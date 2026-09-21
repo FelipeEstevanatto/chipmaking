@@ -90,6 +90,17 @@
   }
 }
 
+/*
+ * VitePress pins a decorative gradient ("aside curtain") to the bottom of the viewport on wide
+ * screens to soften the tail of the outline. It ships as `position: fixed; z-index: 10` with the
+ * default `pointer-events: auto`, so it quietly swallows clicks aimed at whatever sits underneath
+ * — here, the provenance bar's repository link in the bottom-right corner. The fade is purely
+ * cosmetic, so it should never be a click target.
+ */
+.aside-curtain {
+  pointer-events: none;
+}
+
 /* Home: keep hero / features aligned with doc shell */
 .VPHome .container {
   max-width: 1152px;
@@ -297,6 +308,13 @@
 .build-footer {
   /* .Layout is a flex column, so this pins the bar to the bottom on short pages */
   margin-top: auto;
+  /*
+   * Paint above `.aside-curtain` (z-index 10). `pointer-events: none` on the curtain already
+   * restores clickability, but the gradient still fades to the page background colour, so without
+   * this the bar's links would read as a washed-out band rather than normal text.
+   */
+  position: relative;
+  z-index: 11;
   border-top: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg-alt);
   font-size: 0.8125rem;
@@ -363,6 +381,19 @@
 
 .build-footer-icon {
   flex: 0 0 auto;
+}
+
+/*
+ * `layout-bottom` makes this bar a *sibling* of `#VPContent` rather than a child of it, so it never
+ * inherits the `padding-left` VitePress reserves for the fixed sidebar. On wide screens the sidebar
+ * is a full-height opaque column, so the left half of the bar — label, commit link, branch and date
+ * — sat underneath it: the SHA was clipped away and only the branch chip and date peeked out past
+ * the sidebar's edge. Mirror the offset `.VPContent.has-sidebar` gets.
+ */
+@media (min-width: 960px) {
+  .VPContent.has-sidebar ~ .build-footer .build-footer-inner {
+    padding-left: calc(var(--vp-sidebar-width) + 24px);
+  }
 }
 
 @media (max-width: 640px) {
