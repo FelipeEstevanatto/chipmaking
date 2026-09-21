@@ -44,7 +44,37 @@ Limpeza padronizada **RCA** <Cite id="kern-1990" />:
 
 Após secagem Marangoni ou IPA, os wafers passam por metrologia óptica (**Laser Surface Scanning System** — espalhamento de feixe laser) para detecção de defeitos de superfície e contagem de partículas. Por fim, wafers que precisam de camadas especiais passam por **crescimento epitaxial (EPI Growing)** por **CVD** antes de serem embalados a vácuo sob atmosfera limpa (**cleanroom** classe 1/10) para envio às **fabs** (fundições de semicondutores).
 
-<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990']" />
+## Wafers solares: o outro produto da mesma cadeia
+
+Nem todo wafer de silício termina numa fab. A indústria fotovoltaica consome o mesmo material, mas com regras bastante diferentes — e as divergências começam já na escolha do cristal <Cite id="saimm" />.
+
+### Monocristalino ou multicristalino
+
+A eletrônica usa **exclusivamente silício monocristalino**, porque os requisitos de qualidade são altos demais para abrir exceção. A fotovoltaica usa **os dois** <Cite id="saimm" />.
+
+O silício **multicristalino** tem eficiência de célula menor, mas custa menos — e é esse compromisso que explica sua presença no mercado <Cite id="saimm" />. Em vez de puxar um lingote cilíndrico, ele é produzido por **fundição em bloco** (processo Bridgman): o silício é fundido num cadinho e a **interface cristal-líquido avança de baixo para cima** conforme o resfriamento é controlado <Cite id="saimm" />.
+
+O objetivo é obter **grãos alinhados verticalmente**, o que evita tensões térmicas altas e reduz a densidade de discordâncias. Como os wafers são cortados horizontalmente, isso também garante qualidade consistente de lâmina para lâmina <Cite id="saimm" />. Há um bônus de pureza: as impurezas metálicas são **empurradas para o topo do lingote** conforme o cristal cresce, num refino que acontece de graça dentro do próprio cadinho <Cite id="saimm" />. O cadinho é de **sílica**, revestido com **Si₃N₄** para o silício líquido não grudar nas paredes <Cite id="saimm" />.
+
+Já o **Czochralski**, descrito acima, é um processo em batelada que leva cerca de **dois dias por lingote** <Cite id="saimm" />.
+
+### Espessura: onde a fotovoltaica se separa
+
+Aqui está a diferença mais visível. Para extrair a potência elétrica, bastam cerca de **100 µm de silício** — a luz não precisa de mais material que isso <Cite id="saimm" />. Na prática, a indústria fotovoltaica trabalha com lâminas **abaixo de 200 µm** <Cite id="saimm" />, contra os **700 a 800 µm** típicos dos wafers de fab.
+
+Isso não é só economia de material: é economia de uma cadeia inteira. O wafer cristalino responde por **quase metade do custo final do módulo**, e a etapa de fabricação do wafer por cerca de **30%** desse custo <Cite id="saimm" />.
+
+### O corte e o desperdício
+
+O fatiamento usa **serras de fio múltiplo**: um único fio de aço inoxidável de cerca de **180 µm de diâmetro** e **vários quilômetros de comprimento** é movimentado através do cristal numa suspensão abrasiva, formando uma **teia de fios** entre duas bobinas <Cite id="saimm" />. As vantagens são o alto rendimento e a possibilidade de lâminas mais finas <Cite id="saimm" />.
+
+O custo disso é o **kerf**: aproximadamente **30% do silício é perdido como serragem** durante o corte <Cite id="saimm" />. Antes disso, o seccionamento do lingote em blocos já descarta mais material — cerca de **25% nos lingotes monocristalinos e 15% nos multicristalinos** <Cite id="saimm" />. Nos monocristalinos, o cilindro é seccionado até virar um bloco cúbico; nos multicristalinos, o corte remove as **regiões periféricas mais contaminadas** <Cite id="saimm" />.
+
+### O wafer está crescendo
+
+A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²** e, mais recentemente, **15,6 × 15,6 cm²** <Cite id="saimm" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
+
+<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm']" />
 
 <SeeAlso :links="[
   { text: 'Estrutura e tipos de wafer', href: '/estrutura-wafers', note: 'cristal, Miller, dopagem' },

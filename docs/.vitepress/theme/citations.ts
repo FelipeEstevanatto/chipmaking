@@ -98,10 +98,10 @@ const list: Citation[] = [
   {
     key: 'saimm',
     num: 12,
-    title: 'Silicon metal production (SAIMM literature)',
-    publisher: 'SAIMM',
-    url: 'https://www.saimm.co.za/',
-    short: 'SAIMM',
+    title: 'Silicon processing: from quartz to crystalline silicon solar cells',
+    publisher: 'Xakalashe & Tangstad — Southern African Pyrometallurgy 2011, SAIMM',
+    url: 'https://pyrometallurgy.co.za/Pyro2011/Papers/083-Xakalashe.pdf',
+    short: 'Xakalashe & Tangstad (2011)',
   },
   {
     key: 'elkem',

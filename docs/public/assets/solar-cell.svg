@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540" role="img">
+  <title>Cross-section of a finished crystalline silicon solar cell: silver front fingers, silicon nitride anti-reflection coating, phosphorus-doped n+ emitter, boron-doped p base, p+ back surface field and full-area aluminium rear contact</title>
+  <defs>
+    <marker id="sunArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
+      <path d="M0,0 L7,0 L3.5,7 z" fill="#d69e2e" />
+    </marker>
+    <marker id="leadArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+  <style>
+    .t { font: 600 13.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .sym { font: 600 12.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1a202c; }
+    .ag { fill: #e2e8f0; stroke: #718096; stroke-width: 1.5; }
+    .arc { fill: #e9d8fd; stroke: #6b46c1; stroke-width: 1; }
+    .emit { fill: #bee3f8; stroke: #2b6cb0; stroke-width: 1; }
+    .base { fill: #fed7d7; stroke: #c53030; stroke-width: 1; }
+    .bsf { fill: #feb2b2; stroke: #9b2c2c; stroke-width: 1; }
+    .alu { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1; }
+    .edge { fill: none; stroke: #4a5568; stroke-width: 2; }
+    .lead { stroke: #a0aec0; stroke-width: 1; fill: none; }
+    .sun { stroke: #d69e2e; stroke-width: 2.5; fill: none; }
+    .junc { stroke: #c53030; stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+  </style>
+
+  <!-- ============ incident light ============ -->
+  <text class="s" x="345" y="44" text-anchor="middle">incident sunlight</text>
+  <path class="sun" d="M250,58 L250,128" marker-end="url(#sunArrow)" />
+  <path class="sun" d="M425,58 L425,128" marker-end="url(#sunArrow)" />
+  <path class="sun" d="M565,58 L565,128" marker-end="url(#sunArrow)" />
+
+  <!-- ============ layer stack ============ -->
+  <rect class="arc" x="90" y="162" width="510" height="30" />
+  <rect class="emit" x="90" y="192" width="510" height="30" />
+  <rect class="base" x="90" y="222" width="510" height="198" />
+  <rect class="bsf" x="90" y="420" width="510" height="25" />
+  <rect class="alu" x="90" y="445" width="510" height="25" />
+
+  <!-- front fingers sit on the coating, leaving gaps for light -->
+  <rect class="ag" x="150" y="138" width="40" height="24" rx="2" />
+  <rect class="ag" x="320" y="138" width="40" height="24" rx="2" />
+  <rect class="ag" x="490" y="138" width="40" height="24" rx="2" />
+
+  <!-- p-n junction -->
+  <path class="junc" d="M90,222 L600,222" />
+
+  <!-- symbols inside the layers -->
+  <text class="sym" x="345" y="212" text-anchor="middle">n+</text>
+  <text class="sym" x="345" y="326" text-anchor="middle">p</text>
+  <text class="sym" x="345" y="438" text-anchor="middle">p+</text>
+
+  <!-- ============ annotation column ============ -->
+  <line class="lead" x1="630" y1="150" x2="606" y2="150" marker-end="url(#leadArrow)" />
+  <text class="t" x="644" y="146">Silver front contact</text>
+  <text class="s" x="644" y="163">screen-printed fingers</text>
+
+  <line class="lead" x1="630" y1="180" x2="606" y2="177" marker-end="url(#leadArrow)" />
+  <text class="t" x="644" y="180">Anti-reflection coating</text>
+  <text class="s" x="644" y="197">silicon nitride by PECVD</text>
+
+  <line class="lead" x1="630" y1="216" x2="606" y2="207" marker-end="url(#leadArrow)" />
+  <text class="t" x="644" y="214">n+ emitter</text>
+  <text class="s" x="644" y="231">phosphorus, ~900 &#176;C</text>
+
+  <text class="s" x="644" y="252">&#8593; dashed line: the p-n junction</text>
+
+  <line class="lead" x1="630" y1="300" x2="606" y2="310" marker-end="url(#leadArrow)" />
+  <text class="t" x="644" y="298">p base</text>
+  <text class="s" x="644" y="315">boron-doped wafer</text>
+
+  <line class="lead" x1="630" y1="428" x2="606" y2="432" marker-end="url(#leadArrow)" />
+  <text class="t" x="644" y="428">p+ back surface field</text>
+  <text class="s" x="644" y="445">aluminium diffused in</text>
+
+  <line class="lead" x1="630" y1="462" x2="606" y2="457" marker-end="url(#leadArrow)" />
+  <text class="t" x="644" y="462">Aluminium rear contact</text>
+  <text class="s" x="644" y="479">full area</text>
+
+  <text class="s" x="90" y="512">Layers not to scale: the wafer is about 200 &#181;m thick, the emitter only about 0.5 &#181;m.</text>
+</svg>

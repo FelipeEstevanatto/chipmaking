@@ -17,6 +17,29 @@ The full route: quartz becomes crude silicon in the arc furnace; crude silicon b
 
 The principle that organises the route is counter-intuitive: **silicon is not purified as a solid, but as a gas**. Turning it into trichlorosilane, whose boiling point is just **31.8 °C**, allows **fractional distillation** — the same technology used in oil refineries — to separate impurities that no filter could hold back <Cite id="pv-mfg-polysilicon" />. Purifying a gas and then solidifying it again is what separates metallurgical-grade silicon from solar- or electronic-grade silicon.
 
+### Two routes out of the same MG-Si
+
+It is worth fixing the map before the details, because there is more than one way out of MG-Si — and the difference between them is whether or not chlorine is involved <Cite id="saimm" />:
+
+```mermaid
+flowchart TD
+    Q["Quartz"] --> CR["Carbothermal reduction<br/>about 2000 °C"]
+    CR --> MG["MG-Si<br/>98.5 to 99.5 % Si"]
+
+    MG --> CQ["Chemical route<br/>chlorination and distillation"]
+    MG --> PM["Metallurgical route<br/>chlorine-free refining"]
+
+    CQ --> PS["Polysilicon"]
+    PM --> SG["Solar grade (UMG)"]
+
+    PS --> LF["Ingot and slicing"]
+    SG --> LF
+    LF --> WA["Mono or multicrystalline wafers"]
+    WA --> CEL["Crystalline silicon solar cells"]
+```
+
+This page follows the **chemical route**, which dominates the market and is the only one that reaches electronic grade. The **metallurgical route** — which produces upgraded metallurgical-grade (UMG) solar silicon without touching chlorine — is covered further down.
+
 ## From the arc furnace to MG-Si
 
 The step before this page already delivers the starting material. Quartz (SiO₂) is reduced with carbon in a **submerged electric arc furnace** at about 2000 °C <Cite id="csiro" />, in a sequence of reactions where silicon carbide (SiC) is an essential intermediate:
@@ -56,7 +79,13 @@ The purified TCS gas is converted back into solid, ultra-pure metallic silicon b
 
 Created in the 1950s by Siemens and Wacker, it is the dominant method worldwide <Cite id="bernreuter" />. TCS gas is injected together with hydrogen (H₂) into a steel bell-jar reactor where **graphite electrodes** pass current through a **U-shaped silicon core** — the seed <Cite id="pv-mfg-polysilicon" />. That core is electrically heated to about **1100–1150 °C** <Cite id="bernreuter" />, and the TCS undergoes **hydrogen reduction**, in a mechanism equivalent to a **CVD** (*chemical vapour deposition*) process: solid silicon deposits on the seed and grows around it, releasing gaseous HCl <Cite id="pv-mfg-polysilicon" />.
 
-When the process ends, the U-shaped core and the deposited silicon are extracted together and fractured. The rods reach **15 to 20 cm in diameter** <Cite id="ratedpower" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />. It is an extremely energy-intensive process — the main drawback of the method.
+The deposition reaction is exactly the **reverse** of the chlorination that produced the TCS a few steps earlier <Cite id="saimm" />:
+
+```text
+SiHCl₃ + H₂ → Si + 3HCl
+```
+
+When the process ends, the U-shaped core and the deposited silicon are extracted together and fractured. The rods reach **15 to 20 cm in diameter** <Cite id="ratedpower" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />. It is an extremely energy-intensive process — **above 100 kWh per kilogram** of deposited silicon, with a low yield — which is the main drawback of the method <Cite id="saimm" />.
 
 Purity classes:
 
@@ -65,13 +94,57 @@ Purity classes:
 
 ### Fluidized bed reactor (FBR)
 
-A continuous-flow method in which silicon seed particles are kept suspended by a carrier gas containing monosilane (SiH₄) or TCS <Cite id="bernreuter" />. The gas decomposes at much lower temperatures — **650–700 °C** for monosilane — accumulating silicon on the seeds until granules form and are continuously harvested, with none of the rod-fracturing step. It consumes roughly **90% less electricity** than the Siemens process, although it produces an unwanted fraction of silicon dust <Cite id="bernreuter" />.
+A continuous-flow method in which silicon seed particles are kept suspended by a carrier gas containing monosilane (SiH₄) or TCS <Cite id="bernreuter" />. The gas decomposes at much lower temperatures — **650–700 °C** for monosilane — accumulating silicon on the seeds until granules form and are continuously harvested, with none of the rod-fracturing step. It consumes roughly **90% less electricity** than the Siemens process, produces more silicon per unit of reactor volume and delivers the product in a directly usable form, although it also produces an unwanted fraction of silicon dust <Cite id="bernreuter" /> <Cite id="saimm" />.
+
+Even so, the two processes operate at very different scales: in 2008 the Siemens process accounted for about **78%** of the polysilicon produced worldwide and the fluidized bed for just **16%** <Cite id="saimm" />.
 
 <VideoPressEmbed id="ZlxguS11" title="Animation of the polysilicon production route" />
 
 <SourceNote label="Sources" :ids="['pv-mfg-polysilicon', 'bernreuter', 'ratedpower', 'csiro', 'saimm']" />
 
 *Animation and route schematic: [PV-Manufacturing.org](https://pv-manufacturing.org/silicon-production/polysilicon-production/) — the flow chart above was redrawn from that page's diagram and from its description of the reactions* <Cite id="pv-mfg-polysilicon" />.
+
+### The limits of the chemical route
+
+The chemical route dominates, but it has bills to pay. The most cited is **energy**: chlorination, distillation and Siemens add up to an intensive process. The other is safety and environment — it **handles toxic and corrosive compounds** throughout, such as chlorosilanes and hydrochloric acid <Cite id="saimm" />.
+
+In **2006** the solar industry **overtook the semiconductor industry** as the largest consumer of polysilicon <Cite id="saimm" />. In 2008 world production was approximately **75,000 tonnes**, of which **45,000** went to photovoltaics <Cite id="saimm" />.
+
+## The metallurgical route (UMG)
+
+Not all solar silicon has to go through chlorine. The **metallurgical route** starts from MG-Si itself and refines it through a sequence of metallurgical steps, producing **metallurgical-route solar-grade silicon** — *upgraded metallurgical-grade silicon* (UMG). Its energy consumption is markedly lower than that of the Siemens process <Cite id="saimm" />.
+
+The principle behind it is **segregation**: most metallic elements have a low segregation coefficient in silicon, meaning the solid **rejects the impurity into the liquid** as it crystallises. Two central techniques follow from that — **directional solidification** and **acid leaching** <Cite id="saimm" />. Directional solidification comes with a bonus: it doubles as the **ingot casting** step, mono- or multicrystalline, that later becomes wafers <Cite id="saimm" />.
+
+The problem is that this principle does not hold for everyone. **Boron, carbon, oxygen and phosphorus have high segregation coefficients** and are not pushed out by crystal growth <Cite id="saimm" />. Each needs its own attack:
+
+- **Phosphorus:** it is volatile, so it leaves through **vacuum refining** <Cite id="saimm" />.
+- **Boron:** it only leaves through **slag refining** or **plasma refining** — which also remove carbon and oxygen <Cite id="saimm" />.
+
+Because each technique is good at one target and weak at the others, the industry chains **combinations** of steps together <Cite id="saimm" />. Another precaution is to start from already-clean feedstock — purified quartz, carbon black and high-purity electrodes — so as not to introduce new impurities into the product <Cite id="saimm" />.
+
+The route has the potential to become dominant, but in 2008 it accounted for **less than 8%** of solar silicon production <Cite id="saimm" />. The reason is simple: it does not reach electronic grade, so it cannot replace the chemical route for semiconductors.
+
+## How much purity is actually needed?
+
+The purity classes mentioned above become far more concrete when you look at the numbers. Table I of the Xakalashe and Tangstad review compares the typical chemical analyses of the four products in the chain <Cite id="saimm" />:
+
+| Element | MG-Si (ppm) | Solar grade (ppm) | Polycrystalline solar grade | Electronic grade (ppm) |
+| --- | --- | --- | --- | --- |
+| **Si** (mass fraction) | 99 % | 99.9999 % | 99.99999 % | 99.999999999 % |
+| Fe | 2,000–3,000 | < 0.3 | — | < 0.01 |
+| Al | 1,500–4,000 | < 0.1 | — | < 0.0008 |
+| Ca | 500–600 | < 0.1 | — | < 0.003 |
+| B | 40–80 | < 0.3 | — | < 0.0002 |
+| P | 20–50 | < 0.1 | — | < 0.0008 |
+| C | 600 | < 3 | — | < 0.5 |
+| O | 3,000 | < 10 | — | — |
+| Ti | 160–200 | < 0.01 | — | < 0.003 |
+| Cr | 50–200 | < 0.1 | — | — |
+
+Reading the table explains why chemical purification exists at all. Iron, the dominant impurity in MG-Si, drops from thousands of ppm to **below 0.01 ppm** at electronic grade; boron, which MG-Si carries in the tens of ppm, has to reach **below 0.0002 ppm** — a fall of more than five orders of magnitude. No metallurgy achieves that; only the distillation of a gas does <Cite id="saimm" />.
+
+Note also that the polycrystalline solar grade column lists **only the silicon content**. That is not an omission: solar grade has **no formal specification**, and what gets published are acceptable impurity concentrations, used as a guideline rather than a standard <Cite id="saimm" />.
 
 ## Market dynamics and history
 

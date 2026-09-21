@@ -86,6 +86,10 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
       items: [{ text: 'Evolução dos transistores', link: '/transistores' }],
     },
     {
+      text: 'Fotovoltaica',
+      items: [{ text: 'Células e módulos solares', link: '/celulas-solares' }],
+    },
+    {
       text: 'Fontes',
       items: [{ text: 'Referências', link: '/referencias' }],
     },
@@ -174,6 +178,10 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Devices',
       items: [{ text: 'Transistor evolution', link: '/en/transistores' }],
+    },
+    {
+      text: 'Photovoltaics',
+      items: [{ text: 'Solar cells and modules', link: '/en/celulas-solares' }],
     },
     {
       text: 'Sources',

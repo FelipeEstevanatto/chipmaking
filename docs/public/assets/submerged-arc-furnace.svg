@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img">
+  <title>Cross-section of a submerged-arc electric furnace: three carbon electrodes in the charge, an outer solid reaction zone above an inner molten bath, off-gas collected as condensed silica fume, and silicon tapped from the bottom</title>
+  <defs>
+    <marker id="furnArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#718096" />
+    </marker>
+  </defs>
+  <style>
+    .t { font: 600 13.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .gas { fill: #f7fafc; stroke: #cbd5e0; stroke-width: 1; }
+    .charge { fill: #fefcbf; stroke: #b7791f; stroke-width: 1; }
+    .bath { fill: #fed7d7; stroke: #c53030; stroke-width: 1; }
+    .shell { fill: none; stroke: #4a5568; stroke-width: 3; }
+    .rod { fill: #2d3748; stroke: #1a202c; stroke-width: 1; }
+    .clamp { fill: #718096; stroke: #4a5568; stroke-width: 1; }
+    .done { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.5; }
+    .lead { stroke: #a0aec0; stroke-width: 1; fill: none; }
+    .flow { stroke: #718096; stroke-width: 2.5; fill: none; }
+    .pour { stroke: #c53030; stroke-width: 4; fill: none; stroke-linecap: round; }
+  </style>
+
+  <!-- ============ furnace interior ============ -->
+  <rect class="gas" x="62" y="192" width="406" height="30" />
+  <rect class="charge" x="62" y="222" width="406" height="178" />
+  <rect class="bath" x="62" y="400" width="406" height="108" />
+
+  <!-- charge surface: a slightly irregular heap line -->
+  <path d="M62,222 L120,216 L200,226 L280,214 L360,224 L430,216 L468,222" fill="none" stroke="#b7791f" stroke-width="1.5" />
+
+  <!-- ============ electrodes (drawn over the charge) ============ -->
+  <rect class="clamp" x="122" y="58" width="46" height="22" rx="3" />
+  <rect class="clamp" x="242" y="58" width="46" height="22" rx="3" />
+  <rect class="clamp" x="362" y="58" width="46" height="22" rx="3" />
+  <rect class="rod" x="130" y="80" width="30" height="340" />
+  <rect class="rod" x="250" y="80" width="30" height="340" />
+  <rect class="rod" x="370" y="80" width="30" height="340" />
+
+  <!-- ============ vessel shell ============ -->
+  <polygon class="shell" points="60,190 115,130 415,130 470,190" />
+  <rect class="shell" x="60" y="190" width="410" height="320" />
+
+  <!-- ============ off-gas stack ============ -->
+  <rect x="300" y="48" width="50" height="87" fill="#edf2f7" stroke="#a0aec0" stroke-width="1.5" />
+  <path class="flow" d="M325,48 L325,22" marker-end="url(#furnArrow)" />
+  <text class="s" x="340" y="40">silica fume + CO</text>
+
+  <!-- ============ tapping ============ -->
+  <rect x="392" y="502" width="26" height="10" fill="#c53030" />
+  <path class="pour" d="M405,514 L405,546" />
+  <polygon class="done" points="325,548 485,548 470,600 340,600" />
+  <text class="t" x="405" y="580" text-anchor="middle">MG-Si</text>
+
+  <!-- ============ annotation column ============ -->
+  <line class="lead" x1="506" y1="105" x2="404" y2="105" />
+  <rect x="510" y="92" width="14" height="14" class="rod" />
+  <text class="t" x="534" y="104">Carbon electrodes</text>
+  <text class="s" x="534" y="122">three pre-baked electrodes submerged in</text>
+  <text class="s" x="534" y="138">the charge, fed with three-phase current</text>
+
+  <line class="lead" x1="506" y1="200" x2="474" y2="200" />
+  <rect x="510" y="188" width="14" height="14" class="gas" />
+  <text class="t" x="534" y="200">Off-gas</text>
+  <text class="s" x="534" y="218">CO and SiO; its energy content is of the same</text>
+  <text class="s" x="534" y="234">order as the electricity fed to the furnace</text>
+
+  <line class="lead" x1="506" y1="310" x2="474" y2="310" />
+  <rect x="510" y="298" width="14" height="14" class="charge" />
+  <text class="t" x="534" y="310">Outer reaction zone</text>
+  <text class="s" x="534" y="328">solid charge of quartz with coke, coal</text>
+  <text class="s" x="534" y="344">or wood chips, at about 1600 &#176;C</text>
+
+  <line class="lead" x1="506" y1="455" x2="474" y2="455" />
+  <rect x="510" y="443" width="14" height="14" class="bath" />
+  <text class="t" x="534" y="455">Inner reaction zone</text>
+  <text class="s" x="534" y="473">molten silicon bath at about 2000 &#176;C</text>
+  <text class="s" x="534" y="489">the solid charge covers the bath, preserving yield</text>
+
+  <line class="lead" x1="506" y1="557" x2="480" y2="557" />
+  <rect x="510" y="545" width="14" height="14" class="done" />
+  <text class="t" x="534" y="557">Tapping and refining</text>
+  <text class="s" x="534" y="575">hole at the bottom; then slag or gas purging,</text>
+  <text class="s" x="534" y="591">solidification and crushing to 98.5 to 99.5 % Si</text>
+
+  <text class="note" x="60" y="632">Shell about 10 m in diameter &#183; 11 to 13 MWh per tonne of silicon metal</text>
+</svg>
