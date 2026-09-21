@@ -1,8 +1,275 @@
-/* PDF figures with a black canvas: always sit on a white stage (both themes). */
+/**
+ * Layout: follow VitePress defaults (1440px shell, centered .container).
+ * VitePress runs on Vite's dev server; visual layout is theme CSS, not vite.config.
+ * @see https://vitepress.dev/reference/default-theme-config
+ */
+:root {
+  --vp-c-brand-1: #2b6cb0;
+  --vp-c-brand-2: #1e4a7a;
+  --vp-c-brand-3: #163d66;
+  --vp-c-brand-soft: rgba(43, 108, 176, 0.12);
+
+  /* Restore theme default — do not shrink the whole layout shell */
+  --vp-layout-max-width: 1440px;
+  --vp-sidebar-width: 272px;
+}
+
+.dark {
+  --vp-c-brand-1: #7eb0d8;
+  --vp-c-brand-2: #5a9fd4;
+  --vp-c-brand-3: #3d8bc4;
+}
+
+/* --- Sidebar scroll (long grouped nav) --- */
+.VPSidebar {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 116, 139, 0.45) transparent;
+}
+
+.VPSidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.VPSidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.35);
+  border-radius: 999px;
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 116, 139, 0.55);
+}
+
+.dark .VPSidebar {
+  scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
+}
+
+.dark .VPSidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.35);
+}
+
+.dark .VPSidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(148, 163, 184, 0.55);
+}
+
+/* --- Doc content: centered in the main column (with outline aside) --- */
+@media (min-width: 960px) {
+  .VPDoc .container {
+    max-width: var(--vp-layout-max-width);
+    margin-inline: auto;
+    padding-inline: 32px;
+  }
+
+  /* Override default theme cap (688px) so prose + figures breathe and sit centered */
+  .VPDoc.has-aside .content-container {
+    max-width: min(1104px, calc(100vw - var(--vp-sidebar-width) - 48px)) !important;
+    margin-inline: auto !important;
+    width: 100%;
+  }
+
+  .VPDoc .main {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .VPDoc .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Balance main column + right outline as a centered block */
+  .VPDoc.has-aside .container > .content {
+    margin-inline: auto !important;
+    flex: 0 1 960px;
+    max-width: 960px;
+  }
+}
+
+/* Home: keep hero / features aligned with doc shell */
+.VPHome .container {
+  max-width: 1152px;
+  margin-inline: auto;
+}
+
+.vp-doc {
+  --vp-c-divider: rgba(60, 60, 67, 0.12);
+}
+
 .diagram-figure {
   box-shadow: 0 0 0 1px var(--vp-c-divider);
 }
 
 .dark .diagram-figure {
   box-shadow: 0 0 0 1px var(--vp-c-divider), 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.see-also {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+}
+
+.see-also-title {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.see-also ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.youtube-embed {
+  position: relative;
+  margin: 1.25rem 0;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: #000;
+}
+
+.youtube-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.chart-panel {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+}
+
+.chart-panel canvas {
+  max-height: 360px;
+}
+
+.transistor-compare {
+  margin: 1.5rem 0;
+}
+
+.transistor-compare-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.transistor-compare-tabs button {
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.transistor-compare-tabs button.active {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+.supply-chain {
+  margin: 2rem 0;
+}
+
+/* --- Citations (Wikipedia-style) --- */
+.cite-ref {
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: super;
+  margin-left: 0.1em;
+}
+
+.cite-ref a {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0 0.15em;
+}
+
+.cite-ref a:hover {
+  text-decoration: underline;
+}
+
+.source-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.925rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+.source-note-label {
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-right: 0.35em;
+}
+
+.source-note-link {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.source-note-link:hover {
+  text-decoration: underline;
+}
+
+.source-note-meta {
+  margin-left: 0.35em;
+  white-space: nowrap;
+}
+
+.ref-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+}
+
+.ref-list-item {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  scroll-margin-top: 80px;
+}
+
+.ref-list-num {
+  flex: 0 0 auto;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+.ref-list-link {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ref-list-publisher {
+  color: var(--vp-c-text-2);
+}
+
+.ref-usgs-years {
+  margin: 0.5rem 0 1.5rem;
+  padding-left: 1.25rem;
+}
+
+.ref-usgs-years a {
+  color: var(--vp-c-brand-1);
 }

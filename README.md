@@ -6,7 +6,14 @@ Documento fonte: `Resumo Chipmaking.pdf`.
 
 ## Idiomas
 
-[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (padrão, `docs/`) e **English** (`docs/en/`). O seletor de idioma aparece no topo do site. O conteúdo completo está em PT; as páginas em `docs/en/` são placeholders com links para a versão em português até você traduzir.
+[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (conteúdo completo) e **English** (`docs/en/`). Busca local no header (PT com rótulos em português).
+
+## Estrutura do site
+
+- **Início** (`/`) — hero, features e diagrama Mermaid da cadeia
+- **Introdução** — texto USGS + gráfico interativo (Chart.js)
+- **Linha do tempo** / **Glossário** — navegação auxiliar
+- Capítulos agrupados na sidebar: matéria-prima → refino → wafer → fab → dispositivos
 
 ## Figuras do PDF
 

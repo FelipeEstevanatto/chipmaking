@@ -1,16 +1,21 @@
+---
+title: Estrutura e tipos de wafer
+description: Estrutura cúbica de diamante, índices de Miller, classificação de wafers e dopagem tipo P/N.
+---
+
 # Estrutura cristalina e tipos de wafer
 
 ## Estrutura do silício puro
 
 O silício cristalino adota a **estrutura cúbica de diamante** (*diamond cubic crystal structure*).
 
-![Estrutura cúbica de diamante](/pdf-images/p08-1.png)
+<DiagramFigure src="/pdf-images/p08-1.png" alt="Estrutura cúbica de diamante">
+The diamond cubic crystal structure.
+</DiagramFigure>
 
-*The diamond cubic crystal structure.*
-
-![Célula unitária do silício — vista 3D e superior](/pdf-images/p08-2.png)
-
-*Orientações cristalográficas comuns (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.*
+<DiagramFigure src="/pdf-images/p08-2.png" alt="Célula unitária do silício">
+Orientações cristalográficas (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.
+</DiagramFigure>
 
 ### Recursos adicionais
 
@@ -24,9 +29,9 @@ A estrutura pode ser caracterizada por **DRX (difração de raios-X)**. Em condi
 
 Índices que descrevem direções e planos cristalográficos; planos podem ter propriedades **anisotrópicas** (dependentes da direção).
 
-![Planos cristalográficos e índices de Miller](/pdf-images/p09-1.png)
-
-*DeepKling — [Miller Indices](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (CC BY 3.0).*
+<DiagramFigure src="/pdf-images/p09-1.png" alt="Índices de Miller em estrutura cúbica">
+DeepKling — [Miller Indices](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (CC BY 3.0).
+</DiagramFigure>
 
 ## Tipos de wafer
 
@@ -41,6 +46,17 @@ A dopagem introduz impurezas intencionais em semicondutor **intrínseco** para m
 
 Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) é intrínseco no sentido de compensação de portadores.
 
-![Silício intrínseco, tipo P (B) e tipo N (Sb)](/pdf-images/p10-1.png)
+<DiagramFigure src="/pdf-images/p10-1.png" alt="Dopagem tipo P e tipo N no silício">
+Tipo P: buraco (*void*) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb).
+</DiagramFigure>
 
-*Tipo P: buraco (*void*) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb).*
+<div class="see-also">
+
+<p class="see-also-title">Veja também</p>
+
+<ul>
+  <li><a href="/fabricacao-wafers">Fabricação de wafers</a> — orientação &lt;100&gt; / &lt;111&gt; no CZ</li>
+  <li><a href="/transistores">Transistores</a> — dopagem e implantação iônica</li>
+</ul>
+
+</div>

@@ -1,3 +1,8 @@
+---
+title: Fotolitografia
+description: Equipamentos ASML, posicionamento de wafer e etapas do fluxo de fotolitografia DUV/EUV.
+---
+
 # Fotolitografia
 
 Máquinas da **ASML** (originadas da Philips), com precisão nanométrica, alinham wafers em equipamentos que projetam luz ultravioleta através de uma **máscara (retículo)** com o circuito gravado, reagindo com o fotoresistor apenas em pontos selecionados.
@@ -6,18 +11,19 @@ A mesa de posicionamento do wafer pesa cerca de **15 kg** e pode acelerar com fo
 
 Quando a TSMC ainda fazia parte da Philips, motores lineares **hidráulicos** eram usados: muito precisos, porém com alta manutenção — custo e tempo significativos até soluções mais robustas.
 
-![Exposição EUV em wafer — ASML](/pdf-images/p12-1.png)
+<DiagramFigure src="/pdf-images/p12-1.png" alt="Exposição EUV em wafer ASML">
+Exposição EUV em wafer — <a href="https://www.asml.com/" target="_blank" rel="noopener noreferrer">ASML</a> <Cite id="asml-gaa" />.
+</DiagramFigure>
 
-*Fonte: ASML.*
-
-![Posicionamento a laser sobre base de granito](/pdf-images/p13-1.png)
-
+<DiagramFigure src="/pdf-images/p13-1.png" alt="Diagrama de posicionamento a laser sobre granito">
 *Laser controlled positioning and a solid, vibration-suppressing granite base ensure precise alignment of the exposure chuck.*
+</DiagramFigure>
 
-### Vídeos
+## Vídeos
 
-- [Processo ASML](https://www.youtube.com/watch?v=jL7HvnBgrJ4)
-- [RTX 5090 Chip Deep-Dive](https://www.youtube.com/watch?v=rCwgAGG2sZQ)
+<YouTubeEmbed id="jL7HvnBgrJ4" title="Processo ASML" />
+
+<YouTubeEmbed id="rCwgAGG2sZQ" title="RTX 5090 Chip Deep-Dive" />
 
 ## Passo a passo do processo
 
@@ -31,3 +37,15 @@ Executado em sequência, com controle rigoroso de temperatura e contaminantes:
 6. **Revelação (development):** TMAH ou poça; em resiste **positivo**, região exposta dissolve; enxágue com DIW e secagem com N₂.
 7. **Cozimento final (hard bake):** 120–150 °C — reticulação (*cross-linking*) para resistir a etch e implantação.
 8. **Transferência de padrão e stripping:** gravação por **etch** ou **implantação iônica**; remoção do resiste por solventes ou **plasma ashing**.
+
+<div class="see-also">
+
+<p class="see-also-title">Veja também</p>
+
+<ul>
+  <li><a href="/fabricacao-wafers">Fabricação de wafers</a> — superfície pós-CMP exigida para litografia</li>
+  <li><a href="/glossario">Glossário</a> — DUV, EUV</li>
+  <li><a href="/referencias">Referências</a> — ASML GAAFET</li>
+</ul>
+
+</div>
