@@ -8,7 +8,7 @@ Documento fonte: `Resumo Chipmaking.pdf`.
 
 [VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (`docs/`) e **English** (`docs/en/`), ambos com conteúdo completo e espelhado arquivo a arquivo.
 
-Ao adicionar um capítulo, replique-o nos dois locales. Componentes compartilhados (`Cite`, `UsgsProductionChart`, `TransistorCompare`) detectam o locale e apontam para as páginas do idioma ativo.
+Ao adicionar um capítulo, replique-o nos dois locales. Componentes compartilhados (`Cite`, `UsgsProductionChart`, `TransistorCompare`, `TransistorTimeline`, `SeeAlso`) detectam o locale e apontam para as páginas do idioma ativo.
 
 ### Blocos "Veja também"
 
@@ -36,6 +36,16 @@ Imagens embutidas em `docs/public/pdf-images/`. Para regenerar a partir do PDF:
 ```bash
 python scripts/extract-pdf-images.py
 ```
+
+Toda figura (`DiagramFigure`, `TransistorTimeline`) passa pelo componente `ZoomableImage`: um clique abre um visualizador em tela cheia com zoom pela roda do mouse ou duplo clique, arraste para mover, botões `+` / `-` / `1:1` e atalhos `+`, `-`, `0` e `Esc`.
+
+## Diagramas Mermaid
+
+Blocos ` ```mermaid ` são renderizados no cliente por `docs/.vitepress/theme/Mermaid.vue`, com o plugin `vitepress-plugin-mermaid` cuidando do cercamento (*fence*) no Markdown.
+
+O `mermaid` em si é importado **dinamicamente**. O plugin registra o componente com um import estático, e isso faz o Rollup pré-carregar ~680 kB de JS em todas as páginas, inclusive as que não têm diagrama. Por isso `config.ts` traz um alias que troca o renderer do plugin por `theme/mermaid-async.ts` (um `defineAsyncComponent`), deixando o bundle a um salto dinâmico de distância.
+
+Timelines usam `useMaxWidth: false` para manter os rótulos legíveis em largura natural (com rolagem horizontal); flowcharts continuam se ajustando à largura do texto.
 
 ## Desenvolvimento
 

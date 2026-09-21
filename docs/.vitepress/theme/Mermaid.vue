@@ -34,7 +34,7 @@ async function render() {
     securityLevel: 'loose',
     theme: dark ? 'dark' : 'default',
     fontFamily: 'inherit',
-    // Timelines carry a dozen entries: squeezing them into the text column makes the labels
+    // Timelines carry fourteen entries: squeezing them into the text column makes the labels
     // unreadable, so let them keep their natural width and scroll sideways instead (see
     // `.mermaid` in custom.css). Flowcharts fit the column fine.
     timeline: { useMaxWidth: false },

@@ -30,18 +30,20 @@ timeline
     1960 : MOSFET planar
     1963 : CMOS (par complementar)
     1968 : Porta de silício autoalinhada
-    1980 : LDD (dreno levemente dopado)
-    1996 : STI (trincheira rasa)
+    1985 : LDD (dreno levemente dopado)
+    1997 : STI (trincheira rasa)
     1998 : SOI (0.22 µm)
     2003 : Silício esticado (Intel 90 nm)
     2007 : High-K metal gate (45 nm)
     2011 : FinFET / Tri-Gate (22 nm)
+    2012 : FD-SOI (corpo ultrafino)
     2022 : GAAFET / nanosheets (3 nm)
     2025 : BSPDN (PowerVia, Super Power Rail)
+    2029 : Forksheet (nó A10)
     Futuro : CFET empilhado (&lt;1 nm)
 ```
 
-As doze gerações, com a estrutura de cada transistor (clique para ampliar):
+As quatorze gerações, com a estrutura de cada transistor e exemplos de produtos que a usaram (clique para ampliar):
 
 <ClientOnly>
   <TransistorTimeline />

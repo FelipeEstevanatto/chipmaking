@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
+  <title>Partially depleted SOI with a thick floating body versus fully depleted SOI with an ultra-thin film and a back plane</title>
+  <style>
+    .inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
+    .box { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
+    .nplus { fill: #2b6cb0; stroke: #2c5282; stroke-width: 1; }
+    .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
+    .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
+    .chan { fill: #63b3ed; stroke: #2b6cb0; stroke-width: 1; }
+    .body { fill: #dd6b20; stroke: #9c4221; stroke-width: 1; }
+    .dim { stroke: #718096; stroke-width: 1.3; fill: none; }
+    .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+  </style>
+
+  <text class="head" x="200" y="34" text-anchor="middle">PD-SOI (film ~100 nm)</text>
+  <text class="head" x="600" y="34" text-anchor="middle">FD-SOI (film ~6 nm)</text>
+  <line class="divider" x1="400" y1="52" x2="400" y2="356" />
+
+  <!-- ================= LEFT: partially depleted ================= -->
+  <rect class="si" x="60" y="300" width="280" height="52" />
+  <text class="note" x="200" y="332" text-anchor="middle">handle wafer</text>
+  <rect class="box" x="60" y="278" width="280" height="22" />
+  <text class="note" x="98" y="294" text-anchor="middle">BOX</text>
+
+  <rect class="si" x="60" y="236" width="280" height="42" />
+  <rect class="nplus" x="75" y="236" width="58" height="42" />
+  <rect class="nplus" x="267" y="236" width="58" height="42" />
+  <rect class="chan" x="133" y="236" width="134" height="20" />
+  <rect class="body" x="133" y="256" width="134" height="22" />
+
+  <text class="inv" x="104" y="262" text-anchor="middle">n+</text>
+  <text class="inv" x="296" y="262" text-anchor="middle">n+</text>
+  <text class="inv" x="200" y="252" text-anchor="middle">channel</text>
+  <text class="inv" x="200" y="272" text-anchor="middle">floating body</text>
+
+  <rect class="ox" x="155" y="228" width="90" height="8" />
+  <rect class="gate" x="155" y="192" width="90" height="36" />
+  <text class="inv" x="200" y="215" text-anchor="middle">gate</text>
+
+  <path class="dim" d="M352,236 L352,278" />
+  <path class="dim" d="M345,236 L359,236" />
+  <path class="dim" d="M345,278 L359,278" />
+  <text class="note" x="366" y="261">thick film</text>
+
+  <!-- ================= RIGHT: fully depleted ================= -->
+  <rect class="si" x="460" y="300" width="280" height="52" />
+  <text class="note" x="600" y="340" text-anchor="middle">handle wafer</text>
+  <rect class="body" x="460" y="318" width="280" height="18" />
+  <text class="note" x="600" y="332" text-anchor="middle">back plane (V_bb)</text>
+
+  <rect class="box" x="460" y="278" width="280" height="22" />
+  <text class="note" x="498" y="294" text-anchor="middle">BOX</text>
+
+  <rect class="si" x="460" y="264" width="280" height="14" />
+  <rect class="nplus" x="475" y="264" width="58" height="14" />
+  <rect class="nplus" x="667" y="264" width="58" height="14" />
+  <rect class="chan" x="533" y="264" width="134" height="14" />
+
+  <text class="inv" x="504" y="275" text-anchor="middle">n+</text>
+  <text class="inv" x="696" y="275" text-anchor="middle">n+</text>
+  <text class="inv" x="600" y="275" text-anchor="middle">fully depleted</text>
+
+  <rect class="ox" x="555" y="256" width="90" height="8" />
+  <rect class="gate" x="555" y="220" width="90" height="36" />
+  <text class="inv" x="600" y="243" text-anchor="middle">gate</text>
+
+  <path class="dim" d="M752,264 L752,278" />
+  <path class="dim" d="M745,264 L759,264" />
+  <path class="dim" d="M745,278 L759,278" />
+  <text class="note" x="655" y="212" text-anchor="middle">ultra-thin film</text>
+
+  <text class="note" x="600" y="378" text-anchor="middle">V_bb tunes the threshold voltage</text>
+</svg>
