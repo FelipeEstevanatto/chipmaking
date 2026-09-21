@@ -15,9 +15,9 @@ Compare the three main architectures visually:
 
 | Era | Node | Architecture | Key change | Gain |
 |-----|------|--------------|------------|------|
-| **1960** | — | Planar MOSFET | Channel, gate, source and drain in the wafer plane | The basis of Moore's Law for decades |
-| **1963** | — | CMOS (complementary pair) | Complementary NMOS and PMOS on the same substrate | Near-zero standby power — the basis of all digital logic |
-| **1968** | — | Silicon gate (self-aligned) | The polysilicon gate masks its own source/drain implant | Less overlap capacitance; smaller, faster devices |
+| **1960** | 20 µm † | Planar MOSFET | Channel, gate, source and drain in the wafer plane | The basis of Moore's Law for decades |
+| **1963** | ~20 µm † | CMOS (complementary pair) | Complementary NMOS and PMOS on the same substrate | Near-zero standby power — the basis of all digital logic |
+| **1968** | ~10 µm † | Silicon gate (self-aligned) | The polysilicon gate masks its own source/drain implant | Less overlap capacitance; smaller, faster devices |
 | **1985** | 1.5 µm | LDD (lightly doped drain) | n⁻ extensions under nitride spacers | Smooths the drain field and tames hot carriers |
 | **1995** | 0.35 µm | STI (shallow trench) | An oxide trench replaces LOCOS isolation | Vertical walls, no “bird’s beak”; higher density |
 | **1998** | 0.22 µm | SOI (silicon on insulator) | A thin silicon film on a buried oxide | Less junction capacitance and latch-up immunity |
@@ -30,9 +30,58 @@ Compare the three main architectures visually:
 | **~2029** | A10 | Forksheet | A dielectric wall separates the n and p gates | Brings n and p closer without stacking; smaller standard cells |
 | **Future** | &lt;1 nm | CFET | NFET and PFET stacked in the same cell | Up to ~50% less area per logic gate |
 
+† The first three values **are not node names**: before 1971 that convention did not exist. They are the **gate lengths** measured on the pioneering devices — 20 µm and then 10 µm on Atalla and Kahng's first MOSFET <Cite id="semiconductor-scale" />. What the node number came to mean after that is the subject of the [addendum below](#addendum-what-the-node-number-means).
+
+## Where each generation reached consumers
+
+| Era | Standout product | Where it was used |
+|-----|------------------|-------------------|
+| **1960** | NMOS **6502** (1975) | Apple II, Commodore 64 and NES — after the pocket calculators that started the line |
+| **1963** | **RCA CD4000** (1968) | Digital watches, calculators and battery-powered instruments; today the real-time clock of every PC |
+| **1968** | **Fairchild 3708** (1968) | The first commercial silicon-gate IC; the technique later made the Intel 4004 (1971) possible |
+| **1985** | **Intel 80386** (1985) | The PCs of the Windows 3.x era |
+| **1995** | **Pentium II** (1997) | Home and business PCs, via the 0.25 µm P856 process |
+| **1998** | **Cell** / **Xenon** (2005–06) | PlayStation 3 and Xbox 360, both on 90 nm SOI; the Athlon 64 brought the same technology to PCs |
+| **2003** | **Pentium 4 “Prescott”** (2004) | Desktop PCs — the first high-volume part with strained silicon |
+| **2007** | **Core 2 Extreme QX9650** (2007) | 45 nm PCs and MacBooks, followed by the Core 2 Duo/Quad line in 2008 |
+| **2011** | **Ivy Bridge** (2012) / **Exynos 7420** (2015) | FinFET PCs and, three years later, the Galaxy S6 and iPhone 6s (Apple A9) |
+| **2012** | **Synaptics AS-370** | The Google Nest Mini; the GAP9 platform carried 22FDX into smart earbuds |
+| **2022** | **WhatsMiner M56S++** / **Apple A20 Pro** | Mining on Samsung SF3E and, on TSMC N2, the 2025 iPhone |
+| **2025/2026** | **Intel Panther Lake** | Core Ultra series 3 — the first chip with PowerVia and RibbonFET together |
+| **~2029** | — | Still in development at imec: no consumer product announced |
+| **Future** | — | Research architecture; imec projects mass production only after 2030 |
+
+## Addendum: what the node number means
+
+The “Node” column only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name. The story has three stages.
+
+### 1. The number was born from a coincidence
+
+The “node” was not invented as a concept. It records the observation that **two different dimensions gave roughly the same number**. The first is the **gate length** — the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the **metal half-pitch** — half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
+
+For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%** — and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />.
+
+### 2. The two numbers came apart in the mid-1990s
+
+To keep gaining speed, the industry began shrinking the **gate length faster** than the other dimensions. At the so-called “**130 nm**” node, the real transistors had **70 nm** gates — barely more than half the number printed on the label <Cite id="ieee-node" />.
+
+The industry roadmap that defined the nodes, the **ITRS**, recorded the break in its own documents. As early as **1999** it eliminated the “150 nm node” and redefined the designation from the **DRAM half-pitch**, writing that “technology node is now not much more than a simple label for still somewhat convenient ‘tick marks’ along this path” <Cite id="itrs-1999" />. By **2001** the text was explicit: the node designation “is defined by DRAM half pitch, not by the transistor gate length or minimum feature size characteristic of that node” <Cite id="itrs-2001" />.
+
+In other words, the number no longer measured the transistor. It measured a memory dimension — and served mainly as a generation marker.
+
+### 3. With FinFET, the number stopped measuring anything
+
+The final break came with the structural change of the transistor. At Intel's “**22 nm**” node (2011), the first with FinFETs, the devices had **26 nm** gates, a **40 nm** half-pitch and **8 nm** fins <Cite id="ieee-node" />. None of those three measurements is 22.
+
+Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node number “had by then absolutely no meaning, because it had nothing to do with any dimension that you can find on the die” <Cite id="ieee-node" />. The article carrying that quote ran in IEEE Spectrum under a blunt headline: *“The Node is Nonsense”*.
+
+### What replaced it
+
+Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1** — a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names** — and that is exactly how they should be read in the table above.
+
 ## 1960 — Planar MOSFET
 
-The original planar transistors (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. Below **28 nm**, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
+The original planar transistors (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. The first working device, presented in **1960**, had a **20 µm** gate and a 100 nm gate oxide — a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has 26 nm gates: in five decades that dimension shrank almost a thousandfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
 
 In practice this generation powered pocket calculators and the first home microcomputers: the NMOS **6502** family, for instance, drove the Apple II, the Commodore 64 and the NES.
 
@@ -48,13 +97,19 @@ Its first large-scale use was the **RCA CD4000 logic family** (1968), which made
 
 ## 1968 — Self-aligned silicon gate
 
-Until the late 1960s the gate was **aluminium**, deposited **after** the source and drain diffusion. To guarantee that the channel was fully covered, the gate had to **overlap** source and drain, adding parasitic capacitance and forcing alignment tolerances that wasted area. In **1968** Bell Labs and Fairchild proposed the **self-aligned silicon gate**: the polysilicon is deposited and patterned **first**, and then serves itself as the mask for the source/drain implant. The junctions end up automatically aligned to the gate, with minimal overlap — and polysilicon also survives the high-temperature anneals that aluminium could not. This is the technique that made the first microprocessors viable (Intel 4004, 1971).
+Until the late 1960s the gate was **aluminium**, deposited **after** the source and drain diffusion. To guarantee that the channel was fully covered, the gate had to **overlap** source and drain, adding parasitic capacitance and forcing alignment tolerances that wasted area.
+
+The **self-aligned silicon gate** solved this by reversing the order of the steps: the polysilicon is deposited and patterned **first**, and then serves itself as the mask for the source/drain implant. The junctions end up automatically aligned to the gate, with minimal overlap — and polysilicon also survives the high-temperature anneals that aluminium could not.
+
+The chronology has three names. In **1965** Boyd Watkins described a self-aligned silicon-gate structure at General Microelectronics, but the patent filing only came in 1969. In **1967** Robert Kerwin, Donald Klein and John Sarace at Bell Labs published the replacement of aluminium with polycrystalline silicon and demonstrated self-aligned transistors, still as discrete devices <Cite id="chm-sigate" />. The move to integrated circuits came at Fairchild, where Tom Klein and Federico Faggin solved what was still missing — precision silicon etching and the process architecture <Cite id="chm-sigate" />.
 
 <DiagramFigure src="/assets/silicon-gate.svg" alt="Comparison of an overlapping aluminium gate with a self-aligned silicon gate">
 Above, an aluminium gate overlapping source and drain; below, a self-aligned silicon gate.
 </DiagramFigure>
 
-The first product to exploit the technique at scale was the **Intel 4004** (1971), the first microprocessor: 2,300 transistors on a 12 mm² die, built on a 10 µm pMOS process for the Busicom 141-PF calculator <Cite id="intel-4004" />.
+The first commercial product was the **Fairchild 3708** (1968), an 8-channel analog multiplexer created as a replacement for the troublesome aluminium-gate 3705. Compared with it, the 3708 was about **5× faster**, had roughly **100× less leakage current**, and the on-resistance of its analog switches was **3× lower** <Cite id="faggin-sgt" />. The credit is disputed: Intel presented the 1101 as the first silicon-gate IC, but the 3708 got there first — and Intel itself benefited from the process by hiring Les Vadasz and Federico Faggin, who had developed it <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
+
+This is the technique that made the first microprocessors viable. Faggin joined Intel in **April 1970** and was the architect of the 4000 family: the **Intel 4004** (1971) shipped with 2,300 transistors on a 12 mm² die, built on a 10 µm pMOS process for the Busicom 141-PF calculator <Cite id="intel-4004" />. Without the self-aligned gate and the buried contact, the 4004 would not have fit on a manufacturable die <Cite id="chm-sigate" />.
 
 ## 1985 — LDD (lightly doped drain)
 
@@ -152,7 +207,7 @@ Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented a
 
 Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) by up to **~50%** and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },

@@ -294,7 +294,9 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
 
 .source-note-meta {
   margin-left: 0.35em;
-  white-space: nowrap;
+  /* The reference list grows with every source added: let it wrap instead of
+     overflowing the content column once a chapter cites more than ~20 works. */
+  white-space: normal;
 }
 
 .ref-list {

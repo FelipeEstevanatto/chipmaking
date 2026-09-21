@@ -684,6 +684,55 @@ const list: Citation[] = [
     url: 'https://www.inchem.org/documents/icsc/icsc/eics0591.htm',
     short: 'ICSC 0591 (trichlorosilane)',
   },
+  {
+    key: 'ieee-node',
+    num: 85,
+    title: 'A Better Way to Measure Progress in Semiconductors',
+    publisher:
+      'Samuel K. Moore — IEEE Spectrum (print edition, August 2020, as "The Node is Nonsense")',
+    url: 'https://spectrum.ieee.org/a-better-way-to-measure-progress-in-semiconductors',
+    short: 'IEEE Spectrum (the node is nonsense)',
+  },
+  {
+    key: 'itrs-1999',
+    num: 86,
+    title: 'International Technology Roadmap for Semiconductors — 1999 edition',
+    publisher: 'Semiconductor Industry Association (ITRS)',
+    url: 'http://cva.stanford.edu/classes/cs99s/papers/roadmap1999.pdf',
+    short: 'ITRS 1999',
+  },
+  {
+    key: 'itrs-2001',
+    num: 87,
+    title: 'International Technology Roadmap for Semiconductors — 2001 Executive Summary',
+    publisher: 'Semiconductor Industry Association (ITRS)',
+    url: 'https://www.semiconductors.org/wp-content/uploads/2018/08/2001-Executive-Summary.pdf',
+    short: 'ITRS 2001',
+  },
+  {
+    key: 'semiconductor-scale',
+    num: 88,
+    title: 'List of semiconductor scale examples',
+    publisher: 'Wikipedia (CC BY-SA 4.0)',
+    url: 'https://en.wikipedia.org/wiki/List_of_semiconductor_scale_examples',
+    short: 'Wikipedia (semiconductor scale)',
+  },
+  {
+    key: 'chm-sigate',
+    num: 89,
+    title: '1968: Silicon Gate Technology Developed for ICs',
+    publisher: 'Computer History Museum — The Silicon Engine',
+    url: 'https://www.computerhistory.org/siliconengine/silicon-gate-technology-developed-for-ics/',
+    short: 'Computer History Museum (silicon gate)',
+  },
+  {
+    key: 'faggin-sgt',
+    num: 90,
+    title: 'The MOS Silicon Gate Technology and the First Microprocessors',
+    publisher: 'Federico Faggin — first-person account, hosted at intel4004.com',
+    url: 'http://www.intel4004.com/The_MOS_Silicon_Gate_Technology_and_the_First_Microprocessors.pdf',
+    short: 'Faggin (silicon gate)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

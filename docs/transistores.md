@@ -15,9 +15,9 @@ Compare visualmente três arquiteturas principais:
 
 | Era | Nó | Arquitetura | Mudança-chave | Ganho |
 |-----|-----|-------------|---------------|-------|
-| **1960** | — | MOSFET planar | Canal, portão, fonte e dreno no plano do wafer | Base da Lei de Moore por décadas |
-| **1963** | — | CMOS (par complementar) | NMOS e PMOS complementares no mesmo substrato | Consumo quase nulo em repouso — base de toda a lógica digital |
-| **1968** | — | Porta de silício (autoalinhada) | A porta de polissilício mascara o próprio implante de fonte/dreno | Menos capacitância de sobreposição; dispositivos menores e mais rápidos |
+| **1960** | 20 µm † | MOSFET planar | Canal, portão, fonte e dreno no plano do wafer | Base da Lei de Moore por décadas |
+| **1963** | ~20 µm † | CMOS (par complementar) | NMOS e PMOS complementares no mesmo substrato | Consumo quase nulo em repouso — base de toda a lógica digital |
+| **1968** | ~10 µm † | Porta de silício (autoalinhada) | A porta de polissilício mascara o próprio implante de fonte/dreno | Menos capacitância de sobreposição; dispositivos menores e mais rápidos |
 | **1985** | 1.5 µm | LDD (dreno levemente dopado) | Extensões n⁻ sob espaçadores de nitreto | Suaviza o campo no dreno e contém portadores quentes |
 | **1995** | 0.35 µm | STI (trincheira rasa) | Trincheira de óxido substitui o isolamento LOCOS | Paredes verticais, sem “bico de pássaro”; mais densidade |
 | **1998** | 0.22 µm | SOI (silício sobre isolante) | Filme fino de silício sobre óxido enterrado | Menos capacitância de junção e imunidade ao latch-up |
@@ -30,9 +30,58 @@ Compare visualmente três arquiteturas principais:
 | **~2029** | A10 | Forksheet | Parede dielétrica separa as portas n e p | Aproxima n e p sem empilhar; células padrão menores |
 | **Futuro** | &lt;1 nm | CFET | NFET e PFET empilhados na mesma célula | Até ~50% menos área por porta lógica |
 
+† Os três primeiros valores **não são nomes de nó**: antes de 1971 não existia essa convenção. São os **comprimentos de porta** medidos nos dispositivos pioneiros — 20 µm e depois 10 µm no primeiro MOSFET de Atalla e Kahng <Cite id="semiconductor-scale" />. O que o número do nó passou a significar depois disso é o assunto do [adendo abaixo](#adendo-o-que-o-numero-do-no-significa).
+
+## Onde cada geração chegou ao consumidor
+
+| Era | Produto de destaque | Onde foi usado |
+|-----|---------------------|----------------|
+| **1960** | NMOS **6502** (1975) | Apple II, Commodore 64 e NES — depois das calculadoras de bolso que inauguraram a linhagem |
+| **1963** | **RCA CD4000** (1968) | Relógios digitais, calculadoras e instrumentos a bateria; hoje o relógio de tempo real de todo PC |
+| **1968** | **Fairchild 3708** (1968) | O primeiro CI comercial de porta de silício; a técnica depois viabilizou o Intel 4004 (1971) |
+| **1985** | **Intel 80386** (1985) | Os PCs da era Windows 3.x |
+| **1995** | **Pentium II** (1997) | PCs domésticos e corporativos, via o processo P856 de 0,25 µm |
+| **1998** | **Cell** / **Xenon** (2005–06) | PlayStation 3 e Xbox 360, ambos em SOI de 90 nm; o Athlon 64 levou a mesma tecnologia aos PCs |
+| **2003** | **Pentium 4 “Prescott”** (2004) | PCs desktop — o primeiro de alto volume com silício esticado |
+| **2007** | **Core 2 Extreme QX9650** (2007) | PCs e MacBooks de 45 nm, seguidos da linha Core 2 Duo/Quad em 2008 |
+| **2011** | **Ivy Bridge** (2012) / **Exynos 7420** (2015) | PCs com FinFET e, três anos depois, o Galaxy S6 e o iPhone 6s (Apple A9) |
+| **2012** | **Synaptics AS-370** | O Google Nest Mini; a plataforma GAP9 levou o 22FDX aos fones inteligentes |
+| **2022** | **WhatsMiner M56S++** / **Apple A20 Pro** | Mineração em SF3E da Samsung e, no N2 da TSMC, o iPhone de 2025 |
+| **2025/2026** | **Intel Panther Lake** | Core Ultra série 3 — o primeiro chip com PowerVia e RibbonFET juntos |
+| **~2029** | — | Ainda em desenvolvimento na imec: sem produto de consumo anunciado |
+| **Futuro** | — | Arquitetura de pesquisa; a imec projeta produção em massa só depois de 2030 |
+
+## Adendo: o que o número do nó significa
+
+A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração. A história tem três etapas.
+
+### 1. O número nasceu de uma coincidência
+
+O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*) — a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*) — metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
+
+Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />.
+
+### 2. Os dois números se separaram em meados dos anos 1990
+
+Para continuar ganhando velocidade, a indústria passou a encolher o **comprimento de porta mais rápido** que as demais dimensões. No nó dito "**130 nm**", os transistores reais tinham portas de **70 nm** — pouco mais da metade do número estampado no nome <Cite id="ieee-node" />.
+
+O roteiro setorial que definia os nós, o **ITRS**, registrou a ruptura nos próprios documentos. Já na edição de **1999** ele eliminou o "nó de 150 nm" e redefiniu a designação a partir do **meio-passo de DRAM**, escrevendo que "o nó de tecnologia agora não é muito mais do que um rótulo simples para marcas de escala ainda meio convenientes ao longo desse caminho" <Cite id="itrs-1999" />. Em **2001**, o texto ficou explícito: a designação do nó "é definida pelo meio-passo do DRAM, e não pelo comprimento de porta do transistor nem pela dimensão mínima característica daquele nó" <Cite id="itrs-2001" />.
+
+Em outras palavras: o número já não media o transistor. Media uma dimensão de memória — e servia, sobretudo, como marcador de geração.
+
+### 3. Com o FinFET, o número deixou de medir qualquer coisa
+
+A ruptura final veio com a mudança estrutural do transistor. No "**nó de 22 nm**" da Intel (2011), o primeiro com FinFET, os dispositivos tinham portas de **26 nm**, meio-passo de **40 nm** e aletas de **8 nm** <Cite id="ieee-node" />. Nenhuma dessas três medidas é 22.
+
+Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "não tinha mais absolutamente nenhum sentido, porque não dizia respeito a nenhuma dimensão que se pudesse encontrar no chip" <Cite id="ieee-node" />. O artigo em que a citação aparece saiu na IEEE Spectrum com um título direto ao ponto: *“The Node is Nonsense”*.
+
+### O que veio no lugar
+
+Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1** — 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração** — e é exatamente assim que eles devem ser lidos na tabela acima.
+
 ## 1960 — MOSFET planar
 
-Transistores planares (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. Abaixo de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
+Transistores planares (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. O primeiro dispositivo funcional, apresentado em **1960**, tinha porta de **20 µm** e óxido de porta de 100 nm — uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o "nó de 22 nm" de 2011 tem portas de 26 nm: em cinco décadas, essa dimensão encolheu quase mil vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
 
 Na prática, essa geração equipou as calculadoras de bolso e os primeiros microcomputadores domésticos: a família NMOS **6502**, por exemplo, movia o Apple II, o Commodore 64 e o NES.
 
@@ -48,13 +97,19 @@ O primeiro uso em larga escala foi a **família lógica RCA CD4000** (1968), que
 
 ## 1968 — Porta de silício autoalinhada
 
-Até o fim da década de 1960 a porta era de **alumínio**, depositada **depois** da difusão de fonte e dreno. Para garantir que o canal ficasse inteiramente coberto, a porta precisava **sobrepor** fonte e dreno, somando capacitância parasita e obrigando a folgas de alinhamento que desperdiçavam área. Em **1968**, Bell Labs e Fairchild propuseram a **porta de silício autoalinhada**: o polissilício é depositado e definido **antes**, e passa ele próprio a servir de máscara para o implante de fonte e dreno. As junções ficam automaticamente alinhadas à porta, com sobreposição mínima — e o polissilício ainda suporta os recozimentos em alta temperatura que o alumínio não tolerava. Foi essa técnica que tornou viáveis os primeiros microprocessadores (Intel 4004, 1971).
+Até o fim da década de 1960 a porta era de **alumínio**, depositada **depois** da difusão de fonte e dreno. Para garantir que o canal ficasse inteiramente coberto, a porta precisava **sobrepor** fonte e dreno, somando capacitância parasita e obrigando a folgas de alinhamento que desperdiçavam área.
+
+A **porta de silício autoalinhada** resolveu o problema trocando a ordem das etapas: o polissilício é depositado e definido **antes**, e passa ele próprio a servir de máscara para o implante de fonte e dreno. As junções ficam automaticamente alinhadas à porta, com sobreposição mínima — e o polissilício ainda suporta os recozimentos em alta temperatura que o alumínio não tolerava.
+
+A cronologia tem três nomes. Em **1965**, Boyd Watkins descreveu uma estrutura autoalinhada de porta de silício na General Microelectronics, mas o depósito da patente só saiu em 1969. Em **1967**, Robert Kerwin, Donald Klein e John Sarace, dos Bell Labs, publicaram a troca do alumínio por silício policristalino e demonstraram transistores autoalinhados ainda como dispositivos discretos <Cite id="chm-sigate" />. A transposição para circuitos integrados veio na Fairchild, onde Tom Klein e Federico Faggin resolveram o que faltava — a gravura precisa do silício e a arquitetura de processo <Cite id="chm-sigate" />.
 
 <DiagramFigure src="/assets/silicon-gate.svg" alt="Comparação entre porta de alumínio com sobreposição e porta de silício autoalinhada">
 Acima, porta de alumínio com sobreposição de fonte e dreno; abaixo, porta de silício autoalinhada.
 </DiagramFigure>
 
-O primeiro produto a explorar a técnica em escala foi o **Intel 4004** (1971), o primeiro microprocessador: 2 300 transistores numa pastilha de 12 mm², em pMOS de 10 µm, projetado para a calculadora Busicom 141-PF <Cite id="intel-4004" />.
+O primeiro produto comercial foi o **Fairchild 3708** (1968), um multiplexador analógico de 8 canais criado como substituto do problemático 3705 de porta de alumínio. Comparado a ele, o 3708 era cerca de **5× mais rápido**, tinha aproximadamente **100× menos corrente de fuga** e a resistência de condução das chaves analógicas era **3× menor** <Cite id="faggin-sgt" />. Vale registrar a disputa: a Intel apresentava o 1101 como o primeiro CI de porta de silício, mas o 3708 chegou antes — e a própria Intel se beneficiou do processo ao contratar Les Vadasz e Federico Faggin, que o haviam desenvolvido <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
+
+Foi essa técnica que tornou viáveis os primeiros microprocessadores. Faggin entrou na Intel em **abril de 1970** e foi o arquiteto da família 4000: o **Intel 4004** (1971) saiu com 2 300 transistores numa pastilha de 12 mm², em pMOS de 10 µm, projetado para a calculadora Busicom 141-PF <Cite id="intel-4004" />. Sem a porta autoalinhada e o contato enterrado, o 4004 não caberia num die fabricável <Cite id="chm-sigate" />.
 
 ## 1985 — LDD (dreno levemente dopado)
 
@@ -152,7 +207,7 @@ A imec demonstrou o processo em wafers de 300 mm em 2021 e, em 2025, apresentou 
 
 Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha verticalmente NFET e PFET na mesma célula, reduzindo até **~50%** a área por porta lógica (inversores, SRAM), estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó **A7**, depois de 2030 <Cite id="imec-forksheet" />.
 
-<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
+<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'cronologia e comparador interativo' },
