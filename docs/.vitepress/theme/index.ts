@@ -11,6 +11,9 @@ import SourceNote from './SourceNote.vue'
 import RefList from './RefList.vue'
 import UsgsMcsLinks from './UsgsMcsLinks.vue'
 import SeeAlso from './SeeAlso.vue'
+import SupplyChainMap from './SupplyChainMap.vue'
+import ReadingProgress from './ReadingProgress.vue'
+import DocMeta from './DocMeta.vue'
 import './custom.css'
 
 export default {
@@ -28,5 +31,8 @@ export default {
     app.component('RefList', RefList)
     app.component('UsgsMcsLinks', UsgsMcsLinks)
     app.component('SeeAlso', SeeAlso)
+    app.component('SupplyChainMap', SupplyChainMap)
+    app.component('ReadingProgress', ReadingProgress)
+    app.component('DocMeta', DocMeta)
   },
 }

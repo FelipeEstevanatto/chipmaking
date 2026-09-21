@@ -119,6 +119,39 @@
   box-shadow: 0 0 0 1px var(--vp-c-divider), 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
+/*
+ * Auto-numbered figures.
+ *
+ * The longest chapters carry up to ten figures (transistores: 10, fabricacao-wafers: 8,
+ * fotolitografia: 7) and every caption was anonymous, so prose had no way to point back at one
+ * and a reader had no idea how many were left.
+ *
+ * The counter lives in CSS rather than a Vue component on purpose: the numbers are then part of
+ * the static HTML, with no hydration pass and nothing to keep in sync when a figure is added,
+ * removed or reordered.
+ *
+ * `:has(> figcaption)` matters — `DiagramFigure` renders its caption conditionally, and a
+ * caption-less figure would otherwise burn a number and leave a gap in the sequence.
+ */
+.vp-doc {
+  counter-reset: figure;
+}
+
+.vp-doc .diagram-figure:has(> figcaption) {
+  counter-increment: figure;
+}
+
+.vp-doc .diagram-figure > figcaption::before {
+  content: 'Figura ' counter(figure) '. ';
+  font-weight: 600;
+  color: var(--vp-c-text-2);
+}
+
+/* VitePress sets `lang="en-US"` on <html> for the mirrored English locale. */
+html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
+  content: 'Figure ' counter(figure) '. ';
+}
+
 .see-also {
   margin-top: 2.5rem;
   padding: 1rem 1.25rem;

@@ -50,8 +50,10 @@ flowchart LR
   A[HPQ quartz] --> B[MG-Si]
   B --> C[Polysilicon]
   C --> D[CZ ingot]
-  E[Wafer] --> F[Photolithography]
+  D --> E[Wafer]
+  E --> F[Photolithography]
   F --> G[3D transistors]
+  E --> H[Solar cells]
 ```
 
 <div class="supply-chain">
