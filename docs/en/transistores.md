@@ -64,7 +64,7 @@ With channels on the order of **1 µm**, the electric field concentrated at the 
 Left, a conventional junction; right, an LDD with n⁻ extensions defined by spacers.
 </DiagramFigure>
 
-The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" /> — the processor behind the Windows 3.x era. The structure remained standard from 1.5 µm down to 0.8 µm <Cite id="voldman-esd" />.
+The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" /> — the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
 
 ## 1995 — STI (shallow trench)
 
@@ -152,7 +152,7 @@ Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented a
 
 Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) by up to **~50%** and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },

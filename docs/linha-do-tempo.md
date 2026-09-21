@@ -54,4 +54,5 @@ Cada era em detalhe em [Evolução dos transistores](/transistores).
 <SeeAlso :links="[
   { text: 'Evolução dos transistores', href: '/transistores', note: 'arquiteturas principais em detalhe' },
   { text: 'Fotolitografia', href: '/fotolitografia', note: 'padrões no wafer' },
+  { text: 'História da fotolitografia', href: '/historia-fotolitografia', note: 'do contato ao EUV' },
 ]" />

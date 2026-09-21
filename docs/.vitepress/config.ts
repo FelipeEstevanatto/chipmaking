@@ -79,7 +79,10 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: 'Na fab',
-      items: [{ text: 'Fotolitografia', link: '/fotolitografia' }],
+      items: [
+        { text: 'Fotolitografia', link: '/fotolitografia' },
+        { text: 'História da fotolitografia', link: '/historia-fotolitografia' },
+      ],
     },
     {
       text: 'Dispositivos',
@@ -173,7 +176,10 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
     },
     {
       text: 'In the fab',
-      items: [{ text: 'Photolithography', link: '/en/fotolitografia' }],
+      items: [
+        { text: 'Photolithography', link: '/en/fotolitografia' },
+        { text: 'History of photolithography', link: '/en/historia-fotolitografia' },
+      ],
     },
     {
       text: 'Devices',

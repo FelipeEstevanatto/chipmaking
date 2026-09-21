@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img">
+  <title>Six-step photolithography cycle on a positive resist: substrate preparation, spin coating, soft bake, exposure through a reticle, development, and pattern transfer with resist stripping</title>
+  <defs>
+    <marker id="lithArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
+      <path d="M0,0 L7,0 L3.5,7 z" fill="#805ad5" />
+    </marker>
+    <marker id="lithSpin" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#2b6cb0" />
+    </marker>
+  </defs>
+  <style>
+    .t { font: 600 12.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 10.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .wafer { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1.5; }
+    .resist { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.2; }
+    .exposed { fill: #9ae6b4; stroke: #2f855a; stroke-width: 1.2; }
+    .mask { fill: #e2e8f0; stroke: #4a5568; stroke-width: 1.2; }
+    .chrome { fill: #2d3748; }
+    .hot { fill: #fed7d7; stroke: #c53030; stroke-width: 1.2; }
+    .gap { fill: #ffffff; stroke: #4a5568; stroke-width: 1.5; }
+    .drop { fill: #e6fffa; stroke: #319795; stroke-width: 1.2; }
+    .light { stroke: #805ad5; stroke-width: 2; fill: none; }
+    .spin { stroke: #2b6cb0; stroke-width: 1.8; fill: none; }
+    .wavy { stroke: #c53030; stroke-width: 1.5; fill: none; }
+    .chev { stroke: #a0aec0; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+
+  <!-- ============ panel 1: substrate preparation ============ -->
+  <text class="t" x="108" y="24" text-anchor="middle">1. Substrate prep</text>
+  <text class="s" x="108" y="164" text-anchor="middle">HMDS</text>
+  <rect class="wafer" x="32" y="196" width="152" height="34" />
+  <path class="drop" d="M100,170 L107.5,183 Q100,190 92.5,183 Z" />
+  <text class="s" x="108" y="262" text-anchor="middle">bake 200-400 &#176;C, then HMDS</text>
+  <text class="s" x="108" y="278" text-anchor="middle">surface becomes hydrophobic</text>
+
+  <!-- ============ panel 2: resist coating ============ -->
+  <text class="t" x="304" y="24" text-anchor="middle">2. Resist coating</text>
+  <rect class="wafer" x="228" y="196" width="152" height="34" />
+  <rect class="resist" x="228" y="170" width="152" height="26" />
+  <path class="spin" d="M250,152 A 54,14 0 0 1 358,152" marker-end="url(#lithSpin)" />
+  <text class="s" x="304" y="262" text-anchor="middle">spun at thousands of RPM</text>
+  <text class="s" x="304" y="278" text-anchor="middle">uniform micrometre-thick film</text>
+
+  <!-- ============ panel 3: soft bake ============ -->
+  <text class="t" x="500" y="24" text-anchor="middle">3. Soft bake</text>
+  <rect class="wafer" x="424" y="196" width="152" height="34" />
+  <rect class="resist" x="424" y="170" width="152" height="26" />
+  <rect class="hot" x="424" y="244" width="152" height="14" />
+  <path class="wavy" d="M456,242 q 6,-7 12,0 q 6,7 12,0" />
+  <path class="wavy" d="M494,242 q 6,-7 12,0 q 6,7 12,0" />
+  <path class="wavy" d="M532,242 q 6,-7 12,0 q 6,7 12,0" />
+  <text class="s" x="500" y="262" text-anchor="middle">hotplate at 90-100 &#176;C</text>
+  <text class="s" x="500" y="278" text-anchor="middle">solvent leaves, film stabilises</text>
+
+  <!-- ============ panel 4: exposure ============ -->
+  <text class="t" x="696" y="24" text-anchor="middle">4. Exposure</text>
+  <rect class="mask" x="620" y="112" width="152" height="16" />
+  <rect class="chrome" x="638" y="112" width="20" height="16" />
+  <rect class="chrome" x="680" y="112" width="20" height="16" />
+  <rect class="chrome" x="722" y="112" width="20" height="16" />
+  <path class="light" d="M629,136 L629,164" marker-end="url(#lithArrow)" />
+  <path class="light" d="M669,136 L669,164" marker-end="url(#lithArrow)" />
+  <path class="light" d="M711,136 L711,164" marker-end="url(#lithArrow)" />
+  <path class="light" d="M757,136 L757,164" marker-end="url(#lithArrow)" />
+  <rect class="wafer" x="620" y="196" width="152" height="34" />
+  <rect class="resist" x="620" y="170" width="152" height="26" />
+  <rect class="exposed" x="620" y="170" width="18" height="26" />
+  <rect class="exposed" x="658" y="170" width="22" height="26" />
+  <rect class="exposed" x="700" y="170" width="22" height="26" />
+  <rect class="exposed" x="742" y="170" width="30" height="26" />
+  <text class="s" x="696" y="262" text-anchor="middle">193 nm DUV or 13.5 nm EUV</text>
+  <text class="s" x="696" y="278" text-anchor="middle">changes resist solubility</text>
+
+  <!-- ============ panel 5: development ============ -->
+  <text class="t" x="892" y="24" text-anchor="middle">5. Development</text>
+  <rect class="wafer" x="816" y="196" width="152" height="34" />
+  <rect class="resist" x="816" y="170" width="58" height="26" />
+  <rect class="resist" x="910" y="170" width="58" height="26" />
+  <circle class="drop" cx="884" cy="160" r="3.5" />
+  <circle class="drop" cx="895" cy="154" r="3.5" />
+  <circle class="drop" cx="905" cy="160" r="3.5" />
+  <text class="s" x="892" y="262" text-anchor="middle">PEB at 100-130 &#176;C, then TMAH</text>
+  <text class="s" x="892" y="278" text-anchor="middle">exposed resist dissolves</text>
+
+  <!-- ============ panel 6: pattern transfer ============ -->
+  <text class="t" x="1088" y="24" text-anchor="middle">6. Etch and strip</text>
+  <rect class="wafer" x="1012" y="196" width="152" height="34" />
+  <rect class="gap" x="1070" y="196" width="36" height="18" />
+  <text class="s" x="1088" y="262" text-anchor="middle">etch or ion implantation, then</text>
+  <text class="s" x="1088" y="278" text-anchor="middle">resist stripped by plasma</text>
+
+  <!-- ============ between-panel chevrons ============ -->
+  <path class="chev" d="M202,194 L210,200 L202,206" />
+  <path class="chev" d="M398,194 L406,200 L398,206" />
+  <path class="chev" d="M594,194 L602,200 L594,206" />
+  <path class="chev" d="M790,194 L798,200 L790,206" />
+  <path class="chev" d="M986,194 L994,200 L986,206" />
+
+  <text class="note" x="20" y="322">Positive resist shown. Not to scale: the resist film is under 1 &#181;m thick, while the wafer is about 775 &#181;m.</text>
+</svg>

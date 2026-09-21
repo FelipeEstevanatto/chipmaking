@@ -54,4 +54,5 @@ Each era in detail in [Transistor evolution](/en/transistores).
 <SeeAlso title="See also" :links="[
   { text: 'Transistor evolution', href: '/en/transistores', note: 'main architectures in detail' },
   { text: 'Photolithography', href: '/en/fotolitografia', note: 'patterning on the wafer' },
+  { text: 'History of photolithography', href: '/en/historia-fotolitografia', note: 'from contact printing to EUV' },
 ]" />

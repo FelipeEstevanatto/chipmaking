@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img">
+  <title>Optical column of a DUV immersion scanner: light source, illuminator, reticle on its stage, projection optics, a water gap under the last lens, the wafer on its stage, and the granite base with laser interferometry</title>
+  <defs>
+    <marker id="colArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#805ad5" />
+    </marker>
+    <marker id="colGray" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+  <style>
+    .t { font: 600 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .box { fill: #edf2f7; stroke: #4a5568; stroke-width: 1.5; }
+    .reticle { fill: #e2e8f0; stroke: #4a5568; stroke-width: 1.5; }
+    .chrome { fill: #2d3748; }
+    .barrel { fill: #edf2f7; stroke: #4a5568; stroke-width: 2; }
+    .lens { fill: #bee3f8; fill-opacity: 0.85; stroke: #2b6cb0; stroke-width: 1.2; }
+    .water { fill: #e6fffa; stroke: #319795; stroke-width: 1.2; }
+    .wafer { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1.5; }
+    .stage { fill: #e2e8f0; stroke: #4a5568; stroke-width: 1.5; }
+    .granite { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1.5; }
+    .ray { stroke: #805ad5; stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; }
+    .flow { stroke: #805ad5; stroke-width: 2; fill: none; }
+    .lead { stroke: #a0aec0; stroke-width: 1.2; fill: none; }
+  </style>
+
+  <!-- ============ light source ============ -->
+  <rect class="box" x="30" y="56" width="240" height="66" rx="4" />
+  <text class="t" x="46" y="78">Light source</text>
+  <text class="s" x="46" y="96">193 nm ArF excimer laser (DUV)</text>
+  <text class="s" x="46" y="112">13.5 nm tin plasma (EUV)</text>
+  <path class="flow" d="M270,89 L316,89" marker-end="url(#colArrow)" />
+
+  <!-- ============ illuminator ============ -->
+  <rect class="box" x="320" y="56" width="280" height="66" rx="4" />
+  <text class="t" x="336" y="78">Illuminator</text>
+  <text class="s" x="336" y="96">shapes the beam and sets the</text>
+  <text class="s" x="336" y="112">illumination mode and the dose</text>
+  <path class="flow" d="M460,122 L460,150" marker-end="url(#colArrow)" />
+
+  <!-- ============ reticle ============ -->
+  <rect class="reticle" x="330" y="152" width="260" height="16" />
+  <rect class="chrome" x="356" y="152" width="26" height="16" />
+  <rect class="chrome" x="412" y="152" width="26" height="16" />
+  <rect class="chrome" x="468" y="152" width="26" height="16" />
+  <rect class="chrome" x="524" y="152" width="26" height="16" />
+  <line class="lead" x1="606" y1="160" x2="594" y2="160" marker-end="url(#colGray)" />
+  <text class="t" x="612" y="158">Reticle (mask)</text>
+  <text class="s" x="612" y="174">on the reticle stage; it carries</text>
+  <text class="s" x="612" y="190">the pattern, 4x larger</text>
+
+  <!-- ============ projection optics ============ -->
+  <polygon class="barrel" points="400,196 520,196 496,452 424,452" />
+  <path class="ray" d="M432,170 L426,452" />
+  <path class="ray" d="M460,170 L460,452" />
+  <path class="ray" d="M488,170 L494,452" />
+  <ellipse class="lens" cx="460" cy="228" rx="57" ry="9" />
+  <ellipse class="lens" cx="460" cy="270" rx="54" ry="9" />
+  <ellipse class="lens" cx="460" cy="312" rx="51" ry="9" />
+  <ellipse class="lens" cx="460" cy="354" rx="48" ry="9" />
+  <ellipse class="lens" cx="460" cy="396" rx="45" ry="9" />
+  <text class="t" x="386" y="248" text-anchor="end">Projection optics</text>
+  <text class="s" x="386" y="264" text-anchor="end">a stack of lenses,</text>
+  <text class="s" x="386" y="280" text-anchor="end">not a single lens</text>
+  <text class="s" x="386" y="404" text-anchor="end">4x reduction</text>
+
+  <!-- ============ immersion gap and wafer ============ -->
+  <path class="ray" d="M426,452 L458,476" />
+  <path class="ray" d="M460,452 L460,476" />
+  <path class="ray" d="M494,452 L462,476" />
+  <rect class="water" x="424" y="452" width="72" height="18" />
+  <rect class="wafer" x="350" y="470" width="220" height="12" />
+  <line class="lead" x1="278" y1="461" x2="420" y2="461" marker-end="url(#colGray)" />
+  <text class="t" x="274" y="458" text-anchor="end">Immersion water</text>
+  <text class="s" x="274" y="474" text-anchor="end">193 nm becomes ~135 nm</text>
+  <line class="lead" x1="278" y1="476" x2="346" y2="476" marker-end="url(#colGray)" />
+  <text class="t" x="274" y="494" text-anchor="end">Wafer</text>
+
+  <!-- ============ stage, metrology and base ============ -->
+  <rect class="stage" x="350" y="496" width="220" height="44" rx="3" />
+  <text class="t" x="584" y="510">Wafer stage</text>
+  <text class="s" x="584" y="526">20 G acceleration,</text>
+  <text class="s" x="584" y="542">nanometre precision</text>
+  <line class="lead" x1="250" y1="518" x2="344" y2="518" marker-end="url(#colGray)" />
+  <text class="t" x="246" y="514" text-anchor="end">Laser interferometry</text>
+  <text class="s" x="246" y="530" text-anchor="end">measures the stage position</text>
+  <rect class="granite" x="300" y="552" width="320" height="32" />
+  <text class="s" x="460" y="573" text-anchor="middle">Granite block, solid and heavy, damps the vibration</text>
+
+  <text class="note" x="30" y="612">EUV follows the same principle but differs in everything else: no water and no lenses.</text>
+  <text class="note" x="30" y="630">Its path is all multilayer mirrors under vacuum, and the mask itself is reflective.</text>
+</svg>

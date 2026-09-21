@@ -39,7 +39,18 @@ python scripts/extract-pdf-images.py
 
 Toda figura (`DiagramFigure`, `TransistorTimeline`) passa pelo componente `ZoomableImage`: um clique abre um visualizador em tela cheia com zoom pela roda do mouse ou duplo clique, arraste para mover, botões `+` / `-` / `1:1` e atalhos `+`, `-`, `0` e `Esc`.
 
-Esquemas próprios (transistores, rota do polissilício, forno de arco submerso, célula solar) ficam em `docs/public/assets/*.svg`. Escreva-os em **ASCII puro** e use referências numéricas (`&#176;`, `&#8594;`) para `°` e `→`: entidades HTML nomeadas como `&minus;` não existem em XML e fazem o SVG inteiro falhar. Termine com `width`/`height` no `<svg>` raiz — sem eles, o `naturalWidth` fica `0` e o `ZoomableImage` não consegue dimensionar a imagem.
+Esquemas próprios (transistores, rota do polissilício, forno de arco submerso, célula solar, coluna óptica do scanner, etapas da litografia e as quatro gerações ópticas) ficam em `docs/public/assets/*.svg`. Escreva-os em **ASCII puro** e use referências numéricas (`&#176;`, `&#8594;`) para `°` e `→`: entidades HTML nomeadas como `&minus;` não existem em XML e fazem o SVG inteiro falhar. Termine com `width`/`height` no `<svg>` raiz — sem eles, o `naturalWidth` fica `0` e o `ZoomableImage` não consegue dimensionar a imagem.
+
+## Imagens de terceiros
+
+Fotos e esquemas de fora (Wikimedia Commons, laboratórios nacionais) ficam também em `docs/public/assets/` — copiados para o repositório em vez de apontados para o host externo, para que a página não dependa de um servidor de terceiros. Cada `figcaption` credita **autor, arquivo original e licença**, com link para a página no Commons; sem isso a atribuição se perde. Prefira domínio público ou CC BY / CC BY-SA, e confira a descrição do arquivo antes de usá-lo: o `ImageDescription` da API do Commons costuma revelar que uma imagem é outra coisa.
+
+Exemplo (arquivo baixado via `Special:FilePath`, que resolve a miniatura correta):
+
+```powershell
+$u = 'https://commons.wikimedia.org/wiki/Special:FilePath/' + [uri]::EscapeDataString('Immersion lithography illustration.svg')
+Invoke-WebRequest -Uri $u -OutFile 'docs/public/assets/immersion-lithography.svg' -Headers @{ 'User-Agent' = 'chipmaking-docs/1.0' }
+```
 
 ## Vídeos
 

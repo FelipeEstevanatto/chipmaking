@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="360" viewBox="0 0 1180 360" role="img">
+  <title>Four machine arrangements in the history of optical lithography: contact printing with the mask pressed on the wafer, proximity printing with an air gap, 1:1 projection printing with a lens, and the reduction stepper that exposes field by field</title>
+  <defs>
+    <marker id="genArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
+      <path d="M0,0 L7,0 L3.5,7 z" fill="#805ad5" />
+    </marker>
+    <marker id="genGray" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#a0aec0" />
+    </marker>
+  </defs>
+  <style>
+    .t { font: 600 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .yr { font: 600 11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #805ad5; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .mask { fill: #e2e8f0; stroke: #4a5568; stroke-width: 1.2; }
+    .chrome { fill: #2d3748; }
+    .wafer { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1.5; }
+    .barrel { fill: #edf2f7; stroke: #4a5568; stroke-width: 1.5; }
+    .lens { fill: #bee3f8; fill-opacity: 0.85; stroke: #2b6cb0; stroke-width: 1.2; }
+    .light { stroke: #805ad5; stroke-width: 2; fill: none; }
+    .step { stroke: #2b6cb0; stroke-width: 1.5; fill: none; }
+    .line { stroke: #a0aec0; stroke-width: 1.2; fill: none; }
+  </style>
+
+  <!-- ============ 1. contact printing ============ -->
+  <text class="t" x="155" y="36" text-anchor="middle">Contact printing</text>
+  <text class="yr" x="155" y="54" text-anchor="middle">1960s until about 1973</text>
+  <path class="light" d="M90,100 L90,132" marker-end="url(#genArrow)" />
+  <path class="light" d="M155,100 L155,132" marker-end="url(#genArrow)" />
+  <path class="light" d="M220,100 L220,132" marker-end="url(#genArrow)" />
+  <rect class="mask" x="65" y="140" width="180" height="14" />
+  <rect class="chrome" x="83" y="140" width="22" height="14" />
+  <rect class="chrome" x="127" y="140" width="22" height="14" />
+  <rect class="chrome" x="171" y="140" width="22" height="14" />
+  <rect class="chrome" x="215" y="140" width="16" height="14" />
+  <rect class="wafer" x="65" y="154" width="180" height="26" />
+  <line class="line" x1="255" y1="154" x2="278" y2="154" marker-end="url(#genGray)" />
+  <text class="t" x="155" y="266" text-anchor="middle">Mask pressed on the wafer</text>
+  <text class="s" x="155" y="284" text-anchor="middle">no lens at all, so the mask is 1:1</text>
+  <text class="s" x="155" y="300" text-anchor="middle">contact damages the mask and the wafer</text>
+
+  <!-- ============ 2. proximity printing ============ -->
+  <text class="t" x="442" y="36" text-anchor="middle">Proximity printing</text>
+  <text class="yr" x="442" y="54" text-anchor="middle">1973</text>
+  <path class="light" d="M377,88 L377,120" marker-end="url(#genArrow)" />
+  <path class="light" d="M442,88 L442,120" marker-end="url(#genArrow)" />
+  <path class="light" d="M507,88 L507,120" marker-end="url(#genArrow)" />
+  <rect class="mask" x="352" y="128" width="180" height="14" />
+  <rect class="chrome" x="370" y="128" width="22" height="14" />
+  <rect class="chrome" x="414" y="128" width="22" height="14" />
+  <rect class="chrome" x="458" y="128" width="22" height="14" />
+  <rect class="chrome" x="502" y="128" width="16" height="14" />
+  <rect class="wafer" x="352" y="158" width="180" height="26" />
+  <text class="s" x="540" y="152" text-anchor="end">air gap</text>
+  <text class="t" x="442" y="266" text-anchor="middle">A few micrometres of air</text>
+  <text class="s" x="442" y="284" text-anchor="middle">the wear disappears, but diffraction</text>
+  <text class="s" x="442" y="300" text-anchor="middle">worsens the resolution</text>
+
+  <!-- ============ 3. projection printing ============ -->
+  <text class="t" x="729" y="36" text-anchor="middle">Projection printing</text>
+  <text class="yr" x="729" y="54" text-anchor="middle">1970s, 1:1</text>
+  <path class="light" d="M700,78 L700,92" marker-end="url(#genArrow)" />
+  <path class="light" d="M758,78 L758,92" marker-end="url(#genArrow)" />
+  <rect class="mask" x="669" y="96" width="120" height="12" />
+  <rect class="chrome" x="685" y="96" width="18" height="12" />
+  <rect class="chrome" x="720" y="96" width="18" height="12" />
+  <rect class="chrome" x="755" y="96" width="18" height="12" />
+  <polygon class="barrel" points="694,120 764,120 754,176 704,176" />
+  <ellipse class="lens" cx="729" cy="148" rx="34" ry="8" />
+  <rect class="wafer" x="639" y="186" width="180" height="26" />
+  <text class="s" x="826" y="148" text-anchor="end">lens</text>
+  <text class="t" x="729" y="266" text-anchor="middle">A lens enters the light path</text>
+  <text class="s" x="729" y="284" text-anchor="middle">1:1, so the mask keeps the size</text>
+  <text class="s" x="729" y="300" text-anchor="middle">of the pattern; the whole wafer per shot</text>
+
+  <!-- ============ 4. stepper ============ -->
+  <text class="t" x="1016" y="36" text-anchor="middle">Stepper and scanner</text>
+  <text class="yr" x="1016" y="54" text-anchor="middle">1978 to today</text>
+  <path class="light" d="M987,60 L987,74" marker-end="url(#genArrow)" />
+  <path class="light" d="M1045,60 L1045,74" marker-end="url(#genArrow)" />
+  <rect class="mask" x="956" y="80" width="120" height="12" />
+  <rect class="chrome" x="972" y="80" width="18" height="12" />
+  <rect class="chrome" x="1007" y="80" width="18" height="12" />
+  <rect class="chrome" x="1042" y="80" width="18" height="12" />
+  <polygon class="barrel" points="981,104 1051,104 1041,176 991,176" />
+  <ellipse class="lens" cx="1016" cy="136" rx="32" ry="8" />
+  <rect class="wafer" x="926" y="190" width="180" height="26" />
+  <path class="step" d="M1002,190 L1002,216" />
+  <path class="step" d="M1016,190 L1016,216" />
+  <path class="step" d="M1030,190 L1030,216" />
+  <path class="line" d="M926,232 L1106,232" marker-start="url(#genGray)" marker-end="url(#genGray)" />
+  <text class="s" x="1112" y="137" text-anchor="end">4x reduction</text>
+  <text class="t" x="1016" y="266" text-anchor="middle">Reduction optics, field by field</text>
+  <text class="s" x="1016" y="284" text-anchor="middle">the machine steps across the wafer, exposing</text>
+  <text class="s" x="1016" y="300" text-anchor="middle">one field at a time; only it goes past 1 &#181;m</text>
+
+  <text class="note" x="30" y="340">Arrangements not to scale. The stepper did not win on throughput or price &#8212; it won on cost per good die, and on being the only option once features crossed the 1 &#181;m mark.</text>
+</svg>
