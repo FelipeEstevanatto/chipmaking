@@ -633,6 +633,57 @@ const list: Citation[] = [
     url: 'https://doi.org/10.1063/1.336820',
     short: 'Stein et al. (1986)',
   },
+  {
+    key: 'bernreuter-production',
+    num: 79,
+    title:
+      'Polysilicon production processes: Siemens process, fluidized bed reactor, upgraded silicon metal',
+    publisher: 'Bernreuter Research (Johannes Bernreuter)',
+    url: 'https://www.bernreuter.com/polysilicon/production-processes/',
+    short: 'Bernreuter Research (processes)',
+  },
+  {
+    key: 'bernreuter-market',
+    num: 80,
+    title: 'Polysilicon market analysis: size, shares, trends and China',
+    publisher: 'Bernreuter Research (Johannes Bernreuter)',
+    url: 'https://www.bernreuter.com/polysilicon/market-analysis/',
+    short: 'Bernreuter Research (market)',
+  },
+  {
+    key: 'bernreuter-pork-cycle',
+    num: 81,
+    title: 'Why the pork cycle has returned to the polysilicon market',
+    publisher: 'Johannes Bernreuter Research, 16 January 2024',
+    url: 'https://www.bernreuter.com/newsroom/polysilicon-news/article/why-the-pork-cycle-has-returned-to-the-polysilicon-market/',
+    short: 'Bernreuter (pork cycle)',
+  },
+  {
+    key: 'wikipedia-tcs',
+    num: 82,
+    title: 'Trichlorosilane',
+    publisher: 'Wikipedia (CC BY-SA 4.0)',
+    url: 'https://en.wikipedia.org/wiki/Trichlorosilane',
+    short: 'Wikipedia (trichlorosilane)',
+  },
+  {
+    key: 'jarkin-2021',
+    num: 83,
+    title:
+      'Methods of trichlorosilane synthesis for polycrystalline silicon production. Part 1: Direct synthesis; Part 2: Hydrochlorination and redistribution',
+    publisher:
+      'V. N. Jarkin, O. A. Kisarin, T. V. Kritskaya — Modern Electronic Materials 7(1): 1–10 and 7(2): 33–43 (2021), open access, CC BY 4.0',
+    url: 'https://doi.org/10.3897/j.moem.7.1.64953',
+    short: 'Jarkin et al. (TCS synthesis)',
+  },
+  {
+    key: 'icsc-tcs',
+    num: 84,
+    title: 'ICSC 0591 — Trichlorosilane',
+    publisher: 'International Chemical Safety Cards (WHO / ILO), inchem.org',
+    url: 'https://www.inchem.org/documents/icsc/icsc/eics0591.htm',
+    short: 'ICSC 0591 (trichlorosilane)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

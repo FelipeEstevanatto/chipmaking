@@ -30,7 +30,7 @@ function resolvedCites() {
           :href="usgsMcsUrl(year)"
           target="_blank"
           rel="noopener noreferrer"
-          :title="`USGS Mineral Commodity Summaries ${year} — Silicon`"
+          :title="`USGS Mineral Commodity Summaries ${year} - Silicon`"
         >
           USGS MCS {{ year }}</a><span v-if="index < USGS_MCS_YEARS.length - 1"> · </span>
       </template>

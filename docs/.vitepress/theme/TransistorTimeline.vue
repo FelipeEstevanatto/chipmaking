@@ -27,11 +27,11 @@ interface Era {
 const eras: Era[] = [
   {
     year: '1960',
-    node: '—',
+    node: '-',
     namePt: 'MOSFET planar',
     nameEn: 'Planar MOSFET',
-    descPt: 'Canal, porta, fonte e dreno no plano do wafer — a base da Lei de Moore por décadas.',
-    descEn: 'Channel, gate, source and drain in the plane of the wafer — the basis of Moore’s Law for decades.',
+    descPt: 'Canal, porta, fonte e dreno no plano do wafer - a base da Lei de Moore por décadas.',
+    descEn: 'Channel, gate, source and drain in the plane of the wafer - the basis of Moore’s Law for decades.',
     productsPt:
       'Calculadoras de bolso e os primeiros microprocessadores MOS; a família NMOS 6502 equipou o Apple II, o Commodore 64 e o NES.',
     productsEn:
@@ -42,7 +42,7 @@ const eras: Era[] = [
   },
   {
     year: '1963',
-    node: '—',
+    node: '-',
     namePt: 'CMOS (par complementar)',
     nameEn: 'CMOS (complementary pair)',
     descPt: 'NMOS e PMOS complementares: um conduz enquanto o outro está desligado, com consumo quase nulo em repouso.',
@@ -57,15 +57,15 @@ const eras: Era[] = [
   },
   {
     year: '1968',
-    node: '—',
+    node: '-',
     namePt: 'Porta de silício (autoalinhada)',
     nameEn: 'Silicon gate (self-aligned)',
     descPt: 'A porta de polissilício passa a definir a própria fonte e o dreno, eliminando a sobreposição da porta de alumínio.',
     descEn: 'A polysilicon gate now defines source and drain itself, removing the overlap of the aluminium gate.',
     productsPt:
-      'Intel 4004 (1971): o primeiro microprocessador — 2 300 transistores em pMOS de 10 µm, feito para a calculadora Busicom 141-PF.',
+      'Intel 4004 (1971): o primeiro microprocessador - 2 300 transistores em pMOS de 10 µm, feito para a calculadora Busicom 141-PF.',
     productsEn:
-      'Intel 4004 (1971): the first microprocessor — 2,300 transistors on a 10 µm pMOS process, built for the Busicom 141-PF calculator.',
+      'Intel 4004 (1971): the first microprocessor - 2,300 transistors on a 10 µm pMOS process, built for the Busicom 141-PF calculator.',
     src: '/assets/silicon-gate.svg',
     altPt: 'Comparação entre porta de alumínio com sobreposição e porta de silício autoalinhada',
     altEn: 'Comparison of an overlapping aluminium gate with a self-aligned silicon gate',
@@ -78,9 +78,9 @@ const eras: Era[] = [
     descPt: 'Extensões levemente dopadas sob espaçadores suavizam o campo junto ao dreno e domam os portadores quentes.',
     descEn: 'Lightly doped extensions under spacers smooth the field at the drain and tame hot carriers.',
     productsPt:
-      'Estreou em produção na CHMOS III da Intel (1,5 µm, porta de 250 Å), que equipou o 80386 (1985) — o processador da era Windows 3.x.',
+      'Estreou em produção na CHMOS III da Intel (1,5 µm, porta de 250 Å), que equipou o 80386 (1985) - o processador da era Windows 3.x.',
     productsEn:
-      'Debuted in production on Intel’s CHMOS III (1.5 µm, 250 Å gate oxide), which powered the 80386 (1985) — the processor of the Windows 3.x era.',
+      'Debuted in production on Intel’s CHMOS III (1.5 µm, 250 Å gate oxide), which powered the 80386 (1985) - the processor of the Windows 3.x era.',
     src: '/assets/ldd.svg',
     altPt: 'Comparação entre junção convencional e estrutura LDD com espaçadores',
     altEn: 'Comparison of a conventional junction with an LDD structure with spacers',
@@ -206,8 +206,8 @@ const eras: Era[] = [
     nameEn: 'Forksheet',
     descPt: 'Uma parede dielétrica separa as portas n e p e permite aproximá-las sem empilhar os transistores: a ponte entre nanofolhas e CFET.',
     descEn: 'A dielectric wall separates the n and p gates and lets them sit closer without stacking the transistors: the bridge between nanosheets and CFET.',
-    productsPt: 'Ainda em desenvolvimento na imec, mirando o nó A10 — sem produto de consumo anunciado.',
-    productsEn: 'Still in development at imec, targeting the A10 node — no consumer product announced.',
+    productsPt: 'Ainda em desenvolvimento na imec, mirando o nó A10 - sem produto de consumo anunciado.',
+    productsEn: 'Still in development at imec, targeting the A10 node - no consumer product announced.',
     src: '/assets/forksheet.svg',
     altPt: 'Comparação entre nanofolhas GAA com folga n-p larga e forksheet com parede dielétrica entre as portas',
     altEn: 'Comparison of gate-all-around nanosheets with a wide n-p gap and a forksheet with a dielectric wall between the gates',
@@ -252,7 +252,7 @@ const yearLabel = (era: Era) => (isEnglish.value ? era.yearEn ?? era.year : era.
         <div class="transistor-timeline-text">
           <p class="transistor-timeline-meta">
             <span class="transistor-timeline-year">{{ yearLabel(era) }}</span>
-            <span v-if="era.node !== '—'" class="transistor-timeline-node">{{ era.node }}</span>
+            <span v-if="era.node !== '-'" class="transistor-timeline-node">{{ era.node }}</span>
           </p>
           <h3 class="transistor-timeline-title">{{ isEnglish ? era.nameEn : era.namePt }}</h3>
           <p class="transistor-timeline-desc">{{ isEnglish ? era.descEn : era.descPt }}</p>

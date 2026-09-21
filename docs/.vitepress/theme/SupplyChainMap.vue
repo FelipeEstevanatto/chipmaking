@@ -6,8 +6,8 @@ import { useData, withBase } from 'vitepress'
  * Persistent orientation strip for the nine production chapters.
  *
  * The docs are a *chain*, but they read as a flat list of pages: nothing tells a reader what sits
- * upstream or downstream of the page they are on. This renders the whole route — including the
- * point where the wafer forks into a solar branch and a chip branch — and marks the current page.
+ * upstream or downstream of the page they are on. This renders the whole route - including the
+ * point where the wafer forks into a solar branch and a chip branch - and marks the current page.
  *
  * It is mounted globally through the `doc-before` slot (see Layout.vue) and renders nothing on
  * pages that are not part of the chain (home, glossary, timeline, references), so chapters do not
@@ -19,7 +19,7 @@ interface ChainNode {
   en: string
   /** Portuguese content path; English is derived by prefixing `/en`. */
   path: string
-  /** Supporting chapter for this step — related, but not part of the production flow. */
+  /** Supporting chapter for this step - related, but not part of the production flow. */
   extra?: { pt: string; en: string; path: string }
 }
 
@@ -204,7 +204,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
   color: var(--vp-c-brand-1);
 }
 
-/* The reader's own chapter — deliberately the only high-contrast element. */
+/* The reader's own chapter - deliberately the only high-contrast element. */
 .chain-map__chip.is-current {
   border-color: var(--vp-c-brand-1);
   background: var(--vp-c-brand-1);

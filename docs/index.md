@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Silício — Chip Making
+title: Silício - Chip Making
 description: Da mineração de quartzo aos transistores GAA — cadeia do silício para energia solar e semicondutores.
 hero:
   name: Silício

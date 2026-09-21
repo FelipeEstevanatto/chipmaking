@@ -7,7 +7,7 @@ import { useData } from 'vitepress'
  *
  * Several chapters here run long (fabricacao-wafers, transistores, fotolitografia), and a chapter
  * gives no sense of how much remains. The bar is decorative orientation, not content, so it is
- * `aria-hidden` — a screen reader gains nothing from a percentage of scroll.
+ * `aria-hidden` - a screen reader gains nothing from a percentage of scroll.
  *
  * Renders through the `layout-top` slot; see Layout.vue.
  */
@@ -21,7 +21,7 @@ let frame = 0
 let observer: ResizeObserver | undefined
 
 /**
- * Progress is measured against the *scrollable* height, not the document height — otherwise the
+ * Progress is measured against the *scrollable* height, not the document height - otherwise the
  * bar never reaches 100% on pages shorter than the viewport, and tops out early on tall ones.
  */
 function measure() {

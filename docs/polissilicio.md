@@ -69,7 +69,28 @@ Esse pó é injetado em um **reator de leito fluidizado** operando com **alta pr
 Si + 3HCl → SiHCl₃ + H₂
 ```
 
-Com ponto de ebulição de apenas **31,8 °C**, o TCS sai do reator já como gás <Cite id="ratedpower" />. No topo do reator um filtro separa o TCS gasoso do hidrogênio e do HCl residual <Cite id="pv-mfg-polysilicon" />, e o gás segue para **destilação fracionada**, onde a diferença de volatilidade entre o TCS e os cloretos de boro, fósforo e metais faz a separação com altíssima precisão <Cite id="ratedpower" />. É aqui, e não antes, que o silício se torna realmente puro.
+A reação roda na faixa de **300 a 600 °C**, sob pressão de **0,18 a 0,5 MPa** — comprimir o leito aumenta a fração de TCS no gás de saída, e o ótimo experimental fica em torno de **0,4 MPa** <Cite id="jarkin-2021" />. O número que o setor persegue é a **conversão do HCl**: nas gerações mais recentes de reator da Wacker ela se aproxima de **100%**, e a seletividade para TCS passa de **95%** com o carregamento extra de leito (*turbo loading*) <Cite id="jarkin-2021" />.
+
+O que sai do reator, porém, não é TCS puro. Junto com ele vêm **tetracloreto de silício** (SiCl₄, ou STC), **diclorossilano** (H₂SiCl₂) e compostos de ponto de ebulição alto com ligações Si–Si, entre eles o **hexaclorodissilano** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="wikipedia-tcs" />. Cada um tem seu próprio ponto de ebulição — e é justamente isso que a destilação logo adiante vai explorar para separá-los.
+
+Existe um segundo caminho até o TCS, que dispensa o HCl e reaproveita o próprio STC <Cite id="wikipedia-tcs" />:
+
+```text
+Si + 3SiCl₄ + 2H₂ → 4SiHCl₃
+```
+
+As duas rotas convivem na indústria, e a escolha entre elas é decisão de projeto de planta, não de bancada. A conversão do STC entrega TCS mais puro; a hidrocloração é a mais econômica <Cite id="jarkin-2021" />. Comparadas por quilo de SiHCl₃ produzido, as duas opções para reaproveitar o STC ficam assim <Cite id="jarkin-2021" />:
+
+| Parâmetro | Hidrocloração (Si + SiCl₄ + H₂) | Conversão do STC (SiCl₄ + H₂) |
+| --- | --- | --- |
+| Temperatura de reação | 400–600 °C | 1200–1300 °C |
+| Taxa de conversão | 23–28% | 17–22% |
+| Energia por kg de SiHCl₃ | 0,4–0,7 kWh | 2,0–3,5 kWh |
+| Campanha contínua | 150–330 dias | ~120 dias |
+
+É por isso que plantas grandes raramente escolhem uma só: acima de 10.000 t/ano o caminho usual é o **método híbrido**, combinando reatores de síntese direta com reatores de hidrocloração <Cite id="jarkin-2021" />.
+
+Com ponto de ebulição de apenas **31,8 °C**, o TCS sai do reator já como gás <Cite id="ratedpower" /> <Cite id="wikipedia-tcs" />. No topo do reator um filtro separa o TCS gasoso do hidrogênio e do HCl residual <Cite id="pv-mfg-polysilicon" />, e o gás segue para **destilação fracionada**, onde a diferença de volatilidade entre o TCS e os cloretos de boro, fósforo e metais faz a separação com altíssima precisão <Cite id="ratedpower" />. É aqui, e não antes, que o silício se torna realmente puro.
 
 ## Processos de obtenção do polissilício sólido
 
@@ -77,7 +98,11 @@ O gás TCS purificado é convertido de volta a silício metálico sólido e ultr
 
 ### Processo Siemens (CVD)
 
-Criado na década de 1950 pelas empresas Siemens e Wacker, é o método dominante no mercado mundial <Cite id="bernreuter" />. O gás TCS é injetado com hidrogênio (H₂) em um reator de redoma de aço onde **eletrodos de grafita** fazem passar corrente por um **núcleo de silício em forma de “U”** — a semente <Cite id="pv-mfg-polysilicon" />. Esse núcleo é aquecido eletricamente a cerca de **1100–1150 °C** <Cite id="bernreuter" />, e o TCS sofre **redução por hidrogênio**, num mecanismo equivalente ao de um **CVD** (*chemical vapour deposition*): o silício sólido se deposita sobre a semente e cresce ao redor dela, liberando HCl gasoso <Cite id="pv-mfg-polysilicon" />.
+Criado na década de 1950 pelas empresas Siemens e Wacker, é o método dominante no mercado mundial <Cite id="bernreuter-production" />. O gás TCS é injetado com hidrogênio (H₂) em um reator de redoma de aço onde **eletrodos de grafita** fazem passar corrente por um **núcleo de silício em forma de “U”** — a semente <Cite id="pv-mfg-polysilicon" />. Esse núcleo é aquecido eletricamente a cerca de **1100–1150 °C** <Cite id="bernreuter-production" />, e o TCS sofre **redução por hidrogênio**, num mecanismo equivalente ao de um **CVD** (*chemical vapour deposition*): o silício sólido se deposita sobre a semente e cresce ao redor dela, liberando HCl gasoso <Cite id="pv-mfg-polysilicon" />.
+
+<DiagramFigure src="/assets/siemens-reactor.svg" alt="Corte do reator Siemens de redoma: à esquerda, a redoma de aço com duas hastes de silício em U incandescentes sobre eletrodos de grafita, gás TCS e hidrogênio entrando pela base e gás gasto saindo pelo topo; à direita, ampliação da superfície da haste mostrando o silício se depositando sobre ela">
+O reator Siemens em corte. À esquerda, a redoma de aço fechada: os eletrodos de grafita atravessam a base e aquecem por efeito Joule os filamentos de silício em “U”, que incandescem a 1100–1150 °C enquanto o TCS e o hidrogênio sobem entre eles. À direita, a ampliação da superfície da haste: a redução do TCS deposita silício sobre o filamento, que engorda até virar bastão. Desenho do autor, a partir de Bernreuter Research e PV-Manufacturing.org <Cite id="bernreuter-production" /> <Cite id="pv-mfg-polysilicon" />.
+</DiagramFigure>
 
 A reação de deposição é exatamente a **inversa** da cloração que produziu o TCS alguns passos antes <Cite id="saimm" />:
 
@@ -85,28 +110,67 @@ A reação de deposição é exatamente a **inversa** da cloração que produziu
 SiHCl₃ + H₂ → Si + 3HCl
 ```
 
-Quando o processo termina, o núcleo em “U” e o silício depositado são extraídos juntos e fraturados. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="ratedpower" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />. É um processo de altíssimo consumo de energia — **acima de 100 kWh por quilograma** de silício depositado, com rendimento baixo —, a principal desvantagem do método <Cite id="saimm" />.
+Quando o processo termina, a **redoma de aço é erguida** e o conjunto — núcleo em “U” e silício depositado — é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
 
-Classes de pureza:
+É um processo de altíssimo consumo de energia — **acima de 100 kWh por quilograma** de silício depositado, com rendimento baixo —, a principal desvantagem do método <Cite id="saimm" />. Mesmo assim ele resistiu a tudo o que se tentou colocar no seu lugar: em **1985**, um único levantamento listava **17 rotas alternativas** ao Siemens, e quase todas morreram no caminho <Cite id="bernreuter-production" />. A participação do processo no mercado global **só ficou abaixo de 90% uma vez desde 2004** — em 2008, no pico da escassez <Cite id="bernreuter-production" />. O que mudou não foi a química, e sim quem opera o reator: plantas chinesas, com eletricidade barata e equipamento de fornecedores domésticos, levaram o **custo de produção** a **menos de US$ 10 por quilograma** <Cite id="bernreuter-production" />.
 
-- **Grau solar (SoG-Si):** 7N (99,99999%) a 9N — células fotovoltaicas <Cite id="ratedpower" />.
-- **Grau eletrônico (EG-Si):** 10N a 11N — semicondutores <Cite id="ratedpower" />.
+Classes de pureza <Cite id="bernreuter-production" />:
+
+- **Grau solar para multicristalino** (*multi grade*): 7N (99,99999%) a 8N — células multicristalinas;
+- **Grau solar para monocristalino** (*mono grade*): 9N a 10N — células monocristalinas;
+- **Grau eletrônico (EG-Si)**: 10N a 11N — semicondutores.
 
 ### Reator de leito fluidizado (FBR)
 
-Método de fluxo contínuo em que partículas semente de silício são mantidas suspensas por gás portador contendo monossilano (SiH₄) ou TCS <Cite id="bernreuter" />. O gás se decompõe a temperaturas bem menores — **650–700 °C** no caso do monossilano —, acumulando silício nas sementes até formarem grânulos colhidos continuamente, sem a etapa de fratura dos bastões. Consome cerca de **90% menos energia elétrica** que o Siemens, produz mais silício por volume de reator e entrega o produto já numa forma utilizável, embora gere uma fração indesejada de poeira de silício <Cite id="bernreuter" /> <Cite id="saimm" />.
+<DiagramFigure src="/assets/fbr-reactor.svg" alt="Corte do reator de leito fluidizado: sementes de silício caem pelo topo, o gás silano injetado pela base mantém as partículas suspensas, aquecedores nas paredes mantêm 650 a 700 °C e os grânulos crescem até serem retirados continuamente pelo fundo">
+O reator de leito fluidizado em corte. As sementes entram por cima e caem; o silano injetado pela base sobe e mantém as partículas suspensas, de modo que cada grão fica cercado de gás fresco o tempo todo. Os aquecedores de parede mantêm 650–700 °C, e o silício vai se acumulando nas sementes — que engordam à medida que descem — até serem retiradas continuamente pelo fundo. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-production" />.
+</DiagramFigure>
+
+Método de fluxo contínuo em que partículas semente de silício são mantidas suspensas por gás portador contendo monossilano (SiH₄) ou TCS <Cite id="bernreuter-production" />. O gás se decompõe a temperaturas bem menores — **650–700 °C** no caso do monossilano —, acumulando silício nas sementes até formarem grânulos colhidos continuamente, sem a etapa de fratura dos bastões. Consome cerca de **90% menos energia elétrica** que o Siemens, produz mais silício por volume de reator e entrega o produto já numa forma utilizável, embora gere uma fração indesejada de poeira de silício <Cite id="bernreuter-production" /> <Cite id="saimm" />.
+
+Há uma diferença de química dentro da própria família FBR. A REC Silicon alimenta seus reatores com **monossilano (SiH₄)**, que se decompõe a **650–700 °C**; a unidade menor da Wacker trabalha com **TCS**, que só reage por volta de **1000 °C** <Cite id="bernreuter-production" />. Temperatura menor significa menos energia — é daí que sai o argumento de consumir **um décimo** da eletricidade de um forno de hastes convencional <Cite id="bernreuter-production" />.
+
+O ganho não é só energético. Misturar grânulos de FBR a pedaços de Siemens numa proporção de **50:50** pode **encurtar em 40%** o tempo de carregamento de um cadinho de fusão e **aumentar em 30%** o peso da carga <Cite id="bernreuter-production" /> — os grânulos escoam e preenchem o cadinho melhor do que os pedaços irregulares.
+
+A tecnologia existe desde antes da escassez: a MEMC Electronic Materials já produzia grânulos em Pasadena, no Texas <Cite id="bernreuter-production" />. Poucas empresas, porém, conseguiram escalar. A REC Silicon operou uma planta em **Moses Lake, Washington (2009)** e outra em **Yulin, Shaanxi (2017)**, esta numa *joint venture* com a Shaanxi Non-Ferrous Tianhong New Energy <Cite id="bernreuter-production" />. Quatro obstáculos explicam a penetração limitada <Cite id="bernreuter-production" />:
+
+- a tecnologia é protegida por **muitas patentes**;
+- a **fluidodinâmica** é complexa e exige tempo, experiência e capital para escalar do laboratório ao piloto e ao industrial;
+- é preciso um **revestimento interno** para que o material da parede não contamine os grânulos — o que encarece o reator;
+- e a vantagem elétrica pode ser **consumida pela fração de poeira de silício** que não vira produto.
 
 Ainda assim, a escala dos dois processos é muito diferente: em 2008, o Siemens respondia por cerca de **78%** do polissilício produzido no mundo e o leito fluidizado por apenas **16%** <Cite id="saimm" />.
 
+### O ciclo do cloro: o que realmente se consome
+
+Olhar as duas reações lado a lado revela o truque que faz a rota química fechar. A cloração consome HCl e produz TCS; a deposição consome TCS e devolve HCl:
+
+```text
+Si + 3HCl → SiHCl₃ + H₂        (cloração)
+SiHCl₃ + H₂ → Si + 3HCl        (deposição)
+```
+
+O HCl que sai do reator de deposição **não é resíduo**: é o próprio reagente que alimenta o reator de cloração. Somando as duas equações, o HCl desaparece dos dois lados e sobra apenas a transformação que interessa — **silício bruto entra, silício puro sai** <Cite id="wikipedia-tcs" />.
+
+<DiagramFigure src="/assets/chlorine-loop.svg" alt="Diagrama do ciclo do cloro em quatro etapas: cloração do silício bruto com HCl, destilação do TCS, deposição que devolve silício sólido e HCl, e reciclagem do tetracloreto de silício de volta a TCS; setas mostram o HCl e o SiCl4 retornando ao início">
+O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na etapa 3 — são as duas únicas pontas abertas do sistema. Todo o resto circula: o HCl liberado na deposição volta para a cloração, e o tetracloreto de silício separado na destilação é reconvertido em TCS em vez de descartado. Desenho do autor, a partir de Wikipedia (trichlorosilane) e Jarkin et al. <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+</DiagramFigure>
+
+O mesmo vale para o subproduto mais incômodo da cloração, o **tetracloreto de silício** (SiCl₄). Em vez de sair como efluente clorado, ele volta ao processo por **hidrocloração**, junto com hidrogênio e mais silício bruto <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+
+E os volumes não são pequenos. Para cada quilo de polissilício produzido, o estágio de síntese direta gera de **2 a 5 kg** de SiCl₄, e o estágio de deposição outros **11 a 14 kg** <Cite id="jarkin-2021" />. Sem o reciclo, uma planta seria ao mesmo tempo uma fábrica de polissilício e uma fábrica de tetracloreto, nesta última numa proporção de dez para um. É por isso que uma planta de polissilício se mede pela **energia** que consome, e não pela matéria-prima que descarta: o cloro circula, e o que o sistema perde como resíduo é bem menos do que a equação do reator sugere.
+
 <VideoPressEmbed id="ZlxguS11" title="Animação da rota de produção de polissilício" />
 
-<SourceNote :ids="['pv-mfg-polysilicon', 'bernreuter', 'ratedpower', 'csiro', 'saimm']" />
+<SourceNote :ids="['pv-mfg-polysilicon', 'bernreuter-production', 'ratedpower', 'csiro', 'saimm']" />
 
 *Animação e esquema da rota: [PV-Manufacturing.org](https://pv-manufacturing.org/silicon-production/polysilicon-production/) — o fluxograma acima foi redesenhado a partir do diagrama dessa página e da descrição das reações* <Cite id="pv-mfg-polysilicon" />.
 
 ### Os limites da rota química
 
 A rota química domina, mas tem contas a pagar. A mais citada é a **energética**: cloração, destilação e Siemens somados fazem dela um processo intensivo. A outra é de segurança e meio ambiente — ela **manipula compostos tóxicos e corrosivos** o tempo todo, como os clorossilanos e o ácido clorídrico <Cite id="saimm" />.
+
+O TCS ilustra bem o problema. É um **líquido incolor e volátil** — densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C — que **reage violentamente com a água**, inclusive com a umidade do ar, liberando ácido clorídrico e calor. A faixa de inflamabilidade em ar vai de **1,2% a 90,5% em volume**, e a autoignição ocorre a apenas **185 °C** <Cite id="icsc-tcs" />. Com ponto de fulgor de **−27 °C**, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é **4,7 vezes mais denso que o ar** — ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob **gás inerte**, e que as instruções de combate a incêndio da ficha internacional prescrevem explicitamente **não usar água** <Cite id="icsc-tcs" />.
 
 Em **2006** a indústria solar **ultrapassou a de semicondutores** como maior consumidora de polissilício <Cite id="saimm" />. Em 2008, a produção mundial foi de aproximadamente **75 mil toneladas**, das quais **45 mil** foram para fotovoltaica <Cite id="saimm" />.
 
@@ -190,6 +254,22 @@ Repare também que a coluna do grau solar policristalino lista **apenas o teor d
 
 ## Dinâmica e histórico de mercado
 
+### O ciclo do porco (*pork cycle*)
+
+O preço do polissilício não oscila por acaso. Entre **1981 e 2004**, o preço de contrato de longo prazo alternou entre pico e vale num intervalo **notavelmente regular de sete a oito anos** <Cite id="bernreuter-market" />. O padrão tem nome — *pork cycle*, o ciclo do porco — e a causa é sempre a mesma: **o atraso entre o sinal e a resposta**.
+
+<DiagramFigure src="/assets/polysilicon-pork-cycle.svg" alt="Diagrama do ciclo do preço em quatro etapas — escassez, investimento, o atraso de dois a três anos até as plantas entrarem em operação e a sobreoferta — com uma seta de retorno mostrando que o investimento para e a escassez volta; abaixo, um gráfico de linha do preço mostrando o pico em que a decisão de construir é tomada e, dois a três anos depois, o vale em que a capacidade entra em operação">
+Por que o preço cicla. O sinal de preço é verdadeiro, mas a resposta chega tarde: uma planta de polissilício leva de dois a três anos entre engenharia, obra e ramp-up. Quando a capacidade finalmente entra em operação, o mercado que a justificava já não existe. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-market" /> <Cite id="bernreuter-pork-cycle" />.
+</DiagramFigure>
+
+A indústria é, nas palavras da própria Bernreuter Research, **um superpetroleiro com longa distância de frenagem**: quando a queda do preço sinaliza que se deve parar de investir, a obra já está em andamento e não se interrompe sem prejuízo considerável. O resultado é sobrecapacidade, que acelera a queda. E como ninguém investe enquanto o preço cai, a oferta só reage quando o preço volta a subir — tarde demais <Cite id="bernreuter-market" />.
+
+Antes de 2004, a demanda era dominada pelos semicondutores, com seus próprios ciclos. A explosão da fotovoltaica **encurtou o ciclo pela metade**: o intervalo entre vale e pico caiu de oito para **quatro anos** <Cite id="bernreuter-market" />. Depois, a expansão chinesa de baixo custo praticamente **invalidou o ciclo**, produzindo uma tendência sustentada de sobreoferta interrompida apenas por fases curtas de escassez <Cite id="bernreuter-market" />. O ciclo só voltou quando a retração das instalações na China e o fechamento de mais de uma dúzia de fabricantes em 2018–2019 foram seguidos pela recuperação rápida da demanda no segundo semestre de 2020 <Cite id="bernreuter-pork-cycle" />.
+
+Os extremos recentes mostram o tamanho do movimento: em **junho de 2020** o preço à vista tocou o fundo histórico de **US$ 6,75/kg**; em **agosto de 2022** estava em **US$ 39/kg** — a subida inteira em cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
+
+### A inversão da demanda
+
 Em **1995**, cerca de 90% da demanda global por polissilício ia para semicondutores e 10% para fotovoltaica <Cite id="bernreuter" />. Em **2014**, a proporção inverteu-se: o setor fotovoltaico passou a consumir a esmagadora maioria, elevando a demanda de **1.500 toneladas** (1995) para **420.000 toneladas** (2018).
 
 <DiagramFigure src="/pdf-images/p05-1.png" alt="Demanda de polissilício semicondutores vs fotovoltaica 1995 e 2014">
@@ -206,13 +286,27 @@ Ciclos de escassez (*shortage*) e sobreoferta (*oversupply*).
 
 <SourceNote :ids="['bernreuter']" />
 
-Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) para **61** (2010). A sobreoferta global provocou o fechamento de mais de **40 plantas** apenas na China nos três anos seguintes <Cite id="bernreuter" />.
+Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) para **61** (2010) — os projetos brotavam por toda parte, inclusive fora da China, e dezenas fracassaram <Cite id="bernreuter-market" />. A sobreoferta fechou **mais de 40 plantas** entre o fim de 2010 e o início de 2013, a maioria delas na China — que já havia perdido **36 unidades** de pequeno e médio porte em 2011/2012 <Cite id="bernreuter-market" />.
 
-A partir desse marco, a China consolidou liderança ao investir em refinamento tecnológico e subsídios para baratear custos <Cite id="bernreuter" />.
+### A ascensão chinesa
 
-Uma nota sobre o presente: em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />. A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural — a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />. É esse tipo de ciclo curto, contra capacidade instalada abundante, que ajuda a explicar por que plantas europeias competitivas em qualidade — como a de Kristiansand descrita acima — não conseguiram se sustentar.
+Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar. As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%** — pouco dissuasivas —, enquanto os americanos apanharam com taxas de até **57%**, contornadas por algum tempo pelo regime de *processing trade* e fechadas em agosto de 2014 <Cite id="bernreuter-market" />.
 
-<SourceNote :ids="['trendforce-2025', 'bernreuter']" />
+A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
+
+- **Custo de energia.** As novas plantas se concentraram nas regiões autônomas de **Xinjiang e Mongólia Interior**, onde a eletricidade é muito barata — o insumo decisivo de um processo tão intensivo quanto o Siemens. A contrapartida é ambiental: essa eletricidade vem majoritariamente de **usinas a carvão**, e o polissilício produzido carrega uma pegada de carbono alta <Cite id="bernreuter-market" />.
+- **Guerra de preços deliberada.** Em 2018, o então presidente da Daqo New Energy, Longgen Zhang, foi explícito sobre a estratégia: das **300.000 toneladas** de capacidade chinesa de 2017, cerca de **100.000** tinham custo baixo, e as outras **200.000** "seriam eliminadas" para dar lugar à capacidade nova <Cite id="bernreuter-market" />.
+- **Consumo específico em queda.** A quantidade de silício por watt instalado caiu a tal ponto que o polissilício consumido para cada gigawatt novo em **2023 era um quarto** do que se gastava em 2006. Contribuíram a redução da **espessura do wafer**, a troca da serra de lama pela **serra de fio diamantado** (menos perda de *kerf*), o ganho de eficiência das células, a virada para **células monocristalinas tipo n**, além de cortes de célula e outras melhorias de montagem <Cite id="bernreuter-market" />.
+
+A virada para o monocristalino não foi só técnica. Em **2015** a Administração Nacional de Energia da China lançou o programa **Top Runner**, cujos limites mínimos de eficiência **favoreciam o monocristalino em detrimento do multicristalino** — e isso deu o empurrão que faltava para a Longi e a Zhonghuan escalarem capacidade <Cite id="bernreuter-market" />. Como células monocristalinas, sobretudo tipo n, exigem insumo mais puro, o programa também favoreceu as plantas chinesas de polissilício de melhor qualidade — e manteve aberto um nicho para fornecedores estrangeiros como a Wacker e a OCI <Cite id="bernreuter-market" />.
+
+No fim, o mapa virou geopolítico. Fora da China, o último grande projeto foi a planta da **Wacker no Tennessee (EUA)**, aberta em 2016 mas decidida ainda em 2010, antes de existirem os direitos antidumping americanos <Cite id="bernreuter-market" />. E o **Uyghur Forced Labor Prevention Act** criou um **segmento separado, de preço mais alto**, para polissilício não chinês, reabrindo a conversa sobre capacidade fora do país <Cite id="bernreuter-market" />.
+
+### Uma nota sobre o presente
+
+Em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />. A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural — a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />. É esse tipo de ciclo curto, contra capacidade instalada abundante — e num mercado onde mais de 90% da oferta sai de um só país —, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
+
+<SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'marcos do mercado de polissilício' },

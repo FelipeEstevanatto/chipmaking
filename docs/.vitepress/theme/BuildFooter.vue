@@ -1,5 +1,5 @@
 <script lang="ts">
-/** Inlined at build time by Vite's `define` — see `buildInfoForClient` in docs/.vitepress/config.ts. */
+/** Inlined at build time by Vite's `define` - see `buildInfoForClient` in docs/.vitepress/config.ts. */
 declare const __BUILD_INFO__: {
   repo: string
   repoLabel: string

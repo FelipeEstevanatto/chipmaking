@@ -25,7 +25,7 @@ withDefaults(
     <p class="see-also-title">{{ title }}</p>
     <ul>
       <li v-for="link in links" :key="link.href">
-        <a :href="withBase(link.href)">{{ link.text }}</a><template v-if="link.note"> — {{ link.note }}</template><Cite v-if="link.cite" :id="link.cite" />
+        <a :href="withBase(link.href)">{{ link.text }}</a><template v-if="link.note"> - {{ link.note }}</template><Cite v-if="link.cite" :id="link.cite" />
       </li>
     </ul>
   </nav>

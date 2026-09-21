@@ -11,7 +11,7 @@ import { useIsEnglish, useLocalePath } from './locale'
  * first-use tooltip plugin reads. One list means the two locales can't drift apart and a term
  * can't be defined on one side only.
  *
- * A plain text input is used rather than a fuzzy-search library — the list is a few dozen rows, so
+ * A plain text input is used rather than a fuzzy-search library - the list is a few dozen rows, so
  * a substring match is immediate and needs no dependency.
  */
 

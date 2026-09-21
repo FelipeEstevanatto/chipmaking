@@ -24,8 +24,8 @@ const producers = [
   { pt: 'Estados Unidos', en: 'United States', data: [88, 113, 110, 110, 110, 110], color: '#dd6b20' },
   { pt: 'França', en: 'France', data: [32, 47, 40, 40, 40, 40], color: '#a0aec0' },
   {
-    pt: 'Mundo — total',
-    en: 'World — total',
+    pt: 'Mundo - total',
+    en: 'World - total',
     data: [2600, 3300, 3000, 3300, 3300, 3300],
     color: '#4a5568',
     dashed: true,
@@ -109,13 +109,13 @@ watch(logScale, (enabled) => {
     <p class="chart-caption">
       <small v-if="isEnglish">
         Diamond points (2024–2025) are USGS estimates. Source: USGS Mineral Commodity
-        Summaries (2020–2025) — see the per-year links in
+        Summaries (2020–2025) - see the per-year links in
         <a :href="withBase(localePath('/referencias'))">References</a> or the table in
         <a :href="withBase(localePath('/introducao#producao-estimada'))">Introduction</a>.
       </small>
       <small v-else>
         Pontos em losango (2024–2025) são estimativas do USGS. Fonte: USGS Mineral
-        Commodity Summaries (2020–2025) — ver links por ano em
+        Commodity Summaries (2020–2025) - ver links por ano em
         <a :href="withBase(localePath('/referencias'))">Referências</a> ou na tabela em
         <a :href="withBase(localePath('/introducao#producao-estimada'))">Introdução</a>.
       </small>

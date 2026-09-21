@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660" role="img">
+  <title>Cross-section of a Siemens bell-jar CVD reactor: trichlorosilane and hydrogen enter at the base and deposit silicon onto electrically heated U-shaped filaments, growing rods that are later fractured into chunks</title>
+  <rect width="960" height="660" fill="#ffffff" />
+  <defs>
+    <linearGradient id="rodGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#dd6b20" />
+      <stop offset="45%" stop-color="#f6ad55" />
+      <stop offset="100%" stop-color="#d69e2e" />
+    </linearGradient>
+    <marker id="gasIn" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#2b6cb0" />
+    </marker>
+    <marker id="gasOut" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#c53030" />
+    </marker>
+    <clipPath id="insetClip">
+      <circle cx="795" cy="288" r="116" />
+    </clipPath>
+  </defs>
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1d2430; }
+    .jar { fill: #e2e8f0; fill-opacity: 0.42; stroke: #718096; stroke-width: 3; }
+    .rod { fill: none; stroke: url(#rodGlow); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+    .elec { fill: #4a5568; stroke: #2d3748; stroke-width: 1.4; }
+    .base { fill: #a8b3c2; stroke: #718096; stroke-width: 2; }
+    .gas { fill: none; stroke: #2b6cb0; stroke-width: 2.2; }
+    .spent { fill: none; stroke: #c53030; stroke-width: 2.2; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .core { fill: #cfd8e3; }
+    .poly { fill: #ed8936; }
+    .molecule { fill: #2b6cb0; opacity: 0.75; }
+  </style>
+
+  <text class="h" x="40" y="38">Siemens process: depositing silicon from TCS gas</text>
+  <text class="sm" x="40" y="62">Front cross-section of the bell-jar reactor. Label text stays out of the drawing; not to scale.</text>
+
+  <!-- ===================== bell jar ===================== -->
+  <path class="jar" d="M250,520 L250,230 A170,95 0 0 1 590,230 L590,520 Z" />
+
+  <!-- base plate -->
+  <rect class="base" x="222" y="520" width="396" height="26" />
+
+  <!-- ===================== glowing filaments ===================== -->
+  <path class="rod" d="M345,498 L345,252 L405,252 L405,498" />
+  <path class="rod" d="M450,498 L450,252 L510,252 L510,498" />
+
+  <!-- graphite electrodes through the base plate -->
+  <rect class="elec" x="335" y="498" width="20" height="32" />
+  <rect class="elec" x="395" y="498" width="20" height="32" />
+  <rect class="elec" x="440" y="498" width="20" height="32" />
+  <rect class="elec" x="500" y="498" width="20" height="32" />
+
+  <!-- feed gas entering at the base, rising between the filaments -->
+  <path class="gas" d="M420,600 L420,548" marker-end="url(#gasIn)" />
+  <path class="gas" d="M300,500 L300,430" marker-end="url(#gasIn)" />
+  <path class="gas" d="M552,500 L552,430" marker-end="url(#gasIn)" />
+  <path class="gas" d="M362,470 L362,400" marker-end="url(#gasIn)" />
+  <path class="gas" d="M492,470 L492,400" marker-end="url(#gasIn)" />
+
+  <!-- spent gas leaving the dome -->
+  <path class="spent" d="M565,168 L660,120" marker-end="url(#gasOut)" />
+
+  <!-- ===================== labels, left column ===================== -->
+  <text class="t" x="40" y="200">Steel bell jar</text>
+  <text class="sm" x="40" y="224">the vessel is opened to</text>
+  <text class="sm" x="40" y="245">harvest the rods</text>
+  <path class="lead" d="M150,214 L246,238" />
+
+  <text class="t" x="40" y="316">U-shaped filament</text>
+  <text class="sm" x="40" y="340">slim silicon seed, heated</text>
+  <text class="sm" x="40" y="361">by its own resistance</text>
+  <path class="lead" d="M148,330 L340,330" />
+
+  <text class="t" x="40" y="452">Graphite electrode</text>
+  <text class="sm" x="40" y="476">carries the current into</text>
+  <text class="sm" x="40" y="497">the filament</text>
+  <path class="lead" d="M150,486 L330,510" />
+
+  <text class="t" x="420" y="580">Feed gas</text>
+  <text class="m" x="420" y="606">SiHCl3 + H2</text>
+
+  <text class="t" x="700" y="118">Off-gas</text>
+  <text class="sm" x="700" y="140">HCl + unreacted SiHCl3</text>
+
+  <!-- temperature callout on the rod -->
+  <text class="t" x="120" y="150">1100&#8211;1150 &#176;C</text>
+  <path class="lead" d="M215,158 L340,196" />
+
+  <!-- ===================== magnified inset ===================== -->
+  <circle cx="795" cy="288" r="116" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.6" />
+  <g clip-path="url(#insetClip)">
+    <rect class="core" x="670" y="352" width="250" height="60" />
+    <rect class="poly" x="670" y="330" width="250" height="22" />
+    <circle class="molecule" cx="712" cy="286" r="5" />
+    <circle class="molecule" cx="760" cy="258" r="5" />
+    <circle class="molecule" cx="822" cy="272" r="5" />
+    <circle class="molecule" cx="878" cy="248" r="5" />
+    <circle class="molecule" cx="745" cy="306" r="5" />
+    <circle class="molecule" cx="850" cy="302" r="5" />
+    <circle class="molecule" cx="800" cy="224" r="5" />
+    <circle class="molecule" cx="700" cy="238" r="5" />
+    <path class="gas" d="M890,196 L846,268" marker-end="url(#gasIn)" />
+  </g>
+  <circle cx="795" cy="288" r="116" fill="none" stroke="#a0aec0" stroke-width="1.6" />
+  <path class="lead" d="M560,300 L676,300" />
+
+  <text class="t" x="795" y="446" text-anchor="middle">Where the silicon lands</text>
+  <text class="sm" x="795" y="474" text-anchor="middle">Gas meets the hot rod, hydrogen</text>
+  <text class="sm" x="795" y="496" text-anchor="middle">reduces the TCS, and silicon</text>
+  <text class="sm" x="795" y="518" text-anchor="middle">adds to the rod surface.</text>
+  <text class="m" x="795" y="550" text-anchor="middle">SiHCl3 + H2 &#8594; Si + 3HCl</text>
+  <text class="sm" x="795" y="582" text-anchor="middle">Poly grows outward until the rods</text>
+  <text class="sm" x="795" y="604" text-anchor="middle">reach 15&#8211;20 cm across.</text>
+</svg>

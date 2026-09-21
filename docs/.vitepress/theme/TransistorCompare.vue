@@ -10,7 +10,7 @@ const localePath = useLocalePath()
 const options = [
   {
     id: 'planar',
-    label: '1960 — Planar',
+    label: '1960 - Planar',
     src: '/pdf-images/p17-1.png',
     alt: 'Transistor planar MOSFET',
     captionPt: 'Canal bidimensional; base da Lei de Moore por décadas.',
@@ -18,7 +18,7 @@ const options = [
   },
   {
     id: 'finfet',
-    label: '2011 — FinFET',
+    label: '2011 - FinFET',
     src: '/pdf-images/p17-2.png',
     alt: 'FinFET Tri-Gate',
     captionPt: 'Aleta vertical; portão envolve três lados do canal.',
@@ -26,7 +26,7 @@ const options = [
   },
   {
     id: 'gaa',
-    label: '2022 — GAAFET',
+    label: '2022 - GAAFET',
     src: '/pdf-images/p18-1.png',
     alt: 'GAAFET nanosheets',
     captionPt: 'Nanofolhas envolvidas pelo portão nos quatro lados.',

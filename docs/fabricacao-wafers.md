@@ -11,6 +11,8 @@ A transformação do polissilício de grau eletrônico ([EG-Si](/glossario)) em 
 
 O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são depositados em cadinho de quartzo altamente purificado, em forno a vácuo sob argônio inerte. O material é fundido a cerca de **1414 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
 
+Vale notar de onde vem essa pureza. O material que entra no cadinho não passou por filtragem nem por refusão: é o produto da **destilação do triclorossilano** descrita em [Purificação e polissilício](/polissilicio) <Cite id="wikipedia-tcs" />. Ele chega já na casa de **9N a 11N**, e o que o puxamento faz a partir daí é **redistribuir** os poucos dopantes restantes, conforme o coeficiente de segregação de cada um <Cite id="saimm" />.
+
 <DiagramFigure src="/assets/czochralski-process.svg" alt="O processo Czochralski em quatro quadros: fusão do polissilício e dopagem no cadinho, introdução do cristal-semente, início do crescimento do cristal e puxamento do lingote">
 O processo Czochralski em quatro quadros: fusão e dopagem, introdução da semente, início do crescimento e puxamento do lingote. Twisp — <a href="https://commons.wikimedia.org/wiki/File:Czochralski_Process.svg" target="_blank" rel="noopener noreferrer">Czochralski Process</a> (domínio público), Wikimedia Commons.
 </DiagramFigure>

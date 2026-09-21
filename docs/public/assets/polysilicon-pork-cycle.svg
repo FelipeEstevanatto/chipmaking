@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img">
+  <title>Why polysilicon prices move in a pork cycle: a price signal triggers investment, the capacity arrives two to three years later into a collapsing market, investment stops, and the shortage returns</title>
+  <rect width="960" height="720" fill="#ffffff" />
+  <defs>
+    <marker id="porkNext" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#718096" />
+    </marker>
+    <marker id="porkBack" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#c53030" />
+    </marker>
+    <marker id="lagLeft" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d3748" />
+    </marker>
+    <marker id="lagRight" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M8,0 L0,4 L8,8 z" fill="#2d3748" />
+    </marker>
+    <linearGradient id="bandFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dd6b20" stop-opacity="0.20" />
+      <stop offset="100%" stop-color="#dd6b20" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .step { fill: #edf2f7; stroke: #a0aec0; stroke-width: 2; }
+    .warn { fill: #fed7d7; stroke: #c53030; stroke-width: 2; }
+    .flow { fill: none; stroke: #718096; stroke-width: 2.4; }
+    .back { fill: none; stroke: #c53030; stroke-width: 2.4; }
+    .curve { fill: none; stroke: #2b6cb0; stroke-width: 3; stroke-linecap: round; }
+    .axis { stroke: #cbd5e0; stroke-width: 1.6; }
+    .ghost { fill: none; stroke: #a0aec0; stroke-width: 1.6; stroke-dasharray: 5 4; }
+    .dim { fill: none; stroke: #2d3748; stroke-width: 1.8; }
+  </style>
+
+  <text class="h" x="40" y="34">Why the price cycles: a supertanker with a long brake path</text>
+  <text class="sm" x="40" y="58">The decision to build is taken when the price is high. The capacity arrives when the price is low.</text>
+
+  <!-- ===================== the four stages ===================== -->
+  <rect class="step" x="28" y="96" width="208" height="124" rx="10" />
+  <text class="t" x="132" y="126" text-anchor="middle">1. Shortage</text>
+  <text class="sm" x="132" y="156" text-anchor="middle">Price climbs.</text>
+  <text class="sm" x="132" y="180" text-anchor="middle">Supply lags</text>
+  <text class="sm" x="132" y="204" text-anchor="middle">behind demand.</text>
+
+  <path class="flow" d="M240,158 L258,158" marker-end="url(#porkNext)" />
+
+  <rect class="step" x="262" y="96" width="208" height="124" rx="10" />
+  <text class="t" x="366" y="126" text-anchor="middle">2. Investment</text>
+  <text class="sm" x="366" y="156" text-anchor="middle">New plants are</text>
+  <text class="sm" x="366" y="180" text-anchor="middle">ordered and built</text>
+  <text class="sm" x="366" y="204" text-anchor="middle">all at once.</text>
+
+  <path class="flow" d="M474,158 L492,158" marker-end="url(#porkNext)" />
+
+  <rect class="warn" x="496" y="96" width="208" height="124" rx="10" />
+  <text class="t" x="600" y="126" text-anchor="middle">3. The lag</text>
+  <text class="sm" x="600" y="156" text-anchor="middle">They start up two</text>
+  <text class="sm" x="600" y="180" text-anchor="middle">to three years</text>
+  <text class="sm" x="600" y="204" text-anchor="middle">later.</text>
+
+  <path class="flow" d="M708,158 L726,158" marker-end="url(#porkNext)" />
+
+  <rect class="step" x="730" y="96" width="208" height="124" rx="10" />
+  <text class="t" x="834" y="126" text-anchor="middle">4. Oversupply</text>
+  <text class="sm" x="834" y="156" text-anchor="middle">Capacity lands,</text>
+  <text class="sm" x="834" y="180" text-anchor="middle">the market floods</text>
+  <text class="sm" x="834" y="204" text-anchor="middle">and price collapses.</text>
+
+  <!-- ===================== the feedback leg ===================== -->
+  <path class="back" d="M834,224 L834,282 L132,282 L132,226" marker-end="url(#porkBack)" />
+  <text class="l" x="480" y="308" text-anchor="middle">Investment stops &#8212; and the next shortage begins</text>
+
+  <text class="sm" x="480" y="344" text-anchor="middle">A polysilicon plant takes two to three years to engineer, build and ramp up, and the decision cannot be</text>
+  <text class="sm" x="480" y="366" text-anchor="middle">undone when the price turns. Supply is always answering a question the market asked years earlier.</text>
+
+  <!-- ===================== the lag, drawn ===================== -->
+  <text class="t" x="40" y="410">The lag, drawn as a price path</text>
+
+  <!-- the gap between the decision and the delivery -->
+  <rect x="250" y="424" width="410" height="172" fill="url(#bandFill)" />
+
+  <line class="axis" x1="60" y1="596" x2="900" y2="596" />
+
+  <!-- the price curve: a broad peak, a long slide, a broad trough -->
+  <path class="curve" d="M 70,504
+                        C 120,472 160,458 200,456
+                        L 320,456
+                        C 400,460 480,516 560,558
+                        C 590,572 630,577 660,578
+                        L 890,582" />
+
+  <!-- the two moments that matter -->
+  <line class="ghost" x1="250" y1="456" x2="250" y2="612" />
+  <line class="ghost" x1="660" y1="578" x2="660" y2="612" />
+
+  <circle cx="250" cy="456" r="8" fill="#dd6b20" stroke="#ffffff" stroke-width="2.4" />
+  <circle cx="660" cy="578" r="8" fill="#2b6cb0" stroke="#ffffff" stroke-width="2.4" />
+
+  <!-- the span between them -->
+  <path class="dim" d="M250,626 L666,626" marker-start="url(#lagLeft)" marker-end="url(#lagRight)" />
+  <text class="l" x="458" y="652" text-anchor="middle">two to three years</text>
+
+  <!-- annotation: the decision, placed clear of the rising curve -->
+  <text class="t" x="40" y="440">Decision to build: the price is high</text>
+
+  <!-- annotation: the arrival, placed in the empty space above the trough -->
+  <text class="t" x="700" y="500">Capacity starts up</text>
+  <text class="sm" x="700" y="522">the market has already flooded</text>
+  <text class="sm" x="700" y="544">and the price has collapsed</text>
+  <path class="ghost" d="M694,554 L672,572" />
+
+  <!-- what the shaded gap represents -->
+  <text class="sm" x="540" y="450" text-anchor="middle">committed, not yet online</text>
+
+  <!-- ===================== the one number worth keeping ===================== -->
+  <text class="sm" x="40" y="692">Price peaks came every seven to eight years from 1981 to 2004. After the photovoltaic boom halved the interval to four years.</text>
+</svg>
