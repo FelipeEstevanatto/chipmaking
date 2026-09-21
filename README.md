@@ -22,6 +22,23 @@ Use o componente `SeeAlso` — ele aplica o `base` do site automaticamente. Não
 
 **Busca local** (sem Algolia): botão no header ou **Ctrl+K** / **/** — indexa o Markdown no build; cada idioma busca só nas páginas daquele locale.
 
+## Glossário e tooltips
+
+`docs/.vitepress/glossary.ts` é a **fonte única** das entradas do glossário: cada uma declara `pt` e `en` (ambos exigidos pelo tipo, o que impede os locales de divergirem), o capítulo que a explica e, opcionalmente, `variants` (outras grafias, como `TSVs` para `TSV`) e `tooltip: false` para siglas ambíguas demais para anotar em prosa.
+
+Dois consumidores leem essa lista:
+
+- `theme/GlossaryTable.vue` gera as páginas `/glossario` e `/en/glossario` a partir dela, com uma caixa de filtro que busca termo, expansão, capítulo e variantes ignorando acentos — **não escreva a tabela à mão**, ela é derivada;
+- `glossary-tooltips.ts`, um plugin do markdown-it, envolve a **primeira** ocorrência de cada termo em `<abbr title="...">`, dando a expansão no *hover*.
+
+O plugin nunca anota dentro de código (inclusive diagramas Mermaid), rótulos de link, títulos, `figcaption` ou texto que os componentes montam a partir de props (`SeeAlso`, `TransistorTimeline`, `TransistorCompare`): um `<abbr>` dentro de um link aninharia marcação no rótulo da âncora, e o conteúdo de props nem passa pelas regras inline do Markdown. Por isso um termo pode aparecer "cru" perto do topo e receber a expansão na primeira ocorrência de prosa.
+
+Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HTML gerado: título e contexto de cada anotação, anotação única por página, primeira ocorrência de prosa e paridade entre os locales (mesmos termos anotados e as mesmas linhas nas duas tabelas).
+
+## Aids de leitura
+
+`theme/ReadingProgress.vue` (slot `layout-top`) desenha a barra de progresso no topo da janela, e `theme/DocMeta.vue` (slot `doc-before`) mostra o tempo de leitura e a contagem de figuras, medida no texto renderizado — o que a mantém correta quando um capítulo muda. A numeração das figuras sai de CSS (`counter-reset: figure` em `.vp-doc`, em `custom.css`), então `DiagramFigure` não precisa saber o próprio número, e o rótulo alterna entre "Figura" e "Figure" conforme o `lang` do documento.
+
 ## Estrutura do site
 
 - **Início** (`/`) — hero, features e diagrama Mermaid da cadeia

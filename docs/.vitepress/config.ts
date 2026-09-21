@@ -3,6 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { withMermaid } from 'vitepress-plugin-mermaid'
+import { glossaryTooltips } from './glossary-tooltips'
 
 /**
  * Single source of truth for the GitHub Pages subpath. VitePress rewrites Markdown links and theme
@@ -223,6 +224,13 @@ const enTheme: DefaultTheme.Config = {
 export default withMermaid(
   defineConfig({
     ...shared,
+    markdown: {
+      // Adds the first-use expansion tooltip to glossary terms across every chapter; see
+      // glossary-tooltips.ts.
+      config: (md) => {
+        md.use(glossaryTooltips)
+      },
+    },
     vite: {
       resolve: {
         alias: {

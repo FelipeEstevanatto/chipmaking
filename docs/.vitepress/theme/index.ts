@@ -14,6 +14,7 @@ import SeeAlso from './SeeAlso.vue'
 import SupplyChainMap from './SupplyChainMap.vue'
 import ReadingProgress from './ReadingProgress.vue'
 import DocMeta from './DocMeta.vue'
+import GlossaryTable from './GlossaryTable.vue'
 import './custom.css'
 
 export default {
@@ -34,5 +35,6 @@ export default {
     app.component('SupplyChainMap', SupplyChainMap)
     app.component('ReadingProgress', ReadingProgress)
     app.component('DocMeta', DocMeta)
+    app.component('GlossaryTable', GlossaryTable)
   },
 }
