@@ -21,6 +21,8 @@ Exposição EUV em wafer — <a href="https://www.asml.com/" target="_blank" rel
 
 ## Vídeos
 
+<SourceNote label="Vídeos relacionados" :ids="['asml-gaa']" />
+
 <YouTubeEmbed id="jL7HvnBgrJ4" title="Processo ASML" />
 
 <YouTubeEmbed id="rCwgAGG2sZQ" title="RTX 5090 Chip Deep-Dive" />

@@ -22,32 +22,33 @@ Orientações cristalográficas (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e consta
 - [Estrutura cristalina — YouTube](https://www.youtube.com/watch?v=lgYQE2aTNNc)
 - [Orientação e estrutura cristalina — WaferPro](https://waferpro.com/understanding-silicon-wafer-orientation-and-crystal-structure/)
 - [Miller indices — YouTube](https://www.youtube.com/watch?v=_A7oqoMFIiA)
+- [Miller Indices (SVG) — Wikimedia](https://upload.wikimedia.org/wikipedia/commons/d/d5/Miller_Indices_Felix_Kling.svg) · [página Commons](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (DeepKling, CC BY 3.0)
 
-A estrutura pode ser caracterizada por **DRX (difração de raios-X)**. Em condições ideais, a **lei de Bragg** explica a reflexão de raios X por cristais e permite inferir estruturas.
+Podemos inferir a estrutura do cristal com **DRX (difração de raios-X)** em condições controladas (amostra limpa e orientada). A **lei de Bragg** descreve a reflexão dos raios X pelos planos cristalinos e permite determinar geometria da rede — inclusive em alguns materiais parcialmente cristalinos ou filmes finos quando a resolução experimental é suficiente.
 
 ### Índices de Miller
 
 Índices que descrevem direções e planos cristalográficos; planos podem ter propriedades **anisotrópicas** (dependentes da direção).
 
-<DiagramFigure src="/pdf-images/p09-1.png" alt="Índices de Miller em estrutura cúbica">
-DeepKling — [Miller Indices](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (CC BY 3.0).
+<DiagramFigure src="/assets/miller-indices.svg" alt="Índices de Miller em estrutura cúbica">
+DeepKling — <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
 ## Tipos de wafer
 
-Classificamos wafers por **tamanho**, **pureza**, **tipo de dopagem** e **índices de Miller** (orientação dos planos na rede cristalina).
+Classificamos wafers por **tamanho**, **pureza**, **tipo de dopagem** e **índices de Miller** (orientação dos planos na rede cristalina). A orientação cristalográfica do silício é verificada por DRX e marcada no lingote (chanfro/entalhe) antes do processamento na fab.
 
 ## Dopagem
 
-A dopagem introduz impurezas intencionais em semicondutor **intrínseco** para modular propriedades elétricas, ópticas ou estruturais, gerando semicondutor **extrínseco**.
+A dopagem introduz impurezas intencionais em semicondutor **intrínseco** (sem dopagem intencional) para modular propriedades elétricas, ópticas ou estruturais, gerando semicondutor **extrínseco**.
 
 - **Dopagem leve:** ~1 átomo dopante por 100 milhões de átomos.
 - **Dopagem pesada:** ~1 por 10 mil átomos.
 
-Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) é intrínseco no sentido de compensação de portadores.
+Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) está **compensado** (comportamento próximo ao intrínseco em equilíbrio térmico).
 
-<DiagramFigure src="/pdf-images/p10-1.png" alt="Dopagem tipo P e tipo N no silício">
-Tipo P: buraco (*void*) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb).
+<DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Silício intrínseco, dopagem tipo P (B) e tipo N (Sb)">
+Tipo P: buraco (<em>void</em>) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb). VectorVoyager — <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
 <div class="see-also">

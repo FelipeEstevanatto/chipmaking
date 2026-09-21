@@ -44,6 +44,8 @@ Inversão das fatias de mercado e crescimento de **18,4×** entre 1995 e 2014 (1
 
 <SourceNote :ids="['bernreuter']" />
 
+*Between 1995 and 2014, the annual polysilicon demand increased by a factor of 18.4; the ratio between the shares of semiconductors and photovoltaics reversed completely* — fontes do gráfico no PDF: PV News, Sage Concepts e Bernreuter Research <Cite id="bernreuter" />.
+
 Entre 1995 e 2014, a demanda anual aumentou por um fator de **18,4**; a participação relativa de semicondutores e fotovoltaica inverteu-se por completo <Cite id="bernreuter" />.
 
 <DiagramFigure src="/pdf-images/p05-2.png" alt="Preço histórico do polissilício 1977–2017">

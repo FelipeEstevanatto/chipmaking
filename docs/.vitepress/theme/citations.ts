@@ -127,6 +127,14 @@ const list: Citation[] = [
     url: 'https://energycentral.com/',
     short: 'Energy Central',
   },
+  {
+    key: 'hkmg-paper',
+    num: 16,
+    title: 'High Performance High-K + Metal Gate Strain Enhanced Transistors on (110) S',
+    publisher: 'Semantic Scholar, 2008',
+    url: 'https://pdfs.semanticscholar.org/cd90/94aa1fd40650ba21d32d6b976f2f4b66a2d0.pdf',
+    short: 'HKMG (Semantic Scholar)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<
