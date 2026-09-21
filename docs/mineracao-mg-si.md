@@ -33,9 +33,17 @@ Dentro do forno, a reação real ocorre em etapas térmicas distintas <Cite id="
    SiO₂ + 2SiC → 3Si + 2CO (g)
    ```
 
+Uma terceira reação fecha o ciclo do forno <Cite id="pv-mfg-polysilicon" />:
+
+```text
+2SiO₂ + SiC → 3SiO (g) + CO (g)
+```
+
+O **monóxido de silício** (SiO) e o CO sobem pelas zonas frias da carga e recombinam-se, regenerando SiO₂ e carbono que voltam a alimentar o topo do forno. Por isso o forno é praticamente **autossuficiente em reagentes**: ele é um grande consumidor de energia elétrica, mas desperdiça pouca matéria-prima <Cite id="pv-mfg-polysilicon" />.
+
 O silício fundido é drenado pelo fundo do forno com pureza de **98% a 99,5%**, sendo chamado de **Silício de Grau Metalúrgico (MG-Si)** <Cite id="saimm" />. Ele passa por tratamentos de remoção de impurezas (purga de gás ou tratamento com escória) antes de ser resfriado e triturado <Cite id="saimm" />.
 
-<SourceNote :ids="['pv-education', 'sciencedirect-hpq', 'elkem', 'csiro', 'saimm']" />
+<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'elkem', 'csiro', 'saimm']" />
 
 <SeeAlso :links="[
   { text: 'Introdução', href: '/introducao', note: 'produção mundial de silício metálico', cite: 'usgs-mcs' },

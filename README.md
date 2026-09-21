@@ -39,6 +39,25 @@ python scripts/extract-pdf-images.py
 
 Toda figura (`DiagramFigure`, `TransistorTimeline`) passa pelo componente `ZoomableImage`: um clique abre um visualizador em tela cheia com zoom pela roda do mouse ou duplo clique, arraste para mover, botões `+` / `-` / `1:1` e atalhos `+`, `-`, `0` e `Esc`.
 
+Esquemas próprios (transistores, rota do polissilício) ficam em `docs/public/assets/*.svg`. Escreva-os em **ASCII puro** e use referências numéricas (`&#176;`, `&#8594;`) para `°` e `→`: entidades HTML nomeadas como `&minus;` não existem em XML e fazem o SVG inteiro falhar. Termine com `width`/`height` no `<svg>` raiz — sem eles, o `naturalWidth` fica `0` e o `ZoomableImage` não consegue dimensionar a imagem.
+
+## Vídeos
+
+Dois componentes de embed 16:9, ambos com `loading="lazy"` e moldura compartilhada (`.video-embed` em `custom.css`):
+
+```md
+<YouTubeEmbed id="jL7HvnBgrJ4" title="Processo ASML" />
+<VideoPressEmbed id="ZlxguS11" title="Animação da rota de polissilício" />
+```
+
+`YouTubeEmbed` usa `youtube-nocookie.com`; `VideoPressEmbed` usa o player do WordPress.com, usado pelo PV-Manufacturing.org. Ao embutir material de terceiros, credite a fonte no texto e nas referências.
+
+## Rodapé de build
+
+`theme/BuildFooter.vue` é injetado no slot `layout-bottom` por `theme/Layout.vue` e aparece em todas as páginas (o `themeConfig.footer` do VitePress só aceita strings e só renderiza sem sidebar). Ele mostra o commit do build, a branch e o link do repositório.
+
+Os dados vêm de `buildInfoForClient` em `config.ts`, resolvido em Node no carregamento da config e embutido no bundle via `vite.define` como `__BUILD_INFO__`. Em CI usa `GITHUB_SHA`/`GITHUB_REF_NAME` (sem chamar o git); localmente cai para `git rev-parse`.
+
 ## Diagramas Mermaid
 
 Blocos ` ```mermaid ` são renderizados no cliente por `docs/.vitepress/theme/Mermaid.vue`, com o plugin `vitepress-plugin-mermaid` cuidando do cercamento (*fence*) no Markdown.

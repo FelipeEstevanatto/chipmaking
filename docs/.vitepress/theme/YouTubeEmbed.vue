@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="youtube-embed">
+  <div class="video-embed">
     <iframe
       :src="`https://www.youtube-nocookie.com/embed/${id}`"
       :title="title ?? 'YouTube video'"

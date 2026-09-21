@@ -5,8 +5,6 @@ description: Silicon's role in solar and semiconductors, world metallurgical sil
 
 # Introduction
 
-**Felipe Estevanatto** · 2023
-
 <DiagramFigure src="/pdf-images/p01-1.jpeg" alt="Crystalline metallurgical silicon">
 A sample of metallurgical silicon — the visual starting point of the chain that leads to wafers and chips.
 </DiagramFigure>

@@ -33,9 +33,17 @@ Inside the furnace, the real reaction happens in distinct thermal stages <Cite i
    SiO₂ + 2SiC → 3Si + 2CO (g)
    ```
 
+A third reaction closes the furnace's loop <Cite id="pv-mfg-polysilicon" />:
+
+```text
+2SiO₂ + SiC → 3SiO (g) + CO (g)
+```
+
+The **silicon monoxide** (SiO) and the CO rise through the cooler zones of the charge and recombine, regenerating SiO₂ and carbon that feed the top of the furnace again. That is why the furnace is practically **self-sufficient in reactants**: it is a major consumer of electricity, but it wastes very little raw material <Cite id="pv-mfg-polysilicon" />.
+
 The molten silicon is drained from the bottom of the furnace at **98% to 99.5%** purity, and is called **Metallurgical-Grade Silicon (MG-Si)** <Cite id="saimm" />. It goes through impurity-removal treatments (gas purging or slag treatment) before being cooled and crushed <Cite id="saimm" />.
 
-<SourceNote label="Sources" :ids="['pv-education', 'sciencedirect-hpq', 'elkem', 'csiro', 'saimm']" />
+<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'elkem', 'csiro', 'saimm']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs' },

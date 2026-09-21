@@ -126,7 +126,8 @@
   padding-left: 1.25rem;
 }
 
-.youtube-embed {
+/* Shared 16:9 frame for the YouTube and VideoPress embeds */
+.video-embed {
   position: relative;
   margin: 1.25rem 0;
   padding-bottom: 56.25%;
@@ -137,7 +138,7 @@
   background: #000;
 }
 
-.youtube-embed iframe {
+.video-embed iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -290,4 +291,82 @@
 /* Timelines render at natural width so their labels stay legible. */
 .mermaid svg[aria-roledescription='timeline'] {
   max-width: none;
+}
+
+/* --- Build provenance bar (injected into the layout-bottom slot) --- */
+.build-footer {
+  /* .Layout is a flex column, so this pins the bar to the bottom on short pages */
+  margin-top: auto;
+  border-top: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-alt);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+.build-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  max-width: var(--vp-layout-max-width);
+  margin-inline: auto;
+  padding: 0.7rem 24px;
+}
+
+.build-footer-side {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.build-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--vp-c-text-1);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.build-footer a:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.build-footer code {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.8125rem;
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+  /* Outlined pill rather than a filled chip: keeps the SHA at full text contrast */
+  border: 1px solid var(--vp-c-divider);
+  background: transparent;
+  color: var(--vp-c-text-1);
+}
+
+.build-footer a:hover code {
+  color: var(--vp-c-brand-1);
+}
+
+.build-footer-ref {
+  padding: 0.05em 0.4em;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+}
+
+.build-footer-icon {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 640px) {
+  .build-footer-inner {
+    padding-inline: 16px;
+  }
 }

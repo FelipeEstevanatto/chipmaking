@@ -247,6 +247,14 @@ const list: Citation[] = [
     url: 'https://techtoday.co/verisilicon-launches-fd-soi-wireless-ip-platform-for-iot-consumer-electronics/',
     short: 'VeriSilicon (FD-SOI)',
   },
+  {
+    key: 'pv-mfg-polysilicon',
+    num: 31,
+    title: 'Polysilicon Production',
+    publisher: 'PV-Manufacturing.org',
+    url: 'https://pv-manufacturing.org/silicon-production/polysilicon-production/',
+    short: 'PV-Manufacturing.org',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
+import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
@@ -8,6 +9,40 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
  * asset URLs with it, but **not** raw `head` tags — so those have to be prefixed by hand.
  */
 const base = '/chipmaking/'
+
+const repoUrl = 'https://github.com/FelipeEstevanatto/chipmaking'
+
+/** Runs a git command from the project root; returns '' when git (or the repo) is unavailable. */
+function git(command: string): string {
+  try {
+    return execSync(command, { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim()
+  } catch {
+    return ''
+  }
+}
+
+/**
+ * Provenance for the site footer. Resolved once in Node when this config loads, then inlined into
+ * the client bundle through Vite's `define` — the footer stays a static string with no runtime cost
+ * and no filesystem access from the browser.
+ *
+ * GitHub Actions exports `GITHUB_SHA`/`GITHUB_REF_NAME`, so a shallow CI checkout needs no git call
+ * at all; the fallbacks are for local `bun run build` and for `bun run dev`.
+ */
+const buildInfo = {
+  repo: repoUrl,
+  sha: process.env.GITHUB_SHA || git('git rev-parse HEAD'),
+  ref: process.env.GITHUB_REF_NAME || git('git rev-parse --abbrev-ref HEAD'),
+  // Commit date, so a rebuild of an unchanged commit keeps the same stamp. Falls back to build time.
+  date: (git('git log -1 --format=%cI') || new Date().toISOString()).slice(0, 10),
+}
+
+const buildInfoForClient = {
+  ...buildInfo,
+  shortSha: buildInfo.sha ? buildInfo.sha.slice(0, 7) : '',
+  commitUrl: buildInfo.sha ? `${repoUrl}/commit/${buildInfo.sha}` : repoUrl,
+  repoLabel: repoUrl.replace(/^https?:\/\/github\.com\//, ''),
+}
 
 const shared = {
   base,
@@ -184,6 +219,10 @@ export default withMermaid(
             new URL('./theme/mermaid-async.ts', import.meta.url),
           ),
         },
+      },
+      define: {
+        // Read by theme/BuildFooter.vue; see buildInfoForClient above.
+        __BUILD_INFO__: JSON.stringify(buildInfoForClient),
       },
     },
     themeConfig: {

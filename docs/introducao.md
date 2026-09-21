@@ -5,8 +5,6 @@ description: Papel do silício na solar e nos semicondutores, produção mundial
 
 # Introdução
 
-**Felipe Estevanatto** · 2023
-
 <DiagramFigure src="/pdf-images/p01-1.jpeg" alt="Silício metálico cristalino">
 Amostra de silício metálico — ponto de partida visual da cadeia até wafers e chips.
 </DiagramFigure>
