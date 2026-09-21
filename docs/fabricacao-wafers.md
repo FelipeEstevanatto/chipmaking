@@ -39,6 +39,38 @@ Em **1.º de outubro de 1948**, **Gordon Teal** e **John Little**, na Bell Labs,
 
 O passo seguinte foi o silício, bem mais hostil. O banho precisa ser contido num cadinho de **quartzo** (a grafita contamina) e puxado **sob atmosfera controlada**, porque o silício fundido oxida em contato com o ar. Entre **1951 e 1952**, Teal e o técnico **Ernest Buehler** resolveram as duas coisas e anunciaram os primeiros cristais de silício e a primeira junção p-n crescida dentro de um deles <Cite id="teal-buehler-1952" />. É esse arranjo — quartzo, atmosfera inerte, semente girando — que a indústria usa até hoje.
 
+### Oxigênio e carbono: o que o cadinho dissolve
+
+O quartzo do cadinho não é inerte. Em contato com o silício fundido, ele se dissolve lentamente na massa — e é daí que vem a impureza dominante do silício Cz, o **oxigênio**, em concentrações muito acima de qualquer contaminante metálico: **[O] ≈ 5–10 × 10¹⁷ cm⁻³** e **[C] ≈ 5–10 × 10¹⁵ cm⁻³** <Cite id="pv-mfg-cz" />.
+
+A solubilidade do oxigênio no silício cai várias ordens de grandeza entre a fusão e a temperatura ambiente <Cite id="pv-mfg-cz" />. O cristal termina o puxamento **supersaturado**, e no resfriamento o excesso precisa sair de solução: o oxigênio **precipita** como partículas de SiO₂.
+
+O processo tem duas caras. Os precipitados são armadilhas eficientes para metais e funcionam como **gettering interno** — uma limpeza que acontece dentro do próprio wafer <Cite id="pv-mfg-cz" />. Mas o oxigênio que permanece intersticial, sem precipitar, forma **doadores térmicos** eletricamente ativos, que deslocam a resistividade medida. É esse defeito que o tratamento térmico remove depois, na etapa de RTP descrita adiante.
+
+Há ainda uma terceira consequência, que só aparece em células solares e por isso é tratada no [capítulo de células solares](/celulas-solares): o oxigênio intersticial reage com o **boro** sob iluminação e forma um defeito que degrada a eficiência.
+
+### Dopagem e o gradiente de resistividade
+
+Dopar um lingote não é o mesmo que dopar uma solução homogênea. O dopante **não se reparte por igual** entre o líquido e o sólido — cada elemento tem um **coeficiente de segregação** (k), e o cristal incorpora dopante em proporção diferente conforme cresce. Para os dopantes usuais, os valores não poderiam ser mais distintos <Cite id="lid-hallam" />:
+
+| Dopante | Coeficiente de segregação (k) |
+| --- | --- |
+| Fósforo (tipo n) | ≈ 0,35 |
+| Boro (tipo p) | 0,8 |
+| Gálio (tipo p) | 0,008 |
+
+Com k < 1, o sólido **rejeita o dopante para o líquido**. Como o banho encolhe conforme o lingote é puxado, a concentração no líquido **sobe** ao longo do processo — e a do cristal que vai solidificando acompanha. O resultado é um **gradiente de resistividade**: a cabeça do lingote sai mais resistiva que a cauda <Cite id="pv-mfg-cz" />.
+
+O caso do **gálio** é o mais extremo. Com k = 0,008, ele praticamente não sai do banho, e a resistividade varia por um fator enorme ao longo de um único lingote — reduzindo a fração aproveitável da peça <Cite id="lid-hallam" />. É esse o preço que a fotovoltaica aceitou ao trocar boro por gálio, como se detalha no [capítulo de células solares](/celulas-solares).
+
+### Variantes do processo: RCz e CCz
+
+Duas variações atacam justamente esse problema de uniformidade.
+
+Na **RCz** (*Recharge Czochralski*), o cadinho é **recarregado com polissilício sem ser resfriado, aberto ou desmontado** — um alimentador introduz material novo no banho ainda quente <Cite id="pv-mfg-cz" />. Como o forno deixa de ser aberto a cada lingote, caem as paradas para manutenção, o *hot zone* fica menos exposto ao ar e a vida útil do equipamento aumenta. A técnica também reduz os ciclos térmicos bruscos que trincam o cadinho <Cite id="pv-mfg-cz" />.
+
+Na **CCz** (*Continuous Czochralski*), o material é adicionado **durante** o puxamento, e não entre lingotes. Isso permite cadinhos bem mais rasos — logo, menos contato com as paredes de quartzo — e mantém a composição do banho **constante**, produzindo lingotes de resistividade uniforme e muito mais longos, já que o processo deixa de estar limitado ao volume inicial de fusão <Cite id="pv-mfg-cz" />. A contrapartida é que impurezas de k baixo **se acumulam** no banho e contaminam a parte final do lingote. Por essa complexidade, a CCz segue restrita a uma escala pequena <Cite id="pv-mfg-cz" />.
+
 ## Preparação do lingote e pré-usinagem
 
 Após resfriamento, removem-se as extremidades cônicas (cabeça e cauda). O corpo cilíndrico passa por retificação externa por esmerilhamento para a dimensão exata. Produz-se então o **fiducial de orientação** — um **chanfro plano (*flat*)** nos diâmetros menores ou um **entalhe em V (*notch*)** a partir de 200 mm —, que dá às ferramentas automatizadas a referência cristalográfica e, nos wafers pequenos, também o tipo de dopagem ([como identificar um wafer](/estrutura-wafers#como-identificar-um-wafer-pela-borda)) <Cite id="semi-m1" />.
@@ -122,7 +154,7 @@ Já o **Czochralski**, descrito acima, é um processo em batelada que leva cerca
 
 ### Espessura: onde a fotovoltaica se separa
 
-Aqui está a diferença mais visível. Para extrair a potência elétrica, bastam cerca de **100 µm de silício** — a luz não precisa de mais material que isso <Cite id="saimm" />. Na prática, a indústria fotovoltaica trabalha com lâminas **abaixo de 200 µm** <Cite id="saimm" />, contra os **700 a 800 µm** típicos dos wafers de fab.
+Aqui está a diferença mais visível. Para extrair a potência elétrica, bastam cerca de **100 µm de silício** — a luz não precisa de mais material que isso <Cite id="saimm" />. Na prática, a indústria fotovoltaica trabalha com lâminas **abaixo de 200 µm** <Cite id="saimm" /> — e o padrão de 2023 já era de **150 µm** para lâminas monocristalinas do tipo p, com as do tipo n cerca de **5 a 10 µm mais finas** <Cite id="itrpv-2024" /> —, contra os **700 a 800 µm** típicos dos wafers de fab.
 
 Isso não é só economia de material: é economia de uma cadeia inteira. O wafer cristalino responde por **quase metade do custo final do módulo**, e a etapa de fabricação do wafer por cerca de **30%** desse custo <Cite id="saimm" />.
 
@@ -136,7 +168,7 @@ O custo disso é o **kerf**: aproximadamente **30% do silício é perdido como s
 
 A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²** e, mais recentemente, **15,6 × 15,6 cm²** <Cite id="saimm" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
 
-<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer']" />
+<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
 
 ## Vídeos
 

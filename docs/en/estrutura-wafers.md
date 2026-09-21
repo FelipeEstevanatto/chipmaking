@@ -128,11 +128,13 @@ Doping introduces intentional impurities into an **intrinsic** semiconductor (on
 
 A semiconductor with an equal number of excited electrons and holes (**n = p**) is **compensated** (behaving close to intrinsic in thermal equilibrium).
 
+There is one case where the choice of dopant stops being a process detail and starts deciding the reliability of the product: in photovoltaics, boron reacts with the oxygen in Cz silicon and degrades the cell under illumination, which pushed the industry to replace it with **gallium** — covered in the [solar cells and modules](/en/celulas-solares) chapter.
+
 <DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Intrinsic silicon, P-type (B) and N-type (Sb) doping">
 P-type: a hole with boron (B). N-type: a fifth valence electron with antimony (Sb). VectorVoyager — <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG from Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote label="Sources" :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer']" />
+<SourceNote label="Sources" :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: '&lt;100&gt; / &lt;111&gt; orientation in CZ growth' },

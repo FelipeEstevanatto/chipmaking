@@ -9,7 +9,7 @@ description: >-
 
 O wafer de silício tem dois destinos industriais. Um é a **fab** de semicondutores, que percorre a [fotolitografia](/fotolitografia) até chegar aos [transistores](/transistores). O outro é a **linha de células fotovoltaicas**, onde o mesmo material — só que multicristalino e com pureza menor — vira a célula que converte luz em eletricidade.
 
-A célula de silício cristalino é, de longe, a tecnologia dominante: responde por **pelo menos 80%** do mercado fotovoltaico, posição que deve à maturidade da tecnologia e ao custo direto mais baixo <Cite id="saimm" />.
+A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023** respondia por cerca de **97%** do mercado fotovoltaico, contra **3%** das tecnologias de filme fino <Cite id="itrpv-2024" />. Dentro do silício, o **monocristalino Czochralski** domina de forma praticamente absoluta — o wafer multicristalino deixou de ser produzido em massa <Cite id="itrpv-2024" />. O número mais antigo que aparece ao longo deste capítulo, de **pelo menos 80%**, vem do levantamento de 2011 de Xakalashe e Tangstad <Cite id="saimm" />.
 
 ## As sete etapas da célula
 
@@ -29,9 +29,23 @@ Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e pot
 
 ### Difusão do emissor (junção p-n)
 
-É a etapa que transforma uma lâmina de silício num dispositivo. O wafer de partida é **dopado com boro** (tipo p); introduz-se **fósforo** (tipo n) para formar a **junção p-n** <Cite id="saimm" />.
+É a etapa que transforma uma lâmina de silício num dispositivo. O wafer de partida é **tipo p**; introduz-se **fósforo** (tipo n) para formar a **junção p-n** <Cite id="saimm" />. Qual elemento faz a dopagem tipo p, porém, mudou — e é o assunto da subseção seguinte.
 
 O processo roda num forno a aproximadamente **900 °C por cerca de 30 minutos**, produzindo uma profundidade de penetração de **0,5 µm** — é essa camada rasa que a figura mostra como emissor. A fonte de dopante mais comum é o **POCl₃**, embora também se usem serigrafia ou deposição química de vapor <Cite id="saimm" />.
+
+### A troca do boro pelo gálio
+
+A lâmina de partida é **tipo p**, e por décadas isso significou **dopada com boro** <Cite id="saimm" />. A escolha, porém, carrega um defeito embutido — grave o bastante para ter mudado a indústria inteira.
+
+O boro reage com o **oxigênio** dissolvido no silício Cz (a impureza que o próprio cadinho de quartzo introduz, como se viu na [fabricação de wafers](/fabricacao-wafers#oxigenio-e-carbono-o-que-o-cadinho-dissolve)) e forma um complexo **boro–oxigênio** ativo em recombinação. O defeito se ativa sob iluminação e injeção de portadores, e por isso o efeito é conhecido como **BO-LID** (*boron-oxygen light-induced degradation*) <Cite id="lid-hallam" />.
+
+A perda é material: o limite teórico chega a **10% relativo** na eficiência, e na prática o valor fica em **3 a 4%** nas células Al-BSF e **4 a 6%** nas PERC <Cite id="lid-hallam" />. Não é um defeito de laboratório — é degradação que o dono do sistema vê na conta de energia.
+
+A saída foi trocar o dopante. O **gálio** ocupa o mesmo papel aceitador do boro, mas **não forma o complexo com oxigênio**, e por isso a célula não sofre BO-LID <Cite id="lid-hallam" />. A substituição foi rápida quando as patentes que a bloqueavam expiraram, em **2020**: a fatia de lâminas dopadas com gálio saltou de cerca de **10% em 2019 para mais de 95% em 2021**, e a ITRPV já registrava o **desaparecimento do boro** como dopante tipo p em **2023** <Cite id="ga-transition" />.
+
+Gálio, no entanto, não é uma troca gratuita. Seu **coeficiente de segregação** é de apenas **0,008** — contra 0,8 do boro —, o que faz a resistividade variar enormemente ao longo de um único lingote e reduz a fração aproveitável da peça <Cite id="lid-hallam" />. É o preço descrito na seção de [dopagem e gradiente de resistividade](/fabricacao-wafers#dopagem-e-o-gradiente-de-resistividade). E há um segundo problema: células dopadas com gálio ainda podem sofrer **LeTID** (*light and elevated temperature induced degradation*), um efeito ligado ao hidrogênio que derruba até **3% relativo** da potência <Cite id="letid-ga" />.
+
+Vale notar o contexto maior: a indústria está migrando para o **tipo n** de qualquer forma. Em **2024** a ITRPV projetava que as lâminas tipo n ultrapassariam as tipo p, alcançando **69% do mercado** ao fim daquele ano <Cite id="itrpv-2024" />.
 
 ### Isolamento de borda
 
@@ -92,7 +106,7 @@ Os números do setor, na época do levantamento de Xakalashe e Tangstad, dão a 
 
 São números de 2011 e envelheceram rápido — a produção anual hoje se mede em centenas de gigawatts, não em dezenas. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva, não em física.
 
-<SourceNote :ids="['saimm', 'moller-2012']" />
+<SourceNote :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga']" />
 
 <SeeAlso :links="[
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'de onde vem a lâmina' },

@@ -9,7 +9,7 @@ description: >-
 
 A silicon wafer has two industrial destinations. One is the semiconductor **fab**, which runs through [photolithography](/en/fotolitografia) on its way to [transistors](/en/transistores). The other is the **photovoltaic cell line**, where the same material — multicrystalline and of lower purity — becomes the cell that turns light into electricity.
 
-The crystalline silicon cell is by far the dominant technology: it accounts for **at least 80%** of the photovoltaic market, a position it owes to the maturity of the technology and to lower direct production costs <Cite id="saimm" />.
+The crystalline silicon cell is by far the dominant technology: in **2023** it accounted for about **97%** of the photovoltaic market, against **3%** for thin-film technologies <Cite id="itrpv-2024" />. Within silicon, **monocrystalline Czochralski** dominates almost absolutely — multicrystalline wafers are no longer mass-produced <Cite id="itrpv-2024" />. The older figure that recurs through this chapter, **at least 80%**, comes from the 2011 survey by Xakalashe and Tangstad <Cite id="saimm" />.
 
 ## The seven steps of a cell
 
@@ -29,9 +29,23 @@ On **monocrystalline** wafers, a weak solution of sodium and potassium hydroxide
 
 ### Emitter diffusion (the p-n junction)
 
-This is the step that turns a silicon slab into a device. The starting wafer is **boron-doped** (p-type); **phosphorus** (n-type) is introduced to form the **p-n junction** <Cite id="saimm" />.
+This is the step that turns a silicon slab into a device. The starting wafer is **p-type**; **phosphorus** (n-type) is introduced to form the **p-n junction** <Cite id="saimm" />. Which element provides that p-type doping, however, has changed — and that is the subject of the next subsection.
 
 The process runs in a furnace at roughly **900 °C for about 30 minutes**, producing a penetration depth of **0.5 µm** — that shallow layer is what the figure shows as the emitter. The most common dopant source is **POCl₃**, though screen printing and chemical vapour deposition are also used <Cite id="saimm" />.
+
+### The switch from boron to gallium
+
+The starting wafer is **p-type**, and for decades that meant **boron-doped** <Cite id="saimm" />. The choice, however, carries a built-in defect — serious enough to have changed the entire industry.
+
+Boron reacts with the **oxygen** dissolved in Cz silicon (the impurity the quartz crucible itself introduces, as covered in [wafer fabrication](/en/fabricacao-wafers#oxygen-and-carbon-what-the-crucible-dissolves)) and forms a recombination-active **boron–oxygen** complex. The defect activates under illumination and carrier injection, which is why the effect is known as **BO-LID** (*boron-oxygen light-induced degradation*) <Cite id="lid-hallam" />.
+
+The loss is material: the theoretical ceiling reaches **10% relative** in efficiency, and in practice it settles at **3 to 4%** in Al-BSF cells and **4 to 6%** in PERC <Cite id="lid-hallam" />. This is not a laboratory curiosity — it is degradation the system owner sees in the energy bill.
+
+The way out was to change the dopant. **Gallium** fills boron's role as acceptor but **does not form the complex with oxygen**, so the cell does not suffer BO-LID <Cite id="lid-hallam" />. The substitution was swift once the blocking patents expired in **2020**: the share of gallium-doped wafers jumped from about **10% in 2019 to over 95% in 2021**, and the ITRPV already recorded boron **disappearing** as a p-type dopant in **2023** <Cite id="ga-transition" />.
+
+Gallium, however, is not a free swap. Its **segregation coefficient** is only **0.008** — against 0.8 for boron — which makes resistivity vary enormously along a single ingot and reduces the usable fraction of the piece <Cite id="lid-hallam" />. That is the price described in [doping and the resistivity gradient](/en/fabricacao-wafers#doping-and-the-resistivity-gradient). And there is a second problem: gallium-doped cells can still suffer **LeTID** (*light and elevated temperature induced degradation*), a hydrogen-related effect that knocks off up to **3% relative** of the power <Cite id="letid-ga" />.
+
+Worth noting the larger context: the industry is moving to **n-type** regardless. In **2024** the ITRPV projected that n-type wafers would overtake p-type, reaching **69% of the market** by the end of that year <Cite id="itrpv-2024" />.
 
 ### Edge isolation
 
@@ -92,7 +106,7 @@ The industry figures at the time of the Xakalashe and Tangstad review give a sen
 
 These are 2011 figures and they aged quickly — annual production is now measured in hundreds of gigawatts, not tens. But they show the shape of the competition that has defined photovoltaics ever since: silicon wins on scale and industrial chain, not on physics.
 
-<SourceNote label="Sources" :ids="['saimm', 'moller-2012']" />
+<SourceNote label="Sources" :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: 'where the wafer comes from' },

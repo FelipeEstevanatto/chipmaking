@@ -128,11 +128,13 @@ A dopagem introduz impurezas intencionais em semicondutor **intrínseco** (sem d
 
 Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) está **compensado** (comportamento próximo ao intrínseco em equilíbrio térmico).
 
+Há um caso em que a escolha do dopante deixa de ser detalhe de processo e passa a decidir a confiabilidade do produto: na fotovoltaica, o boro reage com o oxigênio do silício Cz e degrada a célula sob iluminação, o que levou a indústria a substituí-lo pelo **gálio** — assunto tratado no capítulo de [células e módulos solares](/celulas-solares).
+
 <DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Silício intrínseco, dopagem tipo P (B) e tipo N (Sb)">
 Tipo P: buraco (<em>void</em>) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb). VectorVoyager — <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer']" />
+<SourceNote :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />
 
 <SeeAlso :links="[
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'orientação &lt;100&gt; / &lt;111&gt; no CZ' },

@@ -535,6 +535,48 @@ const list: Citation[] = [
     url: 'https://snl.no/REC_Solar_Norway',
     short: 'Store norske leksikon (REC)',
   },
+  {
+    key: 'pv-mfg-cz',
+    num: 67,
+    title: 'Cz monocrystalline silicon production',
+    publisher: 'PV-Manufacturing.org',
+    url: 'https://pv-manufacturing.org/silicon-production/cz-monocrystalline-silicon-production/',
+    short: 'PV-Manufacturing.org (Cz)',
+  },
+  {
+    key: 'itrpv-2024',
+    num: 68,
+    title: 'International Technology Roadmap for Photovoltaics (ITRPV) — 15th edition',
+    publisher: 'VDMA',
+    url: 'https://www.vdma.eu/documents/34570/16191053/2024-06-04+PR+VDMA+PV+ITRPV+2024+EN.pdf',
+    short: 'ITRPV (15.ª edição)',
+  },
+  {
+    key: 'lid-hallam',
+    num: 69,
+    title:
+      'Eliminating light-induced degradation in commercial p-type Czochralski silicon solar cells',
+    publisher: 'Hallam & Herguth et al. — Applied Sciences, 8(1), 10 (2018)',
+    url: 'https://www.mdpi.com/2076-3417/8/1/10',
+    short: 'Hallam & Herguth (2018)',
+  },
+  {
+    key: 'ga-transition',
+    num: 70,
+    title: 'Historical market projections and the future of silicon solar cells',
+    publisher: 'Vicari Stefani et al. (CSIRO/UNSW/Oxford) — Joule (2023)',
+    url: 'https://doi.org/10.1016/j.joule.2023.11.006',
+    short: 'Vicari Stefani et al. (2023)',
+  },
+  {
+    key: 'letid-ga',
+    num: 71,
+    title:
+      'LeTID sensitivity of gallium- & boron-doped Cz-Si PERC solar cells with an average conversion efficiency of 23.6%',
+    publisher: 'AIP Conference Proceedings (2022)',
+    url: 'https://doi.org/10.1063/5.0089271',
+    short: 'LeTID em células dopadas com gálio (2022)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

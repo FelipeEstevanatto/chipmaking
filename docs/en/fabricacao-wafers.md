@@ -39,6 +39,38 @@ On **1 October 1948**, **Gordon Teal** and **John Little** at Bell Labs assemble
 
 The next step was silicon, a far more hostile material. The melt has to be contained in a **quartz** crucible (graphite contaminates it) and pulled **under a controlled atmosphere**, because molten silicon oxidises on contact with air. Between **1951 and 1952**, Teal and technician **Ernest Buehler** solved both problems and announced the first silicon crystals and the first p-n junction grown inside one of them <Cite id="teal-buehler-1952" />. It is that arrangement — quartz, inert atmosphere, a rotating seed — that the industry still uses today.
 
+### Oxygen and carbon: what the crucible dissolves
+
+The quartz of the crucible is not inert. In contact with the molten silicon it slowly dissolves into the melt — and that is the origin of Cz silicon's dominant impurity, **oxygen**, present at concentrations far above any metallic contaminant: **[O] ≈ 5–10 × 10¹⁷ cm⁻³** and **[C] ≈ 5–10 × 10¹⁵ cm⁻³** <Cite id="pv-mfg-cz" />.
+
+Oxygen's solubility in silicon falls by several orders of magnitude between the melting point and room temperature <Cite id="pv-mfg-cz" />. The crystal finishes the pull **supersaturated**, and on cooling the excess has to leave solution: the oxygen **precipitates** as SiO₂ particles.
+
+The process cuts both ways. The precipitates are efficient traps for metals and act as **internal gettering** — a cleaning that happens inside the wafer itself <Cite id="pv-mfg-cz" />. But oxygen that stays interstitial, never precipitating, forms electrically active **thermal donors** that shift the measured resistivity. That is the defect the thermal treatment removes later, in the RTP step described below.
+
+There is a third consequence, which shows up only in solar cells and is therefore treated in the [solar cell chapter](/en/celulas-solares): interstitial oxygen reacts with **boron** under illumination and forms a defect that degrades efficiency.
+
+### Doping and the resistivity gradient
+
+Doping an ingot is not the same as doping a homogeneous solution. The dopant **does not partition equally** between liquid and solid — each element has a **segregation coefficient** (k), and the crystal incorporates dopant in a different proportion as it grows. For the usual dopants, the values could hardly be more different <Cite id="lid-hallam" />:
+
+| Dopant | Segregation coefficient (k) |
+| --- | --- |
+| Phosphorus (n-type) | ≈ 0.35 |
+| Boron (p-type) | 0.8 |
+| Gallium (p-type) | 0.008 |
+
+With k < 1, the solid **rejects the dopant into the liquid**. As the melt shrinks while the ingot is pulled, the concentration in the liquid **rises** through the process — and the crystal solidifying behind it follows. The result is a **resistivity gradient**: the head of the ingot comes out more resistive than the tail <Cite id="pv-mfg-cz" />.
+
+**Gallium** is the extreme case. With k = 0.008 it barely leaves the melt, and resistivity varies by an enormous factor along a single ingot — reducing the usable fraction of the piece <Cite id="lid-hallam" />. That is the price photovoltaics accepted when it swapped boron for gallium, as detailed in the [solar cell chapter](/en/celulas-solares).
+
+### Process variants: RCz and CCz
+
+Two variations attack precisely this uniformity problem.
+
+In **RCz** (*Recharge Czochralski*), the crucible is **reloaded with polysilicon without being cooled, opened or dismantled** — a feeder introduces fresh material into the still-hot melt <Cite id="pv-mfg-cz" />. Because the furnace is no longer opened for every ingot, maintenance stops drop, the hot zone is less exposed to air and equipment life improves. The technique also reduces the abrupt thermal cycles that crack the crucible <Cite id="pv-mfg-cz" />.
+
+In **CCz** (*Continuous Czochralski*), material is added **during** the pull, not between ingots. That allows much shallower crucibles — hence less contact with the quartz walls — and keeps the melt composition **constant**, producing ingots of uniform resistivity that are far longer, since the process is no longer limited to the initial melt volume <Cite id="pv-mfg-cz" />. The trade-off is that low-k impurities **build up** in the melt and contaminate the final part of the ingot. Because of that complexity, CCz remains restricted to a small scale <Cite id="pv-mfg-cz" />.
+
 ## Ingot preparation and pre-machining
 
 After cooling, the conical ends of the ingot (head and tail) are removed. The cylindrical body is ground to its exact diameter. The **orientation fiducial** is then produced — a **flat** at the smaller diameters or a **V-shaped notch** from 200 mm upwards — giving automated tools their crystallographic reference and, on small wafers, the doping type as well ([reading a wafer by its edge](/en/estrutura-wafers#reading-a-wafer-by-its-edge)) <Cite id="semi-m1" />.
@@ -122,7 +154,7 @@ The **Czochralski** process described above, by contrast, is a batch process tak
 
 ### Thickness: where photovoltaics diverges
 
-This is the most visible difference. Extracting the electrical power needs only about **100 µm of silicon** — light does not require more material than that <Cite id="saimm" />. In practice the photovoltaic industry works with wafers **below 200 µm** <Cite id="saimm" />, against the **700 to 800 µm** typical of fab wafers.
+This is the most visible difference. Extracting the electrical power needs only about **100 µm of silicon** — light does not require more material than that <Cite id="saimm" />. In practice the photovoltaic industry works with wafers **below 200 µm** <Cite id="saimm" /> — and the 2023 standard was already **150 µm** for p-type monocrystalline wafers, with n-type wafers about **5 to 10 µm thinner** <Cite id="itrpv-2024" /> — against the **700 to 800 µm** typical of fab wafers.
 
 This is not just material savings: it is savings across an entire chain. The crystalline wafer accounts for **nearly half of the final module cost**, and the wafer manufacturing step for about **30%** of that cost <Cite id="saimm" />.
 
@@ -136,7 +168,7 @@ The cost of that is **kerf**: roughly **30% of the silicon is lost as saw dust**
 
 The photovoltaic industry has migrated to larger areas over time: from the **10 × 10 cm²** standard to **12.5 × 12.5 cm²** and, more recently, **15.6 × 15.6 cm²** <Cite id="saimm" />. The driving force is simple: a larger cell means a **lower cost per watt-peak** <Cite id="saimm" />.
 
-<SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer']" />
+<SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
 
 ## Videos
 
