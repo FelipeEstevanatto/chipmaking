@@ -7,7 +7,43 @@ description: HPQ quartz, the submerged-arc furnace, carbothermal reduction and m
 
 ## Quartz mining (HPQ)
 
-The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **unlimited** — although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, mining companies such as COVIA (North Carolina, USA) and Quartz Corp (Norway) extract quartz at large scale, since the subsequent physical and chemical purification process can raise the material's purity to acceptable levels <Cite id="sciencedirect-hpq" />.
+The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **unlimited** — although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
+
+Quartz enters the chain along **two distinct paths**, and it is worth separating them from the outset: it is the **raw material** for silicon (reduced to MG-Si, as we shall see next) and it is also the material of the **crucible** that holds the melt during crystal growth. The first use tolerates impurities that the chemistry downstream removes; the second does not.
+
+### Spruce Pine: where the quartz is pure enough
+
+Not every silica will do for a crucible. The quartz must be free of **boron** and of alkali metals down to the **parts-per-billion** level, and deposits like that are exceedingly rare: roughly **70% to 90% of the world's high-purity quartz** comes from a single region — the pegmatites of **Spruce Pine**, in the Appalachian mountains of North Carolina <Cite id="sibelco-hpq" />.
+
+Two companies mine there <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
+
+| Company | Mining | Note |
+| --- | --- | --- |
+| **Sibelco** (IOTA® line) | Spruce Pine, USA | successor to the historic **Unimin** |
+| **The Quartz Corp** | Spruce Pine + Drag (Norway) | 50/50 *joint venture* of Imerys and Norsk Mineral, since 2011 |
+
+A common confusion is worth clearing up here. Unimin merged with Fairmount Santrol in 2018, and the resulting company took the name **Covia** — but the **high-purity quartz business did not go with it**: it was carved out to the Belgian parent company **Sibelco** before the merger, and it is Sibelco that operates Spruce Pine and sells the IOTA® line to this day <Cite id="sibelco-hpq" />. Concluding that "Unimin became Covia" and stopping there leads to the mistaken impression that the Spruce Pine quartz changed hands — it did not.
+
+### Drag, Norway: where the quartz is purified
+
+The other hub sits above the Arctic Circle. In **Drag**, in the municipality of Hamarøy (Nordland), **Norwegian Crystallites AS** was founded in 1996 by Norsk Mineral to produce ultra-high-purity quartz <Cite id="quartzcorp-hpq" />. In 2011 it and the quartz assets of France's Imerys merged to form **The Quartz Corp**, and the Drag plant became the final purification point on the route <Cite id="quartzcorp-hpq" />.
+
+Part of the ore comes from the region's own dozens of pegmatite bodies; most of it, however, crosses the Atlantic from Spruce Pine. Purification is a sequence of steps <Cite id="quartzcorp-hpq" />:
+
+1. **flotation** — removes feldspar and mica;
+2. **magnetic separation** — removes ferrous contaminants;
+3. **acid leaching** — attacks remaining surface inclusions and impurities;
+4. **calcination** — eliminates residual organic contaminants.
+
+The finished product reaches **99.999% SiO₂** <Cite id="quartzcorp-hpq" />.
+
+### Why boron decides
+
+Because the quartz becomes the **crucible** in which the silicon is melted, it sits in direct contact with the melt at over 1400 °C. Any impurity present in the quartz therefore has a clear path into the crystal that is growing.
+
+**Boron** is the critical case, precisely because it is the dopant that sets the resistivity of p-type silicon. A fraction of **1 ppm** is already enough to collapse the crystal's resistivity, and resistivity is what establishes the finished wafer's electrical behaviour <Cite id="sibelco-hpq" />. That is why CZ crucibles require **boron below 0.04 ppm** — 40 parts per billion <Cite id="sibelco-hpq" />. Alkali metals (**K, Li, Na**) are the other limit: they lower the crucible's softening point and reduce its resistance to deformation, shortening the component's life and hurting crystal yield <Cite id="sibelco-hpq" />.
+
+The most demanding grade in the IOTA® line reaches **99.9992% SiO₂**, with K + Li + Na totalling **80 ppb** and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />. It is a niche material: what sustains the industry's volume sits a few digits below, and The Quartz Corp works at **99.999%** silica <Cite id="quartzcorp-hpq" />.
 
 ## Carbothermal reduction (MG-Si)
 
@@ -69,7 +105,7 @@ World MG-Si production exceeds **1 million metric tonnes per year**, at a cost o
 
 Worth noting: much of the silicon produced industrially never becomes pure MG-Si at all — it leaves as **ferrosilicon**, used for deoxidation and alloying of steel and cast iron <Cite id="saimm" />. The fastest-growing market, however, is photovoltaics <Cite id="saimm" /> — and that is what gives the purification chain described next its economic point.
 
-<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'elkem', 'csiro', 'saimm']" />
+<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs' },

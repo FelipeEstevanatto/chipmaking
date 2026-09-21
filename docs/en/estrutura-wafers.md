@@ -34,6 +34,18 @@ Indices that describe crystallographic directions and planes; planes can have **
 DeepKling — <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG from Wikimedia Commons.
 </DiagramFigure>
 
+## Why silicon, and not germanium
+
+The first transistors were not made of silicon but of **germanium** — the material Bardeen and Brattain used in 1947. The switch was not an aesthetic preference: three properties settled the contest <Cite id="ge-vs-si" />.
+
+The first is the **band gap**. Germanium's is 0.7 eV; silicon's is 1.1 eV. A narrow gap means electron-hole pairs form thermally with little energy, and the material starts conducting on its own as it warms up. Germanium devices lost control at modest temperatures, whereas silicon ones operated hundreds of degrees higher, with far lower leakage currents <Cite id="ge-vs-si" />.
+
+The second — and historically the decisive one — is the **native oxide**. Exposed to oxygen, silicon spontaneously forms a layer of **SiO₂** that is stable, insulating and insoluble in water, protecting the crystal's surface and serving as a diffusion mask during manufacturing. Germanium's oxide (**GeO₂**) is the opposite: thermally unstable and water-soluble, useless as protection. That difference is what made the **planar process** possible and, with it, the integrated circuit — and later the MOSFET itself, which depends on an SiO₂–Si interface with a very low density of surface states <Cite id="ge-vs-si" />.
+
+The third is the most prosaic: silicon is **abundant** and therefore cheap, whereas germanium is rare <Cite id="ge-vs-si" />.
+
+None of that made germanium useless: it returned as **SiGe**, straining the silicon lattice in advanced channels ([Transistor evolution](/en/transistores)) <Cite id="ge-vs-si" />. But the starting wafer is still silicon.
+
 ## Wafer types
 
 We classify wafers by **size**, **purity**, **doping type** and **Miller indices** (the orientation of planes in the crystal lattice). The crystallographic orientation of silicon is verified by XRD and marked on the ingot (flat/notch) before processing in the fab.
@@ -83,9 +95,29 @@ Diameter and thickness move together, because the slice has to stay stiff as it 
 
 The same standard caps thickness variation (**TTV**) at **10 µm** and the wafer's shape deviation — *bow* and *warp*. For 200 mm, M1 allows up to **65 µm** of bow and **75 µm** of warp; for 300 mm, bow is left open and warp is **100 µm** <Cite id="semi-m1" />. Supplier datasheets usually quote much tighter numbers, because the standard's limit is the floor a prime wafer must meet — not what the industry actually ships.
 
+### 450 mm: the transition that never happened
+
+The diameter stopped growing at 300 mm, and not for want of ambition. The logic is irrefutable: a 450 mm wafer has **2.25×** the area of a 300 mm one, which would multiply the number of dies per slice with almost no multiplication of processing cost.
+
+The story actually began earlier, and with a different number. The first **400 mm** crystals were pulled in **1995**, and the plan was to continue at that size — but in 2000 the industry roadmap (ITRS) fixed the next generation at **450 mm**, not 400 <Cite id="eng-450mm" />. The plan called for pilot lines in 2012 and production between 2014 and 2016 <Cite id="eng-450mm" />.
+
+In May 2008, **Intel, Samsung and TSMC** announced an agreement to pursue exactly that goal <Cite id="intel-450mm" />. On the other side of the table sat the equipment and wafer suppliers, who would have had to rebuild the entire installed base — and who saw no return in it. The **G450C** consortium was assembled in 2012, but Intel pulled its resources back in 2014 and the transition drifted to a halt <Cite id="eng-450mm" />.
+
+The verdict that remains is economic, not technical: the move depended on the economies of scale outweighing the cost of rebuilding equipment, metrology and infrastructure, and that bill never added up <Cite id="eng-450mm" />. 300 mm remains the ceiling.
+
 ### Surface: virgin or processed
 
 A **virgin**, polished wafer is a grey mirror. A wafer that has been through lithography shows an **iridescent** pattern, and the colours are neither paint nor oxidation: they are **thin-film interference** in the few-nanometre layers stacked on the slice, plus diffraction from the trace grid itself. Under strong light the die grid and the *scribe lines* are visible to the naked eye — which instantly separates a processed wafer from a blank test slice.
+
+## Who makes the wafers
+
+The wafer industry is one of the most concentrated oligopolies in the entire semiconductor chain, and it speaks with a Japanese accent. In Nikkei's annual market-share survey, **Shin-Etsu** ranks first with **26.3%** and **SUMCO** second with **17.8%** — **44.1%** combined, comfortably ahead of their nearest rivals <Cite id="nikkei-wafer-share" />.
+
+One figure that circulates widely deserves a note: that the two hold "60% of the market". The survey data point to **44.1%** by units, and to just over half of **300 mm volume** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" /> — not 60%. What is not in doubt is the concentration: the next three companies come from Taiwan, Germany and South Korea and together account for **31.9%** <Cite id="nikkei-wafer-share" />. The top five therefore supply roughly **three quarters** of everything.
+
+There is no real room for a new entrant, and the barriers have been stacking up for decades: the crystal is hard to pull, the specification is unforgiving, and qualifying a supplier at a fab takes years.
+
+The geography is just as telling. Most of that capacity sits in **Japan**, a legacy of the 1980s, when the big Japanese chemical companies invested in materials to serve their own domestic semiconductor industry <Cite id="nikkei-wafer-share" />. That creates a single point of failure — when an earthquake or a fire hits one of those plants, the global chain feels it <Cite id="asianometry-wafer" />.
 
 ## Doping
 
@@ -99,6 +131,8 @@ A semiconductor with an equal number of excited electrons and holes (**n = p**) 
 <DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Intrinsic silicon, P-type (B) and N-type (Sb) doping">
 P-type: a hole with boron (B). N-type: a fifth valence electron with antimony (Sb). VectorVoyager — <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG from Wikimedia Commons.
 </DiagramFigure>
+
+<SourceNote label="Sources" :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: '&lt;100&gt; / &lt;111&gt; orientation in CZ growth' },

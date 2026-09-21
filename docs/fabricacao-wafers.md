@@ -9,7 +9,7 @@ A transformação do polissilício de grau eletrônico ([EG-Si](/glossario)) em 
 
 ## Crescimento do monocristal (Czochralski — CZ)
 
-O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são depositados em cadinho de quartzo altamente purificado, em forno a vácuo sob argônio inerte. O material é fundido acima de **1420 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
+O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são depositados em cadinho de quartzo altamente purificado, em forno a vácuo sob argônio inerte. O material é fundido a cerca de **1414 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
 
 <DiagramFigure src="/assets/czochralski-process.svg" alt="O processo Czochralski em quatro quadros: fusão do polissilício e dopagem no cadinho, introdução do cristal-semente, início do crescimento do cristal e puxamento do lingote">
 O processo Czochralski em quatro quadros: fusão e dopagem, introdução da semente, início do crescimento e puxamento do lingote. Twisp — <a href="https://commons.wikimedia.org/wiki/File:Czochralski_Process.svg" target="_blank" rel="noopener noreferrer">Czochralski Process</a> (domínio público), Wikimedia Commons.
@@ -25,6 +25,20 @@ Um cristal de silício sendo puxado na Raytheon, em 1956, para os primeiros tran
 A haste de puxamento: a ponta espelhada é a própria **semente** de silício monocristalino, e é dela que o lingote herda a orientação cristalina. Warut Roonguthai — <a href="https://commons.wikimedia.org/wiki/File:Silicon_seed_crystal_puller_rod.jpg" target="_blank" rel="noopener noreferrer">Silicon seed crystal puller rod</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
+### Um acidente com uma caneta
+
+O método nasceu de um equívoco. Em **1916**, o metalurgista polonês **Jan Czochralski** trabalhava em Berlim medindo a velocidade de cristalização de ligas metálicas quando, distraído, mergulhou a pena no **cadinho de estanho fundido** em vez do tinteiro. Ao retirá-la, viu um fio fino de metal solidificado pendurado na ponta <Cite id="iucr-czochralski" />.
+
+Ele refez o gesto de propósito, com várias penas, e notou que o fio se formava sempre — mas não quando puxava rápido. Substituiu a pena por capilares de vidro e passou a controlar a extração, obtendo fios de estanho, zinco e chumbo de cerca de **1 mm de diâmetro** e até **150 cm de comprimento** <Cite id="iucr-czochralski" />. O achado que fez a fama do experimento, porém, veio depois: aqueles fios eram **um único cristal**, contínuo de ponta a ponta — algo que a física da época só conseguia obter por métodos caros e lentos.
+
+Czochralski publicou o método em 1918, com dois anos de atraso causado pela guerra <Cite id="iucr-czochralski" />. A transformação da técnica em ferramenta de semicondutor, no entanto, não foi obra dele.
+
+### Do germânio ao silício
+
+Em **1.º de outubro de 1948**, **Gordon Teal** e **John Little**, na Bell Labs, montaram um equipamento improvisado — sobre rodas, para escondê-lo num armário ao fim de cada noite — e puxaram os primeiros cristais **monocristalinos de germânio** <Cite id="nae-teal" /> <Cite id="chm-grown-junction" />. O ganho foi imediato: sem fronteiras de grão, os portadores minoritários atravessavam o material sem serem capturados, e os transistores ficaram muito mais uniformes. William Shockley chamou aquilo de "o desenvolvimento científico mais importante do início do semicondutor" <Cite id="chm-grown-junction" />.
+
+O passo seguinte foi o silício, bem mais hostil. O banho precisa ser contido num cadinho de **quartzo** (a grafita contamina) e puxado **sob atmosfera controlada**, porque o silício fundido oxida em contato com o ar. Entre **1951 e 1952**, Teal e o técnico **Ernest Buehler** resolveram as duas coisas e anunciaram os primeiros cristais de silício e a primeira junção p-n crescida dentro de um deles <Cite id="teal-buehler-1952" />. É esse arranjo — quartzo, atmosfera inerte, semente girando — que a indústria usa até hoje.
+
 ## Preparação do lingote e pré-usinagem
 
 Após resfriamento, removem-se as extremidades cônicas (cabeça e cauda). O corpo cilíndrico passa por retificação externa por esmerilhamento para a dimensão exata. Produz-se então o **fiducial de orientação** — um **chanfro plano (*flat*)** nos diâmetros menores ou um **entalhe em V (*notch*)** a partir de 200 mm —, que dá às ferramentas automatizadas a referência cristalográfica e, nos wafers pequenos, também o tipo de dopagem ([como identificar um wafer](/estrutura-wafers#como-identificar-um-wafer-pela-borda)) <Cite id="semi-m1" />.
@@ -36,6 +50,18 @@ Um lingote monocristalino (*boule*) e hastes de silício. Sebastian Wallroth —
 ## Corte em fatias (wafer slicing)
 
 O lingote retificado é **dividido em blocos** e fatiado com **serras de múltiplos fios diamantados (DWS)** <Cite id="moller-2012" />. Um conjunto paralelo de fios de aço revestidos com micropartículas de diamante move-se em altíssima velocidade sob tensão controlada, cortando centenas de wafers simultaneamente, com espessuras típicas de **700–800 µm**, maximizando rendimento e reduzindo perda de **kerf**.
+
+### Da serra de disco interno ao fio diamantado
+
+O corte já foi o gargalo da cadeia, e sua evolução tem três etapas.
+
+Até os anos 1990, o instrumento padrão era a **serra de diâmetro interno (ID)**: um disco fino, com o abrasivo na face *interna* de um anel, que cortava **um wafer por vez** e levava alguns minutos por corte. O disco podia flexionar ou trazer defeitos próprios, que se transferiam para a lâmina e precisavam ser corrigidos depois. Apesar disso, foi a tecnologia dominante nas três últimas décadas do século XX <Cite id="pv-tech-dws" />.
+
+A virada veio com a **serra de fio múltiplo** (*multi-wire*). A princípio o fio não cortava nada: ele apenas **transportava** até o lingote uma suspensão de **carbeto de silício** em óleo mineral — mais tarde, polietilenoglicol. Quem desgastava o silício era o abrasivo, por indentação sucessiva. Como centenas de fios correm em paralelo, todos os cortes de um lingote saem **de uma só vez**, ao contrário da serra ID, que fatiava lâmina a lâmina. A substituição foi gradual e acompanhou a queda da espessura: as serras de fio ganharam terreno quando as lâminas passaram de **500 µm** para menos <Cite id="pv-tech-dws" />.
+
+A terceira etapa está em curso. No **fio diamantado**, o abrasivo deixa de estar na lama e passa a estar **fixo no próprio fio** — aço revestido com diamante. A produtividade sobe, o *kerf* cai, a lâmina pode ser mais fina e o processo dispensa a lama de SiC, trocando-a por fluido de corte à base de água, com impacto ambiental menor. Em contrapartida, o fio custa mais, quebra com mais facilidade e exige limpeza criteriosa <Cite id="pv-tech-dws" />.
+
+Vale notar que, nos wafers de fab, o objetivo do corte não é a espessura mínima — é a **planura**. Uma lâmina de 300 mm sai com 775 µm e vai *perder* material na lapidação e no polimento, justamente para garantir paralelismo e ausência de dano subsuperficial <Cite id="semi-m1" />. É no ramo fotovoltaico, que aceita lâminas três vezes mais finas, que o *kerf* se torna a variável econômica decisiva — como se vê em [Wafers solares](#wafers-solares-o-outro-produto-da-mesma-cadeia).
 
 ## Arredondamento de bordas e lapidação
 
@@ -110,9 +136,11 @@ O custo disso é o **kerf**: aproximadamente **30% do silício é perdido como s
 
 A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²** e, mais recentemente, **15,6 × 15,6 cm²** <Cite id="saimm" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
 
-<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1']" />
+<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer']" />
 
 ## Vídeos
+
+<YouTubeEmbed id="sIRfWyyOFPg" title="The Amazing, Humble Silicon Wafer (Asianometry)" />
 
 <YouTubeEmbed id="skRmyhSOu28" title="Puxamento de um lingote Czochralski (UNSW)" />
 

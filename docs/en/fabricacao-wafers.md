@@ -9,7 +9,7 @@ Turning electronic-grade polysilicon ([EG-Si](/en/glossario)) into monocrystalli
 
 ## Crystal growth (Czochralski — CZ)
 
-The **Czochralski** method is the dominant industrial standard <Cite id="zulehner-2000" />. Pieces of ultra-high-purity polysilicon are placed in a highly purified quartz crucible, inside a vacuum furnace under inert argon. The material is melted above **1420 °C**. A crystallographically oriented seed crystal (usually &lt;100&gt; or &lt;111&gt;) is dipped into the surface of the molten silicon and slowly pulled upwards while rotating in the opposite direction to the crucible. By controlling the pull rate and temperature precisely, a cylindrical monocrystalline ingot (**boule**) is formed with diameters of **200 mm** or **300 mm** and a length greater than **1 m**.
+The **Czochralski** method is the dominant industrial standard <Cite id="zulehner-2000" />. Pieces of ultra-high-purity polysilicon are placed in a highly purified quartz crucible, inside a vacuum furnace under inert argon. The material is melted at about **1414 °C**. A crystallographically oriented seed crystal (usually &lt;100&gt; or &lt;111&gt;) is dipped into the surface of the molten silicon and slowly pulled upwards while rotating in the opposite direction to the crucible. By controlling the pull rate and temperature precisely, a cylindrical monocrystalline ingot (**boule**) is formed with diameters of **200 mm** or **300 mm** and a length greater than **1 m**.
 
 <DiagramFigure src="/assets/czochralski-process.svg" alt="The Czochralski process in four frames: melting and doping the polysilicon in the crucible, introducing the seed crystal, the start of crystal growth, and pulling the ingot">
 The Czochralski process in four frames: melting and doping, introducing the seed, the start of growth, and pulling the ingot. Twisp — <a href="https://commons.wikimedia.org/wiki/File:Czochralski_Process.svg" target="_blank" rel="noopener noreferrer">Czochralski Process</a> (public domain), Wikimedia Commons.
@@ -25,6 +25,20 @@ A silicon crystal being pulled at Raytheon in 1956, for the first silicon transi
 The puller rod: the mirror-like tip is the **seed** itself, a piece of monocrystalline silicon, and it is from this that the ingot inherits its crystal orientation. Warut Roonguthai — <a href="https://commons.wikimedia.org/wiki/File:Silicon_seed_crystal_puller_rod.jpg" target="_blank" rel="noopener noreferrer">Silicon seed crystal puller rod</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
+### An accident with a pen
+
+The method was born of a mistake. In **1916**, the Polish metallurgist **Jan Czochralski** was working in Berlin, measuring the crystallisation rate of metal alloys, when he absent-mindedly dipped his pen into the **crucible of molten tin** instead of the inkwell. Pulling it out, he saw a thin thread of solidified metal hanging from the nib <Cite id="iucr-czochralski" />.
+
+He repeated the gesture deliberately, with several nibs, and noticed the thread formed every time — but not when he pulled quickly. He replaced the nib with glass capillaries and began controlling the extraction, obtaining threads of tin, zinc and lead about **1 mm in diameter** and up to **150 cm long** <Cite id="iucr-czochralski" />. The finding that made the experiment famous, however, came later: those threads were a **single crystal**, continuous from end to end — something contemporary physics could only obtain by costly, slow methods.
+
+Czochralski published the method in 1918, two years late because of the war <Cite id="iucr-czochralski" />. Turning the technique into a semiconductor tool, though, was not his work.
+
+### From germanium to silicon
+
+On **1 October 1948**, **Gordon Teal** and **John Little** at Bell Labs assembled improvised equipment — mounted on wheels, so it could be hidden in a closet at the end of each night — and pulled the first **monocrystalline germanium** crystals <Cite id="nae-teal" /> <Cite id="chm-grown-junction" />. The gain was immediate: with no grain boundaries, minority carriers crossed the material without being trapped, and transistors became far more uniform. William Shockley called it "the most important scientific development in the semiconductor field in the early days" <Cite id="chm-grown-junction" />.
+
+The next step was silicon, a far more hostile material. The melt has to be contained in a **quartz** crucible (graphite contaminates it) and pulled **under a controlled atmosphere**, because molten silicon oxidises on contact with air. Between **1951 and 1952**, Teal and technician **Ernest Buehler** solved both problems and announced the first silicon crystals and the first p-n junction grown inside one of them <Cite id="teal-buehler-1952" />. It is that arrangement — quartz, inert atmosphere, a rotating seed — that the industry still uses today.
+
 ## Ingot preparation and pre-machining
 
 After cooling, the conical ends of the ingot (head and tail) are removed. The cylindrical body is ground to its exact diameter. The **orientation fiducial** is then produced — a **flat** at the smaller diameters or a **V-shaped notch** from 200 mm upwards — giving automated tools their crystallographic reference and, on small wafers, the doping type as well ([reading a wafer by its edge](/en/estrutura-wafers#reading-a-wafer-by-its-edge)) <Cite id="semi-m1" />.
@@ -36,6 +50,18 @@ A monocrystalline ingot (*boule*) and silicon rods. Sebastian Wallroth — <a hr
 ## Wafer slicing
 
 The ground ingot is **divided into blocks** and sliced using **diamond wire saws (DWS)** <Cite id="moller-2012" />. A parallel set of steel wires coated with diamond microparticles moves at very high speed under controlled tension, cutting hundreds of wafers simultaneously at typical thicknesses of **700–800 µm**, maximising yield and reducing **kerf** loss.
+
+### From the inner-diameter saw to diamond wire
+
+Slicing used to be the bottleneck of the chain, and its evolution has three stages.
+
+Until the 1990s, the standard instrument was the **inner-diameter (ID) saw**: a thin disc with the abrasive on the *inner* face of a ring, which cut **one wafer at a time** and took several minutes per cut. The blade could flex or carry defects of its own, which transferred to the slice and had to be corrected later. Even so, it was the dominant technology through the last three decades of the 20th century <Cite id="pv-tech-dws" />.
+
+The turning point came with the **multi-wire saw**. At first the wire cut nothing at all: it merely **carried** a slurry of **silicon carbide** in mineral oil — later, polyethylene glycol — to the ingot. It was the abrasive that wore the silicon away, by successive indentation. Because hundreds of wires run in parallel, every cut in an ingot comes out **at once**, unlike the ID saw, which sliced wafer by wafer. The substitution was gradual and tracked the fall in thickness: wire saws gained ground once slices went from **500 µm** downwards <Cite id="pv-tech-dws" />.
+
+The third stage is under way. With **diamond wire**, the abrasive leaves the slurry and becomes **fixed to the wire itself** — steel coated with diamond. Throughput rises, kerf falls, the slice can be thinner, and the process does away with SiC slurry in favour of a water-based cutting fluid with a far smaller environmental footprint. In exchange, the wire costs more, breaks more easily and demands careful cleaning <Cite id="pv-tech-dws" />.
+
+It is worth noting that, for fab wafers, the goal of slicing is not minimum thickness — it is **flatness**. A 300 mm slice comes out at 775 µm and will *lose* material in lapping and polishing precisely to guarantee parallelism and the absence of subsurface damage <Cite id="semi-m1" />. It is in photovoltaics, which accepts slices three times thinner, that kerf becomes the decisive economic variable — as seen in [Solar wafers](#solar-wafers-the-other-product-of-the-same-chain).
 
 ## Edge profiling and lapping
 
@@ -110,9 +136,11 @@ The cost of that is **kerf**: roughly **30% of the silicon is lost as saw dust**
 
 The photovoltaic industry has migrated to larger areas over time: from the **10 × 10 cm²** standard to **12.5 × 12.5 cm²** and, more recently, **15.6 × 15.6 cm²** <Cite id="saimm" />. The driving force is simple: a larger cell means a **lower cost per watt-peak** <Cite id="saimm" />.
 
-<SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1']" />
+<SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer']" />
 
 ## Videos
+
+<YouTubeEmbed id="sIRfWyyOFPg" title="The Amazing, Humble Silicon Wafer (Asianometry)" />
 
 <YouTubeEmbed id="skRmyhSOu28" title="Pulling a Czochralski ingot (UNSW)" />
 
