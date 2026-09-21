@@ -6,6 +6,14 @@ A mesa de posicionamento do wafer pesa cerca de **15 kg** e pode acelerar com fo
 
 Quando a TSMC ainda fazia parte da Philips, motores lineares **hidráulicos** eram usados: muito precisos, porém com alta manutenção — custo e tempo significativos até soluções mais robustas.
 
+![Exposição EUV em wafer — ASML](/pdf-images/p12-1.png)
+
+*Fonte: ASML.*
+
+![Posicionamento a laser sobre base de granito](/pdf-images/p13-1.png)
+
+*Laser controlled positioning and a solid, vibration-suppressing granite base ensure precise alignment of the exposure chuck.*
+
 ### Vídeos
 
 - [Processo ASML](https://www.youtube.com/watch?v=jL7HvnBgrJ4)

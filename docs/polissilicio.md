@@ -33,7 +33,15 @@ Método de fluxo contínuo em que partículas semente de silício são mantidas 
 
 Em **1995**, cerca de 90% da demanda global por polissilício ia para semicondutores e 10% para fotovoltaica (Bernreuter Research). Em **2014**, a proporção inverteu-se: o setor fotovoltaico passou a consumir a esmagadora maioria, elevando a demanda de **1.500 toneladas** (1995) para **420.000 toneladas** (2018).
 
+![Demanda de polissilício: semicondutores vs. fotovoltaica (1995 e 2014)](/pdf-images/p05-1.png)
+
+*Bernreuter Research — inversão das fatias de mercado e crescimento de **18,4×** entre 1995 e 2014 (15,1 kt → 278 kt).*
+
 Entre 1995 e 2014, a demanda anual aumentou por um fator de **18,4**; a participação relativa de semicondutores e fotovoltaica inverteu-se por completo — fontes: PV News, Sage Concepts, Bernreuter Research.
+
+![Preço histórico do polissilício (1977–2017)](/pdf-images/p05-2.png)
+
+*Bernreuter Research — ciclos de escassez (*shortage*) e sobreoferta (*oversupply*).*
 
 Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) para **61** (2010). A sobreoferta global provocou o fechamento de mais de **40 plantas** apenas na China nos três anos seguintes (Bernreuter Research).
 

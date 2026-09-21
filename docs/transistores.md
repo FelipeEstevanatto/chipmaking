@@ -4,9 +4,17 @@
 
 Transistores planares, consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. Abaixo de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
 
+![Transistor planar (MOSFET)](/pdf-images/p17-1.png)
+
 ## 2003 — Silício esticado (Intel)
 
 No nó **90 nm** (2003/2004), a Intel usou **strained silicon**: estresse mecânico no canal (p.ex. Si sobre SiGe) aumenta espaçamento atômico e mobilidade em **10–20%** com custo marginal.
+
+![Malha de silício vs. silício-germânio (SiGe)](/pdf-images/p15-1.png)
+
+![Silício esticado sobre substrato SiGe](/pdf-images/p15-2.png)
+
+![Fluxo de elétrons em silício normal vs. esticado](/pdf-images/p16-1.png)
 
 ## 2007 — High-K metal gate (HKMG)
 
@@ -16,9 +24,13 @@ Com óxido de portão (SiO₂) reduzido a ~**1 nm**, o vazamento por tunelamento
 
 Abaixo de **20 nm**, planares perderam controle. A Intel comercializou **FinFET** no **22 nm** (2011): canal em “aleta” vertical; portão envolve três lados, reduzindo fuga e permitindo escalar corrente com múltiplas aletas.
 
+![FinFET (Tri-Gate)](/pdf-images/p17-2.png)
+
 ## 2022 — GAAFET (gate-all-around / nanosheets)
 
 Em **3 nm** e abaixo, FinFETs encontram limites de variabilidade e efeitos quânticos. **GAAFET** empilha **nanofolhas** envolvidas pelo portão nos **quatro lados**. Samsung em massa no 3 nm (**MBCFET**, 2022); TSMC e Intel nos nós N2 e **18A (RibbonFET)**. Controle eletrostático superior, até **~40%** menos vazamento, largura de nanofolhas ajustável para performance vs. consumo.
+
+![GAAFET — nanofolhas envolvidas pelo portão (GAA)](/pdf-images/p18-1.png)
 
 ## 2025/2026 — BSPDN (backside power)
 

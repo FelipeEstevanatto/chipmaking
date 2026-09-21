@@ -1,0 +1,8 @@
+/* PDF figures with a black canvas: always sit on a white stage (both themes). */
+.diagram-figure {
+  box-shadow: 0 0 0 1px var(--vp-c-divider);
+}
+
+.dark .diagram-figure {
+  box-shadow: 0 0 0 1px var(--vp-c-divider), 0 2px 8px rgba(0, 0, 0, 0.35);
+}

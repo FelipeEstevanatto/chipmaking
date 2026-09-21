@@ -4,18 +4,29 @@
 
 O silício cristalino adota a **estrutura cúbica de diamante** (*diamond cubic crystal structure*).
 
-### Recursos visuais
+![Estrutura cúbica de diamante](/pdf-images/p08-1.png)
+
+*The diamond cubic crystal structure.*
+
+![Célula unitária do silício — vista 3D e superior](/pdf-images/p08-2.png)
+
+*Orientações cristalográficas comuns (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.*
+
+### Recursos adicionais
 
 - [Estrutura cristalina — YouTube](https://www.youtube.com/watch?v=lgYQE2aTNNc)
 - [Orientação e estrutura cristalina — WaferPro](https://waferpro.com/understanding-silicon-wafer-orientation-and-crystal-structure/)
 - [Miller indices — YouTube](https://www.youtube.com/watch?v=_A7oqoMFIiA)
-- [Diagrama Miller — Wikimedia](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (DeepKling, CC BY 3.0)
 
 A estrutura pode ser caracterizada por **DRX (difração de raios-X)**. Em condições ideais, a **lei de Bragg** explica a reflexão de raios X por cristais e permite inferir estruturas.
 
 ### Índices de Miller
 
 Índices que descrevem direções e planos cristalográficos; planos podem ter propriedades **anisotrópicas** (dependentes da direção).
+
+![Planos cristalográficos e índices de Miller](/pdf-images/p09-1.png)
+
+*DeepKling — [Miller Indices](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (CC BY 3.0).*
 
 ## Tipos de wafer
 
@@ -30,8 +41,6 @@ A dopagem introduz impurezas intencionais em semicondutor **intrínseco** para m
 
 Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) é intrínseco no sentido de compensação de portadores.
 
-- [Dopagem tipo N e P — Wikimedia](https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_N.svg) (VectorVoyager, CC BY-SA 4.0)
+![Silício intrínseco, tipo P (B) e tipo N (Sb)](/pdf-images/p10-1.png)
 
-::: info Imagens do PDF
-Figuras estáticas do documento original (estrutura cúbica, dopagem, etc.) podem ser reincorporadas em `docs/public/` quando você exportar os assets.
-:::
+*Tipo P: buraco (*void*) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb).*

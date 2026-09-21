@@ -4,6 +4,18 @@ Site estático sobre a cadeia de produção do silício (semicondutores e solar)
 
 Documento fonte: `Resumo Chipmaking.pdf`.
 
+## Idiomas
+
+[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (padrão, `docs/`) e **English** (`docs/en/`). O seletor de idioma aparece no topo do site. O conteúdo completo está em PT; as páginas em `docs/en/` são placeholders com links para a versão em português até você traduzir.
+
+## Figuras do PDF
+
+Imagens embutidas em `docs/public/pdf-images/`. Para regenerar a partir do PDF:
+
+```bash
+python scripts/extract-pdf-images.py
+```
+
 ## Desenvolvimento
 
 ```bash

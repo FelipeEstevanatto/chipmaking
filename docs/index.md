@@ -1,10 +1,8 @@
----
-layout: doc
----
-
 # Silício — Chip Making
 
 **Felipe Estevanatto** · 2023
+
+![Silício metálico cristalino](/pdf-images/p01-1.jpeg)
 
 ## Introdução
 
