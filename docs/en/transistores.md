@@ -19,7 +19,7 @@ Compare the three main architectures visually:
 | **1963** | — | CMOS (complementary pair) | Complementary NMOS and PMOS on the same substrate | Near-zero standby power — the basis of all digital logic |
 | **1968** | — | Silicon gate (self-aligned) | The polysilicon gate masks its own source/drain implant | Less overlap capacitance; smaller, faster devices |
 | **1985** | 1.5 µm | LDD (lightly doped drain) | n⁻ extensions under nitride spacers | Smooths the drain field and tames hot carriers |
-| **1997** | 0.25 µm | STI (shallow trench) | An oxide trench replaces LOCOS isolation | Vertical walls, no “bird’s beak”; higher density |
+| **1995** | 0.35 µm | STI (shallow trench) | An oxide trench replaces LOCOS isolation | Vertical walls, no “bird’s beak”; higher density |
 | **1998** | 0.22 µm | SOI (silicon on insulator) | A thin silicon film on a buried oxide | Less junction capacitance and latch-up immunity |
 | **2003** | 90 nm | Strained silicon | Si deposited on SiGe strains the crystal lattice | +10–20% mobility at marginal cost <Cite id="intel-strain" /> |
 | **2007** | 45 nm | HKMG | High-K dielectric (hafnium) + metal gate replace SiO₂/polysilicon | Blocks leakage while keeping electrostatic coupling <Cite id="hkmg-paper" /> |
@@ -64,17 +64,17 @@ With channels on the order of **1 µm**, the electric field concentrated at the 
 Left, a conventional junction; right, an LDD with n⁻ extensions defined by spacers.
 </DiagramFigure>
 
-The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III** (1.5 µm), which powered the **80386** (1985) — the processor behind the Windows 3.x era. The structure remained standard from 1.5 µm down to 0.8 µm <Cite id="intel-chmos3" /><Cite id="voldman-esd" />.
+The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" /> — the processor behind the Windows 3.x era. The structure remained standard from 1.5 µm down to 0.8 µm <Cite id="voldman-esd" />.
 
-## 1997 — STI (shallow trench)
+## 1995 — STI (shallow trench)
 
-Isolation between neighbouring transistors used to be done with **LOCOS** (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the **“bird’s beak”**, which eats into the active area and limits density. The trench approach was developed back in the mid-1980s and reached production at the **0.25 µm** node: a shallow trench is etched into the silicon, filled with deposited oxide and planarised by **CMP**. Vertical walls, no bird’s beak, and a flat surface — a requirement for the lithographic depth of focus.
+Isolation between neighbouring transistors used to be done with **LOCOS** (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the **“bird’s beak”**, which eats into the active area and limits density. The shallow trench was **proposed in the early 1980s**, but spent years without practical use: both the planarisation and an oxide deposition able to fill narrow trenches were missing. It was **CMP** that unlocked the process <Cite id="shmj-sti" />. A shallow trench is then etched into the silicon, filled with deposited oxide and planarised by CMP: vertical walls, no bird’s beak, and a flat surface — a requirement for the lithographic depth of focus.
 
 <DiagramFigure src="/assets/sti.svg" alt="Comparison of LOCOS isolation with a bird’s beak against a vertical shallow trench">
 Left, LOCOS with the bird’s beak intruding into the active area; right, a shallow trench with vertical walls.
 </DiagramFigure>
 
-Intel’s **P856** process (0.25 µm, 1997) opened with STI and was used for the **Pentium II**; IBM had adopted the same approach earlier, in its 0.25 µm DRAM <Cite id="intel-p856" /><Cite id="voldman-esd" />.
+Production arrived **before the 0.25 µm node**, not at it. IBM led the application in **0.35 µm DRAM**, and Toshiba was already in mass production by 1996 <Cite id="shmj-sti" />. On the logic side, Intel started from STI **a generation earlier** too: the P856 flow is described as identical to that of **P854 (0.35 µm)**, which already began with a shallow trench <Cite id="intel-p856" />. It was **P856 (0.25 µm)**, certified in **Q3 1997**, that carried STI into the **Pentium II** at volume <Cite id="intel-p856" /><Cite id="voldman-esd" />.
 
 ## 1998 — SOI (silicon on insulator)
 
@@ -152,7 +152,7 @@ Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented a
 
 Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) by up to **~50%** and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-p856', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },

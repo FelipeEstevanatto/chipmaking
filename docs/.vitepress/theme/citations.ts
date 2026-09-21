@@ -255,6 +255,22 @@ const list: Citation[] = [
     url: 'https://pv-manufacturing.org/silicon-production/polysilicon-production/',
     short: 'PV-Manufacturing.org',
   },
+  {
+    key: 'shmj-sti',
+    num: 32,
+    title: 'Adoption of shallow trench isolation (STI)',
+    publisher: 'Semiconductor History Museum of Japan',
+    url: 'https://www.shmj.or.jp/english/pdf/process/exhibi408E.pdf',
+    short: 'SHMJ (STI)',
+  },
+  {
+    key: 'intel-80386',
+    num: 33,
+    title: 'Introduction to the 80386',
+    publisher: 'Intel, abril de 1986',
+    url: 'https://bitsavers.org/components/intel/80386/231746-001_Introduction_to_the_80386_Apr86.pdf',
+    short: 'Intel 80386 (1986)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

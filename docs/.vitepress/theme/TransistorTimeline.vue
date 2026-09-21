@@ -78,24 +78,24 @@ const eras: Era[] = [
     descPt: 'Extensões levemente dopadas sob espaçadores suavizam o campo junto ao dreno e domam os portadores quentes.',
     descEn: 'Lightly doped extensions under spacers smooth the field at the drain and tame hot carriers.',
     productsPt:
-      'Estreou em produção na CHMOS III da Intel, que equipou o 80386 (1985) — o processador da era Windows 3.x.',
+      'Estreou em produção na CHMOS III da Intel (1,5 µm, porta de 250 Å), que equipou o 80386 (1985) — o processador da era Windows 3.x.',
     productsEn:
-      'Debuted in production on Intel’s CHMOS III, which powered the 80386 (1985) — the processor of the Windows 3.x era.',
+      'Debuted in production on Intel’s CHMOS III (1.5 µm, 250 Å gate oxide), which powered the 80386 (1985) — the processor of the Windows 3.x era.',
     src: '/assets/ldd.svg',
     altPt: 'Comparação entre junção convencional e estrutura LDD com espaçadores',
     altEn: 'Comparison of a conventional junction with an LDD structure with spacers',
   },
   {
-    year: '1997',
-    node: '0.25 µm',
+    year: '1995',
+    node: '0.35 µm',
     namePt: 'STI (trincheira rasa)',
     nameEn: 'STI (shallow trench)',
     descPt: 'Trincheira rasa substitui o LOCOS no isolamento: paredes verticais e sem a “boca de pássaro” que consumia área ativa.',
     descEn: 'A shallow trench replaces LOCOS for isolation: vertical walls and no “bird’s beak” eating into the active area.',
     productsPt:
-      'Processo P856 da Intel (0,25 µm), usado no Pentium II; a IBM já havia adotado STI em DRAM de 0,25 µm.',
+      'DRAM de 0,35 µm da IBM, com a Toshiba em produção em massa já em 1996; no lado lógico, o P854 (0,35 µm) da Intel parte de STI, e o P856 (0,25 µm, certificado no 3º trimestre de 1997) a leva ao Pentium II.',
     productsEn:
-      'Intel’s 0.25 µm P856 process, used for the Pentium II; IBM had already adopted STI in its 0.25 µm DRAM.',
+      'IBM’s 0.35 µm DRAM, with Toshiba in mass production by 1996; on the logic side Intel’s 0.35 µm P854 opens with STI, and P856 (0.25 µm, certified Q3 1997) carries it into the Pentium II.',
     src: '/assets/sti.svg',
     altPt: 'Comparação entre isolamento LOCOS com boca de pássaro e trincheira rasa vertical',
     altEn: 'Comparison of LOCOS isolation with a bird’s beak against a vertical shallow trench',
@@ -200,7 +200,7 @@ const eras: Era[] = [
     altEn: 'Comparison of front-side power delivery with a backside power delivery network',
   },
   {
-    year: '2029',
+    year: '~2029',
     node: 'A10',
     namePt: 'Forksheet',
     nameEn: 'Forksheet',

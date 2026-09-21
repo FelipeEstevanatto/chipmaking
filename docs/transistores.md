@@ -19,7 +19,7 @@ Compare visualmente três arquiteturas principais:
 | **1963** | — | CMOS (par complementar) | NMOS e PMOS complementares no mesmo substrato | Consumo quase nulo em repouso — base de toda a lógica digital |
 | **1968** | — | Porta de silício (autoalinhada) | A porta de polissilício mascara o próprio implante de fonte/dreno | Menos capacitância de sobreposição; dispositivos menores e mais rápidos |
 | **1985** | 1.5 µm | LDD (dreno levemente dopado) | Extensões n⁻ sob espaçadores de nitreto | Suaviza o campo no dreno e contém portadores quentes |
-| **1997** | 0.25 µm | STI (trincheira rasa) | Trincheira de óxido substitui o isolamento LOCOS | Paredes verticais, sem “bico de pássaro”; mais densidade |
+| **1995** | 0.35 µm | STI (trincheira rasa) | Trincheira de óxido substitui o isolamento LOCOS | Paredes verticais, sem “bico de pássaro”; mais densidade |
 | **1998** | 0.22 µm | SOI (silício sobre isolante) | Filme fino de silício sobre óxido enterrado | Menos capacitância de junção e imunidade ao latch-up |
 | **2003** | 90 nm | Silício esticado | Si depositado sobre SiGe tensiona a rede cristalina | +10–20% de mobilidade com custo marginal <Cite id="intel-strain" /> |
 | **2007** | 45 nm | HKMG | Dielétrico High-K (háfnio) + portão metálico substituem SiO₂/polissilício | Bloqueia a fuga mantendo o acoplamento eletrostático <Cite id="hkmg-paper" /> |
@@ -64,17 +64,17 @@ Com canais da ordem de **1 µm**, o campo elétrico concentrado junto ao dreno a
 À esquerda, junção convencional; à direita, LDD com extensões n⁻ definidas por espaçadores.
 </DiagramFigure>
 
-O conceito nasceu na IBM em **1980**, mas a adoção em produção veio com a **CHMOS III** da Intel (1,5 µm), que equipou o **80386** (1985) — o processador dos PCs da era Windows 3.x. A estrutura seguiu padrão de 1,5 µm até 0,8 µm <Cite id="intel-chmos3" /><Cite id="voldman-esd" />.
+O conceito nasceu na IBM em **1980**, mas a adoção em produção veio com a **CHMOS III** da Intel: o próprio paper da Intel descreve a estrutura LDD como o recurso que garantia a confiabilidade do transistor, ao lado de uma porta de **250 Å** e canal elétrico típico de **1,0 µm**, e já anunciava o uso da tecnologia na produção do microprocessador de 32 bits seguinte <Cite id="intel-chmos3" />. O produto foi o **80386** (1985), fabricado em CHMOS III com 1,5 µm e duas camadas de metal <Cite id="intel-80386" /> — o processador dos PCs da era Windows 3.x. A estrutura seguiu padrão de 1,5 µm até 0,8 µm <Cite id="voldman-esd" />.
 
-## 1997 — STI (trincheira rasa)
+## 1995 — STI (trincheira rasa)
 
-O isolamento entre transistores vizinhos era feito por **LOCOS** (*Local Oxidation of Silicon*): um nitreto delimita as áreas ativas e a oxidação térmica cresce um óxido de campo espesso. O processo avança lateralmente sob o nitreto e forma o **“bico de pássaro”**, que consome área ativa e limita a densidade. A trincheira foi desenvolvida ainda em meados dos anos 1980 e entrou em produção no nó de **0,25 µm**: abre-se uma trincheira rasa no silício, preenchida com óxido depositado e planarizada por **CMP**. Paredes verticais, sem bico de pássaro, e superfície plana — requisito para a profundidade de foco da litografia.
+O isolamento entre transistores vizinhos era feito por **LOCOS** (*Local Oxidation of Silicon*): um nitreto delimita as áreas ativas e a oxidação térmica cresce um óxido de campo espesso. O processo avança lateralmente sob o nitreto e forma o **“bico de pássaro”**, que consome área ativa e limita a densidade. A trincheira rasa foi **proposta no início dos anos 1980**, mas passou anos sem uso prático: faltavam tanto a planarização quanto uma deposição de óxido capaz de preencher trincheiras estreitas. Foi o **CMP** que destravou o processo <Cite id="shmj-sti" />. Abre-se então uma trincheira rasa no silício, preenchida com óxido depositado e planarizada por CMP: paredes verticais, sem bico de pássaro, e superfície plana — requisito para a profundidade de foco da litografia.
 
 <DiagramFigure src="/assets/sti.svg" alt="Comparação entre isolamento LOCOS com bico de pássaro e trincheira rasa vertical">
 À esquerda, LOCOS com o bico de pássaro invadindo a área ativa; à direita, trincheira rasa com paredes verticais.
 </DiagramFigure>
 
-O processo **P856** da Intel (0,25 µm, 1997) já começava por STI e foi usado no **Pentium II**; a IBM havia adotado a mesma solução antes, em DRAM de 0,25 µm <Cite id="intel-p856" /><Cite id="voldman-esd" />.
+A produção veio **antes do nó de 0,25 µm**, não nele. A IBM liderou a aplicação em **DRAM de 0,35 µm**, e a Toshiba já produzia em massa em 1996 <Cite id="shmj-sti" />. No lado lógico, a Intel também partiu de STI **uma geração antes**: o fluxo do P856 é descrito como igual ao do **P854 (0,35 µm)**, que já começava por trincheira rasa <Cite id="intel-p856" />. O **P856 (0,25 µm)**, certificado no **3º trimestre de 1997**, é que levou a STI ao **Pentium II** em volume <Cite id="intel-p856" /><Cite id="voldman-esd" />.
 
 ## 1998 — SOI (silício sobre isolante)
 
@@ -152,7 +152,7 @@ A imec demonstrou o processo em wafers de 300 mm em 2021 e, em 2025, apresentou 
 
 Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha verticalmente NFET e PFET na mesma célula, reduzindo até **~50%** a área por porta lógica (inversores, SRAM), estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó **A7**, depois de 2030 <Cite id="imec-forksheet" />.
 
-<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-p856', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
+<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'cronologia e comparador interativo' },

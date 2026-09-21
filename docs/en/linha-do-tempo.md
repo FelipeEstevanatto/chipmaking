@@ -31,7 +31,7 @@ timeline
     1963 : CMOS (complementary pair)
     1968 : Self-aligned silicon gate
     1985 : LDD (lightly doped drain)
-    1997 : STI (shallow trench)
+    1995 : STI (shallow trench, 0.35 µm)
     1998 : SOI (0.22 µm)
     2003 : Strained silicon (Intel 90 nm)
     2007 : High-K metal gate (45 nm)

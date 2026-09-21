@@ -31,7 +31,7 @@ timeline
     1963 : CMOS (par complementar)
     1968 : Porta de silício autoalinhada
     1985 : LDD (dreno levemente dopado)
-    1997 : STI (trincheira rasa)
+    1995 : STI (trincheira rasa, 0.35 µm)
     1998 : SOI (0.22 µm)
     2003 : Silício esticado (Intel 90 nm)
     2007 : High-K metal gate (45 nm)
