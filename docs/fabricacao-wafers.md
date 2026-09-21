@@ -97,15 +97,39 @@ Vale notar que, nos wafers de fab, o objetivo do corte não é a espessura míni
 
 ## Arredondamento de bordas e lapidação
 
-As bordas passam por **edge profiling** para prevenir trincas e partículas. Depois, **lapidação (lapping)** com pasta abrasiva (alumina ou carbeto de silício) uniformiza espessura, paralelismo e remove irregularidades do corte.
+A aresta que sai do corte é viva e frágil. O **edge profiling** (perfilagem da borda) desbasta um contorno curvo — coroa no ápice, chanfros para os dois lados — para que a tensão se distribua em vez de se concentrar num canto. Sem isso a borda lasca no manuseio e no transporte e, pior, cada trinca vira fonte de partículas que depois voltam à superfície ativa; contornar a borda reduz exatamente esses lascamentos e ainda limita o excesso de material na borda (*edge crown*) e o acúmulo de fotoresistor na borda no *spin coating* <Cite id="semi-mf928" />. Nos wafers de 300 mm o padrão pede mais: **borda polida**, porque os vales deixados pela retificação retêm partículas e até fósforo que retorna à superfície durante a dopagem <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
+
+Depois vem a **lapidação (lapping)**: um lote de wafers é prensado entre duas placas de metal que giram em sentidos opostos, com lama abrasiva de alumina injetada entre elas. Como as duas faces são atacadas ao mesmo tempo, a operação corrige espessura, paralelismo e as ondulações deixadas pelo corte <Cite id="pei-2005" />.
+
+<DiagramFigure src="/assets/wafer-edge-profile.svg" alt="Corte transversal da borda do wafer: acima, a aresta viva do corte, com lasca e microtrincas; abaixo, o perfil arredondado e polido, com coroa no ápice e chanfros frontal e traseiro">
+Perfil da borda. Acima, a aresta viva que sai do corte: o canto concentra tensão, lasca e guarda microtrincas. Abaixo, o perfil arredondado — coroa e chanfros — que reparte a carga pelo contorno inteiro e, uma vez polido, não oferece vales para reter partículas. Desenho do autor, a partir de SEMI M1 e SEMI MF928 <Cite id="semi-mf928" /> <Cite id="prostek-edge" />.
+</DiagramFigure>
+
+<DiagramFigure src="/assets/wafer-lapping.svg" alt="Lapidação de dupla face: à esquerda, o corte transversal com dois pratos girando em sentidos opostos e lama abrasiva entre eles, com três wafers no meio; à direita, acima um wafer ondulado e abaixo um wafer com faces paralelas depois da lapidação">
+Lapidação de dupla face. À esquerda, o princípio: os wafers ficam coplanares entre dois pratos que giram em sentidos opostos, e a lama abrasiva de alumina trabalha as duas faces ao mesmo tempo. À direita, o que se ganha — a ondulação do corte some e as faces ficam paralelas. Desenho do autor, a partir de Pei et al. (2005) <Cite id="pei-2005" />.
+</DiagramFigure>
+
+A lapidação, porém, tem custo: é lenta, gasta muito abrasivo, carrega e descarrega wafers à mão e deixa dano subsuperficial que precisa ser removido depois. É por isso que as linhas modernas a substituem pela **retificação simultânea de duas faces (SDSG)**, em que um único wafer passa entre dois rebolos de diamante — mais rendimento, menos consumível, mais automação e bem menos lama descartada <Cite id="pei-2005" />.
 
 ## Ataque químico (etching)
 
-A lapidação deixa tensões residuais e microfraturas. O **etching** químico (HF/HNO₃/CH₃COOH ou KOH/NaOH) remove a camada danificada, deixando superfície quimicamente limpa e livre de estresse.
+Corte e lapidação deixam uma camada danificada — microfraturas, deformação e tensão residual — que desce alguns micrômetros a algumas dezenas de micrômetros abaixo da superfície. O **etching** químico existe para apagá-la: nenhum polimento posterior conserta um defeito que continua enterrado sob uma face espelhada.
+
+O ataque ácido (HF + HNO₃ + CH₃COOH) é **isotrópico** — remove silício na mesma velocidade em todas as direções, sem olhar para a orientação do cristal — e é usado justamente para tirar a camada danificada deixada por corte, chanfro e lapidação, com remoções de poucos a algumas dezenas de micrômetros <Cite id="us-6346485" />. O ataque alcalino (KOH ou NaOH) depende da orientação do cristal e rende wafers mais planos, melhor geometria de face traseira e menos risco de deposição metálica — vantagens que o levaram a substituir o ácido na remoção de dano em muitas linhas de produção <Cite id="dyer-1989" />.
+
+<DiagramFigure src="/assets/wafer-damage-etch.svg" alt="Dois cortes transversais na mesma escala de profundidade: à esquerda, a camada danificada por corte e lapidação com microtrincas até 20 micrômetros; à direita, a mesma superfície depois do ataque, com a região removida marcada em tracejado">
+Antes e depois do ataque, na mesma escala de profundidade (em micrômetros abaixo da superfície original). O ataque ácido come o silício danificado nas duas faces até a camada de microtrincas desaparecer; o alcalino faz o mesmo, mas seguindo a orientação do cristal. Desenho do autor, a partir de US 6.346.485 e Dyer et al. (1989) <Cite id="us-6346485" /> <Cite id="dyer-1989" />.
+</DiagramFigure>
 
 ## Tratamento térmico e RTP
 
-**Tratamento térmico** ou **RTP (Rapid Thermal Processing)** aniquila doadores térmicos de oxigênio do Czochralski, equaliza defeitos pontuais e uniformiza resistividade.
+O oxigênio dissolvido no cristal Czochralski não é inerte. Mantido por horas por volta de **450 °C**, ele forma pequenos aglomerados que doam elétrons — os **doadores térmicos** — e desviam a resistividade do wafer do valor que se queria. O tratamento existe para desfazer isso: um recozimento rápido (**RTP**, *Rapid Thermal Processing*), com lâmpadas levando o wafer a **800–1000 °C por cerca de 10 segundos**, aniquila os doadores térmicos e devolve ao cristal a resistividade que eles haviam deslocado <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+
+A escolha do RTP em vez do forno não é sobre temperatura — é sobre tempo. O forno levaria **horas** na mesma faixa; em segundos, o wafer recebe o mesmo efeito sobre os doadores sem dar tempo para o boro e o fósforo já implantados difundirem. É a esse produto "temperatura × tempo" que a indústria chama de **orçamento térmico** <Cite id="tokuda-1989" />.
+
+<DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Dois gráficos de temperatura por tempo: à esquerda, um forno que sobe a mil graus e mantém por horas; à direita, o RTP, que atinge a mesma temperatura por cerca de dez segundos, com uma faixa horizontal marcando os 450 graus onde os doadores térmicos se formam">
+Orçamento térmico. Um passo de forno se mede em horas; o RTP, em segundos. Os dois passam pela mesma faixa de temperatura — e a faixa em torno de 450 °C, marcada em laranja, é justamente onde o oxigênio do Czochralski monta os doadores térmicos. Desenho do autor, a partir de Tokuda et al. (1989) e Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+</DiagramFigure>
 
 ## Polimento químico-mecânico (CMP)
 

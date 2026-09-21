@@ -97,15 +97,39 @@ It is worth noting that, for fab wafers, the goal of slicing is not minimum thic
 
 ## Edge profiling and lapping
 
-The edges of the sliced wafers are sharp and prone to mechanical chipping, so they go through **edge profiling** to prevent future cracks and particle shedding. Next, **lapping** with an abrasive slurry (alumina or silicon carbide) evens out thickness, improves surface parallelism and removes large irregularities left by the cut.
+The edge a saw leaves behind is sharp and brittle. **Edge profiling** grinds a curved contour — a crown at the apex with a bevel on either side — so that stress spreads out instead of concentrating in a corner. Without it the edge chips during handling and transport and, worse, every crack becomes a source of particles that later return to the active surface; contouring the edge reduces exactly that chipping and also limits epitaxial edge crown and photoresist edge bead <Cite id="semi-mf928" />. On 300 mm wafers the standard asks for more: a **polished edge**, because the valleys left by grinding trap particles and even phosphorus that comes back to the surface during doping <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
+
+Then comes **lapping**: a batch of wafers is pressed between two metal plates rotating in opposite directions, with an alumina slurry injected between them. Because both faces are attacked at once, the operation corrects thickness, parallelism and the waviness left by the cut <Cite id="pei-2005" />.
+
+<DiagramFigure src="/assets/wafer-edge-profile.svg" alt="Cross-section of a wafer edge: above, the sharp as-cut corner with a chip and microcracks; below, the rounded and polished profile with a crown at the apex and front and back bevels">
+Edge profile. Above, the sharp corner the saw leaves behind: the corner concentrates stress, chips and holds microcracks. Below, the rounded profile — crown and bevels — which spreads the load over the whole contour and, once polished, offers no valleys to trap particles. Author's drawing, after SEMI M1 and SEMI MF928 <Cite id="semi-mf928" /> <Cite id="prostek-edge" />.
+</DiagramFigure>
+
+<DiagramFigure src="/assets/wafer-lapping.svg" alt="Double-side lapping: on the left, a cross-section with two plates rotating in opposite directions and abrasive slurry between them, with three wafers in the middle; on the right, a wavy wafer above and a wafer with parallel faces after lapping below">
+Double-side lapping. On the left, the principle: the wafers sit coplanar between two plates that rotate in opposite directions, and the alumina slurry works both faces at the same time. On the right, what it buys — the waviness of the cut is gone and the faces are parallel. Author's drawing, after Pei et al. (2005) <Cite id="pei-2005" />.
+</DiagramFigure>
+
+Lapping has a cost, though: it is slow, consumes a great deal of abrasive, loads and unloads wafers by hand and leaves subsurface damage that must be removed afterwards. That is why modern lines replace it with **simultaneous double-side grinding (SDSG)**, in which a single wafer passes between two diamond cup wheels — higher throughput, fewer consumables, more automation and far less slurry to dispose of <Cite id="pei-2005" />.
 
 ## Chemical etching
 
-Mechanical lapping leaves residual stress and microcracks in the silicon's surface layer. Chemical **etching** removes this damaged layer without introducing new mechanical stress — using an acid solution (HF/HNO₃/CH₃COOH) for rapid dissolution of defects, or an alkaline solution (KOH/NaOH) for controlled anisotropic removal — leaving a chemically clean surface free of structural stress.
+Slicing and lapping leave a damaged layer — microfractures, strain and residual stress — reaching from a few to a few tens of micrometres below the surface. Chemical **etching** exists to erase it: no later polishing repairs a defect that is still buried under a mirror-like face.
+
+The acid etch (HF + HNO₃ + CH₃COOH) is **isotropic** — it removes silicon at the same rate in every direction, ignoring crystal orientation — and is used precisely to strip the damaged layer left by slicing, chamfering and lapping, with removals of a few to a few tens of micrometres <Cite id="us-6346485" />. The alkaline etch (KOH or NaOH) depends on crystal orientation and yields flatter wafers, better back-side geometry and less risk of metal plating — advantages that led it to replace acid in damage removal on many production lines <Cite id="dyer-1989" />.
+
+<DiagramFigure src="/assets/wafer-damage-etch.svg" alt="Two cross-sections on the same depth scale: on the left, the layer damaged by slicing and lapping with microcracks down to 20 micrometres; on the right, the same surface after etching, with the removed region marked in dashed outline">
+Before and after the etch, on the same depth scale (in micrometres below the original surface). The acid etch eats the damaged silicon on both faces until the microcracked layer is gone; the alkaline etch does the same, but following the crystal orientation. Author's drawing, after US 6,346,485 and Dyer et al. (1989) <Cite id="us-6346485" /> <Cite id="dyer-1989" />.
+</DiagramFigure>
 
 ## Thermal treatment and RTP
 
-**Thermal treatment** or **RTP (Rapid Thermal Processing)** eliminates the oxygen thermal donors created during Czochralski growth, equalises point defects and homogenises resistivity by rearranging impurities and dopants in the crystal lattice.
+The oxygen dissolved in a Czochralski crystal is not inert. Held for hours at around **450 °C**, it forms small clusters that donate electrons — **thermal donors** — and pull the wafer's resistivity away from the value that was wanted. The treatment exists to undo that: a rapid anneal (**RTP**, *Rapid Thermal Processing*), with lamps taking the wafer to **800–1000 °C for about 10 seconds**, annihilates the thermal donors and restores the resistivity they had shifted <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+
+Choosing RTP over a furnace is not about temperature — it is about time. A furnace would take **hours** in the same range; in seconds the wafer gets the same effect on the donors without giving the boron and phosphorus already implanted any time to diffuse. It is this "temperature × time" product that the industry calls the **thermal budget** <Cite id="tokuda-1989" />.
+
+<DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Two temperature-versus-time plots: on the left, a furnace ramping to a thousand degrees and holding for hours; on the right, RTP reaching the same temperature for about ten seconds, with a horizontal band marking the 450 degrees where thermal donors form">
+Thermal budget. A furnace step is measured in hours; RTP is measured in seconds. Both pass through the same temperature range — and the band around 450 °C, shaded orange, is exactly where the Czochralski oxygen builds thermal donors. Author's drawing, after Tokuda et al. (1989) and Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+</DiagramFigure>
 
 ## Chemical-mechanical polishing (CMP)
 

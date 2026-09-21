@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
+  <title>Double-side lapping: wafers held between two counter-rotating plates with an abrasive slurry, and the flatness it restores</title>
+  <rect width="960" height="540" fill="#ffffff" />
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .m { font: 600 16.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1d2430; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.5; }
+    .plate { fill: #a8b3c2; stroke: #6b7787; stroke-width: 1.5; }
+    .slurry { fill: #b7791f; }
+    .ref { stroke: #a0aec0; stroke-width: 1.1; stroke-dasharray: 6 4; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .flow { fill: none; stroke: #c53030; stroke-width: 2.2; }
+  </style>
+
+  <text class="h" x="40" y="36">Lapping: abrasive slurry between two counter-rotating plates</text>
+  <text class="sm" x="40" y="58">Side view; a batch of wafers is held flat in carriers and pressed between the plates.</text>
+
+  <!-- ===================== left: the process ===================== -->
+  <text class="t" x="40" y="100">Double-side lapping</text>
+
+  <!-- load, applied from both sides -->
+  <text class="m" x="70" y="142" text-anchor="middle">load</text>
+  <path class="flow" d="M 70,150 L 70,164 M 63,156 L 70,165 L 77,156" />
+  <path class="flow" d="M 70,400 L 70,384 M 63,392 L 70,383 L 77,392" />
+
+  <!-- plates -->
+  <rect class="plate" x="90" y="170" width="320" height="26" />
+  <rect class="plate" x="90" y="350" width="320" height="26" />
+
+  <!-- counter-rotation, shown as the opposite shear of the two plates -->
+  <path class="flow" d="M 150,158 L 290,158 M 278,151 L 291,158 L 278,165" />
+  <path class="flow" d="M 290,388 L 150,388 M 162,381 L 149,388 L 162,395" />
+
+  <!-- wafers, coplanar, in a row -->
+  <rect class="si" x="110" y="262" width="70" height="16" />
+  <rect class="si" x="205" y="262" width="70" height="16" />
+  <rect class="si" x="300" y="262" width="70" height="16" />
+
+  <!-- abrasive slurry, above and below the wafers and in the gaps between them -->
+  <circle class="slurry" cx="120" cy="214" r="2.6" /><circle class="slurry" cx="165" cy="238" r="2.6" />
+  <circle class="slurry" cx="210" cy="208" r="2.6" /><circle class="slurry" cx="255" cy="246" r="2.6" />
+  <circle class="slurry" cx="300" cy="218" r="2.6" /><circle class="slurry" cx="345" cy="240" r="2.6" />
+  <circle class="slurry" cx="390" cy="212" r="2.6" /><circle class="slurry" cx="150" cy="222" r="2.6" />
+  <circle class="slurry" cx="285" cy="232" r="2.6" /><circle class="slurry" cx="375" cy="250" r="2.6" />
+  <circle class="slurry" cx="125" cy="300" r="2.6" /><circle class="slurry" cx="170" cy="330" r="2.6" />
+  <circle class="slurry" cx="215" cy="292" r="2.6" /><circle class="slurry" cx="260" cy="338" r="2.6" />
+  <circle class="slurry" cx="305" cy="302" r="2.6" /><circle class="slurry" cx="350" cy="332" r="2.6" />
+  <circle class="slurry" cx="395" cy="298" r="2.6" /><circle class="slurry" cx="200" cy="318" r="2.6" />
+  <circle class="slurry" cx="340" cy="312" r="2.6" /><circle class="slurry" cx="110" cy="336" r="2.6" />
+  <circle class="slurry" cx="192" cy="270" r="2.6" /><circle class="slurry" cx="287" cy="270" r="2.6" />
+
+  <text class="l" x="440" y="191">lapping plate</text>
+  <path class="lead" d="M 436,186 L 412,186" />
+
+  <text class="l" x="440" y="230">abrasive slurry</text>
+  <path class="lead" d="M 436,225 L 380,222" />
+
+  <text class="l" x="440" y="272">wafers</text>
+  <path class="lead" d="M 436,268 L 372,270" />
+
+  <text class="l" x="440" y="392">plates counter-rotate</text>
+  <path class="lead" d="M 436,388 L 300,388" />
+
+  <!-- ===================== right: what it fixes ===================== -->
+  <text class="t" x="660" y="100">What it fixes</text>
+
+  <text class="l" x="780" y="152" text-anchor="middle">as-sliced</text>
+  <line class="ref" x1="650" y1="186" x2="912" y2="186" />
+  <line class="ref" x1="650" y1="228" x2="912" y2="228" />
+  <path class="si" d="M 660,182 C 690,170 720,198 750,186 C 780,174 810,202 840,188 C 865,177 885,193 900,184 L 900,224 C 885,235 865,219 840,230 C 810,244 780,216 750,228 C 720,240 690,212 660,224 Z" />
+
+  <text class="l" x="780" y="272" text-anchor="middle">waviness and thickness variation</text>
+  <path class="lead" d="M 780,264 L 780,240" />
+
+  <rect class="si" x="660" y="340" width="240" height="38" />
+  <line class="ref" x1="650" y1="340" x2="912" y2="340" />
+  <line class="ref" x1="650" y1="378" x2="912" y2="378" />
+
+  <text class="l" x="780" y="412" text-anchor="middle">after lapping: parallel faces</text>
+  <path class="lead" d="M 780,404 L 780,382" />
+
+  <text class="sm" x="46" y="470">Lapping shaves the top and bottom faces at once, which is what makes the two</text>
+  <text class="sm" x="46" y="492">surfaces parallel. It also leaves subsurface damage that the etch must remove.</text>
+</svg>
