@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
+  <title>Aluminium gate with source/drain overlap versus a self-aligned polysilicon gate</title>
+  <style>
+    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .bad { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .good { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2f855a; }
+    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
+    .nplus { fill: #2b6cb0; stroke: #2c5282; stroke-width: 1; }
+    .metal { fill: #2d3748; stroke: #1a202c; stroke-width: 1; }
+    .poly { fill: #718096; stroke: #4a5568; stroke-width: 1; }
+    .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
+    .overlap { fill: none; stroke: #e53e3e; stroke-width: 1.6; stroke-dasharray: 5 4; }
+    .align { stroke: #38a169; stroke-width: 1.8; stroke-dasharray: 5 4; fill: none; }
+    .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+  </style>
+
+  <text class="head" x="235" y="44" text-anchor="middle">Al gate: overlap</text>
+  <text class="head" x="585" y="44" text-anchor="middle">Self-aligned Si gate</text>
+  <line class="divider" x1="420" y1="60" x2="420" y2="285" />
+
+  <!-- ================= LEFT: aluminium gate, oversized ================= -->
+  <rect class="si" x="95" y="200" width="280" height="80" />
+  <rect class="nplus" x="115" y="200" width="60" height="60" />
+  <rect class="nplus" x="295" y="200" width="60" height="60" />
+  <rect class="ox" x="145" y="192" width="180" height="8" />
+  <rect class="metal" x="145" y="160" width="180" height="32" />
+  <text class="inv" x="235" y="181" text-anchor="middle">Al</text>
+  <text class="inv" x="145" y="234" text-anchor="middle">n+</text>
+  <text class="inv" x="325" y="234" text-anchor="middle">n+</text>
+
+  <!-- the gate hangs over the diffusions -->
+  <rect class="overlap" x="145" y="200" width="30" height="60" />
+  <rect class="overlap" x="295" y="200" width="30" height="60" />
+  <text class="bad" x="235" y="308" text-anchor="middle">overlap capacitance</text>
+
+  <!-- ================= RIGHT: self-aligned polysilicon gate ================= -->
+  <rect class="si" x="445" y="200" width="280" height="80" />
+  <rect class="nplus" x="465" y="200" width="60" height="60" />
+  <rect class="nplus" x="645" y="200" width="60" height="60" />
+  <rect class="ox" x="525" y="192" width="120" height="8" />
+  <rect class="poly" x="525" y="160" width="120" height="32" />
+  <text class="inv" x="585" y="181" text-anchor="middle">poly-Si</text>
+  <text class="inv" x="495" y="234" text-anchor="middle">n+</text>
+  <text class="inv" x="675" y="234" text-anchor="middle">n+</text>
+
+  <line class="align" x1="525" y1="196" x2="525" y2="266" />
+  <line class="align" x1="645" y1="196" x2="645" y2="266" />
+  <text class="good" x="585" y="308" text-anchor="middle">edges aligned, no overlap</text>
+</svg>

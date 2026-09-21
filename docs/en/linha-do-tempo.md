@@ -28,6 +28,11 @@ More context and Bernreuter charts in [Polysilicon](/en/polissilicio).
 timeline
     title Silicon transistors
     1960 : Planar MOSFET
+    1963 : CMOS (complementary pair)
+    1968 : Self-aligned silicon gate
+    1980 : LDD (lightly doped drain)
+    1996 : STI (shallow trench)
+    1998 : SOI (0.22 µm)
     2003 : Strained silicon (Intel 90 nm)
     2007 : High-K metal gate (45 nm)
     2011 : FinFET / Tri-Gate (22 nm)
@@ -36,7 +41,7 @@ timeline
     Future : Stacked CFET (&lt;1 nm)
 ```
 
-All seven generations, with each transistor's structure:
+All twelve generations, with each transistor's structure (click to enlarge):
 
 <ClientOnly>
   <TransistorTimeline />
@@ -45,6 +50,6 @@ All seven generations, with each transistor's structure:
 Each era in detail in [Transistor evolution](/en/transistores).
 
 <SeeAlso title="See also" :links="[
-  { text: 'Transistor evolution', href: '/en/transistores', note: 'text and figures by era' },
+  { text: 'Transistor evolution', href: '/en/transistores', note: 'main architectures in detail' },
   { text: 'Photolithography', href: '/en/fotolitografia', note: 'patterning on the wafer' },
 ]" />

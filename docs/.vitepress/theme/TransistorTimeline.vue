@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { withBase } from 'vitepress'
+import ZoomableImage from './ZoomableImage.vue'
 import { useIsEnglish } from './locale'
 
 const isEnglish = useIsEnglish()
@@ -28,6 +28,61 @@ const eras: Era[] = [
     src: '/pdf-images/p17-1.png',
     altPt: 'Transistor MOSFET planar',
     altEn: 'Planar MOSFET transistor',
+  },
+  {
+    year: '1963',
+    node: '—',
+    namePt: 'CMOS (par complementar)',
+    nameEn: 'CMOS (complementary pair)',
+    descPt: 'NMOS e PMOS complementares: um conduz enquanto o outro está desligado, com consumo quase nulo em repouso.',
+    descEn: 'Complementary NMOS and PMOS: one conducts while the other is off, with near-zero standby power.',
+    src: '/assets/cmos.svg',
+    altPt: 'Corte transversal de CMOS com NMOS em poço p e PMOS em poço n',
+    altEn: 'CMOS cross-section with an NMOS in a p-well and a PMOS in an n-well',
+  },
+  {
+    year: '1968',
+    node: '—',
+    namePt: 'Porta de silício (autoalinhada)',
+    nameEn: 'Silicon gate (self-aligned)',
+    descPt: 'A porta de polissilício passa a definir a própria fonte e o dreno, eliminando a sobreposição da porta de alumínio.',
+    descEn: 'A polysilicon gate now defines source and drain itself, removing the overlap of the aluminium gate.',
+    src: '/assets/silicon-gate.svg',
+    altPt: 'Comparação entre porta de alumínio com sobreposição e porta de silício autoalinhada',
+    altEn: 'Comparison of an overlapping aluminium gate with a self-aligned silicon gate',
+  },
+  {
+    year: '1980',
+    node: '—',
+    namePt: 'LDD (dreno levemente dopado)',
+    nameEn: 'LDD (lightly doped drain)',
+    descPt: 'Extensões levemente dopadas sob espaçadores de nitreto suavizam o campo junto ao dreno, contendo portadores quentes.',
+    descEn: 'Lightly doped extensions under nitride spacers smooth the field at the drain, taming hot carriers.',
+    src: '/assets/ldd.svg',
+    altPt: 'Comparação entre junção convencional e estrutura LDD com espaçadores',
+    altEn: 'Comparison of a conventional junction with an LDD structure with spacers',
+  },
+  {
+    year: '1996',
+    node: '0.35 µm',
+    namePt: 'STI (trincheira rasa)',
+    nameEn: 'STI (shallow trench)',
+    descPt: 'Trincheira rasa substitui o LOCOS no isolamento: paredes verticais e sem a “boca de pássaro” que consumia área ativa.',
+    descEn: 'A shallow trench replaces LOCOS for isolation: vertical walls and no “bird’s beak” eating into the active area.',
+    src: '/assets/sti.svg',
+    altPt: 'Comparação entre isolamento LOCOS com boca de pássaro e trincheira rasa vertical',
+    altEn: 'Comparison of LOCOS isolation with a bird’s beak against a vertical shallow trench',
+  },
+  {
+    year: '1998',
+    node: '0.22 µm',
+    namePt: 'SOI (silício sobre isolante)',
+    nameEn: 'SOI (silicon on insulator)',
+    descPt: 'Uma camada fina de silício sobre óxido enterrado isola as junções do substrato e reduz capacitâncias parasitas.',
+    descEn: 'A thin silicon film on a buried oxide isolates the junctions from the substrate and cuts parasitic capacitance.',
+    src: '/assets/soi.svg',
+    altPt: 'Comparação entre transistor em silício maciço e transistor SOI sobre óxido enterrado',
+    altEn: 'Comparison of a bulk silicon transistor with an SOI transistor on a buried oxide',
   },
   {
     year: '2003',
@@ -111,11 +166,9 @@ const upcoming = (era: Era) => era.year === 'Futuro' || era.year === 'Future'
       <span class="transistor-timeline-marker" aria-hidden="true" />
       <div class="transistor-timeline-body">
         <div class="transistor-timeline-media">
-          <img
-            :src="withBase(era.src)"
+          <ZoomableImage
+            :src="era.src"
             :alt="isEnglish ? era.altEn : era.altPt"
-            loading="lazy"
-            decoding="async"
           />
         </div>
         <div class="transistor-timeline-text">
@@ -178,7 +231,7 @@ const upcoming = (era: Era) => era.year === 'Futuro' || era.year === 'Future'
 
 .transistor-timeline-body {
   display: grid;
-  grid-template-columns: minmax(0, 230px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
   gap: 1.25rem;
   align-items: start;
 }
@@ -195,7 +248,16 @@ const upcoming = (era: Era) => era.year === 'Futuro' || era.year === 'Future'
   box-sizing: border-box;
 }
 
-.transistor-timeline-media img {
+.transistor-timeline-media :deep(.zoomable),
+.transistor-timeline-media :deep(.zoomable-trigger) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.transistor-timeline-media :deep(img) {
   display: block;
   width: 100%;
   height: 100%;

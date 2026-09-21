@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { withBase } from 'vitepress'
+import ZoomableImage from './ZoomableImage.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -14,8 +14,6 @@ const props = withDefaults(
   },
 )
 
-const resolvedSrc = computed(() => withBase(props.src))
-
 const figureClass = computed(() => ({
   'diagram-figure': true,
   'diagram-figure--light-canvas': props.lightCanvas,
@@ -25,7 +23,7 @@ const figureClass = computed(() => ({
 <template>
   <figure :class="figureClass">
     <div class="diagram-figure-media">
-      <img :src="resolvedSrc" :alt="alt" loading="lazy" />
+      <ZoomableImage :src="src" :alt="alt" />
     </div>
     <figcaption v-if="$slots.default"><slot /></figcaption>
   </figure>
@@ -56,7 +54,11 @@ const figureClass = computed(() => ({
   padding: 0.5rem;
 }
 
-.diagram-figure img {
+.diagram-figure :deep(.zoomable-trigger) {
+  width: 100%;
+}
+
+.diagram-figure :deep(img) {
   max-width: 100%;
   height: auto;
   margin: 0 auto;

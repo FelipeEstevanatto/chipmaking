@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
+  <title>Conventional drain junction versus a lightly doped drain (LDD) with sidewall spacers</title>
+  <style>
+    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .bad { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .good { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2f855a; }
+    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
+    .nplus { fill: #2b6cb0; stroke: #2c5282; stroke-width: 1; }
+    .nminus { fill: #90cdf4; stroke: #4299e1; stroke-width: 1; }
+    .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
+    .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
+    .spacer { fill: #e2e8f0; stroke: #a0aec0; stroke-width: 1; }
+    .lead { stroke: #718096; stroke-width: 1; fill: none; }
+    .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+  </style>
+
+  <text class="head" x="235" y="44" text-anchor="middle">Conventional</text>
+  <text class="head" x="585" y="44" text-anchor="middle">LDD + spacers</text>
+  <line class="divider" x1="420" y1="60" x2="420" y2="300" />
+
+  <!-- ================= LEFT ================= -->
+  <rect class="si" x="85" y="210" width="300" height="75" />
+  <rect class="nplus" x="115" y="210" width="70" height="60" />
+  <rect class="nplus" x="285" y="210" width="70" height="60" />
+  <rect class="ox" x="190" y="197" width="90" height="8" />
+  <rect class="gate" x="190" y="165" width="90" height="32" />
+  <text class="inv" x="235" y="186" text-anchor="middle">gate</text>
+  <text class="inv" x="150" y="244" text-anchor="middle">n+</text>
+  <text class="inv" x="320" y="244" text-anchor="middle">n+</text>
+  <text class="bad" x="235" y="310" text-anchor="middle">abrupt junction, peak field</text>
+
+  <!-- ================= RIGHT ================= -->
+  <rect class="si" x="425" y="210" width="320" height="75" />
+  <rect class="nplus" x="435" y="210" width="40" height="60" />
+  <rect class="nminus" x="475" y="210" width="70" height="60" />
+  <rect class="nminus" x="625" y="210" width="70" height="60" />
+  <rect class="nplus" x="695" y="210" width="40" height="60" />
+  <rect class="ox" x="545" y="197" width="80" height="8" />
+  <rect class="gate" x="545" y="165" width="80" height="32" />
+  <rect class="spacer" x="525" y="168" width="20" height="37" />
+  <rect class="spacer" x="625" y="168" width="20" height="37" />
+
+  <text class="inv" x="585" y="186" text-anchor="middle">gate</text>
+  <text class="inv" x="455" y="244" text-anchor="middle">n+</text>
+  <text class="inv" x="510" y="244" text-anchor="middle">n&#8722;</text>
+  <text class="inv" x="660" y="244" text-anchor="middle">n&#8722;</text>
+  <text class="inv" x="715" y="244" text-anchor="middle">n+</text>
+
+  <text class="lbl" x="690" y="150" text-anchor="middle">spacer</text>
+  <path class="lead" d="M690,155 L646,172" />
+
+  <text class="good" x="585" y="310" text-anchor="middle">graded junction, lower field</text>
+</svg>

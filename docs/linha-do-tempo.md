@@ -28,6 +28,11 @@ Mais contexto e gráficos Bernreuter em [Polissilício](/polissilicio).
 timeline
     title Transistores em silício
     1960 : MOSFET planar
+    1963 : CMOS (par complementar)
+    1968 : Porta de silício autoalinhada
+    1980 : LDD (dreno levemente dopado)
+    1996 : STI (trincheira rasa)
+    1998 : SOI (0.22 µm)
     2003 : Silício esticado (Intel 90 nm)
     2007 : High-K metal gate (45 nm)
     2011 : FinFET / Tri-Gate (22 nm)
@@ -36,7 +41,7 @@ timeline
     Futuro : CFET empilhado (&lt;1 nm)
 ```
 
-As sete gerações, com a estrutura de cada transistor:
+As doze gerações, com a estrutura de cada transistor (clique para ampliar):
 
 <ClientOnly>
   <TransistorTimeline />
@@ -45,6 +50,6 @@ As sete gerações, com a estrutura de cada transistor:
 Cada era em detalhe em [Evolução dos transistores](/transistores).
 
 <SeeAlso :links="[
-  { text: 'Evolução dos transistores', href: '/transistores', note: 'texto e figuras por era' },
+  { text: 'Evolução dos transistores', href: '/transistores', note: 'arquiteturas principais em detalhe' },
   { text: 'Fotolitografia', href: '/fotolitografia', note: 'padrões no wafer' },
 ]" />

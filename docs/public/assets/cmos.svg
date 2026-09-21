@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" role="img">
+  <title>CMOS cross-section: an NMOS in a p-well beside a PMOS in an n-well</title>
+  <style>
+    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .sm { font: 11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
+    .pwell { fill: #fbd9b5; stroke: #c05621; stroke-width: 1; }
+    .nwell { fill: #b9d9f5; stroke: #2b6cb0; stroke-width: 1; }
+    .nplus { fill: #2b6cb0; stroke: #2c5282; stroke-width: 1; }
+    .pplus { fill: #c05621; stroke: #9c4221; stroke-width: 1; }
+    .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
+    .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
+    .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+  </style>
+
+  <text class="head" x="234" y="44" text-anchor="middle">NMOS</text>
+  <text class="head" x="566" y="44" text-anchor="middle">PMOS</text>
+  <line class="divider" x1="400" y1="60" x2="400" y2="360" />
+
+  <!-- shared substrate -->
+  <rect class="si" x="60" y="248" width="680" height="96" />
+
+  <!-- wells -->
+  <rect class="pwell" x="100" y="248" width="268" height="82" />
+  <rect class="nwell" x="432" y="248" width="268" height="82" />
+
+  <!-- NMOS -->
+  <rect class="nplus" x="122" y="256" width="62" height="56" />
+  <rect class="nplus" x="284" y="256" width="62" height="56" />
+  <rect class="ox" x="190" y="242" width="88" height="6" />
+  <rect class="gate" x="190" y="210" width="88" height="32" />
+  <text class="inv" x="153" y="292" text-anchor="middle">n+</text>
+  <text class="inv" x="315" y="292" text-anchor="middle">n+</text>
+  <text class="lbl" x="234" y="200" text-anchor="middle">gate</text>
+
+  <!-- PMOS -->
+  <rect class="pplus" x="454" y="256" width="62" height="56" />
+  <rect class="pplus" x="616" y="256" width="62" height="56" />
+  <rect class="ox" x="522" y="242" width="88" height="6" />
+  <rect class="gate" x="522" y="210" width="88" height="32" />
+  <text class="inv" x="485" y="292" text-anchor="middle">p+</text>
+  <text class="inv" x="647" y="292" text-anchor="middle">p+</text>
+  <text class="lbl" x="566" y="200" text-anchor="middle">gate</text>
+
+  <!-- well labels -->
+  <text class="sm" x="234" y="324" text-anchor="middle">p-well</text>
+  <text class="sm" x="566" y="324" text-anchor="middle">n-well</text>
+</svg>
