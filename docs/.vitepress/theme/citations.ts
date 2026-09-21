@@ -367,6 +367,14 @@ const list: Citation[] = [
     url: 'https://doi.org/10.1109/iedm.1987.191432',
     short: 'Chapman et al. (1987)',
   },
+  {
+    key: 'semi-m1',
+    num: 46,
+    title: 'SEMI M1 — Specification for Polished Single Crystal Silicon Wafers',
+    publisher: 'SEMI International Standards',
+    url: 'https://store-us.semi.org/products/m00100-semi-m1-specification-for-polished-single-crystal-silicon-wafers',
+    short: 'SEMI M1',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

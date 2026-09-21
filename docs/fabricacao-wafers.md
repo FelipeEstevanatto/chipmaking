@@ -11,9 +11,27 @@ A transformação do polissilício de grau eletrônico ([EG-Si](/glossario)) em 
 
 O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são depositados em cadinho de quartzo altamente purificado, em forno a vácuo sob argônio inerte. O material é fundido acima de **1420 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
 
+<DiagramFigure src="/assets/czochralski-process.svg" alt="O processo Czochralski em quatro quadros: fusão do polissilício e dopagem no cadinho, introdução do cristal-semente, início do crescimento do cristal e puxamento do lingote">
+O processo Czochralski em quatro quadros: fusão e dopagem, introdução da semente, início do crescimento e puxamento do lingote. Twisp — <a href="https://commons.wikimedia.org/wiki/File:Czochralski_Process.svg" target="_blank" rel="noopener noreferrer">Czochralski Process</a> (domínio público), Wikimedia Commons.
+</DiagramFigure>
+
+O princípio não mudou desde os primeiros anos da indústria: um cristal-semente orientado toca a superfície do silício líquido e sobe devagar, girando contra o cadinho, enquanto o lingote solidifica atrás dele.
+
+<DiagramFigure src="/assets/silicon-czochralski-1956.jpg" alt="Um cristal de silício sendo puxado do cadinho pelo processo Czochralski em 1956">
+Um cristal de silício sendo puxado na Raytheon, em 1956, para os primeiros transistores de silício. George E. Meyers — <a href="https://commons.wikimedia.org/wiki/File:Silicon_grown_by_Czochralski_process_1956.jpg" target="_blank" rel="noopener noreferrer">Silicon grown by Czochralski process, 1956</a> (domínio público), Wikimedia Commons.
+</DiagramFigure>
+
+<DiagramFigure src="/assets/silicon-seed-crystal-rod.jpg" alt="Haste de puxamento com a semente de silício monocristalino na ponta">
+A haste de puxamento: a ponta espelhada é a própria **semente** de silício monocristalino, e é dela que o lingote herda a orientação cristalina. Warut Roonguthai — <a href="https://commons.wikimedia.org/wiki/File:Silicon_seed_crystal_puller_rod.jpg" target="_blank" rel="noopener noreferrer">Silicon seed crystal puller rod</a> (CC BY-SA 4.0), Wikimedia Commons.
+</DiagramFigure>
+
 ## Preparação do lingote e pré-usinagem
 
-Após resfriamento, removem-se as extremidades cônicas (cabeça e cauda). O corpo cilíndrico passa por retificação externa por esmerilhamento para a dimensão exata. Produz-se um **chanfro plano (flat)** ou **entalhe (notch)** para indicar orientação cristalina e dopagem no manuseio automatizado.
+Após resfriamento, removem-se as extremidades cônicas (cabeça e cauda). O corpo cilíndrico passa por retificação externa por esmerilhamento para a dimensão exata. Produz-se então o **fiducial de orientação** — um **chanfro plano (*flat*)** nos diâmetros menores ou um **entalhe em V (*notch*)** a partir de 200 mm —, que dá às ferramentas automatizadas a referência cristalográfica e, nos wafers pequenos, também o tipo de dopagem ([como identificar um wafer](/estrutura-wafers#como-identificar-um-wafer-pela-borda)) <Cite id="semi-m1" />.
+
+<DiagramFigure src="/assets/silicon-crystal-boule.jpg" alt="Lingote de silício monocristalino (bole) e hastes de silício em exposição">
+Um lingote monocristalino (*boule*) e hastes de silício. Sebastian Wallroth — <a href="https://commons.wikimedia.org/wiki/File:Single-crystal_silicon_boule.jpg" target="_blank" rel="noopener noreferrer">Single-crystal silicon boule</a> (domínio público), Wikimedia Commons.
+</DiagramFigure>
 
 ## Corte em fatias (wafer slicing)
 
@@ -35,12 +53,26 @@ A lapidação deixa tensões residuais e microfraturas. O **etching** químico (
 
 O **CMP** <Cite id="runnels-1994" /> é crítico para [fotolitografia](/fotolitografia). O wafer é pressionado contra almofada rotativa com suspensão alcalina de nanopartículas de sílica: oxidação química suave e remoção mecânica do óxido geram superfície espelhada com rugosidade sub-nanométrica.
 
+A almofada não trabalha sozinha: ela é recondicionada continuamente por um disco abrasivo, que reabre os poros entupidos pelo material removido e mantém a taxa de remoção estável ao longo de milhares de wafers.
+
+<DiagramFigure src="/assets/cmp-pad-conditioner.jpg" alt="Condicionador de almofada (Chiaping 108) usado no polimento químico-mecânico de wafers">
+O condicionador de almofada do CMP, que reabre os poros da almofada entre um wafer e o seguinte. cpxmn — <a href="https://commons.wikimedia.org/wiki/File:Chemical-mechanical_polishing_(CMP-108,_conditioner).jpg" target="_blank" rel="noopener noreferrer">Chemical-mechanical polishing</a> (CC BY-SA 2.0), Wikimedia Commons.
+</DiagramFigure>
+
+<DiagramFigure src="/assets/silicon-wafer-300mm.jpg" alt="Wafer de silício de 300 mm com superfície espelhada">
+O resultado: um wafer de 300 mm com superfície espelhada. Peellden — <a href="https://commons.wikimedia.org/wiki/File:12-inch_silicon_wafer.jpg" target="_blank" rel="noopener noreferrer">12-inch silicon wafer</a> (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
+
 ## Limpeza RCA e inspeção
 
 Limpeza padronizada **RCA** <Cite id="kern-1990" />:
 
 1. **RCA-1 (SC-1):** NH₄OH / H₂O₂ / H₂O a 70–80 °C — oxidação orgânica e partículas.
 2. **RCA-2 (SC-2):** HCl / H₂O₂ / H₂O a 70–80 °C — metais alcalinos e pesados.
+
+<DiagramFigure src="/assets/wet-bench.jpg" alt="Bancada úmida (wet bench) de laboratório limpo com tanques para ataques químicos">
+A bancada úmida (*wet bench*) onde ataques e limpezas acontecem: tanques com químicos, exaustão e enxágue em cascata. KristianMolhave — <a href="https://commons.wikimedia.org/wiki/File:WetEtchBench.jpg" target="_blank" rel="noopener noreferrer">WetEtchBench</a> (CC BY 2.5), Wikimedia Commons.
+</DiagramFigure>
 
 Após secagem Marangoni ou IPA, os wafers passam por metrologia óptica (**Laser Surface Scanning System** — espalhamento de feixe laser) para detecção de defeitos de superfície e contagem de partículas. Por fim, wafers que precisam de camadas especiais passam por **crescimento epitaxial (EPI Growing)** por **CVD** antes de serem embalados a vácuo sob atmosfera limpa (**cleanroom** classe 1/10) para envio às **fabs** (fundições de semicondutores).
 
@@ -53,6 +85,10 @@ Nem todo wafer de silício termina numa fab. A indústria fotovoltaica consome o
 A eletrônica usa **exclusivamente silício monocristalino**, porque os requisitos de qualidade são altos demais para abrir exceção. A fotovoltaica usa **os dois** <Cite id="saimm" />.
 
 O silício **multicristalino** tem eficiência de célula menor, mas custa menos — e é esse compromisso que explica sua presença no mercado <Cite id="saimm" />. Em vez de puxar um lingote cilíndrico, ele é produzido por **fundição em bloco** (processo Bridgman): o silício é fundido num cadinho e a **interface cristal-líquido avança de baixo para cima** conforme o resfriamento é controlado <Cite id="saimm" />.
+
+<DiagramFigure src="/assets/multicrystalline-silicon-wafer.jpg" alt="Wafer de silício multicristalino com as fronteiras de grão visíveis e a iridescência de um filme fino de nitreto de silício">
+A diferença é visível a olho nu: num wafer multicristalino as **fronteiras de grão** aparecem como um mosaico — algo que um wafer monocristalino nunca mostra. Radiotrefoil — <a href="https://commons.wikimedia.org/wiki/File:Multicrystalline_silicon_wafer_with_thin_film_iridescence.jpg" target="_blank" rel="noopener noreferrer">Multicrystalline silicon wafer</a> (CC BY-SA 4.0), Wikimedia Commons.
+</DiagramFigure>
 
 O objetivo é obter **grãos alinhados verticalmente**, o que evita tensões térmicas altas e reduz a densidade de discordâncias. Como os wafers são cortados horizontalmente, isso também garante qualidade consistente de lâmina para lâmina <Cite id="saimm" />. Há um bônus de pureza: as impurezas metálicas são **empurradas para o topo do lingote** conforme o cristal cresce, num refino que acontece de graça dentro do próprio cadinho <Cite id="saimm" />. O cadinho é de **sílica**, revestido com **Si₃N₄** para o silício líquido não grudar nas paredes <Cite id="saimm" />.
 
@@ -74,10 +110,18 @@ O custo disso é o **kerf**: aproximadamente **30% do silício é perdido como s
 
 A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²** e, mais recentemente, **15,6 × 15,6 cm²** <Cite id="saimm" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
 
-<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm']" />
+<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1']" />
+
+## Vídeos
+
+<YouTubeEmbed id="skRmyhSOu28" title="Puxamento de um lingote Czochralski (UNSW)" />
+
+<YouTubeEmbed id="Q5paWn7bFg4" title="From Sand To Silicon: The Making of a Chip (Intel)" />
+
+<YouTubeEmbed id="xo-ir73TA_U" title="Crescimento do lingote dentro do forno LCT (Linton Crystal Technologies)" />
 
 <SeeAlso :links="[
-  { text: 'Estrutura e tipos de wafer', href: '/estrutura-wafers', note: 'cristal, Miller, dopagem' },
+  { text: 'Estrutura e tipos de wafer', href: '/estrutura-wafers', note: 'identificar o wafer pela borda' },
   { text: 'Polissilício', href: '/polissilicio', note: 'matéria-prima EG-Si' },
   { text: 'Referências', href: '/referencias', note: 'papers [6]–[9]' },
 ]" />
