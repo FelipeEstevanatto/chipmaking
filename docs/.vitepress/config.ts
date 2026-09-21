@@ -3,10 +3,16 @@ import type { DefaultTheme } from 'vitepress'
 import { fileURLToPath } from 'node:url'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
+/**
+ * Single source of truth for the GitHub Pages subpath. VitePress rewrites Markdown links and theme
+ * asset URLs with it, but **not** raw `head` tags — so those have to be prefixed by hand.
+ */
+const base = '/chipmaking/'
+
 const shared = {
-  base: '/chipmaking/',
+  base,
   appearance: true,
-  head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
+  head: [['link', { rel: 'icon', href: `${base}favicon.svg` }]],
 } as const
 
 function ptSidebar(): DefaultTheme.SidebarItem[] {
