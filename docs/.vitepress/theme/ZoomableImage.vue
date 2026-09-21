@@ -291,6 +291,11 @@ onBeforeUnmount(() => {
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
+  /**
+   * The zoomed image carries a transform, which makes it paint in the positioned layer; as a
+   * later sibling it would otherwise cover this toolbar at high zoom and swallow its clicks.
+   */
+  z-index: 2;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -340,6 +345,15 @@ onBeforeUnmount(() => {
 .zoomable-image {
   max-width: 94vw;
   max-height: 80vh;
+  /**
+   * The overlay is a dark lightbox backdrop, but most diagrams on this site are transparent
+   * SVGs drawn with dark ink for a light page. Without an opaque stage behind them they
+   * render dark-on-dark once enlarged, so the image carries its own white card. Opaque
+   * photographs are unaffected.
+   */
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
   transform-origin: center center;
   transition: transform 0.18s ease-out;
   cursor: zoom-in;
@@ -363,6 +377,7 @@ onBeforeUnmount(() => {
   bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
   margin: 0;
   padding: 0 12px;
   color: rgba(255, 255, 255, 0.72);

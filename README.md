@@ -41,6 +41,8 @@ Toda figura (`DiagramFigure`, `TransistorTimeline`) passa pelo componente `Zooma
 
 Esquemas próprios (transistores, rota do polissilício, forno de arco submerso, célula solar, coluna óptica do scanner, etapas da litografia, as quatro gerações ópticas e a identificação de wafer por flats/notch) ficam em `docs/public/assets/*.svg`. Escreva-os em **ASCII puro** e use referências numéricas (`&#176;`, `&#8594;`) para `°` e `→`: entidades HTML nomeadas como `&minus;` não existem em XML e fazem o SVG inteiro falhar. Termine com `width`/`height` no `<svg>` raiz — sem eles, o `naturalWidth` fica `0` e o `ZoomableImage` não consegue dimensionar a imagem.
 
+Um SVG usado em figura é transparente por padrão, e o visualizador de zoom tem fundo escuro: sem uma tinta clara por baixo, o desenho some no modo noturno e, ao ampliar, fica escuro sobre escuro. Por isso, **o primeiro filho do `<svg>` deve ser um `<rect>` opaco do tamanho do `viewBox`** (o próprio componente pinta um cartão branco, mas o arquivo também é aberto direto no navegador). Pelo mesmo motivo, use texto com contraste alto (`#1a202c` / `#2d3748` sobre branco) em vez de cinzas médios, e evite corpo abaixo de ~14 px: a coluna de prosa renderiza a figura a ~0,6× do tamanho nominal.
+
 O `wafer-identification.svg` é gerado por `scripts/gen-wafer-identification-svg.py`, porque os contornos de wafer com *flats* exigem geometria de arco real (um *flat* é uma corda que substitui um arco). Rode o script em vez de editar o SVG à mão.
 
 ## Imagens de terceiros
