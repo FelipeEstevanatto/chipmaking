@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img">
+  <title>EUV mirrors are Bragg reflectors: about fifty alternating molybdenum and silicon layer pairs, each boundary reflecting roughly three per cent, adding up in phase to about seventy per cent per mirror, so that after ten or more mirrors less than ten per cent of the source light reaches the wafer</title>
+  <rect width="960" height="620" fill="#ffffff" />
+  <defs>
+    <marker id="mIn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c53030" />
+    </marker>
+    <marker id="mOut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#805ad5" />
+    </marker>
+    <marker id="mChain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568" />
+    </marker>
+  </defs>
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sec { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
+    .sm { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .mo { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
+    .si { fill: #e2e8f0; stroke: #a0aec0; stroke-width: 1; }
+    .sub { fill: #cbd5e0; stroke: #718096; stroke-width: 1.4; }
+    .in { stroke: #c53030; stroke-width: 4; fill: none; stroke-linecap: round; }
+    .through { stroke: #c53030; stroke-width: 1.8; stroke-dasharray: 5 4; fill: none; opacity: 0.8; }
+    .refl { stroke: #805ad5; stroke-width: 1.5; fill: none; opacity: 0.75; }
+    .out { stroke: #805ad5; stroke-width: 4.4; fill: none; stroke-linecap: round; }
+    .bx { fill: #edf2f7; stroke: #a0aec0; stroke-width: 1.5; }
+    .bx2 { fill: #faf5ff; stroke: #805ad5; stroke-width: 1.8; }
+    .chain { stroke: #4a5568; stroke-width: 2.6; fill: none; }
+    .num { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+  </style>
+
+  <text class="h" x="40" y="34">The EUV mirror: a stack of molybdenum and silicon</text>
+  <text class="sm" x="40" y="57">No lens can bend 13.5 nm light, so EUV is steered only by reflection. Schematic, not to scale.</text>
+
+  <text class="sec" x="40" y="96">A Bragg reflector is around 50 layer pairs</text>
+
+  <!-- ===================== the multilayer stack ===================== -->
+  <g>
+    <rect class="mo" x="110" y="250" width="410" height="14" />
+    <rect class="si" x="110" y="264" width="410" height="14" />
+    <rect class="mo" x="110" y="278" width="410" height="14" />
+    <rect class="si" x="110" y="292" width="410" height="14" />
+    <rect class="mo" x="110" y="306" width="410" height="14" />
+    <rect class="si" x="110" y="320" width="410" height="14" />
+    <rect class="mo" x="110" y="334" width="410" height="14" />
+    <rect class="si" x="110" y="348" width="410" height="14" />
+    <rect class="mo" x="110" y="362" width="410" height="14" />
+    <rect class="si" x="110" y="376" width="410" height="14" />
+    <rect class="mo" x="110" y="390" width="410" height="14" />
+    <rect class="si" x="110" y="404" width="410" height="14" />
+  </g>
+  <rect class="sub" x="110" y="418" width="410" height="34" rx="5" />
+
+  <!-- incoming beam and the part that travels on through -->
+  <line class="in" x1="60" y1="140" x2="213" y2="249" marker-end="url(#mIn)" />
+  <line class="through" x1="218" y1="252" x2="450" y2="411" />
+  <text class="sm" x="40" y="128">EUV in</text>
+
+  <!-- partial reflections at successive boundaries -->
+  <g class="refl">
+    <line x1="235" y1="264" x2="293" y2="224" />
+    <line x1="256" y1="278" x2="314" y2="238" />
+    <line x1="276" y1="292" x2="334" y2="252" />
+    <line x1="297" y1="306" x2="355" y2="266" />
+    <line x1="317" y1="320" x2="375" y2="280" />
+    <line x1="337" y1="334" x2="395" y2="294" />
+  </g>
+
+  <!-- the sum of those reflections leaves as one beam -->
+  <line class="out" x1="312" y1="220" x2="408" y2="154" marker-end="url(#mOut)" />
+  <text class="s" x="420" y="156">about 70% reflected</text>
+
+  <!-- facts about the stack -->
+  <text class="s" x="545" y="272">molybdenum + silicon</text>
+  <text class="sm" x="545" y="298">layer pairs, a few nm each</text>
+  <text class="s" x="545" y="340">each boundary: ~3%</text>
+  <text class="sm" x="545" y="366">in phase they add to ~70%</text>
+  <text class="sm" x="545" y="404">curved, and polished to less</text>
+  <text class="sm" x="545" y="430">than an atom of figure error</text>
+
+  <!-- ===================== light budget ===================== -->
+  <text class="sec" x="40" y="500">Why the source has to be so bright</text>
+
+  <rect class="bx" x="60" y="528" width="140" height="72" rx="8" />
+  <text class="s" x="130" y="558" text-anchor="middle">tin plasma</text>
+  <text class="num" x="130" y="586" text-anchor="middle">100%</text>
+
+  <line class="chain" x1="204" y1="564" x2="231" y2="564" marker-end="url(#mChain)" />
+
+  <rect class="bx" x="235" y="528" width="140" height="72" rx="8" />
+  <text class="s" x="305" y="558" text-anchor="middle">1 mirror</text>
+  <text class="num" x="305" y="586" text-anchor="middle">70%</text>
+
+  <line class="chain" x1="379" y1="564" x2="406" y2="564" marker-end="url(#mChain)" />
+
+  <rect class="bx" x="410" y="528" width="140" height="72" rx="8" />
+  <text class="s" x="480" y="558" text-anchor="middle">2 mirrors</text>
+  <text class="num" x="480" y="586" text-anchor="middle">49%</text>
+
+  <line class="chain" x1="554" y1="564" x2="581" y2="564" marker-end="url(#mChain)" />
+
+  <rect class="bx" x="585" y="528" width="140" height="72" rx="8" />
+  <text class="s" x="655" y="558" text-anchor="middle">5 mirrors</text>
+  <text class="num" x="655" y="586" text-anchor="middle">17%</text>
+
+  <line class="chain" x1="729" y1="564" x2="756" y2="564" marker-end="url(#mChain)" />
+
+  <rect class="bx2" x="760" y="528" width="140" height="72" rx="8" />
+  <text class="s" x="830" y="558" text-anchor="middle">10+ mirrors</text>
+  <text class="num" x="830" y="586" text-anchor="middle">&lt; 10%</text>
+</svg>

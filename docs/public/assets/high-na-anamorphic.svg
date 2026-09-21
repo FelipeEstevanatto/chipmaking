@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img">
+  <title>Comparing EUV numerical apertures: the 0.33 NA NXE system resolves 13 nm, while the 0.55 NA EXE system resolves 8 nm because its mirrors collect a wider cone of light, and it uses anamorphic optics that halve the exposure field to 26 by 16.5 millimetres</title>
+  <rect width="960" height="720" fill="#ffffff" />
+  <defs>
+    <marker id="naArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#805ad5" />
+    </marker>
+  </defs>
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sec { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
+    .sm { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .na { font: 600 20px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #553c9a; }
+    .mir { stroke: #4a5568; stroke-width: 7; fill: none; stroke-linecap: round; }
+    .rayA { stroke: #b794f4; stroke-width: 2.1; fill: none; }
+    .rayB { stroke: #805ad5; stroke-width: 2.6; fill: none; }
+    .axis { stroke: #a0aec0; stroke-width: 1.3; stroke-dasharray: 5 5; fill: none; }
+    .wafer { stroke: #2b6cb0; stroke-width: 6; fill: none; stroke-linecap: round; }
+    .fldA { fill: #ebf4ff; stroke: #2b6cb0; stroke-width: 2; }
+    .fldB { fill: #faf5ff; stroke: #805ad5; stroke-width: 2; }
+    .dim { stroke: #718096; stroke-width: 1.2; fill: none; }
+  </style>
+
+  <text class="h" x="40" y="34">High-NA EUV: from 0.33 to 0.55 numerical aperture</text>
+  <text class="sm" x="40" y="57">Resolution is k1 &#215; wavelength &#247; NA. A wider cone of light means a smaller printable feature. Schematic, not to scale.</text>
+
+  <text class="sec" x="40" y="100">The numerical aperture sets the resolution</text>
+
+  <!-- ===================== 0.33 NA ===================== -->
+  <text class="sm" x="250" y="150" text-anchor="middle">final mirror</text>
+  <line class="mir" x1="208" y1="172" x2="292" y2="172" />
+  <line class="axis" x1="250" y1="172" x2="250" y2="300" />
+  <line class="rayA" x1="208" y1="172" x2="250" y2="300" />
+  <line class="rayA" x1="292" y1="172" x2="250" y2="300" />
+  <line class="wafer" x1="228" y1="300" x2="272" y2="300" />
+  <text class="na" x="250" y="344" text-anchor="middle">NA 0.33</text>
+  <text class="s" x="250" y="372" text-anchor="middle">13 nm resolution</text>
+
+  <!-- ===================== 0.55 NA ===================== -->
+  <text class="sm" x="690" y="150" text-anchor="middle">final mirror</text>
+  <line class="mir" x1="611" y1="172" x2="769" y2="172" />
+  <line class="axis" x1="690" y1="172" x2="690" y2="300" />
+  <line class="rayB" x1="611" y1="172" x2="690" y2="300" />
+  <line class="rayB" x1="769" y1="172" x2="690" y2="300" />
+  <line class="wafer" x1="668" y1="300" x2="712" y2="300" />
+  <text class="na" x="690" y="344" text-anchor="middle">NA 0.55</text>
+  <text class="s" x="690" y="372" text-anchor="middle">8 nm resolution</text>
+
+  <!-- the point of the comparison -->
+  <text class="s" x="480" y="212" text-anchor="middle">a wider cone:</text>
+  <text class="s" x="480" y="238" text-anchor="middle">sin &#952; = NA</text>
+
+  <text class="s" x="40" y="412">With 13.5 nm light and k1 near 0.3, the same equation gives both numbers.</text>
+
+  <!-- ===================== the anamorphic field ===================== -->
+  <text class="sec" x="40" y="464">Anamorphic optics: half the field per scan</text>
+
+  <rect class="fldA" x="140" y="500" width="130" height="165" />
+  <rect class="fldB" x="310" y="500" width="130" height="82" />
+  <text class="sm" x="205" y="688" text-anchor="middle">NXE: 26 &#215; 33 mm</text>
+  <text class="sm" x="375" y="612" text-anchor="middle">EXE: 26 &#215; 16.5 mm</text>
+
+  <text class="s" x="480" y="528">Anamorphic optics: 8&#215; reduction in</text>
+  <text class="s" x="480" y="554">the scan direction, 4&#215; across it,</text>
+  <text class="s" x="480" y="580">so the exposure field is halved.</text>
+  <text class="sm" x="480" y="624">The result: features 1.7&#215; smaller and</text>
+  <text class="sm" x="480" y="650">2.9&#215; more transistors per area.</text>
+  <text class="sm" x="480" y="682">Faster stages carry the smaller field.</text>
+</svg>
