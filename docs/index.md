@@ -50,8 +50,7 @@ flowchart LR
   A[Quartzo HPQ] --> B[MG-Si]
   B --> C[Polissilício]
   C --> D[Lingote CZ]
-  D --> E[Wafer]
-  E --> F[Fotolitografia]
+  E[Wafer] --> F[Fotolitografia]
   F --> G[Transistores 3D]
 ```
 

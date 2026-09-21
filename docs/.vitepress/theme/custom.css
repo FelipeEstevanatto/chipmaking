@@ -273,3 +273,21 @@
 .ref-usgs-years a {
   color: var(--vp-c-brand-1);
 }
+
+/* Mermaid diagrams (rendered client-side by theme/Mermaid.vue) */
+.mermaid {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Timelines render at natural width so their labels stay legible. */
+.mermaid svg[aria-roledescription='timeline'] {
+  max-width: none;
+}

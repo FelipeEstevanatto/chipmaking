@@ -1,12 +1,11 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
+import { fileURLToPath } from 'node:url'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
 const shared = {
   base: '/chipmaking/',
   appearance: true,
-  markdown: {
-    mermaid: true,
-  },
   head: [['link', { rel: 'icon', href: '/favicon.svg' }]],
 } as const
 
@@ -166,27 +165,41 @@ const enTheme: DefaultTheme.Config = {
   docFooter: { prev: 'Previous', next: 'Next' },
 }
 
-export default defineConfig({
-  ...shared,
-  themeConfig: {
-    search: localSearch,
-  },
-  locales: {
-    root: {
-      label: 'Português',
-      lang: 'pt-BR',
-      title: 'Silício — Chip Making',
-      description:
-        'Da mineração de quartzo aos transistores GAA: cadeia do silício para solar e semicondutores.',
-      themeConfig: ptTheme,
+export default withMermaid(
+  defineConfig({
+    ...shared,
+    vite: {
+      resolve: {
+        alias: {
+          // Keep the plugin's ```mermaid fence handling, but swap in a renderer that loads
+          // mermaid lazily. The plugin's own component imports mermaid statically, which adds
+          // ~450 kB of JavaScript (plus katex/cytoscape diagram chunks) to every page.
+          'vitepress-plugin-mermaid/Mermaid.vue': fileURLToPath(
+            new URL('./theme/mermaid-async.ts', import.meta.url),
+          ),
+        },
+      },
     },
-    en: {
-      label: 'English',
-      lang: 'en-US',
-      link: '/en/',
-      title: 'Silicon — Chip Making',
-      description: 'From quartz mining to GAA transistors: the silicon supply chain.',
-      themeConfig: enTheme,
+    themeConfig: {
+      search: localSearch,
     },
-  },
-})
+    locales: {
+      root: {
+        label: 'Português',
+        lang: 'pt-BR',
+        title: 'Silício — Chip Making',
+        description:
+          'Da mineração de quartzo aos transistores GAA: cadeia do silício para solar e semicondutores.',
+        themeConfig: ptTheme,
+      },
+      en: {
+        label: 'English',
+        lang: 'en-US',
+        link: '/en/',
+        title: 'Silicon — Chip Making',
+        description: 'From quartz mining to GAA transistors: the silicon supply chain.',
+        themeConfig: enTheme,
+      },
+    },
+  }),
+)
