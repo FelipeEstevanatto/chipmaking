@@ -478,6 +478,63 @@ const list: Citation[] = [
     url: 'https://www.imarcgroup.com/silicon-wafer-market',
     short: 'IMARC (mercado de wafers)',
   },
+  {
+    key: 'elkem-solar-route',
+    num: 60,
+    title: "Solar-grade silicon — is 'Siemens' the only answer?",
+    publisher:
+      'Odden, Søiland, Enebakk, Braathen, Sandberg & Friestad (Elkem Solar) — Photovoltaics International, ed. 16, May 2012',
+    url: 'https://www.pv-tech.org/wp-content/uploads/legacy-publication-pdfs/014325526f-solargrade-silicon-is-siemens-the-only-answer.pdf',
+    short: 'Elkem Solar — rota metalúrgica',
+  },
+  {
+    key: 'elkem-lca',
+    num: 61,
+    title: 'Environmental footprint of Elkem Solar Silicon',
+    publisher: 'de Wild-Scholten & Gløckner (2012)',
+    url: 'https://smartgreenscans.nl/publications/deWildScholten-and-Glockner-2012-Environmental-footprint-of-Elkem-Solar-Silicon.pdf',
+    short: 'LCA do silício Elkem Solar',
+  },
+  {
+    key: 'rec-solar-epd',
+    num: 62,
+    title: 'Solar grade silicon (SoG-Si) — Environmental Product Declaration, Fiskå',
+    publisher: 'REC Solar Norway AS / EPD-Norge (2020)',
+    url: 'https://www.recgroup.com/sites/default/files/documents/nepd-2681-1371_rec-solar-solar-grade-silicon-sog-si-.pdf',
+    short: 'EPD do silício grau solar (REC)',
+  },
+  {
+    key: 'rec-closure-2023',
+    num: 63,
+    title: 'REC closes Norwegian polysilicon production facilities',
+    publisher: 'pv magazine (2023)',
+    url: 'https://www.pv-magazine.com/2023/11/23/rec-closes-norwegian-polysilicon-production-facilities/',
+    short: 'pv magazine — fechamento da REC (2023)',
+  },
+  {
+    key: 'elkem-buys-rec',
+    num: 64,
+    title: "India's Reliance Industries offloads REC Solar Norway",
+    publisher: 'TaiyangNews (2024)',
+    url: 'https://taiyangnews.info/business/indias-reliance-industries-offloads-rec-solar-norway',
+    short: 'TaiyangNews — Elkem compra a REC Norway',
+  },
+  {
+    key: 'trendforce-2025',
+    num: 65,
+    title: 'Solar module, cell, wafer prices to rise in Q2 2025, says TrendForce',
+    publisher: 'pv magazine / TrendForce (2025)',
+    url: 'https://www.pv-magazine.com/2025/03/27/solar-module-cell-wafer-prices-to-rise-in-q2-2025-says-trendforce/',
+    short: 'pv magazine — preços em 2025',
+  },
+  {
+    key: 'snl-rec',
+    num: 66,
+    title: 'REC Solar Norway',
+    publisher: 'Store norske leksikon',
+    url: 'https://snl.no/REC_Solar_Norway',
+    short: 'Store norske leksikon (REC)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

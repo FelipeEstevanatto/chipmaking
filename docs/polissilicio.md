@@ -125,6 +125,48 @@ Como cada técnica é boa em um alvo e fraca nos outros, a indústria encadeia *
 
 A rota tem potencial para se tornar dominante, mas em 2008 respondia por **menos de 8%** da produção de silício solar <Cite id="saimm" />. A razão é simples: ela não chega ao grau eletrônico, e por isso não substitui a rota química para semicondutores.
 
+### Um caso industrial: os blocos de silício da Elkem em Kristiansand
+
+A rota metalúrgica não é apenas uma hipótese de *review* acadêmico. Entre **2009 e 2023**, a planta de Kristiansand, no sul da Noruega, operou em escala industrial o que provavelmente foi a tentativa mais bem-sucedida de produzir silício de grau solar sem passar por cloro <Cite id="elkem-solar-route" />.
+
+A Elkem vinha estudando rotas metalúrgicas desde o fim dos anos 1970 e chegou ao conceito industrializado em **2009**. Ele encadeia **cinco etapas**, das quais **três são de purificação** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
+
+1. **Redução carbotérmica** do quartzo em forno de arco elétrico — a mesma etapa que produz o MG-Si descrito no capítulo de mineração;
+2. **Tratamento com escória** a alta temperatura;
+3. **Lixiviação química a úmido**, a baixa temperatura;
+4. **Solidificação direcional**, que segrega os contaminantes residuais;
+5. **Pós-tratamento**, com limpeza e corte em blocos.
+
+A diferença essencial em relação ao processo Siemens é que **o silício nunca passa por uma fase vaporizada** — não há destilação de um gás, apenas metalurgia sucessiva <Cite id="elkem-solar-route" />.
+
+<DiagramFigure src="/assets/elkem-solar-kristiansand.jpg" alt="Vista externa da planta de silício grau solar da Elkem Solar em Kristiansand, Noruega">
+A planta de Kristiansand (Fiskå), onde a Elkem industrializou sua rota metalúrgica em 2009. A produção começou com **5.000 t/ano**, subiu para **6.000 t/ano** em 2011 e tinha capacidade projetada de **~7.500 t/ano** <Cite id="elkem-solar-route" />. Bjoertvedt — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Solar_01.JPG" target="_blank" rel="noopener noreferrer">Elkem Solar</a> (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
+
+O ganho energético é o ponto central do argumento. A planta produzia silício com cerca de **70% menos energia** que a rota Siemens de referência, e as emissões de CO₂ equivalente ficavam entre **10 e 30%** das do processo Siemens — **11 g contra 40–150 g de CO₂-eq por kg**, conforme a rota e a localização da planta <Cite id="elkem-solar-route" />. O tempo de retorno energético de um módulo solar feito com esse material ficava **abaixo de um ano** <Cite id="elkem-solar-route" />.
+
+A purificação também evoluiu. Nos anos 1980 o produto carregava quase **4 ppmw de boro e fósforo**; os valores típicos chegaram a **0,22 ppmw de boro e 0,62 ppmw de fósforo** <Cite id="elkem-solar-route" />. Com isso o material — vendido sob a marca **ESS™** — passou a atender ao **grupo IV** da norma **SEMI PV17-0611**, que classifica justamente as qualidades de silício grau solar <Cite id="elkem-solar-route" />.
+
+Na célula, o resultado prático foi paridade com o polissilício convencional: eficiências de **16,5–17%** em células multicristalinas e de **18–18,5%** em monocristalinas, mesmo em misturas de 40 a 80% de ESS com polissilício virgem <Cite id="elkem-solar-route" />. A rota também aceitava **reciclar os cortes de lingote** (*carbide cuts*) que a indústria solar normalmente descarta <Cite id="elkem-solar-route" />.
+
+#### A forma do produto: blocos, não hastes
+
+Quem visita uma planta Siemens vê **hastes** de silício saindo do reator. A rota metalúrgica entrega outra coisa: **blocos**. O produto saía da Noruega em **pallets de 24 blocos**, cada um pesando **10–18 kg** e medindo tipicamente **14–15 cm de largura por 15–17 cm de altura e 27–28 cm de comprimento** — pallets de **300–350 kg** <Cite id="rec-solar-epd" />. Esses blocos seguiam para fusão e re-cristalização em lingotes mono ou multicristalinos.
+
+A operação tinha dois sítios: **Fiskå, em Kristiansand**, produzia o silício grau solar — cerca de **7.300 toneladas por ano** em 2018 — e **Herøya, em Porsgrunn**, transformava o material em lingotes e blocos para exportação, principalmente para a fábrica da REC em Singapura <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
+
+<DiagramFigure src="/assets/heroyha-industripark.jpg" alt="Parque industrial de Herøya, em Porsgrunn, Noruega">
+O parque industrial de **Herøya**, em Porsgrunn, onde o silício de Kristiansand era fundido em lingotes e cortado em blocos antes de seguir para Singapura <Cite id="rec-solar-epd" />. Bitjungle — <a href="https://commons.wikimedia.org/wiki/File:Her%C3%B8ya_Industripark.JPG" target="_blank" rel="noopener noreferrer">Herøya Industripark</a> (CC BY-SA 4.0), Wikimedia Commons.
+</DiagramFigure>
+
+#### O fim da linha norueguesa
+
+O arco termina de forma amarga. Em **novembro de 2023** a REC fechou a produção de polissilício em Kristiansand e Porsgrunn, citando **preços de eletricidade altos** e prejuízos acumulados de **335 milhões de coroas norueguesas** (cerca de **US$ 31 milhões**); o fechamento atingiu cerca de **250 trabalhadores** <Cite id="rec-closure-2023" />. Em **janeiro de 2024** a Elkem comprou as instalações por **US$ 22 milhões**, sem planos de retomar o modelo de negócio anterior <Cite id="elkem-buys-rec" />.
+
+Vale ser preciso sobre o motivo. A rota metalúrgica **não perdeu por qualidade** — as células provaram paridade elétrica com o polissilício Siemens. Perdeu por economia: o custo da rota é dominado pela **eletricidade**, que na Noruega disparou com a crise energética europeia, enquanto o preço global do polissilício despencava diante da sobreoferta. Insumo em alta contra preço de venda em queda é o pior cenário possível.
+
+<SourceNote :ids="['elkem-solar-route', 'elkem-lca', 'rec-solar-epd', 'snl-rec', 'rec-closure-2023', 'elkem-buys-rec']" />
+
 ## Quanta pureza é necessária?
 
 As classes de pureza citadas acima ficam mais concretas quando se olham os números. A Tabela I do *review* de Xakalashe e Tangstad compara as análises químicas típicas dos quatro produtos da cadeia <Cite id="saimm" />:
@@ -167,6 +209,10 @@ Ciclos de escassez (*shortage*) e sobreoferta (*oversupply*).
 Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) para **61** (2010). A sobreoferta global provocou o fechamento de mais de **40 plantas** apenas na China nos três anos seguintes <Cite id="bernreuter" />.
 
 A partir desse marco, a China consolidou liderança ao investir em refinamento tecnológico e subsídios para baratear custos <Cite id="bernreuter" />.
+
+Uma nota sobre o presente: em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />. A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural — a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />. É esse tipo de ciclo curto, contra capacidade instalada abundante, que ajuda a explicar por que plantas europeias competitivas em qualidade — como a de Kristiansand descrita acima — não conseguiram se sustentar.
+
+<SourceNote :ids="['trendforce-2025', 'bernreuter']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'marcos do mercado de polissilício' },

@@ -1,0 +1,49 @@
+---
+description: Keep original high-resolution image assets; the resize-photos helper is deliberately deferred until the repo is large
+globs: docs/public/assets/**,scripts/resize-photos.py
+alwaysApply: false
+---
+
+# Prefer original high-resolution images
+
+## Policy
+
+Do **not** downscale image assets in this repo. Keep the original
+high-resolution file exactly as the source provides it.
+
+`scripts/resize-photos.py` exists as a helper, but it is **deferred**: only run
+it once the repository reaches roughly **400 MB**. The repo is far below that
+today and page weight is not a problem yet.
+
+## Why
+
+- The photos and diagrams here *are* the content — readers open and zoom them.
+- The repo is still small, so there are no bytes to win that justify the loss.
+- Downscaling is lossy and irreversible: recovering the original means
+  re-downloading it from the source.
+
+## What to do instead
+
+Commit the original file at full resolution. From Wikimedia Commons, fetch the
+original upload URL rather than a thumbnail:
+
+```powershell
+$u = 'https://upload.wikimedia.org/wikipedia/commons/<hash>/<File>.JPG'
+Invoke-WebRequest -Uri $u -Headers @{ 'User-Agent' = $ua } -OutFile $out
+```
+
+Then credit the file inline in the `figcaption` — author, file, license and a
+link to the Commons page. Copy assets into `docs/public/assets/` instead of
+hotlinking a third-party host.
+
+## If you do run the helper
+
+Only past the size threshold, and report back which files changed:
+
+```powershell
+python scripts/resize-photos.py           # scan every asset
+python scripts/resize-photos.py foo.jpg   # only specific files
+python scripts/resize-photos.py --force   # override the size gate on purpose
+```
+
+The script refuses to run below the threshold unless `--force` is given.

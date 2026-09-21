@@ -125,6 +125,48 @@ Because each technique is good at one target and weak at the others, the industr
 
 The route has the potential to become dominant, but in 2008 it accounted for **less than 8%** of solar silicon production <Cite id="saimm" />. The reason is simple: it does not reach electronic grade, so it cannot replace the chemical route for semiconductors.
 
+### An industrial case: Elkem's silicon blocks in Kristiansand
+
+The metallurgical route is not just an academic review exercise. Between **2009 and 2023**, a plant in Kristiansand, in southern Norway, operated at industrial scale what was probably the most successful attempt to produce solar-grade silicon without going through chlorine <Cite id="elkem-solar-route" />.
+
+Elkem had been studying metallurgical routes since the late 1970s and reached the industrialised concept in **2009**. It chains **five stages**, of which **three are purification** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
+
+1. **Carbothermal reduction** of quartz in an electric arc furnace — the same stage that produces the MG-Si described in the mining chapter;
+2. **Slag treatment** at high temperature;
+3. **Wet-chemical leaching**, at low temperature;
+4. **Directional solidification**, which segregates the residual contaminants;
+5. **Post-treatment**, with cleaning and cutting into blocks.
+
+The essential difference from the Siemens process is that **the silicon never passes through a vaporised phase** — there is no distillation of a gas, only successive metallurgy <Cite id="elkem-solar-route" />.
+
+<DiagramFigure src="/assets/elkem-solar-kristiansand.jpg" alt="Exterior view of the Elkem Solar solar-grade silicon plant in Kristiansand, Norway">
+The Kristiansand plant (Fiskå), where Elkem industrialised its metallurgical route in 2009. Production began at **5,000 t/year**, rose to **6,000 t/year** in 2011 and had a projected capacity of **~7,500 t/year** <Cite id="elkem-solar-route" />. Bjoertvedt — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Solar_01.JPG" target="_blank" rel="noopener noreferrer">Elkem Solar</a> (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
+
+The energy gain is the core of the argument. The plant produced silicon with about **70% less energy** than the reference Siemens route, and CO₂-equivalent emissions were between **10 and 30%** of those of the Siemens process — **11 g against 40–150 g of CO₂-eq per kg**, depending on the route and plant location <Cite id="elkem-solar-route" />. The energy payback time of a solar module made from that material was **under one year** <Cite id="elkem-solar-route" />.
+
+Purification evolved too. In the 1980s the product carried nearly **4 ppmw of boron and phosphorus**; typical values reached **0.22 ppmw boron and 0.62 ppmw phosphorus** <Cite id="elkem-solar-route" />. That brought the material — sold under the **ESS™** brand — into **group IV** of the **SEMI PV17-0611** standard, which classifies precisely the qualities of solar-grade silicon <Cite id="elkem-solar-route" />.
+
+In the cell, the practical result was parity with conventional polysilicon: efficiencies of **16.5–17%** in multicrystalline cells and **18–18.5%** in monocrystalline ones, even in blends of 40 to 80% ESS with virgin polysilicon <Cite id="elkem-solar-route" />. The route could also **recycle ingot cuts** (*carbide cuts*) that the solar industry normally discards <Cite id="elkem-solar-route" />.
+
+#### What the product looks like: blocks, not rods
+
+Anyone who visits a Siemens plant sees **rods** of silicon coming out of the reactor. The metallurgical route delivers something else: **blocks**. The product left Norway on **pallets of 24 bricks**, each weighing **10–18 kg** and typically measuring **14–15 cm wide by 15–17 cm high and 27–28 cm long** — pallets of **300–350 kg** <Cite id="rec-solar-epd" />. Those bricks went on to be melted and re-crystallised into mono- or multicrystalline ingots.
+
+The operation had two sites: **Fiskå, in Kristiansand**, produced the solar-grade silicon — around **7,300 tonnes per year** in 2018 — and **Herøya, in Porsgrunn**, turned the material into ingots and blocks for export, mainly to REC's plant in Singapore <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
+
+<DiagramFigure src="/assets/heroyha-industripark.jpg" alt="Herøya industrial park in Porsgrunn, Norway">
+The **Herøya** industrial park in Porsgrunn, where the Kristiansand silicon was melted into ingots and cut into blocks before heading to Singapore <Cite id="rec-solar-epd" />. Bitjungle — <a href="https://commons.wikimedia.org/wiki/File:Her%C3%B8ya_Industripark.JPG" target="_blank" rel="noopener noreferrer">Herøya Industripark</a> (CC BY-SA 4.0), Wikimedia Commons.
+</DiagramFigure>
+
+#### The end of the Norwegian line
+
+The arc ends bitterly. In **November 2023** REC closed polysilicon production in Kristiansand and Porsgrunn, citing **high electricity prices** and accumulated losses of **NOK 335 million** (about **US$ 31 million**); the closure affected around **250 workers** <Cite id="rec-closure-2023" />. In **January 2024** Elkem bought the facilities for **US$ 22 million**, with no plans to revive the previous business model <Cite id="elkem-buys-rec" />.
+
+It is worth being precise about why. The metallurgical route **did not lose on quality** — the cells proved electrical parity with Siemens polysilicon. It lost on economics: the route's cost is dominated by **electricity**, which in Norway spiked with the European energy crisis, while the global polysilicon price collapsed under oversupply. An input rising against a falling selling price is the worst possible setup.
+
+<SourceNote :ids="['elkem-solar-route', 'elkem-lca', 'rec-solar-epd', 'snl-rec', 'rec-closure-2023', 'elkem-buys-rec']" />
+
 ## How much purity is actually needed?
 
 The purity classes mentioned above become far more concrete when you look at the numbers. Table I of the Xakalashe and Tangstad review compares the typical chemical analyses of the four products in the chain <Cite id="saimm" />:
@@ -167,6 +209,10 @@ Shortage and oversupply cycles.
 That growth during the 2000s made the number of plants jump from **11** (2004) to **61** (2010). The resulting global oversupply caused more than **40 plants** to close in China alone over the following three years <Cite id="bernreuter" />.
 
 From that point on, China consolidated its market leadership by investing heavily in refining technology and in subsidies to lower production costs <Cite id="bernreuter" />.
+
+A note on the present: **2025** brought an attempted price recovery. The consultancy TrendForce projected polysilicon at **CNY 45/kg** for the second quarter, with modules at **CNY 0.70/W** and TOPCon cells rising about **1.7%** month on month <Cite id="trendforce-2025" />. The rise, however, came from an artificial installation rush in China ahead of a regulatory change, not from structural demand — TrendForce itself already expected the reversal in the third quarter <Cite id="trendforce-2025" />. It is this kind of short cycle, against abundant installed capacity, that helps explain why European plants competitive on quality — such as the one in Kristiansand described above — could not sustain themselves.
+
+<SourceNote label="Sources" :ids="['trendforce-2025', 'bernreuter']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'milestones of the polysilicon market' },
