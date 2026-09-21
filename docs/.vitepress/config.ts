@@ -52,6 +52,54 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
   ]
 }
 
+/** Root-level `themeConfig.search` is required — VitePress builds the index from here (not locale-only). */
+const localSearch: { provider: 'local'; options: DefaultTheme.LocalSearchOptions } = {
+  provider: 'local',
+  options: {
+    detailedView: true,
+    locales: {
+      root: {
+        translations: {
+          button: {
+            buttonText: 'Buscar',
+            buttonAriaLabel: 'Buscar no site',
+          },
+          modal: {
+            noResultsText: 'Nenhum resultado para',
+            resetButtonTitle: 'Limpar',
+            backButtonTitle: 'Voltar',
+            displayDetails: 'Mostrar lista detalhada',
+            footer: {
+              selectText: 'selecionar',
+              navigateText: 'navegar',
+              closeText: 'fechar',
+            },
+          },
+        },
+      },
+      en: {
+        translations: {
+          button: {
+            buttonText: 'Search',
+            buttonAriaLabel: 'Search docs',
+          },
+          modal: {
+            noResultsText: 'No results for',
+            resetButtonTitle: 'Clear search',
+            backButtonTitle: 'Back',
+            displayDetails: 'Show detailed list',
+            footer: {
+              selectText: 'to select',
+              navigateText: 'to navigate',
+              closeText: 'to close',
+            },
+          },
+        },
+      },
+    },
+  },
+}
+
 function enSidebar(): DefaultTheme.SidebarItem[] {
   return [
     {
@@ -104,7 +152,6 @@ const ptTheme: DefaultTheme.Config = {
   sidebar: ptSidebar(),
   outline: { level: [2, 3], label: 'Nesta página' },
   docFooter: { prev: 'Anterior', next: 'Próximo' },
-  search: { provider: 'local', options: { locales: { root: { translations: { button: { buttonText: 'Buscar', buttonAriaLabel: 'Buscar' }, modal: { noResultsText: 'Nenhum resultado', resetButtonTitle: 'Limpar', footer: { selectText: 'Selecionar', navigateText: 'Navegar', closeText: 'Fechar' } } } } } } },
 }
 
 const enTheme: DefaultTheme.Config = {
@@ -117,11 +164,13 @@ const enTheme: DefaultTheme.Config = {
   sidebar: enSidebar(),
   outline: { level: [2, 3], label: 'On this page' },
   docFooter: { prev: 'Previous', next: 'Next' },
-  search: { provider: 'local' },
 }
 
 export default defineConfig({
   ...shared,
+  themeConfig: {
+    search: localSearch,
+  },
   locales: {
     root: {
       label: 'Português',

@@ -6,7 +6,9 @@ Documento fonte: `Resumo Chipmaking.pdf`.
 
 ## Idiomas
 
-[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (conteúdo completo) e **English** (`docs/en/`). Busca local no header (PT com rótulos em português).
+[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (conteúdo completo) e **English** (`docs/en/`).
+
+**Busca local** (sem Algolia): botão no header ou **Ctrl+K** / **/** — indexa o Markdown no build; cada idioma busca só nas páginas daquele locale.
 
 ## Estrutura do site
 
