@@ -27,6 +27,8 @@ Milhares de toneladas de **silício metálico** (não confundir com polissilíci
 | França | 32 | 47 | 40 | 40 | 40 | 40 |
 | **Mundo (Total)** | **2.600** | **3.300** | **3.000** | **3.300** | **3.300** | **3.300** |
 
+As colunas de 2024 e 2025 são estimativas do USGS, não produção reportada.
+
 <SourceNote usgs-mcs />
 
 ### Gráfico interativo
@@ -39,14 +41,8 @@ Milhares de toneladas de **silício metálico** (não confundir com polissilíci
 
 O silício é o segundo material mais abundante na crosta terrestre (27%) e pode ser minerado de diversas fontes, sendo encontrado como óxido (sílica) e silicatos: areia, quartzo, ametista, ágata e sílex. A maneira mais eficiente vem da mineração e incineração do quartzo, que é dióxido de silício (SiO₂).
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/mineracao-mg-si">Mineração e MG-Si</a> — primeiro passo industrial após o quartzo</li>
-  <li><a href="/glossario">Glossário</a> — diferença entre MG-Si, polissilício e EG-Si</li>
-  <li><a href="/referencias">Referências</a> — lista completa de fontes</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Mineração e MG-Si', href: '/mineracao-mg-si', note: 'primeiro passo industrial após o quartzo' },
+  { text: 'Glossário', href: '/glossario', note: 'diferença entre MG-Si, polissilício e EG-Si' },
+  { text: 'Referências', href: '/referencias', note: 'lista completa de fontes' },
+]" />

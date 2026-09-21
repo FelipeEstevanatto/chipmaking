@@ -3,10 +3,12 @@ import DiagramFigure from './DiagramFigure.vue'
 import YouTubeEmbed from './YouTubeEmbed.vue'
 import UsgsProductionChart from './UsgsProductionChart.vue'
 import TransistorCompare from './TransistorCompare.vue'
+import TransistorTimeline from './TransistorTimeline.vue'
 import Cite from './Cite.vue'
 import SourceNote from './SourceNote.vue'
 import RefList from './RefList.vue'
 import UsgsMcsLinks from './UsgsMcsLinks.vue'
+import SeeAlso from './SeeAlso.vue'
 import './custom.css'
 
 export default {
@@ -16,9 +18,11 @@ export default {
     app.component('YouTubeEmbed', YouTubeEmbed)
     app.component('UsgsProductionChart', UsgsProductionChart)
     app.component('TransistorCompare', TransistorCompare)
+    app.component('TransistorTimeline', TransistorTimeline)
     app.component('Cite', Cite)
     app.component('SourceNote', SourceNote)
     app.component('RefList', RefList)
     app.component('UsgsMcsLinks', UsgsMcsLinks)
+    app.component('SeeAlso', SeeAlso)
   },
 }

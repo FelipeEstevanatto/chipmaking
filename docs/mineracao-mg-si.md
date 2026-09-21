@@ -37,14 +37,8 @@ O silício fundido é drenado pelo fundo do forno com pureza de **98% a 99,5%**,
 
 <SourceNote :ids="['pv-education', 'sciencedirect-hpq', 'elkem', 'csiro', 'saimm']" />
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/introducao">Introdução</a> — produção mundial de silício metálico <Cite id="usgs-mcs" /></li>
-  <li><a href="/polissilicio">Polissilício</a> — refinamento químico a partir do MG-Si</li>
-  <li><a href="/referencias">Referências</a> — lista numerada</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Introdução', href: '/introducao', note: 'produção mundial de silício metálico', cite: 'usgs-mcs' },
+  { text: 'Polissilício', href: '/polissilicio', note: 'refinamento químico a partir do MG-Si' },
+  { text: 'Referências', href: '/referencias', note: 'lista numerada' },
+]" />

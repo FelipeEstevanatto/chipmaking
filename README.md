@@ -6,7 +6,19 @@ Documento fonte: `Resumo Chipmaking.pdf`.
 
 ## Idiomas
 
-[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (conteúdo completo) e **English** (`docs/en/`).
+[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (`docs/`) e **English** (`docs/en/`), ambos com conteúdo completo e espelhado arquivo a arquivo.
+
+Ao adicionar um capítulo, replique-o nos dois locales. Componentes compartilhados (`Cite`, `UsgsProductionChart`, `TransistorCompare`) detectam o locale e apontam para as páginas do idioma ativo.
+
+### Blocos "Veja também"
+
+Use o componente `SeeAlso` — ele aplica o `base` do site automaticamente. Não escreva `<a href="/...">` cru no Markdown: o VitePress só reescreve links de Markdown, então âncoras HTML cruas perdem o prefixo `/chipmaking/`.
+
+```md
+<SeeAlso :links="[
+  { text: 'Polissilício', href: '/polissilicio', note: 'refinamento químico a partir do MG-Si' },
+]" />
+```
 
 **Busca local** (sem Algolia): botão no header ou **Ctrl+K** / **/** — indexa o Markdown no build; cada idioma busca só nas páginas daquele locale.
 

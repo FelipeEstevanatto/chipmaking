@@ -36,17 +36,15 @@ timeline
     Futuro : CFET empilhado (&lt;1 nm)
 ```
 
+As sete gerações, com a estrutura de cada transistor:
+
 <ClientOnly>
-  <TransistorCompare />
+  <TransistorTimeline />
 </ClientOnly>
 
-<div class="see-also">
+Cada era em detalhe em [Evolução dos transistores](/transistores).
 
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/transistores">Evolução dos transistores</a> — texto e figuras por era</li>
-  <li><a href="/fotolitografia">Fotolitografia</a> — padrões no wafer</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Evolução dos transistores', href: '/transistores', note: 'texto e figuras por era' },
+  { text: 'Fotolitografia', href: '/fotolitografia', note: 'padrões no wafer' },
+]" />

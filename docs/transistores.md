@@ -11,6 +11,18 @@ Compare visualmente três arquiteturas principais:
   <TransistorCompare />
 </ClientOnly>
 
+## Comparativo das gerações
+
+| Era | Nó | Arquitetura | Mudança-chave | Ganho |
+|-----|-----|-------------|---------------|-------|
+| **1960** | — | MOSFET planar | Canal, portão, fonte e dreno no plano do wafer | Base da Lei de Moore por décadas |
+| **2003** | 90 nm | Silício esticado | Si depositado sobre SiGe tensiona a rede cristalina | +10–20% de mobilidade com custo marginal <Cite id="intel-strain" /> |
+| **2007** | 45 nm | HKMG | Dielétrico High-K (háfnio) + portão metálico substituem SiO₂/polissilício | Bloqueia a fuga mantendo o acoplamento eletrostático <Cite id="hkmg-paper" /> |
+| **2011** | 22 nm | FinFET (Tri-Gate) | Canal em aleta vertical; portão envolve três lados | Controle eletrostático; corrente escalável por aletas |
+| **2022** | 3 nm | GAAFET / nanofolhas | Nanofolhas empilhadas envoltas pelo portão nos quatro lados | Até ~40% menos vazamento <Cite id="asml-gaa" /> |
+| **2025/2026** | 18A / N2 | BSPDN | Alimentação migra para o verso do wafer via TSVs | ~11% mais densidade; IR drop até 10× menor |
+| **Futuro** | &lt;1 nm | CFET | NFET e PFET empilhados na mesma célula | Até ~50% menos área por porta lógica |
+
 ## 1960 — MOSFET planar
 
 Transistores planares (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. Abaixo de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
@@ -53,14 +65,8 @@ Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha vertical
 
 <SourceNote :ids="['intel-strain', 'hkmg-paper', 'asml-gaa']" />
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/linha-do-tempo">Linha do tempo</a> — cronologia e comparador interativo</li>
-  <li><a href="/fotolitografia">Fotolitografia</a> — patterning dos níveis do chip</li>
-  <li><a href="/referencias">Referências</a> — Intel strained, ASML GAA</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'cronologia e comparador interativo' },
+  { text: 'Fotolitografia', href: '/fotolitografia', note: 'patterning dos níveis do chip' },
+  { text: 'Referências', href: '/referencias', note: 'Intel strained, ASML GAA' },
+]" />

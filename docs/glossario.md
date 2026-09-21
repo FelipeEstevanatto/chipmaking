@@ -27,13 +27,7 @@ description: Siglas e termos da cadeia do silício, com links para os capítulos
 | **CFET** | NFET/PFET empilhados verticalmente | [Transistores](/transistores) |
 | **TSV** | Via de silício passante (*through-silicon via*) | [Transistores](/transistores) |
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/referencias">Referências</a> — fontes USGS, Bernreuter, ASML e papers</li>
-  <li><a href="/linha-do-tempo">Linha do tempo</a> — marcos em ordem cronológica</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Referências', href: '/referencias', note: 'fontes USGS, Bernreuter, ASML e papers' },
+  { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'marcos em ordem cronológica' },
+]" />

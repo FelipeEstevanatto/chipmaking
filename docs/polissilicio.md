@@ -58,14 +58,8 @@ Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) 
 
 A partir desse marco, a China consolidou liderança ao investir em refinamento tecnológico e subsídios para baratear custos <Cite id="bernreuter" />.
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/linha-do-tempo">Linha do tempo</a> — marcos do mercado de polissilício</li>
-  <li><a href="/fabricacao-wafers">Fabricação de wafers</a> — EG-Si → lingote CZ</li>
-  <li><a href="/referencias#ref-3">Referências</a> — Bernreuter Research</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'marcos do mercado de polissilício' },
+  { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'EG-Si → lingote CZ' },
+  { text: 'Referências', href: '/referencias#ref-3', note: 'Bernreuter Research' },
+]" />

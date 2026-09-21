@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
+  <title>Side-by-side NFET and PFET versus a stacked complementary FET (CFET)</title>
+  <style>
+    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .lbl-inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
+    .chan { fill: #63b3ed; stroke: #2b6cb0; stroke-width: 1; }
+    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
+    .dim { stroke: #718096; stroke-width: 1.4; fill: none; }
+    .lead { stroke: #718096; stroke-width: 1; fill: none; }
+    .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+  </style>
+
+  <text class="head" x="210" y="38" text-anchor="middle">side by side</text>
+  <text class="head" x="585" y="38" text-anchor="middle">CFET (stacked)</text>
+  <line class="divider" x1="400" y1="56" x2="400" y2="340" />
+
+  <!-- ================= LEFT ================= -->
+  <rect class="si" x="70" y="280" width="280" height="60" />
+  <text class="lbl" x="210" y="316" text-anchor="middle">Si</text>
+
+  <!-- PFET -->
+  <rect class="chan" x="95" y="225" width="110" height="55" />
+  <rect class="gate" x="110" y="185" width="80" height="40" />
+  <text class="lbl-inv" x="150" y="257" text-anchor="middle">PFET</text>
+  <text class="lbl-inv" x="150" y="211" text-anchor="middle">gate</text>
+
+  <!-- NFET -->
+  <rect class="chan" x="225" y="225" width="110" height="55" />
+  <rect class="gate" x="240" y="185" width="80" height="40" />
+  <text class="lbl-inv" x="280" y="257" text-anchor="middle">NFET</text>
+  <text class="lbl-inv" x="280" y="211" text-anchor="middle">gate</text>
+
+  <path class="dim" d="M95,368 L335,368" />
+  <path class="dim" d="M95,361 L95,375" />
+  <path class="dim" d="M335,361 L335,375" />
+  <text class="note" x="215" y="362" text-anchor="middle">W</text>
+
+  <!-- ================= RIGHT ================= -->
+  <rect class="si" x="525" y="290" width="120" height="50" />
+  <text class="lbl" x="585" y="321" text-anchor="middle">Si</text>
+
+  <!-- gate wrapping both stacked channels -->
+  <rect class="gate" x="525" y="180" width="120" height="110" />
+  <rect class="chan" x="539" y="192" width="92" height="24" />
+  <rect class="chan" x="539" y="252" width="92" height="24" />
+  <text class="lbl-inv" x="585" y="209" text-anchor="middle">NFET</text>
+  <text class="lbl-inv" x="585" y="269" text-anchor="middle">PFET</text>
+
+  <text class="note" x="676" y="239" text-anchor="end">gate</text>
+  <path class="lead" d="M672,235 L648,235" />
+
+  <path class="dim" d="M525,368 L645,368" />
+  <path class="dim" d="M525,361 L525,375" />
+  <path class="dim" d="M645,361 L645,375" />
+  <text class="note" x="585" y="362" text-anchor="middle">~ W/2</text>
+</svg>

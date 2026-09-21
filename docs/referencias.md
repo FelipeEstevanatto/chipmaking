@@ -29,13 +29,7 @@ Série usada na [tabela de produção estimada](/introducao#producao-estimada) e
 
 <YouTubeEmbed id="CPmMfasVxbY" title="Intel 360° fab tour" />
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/introducao">Introdução</a> — dados USGS <Cite id="usgs-mcs" /></li>
-  <li><a href="/glossario">Glossário</a> — termos técnicos do site</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Introdução', href: '/introducao', note: 'dados USGS', cite: 'usgs-mcs' },
+  { text: 'Glossário', href: '/glossario', note: 'termos técnicos do site' },
+]" />

@@ -51,13 +51,7 @@ Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) e
 Tipo P: buraco (<em>void</em>) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb). VectorVoyager — <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/fabricacao-wafers">Fabricação de wafers</a> — orientação &lt;100&gt; / &lt;111&gt; no CZ</li>
-  <li><a href="/transistores">Transistores</a> — dopagem e implantação iônica</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'orientação &lt;100&gt; / &lt;111&gt; no CZ' },
+  { text: 'Transistores', href: '/transistores', note: 'dopagem e implantação iônica' },
+]" />

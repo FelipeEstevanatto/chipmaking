@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img">
+  <title>Front-side power delivery versus backside power delivery network (BSPDN)</title>
+  <defs>
+    <g id="bolt">
+      <path d="M4.2,0 L0,7 L3,7 L1.6,12 L8.2,4.8 L5,4.8 Z" fill="#ffffff" />
+    </g>
+  </defs>
+  <style>
+    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .note { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sig { fill: #4299e1; stroke: #2b6cb0; stroke-width: 1; }
+    .pwr { fill: #e53e3e; stroke: #c53030; stroke-width: 1; }
+    .dev { fill: #2d3748; stroke: #1a202c; stroke-width: 1; }
+    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
+    .via { stroke: #c53030; stroke-width: 3; fill: none; }
+    .bracket { stroke: #718096; stroke-width: 1.2; fill: none; }
+    .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+  </style>
+
+  <text class="head" x="205" y="34" text-anchor="middle">front-side power</text>
+  <text class="head" x="585" y="34" text-anchor="middle">backside power (BSPDN)</text>
+  <line class="divider" x1="400" y1="52" x2="400" y2="352" />
+
+  <!-- ================= LEFT: conventional ================= -->
+  <!-- congested front metal: signal and power share the same layers -->
+  <rect class="sig" x="90" y="60" width="230" height="18" />
+  <rect class="pwr" x="90" y="81" width="230" height="18" />
+  <use href="#bolt" x="196" y="84" />
+  <rect class="sig" x="90" y="102" width="230" height="18" />
+  <rect class="pwr" x="90" y="123" width="230" height="18" />
+  <use href="#bolt" x="196" y="126" />
+  <rect class="sig" x="90" y="144" width="230" height="18" />
+  <rect class="pwr" x="90" y="165" width="230" height="18" />
+  <use href="#bolt" x="196" y="168" />
+
+  <rect class="dev" x="90" y="192" width="230" height="20" />
+  <rect class="si" x="90" y="212" width="230" height="84" />
+  <text class="lbl" x="205" y="258" text-anchor="middle">Si</text>
+
+  <path class="bracket" d="M74,60 L66,60 L66,183 L74,183" />
+  <text class="note" x="60" y="126" text-anchor="end">M1-M6</text>
+
+  <!-- ================= RIGHT: BSPDN ================= -->
+  <!-- front layers carry signal only -->
+  <rect class="sig" x="470" y="60" width="230" height="18" />
+  <rect class="sig" x="470" y="81" width="230" height="18" />
+  <rect class="sig" x="470" y="102" width="230" height="18" />
+  <rect class="sig" x="470" y="123" width="230" height="18" />
+  <rect class="sig" x="470" y="144" width="230" height="18" />
+  <rect class="sig" x="470" y="165" width="230" height="18" />
+
+  <path class="bracket" d="M454,60 L446,60 L446,183 L454,183" />
+  <text class="note" x="440" y="126" text-anchor="end">M1-M6</text>
+
+  <rect class="dev" x="470" y="192" width="230" height="20" />
+  <rect class="si" x="470" y="212" width="230" height="70" />
+  <text class="lbl" x="540" y="250" text-anchor="middle">Si</text>
+
+  <!-- TSVs carrying power up from the backside -->
+  <path class="via" d="M520,292 L520,212" />
+  <path class="via" d="M585,292 L585,212" />
+  <path class="via" d="M650,292 L650,212" />
+  <text class="note" x="668" y="258">TSV</text>
+  <line class="bracket" x1="656" y1="256" x2="652" y2="256" />
+
+  <!-- backside power rails -->
+  <rect class="pwr" x="470" y="292" width="230" height="26" />
+  <use href="#bolt" x="578" y="299" />
+
+  <path class="bracket" d="M454,292 L446,292 L446,318 L454,318" />
+  <text class="note" x="440" y="309" text-anchor="end">BSPDN</text>
+
+  <!-- legend -->
+  <rect class="sig" x="298" y="374" width="16" height="16" />
+  <text class="note" x="320" y="387">signal</text>
+  <rect class="pwr" x="410" y="374" width="16" height="16" />
+  <text class="note" x="432" y="387">power</text>
+</svg>

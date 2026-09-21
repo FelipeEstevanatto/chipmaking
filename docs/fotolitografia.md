@@ -40,14 +40,8 @@ Executado em sequência, com controle rigoroso de temperatura e contaminantes:
 7. **Cozimento final (hard bake):** 120–150 °C — reticulação (*cross-linking*) para resistir a etch e implantação.
 8. **Transferência de padrão e stripping:** gravação por **etch** ou **implantação iônica**; remoção do resiste por solventes ou **plasma ashing**.
 
-<div class="see-also">
-
-<p class="see-also-title">Veja também</p>
-
-<ul>
-  <li><a href="/fabricacao-wafers">Fabricação de wafers</a> — superfície pós-CMP exigida para litografia</li>
-  <li><a href="/glossario">Glossário</a> — DUV, EUV</li>
-  <li><a href="/referencias">Referências</a> — ASML GAAFET</li>
-</ul>
-
-</div>
+<SeeAlso :links="[
+  { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'superfície pós-CMP exigida para litografia' },
+  { text: 'Glossário', href: '/glossario', note: 'DUV, EUV' },
+  { text: 'Referências', href: '/referencias', note: 'ASML GAAFET' },
+]" />
