@@ -1,12 +1,12 @@
 ---
 title: Introduction
-description: Silicon's role in solar and semiconductors, world metallurgical silicon production (USGS), and its abundance in the Earth's crust.
+description: Silicon metal production (USGS), the quartz feedstock, and why solar cells and chips need different purities.
 ---
 
 # Introduction
 
 <DiagramFigure src="/pdf-images/p01-1.jpeg" alt="Crystalline metallurgical silicon">
-A sample of metallurgical silicon — the visual starting point of the chain that leads to wafers and chips.
+A sample of metallurgical silicon, the industrial product that later becomes wafers for solar cells and chips.
 </DiagramFigure>
 
 Producing silicon wafers in sufficient quantity and quality is the main factor determining the price of solar panels, and it is essential for manufacturing computer chips. The purity each sector requires, however, is completely different, and according to the 2023 *Mineral Commodity Summaries* report from the United States Geological Survey (USGS) <Cite id="usgs-mcs" />, China has become the world's leading producer of pure silicon, several orders of magnitude ahead of other producing countries.

@@ -35,17 +35,17 @@ The process runs in a furnace at roughly **900 °C for about 30 minutes**, produ
 
 ### The switch from boron to gallium
 
-The starting wafer is **p-type**, and for decades that meant **boron-doped** <Cite id="saimm" />. The choice, however, carries a built-in defect — serious enough to have changed the entire industry.
+The starting wafer is **p-type**, and for decades that meant **boron-doped** <Cite id="saimm" />. Boron doping brings a defect that changed the dopant the industry uses.
 
 Boron reacts with the **oxygen** dissolved in Cz silicon (the impurity the quartz crucible itself introduces, as covered in [wafer fabrication](/en/fabricacao-wafers#oxygen-and-carbon-what-the-crucible-dissolves)) and forms a recombination-active **boron–oxygen** complex. The defect activates under illumination and carrier injection, which is why the effect is known as **BO-LID** (*boron-oxygen light-induced degradation*) <Cite id="lid-hallam" />.
 
-The loss is material: the theoretical ceiling reaches **10% relative** in efficiency, and in practice it settles at **3 to 4%** in Al-BSF cells and **4 to 6%** in PERC <Cite id="lid-hallam" />. This is not a laboratory curiosity — it is degradation the system owner sees in the energy bill.
+The theoretical loss reaches **10% relative** in efficiency. In the field it is about **3 to 4%** in Al-BSF cells and **4 to 6%** in PERC <Cite id="lid-hallam" />. That shows up as lower energy from the installed system.
 
 The way out was to change the dopant. **Gallium** fills boron's role as acceptor but **does not form the complex with oxygen**, so the cell does not suffer BO-LID <Cite id="lid-hallam" />. The substitution was swift once the blocking patents expired in **2020**: the share of gallium-doped wafers jumped from about **10% in 2019 to over 95% in 2021**, and the ITRPV already recorded boron **disappearing** as a p-type dopant in **2023** <Cite id="ga-transition" />.
 
-Gallium, however, is not a free swap. Its **segregation coefficient** is only **0.008** — against 0.8 for boron — which makes resistivity vary enormously along a single ingot and reduces the usable fraction of the piece <Cite id="lid-hallam" />. That is the price described in [doping and the resistivity gradient](/en/fabricacao-wafers#doping-and-the-resistivity-gradient). And there is a second problem: gallium-doped cells can still suffer **LeTID** (*light and elevated temperature induced degradation*), a hydrogen-related effect that knocks off up to **3% relative** of the power <Cite id="letid-ga" />.
+Gallium's **segregation coefficient** is only **0.008**, against 0.8 for boron, so resistivity varies a lot along one ingot and less of the piece is usable <Cite id="lid-hallam" />. That trade-off is described in [doping and the resistivity gradient](/en/fabricacao-wafers#doping-and-the-resistivity-gradient). Gallium-doped cells can still suffer **LeTID** (*light and elevated temperature induced degradation*), a hydrogen-related loss of up to **3% relative** power <Cite id="letid-ga" />.
 
-Worth noting the larger context: the industry is moving to **n-type** regardless. In **2024** the ITRPV projected that n-type wafers would overtake p-type, reaching **69% of the market** by the end of that year <Cite id="itrpv-2024" />.
+The industry is also moving to **n-type**. In **2024** the ITRPV projected that n-type wafers would pass p-type and reach **69% of the market** by the end of that year <Cite id="itrpv-2024" />.
 
 ### Edge isolation
 
@@ -75,7 +75,7 @@ During firing, the coating undergoes **selective dissolution** and the contacts 
 
 A crystalline silicon cell produces about **0.5 V** — far too little for any practical use. Cells are therefore **interconnected in series** until they reach a useful voltage, then **encapsulated** for protection against moisture and mechanical impact. The assembly is the **module** (panel), which can be used on its own or integrated into a photovoltaic system <Cite id="saimm" />.
 
-The energy balance is comfortable: the **energy payback time** is **1 to 2 years**, while the module lifetime is **25 to 30 years** <Cite id="saimm" />. In other words, the panel returns the energy it cost to manufacture and then keeps operating for more than two decades.
+The **energy payback time** is **1 to 2 years**. Module lifetime is **25 to 30 years** <Cite id="saimm" />. After the panel has returned the energy used to make it, it still has most of its service life left.
 
 ## A history that starts before semiconductors
 
@@ -87,7 +87,7 @@ The first large-scale application was in space: in **1958** the United States la
 
 ## Silicon is not the ideal material
 
-It is worth noting an irony: silicon is **not the best material** for converting light into electricity. It is an **indirect band gap** semiconductor, meaning the conduction band minimum and the valence band maximum occur at different values of crystal momentum. The probability of absorbing a photon drops sharply, and light penetrates a considerable distance before being absorbed <Cite id="saimm" />.
+Silicon is an **indirect band gap** semiconductor: the conduction-band minimum and the valence-band maximum sit at different crystal momenta. Absorbing a photon is less likely than in a direct-gap material, and light travels farther into the wafer before it is absorbed <Cite id="saimm" />.
 
 The consequence is material: **1 µm of gallium arsenide** (a direct band gap) absorbs what **100 µm of silicon** absorbs — two orders of magnitude apart <Cite id="saimm" />.
 

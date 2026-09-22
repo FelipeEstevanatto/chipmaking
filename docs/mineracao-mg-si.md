@@ -22,7 +22,7 @@ Duas empresas mineram ali <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />
 | **Sibelco** (linha IOTA®) | Spruce Pine, EUA | sucessora da histórica **Unimin** |
 | **The Quartz Corp** | Spruce Pine + Drag (Noruega) | *joint venture* 50/50 de Imerys e Norsk Mineral, desde 2011 |
 
-Aqui vale desfazer uma confusão comum. A Unimin se fundiu com a Fairmount Santrol em 2018, e a empresa resultante adotou o nome **Covia** — mas o **negócio de quartzo de alta pureza não foi junto**: ele foi separado (*carve-out*) para a controladora belga **Sibelco** antes da fusão, e é a Sibelco que opera Spruce Pine e vende a linha IOTA® até hoje <Cite id="sibelco-hpq" />. Concluir que "a Unimin virou Covia" e parar aí leva ao erro de supor que o quartzo de Spruce Pine trocou de dono — não trocou.
+A Unimin se fundiu com a Fairmount Santrol em 2018, e a empresa resultante adotou o nome **Covia**. O **negócio de quartzo de alta pureza não foi junto**. Foi separado (*carve-out*) para a controladora belga **Sibelco** antes da fusão, e é a Sibelco que opera Spruce Pine e vende a linha IOTA® até hoje <Cite id="sibelco-hpq" />. Tratar "a Unimin virou Covia" como a história inteira deixa a impressão de que Spruce Pine trocou de dono. Continuou com a Sibelco.
 
 ### Drag, Noruega: onde o quartzo é purificado
 
@@ -41,7 +41,7 @@ O produto final chega a **99,999% de SiO₂** <Cite id="quartzcorp-hpq" />.
 
 Como o quartzo vira o **cadinho** onde o silício é fundido, ele fica em contato direto com o banho a mais de 1400 °C. Qualquer impureza presente no quartzo tem, portanto, caminho livre para dentro do cristal que está crescendo.
 
-O **boro** é o caso crítico, porque é justamente o dopante que define a resistividade do silício tipo P. Uma fração de **1 ppm** já basta para derrubar a resistividade do cristal, e é a resistividade que estabelece o comportamento elétrico do wafer acabado <Cite id="sibelco-hpq" />. Por isso os cadinhos para CZ exigem **boro abaixo de 0,04 ppm** — 40 partes por bilhão <Cite id="sibelco-hpq" />. Os metais alcalinos (**K, Li, Na**) são o outro limite: eles baixam o ponto de amolecimento do cadinho e reduzem sua resistência à deformação, encurtando a vida útil do componente e prejudicando o rendimento do cristal <Cite id="sibelco-hpq" />.
+O **boro** é o caso crítico, porque é justamente o dopante que define a resistividade do silício tipo P. Uma fração de **1 ppm** já basta para derrubar a resistividade do cristal, e é a resistividade que estabelece o comportamento elétrico do wafer acabado <Cite id="sibelco-hpq" />. Por isso os cadinhos para CZ exigem **boro abaixo de 0,04 ppm**, ou 40 partes por bilhão <Cite id="sibelco-hpq" />. Os metais alcalinos (**K, Li, Na**) são o outro limite: eles baixam o ponto de amolecimento do cadinho e reduzem sua resistência à deformação, encurtando a vida útil do componente e prejudicando o rendimento do cristal <Cite id="sibelco-hpq" />.
 
 O grau mais exigente da linha IOTA® chega a **99,9992% de SiO₂**, com K + Li + Na somando **80 ppb** e metais de transição críticos abaixo de 50 ppb <Cite id="sibelco-hpq" />. É um material de nicho: o que sustenta o volume da indústria fica alguns dígitos abaixo, e a The Quartz Corp trabalha com **99,999%** de sílica <Cite id="quartzcorp-hpq" />.
 
@@ -83,9 +83,9 @@ O **monóxido de silício** (SiO) e o CO sobem pelas zonas frias da carga e reco
 Corte de um forno de arco submerso: as duas zonas de reação, os três eletrodos trifásicos, a saída de gás e o vazamento pelo fundo.
 </DiagramFigure>
 
-A geometria do forno é simples e brutal: um invólucro com cerca de **10 m de diâmetro**, atravessado por **três eletrodos de carbono pré-cozido** mergulhados na carga, que conduzem **corrente trifásica** e levam o material a aproximadamente 2000 °C <Cite id="saimm" />.
+O forno é um invólucro com cerca de **10 m de diâmetro**, atravessado por **três eletrodos de carbono pré-cozido** mergulhados na carga. Eles conduzem **corrente trifásica** e levam o material a aproximadamente 2000 °C <Cite id="saimm" />.
 
-O desenho térmico é intencional. Mantém-se uma camada de material sólido (a **zona de reação externa**) sobre o banho fundido (a **zona de reação interna**) justamente para **maximizar o rendimento de silício**: é nessa interface que o SiO gerado consegue voltar a reagir antes de escapar com o gás <Cite id="saimm" />.
+Mantém-se uma camada de material sólido (a **zona de reação externa**) sobre o banho fundido (a **zona de reação interna**) para **aumentar o rendimento de silício**. É nessa interface que o SiO gerado consegue voltar a reagir antes de sair com o gás <Cite id="saimm" />.
 
 O silício é então **vazado por um furo no fundo** do forno e refinado por tratamento com escória ou purga de gás, que removem inclusões e ajustam a composição ao valor especificado. Depois o metal é deixado solidificar em molde e é britado no tamanho pedido <Cite id="saimm" />.
 
@@ -95,7 +95,7 @@ O MG-Si resultante tem especificação típica de **98,5% a 99,5% de Si**, com c
 
 Nem tudo que entra no forno sai como silício. Cada tonelada de silício metálico produz de **0,2 a 0,4 tonelada de fume de sílica condensada**, uma poeira ultrafina arrastada pelo gás e recolhida na casa de filtros <Cite id="saimm" />. Longe de ser rejeito, o fume de sílica encontrou aplicações industriais amplas <Cite id="saimm" />.
 
-O gás de exaustão é o outro subproduto relevante, e seu conteúdo energético é da **mesma ordem de grandeza** da energia elétrica injetada no forno <Cite id="saimm" />. Por isso ele costuma ser desviado para sistemas de recuperação, produzindo água quente ou vapor saturado para aquecimento — ou vapor superaquecido para geração elétrica <Cite id="saimm" />.
+O gás de exaustão é o outro subproduto relevante. Seu conteúdo energético é da **mesma ordem de grandeza** da energia elétrica injetada no forno <Cite id="saimm" />. As plantas costumam recuperá-lo como água quente ou vapor saturado para aquecimento, ou como vapor superaquecido para eletricidade <Cite id="saimm" />.
 
 O consumo elétrico do forno fica entre **11 e 13 MWh por tonelada** de silício metálico, e cai sensivelmente quando o produto final é uma liga com mais ferro <Cite id="saimm" />. É essa conta de energia, e não a disponibilidade de quartzo, que decide onde o MG-Si é produzido: em países com eletricidade barata, redutores abundantes e bons depósitos de quartzo <Cite id="saimm" />.
 
@@ -103,7 +103,7 @@ O consumo elétrico do forno fica entre **11 e 13 MWh por tonelada** de silício
 
 A produção mundial de MG-Si passa de **1 milhão de toneladas métricas por ano**, a um custo de poucos dólares por quilograma, conforme qualidade, pureza e granulometria <Cite id="saimm" />. A demanda vem sobretudo das **indústrias de alumínio e química**, e apenas uma fração pequena segue para refino em grau semicondutor <Cite id="saimm" />.
 
-Vale notar que boa parte do silício produzido industrialmente nem chega ao MG-Si puro: sai como **ferrossilício**, usado na desoxidação e na liga de aços e ferros fundidos <Cite id="saimm" />. O mercado que mais cresce, porém, é o fotovoltaico <Cite id="saimm" /> — e é ele que dá sentido econômico à cadeia de purificação descrita a seguir.
+Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chips. Sai como **ferrossilício**, usado na desoxidação e na liga de aços e ferros fundidos <Cite id="saimm" />. O fotovoltaico é o destino que mais cresce para o metal que segue para purificação <Cite id="saimm" />.
 
 <SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
 

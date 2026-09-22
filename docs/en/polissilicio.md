@@ -12,14 +12,14 @@ The raw material was never the bottleneck: silicon is the **second most abundant
 ## Overview of the route
 
 <DiagramFigure src="/assets/polysilicon-process.svg" alt="Flow chart of the polysilicon route: quartz and carbon in the arc furnace, ground MG-Si, fluidized bed chlorination forming trichlorosilane, fractional distillation, and deposition in either the Siemens reactor or the fluidized bed reactor">
-The full route: quartz becomes crude silicon in the arc furnace; crude silicon becomes a gas so that it can be distilled; and the gas becomes solid silicon again — now ultrapure — in the deposition reactors.
+The full route: quartz becomes crude silicon in the arc furnace, crude silicon becomes a gas so that it can be distilled, and the gas becomes solid silicon again, now ultrapure, in the deposition reactors.
 </DiagramFigure>
 
-The principle that organises the route is counter-intuitive: **silicon is not purified as a solid, but as a gas**. Turning it into trichlorosilane, whose boiling point is just **31.8 °C**, allows **fractional distillation** — the same technology used in oil refineries — to separate impurities that no filter could hold back <Cite id="pv-mfg-polysilicon" />. Purifying a gas and then solidifying it again is what separates metallurgical-grade silicon from solar- or electronic-grade silicon.
+**Silicon is purified as a gas, not as a solid.** Turned into trichlorosilane, which boils at **31.8 °C**, it can be separated by **fractional distillation**, the same method oil refineries use, from impurities no filter would hold back <Cite id="pv-mfg-polysilicon" />. Distilling the gas and depositing a solid again is what takes metallurgical-grade silicon to solar or electronic grade.
 
 ### Two routes out of the same MG-Si
 
-It is worth fixing the map before the details, because there is more than one way out of MG-Si — and the difference between them is whether or not chlorine is involved <Cite id="saimm" />:
+MG-Si has more than one way forward. The split is whether the next step uses chlorine <Cite id="saimm" />:
 
 ```mermaid
 flowchart TD
@@ -61,7 +61,7 @@ The product is **MG-Si**, drained from the bottom of the furnace at 98% to 99.5%
 
 ## Conversion to trichlorosilane (TCS)
 
-To become a gas, MG-Si is not melted: it is **ground into a powder**. The grinding is not a detail — it multiplies the surface area exposed to the gas, which is what allows the reaction to happen in seconds rather than hours.
+To become a gas, MG-Si is **ground into a powder** rather than melted. Grinding multiplies the surface exposed to the gas, so the reaction runs in seconds rather than hours.
 
 That powder is injected into a **fluidized bed reactor** running at **high pressure and velocity**, where the particles are acted on by **anhydrous hydrochloric acid (HCl)** in the presence of a **catalyst** <Cite id="pv-mfg-polysilicon" />. The result is not a single substance but a **family of chlorosilanes** and other volatile chlorides, of which **trichlorosilane** (TCS, SiHCl₃) is by far the most important <Cite id="pv-mfg-polysilicon" />:
 
@@ -112,7 +112,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 When the process ends, the **steel bell jar is lifted off** and the assembly — U-shaped core plus deposited silicon — is removed whole and fractured into smaller chunks <Cite id="bernreuter-production" />. The rods reach **15 to 20 cm in diameter** <Cite id="bernreuter-production" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />.
 
-It is an extremely energy-intensive process — **above 100 kWh per kilogram** of deposited silicon, with a low yield — which is the main drawback of the method <Cite id="saimm" />. Even so, it outlived everything set against it: in **1985** a single survey listed **17 alternative routes** to the Siemens process, and almost all of them died on the way <Cite id="bernreuter-production" />. The process's share of the global market **has dropped below 90% only once since 2004** — in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. What changed was not the chemistry but who runs the reactor: Chinese plants, with cheap electricity and equipment from domestic suppliers, brought the **production cost** down to **below US$ 10 per kilogram** <Cite id="bernreuter-production" />.
+The process uses **more than 100 kWh per kilogram** of deposited silicon, at low yield. That energy use is its main drawback <Cite id="saimm" />. Alternatives have been tried for decades. A 1985 survey listed **17 routes** besides Siemens, and few of them reached production <Cite id="bernreuter-production" />. Since 2004 the process's share of the global market **has fallen below 90% only once**, in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. The chemistry stayed. The operators changed. Chinese plants, with cheap electricity and domestic equipment, brought the **production cost** below **US$ 10 per kilogram** <Cite id="bernreuter-production" />.
 
 Purity classes <Cite id="bernreuter-production" />:
 
@@ -130,7 +130,7 @@ A continuous-flow method in which silicon seed particles are kept suspended by a
 
 There is a chemistry difference within the FBR family itself. REC Silicon feeds its reactors with **monosilane (SiH₄)**, which decomposes at **650–700 °C**; Wacker's smaller unit works with **TCS**, which only reacts at around **1000 °C** <Cite id="bernreuter-production" />. A lower temperature means less energy — and that is where the claim of consuming **one tenth** of the electricity of a conventional rod reactor comes from <Cite id="bernreuter-production" />.
 
-The gain is not only energetic. Mixing FBR granules with Siemens chunks in a **50:50** ratio can **shorten the time to fill a melting crucible by 40%** and **increase the charge weight by 30%** <Cite id="bernreuter-production" /> — granules flow and pack the crucible better than irregular chunks do.
+Granules also pack a crucible better than irregular chunks. Mixing FBR granules with Siemens chunks in a **50:50** ratio can **cut crucible fill time by 40%** and **raise charge weight by 30%** <Cite id="bernreuter-production" />.
 
 The technology predates the shortage: MEMC Electronic Materials was already producing granules in Pasadena, Texas <Cite id="bernreuter-production" />. Few companies managed to scale it, however. REC Silicon ran a plant at **Moses Lake, Washington (2009)** and another at **Yulin, Shaanxi (2017)**, the latter in a joint venture with Shaanxi Non-Ferrous Tianhong New Energy <Cite id="bernreuter-production" />. Four obstacles explain the limited penetration <Cite id="bernreuter-production" />:
 
@@ -168,7 +168,7 @@ And the volumes are not small. For every kilogram of polysilicon produced, the d
 
 ### The limits of the chemical route
 
-The chemical route dominates, but it has bills to pay. The most cited is **energy**: chlorination, distillation and Siemens add up to an intensive process. The other is safety and environment — it **handles toxic and corrosive compounds** throughout, such as chlorosilanes and hydrochloric acid <Cite id="saimm" />.
+The chemical route dominates, and it is expensive in **energy**. Chlorination, distillation and the Siemens reactor add up. It also **handles toxic and corrosive compounds** the whole way through, including chlorosilanes and hydrochloric acid <Cite id="saimm" />.
 
 TCS illustrates the problem well. It is a **colourless, volatile liquid** — density 1.34 g/cm³, melting point −126.5 °C, boiling at 31.8 °C — that **reacts violently with water**, including plain humidity, releasing hydrochloric acid and heat. Its flammable range in air runs from **1.2% to 90.5% by volume**, and it auto-ignites at just **185 °C** <Cite id="icsc-tcs" />. With a flash point of **−27 °C**, the liquid already gives off flammable vapour at room temperature, and that vapour is **4.7 times denser than air** — so it collects at floor level <Cite id="icsc-tcs" />. This is why TCS must be stored and handled under **inert gas**, and why the international safety card's firefighting instructions explicitly say **do not use water** <Cite id="icsc-tcs" />.
 
@@ -191,7 +191,7 @@ The route has the potential to become dominant, but in 2008 it accounted for **l
 
 ### An industrial case: Elkem's silicon blocks in Kristiansand
 
-The metallurgical route is not just an academic review exercise. Between **2009 and 2023**, a plant in Kristiansand, in southern Norway, operated at industrial scale what was probably the most successful attempt to produce solar-grade silicon without going through chlorine <Cite id="elkem-solar-route" />.
+Between **2009 and 2023**, a plant in Kristiansand, in southern Norway, ran at industrial scale one of the few chlorine-free routes that actually shipped solar-grade silicon <Cite id="elkem-solar-route" />.
 
 Elkem had been studying metallurgical routes since the late 1970s and reached the industrialised concept in **2009**. It chains **five stages**, of which **three are purification** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
 

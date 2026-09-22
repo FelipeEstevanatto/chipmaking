@@ -1,12 +1,12 @@
 ---
 title: Introdução
-description: Papel do silício na solar e nos semicondutores, produção mundial de silício metálico (USGS) e abundância na crosta terrestre.
+description: Produção de silício metálico (USGS), o quartzo como matéria-prima, e por que células solares e chips exigem purezas diferentes.
 ---
 
 # Introdução
 
 <DiagramFigure src="/pdf-images/p01-1.jpeg" alt="Silício metálico cristalino">
-Amostra de silício metálico — ponto de partida visual da cadeia até wafers e chips.
+Amostra de silício metalúrgico, o produto industrial que depois vira wafers para células solares e chips.
 </DiagramFigure>
 
 A fabricação de wafers de silício em quantidade e qualidade é o principal fator determinante para o preço de painéis solares, e essencial para a produção de chips de computadores. Porém a pureza necessária do material para esses dois setores é completamente diferente, e de acordo com o relatório *Mineral Commodity Summaries* de 2023 do Serviço Geológico dos Estados Unidos (USGS) <Cite id="usgs-mcs" />, a China se tornou líder mundial na produção de silício puro por ordens de grandeza a mais que outros países produtores.

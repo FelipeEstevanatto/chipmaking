@@ -111,7 +111,7 @@ Um wafer **virgem** e polido é um espelho cinza. Um wafer que já passou pela l
 
 ## Quem fabrica os wafers
 
-A indústria de wafers é um dos oligopólios mais concentrados de toda a cadeia de semicondutores, e ele tem sotaque japonês. Na pesquisa anual de participação de mercado da Nikkei, a **Shin-Etsu** aparece em primeiro lugar com **26,3%** e a **SUMCO** em segundo com **17,8%** — **44,1%** somados, com folga sobre as concorrentes mais próximas <Cite id="nikkei-wafer-share" />.
+A oferta de wafers é muito concentrada, e a maior parte da capacidade líder está no Japão. Na pesquisa anual de participação de mercado da Nikkei, a **Shin-Etsu** aparece em primeiro com **26,3%** e a **SUMCO** em segundo com **17,8%**, **44,1%** somados, à frente dos fornecedores seguintes <Cite id="nikkei-wafer-share" />.
 
 Vale registrar um número que circula com frequência: que as duas teriam "60% do mercado". Os dados da pesquisa apontam para **44,1%** em unidades, e para pouco mais da metade do **volume de 300 mm** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" /> — não 60%. O que não está em dúvida é a concentração: as três empresas seguintes vêm de Taiwan, Alemanha e Coreia do Sul e, somadas, chegam a **31,9%** <Cite id="nikkei-wafer-share" />. As cinco maiores respondem, portanto, por cerca de **três quartos** de tudo.
 

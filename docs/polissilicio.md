@@ -12,14 +12,14 @@ A matéria-prima nunca foi o gargalo: o silício é o **segundo elemento mais ab
 ## Visão geral da rota
 
 <DiagramFigure src="/assets/polysilicon-process.svg" alt="Fluxograma da rota do polissilício: quartzo e carbono no forno de arco, MG-Si moído, cloração em leito fluidizado formando triclorossilano, destilação fracionada e deposição no reator Siemens ou no reator de leito fluidizado">
-A rota completa: o quartzo vira silício bruto no forno de arco; o silício bruto vira gás para poder ser destilado; e o gás volta a ser silício sólido — agora ultrapuro — nos reatores de deposição.
+A rota completa: o quartzo vira silício bruto no forno de arco, o silício bruto vira gás para poder ser destilado, e o gás volta a ser silício sólido, agora ultrapuro, nos reatores de deposição.
 </DiagramFigure>
 
-O princípio que organiza a rota é contraintuitivo: **o silício não se purifica como sólido, e sim como gás**. Convertê-lo em triclorossilano, cujo ponto de ebulição é de apenas **31,8 °C**, permite usar **destilação fracionada** — a mesma tecnologia das refinarias de petróleo — para separar impurezas que nenhum filtro conseguiria reter <Cite id="pv-mfg-polysilicon" />. Purificar um gás e depois solidificá-lo de volta é o que separa o silício de grau metalúrgico do silício de grau solar ou eletrônico.
+**O silício se purifica como gás, não como sólido.** Convertido em triclorossilano, que ferve a **31,8 °C**, ele pode ser separado por **destilação fracionada**, o mesmo método das refinarias de petróleo, de impurezas que nenhum filtro reteria <Cite id="pv-mfg-polysilicon" />. Destilar o gás e depositar o sólido de novo é o que leva o silício metalúrgico ao grau solar ou eletrônico.
 
 ### Duas rotas a partir do mesmo MG-Si
 
-Vale fixar o mapa antes dos detalhes, porque existe mais de um caminho para sair do MG-Si — e a diferença entre eles é o uso ou não de cloro <Cite id="saimm" />:
+O MG-Si tem mais de um caminho adiante. A divisão é se o passo seguinte usa cloro <Cite id="saimm" />:
 
 ```mermaid
 flowchart TD
@@ -61,7 +61,7 @@ O produto é o **MG-Si**, drenado pelo fundo do forno com pureza de 98% a 99,5% 
 
 ## Conversão em triclorossilano (TCS)
 
-Para virar gás, o MG-Si não é fundido: ele é **moído até virar pó**. A moagem não é um detalhe — ela multiplica a área de superfície exposta ao gás, e é o que permite que a reação aconteça em segundos em vez de horas.
+Para virar gás, o MG-Si é **moído até virar pó**, em vez de fundido. A moagem multiplica a superfície exposta ao gás, e a reação corre em segundos em vez de horas.
 
 Esse pó é injetado em um **reator de leito fluidizado** operando com **alta pressão e velocidade**, onde partículas sofrem a ação de um **gás clorídrico anidro (HCl)** na presença de um **catalisador** <Cite id="pv-mfg-polysilicon" />. O resultado não é uma substância só, mas uma **família de clorossilanos** e outros cloretos voláteis, dos quais o **triclorossilano** (TCS, SiHCl₃) é de longe o mais importante <Cite id="pv-mfg-polysilicon" />:
 
@@ -112,7 +112,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 Quando o processo termina, a **redoma de aço é erguida** e o conjunto — núcleo em “U” e silício depositado — é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
 
-É um processo de altíssimo consumo de energia — **acima de 100 kWh por quilograma** de silício depositado, com rendimento baixo —, a principal desvantagem do método <Cite id="saimm" />. Mesmo assim ele resistiu a tudo o que se tentou colocar no seu lugar: em **1985**, um único levantamento listava **17 rotas alternativas** ao Siemens, e quase todas morreram no caminho <Cite id="bernreuter-production" />. A participação do processo no mercado global **só ficou abaixo de 90% uma vez desde 2004** — em 2008, no pico da escassez <Cite id="bernreuter-production" />. O que mudou não foi a química, e sim quem opera o reator: plantas chinesas, com eletricidade barata e equipamento de fornecedores domésticos, levaram o **custo de produção** a **menos de US$ 10 por quilograma** <Cite id="bernreuter-production" />.
+O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou. Quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US$ 10 por quilograma** <Cite id="bernreuter-production" />.
 
 Classes de pureza <Cite id="bernreuter-production" />:
 
@@ -130,7 +130,7 @@ Método de fluxo contínuo em que partículas semente de silício são mantidas 
 
 Há uma diferença de química dentro da própria família FBR. A REC Silicon alimenta seus reatores com **monossilano (SiH₄)**, que se decompõe a **650–700 °C**; a unidade menor da Wacker trabalha com **TCS**, que só reage por volta de **1000 °C** <Cite id="bernreuter-production" />. Temperatura menor significa menos energia — é daí que sai o argumento de consumir **um décimo** da eletricidade de um forno de hastes convencional <Cite id="bernreuter-production" />.
 
-O ganho não é só energético. Misturar grânulos de FBR a pedaços de Siemens numa proporção de **50:50** pode **encurtar em 40%** o tempo de carregamento de um cadinho de fusão e **aumentar em 30%** o peso da carga <Cite id="bernreuter-production" /> — os grânulos escoam e preenchem o cadinho melhor do que os pedaços irregulares.
+Os grânulos também preenchem o cadinho melhor do que pedaços irregulares. Misturar grânulos de FBR a pedaços de Siemens numa proporção de **50:50** pode **encurtar em 40%** o tempo de carga e **aumentar em 30%** o peso da carga <Cite id="bernreuter-production" />.
 
 A tecnologia existe desde antes da escassez: a MEMC Electronic Materials já produzia grânulos em Pasadena, no Texas <Cite id="bernreuter-production" />. Poucas empresas, porém, conseguiram escalar. A REC Silicon operou uma planta em **Moses Lake, Washington (2009)** e outra em **Yulin, Shaanxi (2017)**, esta numa *joint venture* com a Shaanxi Non-Ferrous Tianhong New Energy <Cite id="bernreuter-production" />. Quatro obstáculos explicam a penetração limitada <Cite id="bernreuter-production" />:
 
@@ -168,7 +168,7 @@ E os volumes não são pequenos. Para cada quilo de polissilício produzido, o e
 
 ### Os limites da rota química
 
-A rota química domina, mas tem contas a pagar. A mais citada é a **energética**: cloração, destilação e Siemens somados fazem dela um processo intensivo. A outra é de segurança e meio ambiente — ela **manipula compostos tóxicos e corrosivos** o tempo todo, como os clorossilanos e o ácido clorídrico <Cite id="saimm" />.
+A rota química domina, e é cara em **energia**. Cloração, destilação e o reator Siemens se somam. Ela também **manipula compostos tóxicos e corrosivos** o tempo todo, entre eles clorossilanos e ácido clorídrico <Cite id="saimm" />.
 
 O TCS ilustra bem o problema. É um **líquido incolor e volátil** — densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C — que **reage violentamente com a água**, inclusive com a umidade do ar, liberando ácido clorídrico e calor. A faixa de inflamabilidade em ar vai de **1,2% a 90,5% em volume**, e a autoignição ocorre a apenas **185 °C** <Cite id="icsc-tcs" />. Com ponto de fulgor de **−27 °C**, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é **4,7 vezes mais denso que o ar** — ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob **gás inerte**, e que as instruções de combate a incêndio da ficha internacional prescrevem explicitamente **não usar água** <Cite id="icsc-tcs" />.
 
@@ -191,7 +191,7 @@ A rota tem potencial para se tornar dominante, mas em 2008 respondia por **menos
 
 ### Um caso industrial: os blocos de silício da Elkem em Kristiansand
 
-A rota metalúrgica não é apenas uma hipótese de *review* acadêmico. Entre **2009 e 2023**, a planta de Kristiansand, no sul da Noruega, operou em escala industrial o que provavelmente foi a tentativa mais bem-sucedida de produzir silício de grau solar sem passar por cloro <Cite id="elkem-solar-route" />.
+Entre **2009 e 2023**, uma planta em Kristiansand, no sul da Noruega, operou em escala industrial uma das poucas rotas sem cloro que de fato entregou silício de grau solar <Cite id="elkem-solar-route" />.
 
 A Elkem vinha estudando rotas metalúrgicas desde o fim dos anos 1970 e chegou ao conceito industrializado em **2009**. Ele encadeia **cinco etapas**, das quais **três são de purificação** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
 

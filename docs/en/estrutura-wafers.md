@@ -111,7 +111,7 @@ A **virgin**, polished wafer is a grey mirror. A wafer that has been through lit
 
 ## Who makes the wafers
 
-The wafer industry is one of the most concentrated oligopolies in the entire semiconductor chain, and it speaks with a Japanese accent. In Nikkei's annual market-share survey, **Shin-Etsu** ranks first with **26.3%** and **SUMCO** second with **17.8%** — **44.1%** combined, comfortably ahead of their nearest rivals <Cite id="nikkei-wafer-share" />.
+Wafer supply is highly concentrated, and most of the leading capacity is in Japan. In Nikkei's annual market-share survey, **Shin-Etsu** ranks first with **26.3%** and **SUMCO** second with **17.8%**, **44.1%** combined, ahead of the next suppliers <Cite id="nikkei-wafer-share" />.
 
 One figure that circulates widely deserves a note: that the two hold "60% of the market". The survey data point to **44.1%** by units, and to just over half of **300 mm volume** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" /> — not 60%. What is not in doubt is the concentration: the next three companies come from Taiwan, Germany and South Korea and together account for **31.9%** <Cite id="nikkei-wafer-share" />. The top five therefore supply roughly **three quarters** of everything.
 

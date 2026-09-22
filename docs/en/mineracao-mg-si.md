@@ -22,7 +22,7 @@ Two companies mine there <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
 | **Sibelco** (IOTA® line) | Spruce Pine, USA | successor to the historic **Unimin** |
 | **The Quartz Corp** | Spruce Pine + Drag (Norway) | 50/50 *joint venture* of Imerys and Norsk Mineral, since 2011 |
 
-A common confusion is worth clearing up here. Unimin merged with Fairmount Santrol in 2018, and the resulting company took the name **Covia** — but the **high-purity quartz business did not go with it**: it was carved out to the Belgian parent company **Sibelco** before the merger, and it is Sibelco that operates Spruce Pine and sells the IOTA® line to this day <Cite id="sibelco-hpq" />. Concluding that "Unimin became Covia" and stopping there leads to the mistaken impression that the Spruce Pine quartz changed hands — it did not.
+Unimin merged with Fairmount Santrol in 2018, and the resulting company took the name **Covia**. The **high-purity quartz business did not go with it**. It was carved out to the Belgian parent **Sibelco** before the merger, and Sibelco still operates Spruce Pine and sells the IOTA® line <Cite id="sibelco-hpq" />. Treating "Unimin became Covia" as the whole story leaves the impression that Spruce Pine changed hands. It stayed with Sibelco.
 
 ### Drag, Norway: where the quartz is purified
 
@@ -41,7 +41,7 @@ The finished product reaches **99.999% SiO₂** <Cite id="quartzcorp-hpq" />.
 
 Because the quartz becomes the **crucible** in which the silicon is melted, it sits in direct contact with the melt at over 1400 °C. Any impurity present in the quartz therefore has a clear path into the crystal that is growing.
 
-**Boron** is the critical case, precisely because it is the dopant that sets the resistivity of p-type silicon. A fraction of **1 ppm** is already enough to collapse the crystal's resistivity, and resistivity is what establishes the finished wafer's electrical behaviour <Cite id="sibelco-hpq" />. That is why CZ crucibles require **boron below 0.04 ppm** — 40 parts per billion <Cite id="sibelco-hpq" />. Alkali metals (**K, Li, Na**) are the other limit: they lower the crucible's softening point and reduce its resistance to deformation, shortening the component's life and hurting crystal yield <Cite id="sibelco-hpq" />.
+**Boron** is the critical case, because it is the dopant that sets the resistivity of p-type silicon. A fraction of **1 ppm** is already enough to collapse the crystal's resistivity, and resistivity is what sets the finished wafer's electrical behaviour <Cite id="sibelco-hpq" />. CZ crucibles therefore require **boron below 0.04 ppm**, or 40 parts per billion <Cite id="sibelco-hpq" />. Alkali metals (**K, Li, Na**) are the other limit: they lower the crucible's softening point and reduce its resistance to deformation, shortening the component's life and hurting crystal yield <Cite id="sibelco-hpq" />.
 
 The most demanding grade in the IOTA® line reaches **99.9992% SiO₂**, with K + Li + Na totalling **80 ppb** and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />. It is a niche material: what sustains the industry's volume sits a few digits below, and The Quartz Corp works at **99.999%** silica <Cite id="quartzcorp-hpq" />.
 
@@ -83,9 +83,9 @@ The **silicon monoxide** (SiO) and the CO rise through the cooler zones of the c
 Cross-section of a submerged-arc furnace: the two reaction zones, the three three-phase electrodes, the off-gas take-off and the tapping at the bottom.
 </DiagramFigure>
 
-The furnace geometry is simple and brutal: a shell roughly **10 m in diameter**, pierced by **three pre-baked carbon electrodes** submerged in the charge, which carry a **three-phase current** and take the material to about 2000 °C <Cite id="saimm" />.
+The furnace is a shell roughly **10 m in diameter**, pierced by **three pre-baked carbon electrodes** submerged in the charge. They carry a **three-phase current** and take the material to about 2000 °C <Cite id="saimm" />.
 
-The thermal design is deliberate. A layer of solid material (the **outer reaction zone**) is kept on top of the molten bath (the **inner reaction zone**) precisely to **maximise the silicon yield**: that interface is where the SiO that forms can react again before escaping with the gas <Cite id="saimm" />.
+A layer of solid material (the **outer reaction zone**) is kept on top of the molten bath (the **inner reaction zone**) to **raise the silicon yield**. That interface is where the SiO that forms can react again before it leaves with the gas <Cite id="saimm" />.
 
 The silicon is then **tapped through a hole at the bottom** of the furnace and refined by slag treatment or gas purging, which remove inclusions and adjust the composition to the specified value. The metal is left to solidify in a mould and is then crushed to size <Cite id="saimm" />.
 
@@ -95,7 +95,7 @@ The resulting MG-Si has a typical specification of **98.5% to 99.5% Si**, with c
 
 Not everything that enters the furnace leaves as silicon. Each tonne of silicon metal produces **0.2 to 0.4 tonnes of condensed silica fume**, an ultrafine dust carried by the gas and collected at the filter plant <Cite id="saimm" />. Far from being waste, silica fume has found a wide array of industrial applications <Cite id="saimm" />.
 
-The off-gas is the other relevant by-product, and its energy content is of the **same order of magnitude** as the electrical energy fed into the furnace <Cite id="saimm" />. It is therefore usually routed to recovery systems, producing hot water or saturated steam for heating — or superheated steam for electricity generation <Cite id="saimm" />.
+The off-gas is the other relevant by-product. Its energy content is of the **same order of magnitude** as the electrical energy fed into the furnace <Cite id="saimm" />. Plants usually recover it as hot water or saturated steam for heating, or as superheated steam for electricity <Cite id="saimm" />.
 
 The furnace's own electricity consumption runs at **11 to 13 MWh per tonne** of silicon metal, and falls markedly when the end product is an alloy with more iron in it <Cite id="saimm" />. It is that energy bill, not the availability of quartz, that decides where MG-Si is produced: in countries with cheap electricity, abundant reductants and good quartz deposits <Cite id="saimm" />.
 
@@ -103,7 +103,7 @@ The furnace's own electricity consumption runs at **11 to 13 MWh per tonne** of 
 
 World MG-Si production exceeds **1 million metric tonnes per year**, at a cost of a few US dollars per kilogram depending on quality, purity and particle size <Cite id="saimm" />. Demand comes mainly from the **aluminium and chemical industries**, and only a small fraction goes on to be refined to semiconductor grade <Cite id="saimm" />.
 
-Worth noting: much of the silicon produced industrially never becomes pure MG-Si at all — it leaves as **ferrosilicon**, used for deoxidation and alloying of steel and cast iron <Cite id="saimm" />. The fastest-growing market, however, is photovoltaics <Cite id="saimm" /> — and that is what gives the purification chain described next its economic point.
+Much of the silicon made in these furnaces never becomes MG-Si for chemicals or chips. It leaves as **ferrosilicon**, used to deoxidise and alloy steel and cast iron <Cite id="saimm" />. Photovoltaics is the fastest-growing outlet for the metal that does go on to be purified <Cite id="saimm" />.
 
 <SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
 

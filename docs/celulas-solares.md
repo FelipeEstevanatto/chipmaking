@@ -35,17 +35,17 @@ O processo roda num forno a aproximadamente **900 °C por cerca de 30 minutos**,
 
 ### A troca do boro pelo gálio
 
-A lâmina de partida é **tipo p**, e por décadas isso significou **dopada com boro** <Cite id="saimm" />. A escolha, porém, carrega um defeito embutido — grave o bastante para ter mudado a indústria inteira.
+A lâmina de partida é **tipo p**, e por décadas isso significou **dopada com boro** <Cite id="saimm" />. A dopagem com boro traz um defeito que mudou o dopante usado pela indústria.
 
 O boro reage com o **oxigênio** dissolvido no silício Cz (a impureza que o próprio cadinho de quartzo introduz, como se viu na [fabricação de wafers](/fabricacao-wafers#oxigenio-e-carbono-o-que-o-cadinho-dissolve)) e forma um complexo **boro–oxigênio** ativo em recombinação. O defeito se ativa sob iluminação e injeção de portadores, e por isso o efeito é conhecido como **BO-LID** (*boron-oxygen light-induced degradation*) <Cite id="lid-hallam" />.
 
-A perda é material: o limite teórico chega a **10% relativo** na eficiência, e na prática o valor fica em **3 a 4%** nas células Al-BSF e **4 a 6%** nas PERC <Cite id="lid-hallam" />. Não é um defeito de laboratório — é degradação que o dono do sistema vê na conta de energia.
+A perda teórica chega a **10% relativo** na eficiência. Em campo fica em cerca de **3 a 4%** nas células Al-BSF e **4 a 6%** nas PERC <Cite id="lid-hallam" />. Isso aparece como menos energia no sistema instalado.
 
 A saída foi trocar o dopante. O **gálio** ocupa o mesmo papel aceitador do boro, mas **não forma o complexo com oxigênio**, e por isso a célula não sofre BO-LID <Cite id="lid-hallam" />. A substituição foi rápida quando as patentes que a bloqueavam expiraram, em **2020**: a fatia de lâminas dopadas com gálio saltou de cerca de **10% em 2019 para mais de 95% em 2021**, e a ITRPV já registrava o **desaparecimento do boro** como dopante tipo p em **2023** <Cite id="ga-transition" />.
 
-Gálio, no entanto, não é uma troca gratuita. Seu **coeficiente de segregação** é de apenas **0,008** — contra 0,8 do boro —, o que faz a resistividade variar enormemente ao longo de um único lingote e reduz a fração aproveitável da peça <Cite id="lid-hallam" />. É o preço descrito na seção de [dopagem e gradiente de resistividade](/fabricacao-wafers#dopagem-e-o-gradiente-de-resistividade). E há um segundo problema: células dopadas com gálio ainda podem sofrer **LeTID** (*light and elevated temperature induced degradation*), um efeito ligado ao hidrogênio que derruba até **3% relativo** da potência <Cite id="letid-ga" />.
+O **coeficiente de segregação** do gálio é de apenas **0,008**, contra 0,8 do boro, então a resistividade varia muito ao longo de um lingote e menos da peça é aproveitável <Cite id="lid-hallam" />. Esse compromisso está em [dopagem e gradiente de resistividade](/fabricacao-wafers#dopagem-e-o-gradiente-de-resistividade). Células dopadas com gálio ainda podem sofrer **LeTID** (*light and elevated temperature induced degradation*), uma perda ligada ao hidrogênio de até **3% relativo** da potência <Cite id="letid-ga" />.
 
-Vale notar o contexto maior: a indústria está migrando para o **tipo n** de qualquer forma. Em **2024** a ITRPV projetava que as lâminas tipo n ultrapassariam as tipo p, alcançando **69% do mercado** ao fim daquele ano <Cite id="itrpv-2024" />.
+A indústria também está indo para o **tipo n**. Em **2024** a ITRPV projetava que as lâminas tipo n passariam as tipo p e chegariam a **69% do mercado** no fim daquele ano <Cite id="itrpv-2024" />.
 
 ### Isolamento de borda
 
@@ -75,7 +75,7 @@ Durante a queima, o antirrefletor sofre **dissolução seletiva** e os contatos 
 
 Uma célula de silício cristalino produz cerca de **0,5 V** — pouco demais para qualquer uso prático. Por isso as células são **interligadas em série** até atingirem uma tensão útil e depois **encapsuladas** para proteção contra umidade e impacto mecânico. O conjunto é o **módulo** (painel), que pode ser usado isolado ou integrado a um sistema fotovoltaico <Cite id="saimm" />.
 
-O balanço energético é confortável: o **tempo de retorno de energia** fica entre **1 e 2 anos**, enquanto a vida útil do módulo é de **25 a 30 anos** <Cite id="saimm" />. Ou seja, o painel devolve a energia que custou para ser fabricado e ainda opera por mais de duas décadas.
+O **tempo de retorno de energia** fica entre **1 e 2 anos**. A vida útil do módulo é de **25 a 30 anos** <Cite id="saimm" />. Depois de devolver a energia usada na fabricação, o painel ainda tem a maior parte da vida útil pela frente.
 
 ## Uma história que começa antes dos semicondutores
 
@@ -87,7 +87,7 @@ A primeira aplicação em escala foi espacial: em **1958** os Estados Unidos lan
 
 ## O silício não é o material ideal
 
-Vale registrar uma ironia: o silício **não é o melhor material** para converter luz em eletricidade. Ele é um semicondutor de **gap indireto**, ou seja, o mínimo da banda de condução e o máximo da banda de valência ocorrem em valores diferentes de momento cristalino. A probabilidade de absorver um fóton cai muito, e a luz penetra uma distância considerável antes de ser absorvida <Cite id="saimm" />.
+O silício é um semicondutor de **gap indireto**: o mínimo da banda de condução e o máximo da banda de valência ficam em momentos cristalinos diferentes. Absorver um fóton é menos provável do que num material de gap direto, e a luz percorre mais caminho no wafer antes de ser absorvida <Cite id="saimm" />.
 
 A consequência é material: **1 µm de arseneto de gálio** (gap direto) absorve o que **100 µm de silício** absorvem — duas ordens de grandeza de diferença <Cite id="saimm" />.
 
