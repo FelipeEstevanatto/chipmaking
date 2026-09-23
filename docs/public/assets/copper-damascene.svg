@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="600" viewBox="0 0 960 600" role="img">
+  <title>The dual damascene sequence for copper wiring: the trench and via are etched into the dielectric, a barrier and seed layer are deposited, copper is electroplated up from the bottom, and the overburden is removed by chemical mechanical planarisation</title>
+  <rect width="960" height="600" fill="#ffffff" />
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .st { font: 600 17.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .note { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .diel { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
+    .bar { fill: none; stroke: #b7791f; stroke-width: 3.4; }
+    .cu { fill: #ed8936; stroke: #c05621; stroke-width: 1.4; }
+    .metal { fill: #805ad5; stroke: #553c9a; stroke-width: 1.2; }
+    .dash { stroke: #a0aec0; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  </style>
+
+  <text class="h" x="40" y="36">Copper arrives by damascene, not by carving</text>
+  <text class="sm" x="40" y="58">Copper is hard to etch, so the dielectric is patterned first and the metal is grown into the holes. Cross-sections, schematic.</text>
+
+  <!-- 1 -->
+  <text class="st" x="40" y="100">1. Abrir</text>
+  <path class="diel" d="M 56,270 L 155,270 L 155,340 L 184,340 L 184,430 L 218,430 L 218,340 L 247,340 L 247,270 L 346,270 L 346,430 L 56,430 Z" />
+  <rect class="metal" x="56" y="430" width="290" height="26" />
+  <text class="note" x="40" y="490">Trincheira e via s&#227;o</text>
+  <text class="note" x="40" y="510">gravadas no diel&#233;trico.</text>
+
+  <!-- 2 -->
+  <text class="st" x="266" y="100">2. Barreira + semente</text>
+  <path class="diel" d="M 282,270 L 381,270 L 381,340 L 410,340 L 410,430 L 444,430 L 444,340 L 473,340 L 473,270 L 572,270 L 572,430 L 282,430 Z" />
+  <rect class="metal" x="282" y="430" width="290" height="26" />
+  <path class="bar" d="M 381,270 L 381,340 L 410,340 L 410,430 L 444,430 L 444,340 L 473,340 L 473,270" />
+  <text class="note" x="266" y="490">Barreira fina impede o cobre</text>
+  <text class="note" x="266" y="510">de migrar para o diel&#233;trico.</text>
+
+  <!-- 3 -->
+  <text class="st" x="492" y="100">3. Eletrodeposi&#231;&#227;o</text>
+  <path class="diel" d="M 508,270 L 607,270 L 607,340 L 636,340 L 636,430 L 670,430 L 670,340 L 699,340 L 699,270 L 798,270 L 798,430 L 508,430 Z" />
+  <rect class="metal" x="508" y="430" width="290" height="26" />
+  <path class="cu" d="M 508,256 L 798,256 L 798,270 L 701,270 L 701,340 L 672,340 L 672,428 L 634,428 L 634,340 L 605,340 L 605,270 L 508,270 Z" />
+  <text class="note" x="492" y="490">O cobre cresce de baixo para</text>
+  <text class="note" x="492" y="510">cima e sela a via sem vazio.</text>
+
+  <!-- 4 -->
+  <text class="st" x="718" y="100">4. CMP</text>
+  <path class="diel" d="M 734,270 L 833,270 L 833,340 L 862,340 L 862,430 L 896,430 L 896,340 L 925,340 L 925,270 L 1024,270 L 1024,430 L 734,430 Z" />
+  <rect class="metal" x="734" y="430" width="290" height="26" />
+  <path class="cu" d="M 833,270 L 833,340 L 862,340 L 862,430 L 896,430 L 896,340 L 925,340 L 925,270 Z" />
+  <text class="note" x="718" y="490">O excesso sai no polimento;</text>
+  <text class="note" x="718" y="510">a superf&#237;cie volta a ficar plana.</text>
+
+  <text class="sm" x="40" y="556">O polimento qu&#237;mico-mec&#226;nico existe porque a litografia tem profundidade de foco limitada: cada camada precisa</text>
+  <text class="sm" x="40" y="578">come&#231;ar plana. Ele deixa dois defeitos t&#237;picos, o rebaixo do metal em &#225;reas largas e a eros&#227;o do diel&#233;trico em &#225;reas densas.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img">
+  <title>Three etch profiles in silicon: a wet etch is isotropic and undercuts the mask, reactive ion etching is directional and leaves near-vertical walls, and the Bosch deep process cuts narrow trenches with aspect ratios of forty to one in production</title>
+  <rect width="960" height="620" fill="#ffffff" />
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .pt { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .tag { font: 600 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.5; }
+    .mk { fill: #805ad5; stroke: #553c9a; stroke-width: 1.2; }
+    .pit { fill: #ffffff; stroke: #c05621; stroke-width: 2; }
+    .note { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .lead { fill: none; stroke: #a0aec0; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  </style>
+
+  <text class="h" x="40" y="36">Etching: why direction decides the shape</text>
+  <text class="sm" x="40" y="58">Same mask opening, three chemistries. The purple layer is the mask; the white shape is the removed silicon.</text>
+
+  <text class="pt" x="180" y="106" text-anchor="middle">Wet etch</text>
+  <text class="tag" x="180" y="128" text-anchor="middle" fill="#c05621">isotr&#243;pico</text>
+  <rect class="si" x="50" y="250" width="260" height="220" />
+  <path class="pit" d="M 117,250 Q 180,352 243,250 Z" />
+  <path class="mk" d="M 50,238 L 135,238 L 135,250 L 50,250 Z" />
+  <path class="mk" d="M 225,238 L 310,238 L 310,250 L 225,250 Z" />
+  <text class="note" x="180" y="504" text-anchor="middle">Corr&#243;i tamb&#233;m por baixo da</text>
+  <text class="note" x="180" y="526" text-anchor="middle">m&#225;scara e abre a parede.</text>
+
+  <text class="pt" x="480" y="106" text-anchor="middle">RIE</text>
+  <text class="tag" x="480" y="128" text-anchor="middle" fill="#2b6cb0">direcional</text>
+  <rect class="si" x="350" y="250" width="260" height="220" />
+  <path class="pit" d="M 435,250 L 443,392 L 517,392 L 525,250 Z" />
+  <path class="mk" d="M 350,238 L 435,238 L 435,250 L 350,250 Z" />
+  <path class="mk" d="M 525,238 L 610,238 L 610,250 L 525,250 Z" />
+  <text class="note" x="480" y="504" text-anchor="middle">&#205;ons acelerados contra o wafer:</text>
+  <text class="note" x="480" y="526" text-anchor="middle">a parede sai quase reta.</text>
+
+  <text class="pt" x="780" y="106" text-anchor="middle">DRIE (Bosch)</text>
+  <text class="tag" x="780" y="128" text-anchor="middle" fill="#276749">40:1 em produ&#231;&#227;o</text>
+  <rect class="si" x="650" y="250" width="260" height="220" />
+  <path class="pit" d="M 768,250 L 766,300 L 770,338 L 766,376 L 770,414 L 766,452 L 768,466 L 792,466 L 794,452 L 790,414 L 794,376 L 790,338 L 794,300 L 792,250 Z" />
+  <path class="mk" d="M 650,238 L 768,238 L 768,250 L 650,250 Z" />
+  <path class="mk" d="M 792,238 L 910,238 L 910,250 L 792,250 Z" />
+  <text class="note" x="780" y="504" text-anchor="middle">Alterna corros&#227;o e passiva&#231;&#227;o:</text>
+  <text class="note" x="780" y="526" text-anchor="middle">da&#237; as ondula&#231;&#245;es na parede.</text>
+
+  <text class="sm" x="40" y="574">A seletividade &#233; a raz&#227;o entre a velocidade de corros&#227;o do material alvo e a do material que deve ficar. No DRIE,</text>
+  <text class="sm" x="40" y="596">a m&#225;scara de &#243;xido aguenta cerca de 450 vezes mais que o sil&#237;cio que ela protege.</text>
+</svg>

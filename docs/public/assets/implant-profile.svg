@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="580" viewBox="0 0 960 580" role="img">
+  <title>Ion implantation: the beam is tilted about seven degrees off the crystal axes so that ions do not travel down the open channels of the lattice, which would add a deep tail to the doping profile</title>
+  <rect width="960" height="580" fill="#ffffff" />
+  <defs>
+    <marker id="beamHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c05621" />
+    </marker>
+  </defs>
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .pt { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .ax { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.5; }
+    .chan { stroke: #a0aec0; stroke-width: 1; }
+    .beam { stroke: #c05621; stroke-width: 2.6; }
+    .ion { fill: #dd6b20; }
+    .axisL { stroke: #718096; stroke-width: 1.4; }
+    .cA { fill: none; stroke: #c53030; stroke-width: 2.4; }
+    .cB { fill: none; stroke: #2b6cb0; stroke-width: 2.4; }
+    .dash { stroke: #a0aec0; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  </style>
+
+  <text class="h" x="40" y="36">Ion implantation: shooting dopant into the lattice</text>
+  <text class="sm" x="40" y="58">The wafer is deliberately tilted so the ions do not slide down the open channels of the crystal.</text>
+
+  <text class="pt" x="60" y="100">Geometry</text>
+
+  <rect class="si" x="60" y="330" width="370" height="150" />
+  <line class="chan" x1="90" y1="330" x2="90" y2="470" />
+  <line class="chan" x1="120" y1="330" x2="120" y2="470" />
+  <line class="chan" x1="150" y1="330" x2="150" y2="470" />
+  <line class="chan" x1="180" y1="330" x2="180" y2="470" />
+  <line class="chan" x1="210" y1="330" x2="210" y2="470" />
+  <line class="chan" x1="240" y1="330" x2="240" y2="470" />
+  <line class="chan" x1="270" y1="330" x2="270" y2="470" />
+  <line class="chan" x1="300" y1="330" x2="300" y2="470" />
+  <line class="chan" x1="330" y1="330" x2="330" y2="470" />
+  <line class="chan" x1="360" y1="330" x2="360" y2="470" />
+  <line class="chan" x1="390" y1="330" x2="390" y2="470" />
+
+  <line class="dash" x1="310" y1="185" x2="310" y2="330" />
+  <line class="beam" x1="328" y1="185" x2="310" y2="330" marker-end="url(#beamHead)" />
+  <path d="M 310,272 A 58,58 0 0 1 317.1,272.4" fill="none" stroke="#c05621" stroke-width="1.6" />
+  <text class="ax" x="332" y="266" fill="#c05621">7&#176;</text>
+  <text class="ax" x="344" y="176">feixe de &#237;ons</text>
+
+  <circle class="ion" cx="316" cy="240" r="3.4" />
+  <circle class="ion" cx="313" cy="285" r="3.4" />
+  <circle class="ion" cx="311" cy="318" r="3.4" />
+  <circle class="ion" cx="309" cy="356" r="3.4" />
+  <circle class="ion" cx="307" cy="392" r="3.4" />
+  <circle class="ion" cx="270" cy="404" r="3.4" />
+  <circle class="ion" cx="240" cy="430" r="3.4" />
+  <circle class="ion" cx="180" cy="414" r="3.4" />
+  <circle class="ion" cx="150" cy="440" r="3.4" />
+  <circle class="ion" cx="390" cy="424" r="3.4" />
+
+  <text class="ax" x="66" y="500">Os canais abertos da rede cristalina deixam</text>
+  <text class="ax" x="66" y="520">alguns &#237;ons passarem muito mais fundo.</text>
+
+  <text class="pt" x="500" y="100">Concentra&#231;&#227;o por profundidade</text>
+
+  <line class="axisL" x1="530" y1="150" x2="530" y2="430" />
+  <line class="axisL" x1="530" y1="430" x2="900" y2="430" />
+  <text class="ax" x="516" y="160" text-anchor="end">concentra&#231;&#227;o</text>
+  <text class="ax" x="900" y="454" text-anchor="end">profundidade</text>
+
+  <path class="cA" d="M 536,424 C 566,424 574,206 604,196 C 630,188 640,268 668,330 C 700,398 760,416 806,420" />
+  <path class="cB" d="M 536,424 C 562,424 570,210 598,200 C 622,192 630,306 654,368 C 676,418 706,424 748,426" />
+
+  <text class="ax" x="742" y="200" fill="#c53030">sem inclina&#231;&#227;o</text>
+  <text class="ax" x="742" y="222" fill="#c53030">cauda profunda</text>
+
+  <text class="ax" x="672" y="288" fill="#2b6cb0">com 7&#176; de inclina&#231;&#227;o</text>
+  <text class="ax" x="672" y="310" fill="#2b6cb0">perfil mais estreito</text>
+
+  <line class="dash" x1="604" y1="196" x2="604" y2="430" />
+  <text class="ax" x="604" y="448" text-anchor="middle">pico</text>
+
+  <text class="sm" x="40" y="548">Energias v&#227;o de algumas centenas de eV a v&#225;rios MeV, o que coloca os &#237;ons de menos de 10 nm a cerca de 10 &#181;m de</text>
+  <text class="sm" x="40" y="570">profundidade. As doses v&#227;o de 10&#185;&#185; a 10&#185;&#8312; &#237;ons por cm&#178;, do ajuste de limiar do transistor &#224; forma&#231;&#227;o de camadas enterradas.</text>
+</svg>

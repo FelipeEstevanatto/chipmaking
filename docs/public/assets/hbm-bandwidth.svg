@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img">
+  <title>Bandwidth per HBM stack by generation: from 128 gigabytes per second for the first HBM to about 2,048 for HBM4 and a projected 4,096 for HBM4E, with the JEDEC-numbered standards marked</title>
+  <rect width="960" height="560" fill="#ffffff" />
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .ax { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .xl { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .val { font: 600 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .grid { stroke: #e2e8f0; stroke-width: 1.2; }
+    .axis { stroke: #718096; stroke-width: 1.5; }
+    .bStd { fill: #2b6cb0; }
+    .bExt { fill: #90cdf4; }
+    .jed { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2b6cb0; }
+  </style>
+
+  <text class="h" x="40" y="36">Bandwidth per HBM stack, by generation</text>
+  <text class="sm" x="40" y="58">Gigabytes per second, linear scale. Blue is a JEDEC-numbered standard; light blue is an in-between extension.</text>
+
+  <line class="grid" x1="120" y1="141.2" x2="900" y2="141.2" />
+  <line class="grid" x1="120" y1="205.9" x2="900" y2="205.9" />
+  <line class="grid" x1="120" y1="270.6" x2="900" y2="270.6" />
+  <line class="grid" x1="120" y1="335.3" x2="900" y2="335.3" />
+  <text class="ax" x="110" y="146" text-anchor="end">4.000</text>
+  <text class="ax" x="110" y="211" text-anchor="end">3.000</text>
+  <text class="ax" x="110" y="276" text-anchor="end">2.000</text>
+  <text class="ax" x="110" y="340" text-anchor="end">1.000</text>
+  <line class="axis" x1="120" y1="110" x2="120" y2="400" />
+  <line class="axis" x1="120" y1="400" x2="900" y2="400" />
+
+  <rect class="bExt" x="130" y="391.7" width="68" height="8.3" />
+  <text class="val" x="164" y="384" text-anchor="middle">128</text>
+  <text class="xl" x="164" y="424" text-anchor="middle">HBM</text>
+
+  <rect class="bStd" x="246" y="383.4" width="68" height="16.6" />
+  <text class="val" x="280" y="375" text-anchor="middle">256</text>
+  <text class="xl" x="280" y="424" text-anchor="middle">HBM2</text>
+  <text class="jed" x="280" y="444" text-anchor="middle">JESD235A</text>
+
+  <rect class="bExt" x="362" y="370.2" width="68" height="29.8" />
+  <text class="val" x="396" y="362" text-anchor="middle">461</text>
+  <text class="xl" x="396" y="424" text-anchor="middle">HBM2E</text>
+
+  <rect class="bStd" x="478" y="347" width="68" height="53" />
+  <text class="val" x="512" y="338" text-anchor="middle">819</text>
+  <text class="xl" x="512" y="424" text-anchor="middle">HBM3</text>
+  <text class="jed" x="512" y="444" text-anchor="middle">JESD238</text>
+
+  <rect class="bExt" x="594" y="320.5" width="68" height="79.5" />
+  <text class="val" x="628" y="312" text-anchor="middle">1.229</text>
+  <text class="xl" x="628" y="424" text-anchor="middle">HBM3E</text>
+
+  <rect class="bStd" x="710" y="267.5" width="68" height="132.5" />
+  <text class="val" x="744" y="259" text-anchor="middle">2.048</text>
+  <text class="xl" x="744" y="424" text-anchor="middle">HBM4</text>
+  <text class="jed" x="744" y="444" text-anchor="middle">JESD270-4</text>
+
+  <rect class="bExt" x="826" y="135" width="68" height="265" />
+  <text class="val" x="860" y="126" text-anchor="middle">4.096</text>
+  <text class="xl" x="860" y="424" text-anchor="middle">HBM4E</text>
+
+  <text class="sm" x="40" y="486">O HBM4 dobra a interface de 1.024 para 2.048 bits e passa de 16 para 32 canais por pilha. S&#227;o cerca de 3.000 trilhas</text>
+  <text class="sm" x="40" y="508">at&#233; o processador, contagem imposs&#237;vel de rotear em placa de circuito: por isso a mem&#243;ria precisa morar ao lado do</text>
+  <text class="sm" x="40" y="530">chip sobre um interposer de sil&#237;cio, em vez de em m&#243;dulos encaixados longe dele.</text>
+</svg>

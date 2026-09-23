@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570" role="img">
+  <title>Yield falls exponentially with die area, so one large monolithic die yields far worse than four small chiplets of the same total area, and the reticle sets a hard ceiling on how large the monolithic die can even be</title>
+  <rect width="960" height="570" fill="#ffffff" />
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .ax { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .grid { stroke: #e2e8f0; stroke-width: 1.2; }
+    .axis { stroke: #718096; stroke-width: 1.5; }
+    .curve { fill: none; stroke: #2b6cb0; stroke-width: 3; }
+    .ret { stroke: #c53030; stroke-width: 2; stroke-dasharray: 7 5; }
+    .ptM { fill: #c53030; stroke: #ffffff; stroke-width: 2; }
+    .ptC { fill: #38a169; stroke: #ffffff; stroke-width: 2; }
+    .labM { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .labC { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #276749; }
+    .lbl { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
+  </style>
+
+  <text class="h" x="40" y="36">Why one big die loses to four small ones</text>
+  <text class="sm" x="40" y="58">Each defect kills a whole die. The larger the die, the more defects it is exposed to, and the faster its yield falls.</text>
+
+  <line class="grid" x1="130" y1="110" x2="880" y2="110" />
+  <line class="grid" x1="130" y1="182.5" x2="880" y2="182.5" />
+  <line class="grid" x1="130" y1="255" x2="880" y2="255" />
+  <line class="grid" x1="130" y1="327.5" x2="880" y2="327.5" />
+  <text class="ax" x="120" y="115" text-anchor="end">100%</text>
+  <text class="ax" x="120" y="187" text-anchor="end">75%</text>
+  <text class="ax" x="120" y="260" text-anchor="end">50%</text>
+  <text class="ax" x="120" y="332" text-anchor="end">25%</text>
+  <line class="axis" x1="130" y1="110" x2="130" y2="400" />
+  <line class="axis" x1="130" y1="400" x2="880" y2="400" />
+  <text class="ax" x="880" y="424" text-anchor="end">&#225;rea do die (mm&#178;)</text>
+  <text class="ax" x="500" y="452" text-anchor="middle">rendimento (yield)</text>
+
+  <polyline class="curve" points="130,110 213.3,137.5 296.7,162.5 380,185.1 463.3,205.6 546.7,224 630,240.8 713.3,255.9 796.7,269.8 880,282" />
+
+  <line class="ret" x1="821.7" y1="110" x2="821.7" y2="400" />
+  <text class="lbl" x="815" y="102" text-anchor="end">limite do ret&#237;culo: ~830 mm&#178;</text>
+
+  <circle class="ptC" cx="296.7" cy="162.5" r="7" />
+  <text class="labC" x="290" y="150" text-anchor="middle">chiplet de ~200 mm&#178;: ~82%</text>
+
+  <circle class="ptM" cx="796.7" cy="269.8" r="7" />
+  <text class="labM" x="790" y="292" text-anchor="middle">die &#250;nico de ~800 mm&#178;: ~45%</text>
+
+  <text class="sm" x="40" y="490">A curva &#233; o modelo de Poisson Y = e^(&#8722;D&#183;A) com D = 0,001 defeito por mm&#178;, um valor ilustrativo, n&#227;o medido.</text>
+  <text class="sm" x="40" y="512">O que importa &#233; a forma: quatro chiplets de 200 mm&#178; t&#234;m cada um 82% de chance de funcionar, e s&#243; os que</text>
+  <text class="sm" x="40" y="534">funcionam s&#227;o montados. A AMD estimou que essa troca custava cerca de 0,59&#215; o monol&#237;tico, mesmo com mais sil&#237;cio.</text>
+  <text class="sm" x="40" y="556">O ret&#237;culo &#233; o outro limite: nenhuma exposi&#231;&#227;o de litografia cobre mais que isso.</text>
+</svg>
