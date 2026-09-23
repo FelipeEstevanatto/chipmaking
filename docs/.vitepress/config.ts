@@ -81,6 +81,7 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Na fab',
       items: [
+        { text: 'Na fab: do wafer ao chip', link: '/na-fab' },
         { text: 'Fotolitografia', link: '/fotolitografia' },
         { text: 'História da fotolitografia', link: '/historia-fotolitografia' },
       ],
@@ -88,6 +89,10 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Dispositivos',
       items: [{ text: 'Evolução dos transistores', link: '/transistores' }],
+    },
+    {
+      text: 'Depois da fab',
+      items: [{ text: 'Empacotamento e teste', link: '/empacotamento' }],
     },
     {
       text: 'Fotovoltaica',
@@ -178,6 +183,7 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'In the fab',
       items: [
+        { text: 'In the fab: from wafer to chip', link: '/en/na-fab' },
         { text: 'Photolithography', link: '/en/fotolitografia' },
         { text: 'History of photolithography', link: '/en/historia-fotolitografia' },
       ],
@@ -185,6 +191,10 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Devices',
       items: [{ text: 'Transistor evolution', link: '/en/transistores' }],
+    },
+    {
+      text: 'After the fab',
+      items: [{ text: 'Packaging and test', link: '/en/empacotamento' }],
     },
     {
       text: 'Photovoltaics',
