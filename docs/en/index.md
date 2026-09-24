@@ -41,6 +41,10 @@ features:
     title: Glossary
     details: Acronyms and terms (MG-Si, TCS, CMP, EUV…) with links to each chapter.
     link: /en/glossario
+  - icon: 🧭
+    title: Panorama
+    details: Prices and value, the SiC and GaN neighbours, the chokepoint map and the data series.
+    link: /en/gargalos
 ---
 
 ## Supply chain

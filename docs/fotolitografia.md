@@ -1,6 +1,7 @@
 ---
 title: Fotolitografia
 description: Como o scanner transporta a luz da fonte ao wafer, o fotoresistor, o realce de resolução, a imersão e o passo a passo do processo.
+dataAsOf: 2025
 ---
 
 # Fotolitografia

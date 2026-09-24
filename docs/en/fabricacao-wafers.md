@@ -1,6 +1,7 @@
 ---
 title: Wafer fabrication
 description: From EG-Si polysilicon to a fab-ready wafer — Czochralski growth, slicing, CMP and RCA cleaning.
+dataAsOf: 2025
 ---
 
 # Silicon wafer fabrication

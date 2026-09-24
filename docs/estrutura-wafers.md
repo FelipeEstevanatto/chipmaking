@@ -1,6 +1,7 @@
 ---
 title: Estrutura e tipos de wafer
 description: Estrutura cúbica de diamante, índices de Miller, classificação de wafers e dopagem tipo P/N.
+dataAsOf: 2025
 ---
 
 # Estrutura cristalina e tipos de wafer

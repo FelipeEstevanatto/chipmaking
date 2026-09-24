@@ -15,6 +15,7 @@
 /** Chapter paths are locale-relative; consumers add the `/en` prefix themselves. */
 export const CHAPTER_LABELS = {
   '/introducao': { pt: 'Introdução', en: 'Introduction' },
+  '/o-elemento-silicio': { pt: 'O elemento silício', en: 'The silicon element' },
   '/mineracao-mg-si': { pt: 'Mineração e MG-Si', en: 'Mining & MG-Si' },
   '/polissilicio': { pt: 'Polissilício', en: 'Polysilicon' },
   '/fabricacao-wafers': { pt: 'Fabricação de wafers', en: 'Wafer fabrication' },
@@ -24,8 +25,13 @@ export const CHAPTER_LABELS = {
     pt: 'História da fotolitografia',
     en: 'History of photolithography',
   },
+  '/insumos-fab': { pt: 'Os insumos da fab', en: 'Fab consumables' },
   '/transistores': { pt: 'Evolução dos transistores', en: 'Transistor evolution' },
+  '/confiabilidade': { pt: 'Confiabilidade', en: 'Reliability' },
   '/celulas-solares': { pt: 'Células e módulos solares', en: 'Solar cells and modules' },
+  '/alem-do-silicio': { pt: 'Além do silício', en: 'Beyond silicon' },
+  '/precos-e-valor': { pt: 'Preços e valor', en: 'Prices and value' },
+  '/gargalos': { pt: 'O mapa dos gargalos', en: 'The chokepoint map' },
 } as const
 
 export type ChapterPath = keyof typeof CHAPTER_LABELS
@@ -355,6 +361,98 @@ export const GLOSSARY: GlossaryEntry[] = [
     pt: 'Roteiro internacional de tecnologia para a fotovoltaica',
     en: 'International Technology Roadmap for Photovoltaics',
     chapter: '/celulas-solares',
+  },
+
+  // Fab consumables
+  {
+    term: 'UPW',
+    pt: 'Água ultrapura (ultrapure water)',
+    en: 'Ultrapure water',
+    chapter: '/insumos-fab',
+  },
+  {
+    term: 'CAR',
+    pt: 'Fotorresiste quimicamente amplificado',
+    en: 'Chemically amplified resist',
+    chapter: '/insumos-fab',
+    // Bare "CAR" is too ambiguous to annotate safely in running prose.
+    tooltip: false,
+  },
+
+  // Reliability
+  {
+    term: 'NBTI',
+    pt: 'Instabilidade por polarização de porta negativa e temperatura',
+    en: 'Negative bias temperature instability',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'PBTI',
+    pt: 'Instabilidade por polarização de porta positiva e temperatura',
+    en: 'Positive bias temperature instability',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'HCI',
+    pt: 'Injeção de portadores quentes (hot carrier injection)',
+    en: 'Hot carrier injection',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'TDDB',
+    pt: 'Ruptura dielétrica dependente do tempo',
+    en: 'Time-dependent dielectric breakdown',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'FIT',
+    pt: 'Uma falha por 10⁹ horas-dispositivo (failure in time)',
+    en: 'One failure per 10⁹ device-hours (failure in time)',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'MTTF',
+    pt: 'Tempo médio até a falha (mean time to failure)',
+    en: 'Mean time to failure',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'ECC',
+    pt: 'Código corretor de erro',
+    en: 'Error-correcting code',
+    chapter: '/confiabilidade',
+  },
+  {
+    term: 'HTOL',
+    pt: 'Vida útil em operação em alta temperatura',
+    en: 'High-temperature operating life',
+    chapter: '/confiabilidade',
+  },
+
+  // Beyond silicon
+  {
+    term: 'SiC',
+    pt: 'Carbeto de silício (4H-SiC como politipo de potência)',
+    en: 'Silicon carbide (4H-SiC as the power polytype)',
+    chapter: '/alem-do-silicio',
+  },
+  {
+    term: 'GaN',
+    pt: 'Nitreto de gálio',
+    en: 'Gallium nitride',
+    chapter: '/alem-do-silicio',
+  },
+  {
+    term: 'IGBT',
+    pt: 'Transistor bipolar de porta isolada',
+    en: 'Insulated-gate bipolar transistor',
+    chapter: '/alem-do-silicio',
+  },
+  {
+    term: 'MEMS',
+    pt: 'Sistemas microeletromecânicos',
+    en: 'Micro-electromechanical systems',
+    chapter: '/alem-do-silicio',
   },
 
   // Cross-cutting sources

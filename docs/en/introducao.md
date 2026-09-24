@@ -1,6 +1,7 @@
 ---
 title: Introduction
 description: Silicon metal production (USGS), the quartz feedstock, and why solar cells and chips need different purities.
+dataAsOf: 2025
 ---
 
 # Introduction

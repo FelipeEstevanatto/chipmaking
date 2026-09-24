@@ -2,7 +2,8 @@
 title: Células e módulos solares
 description: >-
   Da lâmina de silício à célula fotovoltaica: texturização, emissor,
-  antirrefletor, metalização e montagem do módulo.
+  antirrefletor, metalização e montagem do módulo, com os números atuais do setor.
+dataAsOf: 2026
 ---
 
 # Células e módulos solares
@@ -106,7 +107,26 @@ Os números do setor, na época do levantamento de Xakalashe e Tangstad, dão a 
 
 São números de 2011 e envelheceram rápido — a produção anual hoje se mede em centenas de gigawatts, não em dezenas. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva, não em física.
 
-<SourceNote :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga']" />
+## Os números de hoje
+
+O levantamento de Xakalashe e Tangstad é de 2011, e a seção acima mantém os números dele porque eles descrevem a virada de década que explica a fotovoltaica atual. Para o presente, a referência anual é o relatório do Fraunhofer ISE, que publica preço, eficiência e produção do setor em uma edição nova a cada ano <Cite id="fraunhofer-pv-report" />.
+
+Alguns números do relatório mais recente dão a medida do que mudou:
+
+- O **preço do módulo** continua caindo a uma taxa de aprendizado publicada: cerca de **26,7%** de redução para cada **duplicação da produção acumulada** <Cite id="fraunhofer-pv-report" />.
+- A eficiência dos módulos de silício comerciais subiu de cerca de **17% para pouco menos de 25%** em dez anos <Cite id="fraunhofer-pv-report" />.
+- O **tempo de retorno de energia** caiu para cerca de **1 ano**, e a vida útil assumida do sistema é de cerca de **20 anos** <Cite id="fraunhofer-pv-report" />.
+- O custo nivelado da eletricidade de grandes usinas solares está em torno de **4 centavos de euro por kWh** <Cite id="fraunhofer-pv-report" />.
+
+<ClientOnly>
+  <DataChart chart="pv-efficiency" />
+</ClientOnly>
+
+A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o **tandem** de perovskita sobre silício, que já chegou a **35%** em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](/referencias) <Cite id="nrel-efficiency" />.
+
+Vale registrar o que esse número significa para a cadeia do silício. Se o tandem se impuser, ele **não substitui** a lâmina de silício: ele a usa como substrato e acrescenta uma camada por cima — o que preserva todo o caminho de quartzo a wafer descrito neste site e ainda aumenta o valor por lâmina.
+
+<SourceNote :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
 
 <SeeAlso :links="[
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'de onde vem a lâmina' },

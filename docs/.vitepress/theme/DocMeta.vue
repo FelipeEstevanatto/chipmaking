@@ -17,6 +17,15 @@ const { page, lang } = useData()
 
 const isEnglish = computed(() => String(lang.value).toLowerCase().startsWith('en'))
 
+/**
+ * Year of the newest data the chapter cites, from frontmatter.
+ *
+ * Some chapters rest on a 2011 survey and others on last year's roadmap, and nothing in the prose
+ * said which. Declaring the year per page makes that visible without re-reading the sources; the
+ * rule is documented in the README.
+ */
+const dataAsOf = computed(() => page.value.frontmatter?.dataAsOf)
+
 /** Average adult reading pace for technical prose; PT and EN are close enough to share it. */
 const WORDS_PER_MINUTE = 200
 
@@ -103,6 +112,12 @@ const show = computed(() => minutes.value > 0)
     <template v-if="figureLabel">
       <span class="doc-meta__sep" aria-hidden="true">·</span>
       <span class="doc-meta__item">{{ figureLabel }}</span>
+    </template>
+    <template v-if="dataAsOf">
+      <span class="doc-meta__sep" aria-hidden="true">·</span>
+      <span class="doc-meta__item" :title="isEnglish
+        ? 'Year of the most recent data cited in this chapter'
+        : 'Ano do dado mais recente citado neste capítulo'">{{ isEnglish ? `data as of ${dataAsOf}` : `dados até ${dataAsOf}` }}</span>
     </template>
   </p>
 </template>

@@ -1,6 +1,7 @@
 ---
 title: Mineração e MG-Si
 description: Quartzo HPQ, forno de arco submerso, redução carbotérmica e obtenção de silício metalúrgico (MG-Si).
+dataAsOf: 2025
 ---
 
 # Mineração e produção de silício metalúrgico

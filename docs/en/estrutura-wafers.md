@@ -1,6 +1,7 @@
 ---
 title: Crystal structure & wafer types
 description: Diamond cubic structure, Miller indices, wafer classification and P/N type doping.
+dataAsOf: 2025
 ---
 
 # Crystal structure and wafer types

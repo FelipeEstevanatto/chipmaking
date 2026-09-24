@@ -3,6 +3,7 @@ title: Empacotamento e teste
 description: >-
   Depois da fábrica: o wafer é testado, cortado, ligado ao invólucro, protegido
   e testado de novo. É onde nascem o HBM, os chiplets e a ligação híbrida.
+dataAsOf: 2025
 ---
 
 # Empacotamento e teste

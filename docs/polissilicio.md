@@ -1,6 +1,7 @@
 ---
 title: Polissilício
 description: Purificação química via TCS, processos Siemens e FBR, e histórico do mercado de polissilício.
+dataAsOf: 2025
 ---
 
 # Purificação química e polissilício

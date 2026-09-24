@@ -1,6 +1,7 @@
 ---
 title: Introdução
 description: Produção de silício metálico (USGS), o quartzo como matéria-prima, e por que células solares e chips exigem purezas diferentes.
+dataAsOf: 2025
 ---
 
 # Introdução

@@ -1,6 +1,7 @@
 ---
 title: Transistor evolution
 description: From planar MOSFET to CFET — strained silicon, HKMG, FinFET, FD-SOI, GAAFET, backside power and forksheet.
+dataAsOf: 2026
 ---
 
 # Architectural evolution of transistors

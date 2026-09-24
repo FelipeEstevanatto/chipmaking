@@ -41,6 +41,10 @@ features:
     title: Glossário
     details: Siglas e termos (MG-Si, TCS, CMP, EUV…) com links para os capítulos.
     link: /glossario
+  - icon: 🧭
+    title: Panorama
+    details: Preços e valor, os vizinhos SiC e GaN, o mapa dos gargalos e as séries de dados.
+    link: /gargalos
 ---
 
 ## Cadeia de produção

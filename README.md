@@ -39,12 +39,41 @@ Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HT
 
 `theme/ReadingProgress.vue` (slot `layout-top`) desenha a barra de progresso no topo da janela, e `theme/DocMeta.vue` (slot `doc-before`) mostra o tempo de leitura e a contagem de figuras, medida no texto renderizado — o que a mantém correta quando um capítulo muda. A numeração das figuras sai de CSS (`counter-reset: figure` em `.vp-doc`, em `custom.css`), então `DiagramFigure` não precisa saber o próprio número, e o rótulo alterna entre "Figura" e "Figure" conforme o `lang` do documento.
 
+### Selo de atualidade
+
+`DocMeta` também mostra **"dados até <ano>"**, lido do campo `dataAsOf` do frontmatter. O valor é o **ano do dado mais recente citado** no capítulo — não a data da última edição —, para que o leitor saiba que `celulas-solares` descreve a escala do setor com números de 2011, enquanto `estrutura-wafers` cita o ano corrente. Capítulos puramente históricos (`linha-do-tempo`, `historia-fotolitografia`) e páginas de navegação (`glossario`, `referencias`) não levam o campo; a ausência é intencional.
+
+## Gráficos e séries de dados
+
+`theme/DataChart.vue` renderiza qualquer gráfico declarado em `theme/charts/specs.ts`, e o markdown só precisa de:
+
+```md
+<ClientOnly>
+  <DataChart chart="transistor-count" />
+</ClientOnly>
+```
+
+O `ClientOnly` **não é decorativo**: sem ele o texto da legenda entra no HTML gerado e passa a contar como "primeira ocorrência" para o `audit-glossary.py`, que enxerga texto que o plugin de tooltips não consegue alcançar. O `DataChart` também está na lista de contextos ignorados do script, como defesa extra.
+
+Uma spec é **serializável de propósito** — sem funções nem callbacks —, porque `scripts/export-chart-data.ts` lê a mesma lista e escreve `docs/public/data/<slug>.csv`. Gráfico e arquivo baixável saem de uma definição só, então não podem divergir. Rode o script depois de mexer em qualquer série:
+
+```bash
+bun run scripts/export-chart-data.ts
+```
+
+Legendas de gráfico são renderizadas como texto por interpolação, e não como Markdown: **não use links `[..](..)` nem `**negrito**` na `caption`** de uma spec. Gráfico com dados cita `sourceIds`; desenho sem dados por trás leva `schematic: true` e a legenda diz que é um esquema.
+
+A página `/dados` (`docs/dados.md` e `docs/en/dados.md`) é o hub: liga cada série ao CSV correspondente e explica o selo de atualidade.
+
+**Fontes primárias, e compilações identificadas.** A regra é citar quem mediu. Quando nenhuma fonte primária tabula uma série — contagens de transistores ao longo de cinco décadas, a dependência de neônio por país —, a entrada em `citations.ts` diz explicitamente que é uma **compilação** e nomeia o agregador, em vez de emprestar autoridade de um paper a um número que ele não publica. O mesmo vale para números derivados: uma porcentagem calculada a partir de uma tabela já citada leva a citação da tabela, não uma fonte nova.
+
 ## Estrutura do site
 
 - **Início** (`/`) — hero, features e diagrama Mermaid da cadeia
 - **Introdução** — texto USGS + gráfico interativo (Chart.js)
 - **Linha do tempo** / **Glossário** — navegação auxiliar
 - Capítulos agrupados na sidebar: matéria-prima → refino → wafer → fab → dispositivos
+- **Panorama** — capítulos transversais que amarram o resto: preços e valor, além do silício, mapa dos gargalos e a página de dados
 
 ## Figuras do PDF
 

@@ -3,6 +3,7 @@ title: Packaging and test
 description: >-
   After the fab: the wafer is tested, diced, connected to a package, protected
   and tested again. This is where HBM, chiplets and hybrid bonding come from.
+dataAsOf: 2025
 ---
 
 # Packaging and test
@@ -143,7 +144,7 @@ The first breach of the reticle barrier came in **March 2020**, when TSMC and Br
 
 ### 3D: chips stacked
 
-In **3D** integration, dies are **stacked** and connected by **through-silicon vias** (TSVs). The dimensions tell the story of the process: in HBM, TSVs are typically **2 to 5 µm in diameter** and **30 to 60 µm deep**, in the *via-middle* scheme — formed **after** the front-end and **before** the BEOL, a balance between density, cost and thermal behaviour <Cite id="semieng-tsv" />. In interposers, TSVs are larger, **10 µm or more**, with an aspect ratio around **10:1** <Cite id="semieng-tsv" />.
+In **3D** integration, dies are **stacked** and connected by **through-silicon vias** (TSV). The dimensions tell the story of the process: in HBM, TSVs are typically **2 to 5 µm in diameter** and **30 to 60 µm deep**, in the *via-middle* scheme — formed **after** the front-end and **before** the BEOL, a balance between density, cost and thermal behaviour <Cite id="semieng-tsv" />. In interposers, TSVs are larger, **10 µm or more**, with an aspect ratio around **10:1** <Cite id="semieng-tsv" />.
 
 These are holes a few micrometres across, tens of micrometres deep, **filled with copper** and polished — in each of the hundreds of thousands of vias in a memory stack.
 

@@ -3,6 +3,7 @@ title: Na fab
 description: >-
   O wafer deixa de ser uma lâmina e vira um chip: oxidação, deposição, corrosão,
   implantação, polimento e metrologia, repetidos cerca de mil vezes dentro da fábrica.
+dataAsOf: 2025
 ---
 
 # Na fab: como um wafer vira um chip

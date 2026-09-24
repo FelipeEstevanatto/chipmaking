@@ -3,6 +3,7 @@ title: In the fab
 description: >-
   The wafer stops being a blank disc and becomes a chip: oxidation, deposition,
   etching, implantation, polishing and metrology, repeated about a thousand times.
+dataAsOf: 2025
 ---
 
 # In the fab: how a wafer becomes a chip

@@ -1,6 +1,7 @@
 ---
 title: Polysilicon
 description: Chemical purification via TCS, the Siemens and FBR processes, and the history of the polysilicon market.
+dataAsOf: 2025
 ---
 
 # Chemical purification and polysilicon

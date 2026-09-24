@@ -59,6 +59,7 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Início', link: '/' },
         { text: 'Introdução', link: '/introducao' },
+        { text: 'O elemento silício', link: '/o-elemento-silicio' },
         { text: 'Linha do tempo', link: '/linha-do-tempo' },
         { text: 'Glossário', link: '/glossario' },
       ],
@@ -84,11 +85,15 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
         { text: 'Na fab: do wafer ao chip', link: '/na-fab' },
         { text: 'Fotolitografia', link: '/fotolitografia' },
         { text: 'História da fotolitografia', link: '/historia-fotolitografia' },
+        { text: 'Os insumos da fab', link: '/insumos-fab' },
       ],
     },
     {
       text: 'Dispositivos',
-      items: [{ text: 'Evolução dos transistores', link: '/transistores' }],
+      items: [
+        { text: 'Evolução dos transistores', link: '/transistores' },
+        { text: 'Confiabilidade', link: '/confiabilidade' },
+      ],
     },
     {
       text: 'Depois da fab',
@@ -97,6 +102,15 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Fotovoltaica',
       items: [{ text: 'Células e módulos solares', link: '/celulas-solares' }],
+    },
+    {
+      text: 'Panorama',
+      items: [
+        { text: 'Preços e valor', link: '/precos-e-valor' },
+        { text: 'Além do silício', link: '/alem-do-silicio' },
+        { text: 'O mapa dos gargalos', link: '/gargalos' },
+        { text: 'Dados e números', link: '/dados' },
+      ],
     },
     {
       text: 'Fontes',
@@ -161,6 +175,7 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Home', link: '/en/' },
         { text: 'Introduction', link: '/en/introducao' },
+        { text: 'The silicon element', link: '/en/o-elemento-silicio' },
         { text: 'Timeline', link: '/en/linha-do-tempo' },
         { text: 'Glossary', link: '/en/glossario' },
       ],
@@ -186,11 +201,15 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
         { text: 'In the fab: from wafer to chip', link: '/en/na-fab' },
         { text: 'Photolithography', link: '/en/fotolitografia' },
         { text: 'History of photolithography', link: '/en/historia-fotolitografia' },
+        { text: 'Fab consumables', link: '/en/insumos-fab' },
       ],
     },
     {
       text: 'Devices',
-      items: [{ text: 'Transistor evolution', link: '/en/transistores' }],
+      items: [
+        { text: 'Transistor evolution', link: '/en/transistores' },
+        { text: 'Reliability', link: '/en/confiabilidade' },
+      ],
     },
     {
       text: 'After the fab',
@@ -199,6 +218,15 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
     {
       text: 'Photovoltaics',
       items: [{ text: 'Solar cells and modules', link: '/en/celulas-solares' }],
+    },
+    {
+      text: 'Panorama',
+      items: [
+        { text: 'Prices and value', link: '/en/precos-e-valor' },
+        { text: 'Beyond silicon', link: '/en/alem-do-silicio' },
+        { text: 'The chokepoint map', link: '/en/gargalos' },
+        { text: 'Data and numbers', link: '/en/dados' },
+      ],
     },
     {
       text: 'Sources',

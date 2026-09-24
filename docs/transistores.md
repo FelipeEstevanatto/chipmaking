@@ -1,6 +1,7 @@
 ---
 title: Evolução dos transistores
 description: De MOSFET planar a CFET — silício esticado, HKMG, FinFET, FD-SOI, GAAFET, backside power e forksheet.
+dataAsOf: 2026
 ---
 
 # Evolução arquitetônica dos transistores

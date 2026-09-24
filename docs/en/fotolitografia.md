@@ -1,6 +1,7 @@
 ---
 title: Photolithography
 description: How the scanner carries light from the source to the wafer, the photoresist, resolution enhancement, immersion and the step-by-step process.
+dataAsOf: 2025
 ---
 
 # Photolithography

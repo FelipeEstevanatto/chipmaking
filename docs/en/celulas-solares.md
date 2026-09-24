@@ -2,7 +2,8 @@
 title: Solar cells and modules
 description: >-
   From the silicon wafer to the photovoltaic cell: texturing, emitter,
-  anti-reflection coating, metallisation and module assembly.
+  antireflection coating, metallisation and module assembly, with today's industry figures.
+dataAsOf: 2026
 ---
 
 # Solar cells and modules
@@ -104,9 +105,28 @@ The industry figures at the time of the Xakalashe and Tangstad review give a sen
 - Efficiencies of up to **22%** were reported in industry.
 - Cell prices were approaching **US$1 per watt-peak**; the cheapest crystalline silicon module was around **US$2/Wp**, while CdTe modules were already **below US$1/Wp**.
 
-These are 2011 figures and they aged quickly — annual production is now measured in hundreds of gigawatts, not tens. But they show the shape of the competition that has defined photovoltaics ever since: silicon wins on scale and industrial chain, not on physics.
+These are 2011 numbers and they aged fast — annual production today is measured in hundreds of gigawatts, not tens. But they show the shape of the contest that has defined photovoltaics since: silicon wins on scale and industrial chain, not on physics.
 
-<SourceNote label="Sources" :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga']" />
+## Today's numbers
+
+The Xakalashe and Tangstad survey is from 2011, and the section above keeps its figures because they describe the decade's turning point that explains today's photovoltaics. For the present, the annual reference is the Fraunhofer ISE report, which publishes the sector's price, efficiency and output in a new edition every year <Cite id="fraunhofer-pv-report" />.
+
+A few numbers from the most recent report measure how much has changed:
+
+- **Module price** keeps falling at a published learning rate: about **26.7%** for every **doubling of cumulative production** <Cite id="fraunhofer-pv-report" />.
+- Commercial silicon module efficiency rose from about **17% to just under 25%** over ten years <Cite id="fraunhofer-pv-report" />.
+- **Energy payback time** has fallen to about **1 year**, and the assumed system lifetime is about **20 years** <Cite id="fraunhofer-pv-report" />.
+- The levelised cost of electricity from large solar plants is around **4 euro cents per kWh** <Cite id="fraunhofer-pv-report" />.
+
+<ClientOnly>
+  <DataChart chart="pv-efficiency" />
+</ClientOnly>
+
+The gap between the first bar in that chart and the last three is this chapter's contest in miniature: what you can buy today is silicon, and what promises the next jump is the perovskite-on-silicon **tandem**, which has already reached **35%** in the laboratory <Cite id="fraunhofer-pv-report" />. Single-cell records are in the comparative chart from [NREL](/en/referencias) <Cite id="nrel-efficiency" />.
+
+Worth noting what that number means for the silicon chain. If the tandem takes hold, it does **not replace** the silicon wafer: it uses it as a substrate and adds a layer on top — which preserves the entire quartz-to-wafer path described on this site and raises the value per wafer.
+
+<SourceNote label="Sources" :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: 'where the wafer comes from' },

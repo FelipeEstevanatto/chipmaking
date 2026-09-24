@@ -1,6 +1,7 @@
 ---
 title: Fabricação de wafers
 description: Do polissilício EG-Si ao wafer pronto para fab — Czochralski, corte, CMP e limpeza RCA.
+dataAsOf: 2025
 ---
 
 # Fabricação do wafer de silício

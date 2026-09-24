@@ -1,6 +1,7 @@
 ---
 title: Mining & MG-Si
 description: HPQ quartz, the submerged-arc furnace, carbothermal reduction and metallurgical-grade silicon (MG-Si).
+dataAsOf: 2025
 ---
 
 # Quartz mining and metallurgical silicon production
