@@ -12,75 +12,19 @@ Compare visualmente três arquiteturas principais:
   <TransistorCompare />
 </ClientOnly>
 
-## Comparativo das gerações
+## As quinze gerações de uma vez
 
-| Era | Nó | Arquitetura | Mudança-chave | Ganho |
-|-----|-----|-------------|---------------|-------|
-| **1960** | 20 µm † | MOSFET planar | Canal, portão, fonte e dreno no plano do wafer | Base da Lei de Moore por décadas |
-| **1963** | ~20 µm † | CMOS (par complementar) | NMOS e PMOS complementares no mesmo substrato | Consumo quase nulo em repouso — base de toda a lógica digital |
-| **1968** | ~10 µm † | Porta de silício (autoalinhada) | A porta de polissilício mascara o próprio implante de fonte/dreno | Menos capacitância de sobreposição; dispositivos menores e mais rápidos |
-| **1985** | 1.5 µm | LDD (dreno levemente dopado) | Extensões n⁻ sob espaçadores de nitreto | Suaviza o campo no dreno e contém portadores quentes |
-| **1995** | 0.35 µm | STI (trincheira rasa) | Trincheira de óxido substitui o isolamento LOCOS | Paredes verticais, sem “bico de pássaro”; mais densidade |
-| **1998** | 0.22 µm | SOI (silício sobre isolante) | Filme fino de silício sobre óxido enterrado | Menos capacitância de junção e imunidade ao latch-up |
-| **2003** | 90 nm | Silício esticado | Si depositado sobre SiGe tensiona a rede cristalina | +10–20% de mobilidade com custo marginal <Cite id="intel-strain" /> |
-| **2007** | 45 nm | HKMG | Dielétrico High-K (háfnio) + portão metálico substituem SiO₂/polissilício | Bloqueia a fuga mantendo o acoplamento eletrostático <Cite id="hkmg-paper" /> |
-| **2011** | 22 nm | FinFET (Tri-Gate) | Canal em aleta vertical; portão envolve três lados | Controle eletrostático; corrente escalável por aletas |
-| **2012** | 28 nm | FD-SOI (corpo ultrafino) | Filme ultrafino sobre óxido + plano traseiro | Back bias ajusta a tensão de limiar; baixo consumo e menos variabilidade |
-| **2022** | 3 nm | GAAFET / nanofolhas | Nanofolhas empilhadas envoltas pelo portão nos quatro lados | Até ~40% menos vazamento <Cite id="asml-gaa" /> |
-| **2025/2026** | 18A / N2 | BSPDN | Alimentação migra para o verso do wafer via TSVs | ~11% mais densidade; IR drop até 10× menor |
-| **~2029** | A10 | Forksheet | Parede dielétrica separa as portas n e p | Aproxima n e p sem empilhar; células padrão menores |
-| **Futuro** | &lt;1 nm | CFET | NFET e PFET empilhados na mesma célula | Até ~50% menos área por porta lógica |
+Antes da história, o mapa: uma linha por geração, com o que ela mudou e o que ela entregou. A coluna **Ano** marca a entrada em produção ou a demonstração; a coluna **Nó** é um rótulo de geração, não uma medida — o que isso significa é o assunto do [adendo no fim do capítulo](#adendo-o-que-o-numero-do-no-significa).
 
-† Os três primeiros valores **não são nomes de nó**: antes de 1971 não existia essa convenção. São os **comprimentos de porta** medidos nos dispositivos pioneiros — 20 µm e depois 10 µm no primeiro MOSFET de Atalla e Kahng <Cite id="semiconductor-scale" />. O que o número do nó passou a significar depois disso é o assunto do [adendo abaixo](#adendo-o-que-o-numero-do-no-significa).
+<TransistorTable />
 
-## Onde cada geração chegou ao consumidor
-
-| Era | Produto de destaque | Onde foi usado |
-|-----|---------------------|----------------|
-| **1960** | NMOS **6502** (1975) | Apple II, Commodore 64 e NES — depois das calculadoras de bolso que inauguraram a linhagem |
-| **1963** | **RCA CD4000** (1968) | Relógios digitais, calculadoras e instrumentos a bateria; hoje o relógio de tempo real de todo PC |
-| **1968** | **Fairchild 3708** (1968) | O primeiro CI comercial de porta de silício; a técnica depois viabilizou o Intel 4004 (1971) |
-| **1985** | **Intel 80386** (1985) | Os PCs da era Windows 3.x |
-| **1995** | **Pentium II** (1997) | PCs domésticos e corporativos, via o processo P856 de 0,25 µm |
-| **1998** | **Cell** / **Xenon** (2005–06) | PlayStation 3 e Xbox 360, ambos em SOI de 90 nm; o Athlon 64 levou a mesma tecnologia aos PCs |
-| **2003** | **Pentium 4 “Prescott”** (2004) | PCs desktop — o primeiro de alto volume com silício esticado |
-| **2007** | **Core 2 Extreme QX9650** (2007) | PCs e MacBooks de 45 nm, seguidos da linha Core 2 Duo/Quad em 2008 |
-| **2011** | **Ivy Bridge** (2012) / **Exynos 7420** (2015) | PCs com FinFET e, três anos depois, o Galaxy S6 e o iPhone 6s (Apple A9) |
-| **2012** | **Synaptics AS-370** | O Google Nest Mini; a plataforma GAP9 levou o 22FDX aos fones inteligentes |
-| **2022** | **WhatsMiner M56S++** / **Apple A20 Pro** | Mineração em SF3E da Samsung e, no N2 da TSMC, o iPhone de 2025 |
-| **2025/2026** | **Intel Panther Lake** | Core Ultra série 3 — o primeiro chip com PowerVia e RibbonFET juntos |
-| **~2029** | — | Ainda em desenvolvimento na imec: sem produto de consumo anunciado |
-| **Futuro** | — | Arquitetura de pesquisa; a imec projeta produção em massa só depois de 2030 |
-
-## Adendo: o que o número do nó significa
-
-A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração. A história tem três etapas.
-
-### 1. O número nasceu de uma coincidência
-
-O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*) — a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*) — metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
-
-Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />.
-
-### 2. Os dois números se separaram em meados dos anos 1990
-
-Para continuar ganhando velocidade, a indústria passou a encolher o **comprimento de porta mais rápido** que as demais dimensões. No nó dito "**130 nm**", os transistores reais tinham portas de **70 nm** — pouco mais da metade do número estampado no nome <Cite id="ieee-node" />.
-
-O roteiro setorial que definia os nós, o **ITRS**, registrou a ruptura nos próprios documentos. Já na edição de **1999** ele eliminou o "nó de 150 nm" e redefiniu a designação a partir do **meio-passo de DRAM**, escrevendo que "o nó de tecnologia agora não é muito mais do que um rótulo simples para marcas de escala ainda meio convenientes ao longo desse caminho" <Cite id="itrs-1999" />. Em **2001**, o texto ficou explícito: a designação do nó "é definida pelo meio-passo do DRAM, e não pelo comprimento de porta do transistor nem pela dimensão mínima característica daquele nó" <Cite id="itrs-2001" />.
-
-Em outras palavras: o número já não media o transistor. Media uma dimensão de memória — e servia, sobretudo, como marcador de geração.
-
-### 3. Com o FinFET, o número deixou de medir qualquer coisa
-
-A ruptura final veio com a mudança estrutural do transistor. No "**nó de 22 nm**" da Intel (2011), o primeiro com FinFET, os dispositivos tinham portas de **26 nm**, meio-passo de **40 nm** e aletas de **8 nm** <Cite id="ieee-node" />. Nenhuma dessas três medidas é 22.
-
-Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "não tinha mais absolutamente nenhum sentido, porque não dizia respeito a nenhuma dimensão que se pudesse encontrar no chip" <Cite id="ieee-node" />. O artigo em que a citação aparece saiu na IEEE Spectrum com um título direto ao ponto: *“The Node is Nonsense”*.
-
-### O que veio no lugar
-
-Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1** — 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração** — e é exatamente assim que eles devem ser lidos na tabela acima.
+O que vem a seguir é a história de cada linha, na mesma ordem, com a figura correspondente.
 
 ## 1960 — MOSFET planar
+
+<DiagramFigure src="/pdf-images/p17-1.png" alt="Transistor MOSFET planar">
+O transistor planar: canal, porta, fonte e dreno no plano do wafer — a estrutura que a litografia precisava desenhar de uma vez.
+</DiagramFigure>
 
 Transistores planares (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. O primeiro dispositivo funcional, apresentado em **1960**, tinha porta de **20 µm** e óxido de porta de 100 nm — uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o "nó de 22 nm" de 2011 tem portas de 26 nm: em cinco décadas, essa dimensão encolheu quase mil vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
 
@@ -162,11 +106,19 @@ O primeiro processador de alto volume com silício esticado foi o **Pentium 4 �
 
 ## 2007 — High-K metal gate (HKMG)
 
+<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Comparação entre porta de SiO₂/polissilício e porta High-K metálica">
+A pilha de porta muda duas vezes de uma vez: o dielétrico deixa de ser SiO₂ e o metal substitui o polissilício.
+</DiagramFigure>
+
 Com óxido de portão (SiO₂) reduzido a ~**1 nm**, o vazamento por tunelamento tornou-se inviável. Em **2007** (45 nm), dielétricos de **High-K** (háfnio) e **portões metálicos** substituíram SiO₂/polissilício, mantendo acoplamento eletrostático com espessura física maior <Cite id="hkmg-paper" />.
 
 A estreia comercial foi o **Core 2 Extreme QX9650**, em novembro de 2007, seguido em janeiro de 2008 pela linha de volume — os Core 2 Duo e Quad de 45 nm que equiparam laptops e MacBooks da época <Cite id="intel-45nm" />.
 
 ## 2011 — FinFET (Tri-Gate)
+
+<DiagramFigure src="/pdf-images/p17-2.png" alt="Transistor FinFET Tri-Gate">
+O canal sai do plano: a aleta vertical é envolvida pelo portão em três lados.
+</DiagramFigure>
 
 Abaixo de **20 nm**, planares perderam controle. A Intel comercializou **FinFET** no **22 nm** (2011): canal em “aleta” vertical; portão envolve três lados, reduzindo fuga e permitindo escalar corrente com múltiplas aletas adjacentes (**quantização de aleta**).
 
@@ -184,11 +136,19 @@ As plataformas comerciais vieram da STMicroelectronics (28 nm) e da GlobalFoundr
 
 ## 2022 — GAAFET (gate-all-around / nanosheets)
 
+<DiagramFigure src="/pdf-images/p18-1.png" alt="Transistor GAAFET de nanofolhas">
+Nanofolhas empilhadas, com o portão envolvendo as quatro faces de cada uma.
+</DiagramFigure>
+
 Em **3 nm** e abaixo, FinFETs encontram limites de variabilidade e efeitos quânticos. **GAAFET** empilha **nanofolhas** envolvidas pelo portão nos **quatro lados**. Samsung em massa no 3 nm (**MBCFET**, 2022); TSMC e Intel nos nós N2 e **18A (RibbonFET)** <Cite id="asml-gaa" />. Controle eletrostático superior, até **~40%** menos vazamento, largura de nanofolhas ajustável para performance vs. consumo.
 
 O primeiro produto comercial com GAA foi o ASIC minerador **MicroBT WhatsMiner M56S++**, no processo SF3E da Samsung, identificado em 2023 <Cite id="techinsights-gaa" />. Vale a ressalva: o **N3 da TSMC ainda era FinFET** — o Apple A17 Pro do iPhone 15 Pro é um chip de 3 nm FinFET. A TSMC só adotou nanofolhas no **N2**, com produção em volume no fim de 2025 e o **Apple A20 Pro** entre os primeiros grandes produtos <Cite id="tsmc-n2" />.
 
 ## 2025/2026 — BSPDN (backside power)
+
+<DiagramFigure src="/assets/bspdn.svg" alt="Comparação entre alimentação frontal e rede de alimentação no verso do wafer">
+A alimentação migra para o verso do wafer e o lado frontal fica livre para sinal.
+</DiagramFigure>
 
 **Backside Power Delivery Network (BSPDN)** — *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): barramentos de alimentação migram para o **verso** do wafer via **TSVs**, liberando camadas frontais para sinal, ~**11%** mais densidade e queda de tensão dinâmica (**IR drop**) até **10×** menor.
 
@@ -206,7 +166,39 @@ A imec demonstrou o processo em wafers de 300 mm em 2021 e, em 2025, apresentou 
 
 ## Futuro — CFET
 
+<DiagramFigure src="/assets/cfet.svg" alt="Comparação entre NFET e PFET lado a lado e um CFET empilhado">
+NFET e PFET na mesma célula, empilhados em vez de lado a lado.
+</DiagramFigure>
+
 Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha verticalmente NFET e PFET na mesma célula, reduzindo até **~50%** a área por porta lógica (inversores, SRAM), estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó **A7**, depois de 2030 <Cite id="imec-forksheet" />.
+
+## Adendo: o que o número do nó significa
+
+A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração. A história tem três etapas.
+
+### 1. O número nasceu de uma coincidência
+
+O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*) — a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*) — metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
+
+Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />.
+
+### 2. Os dois números se separaram em meados dos anos 1990
+
+Para continuar ganhando velocidade, a indústria passou a encolher o **comprimento de porta mais rápido** que as demais dimensões. No nó dito "**130 nm**", os transistores reais tinham portas de **70 nm** — pouco mais da metade do número estampado no nome <Cite id="ieee-node" />.
+
+O roteiro setorial que definia os nós, o **ITRS**, registrou a ruptura nos próprios documentos. Já na edição de **1999** ele eliminou o "nó de 150 nm" e redefiniu a designação a partir do **meio-passo de DRAM**, escrevendo que "o nó de tecnologia agora não é muito mais do que um rótulo simples para marcas de escala ainda meio convenientes ao longo desse caminho" <Cite id="itrs-1999" />. Em **2001**, o texto ficou explícito: a designação do nó "é definida pelo meio-passo do DRAM, e não pelo comprimento de porta do transistor nem pela dimensão mínima característica daquele nó" <Cite id="itrs-2001" />.
+
+Em outras palavras: o número já não media o transistor. Media uma dimensão de memória — e servia, sobretudo, como marcador de geração.
+
+### 3. Com o FinFET, o número deixou de medir qualquer coisa
+
+A ruptura final veio com a mudança estrutural do transistor. No "**nó de 22 nm**" da Intel (2011), o primeiro com FinFET, os dispositivos tinham portas de **26 nm**, meio-passo de **40 nm** e aletas de **8 nm** <Cite id="ieee-node" />. Nenhuma dessas três medidas é 22.
+
+Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "não tinha mais absolutamente nenhum sentido, porque não dizia respeito a nenhuma dimensão que se pudesse encontrar no chip" <Cite id="ieee-node" />. O artigo em que a citação aparece saiu na IEEE Spectrum com um título direto ao ponto: *“The Node is Nonsense”*.
+
+### O que veio no lugar
+
+Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1** — 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração** — e é exatamente assim que eles devem ser lidos na tabela do início do capítulo.
 
 <SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
 

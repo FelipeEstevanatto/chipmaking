@@ -7,6 +7,7 @@ import UsgsProductionChart from './UsgsProductionChart.vue'
 import DataChart from './DataChart.vue'
 import TransistorCompare from './TransistorCompare.vue'
 import TransistorTimeline from './TransistorTimeline.vue'
+import TransistorTable from './TransistorTable.vue'
 import Cite from './Cite.vue'
 import SourceNote from './SourceNote.vue'
 import RefList from './RefList.vue'
@@ -29,6 +30,7 @@ export default {
     app.component('DataChart', DataChart)
     app.component('TransistorCompare', TransistorCompare)
     app.component('TransistorTimeline', TransistorTimeline)
+    app.component('TransistorTable', TransistorTable)
     app.component('Cite', Cite)
     app.component('SourceNote', SourceNote)
     app.component('RefList', RefList)

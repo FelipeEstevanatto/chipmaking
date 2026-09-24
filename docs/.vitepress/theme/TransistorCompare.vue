@@ -7,34 +7,51 @@ import { useIsEnglish, useLocalePath } from './locale'
 const isEnglish = useIsEnglish()
 const localePath = useLocalePath()
 
-const options = [
+import { ERAS } from './transistor-eras'
+
+/**
+ * Three spot comparisons, not a complete list: the point is to fix the vocabulary before the
+ * chapter's table, so the tabs stay short. The figure and its alt text come from the canonical
+ * list of generations, which is the part that must not drift when an asset is replaced.
+ */
+const SPOTLIGHTS = [
   {
     id: 'planar',
-    label: '1960 - Planar',
-    src: '/pdf-images/p17-1.png',
-    alt: 'Transistor planar MOSFET',
+    year: '1960',
+    label: '1960 · Planar',
     captionPt: 'Canal bidimensional; base da Lei de Moore por décadas.',
     captionEn: 'Two-dimensional channel; the basis of Moore’s Law for decades.',
   },
   {
     id: 'finfet',
-    label: '2011 - FinFET',
-    src: '/pdf-images/p17-2.png',
-    alt: 'FinFET Tri-Gate',
+    year: '2011',
+    label: '2011 · FinFET',
     captionPt: 'Aleta vertical; portão envolve três lados do canal.',
     captionEn: 'Vertical fin; the gate wraps three sides of the channel.',
   },
   {
     id: 'gaa',
-    label: '2022 - GAAFET',
-    src: '/pdf-images/p18-1.png',
-    alt: 'GAAFET nanosheets',
+    year: '2022',
+    label: '2022 · GAAFET',
     captionPt: 'Nanofolhas envolvidas pelo portão nos quatro lados.',
     captionEn: 'Nanosheets wrapped by the gate on all four sides.',
   },
 ] as const
 
-const selected = ref<(typeof options)[number]['id']>('planar')
+const options = SPOTLIGHTS.map((spot) => {
+  const era = ERAS.find((candidate) => candidate.year === spot.year)
+  if (!era) throw new Error(`no generation for ${spot.year}`)
+  return {
+    id: spot.id,
+    label: spot.label,
+    src: era.src,
+    alt: isEnglish.value ? era.altEn : era.altPt,
+    captionPt: spot.captionPt,
+    captionEn: spot.captionEn,
+  }
+})
+
+const selected = ref<(typeof SPOTLIGHTS)[number]['id']>('planar')
 const current = computed(() => options.find((o) => o.id === selected.value)!)
 const caption = computed(() =>
   isEnglish.value ? current.value.captionEn : current.value.captionPt,

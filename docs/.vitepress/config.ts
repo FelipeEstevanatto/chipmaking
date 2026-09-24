@@ -65,22 +65,22 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: 'Matéria-prima',
+      text: '1. Matéria-prima',
       items: [{ text: 'Mineração e MG-Si', link: '/mineracao-mg-si' }],
     },
     {
-      text: 'Refino',
+      text: '2. Refino',
       items: [{ text: 'Polissilício', link: '/polissilicio' }],
     },
     {
-      text: 'Wafer',
+      text: '3. Wafer',
       items: [
         { text: 'Fabricação de wafers', link: '/fabricacao-wafers' },
         { text: 'Estrutura e tipos', link: '/estrutura-wafers' },
       ],
     },
     {
-      text: 'Na fab',
+      text: '4. Na fab',
       items: [
         { text: 'Na fab: do wafer ao chip', link: '/na-fab' },
         { text: 'Fotolitografia', link: '/fotolitografia' },
@@ -89,14 +89,14 @@ function ptSidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: 'Dispositivos',
+      text: '5. Dispositivos',
       items: [
         { text: 'Evolução dos transistores', link: '/transistores' },
         { text: 'Confiabilidade', link: '/confiabilidade' },
       ],
     },
     {
-      text: 'Depois da fab',
+      text: '6. Depois da fab',
       items: [{ text: 'Empacotamento e teste', link: '/empacotamento' }],
     },
     {
@@ -181,22 +181,22 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: 'Raw material',
+      text: '1. Raw material',
       items: [{ text: 'Mining & MG-Si', link: '/en/mineracao-mg-si' }],
     },
     {
-      text: 'Refining',
+      text: '2. Refining',
       items: [{ text: 'Polysilicon', link: '/en/polissilicio' }],
     },
     {
-      text: 'Wafer',
+      text: '3. Wafer',
       items: [
         { text: 'Wafer fabrication', link: '/en/fabricacao-wafers' },
         { text: 'Crystal structure', link: '/en/estrutura-wafers' },
       ],
     },
     {
-      text: 'In the fab',
+      text: '4. In the fab',
       items: [
         { text: 'In the fab: from wafer to chip', link: '/en/na-fab' },
         { text: 'Photolithography', link: '/en/fotolitografia' },
@@ -205,14 +205,14 @@ function enSidebar(): DefaultTheme.SidebarItem[] {
       ],
     },
     {
-      text: 'Devices',
+      text: '5. Devices',
       items: [
         { text: 'Transistor evolution', link: '/en/transistores' },
         { text: 'Reliability', link: '/en/confiabilidade' },
       ],
     },
     {
-      text: 'After the fab',
+      text: '6. After the fab',
       items: [{ text: 'Packaging and test', link: '/en/empacotamento' }],
     },
     {

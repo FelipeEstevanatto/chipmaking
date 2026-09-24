@@ -24,26 +24,7 @@ More context and Bernreuter charts in [Polysilicon](/en/polissilicio).
 
 ## Transistor architecture
 
-```mermaid
-timeline
-    title Silicon transistors
-    1960 : Planar MOSFET
-    1963 : CMOS (complementary pair)
-    1968 : Self-aligned silicon gate
-    1985 : LDD (lightly doped drain)
-    1995 : STI (shallow trench, 0.35 µm)
-    1998 : SOI (0.22 µm)
-    2003 : Strained silicon (Intel 90 nm)
-    2007 : High-K metal gate (45 nm)
-    2011 : FinFET / Tri-Gate (22 nm)
-    2012 : FD-SOI (ultra-thin body)
-    2022 : GAAFET / nanosheets (3 nm)
-    2025 : BSPDN (PowerVia, Super Power Rail)
-    2029 : Forksheet (A10 node)
-    Future : Stacked CFET (&lt;1 nm)
-```
-
-All fourteen generations, with each transistor's structure and examples of the products that used it (click to enlarge):
+All fifteen generations, each with the transistor's structure and examples of the products that used it. The component below is generated from the same list the [transistor evolution](/en/transistores) chapter uses, so the chronology and the chapter cannot diverge — click to enlarge:
 
 <ClientOnly>
   <TransistorTimeline />

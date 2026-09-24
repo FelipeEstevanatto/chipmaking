@@ -35,6 +35,21 @@ O plugin nunca anota dentro de código (inclusive diagramas Mermaid), rótulos d
 
 Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HTML gerado: título e contexto de cada anotação, anotação única por página, primeira ocorrência de prosa e paridade entre os locales (mesmos termos anotados e as mesmas linhas nas duas tabelas).
 
+## Anatomia de um capítulo
+
+A cadeia tem uma ordem e o site precisa mostrá-la. Três regras, aplicadas ao capítulo de [transistores](/transistores) e a serem seguidas nos próximos.
+
+**1. Uma espinha, declarada no início.** Todo capítulo tem uma lista ordenada daquilo que explica — as etapas da célula, as gerações do transistor, os módulos da fábrica. Ela aparece **uma vez**, no começo, como mapa: uma frase dizendo o que é a lista, a lista em si e uma frase dizendo que o que vem a seguir segue aquela ordem. O que era dois blocos (um quadro comparativo e outro de produtos) passou a ser um quadro só, sem a coluna que pertence à narrativa.
+
+**2. Enumeração tem fonte única.** Se a mesma lista aparece em um componente interativo, numa tabela e num capítulo, ela mora em um **módulo `.ts`**. `theme/transistor-eras.ts` é o exemplo: as quinze gerações com ano, nó, o que mudou, ganho, produtos e figura, lidas por `TransistorTimeline.vue` (a cronologia interativa), `TransistorTable.vue` (o quadro do capítulo) e a página de linha do tempo. Nenhum consumidor tem cópia própria — foi assim que o capítulo ficou com dois quadros desatualizados em relação à cronologia, e é isso que a regra impede.
+
+**3. Material de referência não abre o capítulo.** A narrativa vem primeiro; quadro-resumo, adendo e cronologia vêm **depois** dela. O adendo sobre o número do nó estava entre os quadros e a história, e passou para o fim: quem quer o atalho lê o quadro do início, quem quer o porquê segue a história. Exceções (um comparador de três arquiteturas logo no topo) só valem quando servem para fixar vocabulário, e devem ser apresentadas como tal.
+
+Duas consequências práticas:
+
+- **Toda geração tem figura.** Se a lista numerada é a espinham cada item dela precisa de uma imagem; itens sem figura são um furo visível, não uma economia. As figuras das gerações mais recentes já existiam em `assets/` e em `public/pdf-images/`, e estavam apenas subutilizadas.
+- **Componente que monta texto a partir de props entra no `audit-glossary.py`.** `TransistorTable` renderiza "CMOS" e "FinFET" sem passar pelas regras inline do Markdown, então sua classe está na lista de contextos ignorados, junto de `transistor-timeline` e `transistor-compare`. Sem isso, o script acusa "primeira ocorrência não anotada" num texto que o plugin não consegue alcançar.
+
 ## Aids de leitura
 
 `theme/ReadingProgress.vue` (slot `layout-top`) desenha a barra de progresso no topo da janela, e `theme/DocMeta.vue` (slot `doc-before`) mostra o tempo de leitura e a contagem de figuras, medida no texto renderizado — o que a mantém correta quando um capítulo muda. A numeração das figuras sai de CSS (`counter-reset: figure` em `.vp-doc`, em `custom.css`), então `DiagramFigure` não precisa saber o próprio número, e o rótulo alterna entre "Figura" e "Figure" conforme o `lang` do documento.
