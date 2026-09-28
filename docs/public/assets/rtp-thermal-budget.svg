@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
   <title>Temperature against time for a furnace anneal of hours and a rapid thermal anneal of seconds, with the band around 450 degrees Celsius where oxygen thermal donors form</title>
+  <desc>A furnace cycle and a rapid thermal cycle on the same temperature axis, with the time each one spends above the process temperature.</desc>
   <rect width="960" height="540" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -15,7 +16,6 @@
   </style>
 
   <text class="h" x="40" y="36">Furnace anneal versus rapid thermal processing</text>
-  <text class="sm" x="40" y="58">Both reach the same temperature. The difference is how long the wafer stays hot.</text>
 
   <!-- temperature window in which oxygen clusters become thermal donors -->
   <rect class="band" x="110" y="290" width="810" height="16" />
@@ -70,6 +70,4 @@
   <text class="m" x="920" y="424" text-anchor="middle">30</text>
   <text class="l" x="750" y="446" text-anchor="middle">seconds</text>
 
-  <text class="sm" x="46" y="478">A furnace step is measured in hours; RTP is measured in seconds, so the wafer keeps</text>
-  <text class="sm" x="46" y="500">its dopant profile while the thermal donors are annihilated above 800 &#176;C.</text>
 </svg>

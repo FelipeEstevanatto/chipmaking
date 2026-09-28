@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img">
   <title>Two light paths side by side: DUV immersion at 193 nm shines light through a quartz reticle, glass lenses and a film of water, while EUV at 13.5 nm is absorbed by all of those and can only be reflected by multilayer mirrors in vacuum</title>
+  <desc>Two optical columns side by side. Left: DUV at 193 nm through a reticle, glass lenses and a water film. Right: EUV at 13.5 nm reflected by multilayer mirrors in vacuum. Not to scale.</desc>
   <rect width="960" height="560" fill="#ffffff" />
   <defs>
     <marker id="dvArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -18,7 +19,6 @@
   </style>
 
   <text class="h" x="40" y="34">DUV and EUV: two different light paths</text>
-  <text class="sm" x="40" y="57">One shines through materials. The other has no choice but to bounce off them.</text>
 
   <!-- ===================== DUV column ===================== -->
   <text class="sec" x="250" y="106" text-anchor="middle">DUV immersion</text>
@@ -73,6 +73,4 @@
   <rect class="bxB" x="615" y="418" width="170" height="46" rx="7" />
   <text class="s" x="700" y="449" text-anchor="middle">wafer</text>
 
-  <text class="sm" x="700" y="500" text-anchor="middle">everything absorbs EUV, so nothing</text>
-  <text class="sm" x="700" y="526" text-anchor="middle">can be a lens: numerical aperture 0.33 or 0.55</text>
 </svg>

@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540" role="img">
   <title>Cross-section of a finished crystalline silicon solar cell: silver front fingers, silicon nitride anti-reflection coating, phosphorus-doped n+ emitter, boron-doped p base, p+ back surface field and full-area aluminium rear contact</title>
+  <desc>Cross-section of a finished cell with the front contacts, anti-reflection coating, n+ emitter, p base, back surface field and rear contact. Layers not to scale.</desc>
+  <rect width="900" height="540" fill="#ffffff" />
   <defs>
     <marker id="sunArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
       <path d="M0,0 L7,0 L3.5,7 z" fill="#d69e2e" />
@@ -19,7 +21,7 @@
     .bsf { fill: #feb2b2; stroke: #9b2c2c; stroke-width: 1; }
     .alu { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1; }
     .edge { fill: none; stroke: #4a5568; stroke-width: 2; }
-    .lead { stroke: #a0aec0; stroke-width: 1; fill: none; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
     .sun { stroke: #d69e2e; stroke-width: 2.5; fill: none; }
     .junc { stroke: #c53030; stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
   </style>
@@ -77,5 +79,4 @@
   <text class="t" x="644" y="462">Aluminium rear contact</text>
   <text class="s" x="644" y="479">full area</text>
 
-  <text class="s" x="90" y="512">Layers not to scale: the wafer is about 200 &#181;m thick, the emitter only about 0.5 &#181;m.</text>
 </svg>

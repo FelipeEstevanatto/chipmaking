@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
   <title>Cross-section of the wafer surface before and after chemical etching: the microcracked layer left by slicing and lapping, and the same surface once 10 to 30 micrometres have been etched away</title>
+  <desc>Two surface cross-sections to the same depth scale: the microcracked layer after slicing and lapping, and the surface after etching 10 to 20 um away. Not to scale across the two panels.</desc>
   <rect width="960" height="540" fill="#ffffff" />
   <defs>
     <pattern id="dmg" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -24,7 +25,6 @@
   </style>
 
   <text class="h" x="40" y="36">Etching away the damaged layer</text>
-  <text class="sm" x="40" y="58">Same vertical scale in both panels; the depth bar is in micrometres below the original surface.</text>
 
   <!-- ===================== left: before ===================== -->
   <text class="t" x="40" y="106">After slicing and lapping</text>
@@ -83,7 +83,4 @@
   <text class="l" x="725" y="322" text-anchor="middle">new surface</text>
   <path class="lead" d="M 725,314 L 725,252" />
 
-  <text class="sm" x="46" y="366">Acid etch (HF + HNO&#8323; + CH&#8323;COOH) removes silicon in every direction at the same</text>
-  <text class="sm" x="46" y="388">rate, so it clears the damage without regard to crystal orientation. Alkaline etch</text>
-  <text class="sm" x="46" y="410">(KOH or NaOH) is orientation-dependent and leaves the wafer flatter and cleaner.</text>
 </svg>

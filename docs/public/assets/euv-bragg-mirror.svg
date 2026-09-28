@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img">
   <title>EUV mirrors are Bragg reflectors: about fifty alternating molybdenum and silicon layer pairs, each boundary reflecting roughly three per cent, adding up in phase to about seventy per cent per mirror, so that after ten or more mirrors less than ten per cent of the source light reaches the wafer</title>
+  <desc>Top: the multilayer mirror and how reflection adds up across layer boundaries. Bottom: the share of source light left after one, two, five and ten or more mirrors. Not to scale.</desc>
   <rect width="960" height="620" fill="#ffffff" />
   <defs>
     <marker id="mIn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -31,7 +32,6 @@
   </style>
 
   <text class="h" x="40" y="34">The EUV mirror: a stack of molybdenum and silicon</text>
-  <text class="sm" x="40" y="57">No lens can bend 13.5 nm light, so EUV is steered only by reflection. Schematic, not to scale.</text>
 
   <text class="sec" x="40" y="96">A Bragg reflector is around 50 layer pairs</text>
 

@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img">
   <title>Optical column of a DUV immersion scanner: light source, illuminator, reticle on its stage, projection optics, a water gap under the last lens, the wafer on its stage, and the granite base with laser interferometry</title>
+  <desc>The optical column of a DUV scanner from source to wafer, with the wafer stage and metrology below. Not to scale.</desc>
+  <rect width="900" height="640" fill="#ffffff" />
   <defs>
     <marker id="colArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
       <path d="M0,0 L7,3.5 L0,7 z" fill="#805ad5" />
@@ -23,7 +25,7 @@
     .granite { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1.5; }
     .ray { stroke: #805ad5; stroke-width: 1.3; fill: none; stroke-dasharray: 5 4; }
     .flow { stroke: #805ad5; stroke-width: 2; fill: none; }
-    .lead { stroke: #a0aec0; stroke-width: 1.2; fill: none; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
   </style>
 
   <!-- ============ light source ============ -->
@@ -89,6 +91,4 @@
   <rect class="granite" x="300" y="552" width="320" height="32" />
   <text class="s" x="460" y="573" text-anchor="middle">Granite block, solid and heavy, damps the vibration</text>
 
-  <text class="note" x="30" y="612">EUV follows the same principle but differs in everything else: no water and no lenses.</text>
-  <text class="note" x="30" y="630">Its path is all multilayer mirrors under vacuum, and the mask itself is reflective.</text>
 </svg>

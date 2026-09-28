@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img">
   <title>The chlorine loop of polysilicon refining: metallurgical silicon is chlorinated to trichlorosilane, distilled, decomposed back to pure silicon, and the hydrochloric acid and silicon tetrachloride byproducts return to the start</title>
+  <desc>Four numbered stages in a loop: chlorination, distillation, deposition and byproduct recycle, with the silicon and chlorine flows between them. Not to scale.</desc>
   <rect width="960" height="720" fill="#ffffff" />
   <defs>
     <marker id="loopArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
@@ -28,7 +29,6 @@
   </style>
 
   <text class="h" x="40" y="34">The chlorine loop: what actually gets consumed</text>
-  <text class="sm" x="40" y="58">Only silicon enters and leaves. The chlorine carries it through and comes back.</text>
 
   <!-- ===================== 1. chlorination ===================== -->
   <rect class="chem" x="120" y="100" width="290" height="124" rx="10" />
@@ -84,8 +84,4 @@
 
   <!-- ===================== the point ===================== -->
   <text class="t" x="499" y="300" text-anchor="middle">Nothing is burnt up</text>
-  <text class="sm" x="499" y="326" text-anchor="middle">Chlorine is a carrier, not a fuel:</text>
-  <text class="sm" x="499" y="348" text-anchor="middle">it leaves the deposition step as HCl,</text>
-  <text class="sm" x="499" y="370" text-anchor="middle">is fed straight back to step 1, and the</text>
-  <text class="sm" x="499" y="392" text-anchor="middle">SiCl4 side-product is returned too.</text>
 </svg>

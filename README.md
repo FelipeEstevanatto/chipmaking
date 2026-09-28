@@ -104,15 +104,27 @@ Esquemas próprios (transistores, rota do polissilício, forno de arco submerso,
 
 Um SVG usado em figura é transparente por padrão, e o visualizador de zoom tem fundo escuro: sem uma tinta clara por baixo, o desenho some no modo noturno e, ao ampliar, fica escuro sobre escuro. Por isso, **o primeiro filho do `<svg>` deve ser um `<rect>` opaco do tamanho do `viewBox`** (o próprio componente pinta um cartão branco, mas o arquivo também é aberto direto no navegador). Pelo mesmo motivo, use texto com contraste alto (`#1a202c` / `#2d3748` sobre branco) em vez de cinzas médios.
 
+**Título e descrição.** Todo desenho abre com `<title>` e `<desc>`, ambos em inglês e neutros de locale. O `<title>` diz em uma frase o que a figura mostra, e o `<desc>` repete isso para quem usa leitor de tela e registra a ressalva de escala (*not to scale*). Nenhum dos dois substitui a legenda, que continua sendo o texto visível e traduzido.
+
 **Tamanho de fonte.** A coluna de prosa entrega 638 px de largura. Num `viewBox` de 960, isso é uma redução de ~0,66×: um rótulo de 14 px no SVG chega à tela com ~9 px. Meça com `img.getBoundingClientRect()` no navegador em vez de confiar no número do `viewBox`, e dimensione o corpo entre **17 e 18 px** (≈12 px na tela), reservando 16,5 px para notas de rodapé do próprio desenho.
 
-**Idioma dos rótulos.** O desenho é único e vai para os dois locales, então os rótulos são termos técnicos curtos em inglês (`crown`, `bevel`, `slurry`, `load`), os mesmos que a prosa portuguesa já usa entre parênteses, e **toda a explicação fica na legenda**, que é traduzida. `wafer-identification.svg` é a exceção herdada: seus rótulos estão em português e aparecem assim também na página em inglês.
+**Idioma dos rótulos.** O desenho é único e vai para os dois locales, então os rótulos são termos técnicos curtos em inglês (`crown`, `bevel`, `slurry`, `load`), os mesmos que a prosa portuguesa já usa entre parênteses, e **toda a explicação fica na legenda**, que é traduzida: frase, parágrafo e nota de rodapé saem do desenho. Os números usam o ponto decimal, porque o arquivo é compartilhado (`1.00 mm`, não `1,00 mm`). `scripts/audit-svgs.py` reprova qualquer `<text>` de 60 caracteres ou mais, qualquer rótulo em português e qualquer entidade HTML nomeada.
 
 **Conferir sem enxergar.** Um SVG pode ser validado sem abrir a imagem: monte um `<canvas>`, desenhe o SVG e amostre pixels em coordenadas conhecidas para confirmar que cada forma caiu onde devia, e leia `getBBox()` dos `<text>` para detectar rótulos cortados ou sobrepostos. Foi assim que o arco da lasca em `wafer-edge-profile.svg` apareceu com o `sweep` invertido — o `getBBox()` do `<path>` denunciava o topo 17 px acima do esperado.
 
 Vale rodar isso **antes** de escrever a legenda, porque o erro típico não é a geometria e sim o texto: um rótulo centralizado que vaza pela borda direita ou duas linhas com 2 px de sobreposição passam despercebidos a olho nu no `viewBox` e ficam óbvios depois de montar o arquivo. Ao gerar um SVG novo, aponte o mesmo verificador para ele e resolva todo `<text>` com `x < 1`, `y < 1`, `x + w > viewBox` ou `y + h > viewBox`. Lembre também de conferir o **preenchimento por `<pattern>`**: se a `url(#id)` não resolver, o `<rect>` simplesmente não desenha nada e o erro passa silencioso — amostre a fração de pixels preenchidos na região em vez de um único ponto, já que o padrão tem vãos.
 
-O `wafer-identification.svg` é gerado por `scripts/gen-wafer-identification-svg.py`, porque os contornos de wafer com *flats* exigem geometria de arco real (um *flat* é uma corda que substitui um arco). Rode o script em vez de editar o SVG à mão.
+O `wafer-identification.svg` é gerado por `scripts/gen-wafer-identification-svg.py`, porque os contornos de wafer com *flats* exigem geometria de arco real (um *flat* é uma corda que substitui um arco). Ele é o único desenho com rótulos vindos de código; rode o script em vez de editar o SVG à mão.
+
+### Gramática das anotações
+
+Um desenho por figura, e todas as figuras usam a mesma gramática, para que o leitor não reaprenda a convenção a cada página:
+
+- **Seta de fluxo.** Toda seta sai de uma `<marker>` declarada em `<defs>`, com um triângulo `M 0 0 L 10 5 L 0 10 z` e `orient="auto-start-reverse"`. A seta marca direção de processo; nenhuma peça aponta para outra com uma seta desenhada à mão.
+- **Linha-guia.** O rótulo que precisa alcançar uma peça usa a classe `.lead`: tracejado `#718096` de 1,2 px, sem ponta de seta. `.dim` é a linha de cota, sólida e no mesmo cinza. As duas classes têm a mesma definição em todos os arquivos.
+- **Número e unidade.** O valor sai em negrito e a unidade em peso normal, separados por espaço (`3 nm`, `40:1`, `1.2 mm`).
+- **Antes e depois, corte.** Figuras comparativas põem os painéis no mesmo eixo e mantêm os títulos em `.pt` ou `.t`. O corte transversal é declarado no `<desc>`, não desenhado como legenda dentro da figura.
+- **Cores com significado fixo.** Silício e corte usam `#cfd8e3` com contorno `#7d8b9c`, máscara e parede dielétrica usam `#805ad5`, cobre usa `#ed8936` e alerta usa `#c53030`. Fora esses quatro, a paleta ainda está espalhada em dezenas de tons, e `audit-svgs.py` lista cada um como aviso.
 
 ## Imagens de terceiros
 
@@ -170,6 +182,8 @@ Saída em `docs/.vitepress/dist`. Pré-visualização local:
 ```bash
 bun run preview
 ```
+
+Duas verificações rodam depois do build. `python scripts/audit-glossary.py` confere os tooltips no HTML gerado; `python scripts/audit-svgs.py` confere os desenhos de `docs/public/assets/` e reprova estrutura quebrada, `<text>` longo, rótulo em português e entidade HTML nomeada (tamanho de fonte e deriva de paleta saem como aviso).
 
 ## GitHub Pages
 

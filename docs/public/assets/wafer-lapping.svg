@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
   <title>Double-side lapping: wafers held between two counter-rotating plates with an abrasive slurry, and the flatness it restores</title>
+  <desc>Left: a wafer batch between two counter-rotating lapping plates with abrasive slurry. Right: waviness before and parallel faces after. Not to scale.</desc>
   <rect width="960" height="540" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -15,8 +16,6 @@
     .flow { fill: none; stroke: #c53030; stroke-width: 2.2; }
   </style>
 
-  <text class="h" x="40" y="36">Lapping: abrasive slurry between two counter-rotating plates</text>
-  <text class="sm" x="40" y="58">Side view; a batch of wafers is held flat in carriers and pressed between the plates.</text>
 
   <!-- ===================== left: the process ===================== -->
   <text class="t" x="40" y="100">Double-side lapping</text>
@@ -82,6 +81,4 @@
   <text class="l" x="780" y="412" text-anchor="middle">after lapping: parallel faces</text>
   <path class="lead" d="M 780,404 L 780,382" />
 
-  <text class="sm" x="46" y="470">Lapping shaves the top and bottom faces at once, which is what makes the two</text>
-  <text class="sm" x="46" y="492">surfaces parallel. It also leaves subsurface damage that the etch must remove.</text>
 </svg>

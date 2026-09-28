@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="530" viewBox="0 0 960 530" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="356" viewBox="0 0 960 356" role="img">
   <title>Four generations of chip connection, from wires along the die edge at tens of microns of pitch, through flip-chip bumps above 130 microns, to micro-bumps near 40 microns on a 2.5D interposer, and finally stacked dies joined directly at under 10 microns</title>
-  <rect width="960" height="530" fill="#ffffff" />
+  <desc>Four packaging generations side by side: wire bonding, flip-chip, 2.5D on an interposer and 3D stacking, with the pitch of each connection. Not to scale.</desc>
+  <rect width="960" height="356" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
@@ -18,11 +19,10 @@
   </style>
 
   <text class="h" x="40" y="36">How many connections, and how close together</text>
-  <text class="sm" x="40" y="58">The whole packaging roadmap is one number getting smaller: the distance between two neighbouring connections.</text>
 
   <!-- 1 -->
   <text class="pt" x="40" y="104">Wire-bond BGA</text>
-  <text class="tag" x="40" y="126" fill="#b7791f">fio: 15 a 25 &#181;m</text>
+  <text class="tag" x="40" y="126" fill="#b7791f">wire: 15 to 25 &#181;m</text>
   <rect class="sub" x="55" y="272" width="160" height="34" rx="3" />
   <rect class="die" x="95" y="222" width="80" height="40" rx="3" />
   <path class="wire" d="M 103,222 C 78,190 68,232 66,268" />
@@ -32,14 +32,10 @@
   <circle class="ball" cx="135" cy="324" r="8" />
   <circle class="ball" cx="165" cy="324" r="8" />
   <circle class="ball" cx="195" cy="324" r="8" />
-  <text class="note" x="40" y="372">O die fica de face para cima</text>
-  <text class="note" x="40" y="392">e cada pad recebe um fio.</text>
-  <text class="note" x="40" y="412">Barato e robusto: monta</text>
-  <text class="note" x="40" y="432">mais de 80% dos inv&#243;lucros.</text>
 
   <!-- 2 -->
   <text class="pt" x="272" y="104">Flip-chip BGA</text>
-  <text class="tag" x="272" y="126" fill="#c05621">bump C4: acima de 130 &#181;m</text>
+  <text class="tag" x="272" y="126" fill="#c05621">bump C4: above 130 &#181;m</text>
   <rect class="sub" x="287" y="272" width="160" height="34" rx="3" />
   <rect class="die" x="317" y="218" width="100" height="40" rx="3" />
   <rect class="bump" x="327" y="258" width="14" height="14" />
@@ -51,14 +47,10 @@
   <circle class="ball" cx="367" cy="324" r="8" />
   <circle class="ball" cx="397" cy="324" r="8" />
   <circle class="ball" cx="427" cy="324" r="8" />
-  <text class="note" x="272" y="372">O die vira de cabe&#231;a para baixo.</text>
-  <text class="note" x="272" y="392">Como os contatos podem ficar</text>
-  <text class="note" x="272" y="412">em qualquer ponto da &#225;rea ativa,</text>
-  <text class="note" x="272" y="432">o n&#250;mero de conex&#245;es explode.</text>
 
   <!-- 3 -->
-  <text class="pt" x="504" y="104">2.5D com interposer</text>
-  <text class="tag" x="504" y="126" fill="#2b6cb0">microbump: cerca de 40 &#181;m</text>
+  <text class="pt" x="504" y="104">2.5D with interposer</text>
+  <text class="tag" x="504" y="126" fill="#2b6cb0">microbump: about 40 &#181;m</text>
   <rect class="sub" x="519" y="286" width="160" height="32" rx="3" />
   <rect class="ip" x="539" y="256" width="120" height="28" rx="3" />
   <rect class="die" x="547" y="212" width="48" height="42" rx="3" />
@@ -72,14 +64,10 @@
   <circle class="ball" cx="599" cy="334" r="8" />
   <circle class="ball" cx="629" cy="334" r="8" />
   <circle class="ball" cx="659" cy="334" r="8" />
-  <text class="note" x="504" y="372">Os chips ficam lado a lado sobre</text>
-  <text class="note" x="504" y="392">um interposer de sil&#237;cio, que roteia</text>
-  <text class="note" x="504" y="412">milhares de fios entre o processador</text>
-  <text class="note" x="504" y="432">e a mem&#243;ria HBM ao lado.</text>
 
   <!-- 4 -->
-  <text class="pt" x="736" y="104">3D empilhado</text>
-  <text class="tag" x="736" y="126" fill="#276749">liga&#231;&#227;o direta: abaixo de 10 &#181;m</text>
+  <text class="pt" x="736" y="104">3D stacked</text>
+  <text class="tag" x="736" y="126" fill="#276749">direct bond: below 10 &#181;m</text>
   <rect class="sub" x="751" y="286" width="160" height="32" rx="3" />
   <rect class="die" x="771" y="242" width="120" height="40" rx="3" />
   <rect class="die" x="771" y="200" width="120" height="40" rx="3" />
@@ -92,11 +80,5 @@
   <circle class="ball" cx="831" cy="334" r="8" />
   <circle class="ball" cx="861" cy="334" r="8" />
   <circle class="ball" cx="891" cy="334" r="8" />
-  <text class="note" x="736" y="372">Os dies s&#227;o empilhados e ligados</text>
-  <text class="note" x="736" y="392">por vias que atravessam o sil&#237;cio.</text>
-  <text class="note" x="736" y="412">Na liga&#231;&#227;o h&#237;brida dois cobre se</text>
-  <text class="note" x="736" y="432">soldam direto, sem solda no meio.</text>
 
-  <text class="sm" x="40" y="482">Abaixo de cerca de 10 &#181;m de passo, a solda deixa de funcionar: as esferas se tocam e curto-circuitam. A sa&#237;da &#233; a</text>
-  <text class="sm" x="40" y="504">liga&#231;&#227;o h&#237;brida, em que as superf&#237;cies de cobre s&#227;o polidas, postas em contato e aquecidas at&#233; se unirem atomicamente.</text>
 </svg>

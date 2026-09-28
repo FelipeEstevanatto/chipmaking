@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="360" viewBox="0 0 1180 360" role="img">
   <title>Four machine arrangements in the history of optical lithography: contact printing with the mask pressed on the wafer, proximity printing with an air gap, 1:1 projection printing with a lens, and the reduction stepper that exposes field by field</title>
+  <desc>Four exposure schemes side by side: contact and proximity, projection, step-and-repeat, and step-and-scan with immersion. Not to scale.</desc>
+  <rect width="1180" height="360" fill="#ffffff" />
   <defs>
     <marker id="genArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
       <path d="M0,0 L7,0 L3.5,7 z" fill="#805ad5" />
@@ -95,5 +97,4 @@
   <text class="s" x="1016" y="284" text-anchor="middle">the machine steps across the wafer, exposing</text>
   <text class="s" x="1016" y="300" text-anchor="middle">one field at a time; only it goes past 1 &#181;m</text>
 
-  <text class="note" x="30" y="340">Arrangements not to scale. The stepper did not win on throughput or price &#8212; it won on cost per good die, and on being the only option once features crossed the 1 &#181;m mark.</text>
 </svg>

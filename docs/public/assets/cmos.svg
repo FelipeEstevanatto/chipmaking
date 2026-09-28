@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="380" viewBox="0 0 800 380" role="img">
   <title>CMOS cross-section: an NMOS in a p-well beside a PMOS in an n-well</title>
+  <desc>Cross-section of a CMOS pair: an NMOS in a p-well beside a PMOS in an n-well, with the shared gate level above. Not to scale.</desc>
+  <rect width="800" height="380" fill="#ffffff" />
   <style>
     .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }

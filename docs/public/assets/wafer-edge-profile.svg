@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
   <title>Cross-section of a wafer edge: an as-cut sharp corner that chips and holds microcracks, against a rounded and polished SEMI M1 edge profile</title>
+  <desc>Two edge cross-sections: an as-cut sharp corner, and a rounded, polished profile inside the SEMI M1 contour. Not to scale.</desc>
   <rect width="960" height="540" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -15,7 +16,6 @@
   </style>
 
   <text class="h" x="40" y="36">Wafer edge: as-cut versus rounded profile</text>
-  <text class="sm" x="40" y="58">Cross-section through the edge of the wafer; schematic, not to scale.</text>
 
   <!-- ===================== top: as-cut ===================== -->
   <text class="t" x="40" y="100">As-cut</text>
@@ -36,8 +36,6 @@
   <text class="bad" x="600" y="204">microcracks</text>
   <path class="lead" d="M 596,200 L 583,203" />
 
-  <text class="sm" x="46" y="262">The sharp corner concentrates stress. The brittle edge chips, and the grinding</text>
-  <text class="sm" x="46" y="284">leaves microcracks that run deeper than the surface damage suggests.</text>
 
   <!-- ===================== bottom: rounded ===================== -->
   <text class="t" x="40" y="330">Rounded and polished</text>
@@ -55,6 +53,4 @@
   <text class="l" x="616" y="432">back bevel</text>
   <path class="lead" d="M 612,430 L 556,434" />
 
-  <text class="sm" x="46" y="478">Rounding spreads the load over the whole bevel, so the edge stops chipping and</text>
-  <text class="sm" x="46" y="500">stops shedding particles. Polishing removes the valleys that would trap them.</text>
 </svg>

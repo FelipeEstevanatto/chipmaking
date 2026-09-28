@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img">
   <title>Why polysilicon prices move in a pork cycle: a price signal triggers investment, the capacity arrives two to three years later into a collapsing market, investment stops, and the shortage returns</title>
+  <desc>Price and capacity against time for polysilicon, showing the lag between a price peak and the capacity it triggers. Schematic.</desc>
   <rect width="960" height="720" fill="#ffffff" />
   <defs>
     <marker id="porkNext" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
@@ -31,11 +32,10 @@
     .curve { fill: none; stroke: #2b6cb0; stroke-width: 3; stroke-linecap: round; }
     .axis { stroke: #cbd5e0; stroke-width: 1.6; }
     .ghost { fill: none; stroke: #a0aec0; stroke-width: 1.6; stroke-dasharray: 5 4; }
-    .dim { fill: none; stroke: #2d3748; stroke-width: 1.8; }
+    .dim { fill: none; stroke: #718096; stroke-width: 1.3; }
   </style>
 
   <text class="h" x="40" y="34">Why the price cycles: a supertanker with a long brake path</text>
-  <text class="sm" x="40" y="58">The decision to build is taken when the price is high. The capacity arrives when the price is low.</text>
 
   <!-- ===================== the four stages ===================== -->
   <rect class="step" x="28" y="96" width="208" height="124" rx="10" />
@@ -72,8 +72,6 @@
   <path class="back" d="M834,224 L834,282 L132,282 L132,226" marker-end="url(#porkBack)" />
   <text class="l" x="480" y="308" text-anchor="middle">Investment stops &#8212; and the next shortage begins</text>
 
-  <text class="sm" x="480" y="344" text-anchor="middle">A polysilicon plant takes two to three years to engineer, build and ramp up, and the decision cannot be</text>
-  <text class="sm" x="480" y="366" text-anchor="middle">undone when the price turns. Supply is always answering a question the market asked years earlier.</text>
 
   <!-- ===================== the lag, drawn ===================== -->
   <text class="t" x="40" y="410">The lag, drawn as a price path</text>
@@ -115,5 +113,4 @@
   <text class="sm" x="540" y="450" text-anchor="middle">committed, not yet online</text>
 
   <!-- ===================== the one number worth keeping ===================== -->
-  <text class="sm" x="40" y="692">Price peaks came every seven to eight years from 1981 to 2004. After the photovoltaic boom halved the interval to four years.</text>
 </svg>

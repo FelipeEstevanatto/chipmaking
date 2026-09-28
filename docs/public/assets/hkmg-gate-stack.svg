@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360" role="img">
   <title>Gate stack comparison: SiO2 / poly-Si versus High-K / metal gate</title>
+  <desc>Two gate stacks side by side: silicon dioxide with polysilicon, and a high-k dielectric with a metal gate. Layer thicknesses are not to scale.</desc>
+  <rect width="800" height="360" fill="#ffffff" />
   <defs>
     <marker id="hkmgArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
       <path d="M0,0 L7,3.5 L0,7 z" fill="#e53e3e" />
@@ -17,7 +19,7 @@
     .poly { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
     .metal { fill: #2d3748; stroke: #1a202c; stroke-width: 1; }
     .leak { stroke: #e53e3e; stroke-width: 2.2; fill: none; marker-end: url(#hkmgArrow); }
-    .lead { stroke: #718096; stroke-width: 1; fill: none; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
     .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
   </style>
 

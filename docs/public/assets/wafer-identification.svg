@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="690" viewBox="0 0 1120 690" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="672" viewBox="0 0 1120 672" role="img">
   <title>How to read a silicon wafer: the primary and secondary flats used up to 150 mm, and the orientation notch that replaces them on 200 mm and 300 mm wafers</title>
-  <rect width="1120" height="690" fill="#ffffff" />
+  <desc>Four wafers with flats and the 300 mm wafer with a notch, plus a magnified view of the notch and what it does and does not encode. Not to scale.</desc>
+  <rect width="1120" height="672" fill="#ffffff" />
   <style>
     .t { font: 600 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .h { font: 600 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -16,29 +17,27 @@
     .box { fill: none; stroke: #a9b4c2; stroke-width: 1.3; }
   </style>
   <text class="h" x="28" y="32">Wafers with flats &#8212; 150 mm and smaller</text>
-  <text class="s" x="28" y="56">The primary flat sits at the bottom and fixes the crystal reference.</text>
-  <text class="s" x="28" y="76">When a secondary flat exists, its angle reports orientation and doping type.</text>
   <path class="wafer" d="M 114.78,252.64 A 62,62 0 1 1 165.22,252.64 Z" />
   <path class="prim" d="M 165.22,252.64 L 114.78,252.64" />
   <text class="t" x="140" y="118" text-anchor="middle">P &lt;111&gt;</text>
-  <text class="s" x="140" y="292" text-anchor="middle">sem flat secund&#225;rio</text>
+  <text class="s" x="140" y="292" text-anchor="middle">no secondary flat</text>
   <path class="wafer" d="M 374.78,252.64 A 62,62 0 0 1 367.15,248.58 L 347.42,228.85 A 62,62 0 1 1 425.22,252.64 Z" />
   <path class="prim" d="M 425.22,252.64 L 374.78,252.64" />
   <path class="sec" d="M 367.15,248.58 L 347.42,228.85" />
   <text class="t" x="400" y="118" text-anchor="middle">N &lt;111&gt;</text>
-  <text class="s" x="400" y="292" text-anchor="middle">secund&#225;rio a 45&#176;</text>
+  <text class="s" x="400" y="292" text-anchor="middle">secondary at 45&#176;</text>
   <path class="wafer" d="M 634.78,252.64 A 62,62 0 0 1 599.59,209.95 L 599.59,182.05 A 62,62 0 1 1 685.22,252.64 Z" />
   <path class="prim" d="M 685.22,252.64 L 634.78,252.64" />
   <path class="sec" d="M 599.59,209.95 L 599.59,182.05" />
   <text class="t" x="660" y="118" text-anchor="middle">P &lt;100&gt;</text>
-  <text class="s" x="660" y="292" text-anchor="middle">secund&#225;rio a 90&#176;</text>
+  <text class="s" x="660" y="292" text-anchor="middle">secondary at 90&#176;</text>
   <path class="wafer" d="M 894.78,252.64 A 62,62 0 0 1 906.05,135.59 L 933.95,135.59 A 62,62 0 0 1 945.22,252.64 Z" />
   <path class="prim" d="M 945.22,252.64 L 894.78,252.64" />
   <path class="sec" d="M 906.05,135.59 L 933.95,135.59" />
   <text class="t" x="920" y="118" text-anchor="middle">N &lt;100&gt;</text>
-  <text class="s" x="920" y="292" text-anchor="middle">secund&#225;rio a 180&#176;</text>
+  <text class="s" x="920" y="292" text-anchor="middle">secondary at 180&#176;</text>
   <line class="prim" x1="28" y1="326" x2="56" y2="326" />
-  <text class="s" x="64" y="330">primary flat &#8212; crystal reference (parallel to a &lt;110&gt; plane)</text>
+  <text class="s" x="64" y="330">primary flat &#8212; crystal reference</text>
   <line class="sec" x1="530" y1="326" x2="558" y2="326" />
   <text class="s" x="566" y="330">secondary flat &#8212; orientation + doping type</text>
   <text class="h" x="28" y="372">Wafers with a notch &#8212; 200 mm and 300 mm</text>
@@ -52,10 +51,10 @@
   <line class="dash" x1="470" y1="458" x2="594" y2="458" />
   <text class="s" x="594" y="450" text-anchor="end">wafer edge</text>
   <line class="dash" x1="530" y1="458" x2="530" y2="510" />
-  <text class="m" x="538" y="490">1,00 mm</text>
+  <text class="m" x="538" y="490">1.00 mm</text>
   <text class="m" x="530" y="528" text-anchor="middle">90&#176;</text>
   <text class="s" x="530" y="550" text-anchor="middle">the V has a 90&#176; included angle</text>
-  <text class="s" x="530" y="572" text-anchor="middle">1,00 mm deep (SEMI M1)</text>
+  <text class="s" x="530" y="572" text-anchor="middle">1.00 mm deep (SEMI M1)</text>
   <text class="t" x="664" y="418">What the notch tells you</text>
   <text class="s" x="664" y="446">Its axis is aligned to &lt;110&gt; within &#177;1&#176;, so the</text>
   <text class="s" x="664" y="464">tools know where the lattice rests under the pattern.</text>
@@ -65,5 +64,4 @@
   <text class="s" x="664" y="562">notch carries no doping type. P or N comes from the</text>
   <text class="s" x="664" y="580">certificate, or from the laser mark on the back:</text>
   <text class="s" x="664" y="598">SEMI T7, with an optional A/N field.</text>
-  <text class="note" x="28" y="676">Not to scale: the notch is drawn far larger than life. At its true size it is 1,00 mm deep on a 300 mm wafer &#8212; about 0,3 % of the radius.</text>
 </svg>

@@ -61,7 +61,7 @@ Um wafer se descreve por **quatro eixos**, e cada um tem onde ser conferido nest
 Uma lâmina redonda não tem "cima". Sem uma referência na borda, nada diz à máquina para onde apontam os eixos do cristal — e é essa referência que permite alinhar máscara e rede cristalina camada após camada. Por isso todo wafer leva um **fiducial de orientação**: um chanfro plano (*flat*) nos diâmetros menores, ou um **entalhe em V** (*notch*) a partir de 200 mm <Cite id="semi-m1" />. Ler esse fiducial é a forma mais direta de identificar um wafer que você tem em mãos.
 
 <DiagramFigure src="/assets/wafer-identification.svg" alt="Quatro wafers com flats mostrando as combinações de tipo e orientação (P 111 sem flat secundário, N 111 a 45 graus, P 100 a 90 graus, N 100 a 180 graus) e, abaixo, um wafer de 300 mm com notch, com o detalhe ampliado do entalhe de 90 graus e 1,00 mm de profundidade">
-Como a borda codifica a orientação — e, nos wafers menores, também a dopagem. Desenho do autor, a partir da SEMI M1 <Cite id="semi-m1" />.
+Como a borda codifica a orientação — e, nos wafers menores, também a dopagem. O entalhe está muito ampliado: em escala real são 1,00 mm de profundidade num wafer de 300 mm. Desenho do autor, a partir da SEMI M1 <Cite id="semi-m1" />.
 </DiagramFigure>
 
 ### *Flats*: wafers de até 150 mm

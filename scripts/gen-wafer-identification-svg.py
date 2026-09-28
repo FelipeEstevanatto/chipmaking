@@ -26,9 +26,8 @@ MDASH = '&#8212;'
 PM = '&#177;'
 LT = '&lt;'
 GT = '&gt;'
-ACUTE = '&#225;'   # a-acute, for "secundário"
 
-W, H = 1120, 690
+W, H = 1120, 672
 PAPER = '#ffffff'
 INK = '#1a202c'
 INK_SOFT = '#2d3748'
@@ -92,10 +91,10 @@ PRIMARY = (90.0, 24.0)     # at the bottom, drawn wide so it is obvious
 SEC_HALF = 13.0
 
 configs = [
-    ('P', f'{LT}111{GT}', None, f'sem flat secund{ACUTE}rio'),
-    ('N', f'{LT}111{GT}', 45.0, f'secund{ACUTE}rio a 45{DEG}'),
-    ('P', f'{LT}100{GT}', 90.0, f'secund{ACUTE}rio a 90{DEG}'),
-    ('N', f'{LT}100{GT}', 180.0, f'secund{ACUTE}rio a 180{DEG}'),
+    ('P', f'{LT}111{GT}', None, 'no secondary flat'),
+    ('N', f'{LT}111{GT}', 45.0, f'secondary at 45{DEG}'),
+    ('P', f'{LT}100{GT}', 90.0, f'secondary at 90{DEG}'),
+    ('N', f'{LT}100{GT}', 180.0, f'secondary at 180{DEG}'),
 ]
 CXS = [140, 400, 660, 920]
 CY, R = 196.0, 62.0
@@ -109,6 +108,8 @@ add = out.append
 add(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img">')
 add('  <title>How to read a silicon wafer: the primary and secondary flats used up to 150 mm, '
     'and the orientation notch that replaces them on 200 mm and 300 mm wafers</title>')
+add('  <desc>Four wafers with flats and the 300 mm wafer with a notch, plus a magnified view '
+    'of the notch and what it does and does not encode. Not to scale.</desc>')
 add(f'  <rect width="{W}" height="{H}" fill="{PAPER}" />')
 add('  <style>')
 add(f'    .t {{ font: 600 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK}; }}')
@@ -127,8 +128,6 @@ add('  </style>')
 
 # ------------------------------------------------------- flats (150 mm and below)
 add(f'  <text class="h" x="28" y="32">Wafers with flats {MDASH} 150 mm and smaller</text>')
-add('  <text class="s" x="28" y="56">The primary flat sits at the bottom and fixes the crystal reference.</text>')
-add('  <text class="s" x="28" y="76">When a secondary flat exists, its angle reports orientation and doping type.</text>')
 
 for (typ, orient, sec_at, desc), cx in zip(configs, CXS):
     flats = [PRIMARY] if sec_at is None else [PRIMARY, (90.0 + sec_at, SEC_HALF)]
@@ -140,7 +139,7 @@ for (typ, orient, sec_at, desc), cx in zip(configs, CXS):
     add(f'  <text class="s" x="{cx}" y="292" text-anchor="middle">{desc}</text>')
 
 add('  <line class="prim" x1="28" y1="326" x2="56" y2="326" />')
-add(f'  <text class="s" x="64" y="330">primary flat {MDASH} crystal reference (parallel to a {LT}110{GT} plane)</text>')
+add(f'  <text class="s" x="64" y="330">primary flat {MDASH} crystal reference</text>')
 add('  <line class="sec" x1="530" y1="326" x2="558" y2="326" />')
 add(f'  <text class="s" x="566" y="330">secondary flat {MDASH} orientation + doping type</text>')
 
@@ -162,10 +161,10 @@ add('  <path class="vin" d="M 478,458 L 530,510 L 582,458" />')
 add('  <line class="dash" x1="470" y1="458" x2="594" y2="458" />')
 add('  <text class="s" x="594" y="450" text-anchor="end">wafer edge</text>')
 add('  <line class="dash" x1="530" y1="458" x2="530" y2="510" />')
-add('  <text class="m" x="538" y="490">1,00 mm</text>')
+add('  <text class="m" x="538" y="490">1.00 mm</text>')
 add(f'  <text class="m" x="530" y="528" text-anchor="middle">90{DEG}</text>')
 add(f'  <text class="s" x="530" y="550" text-anchor="middle">the V has a 90{DEG} included angle</text>')
-add('  <text class="s" x="530" y="572" text-anchor="middle">1,00 mm deep (SEMI M1)</text>')
+add('  <text class="s" x="530" y="572" text-anchor="middle">1.00 mm deep (SEMI M1)</text>')
 
 # annotation column
 ax = 664
@@ -179,8 +178,6 @@ add(f'  <text class="s" x="{ax}" y="562">notch carries no doping type. P or N co
 add(f'  <text class="s" x="{ax}" y="580">certificate, or from the laser mark on the back:</text>')
 add(f'  <text class="s" x="{ax}" y="598">SEMI T7, with an optional A/N field.</text>')
 
-add(f'  <text class="note" x="28" y="676">Not to scale: the notch is drawn far larger than life. At its true size it is '
-    f'1,00 mm deep on a 300 mm wafer {MDASH} about 0,3 % of the radius.</text>')
 add('</svg>')
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)

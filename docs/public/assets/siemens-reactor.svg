@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660" role="img">
   <title>Cross-section of a Siemens bell-jar CVD reactor: trichlorosilane and hydrogen enter at the base and deposit silicon onto electrically heated U-shaped filaments, growing rods that are later fractured into chunks</title>
+  <desc>Cross-section of the bell-jar reactor: the U-shaped filaments on graphite electrodes, the feed gas, the off-gas and where the silicon deposits. Not to scale.</desc>
   <rect width="960" height="660" fill="#ffffff" />
   <defs>
     <linearGradient id="rodGlow" x1="0" y1="0" x2="1" y2="0">
@@ -36,7 +37,6 @@
   </style>
 
   <text class="h" x="40" y="38">Siemens process: depositing silicon from TCS gas</text>
-  <text class="sm" x="40" y="62">Front cross-section of the bell-jar reactor. Label text stays out of the drawing; not to scale.</text>
 
   <!-- ===================== bell jar ===================== -->
   <path class="jar" d="M250,520 L250,230 A170,95 0 0 1 590,230 L590,520 Z" />

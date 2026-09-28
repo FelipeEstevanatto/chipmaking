@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="314" viewBox="0 0 960 314" role="img">
   <title>The back-end sequence after the wafer leaves the fab: wafer probe to bin good die, dicing to separate them, die attach and interconnection, encapsulation into a package, and final test of the assembled part</title>
-  <rect width="960" height="430" fill="#ffffff" />
+  <desc>Five stages left to right: probe, dice, attach and interconnect, encapsulate, final test. A wafer enters at the left and loose parts leave at the right. Not to scale.</desc>
+  <rect width="960" height="314" fill="#ffffff" />
   <defs>
     <marker id="beArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a94a6" />
@@ -21,7 +22,6 @@
   </style>
 
   <text class="h" x="40" y="36">From a wafer to a part you can solder</text>
-  <text class="sm" x="40" y="58">Everything after the fab: separate, connect, protect, and test.</text>
 
   <!-- 1 wafer -->
   <circle class="si" cx="120" cy="172" r="52" />
@@ -30,9 +30,9 @@
   <line class="line" x1="120" y1="120" x2="120" y2="224" />
   <line class="line" x1="86" y1="130" x2="86" y2="214" />
   <line class="line" x1="154" y1="130" x2="154" y2="214" />
-  <text class="st" x="120" y="256" text-anchor="middle">Wafer pronto</text>
-  <text class="note" x="120" y="278" text-anchor="middle">milhares de chips</text>
-  <text class="note" x="120" y="298" text-anchor="middle">ainda grudados</text>
+  <text class="st" x="120" y="256" text-anchor="middle">Wafer ready</text>
+  <text class="note" x="120" y="278" text-anchor="middle">thousands of chips</text>
+  <text class="note" x="120" y="298" text-anchor="middle">still joined</text>
 
   <line class="arw" x1="196" y1="172" x2="248" y2="172" marker-end="url(#beArrow)" />
 
@@ -45,9 +45,9 @@
   <path class="gold" d="M 300,108 L 316,148" />
   <path class="gold" d="M 336,108 L 336,148" />
   <rect class="ink" x="316" y="184" width="38" height="28" />
-  <text class="st" x="335" y="256" text-anchor="middle">Teste de wafer</text>
-  <text class="note" x="335" y="278" text-anchor="middle">cada die &#233; sondado</text>
-  <text class="note" x="335" y="298" text-anchor="middle">e marcado como bom ou ruim</text>
+  <text class="st" x="335" y="256" text-anchor="middle">Wafer probe</text>
+  <text class="note" x="335" y="278" text-anchor="middle">every die probed</text>
+  <text class="note" x="335" y="298" text-anchor="middle">and binned good or bad</text>
 
   <line class="arw" x1="411" y1="172" x2="463" y2="172" marker-end="url(#beArrow)" />
 
@@ -58,9 +58,9 @@
   <rect class="si" x="496" y="176" width="34" height="34" rx="3" />
   <rect class="pkg" x="540" y="176" width="34" height="34" rx="3" />
   <rect class="si" x="584" y="176" width="34" height="34" rx="3" />
-  <text class="st" x="557" y="256" text-anchor="middle">Fatiamento</text>
-  <text class="note" x="557" y="278" text-anchor="middle">l&#226;mina, laser ou plasma</text>
-  <text class="note" x="557" y="298" text-anchor="middle">separam os dies bons</text>
+  <text class="st" x="557" y="256" text-anchor="middle">Dicing</text>
+  <text class="note" x="557" y="278" text-anchor="middle">blade, laser or plasma</text>
+  <text class="note" x="557" y="298" text-anchor="middle">separate the good die</text>
 
   <line class="arw" x1="634" y1="172" x2="686" y2="172" marker-end="url(#beArrow)" />
 
@@ -69,20 +69,17 @@
   <path class="gold" d="M 736,152 C 742,126 762,126 768,152" />
   <path class="gold" d="M 746,152 C 750,130 754,130 758,152" />
   <rect class="si" x="716" y="172" width="72" height="30" rx="3" />
-  <text class="st" x="752" y="256" text-anchor="middle">Empacotamento</text>
-  <text class="note" x="752" y="278" text-anchor="middle">fio ou bump, molde</text>
-  <text class="note" x="752" y="298" text-anchor="middle">e solda ou esferas</text>
+  <text class="st" x="752" y="256" text-anchor="middle">Packaging</text>
+  <text class="note" x="752" y="278" text-anchor="middle">wire or bump, mould</text>
+  <text class="note" x="752" y="298" text-anchor="middle">and solder or balls</text>
 
   <line class="arw" x1="812" y1="172" x2="864" y2="172" marker-end="url(#beArrow)" />
 
   <!-- 5 final test -->
   <rect class="si" x="880" y="150" width="56" height="56" rx="6" />
   <path class="ok" d="M 894,180 L 904,192 L 926,164" fill="none" stroke="#38a169" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <text class="st" x="908" y="256" text-anchor="middle">Teste final</text>
-  <text class="note" x="908" y="278" text-anchor="middle">j&#225; montado, a plena</text>
-  <text class="note" x="908" y="298" text-anchor="middle">velocidade de opera&#231;&#227;o</text>
+  <text class="st" x="908" y="256" text-anchor="middle">Final test</text>
+  <text class="note" x="908" y="278" text-anchor="middle">assembled, at</text>
+  <text class="note" x="908" y="298" text-anchor="middle">full speed</text>
 
-  <text class="sm" x="40" y="356">Testar antes de empacotar &#233; o que evita gastar inv&#243;lucro, fio e molde em um die que j&#225; nasceu ruim. Por isso o teste de</text>
-  <text class="sm" x="40" y="378">wafer custa caro e existe: cada cart&#227;o de sondas &#233; feito sob medida e alguns t&#234;m milhares de agulhas.</text>
-  <text class="sm" x="40" y="404">O teste final repete a medida depois do empacotamento, agora para pegar defeitos que o pr&#243;prio processo de montagem criou.</text>
 </svg>

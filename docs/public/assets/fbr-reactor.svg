@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img">
   <title>Cross-section of a fluidized bed reactor: silane gas injected from below suspends silicon seed particles, which grow into granules and are withdrawn continuously</title>
+  <desc>Cross-section of the reactor: seed particles in at the top, a fluidized bed in the middle, the gas distributor below and continuous granule withdrawal at the bottom. Not to scale.</desc>
   <rect width="960" height="650" fill="#ffffff" />
   <defs>
     <pattern id="seedSmall" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -43,7 +44,6 @@
   </style>
 
   <text class="h" x="40" y="38">Fluidized bed reactor: growing granules from the gas</text>
-  <text class="sm" x="40" y="62">Front cross-section. Seeds fall in at the top, grow as they sink, and leave at the bottom.</text>
 
   <!-- ===================== seed feed hopper ===================== -->
   <path class="steel" d="M352,88 L448,88 L432,140 L368,140 Z" />

@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="570" viewBox="0 0 960 570" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="474" viewBox="0 0 960 474" role="img">
   <title>Yield falls exponentially with die area, so one large monolithic die yields far worse than four small chiplets of the same total area, and the reticle sets a hard ceiling on how large the monolithic die can even be</title>
-  <rect width="960" height="570" fill="#ffffff" />
+  <desc>Yield against die area from the Poisson model, with one 200 mm2 chiplet and one 800 mm2 monolithic die marked, and the reticle limit near 830 mm2. Illustrative defect density, not measured data.</desc>
+  <rect width="960" height="474" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
@@ -17,7 +18,6 @@
   </style>
 
   <text class="h" x="40" y="36">Why one big die loses to four small ones</text>
-  <text class="sm" x="40" y="58">Each defect kills a whole die. The larger the die, the more defects it is exposed to, and the faster its yield falls.</text>
 
   <line class="grid" x1="130" y1="110" x2="880" y2="110" />
   <line class="grid" x1="130" y1="182.5" x2="880" y2="182.5" />
@@ -29,22 +29,18 @@
   <text class="ax" x="120" y="332" text-anchor="end">25%</text>
   <line class="axis" x1="130" y1="110" x2="130" y2="400" />
   <line class="axis" x1="130" y1="400" x2="880" y2="400" />
-  <text class="ax" x="880" y="424" text-anchor="end">&#225;rea do die (mm&#178;)</text>
-  <text class="ax" x="500" y="452" text-anchor="middle">rendimento (yield)</text>
+  <text class="ax" x="880" y="424" text-anchor="end">die area (mm&#178;)</text>
+  <text class="ax" x="500" y="452" text-anchor="middle">yield</text>
 
   <polyline class="curve" points="130,110 213.3,137.5 296.7,162.5 380,185.1 463.3,205.6 546.7,224 630,240.8 713.3,255.9 796.7,269.8 880,282" />
 
   <line class="ret" x1="821.7" y1="110" x2="821.7" y2="400" />
-  <text class="lbl" x="815" y="102" text-anchor="end">limite do ret&#237;culo: ~830 mm&#178;</text>
+  <text class="lbl" x="815" y="102" text-anchor="end">reticle limit: ~830 mm&#178;</text>
 
   <circle class="ptC" cx="296.7" cy="162.5" r="7" />
-  <text class="labC" x="290" y="150" text-anchor="middle">chiplet de ~200 mm&#178;: ~82%</text>
+  <text class="labC" x="290" y="150" text-anchor="middle">chiplet ~200 mm&#178;: ~82%</text>
 
   <circle class="ptM" cx="796.7" cy="269.8" r="7" />
-  <text class="labM" x="790" y="292" text-anchor="middle">die &#250;nico de ~800 mm&#178;: ~45%</text>
+  <text class="labM" x="790" y="292" text-anchor="middle">monolithic ~800 mm&#178;: ~45%</text>
 
-  <text class="sm" x="40" y="490">A curva &#233; o modelo de Poisson Y = e^(&#8722;D&#183;A) com D = 0,001 defeito por mm&#178;, um valor ilustrativo, n&#227;o medido.</text>
-  <text class="sm" x="40" y="512">O que importa &#233; a forma: quatro chiplets de 200 mm&#178; t&#234;m cada um 82% de chance de funcionar, e s&#243; os que</text>
-  <text class="sm" x="40" y="534">funcionam s&#227;o montados. A AMD estimou que essa troca custava cerca de 0,59&#215; o monol&#237;tico, mesmo com mais sil&#237;cio.</text>
-  <text class="sm" x="40" y="556">O ret&#237;culo &#233; o outro limite: nenhuma exposi&#231;&#227;o de litografia cobre mais que isso.</text>
 </svg>

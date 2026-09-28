@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img">
   <title>How an EUV source makes 13.5 nm light: a CO2 laser hits falling tin droplets inside a vacuum vessel, the plasma emits extreme ultraviolet light, and a parabolic collector mirror focuses it to the intermediate focus that feeds the illuminator</title>
+  <desc>Cross-section of the source vessel: the droplet generator, the laser pulses, the tin plasma and the collector mirror that sends light to the intermediate focus. Not to scale.</desc>
   <rect width="960" height="620" fill="#ffffff" />
   <defs>
     <marker id="euvArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -27,7 +28,6 @@
   </style>
 
   <text class="h" x="40" y="34">The EUV source: turning tin into 13.5 nm light</text>
-  <text class="sm" x="40" y="60">All of this happens in vacuum, because air absorbs EUV. Schematic, not to scale.</text>
 
   <!-- ===================== vacuum vessel ===================== -->
   <rect class="vessel" x="150" y="84" width="750" height="386" rx="14" />

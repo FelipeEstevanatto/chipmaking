@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560" role="img">
   <title>Bandwidth per HBM stack by generation: from 128 gigabytes per second for the first HBM to about 2,048 for HBM4 and a projected 4,096 for HBM4E, with the JEDEC-numbered standards marked</title>
+  <desc>Bar chart of bandwidth per stack for HBM through HBM4E, with JEDEC-numbered standards in dark blue and intermediate parts in light blue.</desc>
   <rect width="960" height="560" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -15,7 +16,6 @@
   </style>
 
   <text class="h" x="40" y="36">Bandwidth per HBM stack, by generation</text>
-  <text class="sm" x="40" y="58">Gigabytes per second, linear scale. Blue is a JEDEC-numbered standard; light blue is an in-between extension.</text>
 
   <line class="grid" x1="120" y1="141.2" x2="900" y2="141.2" />
   <line class="grid" x1="120" y1="205.9" x2="900" y2="205.9" />
@@ -59,7 +59,4 @@
   <text class="val" x="860" y="126" text-anchor="middle">4.096</text>
   <text class="xl" x="860" y="424" text-anchor="middle">HBM4E</text>
 
-  <text class="sm" x="40" y="486">O HBM4 dobra a interface de 1.024 para 2.048 bits e passa de 16 para 32 canais por pilha. S&#227;o cerca de 3.000 trilhas</text>
-  <text class="sm" x="40" y="508">at&#233; o processador, contagem imposs&#237;vel de rotear em placa de circuito: por isso a mem&#243;ria precisa morar ao lado do</text>
-  <text class="sm" x="40" y="530">chip sobre um interposer de sil&#237;cio, em vez de em m&#243;dulos encaixados longe dele.</text>
 </svg>

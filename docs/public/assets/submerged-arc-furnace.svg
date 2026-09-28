@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img">
   <title>Cross-section of a submerged-arc electric furnace: three carbon electrodes in the charge, an outer solid reaction zone above an inner molten bath, off-gas collected as condensed silica fume, and silicon tapped from the bottom</title>
+  <desc>Cross-section of the furnace: three carbon electrodes in the charge, the outer solid reaction zone, the molten bath and the tapping point. Not to scale.</desc>
+  <rect width="900" height="650" fill="#ffffff" />
   <defs>
     <marker id="furnArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
       <path d="M0,0 L7,3.5 L0,7 z" fill="#718096" />
@@ -16,7 +18,7 @@
     .rod { fill: #2d3748; stroke: #1a202c; stroke-width: 1; }
     .clamp { fill: #718096; stroke: #4a5568; stroke-width: 1; }
     .done { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.5; }
-    .lead { stroke: #a0aec0; stroke-width: 1; fill: none; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
     .flow { stroke: #718096; stroke-width: 2.5; fill: none; }
     .pour { stroke: #c53030; stroke-width: 4; fill: none; stroke-linecap: round; }
   </style>
@@ -83,5 +85,4 @@
   <text class="s" x="534" y="575">hole at the bottom; then slag or gas purging,</text>
   <text class="s" x="534" y="591">solidification and crushing to 98.5 to 99.5 % Si</text>
 
-  <text class="note" x="60" y="632">Shell about 10 m in diameter &#183; 11 to 13 MWh per tonne of silicon metal</text>
 </svg>

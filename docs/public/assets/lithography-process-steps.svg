@@ -1,5 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img">
   <title>Six-step photolithography cycle on a positive resist: substrate preparation, spin coating, soft bake, exposure through a reticle, development, and pattern transfer with resist stripping</title>
+  <desc>The resist cycle in order: coat, expose, develop, and the pattern that remains. Positive resist is shown. Not to scale.</desc>
+  <rect width="1200" height="340" fill="#ffffff" />
   <defs>
     <marker id="lithArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
       <path d="M0,0 L7,0 L3.5,7 z" fill="#805ad5" />
@@ -97,5 +99,4 @@
   <path class="chev" d="M790,194 L798,200 L790,206" />
   <path class="chev" d="M986,194 L994,200 L986,206" />
 
-  <text class="note" x="20" y="322">Positive resist shown. Not to scale: the resist film is under 1 &#181;m thick, while the wafer is about 775 &#181;m.</text>
 </svg>

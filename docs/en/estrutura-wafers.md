@@ -61,7 +61,7 @@ A wafer is described by **four axes**, and each one has somewhere to be checked 
 A round slice has no "up". Without a reference on the edge, nothing tells the tooling which way the crystal axes point — and that reference is what lets mask and lattice be aligned layer after layer. Every wafer therefore carries an **orientation fiducial**: a straight *flat* at the smaller diameters, or a **V-shaped notch** from 200 mm upwards <Cite id="semi-m1" />. Reading that fiducial is the most direct way to identify a wafer in your hand.
 
 <DiagramFigure src="/assets/wafer-identification.svg" alt="Four wafers with flats showing the orientation and doping combinations (P 111 with no secondary flat, N 111 at 45 degrees, P 100 at 90 degrees, N 100 at 180 degrees) and, below, a 300 mm wafer with a notch, with a magnified detail of the 90 degree, 1.00 mm deep groove">
-How the edge encodes orientation — and, on smaller wafers, doping type as well. Author's drawing, after SEMI M1 <Cite id="semi-m1" />.
+How the edge encodes orientation — and, on smaller wafers, doping type as well. The notch is magnified: at true scale it is 1.00 mm deep on a 300 mm wafer. Author's drawing, after SEMI M1 <Cite id="semi-m1" />.
 </DiagramFigure>
 
 ### Flats: wafers up to 150 mm
