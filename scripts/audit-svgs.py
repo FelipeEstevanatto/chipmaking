@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Audit the hand-made and third-party SVGs in docs/public/assets.
 
-The rules come from README.md ("Esquemas proprios"). They exist because the
+The rules come from `AGENTS.md` ("Drawings"). They exist because the
 drawings are single files used by both locales, sized by ZoomableImage, and
 opened directly in a browser as well as inside the site.
 

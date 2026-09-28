@@ -1,23 +1,134 @@
-# Writing rules
+# Project rules
 
-Applies to every word this repo ships: `docs/**/*.md` in both locales, `README.md`, UI copy in
-`docs/.vitepress/theme/*.vue`, and commit messages. Architecture and structure conventions live in
-`README.md`; this file is about the prose.
+Applies to every file this repo ships: `docs/**/*.md` in both locales, `README.md`, this file, UI copy
+in `docs/.vitepress/theme/*.vue`, the drawings in `docs/public/assets/`, and commit messages.
 
-The rules below come from the `no-ai-slop` skill (`~/.agents/skills/no-ai-slop/SKILL.md`, after
-<https://github.com/petergyang/no-ai-slop>). Run that skill for a full prose pass. Apply these while
-writing, not as a cleanup pass afterwards.
+Two halves. First how the site is put together, then how it reads. Both apply while writing, not as a
+cleanup pass afterwards.
+
+## Sources
+
+Every factual claim carries a `<Cite id="…" />` that resolves to a key in
+`docs/.vitepress/theme/citations.ts`.
+
+- **Never invent a source, and never ship a number without one.** Cite who measured, not who repeated
+  it.
+- One marker, one claim. Never drop, duplicate, or move a `<Cite>` to a different sentence.
+- A new source appends an entry to `citations.ts`: `key`, `num`, `title`, `publisher?`, `url?`,
+  `short`. `num` is both the display number and the row order on `/referencias`, so append at the end;
+  renumbering breaks every marker and every `#ref-<n>` anchor in the repo.
+- The numbered list on `/referencias` renders from that array through `RefList`. Never write it by
+  hand.
+- When no primary source tabulates a series, the entry says it is a **compilation** and names the
+  aggregator. Don't lend a paper's authority to a number it does not publish. A number derived from
+  an already-cited table cites that table, not a new source.
+- Series and components use `SourceNote` (label, short names, `<Cite>`). Prose uses `<Cite>` inline.
+- Third-party media credits author, original file and licence in the `figcaption`, with a link to the
+  source page. Prefer public domain or CC BY / CC BY-SA, and check the file description before using
+  it: the Commons `ImageDescription` often reveals the image is something else.
 
 ## The two locales
 
-- Every chapter exists twice: `docs/<slug>.md` (Portuguese) and `docs/en/<slug>.md` (English).
-  Change both in the same edit. `python scripts/audit-glossary.py` fails when they drift apart.
+- Every chapter exists twice: `docs/<slug>.md` (Portuguese) and `docs/en/<slug>.md` (English). Change
+  both in the same edit. `python scripts/audit-glossary.py` fails when they drift apart.
 - Translate the sentence, don't transliterate it. The English is a mirror of the Portuguese, not a
   word-for-word rendering.
 - Numbers: PT writes `1.700` and `0,47 %`; EN writes `1,700` and `0.47%`.
-- `<Cite id="…" />` attaches to one specific claim. Never drop, duplicate, or move a marker to a
-  different sentence.
 - Glossary terms are annotated on first use per page. The audit enforces this; don't fight it.
+- Cross-links use the `SeeAlso` component, never a raw `<a href="/…">`. VitePress only rewrites
+  Markdown links, so a raw anchor loses the `/chipmaking/` base.
+
+## Chapters
+
+- **One spine, declared at the start.** A chapter opens with the ordered list of what it explains (the
+  steps of a cell, the transistor generations, the modules of the fab), once, as navigation: a
+  sentence introducing it, the list, and a sentence saying the rest follows that order. The list
+  points at the sections; it does not summarise them.
+- **An enumeration has one home.** A list that also appears in an interactive component or a table
+  lives in a `.ts` module. `theme/transistor-eras.ts` is the example, read by `TransistorTimeline`,
+  `TransistorFacts` and the timeline page. No consumer keeps its own copy.
+- **Reference material never opens a chapter.** Summary table, addendum and chronology come after the
+  narrative.
+- Every item of the spine needs a figure. A gap is a visible hole, not an economy.
+
+## Glossary
+
+`docs/.vitepress/glossary.ts` is the single source: each entry declares `pt` and `en` (both required
+by the type, which stops the locales from drifting), the chapter that explains it, optional
+`variants`, and `tooltip: false` for spellings too ambiguous to annotate in running prose.
+`theme/GlossaryTable.vue` renders `/glossario` and `/en/glossario` from it; never write the table by
+hand. `glossary-tooltips.ts` annotates the first occurrence of each term per page, but it cannot reach
+code (including Mermaid), link labels, headings, `figcaption`, or text a component builds from props.
+A term may therefore appear bare near the top and be annotated further down. Any component that
+renders prose from props goes on the audit's ignore list.
+
+## Charts
+
+- `theme/charts/specs.ts` is the single source for every chart. A spec is deliberately serialisable,
+  no functions, because `scripts/export-chart-data.ts` reads the same list into
+  `docs/public/data/<slug>.csv`. Run it after touching a series; the chart and the CSV cannot diverge.
+- A chart in Markdown goes inside `<ClientOnly>`. Without it the caption text lands in the built HTML
+  and counts as a glossary first use the plugin cannot reach.
+- Captions render as plain text, so no `[links](…)` and no `**bold**` inside a spec.
+- A chart with data cites `sourceIds`; a drawing with no data behind it sets `schematic: true` and the
+  caption says it is a diagram.
+
+## Reading aids
+
+`ReadingProgress.vue` draws the progress bar; `DocMeta.vue` shows reading time, figure count and the
+freshness stamp. The stamp comes from the `dataAsOf` frontmatter field: the year of the most recent
+datum cited, not the edit date. `celulas-solares` describes the industry with 2011 numbers while
+`estrutura-wafers` cites the current year, and the reader should be able to tell. Purely historical
+chapters (`linha-do-tempo`, `historia-fotolitografia`) and navigation pages (`glossario`,
+`referencias`) carry no field on purpose.
+
+## Drawings
+
+Own schematics live in `docs/public/assets/*.svg`; PDF-extracted figures in `docs/public/pdf-images/`.
+`python scripts/extract-pdf-images.py` regenerates the second set.
+
+- Pure ASCII. Use numeric references (`&#176;`, `&#8594;`) for `°` and `→`: named HTML entities such
+  as `&minus;` do not exist in XML and break the whole file.
+- Root `<svg>` carries `width`, `height`, `viewBox` and `role="img"`. Without `width`/`height`,
+  `naturalWidth` is 0 and `ZoomableImage` cannot size the image.
+- The first drawing child is an opaque `<rect>` covering the `viewBox`, in high-contrast ink
+  (`#1a202c` / `#2d3748` on white). The zoom overlay is a dark lightbox, so a transparent drawing
+  disappears in dark mode and on zoom.
+- `<title>` and `<desc>` on every drawing, both in English and locale-neutral. The `<desc>` restates
+  the drawing for a screen reader and records the scale caveat. Neither replaces the translated
+  caption.
+- Labels are short English technical terms. Sentences, paragraphs and footnotes go in the caption.
+  Numbers use the decimal point, because the file is shared (`1.00 mm`, not `1,00 mm`).
+  `python scripts/audit-svgs.py` fails on any `<text>` of 60 characters or more, any Portuguese label,
+  and any named entity.
+- Body text 17–18 px, notes 16,5 px. The prose column is 638 px wide, so a 960-wide `viewBox` reaches
+  the screen at roughly 0.66×. Measure with `img.getBoundingClientRect()` instead of trusting the
+  `viewBox`.
+- Annotation grammar, shared by every figure. Arrows come from a `<marker>` in `<defs>` (triangle
+  `M 0 0 L 10 5 L 0 10 z`, `orient="auto-start-reverse"`). A label that reaches a feature uses class
+  `.lead` (dashed `#718096`, 1.2 px, no arrowhead); a dimension line uses `.dim` (solid, same grey).
+  The value is bold and the unit regular, one space apart (`3 nm`). Comparison panels share an axis
+  and keep their titles in `.pt`/`.t`. Fixed colours: silicon `#cfd8e3` on `#7d8b9c`, mask and
+  dielectric wall `#805ad5`, copper `#ed8936`, alert `#c53030`.
+- `wafer-identification.svg` is generated by `scripts/gen-wafer-identification-svg.py`; run the
+  script, don't edit the SVG.
+- To check a drawing without looking at it, build a `<canvas>`, draw the SVG, sample pixels at known
+  coordinates and read `getBBox()` of its `<text>` nodes. Run it before writing the caption: the usual
+  error is a label that clips the edge, not the geometry. For a `<pattern>` fill, sample the fraction
+  of painted pixels, since a missing `url(#id)` draws nothing and fails silently.
+
+## Embeds
+
+`YouTubeEmbed` (youtube-nocookie.com) and `VideoPressEmbed` (the PV-Manufacturing.org player) are 16:9
+and lazy-loaded; credit the source in the text and in the references. Mermaid fences render in the
+client through `theme/Mermaid.vue`, with the renderer swapped for an async import so the ~680 kB
+library is not preloaded on pages without a diagram. Timelines set `useMaxWidth: false` to keep their
+labels legible.
+
+# How it reads
+
+The rules below come from the `no-ai-slop` skill (`~/.agents/skills/no-ai-slop/SKILL.md`, after
+<https://github.com/petergyang/no-ai-slop>). Run that skill for a full prose pass.
 
 ## Words to cut
 
@@ -122,5 +233,7 @@ Never touch an em dash that is data:
 ## Before you finish
 
 - `bun run build` — VitePress must build clean.
-- `python scripts/audit-glossary.py` — must print `OK` (it checks annotations, first use, and PT/EN
+- `python scripts/audit-glossary.py` — after the build; must print `OK` (annotations, first use, PT/EN
   parity).
+- `python scripts/audit-svgs.py` — must print `OK` (structure, title/desc, background, long text,
+  Portuguese labels, named entities).

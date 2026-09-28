@@ -22,7 +22,7 @@ const isEnglish = computed(() => String(lang.value).toLowerCase().startsWith('en
  *
  * Some chapters rest on a 2011 survey and others on last year's roadmap, and nothing in the prose
  * said which. Declaring the year per page makes that visible without re-reading the sources; the
- * rule is documented in the README.
+ * rule is documented in `AGENTS.md` ("Reading aids").
  */
 const dataAsOf = computed(() => page.value.frontmatter?.dataAsOf)
 

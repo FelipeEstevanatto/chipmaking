@@ -1,190 +1,87 @@
-# chipmaking
-
-Site estático sobre a cadeia de produção do silício (semicondutores e solar), gerado com [VitePress](https://vitepress.dev/) e [Bun](https://bun.sh/).
-
-Documento fonte: `Resumo Chipmaking.pdf`.
-
-## Idiomas
-
-[VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (`docs/`) e **English** (`docs/en/`), ambos com conteúdo completo e espelhado arquivo a arquivo.
-
-Ao adicionar um capítulo, replique-o nos dois locales. Componentes compartilhados (`Cite`, `UsgsProductionChart`, `TransistorFacts`, `TransistorTimeline`, `SeeAlso`) detectam o locale e apontam para as páginas do idioma ativo.
-
-### Blocos "Veja também"
-
-Use o componente `SeeAlso` — ele aplica o `base` do site automaticamente. Não escreva `<a href="/...">` cru no Markdown: o VitePress só reescreve links de Markdown, então âncoras HTML cruas perdem o prefixo `/chipmaking/`.
-
-```md
-<SeeAlso :links="[
-  { text: 'Polissilício', href: '/polissilicio', note: 'refinamento químico a partir do MG-Si' },
-]" />
-```
-
-**Busca local** (sem Algolia): botão no header ou **Ctrl+K** / **/** — indexa o Markdown no build; cada idioma busca só nas páginas daquele locale.
-
-## Glossário e tooltips
-
-`docs/.vitepress/glossary.ts` é a **fonte única** das entradas do glossário: cada uma declara `pt` e `en` (ambos exigidos pelo tipo, o que impede os locales de divergirem), o capítulo que a explica e, opcionalmente, `variants` (outras grafias, como `TSVs` para `TSV`) e `tooltip: false` para siglas ambíguas demais para anotar em prosa.
-
-Dois consumidores leem essa lista:
-
-- `theme/GlossaryTable.vue` gera as páginas `/glossario` e `/en/glossario` a partir dela, com uma caixa de filtro que busca termo, expansão, capítulo e variantes ignorando acentos — **não escreva a tabela à mão**, ela é derivada;
-- `glossary-tooltips.ts`, um plugin do markdown-it, envolve a **primeira** ocorrência de cada termo em `<abbr title="...">`, dando a expansão no *hover*.
-
-O plugin nunca anota dentro de código (inclusive diagramas Mermaid), rótulos de link, títulos, `figcaption` ou texto que os componentes montam a partir de props (`SeeAlso`, `TransistorTimeline`, `TransistorFacts`): um `<abbr>` dentro de um link aninharia marcação no rótulo da âncora, e o conteúdo de props nem passa pelas regras inline do Markdown. Por isso um termo pode aparecer "cru" perto do topo e receber a expansão na primeira ocorrência de prosa.
-
-Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HTML gerado: título e contexto de cada anotação, anotação única por página, primeira ocorrência de prosa e paridade entre os locales (mesmos termos anotados e as mesmas linhas nas duas tabelas).
-
-## Anatomia de um capítulo
-
-A cadeia tem uma ordem e o site precisa mostrá-la. Três regras, já aplicadas a cinco capítulos: `transistores`, `na-fab`, `celulas-solares`, `estrutura-wafers` e `empacotamento`.
-
-**1. Uma espinha, declarada no início.** Todo capítulo tem uma lista ordenada daquilo que explica — as etapas da célula, as gerações do transistor, os módulos da fábrica. Ela aparece **uma vez**, no começo, como mapa: uma frase dizendo o que é a lista, a lista em si e uma frase dizendo que o que vem a seguir segue aquela ordem. A lista é **navegação, não resumo**: ela aponta para as seções e não repete o que elas dizem. O capítulo dos transistores já teve dois quadros (um comparativo e outro de produtos), depois um único quadro-resumo; hoje o quadro saiu, e os campos que só ele trazia — o nó de processo e o ganho de cada geração — abrem cada seção, no lugar onde são lidos.
-
-**2. Enumeração tem fonte única.** Se a mesma lista aparece em um componente interativo, numa tabela e num capítulo, ela mora em um **módulo `.ts`**. `theme/transistor-eras.ts` é o exemplo: as gerações com ano, nó, o que mudou, ganho, produtos e figura, lidas por `TransistorTimeline.vue` (a cronologia interativa) e `TransistorFacts.vue` (o nó e o ganho que abrem cada seção), além da página de linha do tempo. Nenhum consumidor tem cópia própria — foi assim que o capítulo ficou com dois quadros desatualizados em relação à cronologia, e é isso que a regra impede.
-
-**3. Material de referência não abre o capítulo.** A narrativa vem primeiro; quadro-resumo, adendo e cronologia vêm **depois** dela. O adendo sobre o número do nó estava entre os quadros e a história, e passou para o fim: quem quer o atalho lê a espinha do início, quem quer o porquê segue a história. O que não abre o capítulo é o **resumo**: uma tabela comparativa de descrições no topo — e a figura que ela trocava a cada linha — repete o que cada seção já diz e ainda faz a página pular, porque as imagens têm alturas diferentes. O panorama comparativo fica na página de linha do tempo, que fixa a proporção da caixa de imagem para não pular.
-
-Duas consequências práticas:
-
-- **Toda geração tem figura.** Se a lista numerada é a espinha, cada item dela precisa de uma imagem; itens sem figura são um furo visível, não uma economia. As figuras das gerações mais recentes já existiam em `assets/` e em `public/pdf-images/`, e estavam apenas subutilizadas.
-- **Componente que monta texto a partir de props entra no `audit-glossary.py`.** `TransistorFacts` renderiza o nó e o ganho de cada geração sem passar pelas regras inline do Markdown, então sua classe está na lista de contextos ignorados, junto de `transistor-timeline`. Sem isso, o script acusa "primeira ocorrência não anotada" num texto que o plugin não consegue alcançar.
-
-## Aids de leitura
-
-`theme/ReadingProgress.vue` (slot `layout-top`) desenha a barra de progresso no topo da janela, e `theme/DocMeta.vue` (slot `doc-before`) mostra o tempo de leitura e a contagem de figuras, medida no texto renderizado — o que a mantém correta quando um capítulo muda. A numeração das figuras sai de CSS (`counter-reset: figure` em `.vp-doc`, em `custom.css`), então `DiagramFigure` não precisa saber o próprio número, e o rótulo alterna entre "Figura" e "Figure" conforme o `lang` do documento.
-
-### Selo de atualidade
-
-`DocMeta` também mostra **"dados até <ano>"**, lido do campo `dataAsOf` do frontmatter. O valor é o **ano do dado mais recente citado** no capítulo, não a data da última edição, para que o leitor saiba que `celulas-solares` descreve a escala do setor com números de 2011, enquanto `estrutura-wafers` cita o ano corrente. Capítulos puramente históricos (`linha-do-tempo`, `historia-fotolitografia`) e páginas de navegação (`glossario`, `referencias`) não levam o campo; a ausência é intencional.
-
-## Gráficos e séries de dados
-
-`theme/DataChart.vue` renderiza qualquer gráfico declarado em `theme/charts/specs.ts`, e o markdown só precisa de:
-
-```md
-<ClientOnly>
-  <DataChart chart="transistor-count" />
-</ClientOnly>
-```
-
-O `ClientOnly` **não é decorativo**: sem ele o texto da legenda entra no HTML gerado e passa a contar como "primeira ocorrência" para o `audit-glossary.py`, que enxerga texto que o plugin de tooltips não consegue alcançar. O `DataChart` também está na lista de contextos ignorados do script, como defesa extra.
-
-Uma spec é **serializável de propósito**, sem funções nem callbacks, porque `scripts/export-chart-data.ts` lê a mesma lista e escreve `docs/public/data/<slug>.csv`. Gráfico e arquivo baixável saem de uma definição só, então não podem divergir. Rode o script depois de mexer em qualquer série:
-
-```bash
-bun run scripts/export-chart-data.ts
-```
-
-Legendas de gráfico são renderizadas como texto por interpolação, e não como Markdown: **não use links `[..](..)` nem `**negrito**` na `caption`** de uma spec. Gráfico com dados cita `sourceIds`; desenho sem dados por trás leva `schematic: true` e a legenda diz que é um esquema.
-
-A página `/dados` (`docs/dados.md` e `docs/en/dados.md`) é o hub: liga cada série ao CSV correspondente e explica o selo de atualidade.
-
-**Fontes primárias, e compilações identificadas.** A regra é citar quem mediu. Quando nenhuma fonte primária tabula uma série (contagens de transistores ao longo de cinco décadas, a dependência de neônio por país), a entrada em `citations.ts` diz explicitamente que é uma **compilação** e nomeia o agregador, em vez de emprestar autoridade de um paper a um número que ele não publica. O mesmo vale para números derivados: uma porcentagem calculada a partir de uma tabela já citada leva a citação da tabela, não uma fonte nova.
-
-## Estrutura do site
-
-- **Início** (`/`) — hero, features e diagrama Mermaid da cadeia
-- **Introdução** — texto USGS + gráfico interativo (Chart.js)
-- **Linha do tempo** / **Glossário** — navegação auxiliar
-- Capítulos agrupados na sidebar: matéria-prima → refino → wafer → fab → dispositivos
-- **Panorama** — capítulos transversais que amarram o resto: preços e valor, além do silício, mapa dos gargalos e a página de dados
-
-## Figuras do PDF
-
-Imagens embutidas em `docs/public/pdf-images/`. Para regenerar a partir do PDF:
-
-```bash
-python scripts/extract-pdf-images.py
-```
-
-Toda figura (`DiagramFigure`, `TransistorTimeline`) passa pelo componente `ZoomableImage`: um clique abre um visualizador em tela cheia com zoom pela roda do mouse ou duplo clique, arraste para mover, botões `+` / `-` / `1:1` e atalhos `+`, `-`, `0` e `Esc`.
-
-Esquemas próprios (transistores, rota do polissilício, forno de arco submerso, célula solar, coluna óptica do scanner, etapas da litografia, as quatro gerações ópticas, a identificação de wafer por flats/notch, as etapas mecânicas do wafer — perfil de borda, lapidação, ataque e orçamento térmico do RTP — e, no refino, os reatores Siemens e FBR, o ciclo do cloro e o ciclo do preço) ficam em `docs/public/assets/*.svg`. Escreva-os em **ASCII puro** e use referências numéricas (`&#176;`, `&#8594;`) para `°` e `→`: entidades HTML nomeadas como `&minus;` não existem em XML e fazem o SVG inteiro falhar. Termine com `width`/`height` no `<svg>` raiz — sem eles, o `naturalWidth` fica `0` e o `ZoomableImage` não consegue dimensionar a imagem.
-
-Um SVG usado em figura é transparente por padrão, e o visualizador de zoom tem fundo escuro: sem uma tinta clara por baixo, o desenho some no modo noturno e, ao ampliar, fica escuro sobre escuro. Por isso, **o primeiro filho do `<svg>` deve ser um `<rect>` opaco do tamanho do `viewBox`** (o próprio componente pinta um cartão branco, mas o arquivo também é aberto direto no navegador). Pelo mesmo motivo, use texto com contraste alto (`#1a202c` / `#2d3748` sobre branco) em vez de cinzas médios.
-
-**Título e descrição.** Todo desenho abre com `<title>` e `<desc>`, ambos em inglês e neutros de locale. O `<title>` diz em uma frase o que a figura mostra, e o `<desc>` repete isso para quem usa leitor de tela e registra a ressalva de escala (*not to scale*). Nenhum dos dois substitui a legenda, que continua sendo o texto visível e traduzido.
-
-**Tamanho de fonte.** A coluna de prosa entrega 638 px de largura. Num `viewBox` de 960, isso é uma redução de ~0,66×: um rótulo de 14 px no SVG chega à tela com ~9 px. Meça com `img.getBoundingClientRect()` no navegador em vez de confiar no número do `viewBox`, e dimensione o corpo entre **17 e 18 px** (≈12 px na tela), reservando 16,5 px para notas de rodapé do próprio desenho.
-
-**Idioma dos rótulos.** O desenho é único e vai para os dois locales, então os rótulos são termos técnicos curtos em inglês (`crown`, `bevel`, `slurry`, `load`), os mesmos que a prosa portuguesa já usa entre parênteses, e **toda a explicação fica na legenda**, que é traduzida: frase, parágrafo e nota de rodapé saem do desenho. Os números usam o ponto decimal, porque o arquivo é compartilhado (`1.00 mm`, não `1,00 mm`). `scripts/audit-svgs.py` reprova qualquer `<text>` de 60 caracteres ou mais, qualquer rótulo em português e qualquer entidade HTML nomeada.
-
-**Conferir sem enxergar.** Um SVG pode ser validado sem abrir a imagem: monte um `<canvas>`, desenhe o SVG e amostre pixels em coordenadas conhecidas para confirmar que cada forma caiu onde devia, e leia `getBBox()` dos `<text>` para detectar rótulos cortados ou sobrepostos. Foi assim que o arco da lasca em `wafer-edge-profile.svg` apareceu com o `sweep` invertido — o `getBBox()` do `<path>` denunciava o topo 17 px acima do esperado.
-
-Vale rodar isso **antes** de escrever a legenda, porque o erro típico não é a geometria e sim o texto: um rótulo centralizado que vaza pela borda direita ou duas linhas com 2 px de sobreposição passam despercebidos a olho nu no `viewBox` e ficam óbvios depois de montar o arquivo. Ao gerar um SVG novo, aponte o mesmo verificador para ele e resolva todo `<text>` com `x < 1`, `y < 1`, `x + w > viewBox` ou `y + h > viewBox`. Lembre também de conferir o **preenchimento por `<pattern>`**: se a `url(#id)` não resolver, o `<rect>` simplesmente não desenha nada e o erro passa silencioso — amostre a fração de pixels preenchidos na região em vez de um único ponto, já que o padrão tem vãos.
-
-O `wafer-identification.svg` é gerado por `scripts/gen-wafer-identification-svg.py`, porque os contornos de wafer com *flats* exigem geometria de arco real (um *flat* é uma corda que substitui um arco). Ele é o único desenho com rótulos vindos de código; rode o script em vez de editar o SVG à mão.
-
-### Gramática das anotações
-
-Um desenho por figura, e todas as figuras usam a mesma gramática, para que o leitor não reaprenda a convenção a cada página:
-
-- **Seta de fluxo.** Toda seta sai de uma `<marker>` declarada em `<defs>`, com um triângulo `M 0 0 L 10 5 L 0 10 z` e `orient="auto-start-reverse"`. A seta marca direção de processo; nenhuma peça aponta para outra com uma seta desenhada à mão.
-- **Linha-guia.** O rótulo que precisa alcançar uma peça usa a classe `.lead`: tracejado `#718096` de 1,2 px, sem ponta de seta. `.dim` é a linha de cota, sólida e no mesmo cinza. As duas classes têm a mesma definição em todos os arquivos.
-- **Número e unidade.** O valor sai em negrito e a unidade em peso normal, separados por espaço (`3 nm`, `40:1`, `1.2 mm`).
-- **Antes e depois, corte.** Figuras comparativas põem os painéis no mesmo eixo e mantêm os títulos em `.pt` ou `.t`. O corte transversal é declarado no `<desc>`, não desenhado como legenda dentro da figura.
-- **Cores com significado fixo.** Silício e corte usam `#cfd8e3` com contorno `#7d8b9c`, máscara e parede dielétrica usam `#805ad5`, cobre usa `#ed8936` e alerta usa `#c53030`. Fora esses quatro, a paleta ainda está espalhada em dezenas de tons, e `audit-svgs.py` lista cada um como aviso.
-
-## Imagens de terceiros
-
-Fotos e esquemas de fora (Wikimedia Commons, laboratórios nacionais) ficam também em `docs/public/assets/` — copiados para o repositório em vez de apontados para o host externo, para que a página não dependa de um servidor de terceiros. Cada `figcaption` credita **autor, arquivo original e licença**, com link para a página no Commons; sem isso a atribuição se perde. Prefira domínio público ou CC BY / CC BY-SA, e confira a descrição do arquivo antes de usá-lo: o `ImageDescription` da API do Commons costuma revelar que uma imagem é outra coisa.
-
-Exemplo (arquivo baixado via `Special:FilePath`, que resolve a miniatura correta):
-
-```powershell
-$u = 'https://commons.wikimedia.org/wiki/Special:FilePath/' + [uri]::EscapeDataString('Immersion lithography illustration.svg')
-Invoke-WebRequest -Uri $u -OutFile 'docs/public/assets/immersion-lithography.svg' -Headers @{ 'User-Agent' = 'chipmaking-docs/1.0' }
-```
-
-## Vídeos
-
-Dois componentes de embed 16:9, ambos com `loading="lazy"` e moldura compartilhada (`.video-embed` em `custom.css`):
-
-```md
-<YouTubeEmbed id="jL7HvnBgrJ4" title="Processo ASML" />
-<VideoPressEmbed id="ZlxguS11" title="Animação da rota de polissilício" />
-```
-
-`YouTubeEmbed` usa `youtube-nocookie.com`; `VideoPressEmbed` usa o player do WordPress.com, usado pelo PV-Manufacturing.org. Ao embutir material de terceiros, credite a fonte no texto e nas referências.
-
-## Rodapé de build
-
-`theme/BuildFooter.vue` é injetado no slot `layout-bottom` por `theme/Layout.vue` e aparece em todas as páginas (o `themeConfig.footer` do VitePress só aceita strings e só renderiza sem sidebar). Ele mostra o commit do build, a branch e o link do repositório.
-
-Os dados vêm de `buildInfoForClient` em `config.ts`, resolvido em Node no carregamento da config e embutido no bundle via `vite.define` como `__BUILD_INFO__`. Em CI usa `GITHUB_SHA`/`GITHUB_REF_NAME` (sem chamar o git); localmente cai para `git rev-parse`.
-
-## Diagramas Mermaid
-
-Blocos ` ```mermaid ` são renderizados no cliente por `docs/.vitepress/theme/Mermaid.vue`, com o plugin `vitepress-plugin-mermaid` cuidando do cercamento (*fence*) no Markdown.
-
-O `mermaid` em si é importado **dinamicamente**. O plugin registra o componente com um import estático, e isso faz o Rollup pré-carregar ~680 kB de JS em todas as páginas, inclusive as que não têm diagrama. Por isso `config.ts` traz um alias que troca o renderer do plugin por `theme/mermaid-async.ts` (um `defineAsyncComponent`), deixando o bundle a um salto dinâmico de distância.
-
-Timelines usam `useMaxWidth: false` para manter os rótulos legíveis em largura natural (com rolagem horizontal); flowcharts continuam se ajustando à largura do texto.
-
-## Desenvolvimento
+<p align="center">
+  <img src="docs/public/favicon.svg" alt="Wafer de silício com o entalhe de orientação" width="88" height="88">
+</p>
+
+<h1 align="center">chipmaking</h1>
+
+<p align="center">A cadeia de produção do silício, do quartzo ao chip e à célula solar.</p>
+
+## Sobre
+
+Documentação estática e bilíngue, em português (`docs/`) e inglês (`docs/en/`), gerada com [VitePress](https://vitepress.dev/) e [Bun](https://bun.sh/). Os dois idiomas têm o mesmo conteúdo, arquivo por arquivo, e cada afirmação factual cita a fonte primária de onde saiu.
+
+Documento de origem: `Resumo Chipmaking.pdf`. Busca local no site com **Ctrl+K** ou `/`, em cada idioma.
+
+## O que a documentação cobre
+
+A ordem do site é a ordem da cadeia.
+
+| Etapa | Capítulos |
+| --- | --- |
+| Visão geral | [Introdução](docs/introducao.md) · [O elemento silício](docs/o-elemento-silicio.md) · [Linha do tempo](docs/linha-do-tempo.md) · [Glossário](docs/glossario.md) |
+| 1. Matéria-prima | [Mineração e MG-Si](docs/mineracao-mg-si.md) |
+| 2. Refino | [Polissilício](docs/polissilicio.md) |
+| 3. Wafer | [Fabricação de wafers](docs/fabricacao-wafers.md) · [Estrutura e tipos](docs/estrutura-wafers.md) |
+| 4. Na fab | [Na fab: do wafer ao chip](docs/na-fab.md) · [Fotolitografia](docs/fotolitografia.md) · [História da fotolitografia](docs/historia-fotolitografia.md) · [Os insumos da fab](docs/insumos-fab.md) |
+| 5. Dispositivos | [Evolução dos transistores](docs/transistores.md) · [Confiabilidade](docs/confiabilidade.md) |
+| 6. Depois da fab | [Empacotamento e teste](docs/empacotamento.md) |
+| Fotovoltaica | [Células e módulos solares](docs/celulas-solares.md) |
+| Panorama | [Preços e valor](docs/precos-e-valor.md) · [Além do silício](docs/alem-do-silicio.md) · [O mapa dos gargalos](docs/gargalos.md) · [Dados e números](docs/dados.md) |
+| Fontes | [Referências](docs/referencias.md) |
+
+Os capítulos do Panorama amarram o resto: a escada de preços, os semicondutores vizinhos (SiC e GaN), uma tabela única de gargalos por etapa e país, e o hub de séries de dados em CSV.
+
+## Glossário rápido
+
+| Termo | O que é |
+| --- | --- |
+| HPQ | Quartzo de alta pureza; a carga dos cadinhos de Czochralski |
+| MG-Si | Silício grau metalúrgico, cerca de 98 a 99,5 % de silício; sai do forno de arco |
+| TCS | Triclorossilano (SiHCl₃), o gás intermediário do refino |
+| SoG-Si / EG-Si | Polissilício grau solar (7N a 9N) e grau eletrônico (10N a 11N) |
+| CZ | Crescimento Czochralski; o lingote monocristalino de que saem os wafers |
+| DWS | Corte por fio diamantado, que fatia o lingote em wafers |
+| CMP | Polimento químico-mecânico; achata cada camada antes da seguinte |
+| DUV / EUV | Luz de 248 ou 193 nm e de 13,5 nm, as duas eras da litografia óptica |
+| FinFET | Transistor de aleta, com a porta cobrindo três lados do canal |
+| TSV | Via de silício passante, que liga pastilhas empilhadas |
+| FIT | Uma falha por 10⁹ horas-dispositivo; a unidade da confiabilidade |
+| SiC / GaN | Carbeto de silício e nitreto de gálio, os semicondutores de potência vizinhos |
+
+O glossário completo, com 63 entradas e filtro, é gerado de `docs/.vitepress/glossary.ts` e aparece no site em `/glossario` e `/en/glossario`.
+
+## Como rodar
 
 ```bash
 bun install
-bun run dev
+bun run dev       # http://localhost:5173/chipmaking/
+bun run build     # gera docs/.vitepress/dist
+bun run preview   # serve o build
 ```
 
-Abre em `http://localhost:5173/chipmaking/` (o `base` está configurado para GitHub Pages).
+A cada push em `main`, o workflow em `.github/workflows/deploy-pages.yml` builda e publica no GitHub Pages.
 
-## Build
+## Contribuir
 
-```bash
-bun run build
+Pull requests são bem-vindos. Quatro regras:
+
+1. **Cite a fonte de tudo que é factual.** Toda afirmação numérica ou factual entra com um `<Cite id="…" />` e uma entrada em `docs/.vitepress/theme/citations.ts`. PR sem fonte não entra, e fonte inventada é motivo para fechar. Quando nenhuma fonte primária tabula o dado, a entrada diz que é uma **compilação** e nomeia quem agregou, em vez de emprestar a autoridade de um paper a um número que ele não publica.
+2. **Espelhe os dois idiomas.** Toda mudança em `docs/<slug>.md` vai no mesmo commit que `docs/en/<slug>.md`. Traduza a frase, não a translitera.
+3. **Uma mudança por PR.** Capítulo novo, correção de dados e troca de layout vão em PRs separados, para a revisão conseguir olhar cada um.
+4. **Rode as verificações.** `bun run build`, `python scripts/audit-glossary.py` e `python scripts/audit-svgs.py`, os três têm de passar antes de abrir o PR.
+
+Imagem de terceiro entra só com licença livre (domínio público, CC BY ou CC BY-SA) e crédito completo de autor, arquivo original e licença na legenda.
+
+As convenções de escrita e de estrutura estão em [`AGENTS.md`](AGENTS.md); as de prosa vêm do skill [`no-ai-slop`](https://github.com/petergyang/no-ai-slop).
+
+## Estrutura do repositório
+
 ```
-
-Saída em `docs/.vitepress/dist`. Pré-visualização local:
-
-```bash
-bun run preview
+docs/                     capítulos em português
+docs/en/                  os mesmos capítulos em inglês
+docs/.vitepress/          config, tema, glossário, citações, specs de gráfico
+docs/public/assets/       esquemas SVG e fotos
+docs/public/data/         CSV gerado das séries
+docs/public/pdf-images/   figuras extraídas do PDF
+scripts/                  audits, exportação de dados, geradores de SVG
 ```
-
-Duas verificações rodam depois do build. `python scripts/audit-glossary.py` confere os tooltips no HTML gerado; `python scripts/audit-svgs.py` confere os desenhos de `docs/public/assets/` e reprova estrutura quebrada, `<text>` longo, rótulo em português e entidade HTML nomeada (tamanho de fonte e deriva de paleta saem como aviso).
-
-## GitHub Pages
-
-Publique o conteúdo de `docs/.vitepress/dist` (workflow de GitHub Actions ou branch `gh-pages`). O site fica em `https://<usuario>.github.io/chipmaking/`.

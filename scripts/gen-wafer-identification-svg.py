@@ -13,8 +13,8 @@ Two things are handled here that are easy to get wrong by hand:
 
 The output is ASCII-only and uses *only* numeric character references plus the five
 predefined XML entities (&amp; &lt; &gt; &quot; &apos;): named entities such as &deg; do
-not exist in XML and make the whole SVG fail to parse. See the "Figuras" section of
-README.md.
+not exist in XML and make the whole SVG fail to parse. See the "Drawings" section of
+AGENTS.md.
 """
 import math
 import os
