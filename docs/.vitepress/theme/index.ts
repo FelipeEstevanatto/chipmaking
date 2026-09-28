@@ -5,9 +5,8 @@ import YouTubeEmbed from './YouTubeEmbed.vue'
 import VideoPressEmbed from './VideoPressEmbed.vue'
 import UsgsProductionChart from './UsgsProductionChart.vue'
 import DataChart from './DataChart.vue'
-import TransistorCompare from './TransistorCompare.vue'
+import TransistorFacts from './TransistorFacts.vue'
 import TransistorTimeline from './TransistorTimeline.vue'
-import TransistorTable from './TransistorTable.vue'
 import Cite from './Cite.vue'
 import SourceNote from './SourceNote.vue'
 import RefList from './RefList.vue'
@@ -28,9 +27,8 @@ export default {
     app.component('VideoPressEmbed', VideoPressEmbed)
     app.component('UsgsProductionChart', UsgsProductionChart)
     app.component('DataChart', DataChart)
-    app.component('TransistorCompare', TransistorCompare)
+    app.component('TransistorFacts', TransistorFacts)
     app.component('TransistorTimeline', TransistorTimeline)
-    app.component('TransistorTable', TransistorTable)
     app.component('Cite', Cite)
     app.component('SourceNote', SourceNote)
     app.component('RefList', RefList)

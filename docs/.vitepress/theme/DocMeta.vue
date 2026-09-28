@@ -57,10 +57,9 @@ onMounted(() => {
   measure()
 
   /*
-   * Figures are not all in the initial HTML: `TransistorCompare` renders a `DiagramFigure` of its
-   * own once it hydrates, so a single pass at mount undercounts (10 instead of 11 on the
-   * transistor chapter). Watching the document's size is the simplest way to catch content that
-   * arrives or grows after mount - a late figure changes the height, which re-triggers this.
+   * Figures are lazy-loaded (`loading="lazy"` in `ZoomableImage`), so they keep resizing the page
+   * after mount. Watching the document's size is the simplest way to catch content that arrives or
+   * grows later - a late image changes the height, which re-triggers this.
    */
   if (typeof ResizeObserver !== 'undefined') {
     const root = document.querySelector('.vp-doc')

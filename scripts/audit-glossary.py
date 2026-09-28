@@ -85,7 +85,7 @@ class Annotated(HTMLParser):
             return "caption"
         if any(t in ("pre", "code", "svg", "script") for t in tags) or "mermaid" in classes:
             return "code"
-        if any(c in classes for c in ("transistor-timeline", "transistor-compare", "transistor-table",
+        if any(c in classes for c in ("transistor-timeline", "transistor-facts",
                                       "see-also", "glossary", "doc-meta", "build-footer",
                                       "data-chart")):
             return "foreign"

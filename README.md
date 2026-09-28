@@ -8,7 +8,7 @@ Documento fonte: `Resumo Chipmaking.pdf`.
 
 [VitePress i18n](https://vitepress.dev/guide/i18n): **Português** (`docs/`) e **English** (`docs/en/`), ambos com conteúdo completo e espelhado arquivo a arquivo.
 
-Ao adicionar um capítulo, replique-o nos dois locales. Componentes compartilhados (`Cite`, `UsgsProductionChart`, `TransistorCompare`, `TransistorTimeline`, `SeeAlso`) detectam o locale e apontam para as páginas do idioma ativo.
+Ao adicionar um capítulo, replique-o nos dois locales. Componentes compartilhados (`Cite`, `UsgsProductionChart`, `TransistorFacts`, `TransistorTimeline`, `SeeAlso`) detectam o locale e apontam para as páginas do idioma ativo.
 
 ### Blocos "Veja também"
 
@@ -31,7 +31,7 @@ Dois consumidores leem essa lista:
 - `theme/GlossaryTable.vue` gera as páginas `/glossario` e `/en/glossario` a partir dela, com uma caixa de filtro que busca termo, expansão, capítulo e variantes ignorando acentos — **não escreva a tabela à mão**, ela é derivada;
 - `glossary-tooltips.ts`, um plugin do markdown-it, envolve a **primeira** ocorrência de cada termo em `<abbr title="...">`, dando a expansão no *hover*.
 
-O plugin nunca anota dentro de código (inclusive diagramas Mermaid), rótulos de link, títulos, `figcaption` ou texto que os componentes montam a partir de props (`SeeAlso`, `TransistorTimeline`, `TransistorCompare`): um `<abbr>` dentro de um link aninharia marcação no rótulo da âncora, e o conteúdo de props nem passa pelas regras inline do Markdown. Por isso um termo pode aparecer "cru" perto do topo e receber a expansão na primeira ocorrência de prosa.
+O plugin nunca anota dentro de código (inclusive diagramas Mermaid), rótulos de link, títulos, `figcaption` ou texto que os componentes montam a partir de props (`SeeAlso`, `TransistorTimeline`, `TransistorFacts`): um `<abbr>` dentro de um link aninharia marcação no rótulo da âncora, e o conteúdo de props nem passa pelas regras inline do Markdown. Por isso um termo pode aparecer "cru" perto do topo e receber a expansão na primeira ocorrência de prosa.
 
 Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HTML gerado: título e contexto de cada anotação, anotação única por página, primeira ocorrência de prosa e paridade entre os locales (mesmos termos anotados e as mesmas linhas nas duas tabelas).
 
@@ -39,16 +39,16 @@ Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HT
 
 A cadeia tem uma ordem e o site precisa mostrá-la. Três regras, já aplicadas a cinco capítulos: `transistores`, `na-fab`, `celulas-solares`, `estrutura-wafers` e `empacotamento`.
 
-**1. Uma espinha, declarada no início.** Todo capítulo tem uma lista ordenada daquilo que explica — as etapas da célula, as gerações do transistor, os módulos da fábrica. Ela aparece **uma vez**, no começo, como mapa: uma frase dizendo o que é a lista, a lista em si e uma frase dizendo que o que vem a seguir segue aquela ordem. O que era dois blocos (um quadro comparativo e outro de produtos) passou a ser um quadro só, sem a coluna que pertence à narrativa.
+**1. Uma espinha, declarada no início.** Todo capítulo tem uma lista ordenada daquilo que explica — as etapas da célula, as gerações do transistor, os módulos da fábrica. Ela aparece **uma vez**, no começo, como mapa: uma frase dizendo o que é a lista, a lista em si e uma frase dizendo que o que vem a seguir segue aquela ordem. A lista é **navegação, não resumo**: ela aponta para as seções e não repete o que elas dizem. O capítulo dos transistores já teve dois quadros (um comparativo e outro de produtos), depois um único quadro-resumo; hoje o quadro saiu, e os campos que só ele trazia — o nó de processo e o ganho de cada geração — abrem cada seção, no lugar onde são lidos.
 
-**2. Enumeração tem fonte única.** Se a mesma lista aparece em um componente interativo, numa tabela e num capítulo, ela mora em um **módulo `.ts`**. `theme/transistor-eras.ts` é o exemplo: as quinze gerações com ano, nó, o que mudou, ganho, produtos e figura, lidas por `TransistorTimeline.vue` (a cronologia interativa), `TransistorTable.vue` (o quadro do capítulo) e a página de linha do tempo. Nenhum consumidor tem cópia própria — foi assim que o capítulo ficou com dois quadros desatualizados em relação à cronologia, e é isso que a regra impede.
+**2. Enumeração tem fonte única.** Se a mesma lista aparece em um componente interativo, numa tabela e num capítulo, ela mora em um **módulo `.ts`**. `theme/transistor-eras.ts` é o exemplo: as gerações com ano, nó, o que mudou, ganho, produtos e figura, lidas por `TransistorTimeline.vue` (a cronologia interativa) e `TransistorFacts.vue` (o nó e o ganho que abrem cada seção), além da página de linha do tempo. Nenhum consumidor tem cópia própria — foi assim que o capítulo ficou com dois quadros desatualizados em relação à cronologia, e é isso que a regra impede.
 
-**3. Material de referência não abre o capítulo.** A narrativa vem primeiro; quadro-resumo, adendo e cronologia vêm **depois** dela. O adendo sobre o número do nó estava entre os quadros e a história, e passou para o fim: quem quer o atalho lê o quadro do início, quem quer o porquê segue a história. Exceções (um comparador de três arquiteturas logo no topo) só valem quando servem para fixar vocabulário, e devem ser apresentadas como tal.
+**3. Material de referência não abre o capítulo.** A narrativa vem primeiro; quadro-resumo, adendo e cronologia vêm **depois** dela. O adendo sobre o número do nó estava entre os quadros e a história, e passou para o fim: quem quer o atalho lê a espinha do início, quem quer o porquê segue a história. O que não abre o capítulo é o **resumo**: uma tabela comparativa de descrições no topo — e a figura que ela trocava a cada linha — repete o que cada seção já diz e ainda faz a página pular, porque as imagens têm alturas diferentes. O panorama comparativo fica na página de linha do tempo, que fixa a proporção da caixa de imagem para não pular.
 
 Duas consequências práticas:
 
-- **Toda geração tem figura.** Se a lista numerada é a espinham cada item dela precisa de uma imagem; itens sem figura são um furo visível, não uma economia. As figuras das gerações mais recentes já existiam em `assets/` e em `public/pdf-images/`, e estavam apenas subutilizadas.
-- **Componente que monta texto a partir de props entra no `audit-glossary.py`.** `TransistorTable` renderiza "CMOS" e "FinFET" sem passar pelas regras inline do Markdown, então sua classe está na lista de contextos ignorados, junto de `transistor-timeline` e `transistor-compare`. Sem isso, o script acusa "primeira ocorrência não anotada" num texto que o plugin não consegue alcançar.
+- **Toda geração tem figura.** Se a lista numerada é a espinha, cada item dela precisa de uma imagem; itens sem figura são um furo visível, não uma economia. As figuras das gerações mais recentes já existiam em `assets/` e em `public/pdf-images/`, e estavam apenas subutilizadas.
+- **Componente que monta texto a partir de props entra no `audit-glossary.py`.** `TransistorFacts` renderiza o nó e o ganho de cada geração sem passar pelas regras inline do Markdown, então sua classe está na lista de contextos ignorados, junto de `transistor-timeline`. Sem isso, o script acusa "primeira ocorrência não anotada" num texto que o plugin não consegue alcançar.
 
 ## Aids de leitura
 

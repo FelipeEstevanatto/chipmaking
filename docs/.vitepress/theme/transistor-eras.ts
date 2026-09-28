@@ -1,9 +1,9 @@
 /**
  * The fifteen transistor generations, with the figure that illustrates each one.
  *
- * Single source of truth for the three consumers that used to keep private copies of the same
- * list and drift: `TransistorTimeline.vue` (the interactive chronology), `TransistorTable.vue`
- * (the chapter recap table) and `TransistorCompare.vue` (the three-way spot comparison).
+ * Single source of truth for the consumers that would otherwise keep private copies of the same
+ * list and drift: `TransistorTimeline.vue` (the interactive chronology) and `TransistorFacts.vue`
+ * (the node and payoff line that opens each generation section).
  */
 
 export interface Era {

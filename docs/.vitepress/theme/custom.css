@@ -122,9 +122,8 @@
 /*
  * Auto-numbered figures.
  *
- * The longest chapters carry up to ten figures (transistores: 10, fabricacao-wafers: 8,
- * fotolitografia: 7) and every caption was anonymous, so prose had no way to point back at one
- * and a reader had no idea how many were left.
+ * The longest chapters carry more than a dozen figures and every caption was anonymous, so prose
+ * had no way to point back at one and a reader had no idea how many were left.
  *
  * The counter lives in CSS rather than a Vue component on purpose: the numbers are then part of
  * the static HTML, with no hydration pass and nothing to keep in sync when a figure is added,
@@ -217,34 +216,6 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
 
 .chart-panel canvas {
   max-height: 360px;
-}
-
-.transistor-compare {
-  margin: 1.5rem 0;
-}
-
-.transistor-compare-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.transistor-compare-tabs button {
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
-  border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
-  cursor: pointer;
-  font-size: 0.875rem;
-}
-
-.transistor-compare-tabs button.active {
-  border-color: var(--vp-c-brand-1);
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  font-weight: 600;
 }
 
 .supply-chain {

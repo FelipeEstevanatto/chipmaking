@@ -6,21 +6,28 @@ dataAsOf: 2026
 
 # Architectural evolution of transistors
 
-Compare the three main architectures visually:
+From the planar structure to the CFET, the chapter walks the generations of the transistor in chronological order. Each section opens with that generation's process node and the payoff it brought; what the "node" label means is in the [addendum at the end of the chapter](#addendum-what-the-node-number-means).
 
-<ClientOnly>
-  <TransistorCompare />
-</ClientOnly>
+1. [1960 — Planar MOSFET](#_1960-—-planar-mosfet)
+2. [1963 — CMOS complementary pair](#_1963-—-cmos-complementary-pair)
+3. [1968 — Self-aligned silicon gate](#_1968-—-self-aligned-silicon-gate)
+4. [1985 — LDD](#_1985-—-ldd-lightly-doped-drain)
+5. [1995 — STI](#_1995-—-sti-shallow-trench)
+6. [1998 — SOI](#_1998-—-soi-silicon-on-insulator)
+7. [2003 — Strained silicon](#_2003-—-strained-silicon-intel)
+8. [2007 — High-K metal gate](#_2007-—-high-k-metal-gate-hkmg)
+9. [2011 — FinFET](#_2011-—-finfet-tri-gate)
+10. [2012 — FD-SOI](#_2012-—-fd-soi-ultra-thin-body)
+11. [2022 — GAAFET](#_2022-—-gaafet-gate-all-around-nanosheets)
+12. [2025/2026 — BSPDN](#_2025-2026-—-bspdn-backside-power)
+13. [~2029 — Forksheet](#_2029-—-forksheet)
+14. [Future — CFET](#future-—-cfet)
 
-## The fifteen generations at a glance
-
-One row per generation, with what it changed and what it delivered. The **Year** column marks when it reached production or demonstration. The **Node** column is a generation label, not a measurement; what that means is in the [addendum at the end of the chapter](#addendum-what-the-node-number-means).
-
-<TransistorTable />
-
-The rest of the chapter tells the story of each row, in the same order, with its figure.
+The [timeline](/en/linha-do-tempo) gathers these same generations into one interactive list, with each one's products. The sections below follow the order above.
 
 ## 1960 — Planar MOSFET
+
+<TransistorFacts year="1960" />
 
 <DiagramFigure src="/pdf-images/p17-1.png" alt="Planar MOSFET transistor">
 Channel, gate, source and drain in the plane of the wafer: the structure lithography had to draw in one pass.
@@ -32,6 +39,8 @@ In practice this generation powered pocket calculators and the first home microc
 
 ## 1963 — CMOS (complementary pair)
 
+<TransistorFacts year="1963" />
+
 In **1963** Frank Wanlass (Fairchild) patented **CMOS** (*Complementary MOS*): an NMOS and a PMOS wired in series so that **one conducts while the other is cut off**. Because there is never a direct path between supply and ground in the steady state, standby current reduces to leakage alone — essentially zero static power. RCA brought the 4000 family to market in 1968 and, ever since, CMOS has been the basis of virtually all digital logic: it is what allows billions of gates on one chip without melting it.
 
 <DiagramFigure src="/assets/cmos.svg" alt="CMOS cross-section with an NMOS in a p-well and a PMOS in an n-well">
@@ -41,6 +50,8 @@ Complementary pair: an NMOS in a p-well and a PMOS in an n-well, with a single p
 Its first large-scale use was the **RCA CD4000 logic family** (1968), which made CMOS the standard for digital watches, calculators and battery-powered instruments. Decades later the same principle became the **real-time clock** of every PC — still kept alive by what the industry nicknamed the “CMOS battery”.
 
 ## 1968 — Self-aligned silicon gate
+
+<TransistorFacts year="1968" />
 
 Until the late 1960s the gate was **aluminium**, deposited **after** the source and drain diffusion. To guarantee that the channel was fully covered, the gate had to **overlap** source and drain, adding parasitic capacitance and forcing alignment tolerances that wasted area.
 
@@ -58,6 +69,8 @@ This is the technique that made the first microprocessors viable. Faggin joined 
 
 ## 1985 — LDD (lightly doped drain)
 
+<TransistorFacts year="1985" />
+
 With channels on the order of **1 µm**, the electric field concentrated at the drain accelerated carriers to energies high enough to cross the gate oxide. These **hot carriers** became trapped in the oxide, shifting the threshold voltage and shortening the device's useful life. The **LDD** structure (*Lightly Doped Drain*, IBM, 1980) inserts a lightly doped (**n⁻**) extension between the channel and the heavily doped (**n⁺**) contact: the potential drop spreads over a longer distance and the peak field falls. The extension is defined by a nitride **sidewall spacer**, which later processes would reuse for silicide formation. The price is a small extra series resistance.
 
 <DiagramFigure src="/assets/ldd.svg" alt="Comparison of a conventional junction with an LDD structure with spacers">
@@ -67,6 +80,8 @@ Left, a conventional junction; right, an LDD with n⁻ extensions defined by spa
 The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" /> — the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
 
 ## 1995 — STI (shallow trench)
+
+<TransistorFacts year="1995" />
 
 Isolation between neighbouring transistors used to be done with **LOCOS** (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the **“bird’s beak”**, which eats into the active area and limits density. The shallow trench was **proposed in the early 1980s**, but spent years without practical use: both the planarisation and an oxide deposition able to fill narrow trenches were missing. It was **CMP** that unlocked the process <Cite id="shmj-sti" />. A shallow trench is then etched into the silicon, filled with deposited oxide and planarised by CMP: vertical walls, no bird’s beak, and a flat surface — a requirement for the lithographic depth of focus.
 
@@ -78,6 +93,8 @@ Production arrived **before the 0.25 µm node**, not at it. IBM led the applicat
 
 ## 1998 — SOI (silicon on insulator)
 
+<TransistorFacts year="1998" />
+
 In **SOI** (*Silicon On Insulator*) the transistor is built in a **thin silicon film** on top of a **buried oxide** layer (BOX). The junctions no longer touch the substrate, which slashes **junction capacitance** (faster switching for less energy), eliminates the **latch-up** that plagues bulk CMOS, and improves radiation tolerance. IBM popularised the technique in high-performance processors from ~**0.22 µm**; today the **FD-SOI** variant (ultra-thin body) occupies niches in low-power and RF designs.
 
 <DiagramFigure src="/assets/soi.svg" alt="Comparison of a bulk silicon transistor with an SOI transistor on a buried oxide">
@@ -87,6 +104,8 @@ Above, a bulk silicon transistor; below, a thin silicon film isolated by a burie
 The architecture became famous in the 2005–2006 console generation: the **Cell** in the PlayStation 3 and the **Xenon** in the Xbox 360 both shipped on 90 nm SOI, while AMD's **Athlon 64** brought the same technology to PCs <Cite id="ibm-cell" />.
 
 ## 2003 — Strained silicon (Intel)
+
+<TransistorFacts year="2003" />
 
 At the **90 nm** node (2003/2004), Intel used **strained silicon**: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility by **10–20%** at marginal cost <Cite id="intel-strain" />.
 
@@ -106,6 +125,8 @@ The first high-volume processor with strained silicon was the **Pentium 4 “Pre
 
 ## 2007 — High-K metal gate (HKMG)
 
+<TransistorFacts year="2007" />
+
 <DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Comparison of an SiO₂/polysilicon gate with a high-K metal gate">
 The gate stack changes twice at once: the dielectric stops being SiO₂ and a metal replaces polysilicon.
 </DiagramFigure>
@@ -115,6 +136,8 @@ With the gate oxide (SiO₂) reduced to ~**1 nm**, tunnelling leakage became unw
 The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line — the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
 
 ## 2011 — FinFET (Tri-Gate)
+
+<TransistorFacts year="2011" />
 
 <DiagramFigure src="/pdf-images/p17-2.png" alt="FinFET Tri-Gate transistor">
 The channel leaves the plane: the vertical fin is wrapped by the gate on three sides.
@@ -126,6 +149,8 @@ Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at
 
 ## 2012 — FD-SOI (ultra-thin body)
 
+<TransistorFacts year="2012" />
+
 While the rest of the industry moved to FinFET, **FD-SOI** took a different route, reviving the SOI idea with an **ultra-thin silicon film** (~6 nm) on top of the buried oxide. With the film that thin the channel becomes **fully depleted** (no “floating body” effects as in partially depleted SOI) and a **back plane** under the BOX allows **body bias** to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
 
 <DiagramFigure src="/assets/fdsoi.svg" alt="Comparison of partially depleted SOI with a floating body against FD-SOI with an ultra-thin film and a back plane">
@@ -135,6 +160,8 @@ Above, partially depleted SOI with a floating body; below, FD-SOI with an ultra-
 The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundries (**22FDX**). The best-known case is the **Google Nest Mini**, whose Synaptics AS-370 SoC was identified in a teardown as built on 22FDX <Cite id="techinsights-22fdx" />. The technology also underpins BLE MCUs, Wi-Fi cameras and GNSS SoCs, with dozens of designs already in mass production <Cite id="verisilicon-fdsoi" />.
 
 ## 2022 — GAAFET (gate-all-around / nanosheets)
+
+<TransistorFacts year="2022" />
 
 <DiagramFigure src="/pdf-images/p18-1.png" alt="GAAFET nanosheet transistor">
 Stacked nanosheets, with the gate wrapping all four faces of each one.
@@ -146,6 +173,8 @@ The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC
 
 ## 2025/2026 — BSPDN (backside power)
 
+<TransistorFacts year="2025/2026" />
+
 <DiagramFigure src="/assets/bspdn.svg" alt="Comparison of front-side power delivery with a backside power delivery network">
 Power delivery moves to the wafer backside, leaving the front free for signal.
 </DiagramFigure>
@@ -156,6 +185,8 @@ It reached the market in **Intel Panther Lake** (Core Ultra series 3), the first
 
 ## ~2029 — Forksheet
 
+<TransistorFacts year="~2029" />
+
 For the **A10** node, imec proposed an intermediate architecture called the **forksheet**. The idea is to place a **dielectric wall** between the n and p gates: the wall separates the two gate trenches and lets them sit far closer than conventional nanosheets allow, without having to stack the transistors as CFET does. The result is a smaller standard cell while keeping much of the nanosheet manufacturing flow, which makes the transition less disruptive.
 
 <DiagramFigure src="/assets/forksheet.svg" alt="Comparison of gate-all-around nanosheets with a wide n-p gap and a forksheet with a dielectric wall between the gates">
@@ -165,6 +196,8 @@ Left, gate-all-around nanosheets with a wide gap between the n and p gates; righ
 Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented an *outer wall* variant with better manufacturability and performance. It is the declared bridge between GAAFET and CFET <Cite id="imec-forksheet" />.
 
 ## Future — CFET
+
+<TransistorFacts year="Futuro" />
 
 <DiagramFigure src="/assets/cfet.svg" alt="Comparison of an NFET and PFET side by side with a stacked CFET">
 NFET and PFET in the same cell, stacked instead of side by side.
