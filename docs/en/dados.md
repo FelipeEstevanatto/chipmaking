@@ -1,6 +1,6 @@
 ---
 title: Data and numbers
-description: The site's series as charts and as files — transistor counts, the yield model, and each chapter's data-freshness stamp.
+description: The site's series as charts and as files — transistor counts, the yield model, binning by frequency, and each chapter's data-freshness stamp.
 dataAsOf: 2026
 ---
 
@@ -42,6 +42,16 @@ The second chart is not a measurement: it is the **Poisson model** of yield, eva
 
 Doubling a die's area cuts yield by **more than half**, and the loss grows with defect density — the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividir-para-render) instead of continuing to enlarge the monolithic die. The Poisson model is optimistic at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
 
+## Binning by frequency
+
+Yield tells you how many dies survive; **binning** tells you what each one sells for. An independent binning house, **Silicon Lottery**, measured every processor it resold and published the distribution of highest stable frequency <Cite id="siliconlottery-stats" />. The chart compares two models of the same Coffee Lake die: the 8086K is the batch Intel hand-picked, with a 5.0 GHz floor, against the 17% of the 8700K batch that never reach it <Cite id="tomshardware-8086k" />.
+
+<ClientOnly>
+  <DataChart chart="binning-bins" />
+</ClientOnly>
+
+The shares are the difference between consecutive published percentiles, rounded to the whole per cent, not a direct count.
+
 ## The series as files
 
 Every chart on the site also exists as a data file, generated from the **same definition** that draws it — not from a parallel spreadsheet that would age on its own:
@@ -52,6 +62,7 @@ Every chart on the site also exists as a data file, generated from the **same de
 - [Concentration by step](/data/chokepoint-share.csv)
 - [Photovoltaic efficiency](/data/pv-efficiency.csv)
 - [Bathtub curve](/data/bathtub.csv)
+- [Binning by frequency](/data/binning-bins.csv)
 
 The script `scripts/export-chart-data.ts` rewrites all of them from `docs/.vitepress/theme/charts/specs.ts`, so the chart and the CSV cannot drift apart.
 
@@ -61,7 +72,7 @@ Not every chapter is equally recent, and until now a reader had no way to know. 
 
 That is why each chapter declares, below its title, the **year of the most recent data it cites**. It is a reading aid, not a validity stamp: a 2011 number may still be the best reference for what it describes, but the reader is entitled to know they are reading 2011.
 
-<SourceNote label="Sources" :ids="['dados-transistor-count', 'intel-4004', 'leachman-yield', 'murphy-1964']" />
+<SourceNote label="Sources" :ids="['dados-transistor-count', 'intel-4004', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'In the fab', href: '/en/na-fab', note: 'where the yield equation comes from' },

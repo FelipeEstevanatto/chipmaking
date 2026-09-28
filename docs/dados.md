@@ -1,6 +1,6 @@
 ---
 title: Dados e números
-description: As séries do site em gráfico e em arquivo — contagem de transistores, modelo de rendimento e o selo de atualidade de cada capítulo.
+description: As séries do site em gráfico e em arquivo — contagem de transistores, modelo de rendimento, classificação por frequência e o selo de atualidade de cada capítulo.
 dataAsOf: 2026
 ---
 
@@ -42,6 +42,16 @@ O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimen
 
 Dobrar a área de um die derruba o rendimento **mais que pela metade**, e a perda cresce com a densidade de defeitos — é o motivo econômico pelo qual dies muito grandes são raros e pelos quais a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é otimista para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
+## Classificação por frequência
+
+O rendimento diz quantos dies sobrevivem; a **classificação** diz por quanto cada um é vendido. Uma casa de binning independente, a **Silicon Lottery**, media cada processador que revendia e publicava a distribuição de frequência máxima estável <Cite id="siliconlottery-stats" />. O gráfico compara dois modelos do mesmo die Coffee Lake: o 8086K é o lote escolhido a dedo pela Intel, com piso de 5,0 GHz, contra os 17 % do lote de 8700K que não chegam lá <Cite id="tomshardware-8086k" />.
+
+<ClientOnly>
+  <DataChart chart="binning-bins" />
+</ClientOnly>
+
+As fatias saem da diferença entre percentis consecutivos publicados, arredondados ao ponto percentual, e não de uma contagem direta.
+
 ## As séries em arquivo
 
 Cada gráfico do site existe também como arquivo de dados, gerado a partir da **mesma definição** que o desenha — não de uma planilha paralela que envelheceria sozinha:
@@ -52,6 +62,7 @@ Cada gráfico do site existe também como arquivo de dados, gerado a partir da *
 - [Concentração por etapa](/data/chokepoint-share.csv)
 - [Eficiência fotovoltaica](/data/pv-efficiency.csv)
 - [Curva da banheira](/data/bathtub.csv)
+- [Classificação por frequência](/data/binning-bins.csv)
 
 O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.vitepress/theme/charts/specs.ts`, então o gráfico e o CSV não podem divergir.
 
@@ -61,7 +72,7 @@ Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como 
 
 Por isso cada capítulo declara, abaixo do título, o **ano do dado mais recente que cita**. É uma informação de leitura, não de validade: um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
 
-<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'leachman-yield', 'murphy-1964']" />
+<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
 
 <SeeAlso :links="[
   { text: 'Na fab', href: '/na-fab', note: 'de onde sai a equação do rendimento' },

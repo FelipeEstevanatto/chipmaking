@@ -3,7 +3,7 @@ title: Empacotamento e teste
 description: >-
   Depois da fábrica: o wafer é testado, cortado, ligado ao invólucro, protegido
   e testado de novo. É onde nascem o HBM, os chiplets e a ligação híbrida.
-dataAsOf: 2025
+dataAsOf: 2026
 ---
 
 # Empacotamento e teste
@@ -244,6 +244,28 @@ Nem todo chip funcional é igual. No **teste final**, os dispositivos são class
 
 É por isso que o mesmo die aparece na loja em várias versões com preços diferentes. A classificação é feita **depois do empacotamento**, no teste final <Cite id="semieng-binning" />, e converte a variabilidade natural do processo em uma **linha de produtos** em vez de desperdício. Um die que não alcança a frequência do modelo topo ainda pode ser vendido como o modelo de baixo.
 
+Ela corre sobre dois eixos. O primeiro é **frequência**: quanto o chip aguenta dentro de uma tensão e uma temperatura dadas. O segundo são **os blocos que sobrevivem**: núcleos, cache e controladores de memória são projetados para poder ser desligados, e o die com um deles defeituoso vira o modelo de baixo em vez de virar lixo <Cite id="gamersnexus-binning" />. O teste começa ainda no wafer, com um algoritmo simples que descarta quem responde errado; a frequência só é medida depois do empacotamento <Cite id="bit-tech-binning" />.
+
+#### Frequência: o mesmo die, dois preços
+
+O par **Core i7-8700K e Core i7-8086K** mostra o eixo inteiro. É o mesmo die Coffee Lake, com os mesmos seis núcleos e *hyper-threading*, mas o 8086K saiu com frequências de turbo mais altas porque a Intel reservou para ele os melhores exemplares da produção: 50 mil unidades, US$ 75 mais caras que o 8700K <Cite id="tomshardware-8086k" />.
+
+A **Silicon Lottery** comprava processadores no varejo, media cada unidade antes de revender e publicava a distribuição. No lote de 8700K, 17 % das unidades chegavam a 5,2 GHz; no lote de 8086K, **nenhuma** ficou abaixo de 5,0 GHz <Cite id="siliconlottery-stats" />.
+
+<ClientOnly>
+  <DataChart chart="binning-bins" />
+</ClientOnly>
+
+Na memória o eixo vira **grau de velocidade** e a mecânica é a mesma. Um chip que falha a 3.000 MHz é classificado e vendido como um chip de 2.800 MHz <Cite id="macworld-binning" />. Um fabricante de memória contou à Gamers Nexus que comprava lotes para uma linha de 1.600 MHz e encontrava unidades que passavam a 1.866 ou 2.400 MHz, reservadas para uma linha mais rápida. Numa ocasião em que o produto de entrada esgotou, ele desviou para esse produto chips que passariam no grau de cima, e quem comprou o modelo barato levou silício melhor sem saber <Cite id="gamersnexus-binning" />.
+
+#### Colher em vez de descartar
+
+O segundo eixo é a **colheita** (*harvesting*). Um chip com um bloco defeituoso passa a ser vendido com esse bloco desligado, e a AMD já vendeu modelos de três núcleos a partir de um die de quatro <Cite id="gamersnexus-binning" />. A Apple transformou a prática em linha de produto: o **A12X** saiu com 7 dos 8 núcleos de GPU porque o rendimento não entregava 8; dois anos depois, o **A12Z** era o mesmo chip com o oitavo ligado, porque o processo tinha melhorado. No **iPhone 17e**, o A19 tem 4 núcleos de GPU contra 5 do iPhone 17, e o desempenho gráfico cai na mesma proporção, cerca de 20 % <Cite id="macworld-binning" />.
+
+Nem todo bloco desligado é defeito. Num lote de **Radeon RX 460**, 128 núcleos presentes no die estavam desativados e voltaram a funcionar com uma troca de BIOS, cerca de 14 % mais núcleos; o risco é o chip ter sido desativado por defeito, e aí a imagem sai com artefatos <Cite id="extremetech-rx460" />.
+
+Sem classificação, o que sobra é descarte. A Macworld ilustra a conta com o A18: um wafer rende cerca de **500** chips dessa classe, e jogar fora todos os que têm um defeito deixaria cerca de **200** <Cite id="macworld-binning" />. A classificação existe para que os outros 300 não virem lixo.
+
 ## Quanto vale o empacotamento
 
 O tamanho econômico desta etapa engana em duas direções.
@@ -256,7 +278,7 @@ E há um terceiro dado, mais recente, que explica por que o assunto deixou de se
 
 Um gargalo pequeno em valor pode ser um gargalo grande em consequência. Foi o que aconteceu com o empacotamento: durante décadas a etapa barata no fim da linha, hoje é a etapa que decide quantos chips de IA o mundo consegue montar.
 
-<SourceNote :ids="['semiprobe-wafer-test', 'cadence-kgd', 'advantest-ir', 'itrs-2015-test', 'itrs-2013-test', 'teradyne-slt', 'ku-dicing-sop', 'disco-dad3221', 'disco-thin-wafer', 'ectc-2016-dicing', 'mdpi-singulation-hbm', 'hamamatsu-stealth', 'imaps-plasma-dicing', 'pdbg-dicing', 'ieee-die-strength', 'semieng-wirebond', 'semieng-wirebond2', 'pmc-bonding-wire', 'inseto-wire-guide', 'imaps-cu-wire', 'semi-gspmo-2020', 'gold-bulletin-ball-bonds', 'wiley-packaging-ch3', 'totta-flipchip', 'springer-flipchip-history', 'semieng-flipchip-bumps', 'synopsys-cu-pillar', 'fue-packaging-roadmap', 'tsmc-cowos', 'tsmc-2x-cowos', 'semieng-tsv', 'semieng-bump-pitch', 'imec-hybrid-bonding', 'imec-d2w-hb', 'intel-foveros-direct', 'jedec-hbm2', 'jedec-hbm3', 'jedec-hbm4', 'rambus-hbm', 'semianalysis-hbm', 'ectc-cowos-s5', 'amd-chiplet-economics', 'ucie-formation', 'ucie-3', 'anysilicon-wafer-sort', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'semieng-binning', 'cset-packaging', 'itrs-assembly', 'yole-advanced-packaging', 'tsmc-q3-2024']" />
+<SourceNote :ids="['semiprobe-wafer-test', 'cadence-kgd', 'advantest-ir', 'itrs-2015-test', 'itrs-2013-test', 'teradyne-slt', 'ku-dicing-sop', 'disco-dad3221', 'disco-thin-wafer', 'ectc-2016-dicing', 'mdpi-singulation-hbm', 'hamamatsu-stealth', 'imaps-plasma-dicing', 'pdbg-dicing', 'ieee-die-strength', 'semieng-wirebond', 'semieng-wirebond2', 'pmc-bonding-wire', 'inseto-wire-guide', 'imaps-cu-wire', 'semi-gspmo-2020', 'gold-bulletin-ball-bonds', 'wiley-packaging-ch3', 'totta-flipchip', 'springer-flipchip-history', 'semieng-flipchip-bumps', 'synopsys-cu-pillar', 'fue-packaging-roadmap', 'tsmc-cowos', 'tsmc-2x-cowos', 'semieng-tsv', 'semieng-bump-pitch', 'imec-hybrid-bonding', 'imec-d2w-hb', 'intel-foveros-direct', 'jedec-hbm2', 'jedec-hbm3', 'jedec-hbm4', 'rambus-hbm', 'semianalysis-hbm', 'ectc-cowos-s5', 'amd-chiplet-economics', 'ucie-formation', 'ucie-3', 'anysilicon-wafer-sort', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'semieng-binning', 'bit-tech-binning', 'gamersnexus-binning', 'siliconlottery-stats', 'tomshardware-8086k', 'macworld-binning', 'extremetech-rx460', 'cset-packaging', 'itrs-assembly', 'yole-advanced-packaging', 'tsmc-q3-2024']" />
 
 <SeeAlso :links="[
   { text: 'Na fab', href: '/na-fab', note: 'de onde sai o wafer processado' },

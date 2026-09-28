@@ -3,7 +3,7 @@ title: Packaging and test
 description: >-
   After the fab: the wafer is tested, diced, connected to a package, protected
   and tested again. This is where HBM, chiplets and hybrid bonding come from.
-dataAsOf: 2025
+dataAsOf: 2026
 ---
 
 # Packaging and test
@@ -244,6 +244,28 @@ Not every working chip is equal. At **final test**, devices are sorted, ***binne
 
 That is why the same die appears in the shop in several versions at different prices. Binning happens **after packaging**, at final test <Cite id="semieng-binning" />, and it converts the process's natural variability into a **product line** instead of waste. A die that cannot reach the top model's frequency can still be sold as the model below.
 
+It runs on two axes. The first is **frequency**: how much the chip holds within a given voltage and temperature. The second is **which blocks survive**: cores, cache and memory controllers are designed so they can be fused off, and a die with one of them defective is sold as the model below instead of being scrapped <Cite id="gamersnexus-binning" />. Testing starts at wafer level, with a simple algorithm that discards the dies that answer wrong; frequency is only measured after packaging <Cite id="bit-tech-binning" />.
+
+#### Frequency: the same die, two prices
+
+The **Core i7-8700K and Core i7-8086K** pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, $75 more than the 8700K <Cite id="tomshardware-8086k" />.
+
+**Silicon Lottery** bought processors at retail, measured every unit before reselling it, and published the distribution. In the 8700K batch, 17% of units reached 5.2 GHz; in the 8086K batch, **none** fell below 5.0 GHz <Cite id="siliconlottery-stats" />.
+
+<ClientOnly>
+  <DataChart chart="binning-bins" />
+</ClientOnly>
+
+In memory the axis becomes the **speed grade** and the mechanics are the same. A chip that fails at 3,000 MHz is binned and sold as a 2,800 MHz chip <Cite id="macworld-binning" />. A memory manufacturer told Gamers Nexus that it bought batches for a 1,600 MHz line and found units that passed at 1,866 or 2,400 MHz, set aside for a faster line. When its entry product sold out, that manufacturer pushed chips that would have passed the higher grade down into it, and the buyers of the cheap model got better silicon without knowing <Cite id="gamersnexus-binning" />.
+
+#### Harvesting instead of scrapping
+
+The second axis is **harvesting**. A chip with one defective block is sold with that block disabled, and AMD has sold tri-core parts out of a quad-core die <Cite id="gamersnexus-binning" />. Apple turned the practice into a product line: the **A12X** shipped with 7 of its 8 GPU cores because yields could not deliver 8; two years later the **A12Z** was the same chip with the eighth core enabled, because the process had improved. In the **iPhone 17e**, the A19 has 4 GPU cores against 5 in the iPhone 17, and graphics performance drops in proportion, about 20% <Cite id="macworld-binning" />.
+
+Not every disabled block is a defect. In one batch of **Radeon RX 460**, 128 cores present on the die were disabled and came back with a BIOS swap, about 14% more cores; the risk is that the chip was disabled for a defect, in which case the picture comes out with artifacts <Cite id="extremetech-rx460" />.
+
+Without binning, the only alternative is to scrap them. Macworld runs the numbers on the A18: a wafer yields around **500** chips of that class, and throwing away every one with a flaw would leave around **200** <Cite id="macworld-binning" />. Binning is what keeps the other 300 out of the trash.
+
 ## What packaging is worth
 
 The economic size of this step misleads in two directions.
@@ -256,7 +278,7 @@ And there is a third, more recent figure that explains why the subject stopped b
 
 A bottleneck that is small in value can be large in consequence. That is what happened to packaging: for decades the cheap step at the end of the line, it is now the step that decides how many AI chips the world can assemble.
 
-<SourceNote label="Sources" :ids="['semiprobe-wafer-test', 'cadence-kgd', 'advantest-ir', 'itrs-2015-test', 'itrs-2013-test', 'teradyne-slt', 'ku-dicing-sop', 'disco-dad3221', 'disco-thin-wafer', 'ectc-2016-dicing', 'mdpi-singulation-hbm', 'hamamatsu-stealth', 'imaps-plasma-dicing', 'pdbg-dicing', 'ieee-die-strength', 'semieng-wirebond', 'semieng-wirebond2', 'pmc-bonding-wire', 'inseto-wire-guide', 'imaps-cu-wire', 'semi-gspmo-2020', 'gold-bulletin-ball-bonds', 'wiley-packaging-ch3', 'totta-flipchip', 'springer-flipchip-history', 'semieng-flipchip-bumps', 'synopsys-cu-pillar', 'fue-packaging-roadmap', 'tsmc-cowos', 'tsmc-2x-cowos', 'semieng-tsv', 'semieng-bump-pitch', 'imec-hybrid-bonding', 'imec-d2w-hb', 'intel-foveros-direct', 'jedec-hbm2', 'jedec-hbm3', 'jedec-hbm4', 'rambus-hbm', 'semianalysis-hbm', 'ectc-cowos-s5', 'amd-chiplet-economics', 'ucie-formation', 'ucie-3', 'anysilicon-wafer-sort', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'semieng-binning', 'cset-packaging', 'itrs-assembly', 'yole-advanced-packaging', 'tsmc-q3-2024']" />
+<SourceNote label="Sources" :ids="['semiprobe-wafer-test', 'cadence-kgd', 'advantest-ir', 'itrs-2015-test', 'itrs-2013-test', 'teradyne-slt', 'ku-dicing-sop', 'disco-dad3221', 'disco-thin-wafer', 'ectc-2016-dicing', 'mdpi-singulation-hbm', 'hamamatsu-stealth', 'imaps-plasma-dicing', 'pdbg-dicing', 'ieee-die-strength', 'semieng-wirebond', 'semieng-wirebond2', 'pmc-bonding-wire', 'inseto-wire-guide', 'imaps-cu-wire', 'semi-gspmo-2020', 'gold-bulletin-ball-bonds', 'wiley-packaging-ch3', 'totta-flipchip', 'springer-flipchip-history', 'semieng-flipchip-bumps', 'synopsys-cu-pillar', 'fue-packaging-roadmap', 'tsmc-cowos', 'tsmc-2x-cowos', 'semieng-tsv', 'semieng-bump-pitch', 'imec-hybrid-bonding', 'imec-d2w-hb', 'intel-foveros-direct', 'jedec-hbm2', 'jedec-hbm3', 'jedec-hbm4', 'rambus-hbm', 'semianalysis-hbm', 'ectc-cowos-s5', 'amd-chiplet-economics', 'ucie-formation', 'ucie-3', 'anysilicon-wafer-sort', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'semieng-binning', 'bit-tech-binning', 'gamersnexus-binning', 'siliconlottery-stats', 'tomshardware-8086k', 'macworld-binning', 'extremetech-rx460', 'cset-packaging', 'itrs-assembly', 'yole-advanced-packaging', 'tsmc-q3-2024']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'In the fab', href: '/en/na-fab', note: 'where the processed wafer comes from' },

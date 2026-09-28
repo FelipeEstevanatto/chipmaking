@@ -209,6 +209,30 @@ export const CHARTS: Record<string, ChartSpec> = {
     sourceIds: ['leachman-yield', 'murphy-1964'],
     slug: 'yield-vs-area',
   },
+
+  /**
+   * The same Coffee Lake die sold as two models. Silicon Lottery, an independent binning house,
+   * measured retail 8700K and 8086K chips and published the share that reached each frequency. The
+   * bars are the difference between consecutive published percentiles, so they are derived from
+   * that table rather than measured directly.
+   */
+  'binning-bins': {
+    id: 'binning-bins',
+    type: 'bar',
+    xLabel: { pt: 'Frequência máxima estável (GHz)', en: 'Highest stable frequency (GHz)' },
+    yLabel: { pt: 'Fatia do lote (%)', en: 'Share of the batch (%)' },
+    labels: ['4.8', '4.9', '5.0', '5.1', '5.2', '5.3'],
+    datasets: [
+      { pt: 'Core i7-8700K', en: 'Core i7-8700K', color: '#2b6cb0', data: [1, 16, 34, 32, 13, 4] },
+      { pt: 'Core i7-8086K', en: 'Core i7-8086K', color: '#ed8936', data: [0, 0, 6, 29, 50, 15] },
+    ],
+    caption: {
+      pt: 'O mesmo die Coffee Lake em dois modelos, separados pela frequência que cada unidade aguenta. O 8086K é o lote escolhido a dedo: nenhuma unidade vendida nesse grau ficou abaixo de 5,0 GHz, e 79 % do lote caiu em 5,1 ou 5,2 GHz. As barras são a diferença entre percentis publicados, arredondados ao ponto percentual, e por isso as colunas de 4,8 e 4,9 GHz do 8086K são zero, não ausentes.',
+      en: 'The same Coffee Lake die in two models, separated by the frequency each unit can hold. The 8086K is the hand-picked batch: no unit sold in that grade fell below 5.0 GHz, and 79% of the batch landed at 5.1 or 5.2 GHz. The bars are the difference between published percentiles rounded to the whole per cent, which is why the 8086K columns at 4.8 and 4.9 GHz are zero rather than missing.',
+    },
+    sourceIds: ['siliconlottery-stats', 'tomshardware-8086k'],
+    slug: 'binning-bins',
+  },
 }
 
 export const chartIds = Object.keys(CHARTS)
