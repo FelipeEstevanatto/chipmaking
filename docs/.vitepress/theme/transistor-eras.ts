@@ -92,15 +92,15 @@ export const ERAS: Era[] = [
     node: '0.35 µm',
     namePt: 'STI (trincheira rasa)',
     nameEn: 'STI (shallow trench)',
-    descPt: 'Trincheira rasa substitui o LOCOS no isolamento: paredes verticais e sem a “boca de pássaro” que consumia área ativa.',
+    descPt: 'Trincheira rasa substitui o LOCOS no isolamento: paredes verticais e sem o “bico de pássaro” que consumia área ativa.',
     descEn: 'A shallow trench replaces LOCOS for isolation: vertical walls and no “bird’s beak” eating into the active area.',
     productsPt:
       'DRAM de 0,35 µm da IBM, com a Toshiba em produção em massa já em 1996; no lado lógico, o P854 (0,35 µm) da Intel parte de STI, e o P856 (0,25 µm, certificado no 3º trimestre de 1997) a leva ao Pentium II.',
     productsEn:
       'IBM’s 0.35 µm DRAM, with Toshiba in mass production by 1996; on the logic side Intel’s 0.35 µm P854 opens with STI, and P856 (0.25 µm, certified Q3 1997) carries it into the Pentium II.',
     src: '/assets/sti.svg',
-    altPt: 'Comparação entre isolamento LOCOS com boca de pássaro e trincheira rasa vertical',
-    altEn: 'Comparison of LOCOS isolation with a bird’s beak against a vertical shallow trench',
+    altPt: 'Comparação entre isolamento LOCOS, com o bico de pássaro sob a superfície, e trincheira rasa com liner de óxido e óxido depositado',
+    altEn: 'Comparison of LOCOS isolation, with the bird’s beak below the surface, against a shallow trench with an oxide liner and deposited oxide',
   },
   {
     year: '1998',

@@ -1906,6 +1906,14 @@ const list: Citation[] = [
     url: 'https://patents.google.com/patent/US4753898A/en',
     short: 'US 4,753,898',
   },
+  {
+    key: 'ibm-sti-patent',
+    num: 238,
+    title: 'Shallow trench isolation with thin nitride liner',
+    publisher: 'US Patent 5,447,884',
+    url: 'https://patents.google.com/patent/US5447884A/en',
+    short: 'US 5,447,884',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

@@ -1,45 +1,64 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
-  <title>LOCOS isolation with a bird's beak versus shallow trench isolation (STI)</title>
-  <desc>Two isolation schemes side by side: LOCOS with its bird's beak, and shallow trench isolation with vertical walls. Not to scale.</desc>
+  <title>LOCOS isolation with its bird's beak against shallow trench isolation, both drawn across one dashed line that marks the original silicon surface</title>
+  <desc>Two isolation schemes side by side, sharing a dashed datum line that marks the original silicon surface. Left: LOCOS, where the field oxide rises above the datum in the field region and its bird's beak runs below the datum, tapering to a point inside the active area on each side. Right: a shallow trench with slightly tapered walls, a thin thermal liner along its walls and floor, and a deposited oxide fill whose top is level with the datum. Both panels label the remaining active silicon with Si. Not to scale.</desc>
   <rect width="800" height="400" fill="#ffffff" />
   <style>
-    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .sm { font: 11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
     .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .bad { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
-    .good { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2f855a; }
+    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .bad { font: 600 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .good { font: 600 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2f855a; }
     .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
     .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
+    .liner { fill: #f6e05e; stroke: #975a16; stroke-width: 1; }
+    .fill { fill: #fefcbf; stroke: #b7791f; stroke-width: 1; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .datum { fill: none; stroke: #a0aec0; stroke-width: 1; stroke-dasharray: 5 4; }
     .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
   </style>
 
-  <text class="head" x="235" y="44" text-anchor="middle">LOCOS</text>
+  <text class="head" x="215" y="44" text-anchor="middle">LOCOS</text>
+  <text class="bad" x="215" y="68" text-anchor="middle">bird's beak eats active area</text>
+
   <text class="head" x="585" y="44" text-anchor="middle">STI (shallow trench)</text>
-  <line class="divider" x1="420" y1="60" x2="420" y2="320" />
+  <text class="good" x="585" y="68" text-anchor="middle">no encroachment, flat surface</text>
+
+  <line class="divider" x1="400" y1="88" x2="400" y2="320" />
 
   <!-- ================= LEFT: LOCOS ================= -->
-  <rect class="si" x="85" y="205" width="300" height="80" />
-  <text class="lbl" x="235" y="170" text-anchor="middle">field oxide</text>
-
-  <!-- thick oxide mound, plus the thin lateral wedges that eat active area -->
-  <path class="ox" d="M190,215 L190,196 Q190,178 212,178 L258,178 Q280,178 280,196 L280,215 Z" />
-  <path class="ox" d="M190,207 L152,207 L190,215 Z" />
-  <path class="ox" d="M280,207 L318,207 L280,215 Z" />
-
-  <text class="sm" x="120" y="250">Si</text>
-  <text class="sm" x="330" y="250">Si</text>
-
-  <text class="bad" x="171" y="312" text-anchor="middle">bird's beak</text>
-  <path d="M171,304 L171,216" stroke="#e53e3e" stroke-width="1.2" stroke-dasharray="4 4" fill="none" />
+  <!-- silicon drawn without a stroke on its top edge: the dashed datum is the surface -->
+  <path class="si" d="M 345,220 V 330 H 85 V 220" />
+  <path class="datum" d="M 85,220 H 385" />
+  <!-- field oxide straddles the datum: the head grows up in the field region, the beak runs below the datum into the active area -->
+  <path class="ox" d="M 96,221
+                      L 126,221
+                      C 130,214 136,200 138,196
+                      C 142,186 150,181.5 162,181
+                      L 268,181
+                      C 280,181.5 288,186 292,196
+                      C 294,200 300,214 304,221
+                      L 334,221
+                      C 322,228 308,234 296,242
+                      C 270,252 240,254 215,254
+                      C 190,254 160,252 134,242
+                      C 122,234 108,228 96,221 Z" />
+  <text class="lbl" x="215" y="223" text-anchor="middle">field oxide</text>
+  <text class="bad" x="88" y="262">bird's beak</text>
+  <path class="lead" d="M 118,252 L 121,232" />
+  <text class="sm" x="110" y="300" text-anchor="middle">Si</text>
+  <text class="sm" x="322" y="300" text-anchor="middle">Si</text>
 
   <!-- ================= RIGHT: STI ================= -->
-  <rect class="si" x="435" y="205" width="300" height="80" />
-  <text class="lbl" x="585" y="196" text-anchor="middle">trench oxide</text>
-  <rect class="ox" x="545" y="205" width="80" height="42" />
-
-  <text class="sm" x="470" y="250">Si</text>
-  <text class="sm" x="690" y="250">Si</text>
-
-  <text class="good" x="585" y="312" text-anchor="middle">vertical walls, no encroachment</text>
-  <path d="M585,304 L585,250" stroke="#38a169" stroke-width="1.2" stroke-dasharray="4 4" fill="none" />
+  <path class="si" d="M 745,220 V 330 H 425 V 220" />
+  <path class="datum" d="M 415,220 H 745" />
+  <text class="sm" x="435" y="210">original surface</text>
+  <!-- thermal liner grown on the etched trench walls, then the deposited fill, flush with the datum -->
+  <path class="liner" d="M 545,220 L 553,271 Q 555,288 572,288 L 598,288 Q 615,288 617,271 L 625,220 Z" />
+  <path class="fill" d="M 549,220 L 557,271 Q 559,284 572,284 L 598,284 Q 611,284 613,271 L 621,220 Z" />
+  <text class="sm" x="540" y="262" text-anchor="end">liner oxide</text>
+  <path class="lead" d="M 542,262 L 549,247" />
+  <text class="sm" x="632" y="246">deposited oxide</text>
+  <path class="lead" d="M 630,246 L 610,262" />
+  <text class="sm" x="445" y="300" text-anchor="middle">Si</text>
+  <text class="sm" x="725" y="300" text-anchor="middle">Si</text>
 </svg>
