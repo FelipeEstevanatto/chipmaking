@@ -99,11 +99,13 @@ Production arrived **before the 0.25 µm node**, not at it. IBM led the applicat
 
 <TransistorFacts year="1998" />
 
-In **SOI** (*Silicon On Insulator*) the transistor is built in a **thin silicon film** on top of a **buried oxide** layer (BOX). The junctions no longer touch the substrate, which slashes **junction capacitance** (faster switching for less energy), eliminates the **latch-up** that plagues bulk CMOS, and improves radiation tolerance. IBM popularised the technique in high-performance processors from ~**0.22 µm**; today the **FD-SOI** variant (ultra-thin body) occupies niches in low-power and RF designs.
+In **SOI** (*Silicon On Insulator*) the transistor is built in a **thin silicon film** on top of a **buried oxide** layer (BOX). The junctions no longer touch the substrate, which slashes **junction capacitance** (faster switching for less energy), eliminates the **latch-up** that plagues bulk CMOS, and improves radiation tolerance. IBM brought SOI to its servers through the RS64 family, which was already shipping in iSeries 400 machines in **1998** <Cite id="ibm-rs64-soi" />. The company's first SOI processor was the **RS64-III *IStar***, still on the **0.22 µm** process <Cite id="wikipedia-rs64" />; in **2000** the **RS64-IV** shipped on **0.18 µm** copper SOI <Cite id="ibm-rs64-soi" />, and today the **FD-SOI** variant (ultra-thin body) occupies niches in low-power and RF designs.
 
-<DiagramFigure src="/assets/soi.svg" alt="Comparison of a bulk silicon transistor with an SOI transistor on a buried oxide">
-Above, a bulk silicon transistor; below, a thin silicon film isolated by a buried oxide.
+<DiagramFigure src="/assets/soi.svg" alt="Cross-sections of two transistors on the same surface line: on the left, bulk silicon with the n+ regions embedded in the substrate; on the right, SOI with the transistor built in a thin film on a buried oxide over a handle wafer">
+Left, the bulk transistor: the n+ junctions run into the substrate, which continues downwards with no boundary. Right, SOI: the same transistor fits in the thin film, the n+ junctions stop at the buried oxide, and the handle wafer below the oxide is electrically inert. Both panels share the same surface line.
 </DiagramFigure>
+
+The buried oxide is not grown in the transistor, it comes inside the wafer. **SIMOX** formed it with an extremely high-dose oxygen implant, which called for heavy implantation machines of limited output; **Smart Cut**, patented by CEA in **1994**, implants hydrogen ions, bonds the wafer face to a support substrate and heats the stack above **500 °C**, where the pressure of the microbubbles splits the thin film off the rest of the wafer <Cite id="bruel-smartcut" />. The film thickness then follows the implantation energy: **10 keV** yields about **0.1 µm** <Cite id="bruel-smartcut" />.
 
 The architecture became famous in the 2005–2006 console generation: the **Cell** in the PlayStation 3 and the **Xenon** in the Xbox 360 both shipped on 90 nm SOI, while AMD's **Athlon 64** brought the same technology to PCs <Cite id="ibm-cell" />.
 
@@ -237,7 +239,7 @@ Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node num
 
 Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the table at the top of the chapter.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },

@@ -110,12 +110,12 @@ export const ERAS: Era[] = [
     descPt: 'Uma camada fina de silício sobre óxido enterrado isola as junções do substrato e reduz capacitâncias parasitas.',
     descEn: 'A thin silicon film on a buried oxide isolates the junctions from the substrate and cuts parasitic capacitance.',
     productsPt:
-      'PlayStation 3 (Cell) e Xbox 360 (Xenon), ambos em SOI de 90 nm, e o Athlon 64 da AMD.',
+      'PlayStation 3 (Cell) e Xbox 360 (Xenon), ambos em SOI de 90 nm, e o Athlon 64 da AMD; nos servidores, o RS64-IV da IBM saiu em SOI de 0,18 µm com cobre em 2000.',
     productsEn:
-      'The PlayStation 3 (Cell) and Xbox 360 (Xenon), both on 90 nm SOI, plus AMD’s Athlon 64.',
+      'The PlayStation 3 (Cell) and Xbox 360 (Xenon), both on 90 nm SOI, plus AMD’s Athlon 64; on the server side, IBM’s RS64-IV shipped in 2000 on 0.18 µm copper SOI.',
     src: '/assets/soi.svg',
-    altPt: 'Comparação entre transistor em silício maciço e transistor SOI sobre óxido enterrado',
-    altEn: 'Comparison of a bulk silicon transistor with an SOI transistor on a buried oxide',
+    altPt: 'Corte de dois transistores na mesma superfície: em silício maciço, com as junções n+ dentro do substrato, e em SOI, com filme fino sobre óxido enterrado e um wafer de suporte inerte abaixo',
+    altEn: 'Cross-sections of two transistors on the same surface: bulk silicon with the n+ junctions inside the substrate, and SOI with a thin film on a buried oxide and an inert handle wafer below',
   },
   {
     year: '2003',

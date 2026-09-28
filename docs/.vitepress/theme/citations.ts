@@ -1914,6 +1914,30 @@ const list: Citation[] = [
     url: 'https://patents.google.com/patent/US5447884A/en',
     short: 'US 5,447,884',
   },
+  {
+    key: 'wikipedia-rs64',
+    num: 239,
+    title: 'IBM RS64 (compilation of processor specifications)',
+    publisher: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/IBM_RS64',
+    short: 'Wikipedia (RS64)',
+  },
+  {
+    key: 'ibm-rs64-soi',
+    num: 240,
+    title: 'A multithreaded PowerPC processor for commercial servers (arquivo de 2005)',
+    publisher: 'IBM Journal of Research and Development 44(6)',
+    url: 'http://web.archive.org/web/20051220065725/http://www.research.ibm.com:80/journal/rd/446/borkenhagen.html',
+    short: 'IBM J. Res. Dev. 44(6)',
+  },
+  {
+    key: 'bruel-smartcut',
+    num: 241,
+    title: 'Process for the production of thin semiconductor material films',
+    publisher: 'US Patent 5,374,564',
+    url: 'https://patents.google.com/patent/US5374564A/en',
+    short: 'US 5,374,564',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<
