@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360" role="img">
+  <title>What one tonne of silicon takes out of the submerged-arc furnace</title>
+  <desc>Inputs &#8212; quartz, carbon and 11 to 13 MWh of electricity &#8212; against the outputs of one tonne of silicon: the metal itself, 0.2 to 0.4 tonnes of condensed silica fume, and an off-gas whose energy content is of the same order as the electricity fed in. Balance diagram from published figures, not a plant measurement.</desc>
+  <rect width="960" height="360" fill="#ffffff" />
+  <style>
+    .h { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .n { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .c { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .box { fill: #fefcbf; stroke: #b7791f; stroke-width: 1.6; }
+    .edge { fill: none; stroke: #718096; stroke-width: 2; }
+  </style>
+
+  <defs>
+    <marker id="balArrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L7,3.5 L0,7 z" fill="#718096" />
+    </marker>
+  </defs>
+
+  <text class="h" x="480" y="44" text-anchor="middle">Per tonne of silicon tapped</text>
+
+  <!-- ============ the furnace ============ -->
+  <rect class="box" x="372" y="120" width="156" height="120" rx="10" />
+  <text class="n" x="450" y="172" text-anchor="middle">Furnace</text>
+  <text class="c" x="450" y="198" text-anchor="middle">about 2000 &#176;C</text>
+
+  <!-- ============ inputs ============ -->
+  <text class="n" x="336" y="102" text-anchor="end">Quartz</text>
+  <text class="c" x="336" y="126" text-anchor="end">SiO&#8322;</text>
+
+  <text class="n" x="336" y="192" text-anchor="end">Carbon</text>
+  <text class="c" x="336" y="216" text-anchor="end">coke, coal, charcoal, wood chips</text>
+
+  <text class="n" x="336" y="282" text-anchor="end">Electricity</text>
+  <text class="c" x="336" y="306" text-anchor="end">11 to 13 MWh per tonne</text>
+
+  <g class="edge" marker-end="url(#balArrow)">
+    <line x1="344" y1="108" x2="366" y2="144" />
+    <line x1="344" y1="198" x2="366" y2="184" />
+    <line x1="344" y1="288" x2="366" y2="220" />
+  </g>
+
+  <!-- ============ outputs ============ -->
+  <text class="n" x="568" y="102">Silicon metal</text>
+  <text class="c" x="568" y="126">1 tonne, 98.5 to 99.5 % Si</text>
+
+  <text class="n" x="568" y="192">Silica fume</text>
+  <text class="c" x="568" y="216">0.2 to 0.4 tonnes, condensed and collected</text>
+
+  <text class="n" x="568" y="282">Off-gas</text>
+  <text class="c" x="568" y="306">CO and SiO, energy of the same order</text>
+
+  <g class="edge" marker-end="url(#balArrow)">
+    <line x1="534" y1="144" x2="560" y2="108" />
+    <line x1="534" y1="184" x2="560" y2="198" />
+    <line x1="534" y1="220" x2="560" y2="288" />
+  </g>
+</svg>

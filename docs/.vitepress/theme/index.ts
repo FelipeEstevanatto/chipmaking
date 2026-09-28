@@ -5,6 +5,7 @@ import YouTubeEmbed from './YouTubeEmbed.vue'
 import VideoPressEmbed from './VideoPressEmbed.vue'
 import UsgsProductionChart from './UsgsProductionChart.vue'
 import DataChart from './DataChart.vue'
+import FurnaceChemistry from './FurnaceChemistry.vue'
 import TransistorFacts from './TransistorFacts.vue'
 import TransistorTimeline from './TransistorTimeline.vue'
 import Cite from './Cite.vue'
@@ -13,6 +14,7 @@ import RefList from './RefList.vue'
 import UsgsMcsLinks from './UsgsMcsLinks.vue'
 import SeeAlso from './SeeAlso.vue'
 import SupplyChainMap from './SupplyChainMap.vue'
+import CrystalViewer from './CrystalViewer.vue'
 import ReadingProgress from './ReadingProgress.vue'
 import DocMeta from './DocMeta.vue'
 import GlossaryTable from './GlossaryTable.vue'
@@ -27,6 +29,7 @@ export default {
     app.component('VideoPressEmbed', VideoPressEmbed)
     app.component('UsgsProductionChart', UsgsProductionChart)
     app.component('DataChart', DataChart)
+    app.component('FurnaceChemistry', FurnaceChemistry)
     app.component('TransistorFacts', TransistorFacts)
     app.component('TransistorTimeline', TransistorTimeline)
     app.component('Cite', Cite)
@@ -35,6 +38,7 @@ export default {
     app.component('UsgsMcsLinks', UsgsMcsLinks)
     app.component('SeeAlso', SeeAlso)
     app.component('SupplyChainMap', SupplyChainMap)
+    app.component('CrystalViewer', CrystalViewer)
     app.component('ReadingProgress', ReadingProgress)
     app.component('DocMeta', DocMeta)
     app.component('GlossaryTable', GlossaryTable)

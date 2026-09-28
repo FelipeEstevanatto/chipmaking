@@ -1955,6 +1955,39 @@ const list: Citation[] = [
     url: 'https://en.wikipedia.org/wiki/Photolithography',
     short: 'Wikipedia (fotolitografia)',
   },
+  {
+    key: 'sibelco-spruce-pine-video',
+    num: 244,
+    title: 'Sibelco Spruce Pine IOTA HPQ',
+    publisher: 'Sibelco Group (vídeo)',
+    url: 'https://www.youtube.com/watch?v=MZf3ksYsHz8',
+    short: 'Sibelco (vídeo Spruce Pine)',
+  },
+  {
+    key: 'ntnu-silicon-video',
+    num: 245,
+    title: 'The Production of Silicon',
+    publisher: 'NTNU — Norwegian University of Science and Technology (vídeo)',
+    url: 'https://www.youtube.com/watch?v=D1ALNg3z2gk',
+    short: 'NTNU (vídeo)',
+  },
+  {
+    key: 'abc-silicon-smelter-video',
+    num: 246,
+    title: '“It’s Like Working In A Volcano”: How Silicon Is Made',
+    publisher: 'ABC Science — trecho de Catalyst: The Grid (vídeo)',
+    url: 'https://www.youtube.com/watch?v=5eVsQSn_EWc',
+    short: 'ABC Science (vídeo)',
+  },
+  {
+    key: 'struct-quartz-levien',
+    num: 247,
+    title: 'Quartz (SiO₂) crystal structure at 1 atm — determination by Levien, Prewitt & Weidner',
+    publisher:
+      'American Mineralogist 65, 920–930 — entry 9000775 of the Crystallography Open Database',
+    url: 'https://www.crystallography.net/cod/9000775.html',
+    short: 'Levien et al. (1980)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

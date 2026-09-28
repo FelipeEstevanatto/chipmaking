@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img">
+  <title>Impurity concentrations along the quartz chain, on a logarithmic axis</title>
+  <desc>Logarithmic axis from 1 ppb to 10,000 ppm. Marks the impurity level of metallurgical silicon, of high-purity quartz, of the boron that ruins a crystal, and of the boron, alkali and transition metals that a crucible tolerates. A diagram of published limits, not a measurement of one sample.</desc>
+  <rect width="960" height="460" fill="#ffffff" />
+  <style>
+    .t { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .k { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
+    .v { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
+    .l { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .axis { font: 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .rule { stroke: #a0aec0; stroke-width: 1.6; }
+    .tick { stroke: #cbd5e0; stroke-width: 1.2; }
+    .lead { fill: none; stroke-width: 1.4; stroke-dasharray: 5 4; }
+  </style>
+
+  <!-- ============ key: the limits a crucible imposes ============ -->
+  <text class="t" x="70" y="82">What a crucible tolerates</text>
+  <circle cx="78" cy="112" r="6" fill="#c53030" />
+  <text class="k" x="96" y="118">Boron, in the crucible quartz</text>
+  <text class="v" x="470" y="118" text-anchor="end">0.04 ppm</text>
+  <circle cx="78" cy="146" r="6" fill="#805ad5" />
+  <text class="k" x="96" y="152">Potassium, lithium and sodium</text>
+  <text class="v" x="470" y="152" text-anchor="end">80 ppb</text>
+  <circle cx="78" cy="180" r="6" fill="#2f855a" />
+  <text class="k" x="96" y="186">Critical transition metals</text>
+  <text class="v" x="470" y="186" text-anchor="end">50 ppb</text>
+
+  <!-- ============ axis ============ -->
+  <line class="rule" x1="70" y1="380" x2="862" y2="380" />
+  <g class="tick">
+    <line x1="70" y1="374" x2="70" y2="386" />
+    <line x1="172" y1="374" x2="172" y2="386" />
+    <line x1="275" y1="374" x2="275" y2="386" />
+    <line x1="377" y1="374" x2="377" y2="386" />
+    <line x1="480" y1="374" x2="480" y2="386" />
+    <line x1="582" y1="374" x2="582" y2="386" />
+    <line x1="685" y1="374" x2="685" y2="386" />
+    <line x1="787" y1="374" x2="787" y2="386" />
+  </g>
+  <g class="axis" text-anchor="middle">
+    <text x="70" y="408">1 ppb</text>
+    <text x="172" y="408">10 ppb</text>
+    <text x="275" y="408">100 ppb</text>
+    <text x="377" y="408">1 ppm</text>
+    <text x="480" y="408">10 ppm</text>
+    <text x="582" y="408">100 ppm</text>
+    <text x="685" y="408">1,000 ppm</text>
+    <text x="787" y="408">10,000 ppm</text>
+  </g>
+  <text class="axis" x="70" y="442">Impurity concentration, by mass (logarithmic scale)</text>
+
+  <!-- ============ the furnace product: every other element in the metal ============ -->
+  <line class="lead" stroke="#dd6b20" x1="782" y1="96" x2="782" y2="372" />
+  <text class="l" x="782" y="86" text-anchor="middle">MG-Si: 5,000 to 15,000 ppm</text>
+  <line x1="757" y1="380" x2="806" y2="380" stroke="#dd6b20" stroke-width="15" stroke-linecap="round" />
+
+  <!-- ============ high-purity quartz: total impurities ============ -->
+  <line class="lead" stroke="#2b6cb0" x1="480" y1="252" x2="480" y2="372" />
+  <circle cx="480" cy="380" r="7" fill="#2b6cb0" />
+  <text class="l" x="480" y="242" text-anchor="middle">Quartz: 8 to 10 ppm total</text>
+
+  <!-- ============ boron in the finished crystal ============ -->
+  <line class="lead" stroke="#c53030" x1="377" y1="252" x2="377" y2="372" />
+  <circle cx="377" cy="380" r="7" fill="#c53030" />
+  <text class="l" x="360" y="242" text-anchor="end">Boron in the crystal: 1 ppm</text>
+
+  <!-- ============ the three key entries, marked on the axis ============ -->
+  <circle cx="234" cy="380" r="7" fill="#c53030" />
+  <circle cx="244" cy="380" r="7" fill="#2f855a" />
+  <circle cx="265" cy="380" r="7" fill="#805ad5" />
+  <path class="lead" stroke="#718096" d="M234,372 L234,340 L265,340 L265,372" />
+  <path class="lead" stroke="#718096" d="M249,340 L249,300 L70,300 L70,206" />
+</svg>

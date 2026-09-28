@@ -10,6 +10,16 @@ Every chapter of this site treats silicon as a feedstock: ore, furnace, ingot, w
 
 They come back at every step of the chain. The [submerged arc furnace](/en/mineracao-mg-si) has to beat a strong bond; [crystal growth](/en/fabricacao-wafers) needs a lattice that repeats; the [solar cell](/en/celulas-solares) is limited by a number that sits in this table from the start.
 
+This page works through, in order:
+
+1. [The element's data card](#the-element-s-data-card) — the constants the industry does not choose.
+2. [The lattice silicon forms](#the-lattice-silicon-forms) — how those numbers arrange themselves in space, and what silicon does with carbon, germanium and oxygen.
+3. [The indirect gap](#the-indirect-gap-explains-more-than-solar) — why it limits the absorption of light.
+4. [The three isotopes](#the-three-isotopes) — the mixture nature delivers.
+5. [Why the industry uses this element](#why-the-industry-uses-this-element) — what silicon has, and what it does not.
+
+The rest of the page follows that order.
+
 ## The element's data card
 
 | Quantity | Value |
@@ -30,7 +40,17 @@ They come back at every step of the chain. The [submerged arc furnace](/en/miner
 
 <Cite id="elem-ioffe" /> <Cite id="elem-sze" /> <Cite id="elem-ciaaw" />
 
-Three of those numbers have industrial consequences.
+## The lattice silicon forms
+
+The data card describes an arrangement, not a lone atom: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the three bonds industry builds with it: carbon, germanium and oxygen. Drag to rotate, and use the extent control to repeat more cells.
+
+<ClientOnly>
+  <CrystalViewer />
+</ClientOnly>
+
+The crystal continues in [Crystal structure](/en/estrutura-wafers), where the same lattice explains the Miller indices and the anisotropy of the planes.
+
+Three of the numbers in the card have industrial consequences.
 
 The first is density. Solid silicon is **less dense than its own melt** — 2.33 against about 2.57 g/cm³. Almost every material shrinks as it solidifies; silicon **expands**. That is why the crystal grows floating on the melt in the [Czochralski](/en/fabricacao-wafers) process rather than sinking into it <Cite id="zulehner-2000" />.
 
@@ -74,7 +94,7 @@ For the industry the practical consequence is different. That **0.47% of ²⁹Si
 
 None of those properties is the best possible on its own. It is the combination, plus the industrial chain built around them, that sustains silicon's position — the same conclusion [solar cells and modules](/en/celulas-solares) reaches.
 
-<SourceNote label="Sources" :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit']" />
+<SourceNote label="Sources" :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit', 'wbg-ioffe-sic', 'intel-strain', 'struct-quartz-levien']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Crystal structure', href: '/en/estrutura-wafers', note: 'the diamond cubic lattice and doping' },

@@ -6,15 +6,27 @@ dataAsOf: 2025
 
 # Quartz mining and metallurgical silicon production
 
-## Quartz mining (HPQ)
-
 The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **unlimited** — although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
 
 Quartz enters the chain along **two distinct paths**, and it is worth separating them from the outset: it is the **raw material** for silicon (reduced to MG-Si, as we shall see next) and it is also the material of the **crucible** that holds the melt during crystal growth. The first use tolerates impurities that the chemistry downstream removes; the second does not.
 
-### Spruce Pine: where the quartz is pure enough
+The chapter follows the material in seven steps:
+
+1. [Spruce Pine](#spruce-pine-where-the-quartz-is-pure-enough) — the deposit that keeps the market supplied, and the two companies that mine there.
+2. [Drag, Norway](#drag-norway-where-the-quartz-is-purified) — where the raw ore becomes quartz at 99.999% SiO₂.
+3. [Why boron decides](#why-boron-decides) — the impurity limits a crucible imposes on the quartz.
+4. [Carbothermal reduction](#carbothermal-reduction-mg-si) — the three reactions that turn SiO₂ into silicon.
+5. [The submerged-arc furnace](#the-submerged-arc-furnace) — the reactor where they happen.
+6. [Silica fume and off-gas energy](#silica-fume-and-off-gas-energy) — what leaves the furnace besides the metal.
+7. [Scale and uses of MG-Si](#scale-and-uses-of-mg-si) — how much silicon the world makes and where it goes.
+
+The text follows that order.
+
+## Quartz mining (HPQ)
 
 Not every silica will do for a crucible. The quartz must be free of **boron** and of alkali metals down to the **parts-per-billion** level, and deposits like that are exceedingly rare: roughly **70% to 90% of the world's high-purity quartz** comes from a single region — the pegmatites of **Spruce Pine**, in the Appalachian mountains of North Carolina <Cite id="sibelco-hpq" />.
+
+### Spruce Pine: where the quartz is pure enough
 
 Two companies mine there <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
 
@@ -25,11 +37,25 @@ Two companies mine there <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
 
 Unimin merged with Fairmount Santrol in 2018, and the resulting company took the name **Covia**. The **high-purity quartz business did not go with it**. It was carved out to the Belgian parent **Sibelco** before the merger, and Sibelco still operates Spruce Pine and sells the IOTA® line <Cite id="sibelco-hpq" />. Treating "Unimin became Covia" as the whole story leaves the impression that Spruce Pine changed hands. It stayed with Sibelco.
 
+What is mined there is a rock, not an isolated crystal: the district's pegmatitic granite carries quartz, feldspar and mica grown together into large crystals, and that mixture is what purification has to undo <Cite id="quartzcorp-hpq" />.
+
+<DiagramFigure src="/assets/spruce-pine-pegmatite.jpg" alt="Hand specimen of pegmatitic granite from the Spruce Pine district, with grey and milky quartz, white and pink feldspar, and dark sheets of mica">
+A specimen of the pegmatitic granite of the Spruce Pine district, from the Wiseman quarry. The quartz (grey) comes with feldspar (white and pink) and mica (black), the phases that flotation and magnetic separation later remove. James St. John — <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
+</DiagramFigure>
+
+Sibelco, one of the two miners at Spruce Pine, has published a video about the site and the IOTA® line <Cite id="sibelco-spruce-pine-video" />.
+
+<YouTubeEmbed id="MZf3ksYsHz8" title="Sibelco Spruce Pine IOTA HPQ (Sibelco Group)" />
+
 ### Drag, Norway: where the quartz is purified
 
 The other hub sits above the Arctic Circle. In **Drag**, in the municipality of Hamarøy (Nordland), **Norwegian Crystallites AS** was founded in 1996 by Norsk Mineral to produce ultra-high-purity quartz <Cite id="quartzcorp-hpq" />. In 2011 it and the quartz assets of France's Imerys merged to form **The Quartz Corp**, and the Drag plant became the final purification point on the route <Cite id="quartzcorp-hpq" />.
 
-Part of the ore comes from the region's own dozens of pegmatite bodies; most of it, however, crosses the Atlantic from Spruce Pine. Purification is a sequence of steps <Cite id="quartzcorp-hpq" />:
+Part of the ore comes from the region's own dozens of pegmatite bodies; most of it, however, crosses the Atlantic from Spruce Pine. Purification is a sequence of four steps, each one removing a class of contaminant <Cite id="quartzcorp-hpq" />:
+
+<DiagramFigure src="/assets/quartz-purification.svg" alt="Flow of four steps: flotation, which removes feldspar and mica; magnetic separation, which removes iron minerals; acid leaching, which attacks surface inclusions; and calcination, which eliminates organic residue, up to a product of 99.999% SiO₂">
+The four purification steps at Drag, in the order the material goes through them. The finished product reaches 99.999% SiO₂ <Cite id="quartzcorp-hpq" />.
+</DiagramFigure>
 
 1. **flotation** — removes feldspar and mica;
 2. **magnetic separation** — removes ferrous contaminants;
@@ -44,6 +70,10 @@ Because the quartz becomes the **crucible** in which the silicon is melted, it s
 
 **Boron** is the critical case, because it is the dopant that sets the resistivity of p-type silicon. A fraction of **1 ppm** is already enough to collapse the crystal's resistivity, and resistivity is what sets the finished wafer's electrical behaviour <Cite id="sibelco-hpq" />. CZ crucibles therefore require **boron below 0.04 ppm**, or 40 parts per billion <Cite id="sibelco-hpq" />. Alkali metals (**K, Li, Na**) are the other limit: they lower the crucible's softening point and reduce its resistance to deformation, shortening the component's life and hurting crystal yield <Cite id="sibelco-hpq" />.
 
+<DiagramFigure src="/assets/quartz-purity-ladder.svg" alt="Logarithmic scale of impurity concentration, from 1 ppb to 10,000 ppm, with metallurgical silicon between 5,000 and 15,000 ppm, high-purity quartz between 8 and 10 ppm, boron in the crystal at 1 ppm, and, at the clean end, the limits of the crucible quartz: boron at 0.04 ppm, transition metals at 50 ppb and potassium, lithium and sodium at 80 ppb">
+The axis spans seven orders of magnitude, and that distance is what separates the metal that leaves the furnace from the quartz that can become a crucible. The MG-Si band is the complement of its silicon content (98.5 to 99.5% ⇒ 5,000 to 15,000 ppm of other elements); the 1 ppm boron mark is a limit in the crystal, and the three rows in the key are limits in the quartz <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
+</DiagramFigure>
+
 The most demanding grade in the IOTA® line reaches **99.9992% SiO₂**, with K + Li + Na totalling **80 ppb** and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />. It is a niche material: what sustains the industry's volume sits a few digits below, and The Quartz Corp works at **99.999%** silica <Cite id="quartzcorp-hpq" />.
 
 ## Carbothermal reduction (MG-Si)
@@ -55,6 +85,10 @@ Quartz is mixed with carbon-rich reducing agents (charcoal, coke, coal and wood 
 ```text
 SiO₂ (s) + 2C (s) → Si (l) + 2CO (g)
 ```
+
+NTNU, the Norwegian university of science and technology, has published a video explaining how silicon is produced <Cite id="ntnu-silicon-video" />.
+
+<YouTubeEmbed id="D1ALNg3z2gk" title="The Production of Silicon (NTNU)" />
 
 Inside the furnace, the real reaction happens in distinct thermal stages <Cite id="pv-education" />:
 
@@ -78,6 +112,14 @@ A third reaction closes the furnace's loop <Cite id="pv-mfg-polysilicon" />:
 
 The **silicon monoxide** (SiO) and the CO rise through the cooler zones of the charge and recombine, regenerating SiO₂ and carbon that feed the top of the furnace again. That is why the furnace is practically **self-sufficient in reactants**: it is a major consumer of electricity, but it wastes very little raw material <Cite id="pv-mfg-polysilicon" />.
 
+The animation below walks through those reactions at the level of the atoms: carbon taking the oxygen out of the quartz, the silicon coming loose, and the gas that rises and turns back into charge.
+
+<ClientOnly>
+  <FurnaceChemistry />
+</ClientOnly>
+
+The drawing is a sketch of the bond changes, not a balanced atom count: the equation of each step is printed under the canvas, and that is what carries the stoichiometry <Cite id="pv-education" /> <Cite id="pv-mfg-polysilicon" />.
+
 ### The submerged-arc furnace
 
 <DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Cross-section of a submerged electric arc furnace: three carbon electrodes in the charge, a solid outer reaction zone above a molten inner reaction zone, off-gas collected as condensed silica fume, and silicon tapped from the bottom">
@@ -90,11 +132,19 @@ A layer of solid material (the **outer reaction zone**) is kept on top of the mo
 
 The silicon is then **tapped through a hole at the bottom** of the furnace and refined by slag treatment or gas purging, which remove inclusions and adjust the composition to the specified value. The metal is left to solidify in a mould and is then crushed to size <Cite id="saimm" />.
 
+<YouTubeEmbed id="5eVsQSn_EWc" title="“It’s Like Working In A Volcano”: How Silicon Is Made (ABC Science)" />
+
+The ABC Science video goes inside one of the largest silicon smelters in the world to show the process <Cite id="abc-silicon-smelter-video" />.
+
 The resulting MG-Si has a typical specification of **98.5% to 99.5% Si**, with carbon, alkali-earth and transition metals, boron and phosphorus among its characteristic impurities <Cite id="saimm" />. Those impurities travel with the material into the chemical purification described in [Polysilicon](/en/polissilicio).
 
 ### Silica fume and off-gas energy
 
 Not everything that enters the furnace leaves as silicon. Each tonne of silicon metal produces **0.2 to 0.4 tonnes of condensed silica fume**, an ultrafine dust carried by the gas and collected at the filter plant <Cite id="saimm" />. Far from being waste, silica fume has found a wide array of industrial applications <Cite id="saimm" />.
+
+<DiagramFigure src="/assets/silicon-furnace-balance.svg" alt="Mass and energy balance per tonne of silicon: in go quartz, carbon and electricity, 11 to 13 MWh; out come one tonne of silicon metal, 0.2 to 0.4 tonnes of silica fume and an off-gas whose energy is of the same order as the electricity fed in">
+The balance for one tonne of silicon, from the figures in this chapter: silica fume and off-gas are by-products, not waste <Cite id="saimm" />.
+</DiagramFigure>
 
 The off-gas is the other relevant by-product. Its energy content is of the **same order of magnitude** as the electrical energy fed into the furnace <Cite id="saimm" />. Plants usually recover it as hot water or saturated steam for heating, or as superheated steam for electricity <Cite id="saimm" />.
 
@@ -106,7 +156,13 @@ World MG-Si production exceeds **1 million metric tonnes per year**, at a cost o
 
 Much of the silicon made in these furnaces never becomes MG-Si for chemicals or chips. It leaves as **ferrosilicon**, used to deoxidise and alloy steel and cast iron <Cite id="saimm" />. Photovoltaics is the fastest-growing outlet for the metal that does go on to be purified <Cite id="saimm" />.
 
-<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
+That set of factors, not the ore, is what decides where a plant is built.
+
+<DiagramFigure src="/assets/elkem-salten-ferrosilicon.jpg" alt="Aerial view of Elkem's plant at Salten, in Norway, between the fjord and the mountains, with the quartz stockyard beside the industrial buildings">
+Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
+</DiagramFigure>
+
+<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs' },

@@ -74,6 +74,38 @@ prose from props goes on the audit's ignore list.
 - A chart with data cites `sourceIds`; a drawing with no data behind it sets `schematic: true` and the
   caption says it is a diagram.
 
+## The 3D viewer
+
+`theme/CrystalViewer.vue` draws the crystals of `theme/crystal/structures.ts` in WebGL2: a cell (lattice
+parameters, basis sites, the symmetry operations in CIF form) goes in, `crystal/geometry.ts` repeats
+it and finds the bonds by distance, and `crystal/renderer.ts` instantiates a sphere and a cylinder
+over the result. A new structure is a data entry, never a hand-placed set of coordinates.
+
+- Distances follow the published cell and the display radii are one common fraction of the covalent
+  radii; the panel states that in the reader's language, because a drawing that shrinks atoms has to
+  say so.
+- The viewer is wrapped in `<ClientOnly>` and its class sits on the glossary audit's ignore list, like
+  every component that renders prose from props.
+- It has to work without a pointer and without a mouse: the buttons, the arrow keys and `Home` are
+  wired, and the scene stands still for a reader who asked for reduced motion.
+
+## The furnace animation
+
+`theme/FurnaceChemistry.vue` is the interactive view of the carbothermal reactions in *Mineração e MG-Si*: a
+canvas player with four beats, wrapped in `<ClientOnly>`.
+
+- `theme/furnace-stages.ts` holds the beats (temperature band, equation, localised title and note, and
+  the cast of atoms). `theme/furnace-scene.ts` is the plain canvas model that animates them, with no
+  Vue in it, so the choreography can be exercised from a scratch page.
+- Actors are matched by `id` across stages, so an atom that carries over keeps travelling; a stage
+  that does not mention an actor sends it away. Bonds are only drawn while their two atoms are close
+  enough, which is what keeps a later stage's bond from stretching across the panel.
+- The drawing is a schematic of the bond changes, not a balanced atom count, and the caption says so.
+  The equation printed under the canvas carries the stoichiometry.
+- The class sits on the glossary audit's ignore list, the palette follows the site's light and dark
+  themes, the loop pauses when the component is off screen, and reduced motion gets the same four
+  pictures without the animation.
+
 ## Reading aids
 
 `ReadingProgress.vue` draws the progress bar; `DocMeta.vue` shows reading time, figure count and the
