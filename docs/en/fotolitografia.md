@@ -10,7 +10,7 @@ Photolithography is the step that **draws the circuit** on the wafer. **ASML** m
 
 The wafer positioning stage weighs about **15 kg** and can accelerate with a force of up to **20 G** (roughly three times the acceleration of a Formula 1 car), moving with **nanometre** precision for **multi-patterning** — several reticles in sequence to produce lines smaller than a single exposure allows. Any unwanted vibration can destroy the pattern.
 
-When TSMC was still part of Philips, **hydraulic** linear motors were used: very precise, but demanding heavy maintenance — a significant cost and time sink until more robust solutions appeared.
+ASML itself began as a *joint venture* between Philips and ASM International (ASMI) in 1984, in a shed next to a Philips building in Eindhoven; its first stepper, the PAS 2000, was launched the same year <Cite id="asml-history" />.
 
 <DiagramFigure src="/pdf-images/p12-1.png" alt="EUV exposure on an ASML wafer">
 EUV exposure on a wafer — <a href="https://www.asml.com/" target="_blank" rel="noopener noreferrer">ASML</a> <Cite id="asml-gaa" />.

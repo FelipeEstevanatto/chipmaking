@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img">
+  <title>Isometric view of a planar MOSFET: the silicon in front of the active area is cut away, so the front face of the slab is a section through source, channel and drain; an aluminium gate over a thin gate oxide crosses the channel and overlaps both junctions, and its front corner is cut away</title>
+  <desc>Isometric drawing of a planar MOSFET. The strip of p-type silicon in front of the active area has been removed, so the front face of the slab is a section: a band with the grey field, the source diffusion, the green channel and the drain diffusion at the top, and the bulk of the p-type silicon below. To the left, right and back the field silicon meets the active area flush, as on a real wafer. A thin gate oxide and the aluminium gate cross the channel and overlap both junctions - the geometry the self-aligned gate would later remove. The front corner of the gate is cut away to expose the oxide in section and the channel surface below it. Metal contacts stand near the outer end of each diffusion, spaced away from the gate edge. The section and the gate cut are drawing devices, and the coloured band is much deeper than a real junction. Not to scale.</desc>
+  <rect width="960" height="620" fill="#ffffff" />
+  <defs>
+    <pattern id="cutAl" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#a0aec0" />
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#8a94a6" stroke-width="1.5" />
+    </pattern>
+    <pattern id="cutOx" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="6" height="6" fill="#fefcbf" />
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#f6e05e" stroke-width="1.6" />
+    </pattern>
+    <pattern id="cutSi" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#cfd8e3" />
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#8a94a6" stroke-width="1.5" />
+    </pattern>
+  </defs>
+  <style>
+    .lbl { font: 600 17.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .inv { font: 600 17.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .nd { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a365d; }
+    .siTop { fill: #dbe3ec; stroke: #7d8b9c; stroke-width: 1.4; }
+    .siL { fill: url(#cutSi); stroke: #7d8b9c; stroke-width: 1.4; }
+    .siR { fill: #a0aec0; stroke: #7d8b9c; stroke-width: 1.4; }
+    .n { fill: #90cdf4; stroke: #2b6cb0; stroke-width: 1.4; }
+    .chan { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.4; }
+    .nS { fill: #4299e1; stroke: #2b6cb0; stroke-width: 1.4; }
+    .chS { fill: #48bb78; stroke: #2f855a; stroke-width: 1.4; }
+    .oxE { fill: #f6e05e; stroke: #b7791f; stroke-width: 1.2; }
+    .oxS { fill: #f6e05e; stroke: #b7791f; stroke-width: 1.2; }
+    .oxC { fill: url(#cutOx); stroke: #b7791f; stroke-width: 1.2; }
+    .gT { fill: #718096; stroke: #2d3748; stroke-width: 1.4; }
+    .gE { fill: #4a5568; stroke: #2d3748; stroke-width: 1.4; }
+    .gS { fill: #3d4756; stroke: #2d3748; stroke-width: 1.4; }
+    .gC { fill: url(#cutAl); stroke: #4a5568; stroke-width: 1.4; }
+    .cT { fill: #2b6cb0; stroke: #1a365d; stroke-width: 1.4; }
+    .cE { fill: #2c5282; stroke: #1a365d; stroke-width: 1.4; }
+    .cS { fill: #1a365d; stroke: #1a365d; stroke-width: 1.4; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  </style>
+
+  <!-- substrate: top face, section face and the east end -->
+  <polygon class="siTop" points="428.0,107.0 791.7,317.0 592.5,432.0 228.8,222.0" />
+
+  <!-- the section: bulk silicon below, then field, source, channel, drain, field -->
+  <polygon class="siL" points="228.8,246.0 592.5,456.0 592.5,478.0 228.8,268.0" />
+  <polygon class="siL" points="228.8,222.0 276.4,249.5 276.4,273.5 228.8,246.0" />
+  <polygon class="nS" points="276.4,249.5 376.0,307.0 376.0,331.0 276.4,273.5" />
+  <polygon class="chS" points="376.0,307.0 445.3,347.0 445.3,371.0 376.0,331.0" />
+  <polygon class="nS" points="445.3,347.0 544.9,404.5 544.9,428.5 445.3,371.0" />
+  <polygon class="siL" points="544.9,404.5 592.5,432.0 592.5,456.0 544.9,428.5" />
+
+  <polygon class="siR" points="791.7,317.0 592.5,432.0 592.5,478.0 791.7,363.0" />
+
+  <!-- surface regions: source, channel, drain -->
+  <polygon class="n" points="415.0,169.5 514.6,227.0 376.0,307.0 276.4,249.5" />
+  <polygon class="chan" points="514.6,227.0 583.9,267.0 445.3,347.0 376.0,307.0" />
+  <polygon class="n" points="583.9,267.0 683.5,324.5 544.9,404.5 445.3,347.0" />
+
+  <!-- source contact: the gate stands in front of it, so it is drawn first -->
+  <polygon class="cT" points="404.6,162.5 447.9,187.5 378.6,227.5 335.3,202.5" />
+  <polygon class="cE" points="447.9,187.5 378.6,227.5 378.6,253.5 447.9,213.5" />
+  <polygon class="cS" points="335.3,202.5 378.6,227.5 378.6,253.5 335.3,228.5" />
+
+  <!-- gate oxide: side faces and the two faces exposed by the cut -->
+  <polygon class="oxE" points="596.9,262.5 536.3,297.5 536.3,309.5 596.9,274.5" />
+  <polygon class="oxS" points="363.0,287.5 397.7,307.5 397.7,319.5 363.0,299.5" />
+  <polygon class="oxC" points="475.6,262.5 397.7,307.5 397.7,319.5 475.6,274.5" />
+  <polygon class="oxC" points="475.6,262.5 536.3,297.5 536.3,309.5 475.6,274.5" />
+
+  <!-- gate: L-shaped top, two side faces, two cut faces -->
+  <polygon class="gT" points="501.6,156.5 596.9,211.5 536.3,246.5 475.6,211.5 397.7,256.5 363.0,236.5" />
+  <polygon class="gE" points="596.9,211.5 536.3,246.5 536.3,297.5 596.9,262.5" />
+  <polygon class="gS" points="363.0,236.5 397.7,256.5 397.7,307.5 363.0,287.5" />
+  <polygon class="gC" points="475.6,211.5 397.7,256.5 397.7,307.5 475.6,262.5" />
+  <polygon class="gC" points="475.6,211.5 536.3,246.5 536.3,297.5 475.6,262.5" />
+
+  <!-- drain contact: the gate stands behind it -->
+  <polygon class="cT" points="607.3,279.5 650.6,304.5 581.3,344.5 538.0,319.5" />
+  <polygon class="cE" points="650.6,304.5 581.3,344.5 581.3,370.5 650.6,330.5" />
+  <polygon class="cS" points="538.0,319.5 581.3,344.5 581.3,370.5 538.0,345.5" />
+
+  <!-- labels -->
+  <text class="inv" x="490" y="200" text-anchor="middle">Al gate</text>
+  <text class="nd" x="333" y="257" text-anchor="middle">n+</text>
+  <text class="nd" x="515" y="357" text-anchor="middle">n+</text>
+  <text class="lbl" x="170" y="195" text-anchor="middle">source</text>
+  <path class="lead" d="M205.0,203.0 L319.7,254.5" />
+  <text class="lbl" x="800" y="415" text-anchor="middle">drain</text>
+  <path class="lead" d="M766.0,408.0 L575.2,372.0" />
+  <text class="lbl" x="300" y="352" text-anchor="middle">channel</text>
+  <path class="lead" d="M340.0,348.0 L402.0,334.0" />
+  <text class="lbl" x="636" y="152" text-anchor="start">gate oxide</text>
+  <path class="lead" d="M632.0,160.0 L380.4,303.5" />
+  <text class="lbl" x="740" y="250" text-anchor="start">metal contact</text>
+  <path class="lead" d="M734.0,256.0 L594.3,312.0" />
+  <text class="sm" x="140" y="305" text-anchor="start">p-type silicon</text>
+</svg>

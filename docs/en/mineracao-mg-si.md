@@ -122,19 +122,21 @@ The drawing is a sketch of the bond changes, not a balanced atom count: the equa
 
 ### The submerged-arc furnace
 
-<DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Cross-section of a submerged electric arc furnace: three carbon electrodes in the charge, a solid outer reaction zone above a molten inner reaction zone, off-gas collected as condensed silica fume, and silicon tapped from the bottom">
-Cross-section of a submerged-arc furnace: the two reaction zones, the three three-phase electrodes, the off-gas take-off and the tapping at the bottom.
+<DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Cross-section of a submerged-arc furnace: three pre-baked electrodes pierce the charge, each with its crater lined by a carbide wall and roofed by a crust, gas rising through the charge to the hood, the pool of liquid silicon at the bottom with the tap hole, and the off-gas going on to the bag filter and heat recovery">
+Cross-section of a submerged-arc furnace. The three pre-baked electrodes, about 1 m across, pierce the charge; around each tip a crater opens, with a carbide wall and a crust as its roof, where the silica and the carbide react at about 2000 °C. The SiO and the CO that rise are recovered inside the charge itself, and the liquid silicon collects at the bottom, where it is tapped. Author's drawing, from <Cite id="saimm" /> <Cite id="saevarsdottir-2010" /> <Cite id="vangskasen-2013" /> <Cite id="elkem-electrodes" />.
 </DiagramFigure>
 
-The furnace is a shell roughly **10 m in diameter**, pierced by **three pre-baked carbon electrodes** submerged in the charge. They carry a **three-phase current** and take the material to about 2000 °C <Cite id="saimm" />.
+The furnace is a shell roughly **10 m in diameter**, pierced by **three pre-baked carbon electrodes** about **1 m across**, submerged in the charge. They carry a **three-phase current** and take the material to about 2000 °C <Cite id="saimm" /> <Cite id="elkem-electrodes" />.
 
 A layer of solid material (the **outer reaction zone**) is kept on top of the molten bath (the **inner reaction zone**) to **raise the silicon yield**. That interface is where the SiO that forms can react again before it leaves with the gas <Cite id="saimm" />.
 
+In practice the inside of the furnace has no horizontal layers: each electrode opens a **crater** in the charge, and the roof of that cavity is a **crust** of condensate, gluing the grains together and holding up the material above it <Cite id="vangskasen-2013" />. The gas rising from the crater meets the carbon in the charge and turns back into carbide; whatever escapes that reaction condenses in the cooler charge. That internal recycling is what sustains a silicon yield of around **85%** in a well-run furnace <Cite id="vangskasen-2013" />. The energy itself comes from the arc at the electrode tip — less than **20 cm** long, with currents of the order of **100 kA** per phase <Cite id="saevarsdottir-2010" />. The electrodes are **pre-baked** rather than self-baking (*Søderberg*), precisely to avoid the contamination that the latter's metal casing carries into the silicon <Cite id="elkem-electrodes" />.
+
 The silicon is then **tapped through a hole at the bottom** of the furnace and refined by slag treatment or gas purging, which remove inclusions and adjust the composition to the specified value. The metal is left to solidify in a mould and is then crushed to size <Cite id="saimm" />.
 
-<YouTubeEmbed id="5eVsQSn_EWc" title="“It’s Like Working In A Volcano”: How Silicon Is Made (ABC Science)" />
+<YouTubeEmbed id="2LKOG6wrEY8" title="Ferrosilicon Submerged Arc Furnace Smelting Operation, Tapping and Casting (SR Furnace)" />
 
-The ABC Science video goes inside one of the largest silicon smelters in the world to show the process <Cite id="abc-silicon-smelter-video" />.
+The video by SR Furnace, a maker of submerged-arc furnaces, shows the tapping and casting of a ferrosilicon furnace — the other product of these furnaces, made in the same kind of reactor <Cite id="abc-silicon-smelter-video" />.
 
 The resulting MG-Si has a typical specification of **98.5% to 99.5% Si**, with carbon, alkali-earth and transition metals, boron and phosphorus among its characteristic impurities <Cite id="saimm" />. Those impurities travel with the material into the chemical purification described in [Polysilicon](/en/polissilicio).
 
@@ -162,10 +164,10 @@ That set of factors, not the ore, is what decides where a plant is built.
 Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
+<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer']" />
 
 <SeeAlso title="See also" :links="[
-  { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs' },
+  { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs-2026' },
   { text: 'Polysilicon', href: '/en/polissilicio', note: 'chemical refining from MG-Si' },
   { text: 'References', href: '/en/referencias', note: 'numbered list' },
 ]" />

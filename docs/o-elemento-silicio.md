@@ -13,7 +13,7 @@ Elas reaparecem em cada etapa da cadeia. O [forno de arco](/mineracao-mg-si) pre
 Esta página percorre, nesta ordem:
 
 1. [A ficha do elemento](#a-ficha-do-elemento) — as constantes que a indústria não escolhe.
-2. [A rede que o silício forma](#a-rede-que-o-silicio-forma) — como esses números se arranjam no espaço, e o que o silício faz com carbono, germânio e oxigênio.
+2. [A rede que o silício forma](#a-rede-que-o-silicio-forma) — como esses números se arranjam no espaço, e o que o silício faz com carbono, germânio, oxigênio e nitrogênio.
 3. [O gap indireto](#o-gap-indireto-explica-mais-do-que-o-solar) — por que ele limita a absorção de luz.
 4. [Os três isótopos](#os-tres-isotopos) — a mistura que a natureza entrega.
 5. [Por que a indústria usa este elemento](#por-que-a-industria-usa-este-elemento) — o que o silício tem, e o que ele não tem.
@@ -42,7 +42,7 @@ O resto da página segue essa ordem.
 
 ## A rede que o silício forma
 
-A ficha descreve um arranjo, não um átomo solto: cada silício se liga a quatro vizinhos e a rede repete esse tetraedro em todas as direções. O visualizador abaixo desenha esse arranjo, junto com as três ligações que a indústria constrói com ele: carbono, germânio e oxigênio. Arraste para girar e use o controle de extensão para repetir mais células.
+A ficha descreve um arranjo, não um átomo solto: cada silício se liga a quatro vizinhos e a rede repete esse tetraedro em todas as direções. O visualizador abaixo desenha esse arranjo, junto com as quatro ligações que a indústria constrói com ele: carbono, germânio, oxigênio e nitrogênio. Arraste para girar e use o controle de extensão para repetir mais células; o quadro da ocupação, ao lado, mostra quanto de uma célula unitária é matéria e quanto é vazio.
 
 <ClientOnly>
   <CrystalViewer />
@@ -84,7 +84,7 @@ O silício natural é uma mistura de três isótopos estáveis, e a proporção 
 
 A variação é pequena, mas não nula, e é medida com precisão suficiente para virar ferramenta: a razão entre isótopos de silício num sedimento conta a história do clima em que ele se formou <Cite id="elem-ciaaw" />.
 
-Para a indústria, a consequência prática é outra. Os **0,47% de ²⁹Si** não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo (não a substância, mas o **isótopo**) é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+Para a indústria, a consequência prática é outra. Os **~4,7% de ²⁹Si** não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo (não a substância, mas o **isótopo**) é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Por que a indústria usa este elemento
 
@@ -94,7 +94,7 @@ Para a indústria, a consequência prática é outra. Os **0,47% de ²⁹Si** n�
 
 Nenhuma dessas propriedades é a melhor possível isoladamente. É a combinação delas, mais a cadeia industrial construída em volta, que sustenta a posição do silício — a mesma conclusão a que chega o capítulo de [células e módulos solares](/celulas-solares).
 
-<SourceNote :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit', 'wbg-ioffe-sic', 'intel-strain', 'struct-quartz-levien']" />
+<SourceNote :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit', 'wbg-ioffe-sic', 'intel-strain', 'struct-quartz-levien', 'struct-si3n4-kohatsu']" />
 
 <SeeAlso :links="[
   { text: 'Estrutura e tipos de wafer', href: '/estrutura-wafers', note: 'a rede cúbica de diamante e a dopagem' },

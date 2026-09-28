@@ -10,7 +10,7 @@ A fotolitografia é a etapa que **desenha o circuito** no wafer. Máquinas da **
 
 A mesa de posicionamento do wafer pesa cerca de **15 kg** e pode acelerar com força de até **20 G** (cerca de três vezes a aceleração típica de um carro de Fórmula 1), movendo-se com precisão de **nanômetros** para **multi-padrões** — vários retículos em sequência para linhas menores que o permitido por uma única exposição. Qualquer vibração indesejada pode destruir o padrão.
 
-Quando a TSMC ainda fazia parte da Philips, motores lineares **hidráulicos** eram usados: muito precisos, porém com alta manutenção — custo e tempo significativos até soluções mais robustas.
+A própria ASML nasceu de uma *joint venture* entre a Philips e a ASM International (ASMI), em 1984, num galpão ao lado de um prédio da Philips em Eindhoven; o primeiro stepper, o PAS 2000, saiu no mesmo ano <Cite id="asml-history" />.
 
 <DiagramFigure src="/pdf-images/p12-1.png" alt="Exposição EUV em wafer ASML">
 Exposição EUV em wafer — <a href="https://www.asml.com/" target="_blank" rel="noopener noreferrer">ASML</a> <Cite id="asml-gaa" />.

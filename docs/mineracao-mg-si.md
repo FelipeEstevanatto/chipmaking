@@ -122,19 +122,21 @@ O desenho é um esquema das trocas de ligação, não uma contagem balanceada de
 
 ### O forno de arco submerso
 
-<DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Corte esquemático de um forno elétrico de arco submerso: três eletrodos de carbono mergulhados na carga, zona de reação externa sólida sobre a zona de reação interna fundida, gás de exaustão recolhido como fume de sílica e vazamento do silício pelo fundo">
-Corte de um forno de arco submerso: as duas zonas de reação, os três eletrodos trifásicos, a saída de gás e o vazamento pelo fundo.
+<DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Corte de um forno de arco submerso: três eletrodos pré-cozidos atravessam a carga, cada um com sua cratera de parede de carbeto e o teto de crosta, gás subindo pela carga até o capuz, o banho de silício líquido no fundo com o furo de vazamento, e o gás seguindo para o filtro de manga e a recuperação de calor">
+Corte de um forno de arco submerso. Os três eletrodos pré-cozidos, de cerca de 1 m de diâmetro, atravessam a carga; em volta da ponta de cada um abre-se uma cratera, com parede de carbeto e um teto de crosta, onde a sílica e o carbeto reagem a cerca de 2000 °C. O SiO e o CO que sobem são reaproveitados na própria carga, e o silício líquido se acumula no fundo, de onde é vazado. Desenho do autor, a partir de <Cite id="saimm" /> <Cite id="saevarsdottir-2010" /> <Cite id="vangskasen-2013" /> <Cite id="elkem-electrodes" />.
 </DiagramFigure>
 
-O forno é um invólucro com cerca de **10 m de diâmetro**, atravessado por **três eletrodos de carbono pré-cozido** mergulhados na carga. Eles conduzem **corrente trifásica** e levam o material a aproximadamente 2000 °C <Cite id="saimm" />.
+O forno é um invólucro com cerca de **10 m de diâmetro**, atravessado por **três eletrodos de carbono pré-cozido** de cerca de **1 m de diâmetro**, mergulhados na carga. Eles conduzem **corrente trifásica** e levam o material a aproximadamente 2000 °C <Cite id="saimm" /> <Cite id="elkem-electrodes" />.
 
 Mantém-se uma camada de material sólido (a **zona de reação externa**) sobre o banho fundido (a **zona de reação interna**) para **aumentar o rendimento de silício**. É nessa interface que o SiO gerado consegue voltar a reagir antes de sair com o gás <Cite id="saimm" />.
 
+Na prática, o interior do forno não tem camadas horizontais: cada eletrodo abre uma **cratera** na carga, e o teto dessa cavidade é uma **crosta** de condensado, que gruda nos grãos e sustenta o material de cima <Cite id="vangskasen-2013" />. O gás que sobe da cratera encontra o carbono da carga e volta a virar carbeto; o que escapa dessa reação condensa na carga mais fria. É essa reciclagem interna que sustenta um rendimento de silício em torno de **85%** num forno bem operado <Cite id="vangskasen-2013" />. Quem entrega a energia é o arco na ponta do eletrodo — menos de **20 cm** de comprimento, com correntes da ordem de **100 kA** por fase <Cite id="saevarsdottir-2010" />. Os eletrodos são **pré-cozidos**, e não do tipo auto-cozido (*Søderberg*), justamente para não trazer ao silício a contaminação que o invólucro metálico destes últimos carrega <Cite id="elkem-electrodes" />.
+
 O silício é então **vazado por um furo no fundo** do forno e refinado por tratamento com escória ou purga de gás, que removem inclusões e ajustam a composição ao valor especificado. Depois o metal é deixado solidificar em molde e é britado no tamanho pedido <Cite id="saimm" />.
 
-<YouTubeEmbed id="5eVsQSn_EWc" title="“It’s Like Working In A Volcano”: How Silicon Is Made (ABC Science)" />
+<YouTubeEmbed id="2LKOG6wrEY8" title="Ferrosilicon Submerged Arc Furnace Smelting Operation, Tapping and Casting (SR Furnace)" />
 
-O vídeo da ABC Science entra em uma das maiores fundições de silício do mundo para mostrar o processo <Cite id="abc-silicon-smelter-video" />.
+O vídeo da SR Furnace, fabricante de fornos de arco submerso, mostra o vazamento e a lingotagem em um forno de ferrossilício — o outro produto desses fornos, feito no mesmo tipo de reator <Cite id="abc-silicon-smelter-video" />.
 
 O MG-Si resultante tem especificação típica de **98,5% a 99,5% de Si**, com carbono, metais alcalinoterrosos e de transição, boro e fósforo entre as impurezas características <Cite id="saimm" />. Essas impurezas viajam com o material até a purificação química, descrita em [Polissilício](/polissilicio).
 
@@ -162,10 +164,10 @@ Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chi
 A planta da Elkem em Salten, em Straumen, no norte da Noruega, produz ferrossilício desde 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']" />
+<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer']" />
 
 <SeeAlso :links="[
-  { text: 'Introdução', href: '/introducao', note: 'produção mundial de silício metálico', cite: 'usgs-mcs' },
+  { text: 'Introdução', href: '/introducao', note: 'produção mundial de silício metálico', cite: 'usgs-mcs-2026' },
   { text: 'Polissilício', href: '/polissilicio', note: 'refinamento químico a partir do MG-Si' },
   { text: 'Referências', href: '/referencias', note: 'lista numerada' },
 ]" />

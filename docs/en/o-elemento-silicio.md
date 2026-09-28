@@ -13,7 +13,7 @@ They come back at every step of the chain. The [submerged arc furnace](/en/miner
 This page works through, in order:
 
 1. [The element's data card](#the-element-s-data-card) — the constants the industry does not choose.
-2. [The lattice silicon forms](#the-lattice-silicon-forms) — how those numbers arrange themselves in space, and what silicon does with carbon, germanium and oxygen.
+2. [The lattice silicon forms](#the-lattice-silicon-forms) — how those numbers arrange themselves in space, and what silicon does with carbon, germanium, oxygen and nitrogen.
 3. [The indirect gap](#the-indirect-gap-explains-more-than-solar) — why it limits the absorption of light.
 4. [The three isotopes](#the-three-isotopes) — the mixture nature delivers.
 5. [Why the industry uses this element](#why-the-industry-uses-this-element) — what silicon has, and what it does not.
@@ -42,7 +42,7 @@ The rest of the page follows that order.
 
 ## The lattice silicon forms
 
-The data card describes an arrangement, not a lone atom: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the three bonds industry builds with it: carbon, germanium and oxygen. Drag to rotate, and use the extent control to repeat more cells.
+The data card describes an arrangement, not a lone atom: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the four bonds industry builds with it: carbon, germanium, oxygen and nitrogen. Drag to rotate, and use the extent control to repeat more cells; the occupancy panel beside it shows how much of one unit cell is matter and how much is void.
 
 <ClientOnly>
   <CrystalViewer />
@@ -84,7 +84,7 @@ Natural silicon is a mixture of three stable isotopes, and the proportion betwee
 
 The variation is small but not zero, and it is measured precisely enough to become a tool: the ratio of silicon isotopes in a sediment records the climate in which it formed <Cite id="elem-ciaaw" />.
 
-For the industry the practical consequence is different. That **0.47% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope (not the substance, the **isotope**) is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+For the industry the practical consequence is different. That **~4.7% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope (not the substance, the **isotope**) is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Why the industry uses this element
 
@@ -94,7 +94,7 @@ For the industry the practical consequence is different. That **0.47% of ²⁹Si
 
 None of those properties is the best possible on its own. It is the combination, plus the industrial chain built around them, that sustains silicon's position — the same conclusion [solar cells and modules](/en/celulas-solares) reaches.
 
-<SourceNote label="Sources" :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit', 'wbg-ioffe-sic', 'intel-strain', 'struct-quartz-levien']" />
+<SourceNote label="Sources" :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit', 'wbg-ioffe-sic', 'intel-strain', 'struct-quartz-levien', 'struct-si3n4-kohatsu']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Crystal structure', href: '/en/estrutura-wafers', note: 'the diamond cubic lattice and doping' },
