@@ -30,7 +30,7 @@ The industry's most quoted curve is also the hardest to attribute, because no si
 | 2020 | Apple M1 | **16 billion** | <Cite id="dados-transistor-count" /> |
 | 2024 | Apple M4 | **28 billion** | <Cite id="dados-transistor-count" /> |
 
-The series reads best on the **logarithmic** scale the button above toggles: on a linear scale the last two rows flatten everything before them, and the impression of Moore's law continuity disappears. What the log curve shows is a straight line — **exponential** growth with a doubling time of a few years — and it is that regularity, not the absolute value, that the industry chased for decades.
+The reading changes with the button above. On a linear scale the last two rows flatten everything before them and the impression of Moore's law continuity disappears. On a **logarithmic** scale what you see is a straight line: **exponential** growth with a doubling time of a few years, and it is that regularity the industry chased for decades.
 
 ## Yield against area
 
@@ -40,7 +40,7 @@ The second chart is not a measurement: it is the **Poisson model** of yield, eva
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Look at the slope before the values. Doubling a die's area cuts yield by **more than half**, and the loss grows with defect density — the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividir-para-render) instead of continuing to enlarge the monolithic die. The Poisson model is optimistic at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
+Doubling a die's area cuts yield by **more than half**, and the loss grows with defect density — the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividir-para-render) instead of continuing to enlarge the monolithic die. The Poisson model is optimistic at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
 
 ## The series as files
 
@@ -57,7 +57,7 @@ The script `scripts/export-chart-data.ts` rewrites all of them from `docs/.vitep
 
 ## The freshness stamp
 
-Not every chapter is equally recent, and until now a reader had no way to know. The [solar cells and modules](/en/celulas-solares) chapter used **2011** figures for the industry's scale and cost — which its own text admits are outdated — while [crystal structure](/en/estrutura-wafers) cites data from the current year.
+Not every chapter is equally recent, and until now a reader had no way to know. The [solar cells and modules](/en/celulas-solares) chapter used **2011** figures for the industry's scale and cost (which its own text admits are outdated) while [crystal structure](/en/estrutura-wafers) cites data from the current year.
 
 That is why each chapter declares, below its title, the **year of the most recent data it cites**. It is a reading aid, not a validity stamp: a 2011 number may still be the best reference for what it describes, but the reader is entitled to know they are reading 2011.
 

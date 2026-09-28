@@ -1,6 +1,6 @@
 ---
 title: Preços e valor
-description: A escada de preços do silício — de dólares por quilo no MG-Si à fração de valor de um chip pronto — e o degrau que a indústria não publica.
+description: A escada de preços do silício (de dólares por quilo no MG-Si à fração de valor de um chip pronto) e o degrau que a indústria não publica.
 dataAsOf: 2026
 ---
 
@@ -23,17 +23,15 @@ O exercício tem uma virtude e um limite. A virtude é que o preço é o resumo 
 | Montagem, teste e empacotamento | % do valor do chip pronto | **cerca de 10%** (SIA/BCG estima **6%**) | <Cite id="cset-packaging" /> |
 | Projeto + fabricação de front-end | % do valor do chip pronto | **cerca de 45%** | <Cite id="cset-packaging" /> |
 
-Duas leituras dessa tabela merecem destaque.
+A massa encolhe a cada degrau. Um quilo de silício metalúrgico vira menos de um quilo de polissilício, que vira uma lâmina de algumas centenas de gramas, que vira um chip de alguns gramas. O preço **por unidade de massa** sobe em ordens de grandeza.
 
-A primeira é a **queda de massa**. Um quilo de silício metalúrgico vira menos de um quilo de polissilício, que vira uma lâmina de algumas centenas de gramas, que vira um chip de alguns gramas. A massa encolhe a cada degrau; o preço **por unidade de massa** sobe em ordens de grandeza.
-
-A segunda é que a maior parte do valor **não está no material**. Projeto e front-end somam cerca de 45% do valor de um chip pronto, enquanto a etapa de montagem e teste — a que o site trata em [empacotamento](/empacotamento) — fica perto de 10%, e o próprio material semicondutor é uma fração menor ainda <Cite id="cset-packaging" />.
+A maior parte do valor, porém, não está no material. Projeto e front-end somam cerca de 45% do valor de um chip pronto, enquanto a etapa de montagem e teste, tratada em [empacotamento](/empacotamento), fica perto de 10%, e o próprio material semicondutor é uma fração menor ainda <Cite id="cset-packaging" />.
 
 ## O degrau de commodity
 
 O polissilício é o degrau da cadeia em que o preço se comporta como commodity, e por isso é o único em que se observa o ciclo inteiro em números públicos: **6,75 US$/kg** no fundo histórico de junho de 2020 e **39 US$/kg** em agosto de 2022, com a subida completa em cerca de dois anos <Cite id="bernreuter-pork-cycle" />.
 
-Esse intervalo — quase **6×** entre vale e pico — é o que decidiu quem construiu planta nova e quem fechou. A dinâmica do *pork cycle* e a lista de empresas que saíram do mercado estão no capítulo de [polissilício](/polissilicio).
+Esse intervalo (quase **6×** entre vale e pico) é o que decidiu quem construiu planta nova e quem fechou. A dinâmica do *pork cycle* e a lista de empresas que saíram do mercado estão no capítulo de [polissilício](/polissilicio).
 
 Do outro lado da cadeia, o preço do módulo desceu por um motivo diferente: escala e eficiência, com o custo caindo uma fração fixa a cada duplicação da produção acumulada <Cite id="fraunhofer-pv-report" />. É a mesma física que fez a célula sair de cerca de **1 US$/Wp** em 2011 para um módulo em torno de **¥ 0,70/W** em 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
 
@@ -43,7 +41,7 @@ Falta na tabela o degrau mais interessante para quem quer entender o custo real 
 
 Ele não aparece aqui porque não é publicado de forma comparável. Contratos de fornecimento de wafer são negociados caso a caso e cobertos por confidencialidade, de modo que os números que circulam em apresentações raramente têm uma fonte primária que os sustente — o mesmo problema que este site já registrou ao tratar da participação de mercado dos fabricantes de wafer em [estrutura e tipos](/estrutura-wafers#quem-fabrica-os-wafers), onde a cifra redonda de "60%" não sobreviveu aos dados.
 
-A consequência prática é uma regra de leitura: **quando um degrau é apresentado como um número fechado, vale perguntar de onde ele veio**. Onde há índice público — como o preço de contrato de polissilício — a série é auditável; onde não há, o que existe é estimativa de consultoria.
+A consequência prática é uma regra de leitura: **quando um degrau é apresentado como um número fechado, vale perguntar de onde ele veio**. Onde há índice público (como o preço de contrato de polissilício) a série é auditável; onde não há, o que existe é estimativa de consultoria.
 
 ## Do quilo ao milímetro quadrado
 

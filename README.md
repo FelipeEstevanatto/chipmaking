@@ -37,7 +37,7 @@ Depois de `bun run build`, `python scripts/audit-glossary.py` confere isso no HT
 
 ## Anatomia de um capítulo
 
-A cadeia tem uma ordem e o site precisa mostrá-la. Três regras, aplicadas ao capítulo de [transistores](/transistores) e a serem seguidas nos próximos.
+A cadeia tem uma ordem e o site precisa mostrá-la. Três regras, já aplicadas a cinco capítulos: `transistores`, `na-fab`, `celulas-solares`, `estrutura-wafers` e `empacotamento`.
 
 **1. Uma espinha, declarada no início.** Todo capítulo tem uma lista ordenada daquilo que explica — as etapas da célula, as gerações do transistor, os módulos da fábrica. Ela aparece **uma vez**, no começo, como mapa: uma frase dizendo o que é a lista, a lista em si e uma frase dizendo que o que vem a seguir segue aquela ordem. O que era dois blocos (um quadro comparativo e outro de produtos) passou a ser um quadro só, sem a coluna que pertence à narrativa.
 
@@ -56,7 +56,7 @@ Duas consequências práticas:
 
 ### Selo de atualidade
 
-`DocMeta` também mostra **"dados até <ano>"**, lido do campo `dataAsOf` do frontmatter. O valor é o **ano do dado mais recente citado** no capítulo — não a data da última edição —, para que o leitor saiba que `celulas-solares` descreve a escala do setor com números de 2011, enquanto `estrutura-wafers` cita o ano corrente. Capítulos puramente históricos (`linha-do-tempo`, `historia-fotolitografia`) e páginas de navegação (`glossario`, `referencias`) não levam o campo; a ausência é intencional.
+`DocMeta` também mostra **"dados até <ano>"**, lido do campo `dataAsOf` do frontmatter. O valor é o **ano do dado mais recente citado** no capítulo, não a data da última edição, para que o leitor saiba que `celulas-solares` descreve a escala do setor com números de 2011, enquanto `estrutura-wafers` cita o ano corrente. Capítulos puramente históricos (`linha-do-tempo`, `historia-fotolitografia`) e páginas de navegação (`glossario`, `referencias`) não levam o campo; a ausência é intencional.
 
 ## Gráficos e séries de dados
 
@@ -70,7 +70,7 @@ Duas consequências práticas:
 
 O `ClientOnly` **não é decorativo**: sem ele o texto da legenda entra no HTML gerado e passa a contar como "primeira ocorrência" para o `audit-glossary.py`, que enxerga texto que o plugin de tooltips não consegue alcançar. O `DataChart` também está na lista de contextos ignorados do script, como defesa extra.
 
-Uma spec é **serializável de propósito** — sem funções nem callbacks —, porque `scripts/export-chart-data.ts` lê a mesma lista e escreve `docs/public/data/<slug>.csv`. Gráfico e arquivo baixável saem de uma definição só, então não podem divergir. Rode o script depois de mexer em qualquer série:
+Uma spec é **serializável de propósito**, sem funções nem callbacks, porque `scripts/export-chart-data.ts` lê a mesma lista e escreve `docs/public/data/<slug>.csv`. Gráfico e arquivo baixável saem de uma definição só, então não podem divergir. Rode o script depois de mexer em qualquer série:
 
 ```bash
 bun run scripts/export-chart-data.ts
@@ -80,7 +80,7 @@ Legendas de gráfico são renderizadas como texto por interpolação, e não com
 
 A página `/dados` (`docs/dados.md` e `docs/en/dados.md`) é o hub: liga cada série ao CSV correspondente e explica o selo de atualidade.
 
-**Fontes primárias, e compilações identificadas.** A regra é citar quem mediu. Quando nenhuma fonte primária tabula uma série — contagens de transistores ao longo de cinco décadas, a dependência de neônio por país —, a entrada em `citations.ts` diz explicitamente que é uma **compilação** e nomeia o agregador, em vez de emprestar autoridade de um paper a um número que ele não publica. O mesmo vale para números derivados: uma porcentagem calculada a partir de uma tabela já citada leva a citação da tabela, não uma fonte nova.
+**Fontes primárias, e compilações identificadas.** A regra é citar quem mediu. Quando nenhuma fonte primária tabula uma série (contagens de transistores ao longo de cinco décadas, a dependência de neônio por país), a entrada em `citations.ts` diz explicitamente que é uma **compilação** e nomeia o agregador, em vez de emprestar autoridade de um paper a um número que ele não publica. O mesmo vale para números derivados: uma porcentagem calculada a partir de uma tabela já citada leva a citação da tabela, não uma fonte nova.
 
 ## Estrutura do site
 
@@ -106,7 +106,7 @@ Um SVG usado em figura é transparente por padrão, e o visualizador de zoom tem
 
 **Tamanho de fonte.** A coluna de prosa entrega 638 px de largura. Num `viewBox` de 960, isso é uma redução de ~0,66×: um rótulo de 14 px no SVG chega à tela com ~9 px. Meça com `img.getBoundingClientRect()` no navegador em vez de confiar no número do `viewBox`, e dimensione o corpo entre **17 e 18 px** (≈12 px na tela), reservando 16,5 px para notas de rodapé do próprio desenho.
 
-**Idioma dos rótulos.** O desenho é único e vai para os dois locales, então os rótulos são termos técnicos curtos em inglês (`crown`, `bevel`, `slurry`, `load`) — os mesmos que a prosa portuguesa já usa entre parênteses — e **toda a explicação fica na legenda**, que é traduzida. `wafer-identification.svg` é a exceção herdada: seus rótulos estão em português e aparecem assim também na página em inglês.
+**Idioma dos rótulos.** O desenho é único e vai para os dois locales, então os rótulos são termos técnicos curtos em inglês (`crown`, `bevel`, `slurry`, `load`), os mesmos que a prosa portuguesa já usa entre parênteses, e **toda a explicação fica na legenda**, que é traduzida. `wafer-identification.svg` é a exceção herdada: seus rótulos estão em português e aparecem assim também na página em inglês.
 
 **Conferir sem enxergar.** Um SVG pode ser validado sem abrir a imagem: monte um `<canvas>`, desenhe o SVG e amostre pixels em coordenadas conhecidas para confirmar que cada forma caiu onde devia, e leia `getBBox()` dos `<text>` para detectar rótulos cortados ou sobrepostos. Foi assim que o arco da lasca em `wafer-edge-profile.svg` apareceu com o `sweep` invertido — o `getBBox()` do `<path>` denunciava o topo 17 px acima do esperado.
 

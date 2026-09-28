@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 # Solar cells and modules
 
-A silicon wafer has two industrial destinations. One is the semiconductor **fab**, which runs through [photolithography](/en/fotolitografia) on its way to [transistors](/en/transistores). The other is the **photovoltaic cell line**, where the same material — multicrystalline and of lower purity — becomes the cell that turns light into electricity.
+A silicon wafer has two industrial destinations. One is the semiconductor **fab**, which runs through [photolithography](/en/fotolitografia) on its way to [transistors](/en/transistores). The other is the **photovoltaic cell line**, where the same material (multicrystalline and of lower purity) becomes the cell that turns light into electricity.
 
 The crystalline silicon cell is by far the dominant technology: in **2023** it accounted for about **97%** of the photovoltaic market, against **3%** for thin-film technologies <Cite id="itrpv-2024" />. Within silicon, **monocrystalline Czochralski** dominates almost absolutely — multicrystalline wafers are no longer mass-produced <Cite id="itrpv-2024" />. The older figure that recurs through this chapter, **at least 80%**, comes from the 2011 survey by Xakalashe and Tangstad <Cite id="saimm" />.
 
@@ -18,7 +18,19 @@ The crystalline silicon cell is by far the dominant technology: in **2023** it a
 The finished cell in cross-section: the layers light crosses on its way to the p-n junction, and the two contacts that collect the current.
 </DiagramFigure>
 
-### Saw-damage removal
+A finished cell comes out of **seven steps**, in this order:
+
+1. [Saw damage removal](#saw-damage-removal) — the etch that takes off the damage left by the saw.
+2. [Texturing](#texturing) — the roughness that lets light in instead of back out.
+3. [Emitter diffusion](#emitter-diffusion-the-p-n-junction) — the p-n junction that turns the wafer into a device.
+4. [Edge isolation](#edge-isolation) — cutting the short between the two faces.
+5. [Anti-reflection coating](#anti-reflection-coating) — less reflection, and surface passivation with it.
+6. [Metallisation](#metallisation) — the contacts, where every millimetre of silver is a millimetre without light.
+7. [Contact firing](#contact-firing) — the heat step that drives the metal through the anti-reflection layer.
+
+The choice of p-type dopant (boron or gallium) runs through the third step and became a subsection inside it: it changed the product, not the process sequence.
+
+### Saw damage removal
 
 The wafer leaves the saw with a surface that has been **damaged and contaminated**. At the start of the process, **10 to 20 µm** are etched from both sides, typically with alkaline solutions, followed by a rinse in de-ionised water <Cite id="saimm" />.
 
@@ -26,7 +38,7 @@ The wafer leaves the saw with a surface that has been **damaged and contaminated
 
 After etching, the surface is mirror-like and **reflects more than 35% of the incident light**. Texturing solves this by creating roughness at the micrometre scale <Cite id="saimm" />.
 
-On **monocrystalline** wafers, a weak solution of sodium and potassium hydroxide with isopropanol at **80 °C** attacks silicon **anisotropically** — different crystal planes react at different rates — producing **randomly distributed pyramids** that make light enter and bounce around instead of leaving <Cite id="saimm" />. On **multicrystalline** wafers this trick fails, because the orientation changes from grain to grain; there the texture is **mechanical** <Cite id="saimm" />. Either way, reflection drops **below 10%** <Cite id="saimm" />.
+On **monocrystalline** wafers, a weak solution of sodium and potassium hydroxide with isopropanol at **80 °C** attacks silicon **anisotropically** (different crystal planes react at different rates) producing **randomly distributed pyramids** that make light enter and bounce around instead of leaving <Cite id="saimm" />. On **multicrystalline** wafers this trick fails, because the orientation changes from grain to grain; there the texture is **mechanical** <Cite id="saimm" />. Either way, reflection drops **below 10%** <Cite id="saimm" />.
 
 ### Emitter diffusion (the p-n junction)
 
@@ -34,7 +46,7 @@ This is the step that turns a silicon slab into a device. The starting wafer is 
 
 The process runs in a furnace at roughly **900 °C for about 30 minutes**, producing a penetration depth of **0.5 µm** — that shallow layer is what the figure shows as the emitter. The most common dopant source is **POCl₃**, though screen printing and chemical vapour deposition are also used <Cite id="saimm" />.
 
-### The switch from boron to gallium
+#### The switch from boron to gallium
 
 The starting wafer is **p-type**, and for decades that meant **boron-doped** <Cite id="saimm" />. Boron doping brings a defect that changed the dopant the industry uses.
 
@@ -82,7 +94,7 @@ The **energy payback time** is **1 to 2 years**. Module lifetime is **25 to 30 y
 
 Photovoltaics is older than solid-state electronics. In **1839**, Alexandre-Edmond Becquerel observed that an electric current appeared in a silver-coated platinum electrode immersed in an electrolyte when it was exposed to light — the **photovoltaic effect** <Cite id="saimm" />. In **1876**, the same effect was demonstrated in an entirely solid-state system, using selenium and platinum contacts <Cite id="saimm" />.
 
-The modern cell arrives in **1954**, at Bell Laboratories, with Chapin, Fuller and Pearson: silicon at **6% efficiency** <Cite id="saimm" />. Earlier figures had been modest — between **0.1% and 0.5%** — which gives the measure of the leap. That same year a cadmium sulphide thin-film cell appeared with equivalent efficiency; in **1956** came RCA's gallium arsenide cells, also at 6%, by which point silicon had already reached **10%** <Cite id="saimm" />.
+The modern cell arrives in **1954**, at Bell Laboratories, with Chapin, Fuller and Pearson: silicon at **6% efficiency** <Cite id="saimm" />. Earlier figures had been modest (between **0.1% and 0.5%**), which gives the measure of the leap. That same year a cadmium sulphide thin-film cell appeared with equivalent efficiency; in **1956** came RCA's gallium arsenide cells, also at 6%, by which point silicon had already reached **10%** <Cite id="saimm" />.
 
 The first large-scale application was in space: in **1958** the United States launched the first satellite powered by solar cells, and they were silicon <Cite id="saimm" />.
 
@@ -124,7 +136,7 @@ A few numbers from the most recent report measure how much has changed:
 
 The gap between the first bar in that chart and the last three is this chapter's contest in miniature: what you can buy today is silicon, and what promises the next jump is the perovskite-on-silicon **tandem**, which has already reached **35%** in the laboratory <Cite id="fraunhofer-pv-report" />. Single-cell records are in the comparative chart from [NREL](/en/referencias) <Cite id="nrel-efficiency" />.
 
-Worth noting what that number means for the silicon chain. If the tandem takes hold, it does **not replace** the silicon wafer: it uses it as a substrate and adds a layer on top — which preserves the entire quartz-to-wafer path described on this site and raises the value per wafer.
+If the tandem takes hold, it uses the silicon wafer as a substrate and adds a layer on top. The quartz-to-wafer path described on this site stays the same, and the value per wafer rises.
 
 <SourceNote label="Sources" :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
 

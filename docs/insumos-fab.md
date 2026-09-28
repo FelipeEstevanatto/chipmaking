@@ -1,6 +1,6 @@
 ---
 title: Os insumos da fab
-description: O que uma fábrica de semicondutores consome além do silício — fotorresiste, máscara, slurry, gases e água ultrapura — e por que essa lista é um gargalo tão silencioso quanto o quartzo.
+description: O que uma fábrica de semicondutores consome além do silício (fotorresiste, máscara, slurry, gases e água ultrapura) e por que essa lista é um gargalo tão silencioso quanto o quartzo.
 dataAsOf: 2026
 ---
 
@@ -36,13 +36,13 @@ Excimer lasers da litografia DUV precisam de **neônio** na mistura gasosa, e a 
 
 O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país respondia por **cerca de metade** do neônio mundial e por **90%** do neônio de grau semicondutor, produzido como subproduto da siderurgia — e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="fabm-neon-2022" />.
 
-Vale reter o formato, porque ele se repete: **insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria**. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
+O formato se repete: **insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria**. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
 
 ## Água ultrapura
 
 A água é, em volume, o insumo mais íntimo de uma fab — e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de **18,2 MΩ·cm** a 25 °C e carbono orgânico total na casa das **partes por trilhão** <Cite id="fabm-upw" />.
 
-A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, **dopantes** — sódio e potássio no nível de ppb já alteram a tensão de limiar de um transistor —, e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada **no próprio site**, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
+A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, **dopantes** (sódio e potássio no nível de ppb já alteram a tensão de limiar de um transistor), e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada **no próprio site**, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
 
 ## Por que essa lista é um gargalo
 

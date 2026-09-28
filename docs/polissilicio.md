@@ -39,7 +39,7 @@ flowchart TD
     WA --> CEL["Células solares de silício"]
 ```
 
-Esta página percorre a **rota química**, que domina o mercado e é a única que chega ao grau eletrônico. A **rota metalúrgica** — que produz o silício de grau solar *upgraded* (UMG) sem passar por cloro — é tratada mais adiante.
+Esta página percorre a **rota química**, que domina o mercado e é a única que chega ao grau eletrônico. A **rota metalúrgica**, que produz o silício de grau solar *upgraded* (UMG) sem passar por cloro, é tratada mais adiante.
 
 ## Do forno de arco ao MG-Si
 
@@ -111,7 +111,7 @@ A reação de deposição é exatamente a **inversa** da cloração que produziu
 SiHCl₃ + H₂ → Si + 3HCl
 ```
 
-Quando o processo termina, a **redoma de aço é erguida** e o conjunto — núcleo em “U” e silício depositado — é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
+Quando o processo termina, a **redoma de aço é erguida** e o conjunto (núcleo em “U” e silício depositado) é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
 
 O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou. Quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US$ 10 por quilograma** <Cite id="bernreuter-production" />.
 
@@ -124,10 +124,10 @@ Classes de pureza <Cite id="bernreuter-production" />:
 ### Reator de leito fluidizado (FBR)
 
 <DiagramFigure src="/assets/fbr-reactor.svg" alt="Corte do reator de leito fluidizado: sementes de silício caem pelo topo, o gás silano injetado pela base mantém as partículas suspensas, aquecedores nas paredes mantêm 650 a 700 °C e os grânulos crescem até serem retirados continuamente pelo fundo">
-O reator de leito fluidizado em corte. As sementes entram por cima e caem; o silano injetado pela base sobe e mantém as partículas suspensas, de modo que cada grão fica cercado de gás fresco o tempo todo. Os aquecedores de parede mantêm 650–700 °C, e o silício vai se acumulando nas sementes — que engordam à medida que descem — até serem retiradas continuamente pelo fundo. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-production" />.
+O reator de leito fluidizado em corte. As sementes entram por cima e caem; o silano injetado pela base sobe e mantém as partículas suspensas, de modo que cada grão fica cercado de gás fresco o tempo todo. Os aquecedores de parede mantêm 650–700 °C, e o silício vai se acumulando nas sementes, que engordam à medida que descem, até serem retiradas continuamente pelo fundo. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-production" />.
 </DiagramFigure>
 
-Método de fluxo contínuo em que partículas semente de silício são mantidas suspensas por gás portador contendo monossilano (SiH₄) ou TCS <Cite id="bernreuter-production" />. O gás se decompõe a temperaturas bem menores — **650–700 °C** no caso do monossilano —, acumulando silício nas sementes até formarem grânulos colhidos continuamente, sem a etapa de fratura dos bastões. Consome cerca de **90% menos energia elétrica** que o Siemens, produz mais silício por volume de reator e entrega o produto já numa forma utilizável, embora gere uma fração indesejada de poeira de silício <Cite id="bernreuter-production" /> <Cite id="saimm" />.
+Método de fluxo contínuo em que partículas semente de silício são mantidas suspensas por gás portador contendo monossilano (SiH₄) ou TCS <Cite id="bernreuter-production" />. O gás se decompõe a temperaturas bem menores, **650–700 °C** no caso do monossilano, acumulando silício nas sementes até formarem grânulos colhidos continuamente, sem a etapa de fratura dos bastões. Consome cerca de **90% menos energia elétrica** que o Siemens, produz mais silício por volume de reator e entrega o produto já numa forma utilizável, embora gere uma fração indesejada de poeira de silício <Cite id="bernreuter-production" /> <Cite id="saimm" />.
 
 Há uma diferença de química dentro da própria família FBR. A REC Silicon alimenta seus reatores com **monossilano (SiH₄)**, que se decompõe a **650–700 °C**; a unidade menor da Wacker trabalha com **TCS**, que só reage por volta de **1000 °C** <Cite id="bernreuter-production" />. Temperatura menor significa menos energia — é daí que sai o argumento de consumir **um décimo** da eletricidade de um forno de hastes convencional <Cite id="bernreuter-production" />.
 
@@ -171,7 +171,7 @@ E os volumes não são pequenos. Para cada quilo de polissilício produzido, o e
 
 A rota química domina, e é cara em **energia**. Cloração, destilação e o reator Siemens se somam. Ela também **manipula compostos tóxicos e corrosivos** o tempo todo, entre eles clorossilanos e ácido clorídrico <Cite id="saimm" />.
 
-O TCS ilustra bem o problema. É um **líquido incolor e volátil** — densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C — que **reage violentamente com a água**, inclusive com a umidade do ar, liberando ácido clorídrico e calor. A faixa de inflamabilidade em ar vai de **1,2% a 90,5% em volume**, e a autoignição ocorre a apenas **185 °C** <Cite id="icsc-tcs" />. Com ponto de fulgor de **−27 °C**, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é **4,7 vezes mais denso que o ar** — ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob **gás inerte**, e que as instruções de combate a incêndio da ficha internacional prescrevem explicitamente **não usar água** <Cite id="icsc-tcs" />.
+O TCS ilustra bem o problema. É um **líquido incolor e volátil** (densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C) que **reage violentamente com a água**, inclusive com a umidade do ar, liberando ácido clorídrico e calor. A faixa de inflamabilidade em ar vai de **1,2% a 90,5% em volume**, e a autoignição ocorre a apenas **185 °C** <Cite id="icsc-tcs" />. Com ponto de fulgor de **−27 °C**, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é **4,7 vezes mais denso que o ar**, ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob **gás inerte**, e que as instruções de combate a incêndio da ficha internacional prescrevem explicitamente **não usar água** <Cite id="icsc-tcs" />.
 
 Em **2006** a indústria solar **ultrapassou a de semicondutores** como maior consumidora de polissilício <Cite id="saimm" />. Em 2008, a produção mundial foi de aproximadamente **75 mil toneladas**, das quais **45 mil** foram para fotovoltaica <Cite id="saimm" />.
 
@@ -186,7 +186,7 @@ O problema é que esse princípio não vale para todo mundo. **Boro, carbono, ox
 - **Fósforo:** é volátil, e sai por **refino a vácuo** <Cite id="saimm" />.
 - **Boro:** só sai por **refino com escória** ou **refino por plasma** — que de quebra também removem carbono e oxigênio <Cite id="saimm" />.
 
-Como cada técnica é boa em um alvo e fraca nos outros, a indústria encadeia **combinações** de etapas <Cite id="saimm" />. Outro cuidado é partir de matéria-prima já limpa — quartzo purificado, negro de fumo e eletrodos de alta pureza — para não introduzir impureza nova no produto <Cite id="saimm" />.
+Como cada técnica é boa em um alvo e fraca nos outros, a indústria encadeia **combinações** de etapas <Cite id="saimm" />. Outro cuidado é partir de matéria-prima já limpa (quartzo purificado, negro de fumo e eletrodos de alta pureza) para não introduzir impureza nova no produto <Cite id="saimm" />.
 
 A rota tem potencial para se tornar dominante, mas em 2008 respondia por **menos de 8%** da produção de silício solar <Cite id="saimm" />. A razão é simples: ela não chega ao grau eletrônico, e por isso não substitui a rota química para semicondutores.
 
@@ -210,7 +210,7 @@ A planta de Kristiansand (Fiskå), onde a Elkem industrializou sua rota metalúr
 
 O ganho energético é o ponto central do argumento. A planta produzia silício com cerca de **70% menos energia** que a rota Siemens de referência, e as emissões de CO₂ equivalente ficavam entre **10 e 30%** das do processo Siemens — **11 g contra 40–150 g de CO₂-eq por kg**, conforme a rota e a localização da planta <Cite id="elkem-solar-route" />. O tempo de retorno energético de um módulo solar feito com esse material ficava **abaixo de um ano** <Cite id="elkem-solar-route" />.
 
-A purificação também evoluiu. Nos anos 1980 o produto carregava quase **4 ppmw de boro e fósforo**; os valores típicos chegaram a **0,22 ppmw de boro e 0,62 ppmw de fósforo** <Cite id="elkem-solar-route" />. Com isso o material — vendido sob a marca **ESS™** — passou a atender ao **grupo IV** da norma **SEMI PV17-0611**, que classifica justamente as qualidades de silício grau solar <Cite id="elkem-solar-route" />.
+A purificação também evoluiu. Nos anos 1980 o produto carregava quase **4 ppmw de boro e fósforo**; os valores típicos chegaram a **0,22 ppmw de boro e 0,62 ppmw de fósforo** <Cite id="elkem-solar-route" />. Com isso o material, vendido sob a marca **ESS™**, passou a atender ao **grupo IV** da norma **SEMI PV17-0611**, que classifica justamente as qualidades de silício grau solar <Cite id="elkem-solar-route" />.
 
 Na célula, o resultado prático foi paridade com o polissilício convencional: eficiências de **16,5–17%** em células multicristalinas e de **18–18,5%** em monocristalinas, mesmo em misturas de 40 a 80% de ESS com polissilício virgem <Cite id="elkem-solar-route" />. A rota também aceitava **reciclar os cortes de lingote** (*carbide cuts*) que a indústria solar normalmente descarta <Cite id="elkem-solar-route" />.
 
@@ -218,7 +218,7 @@ Na célula, o resultado prático foi paridade com o polissilício convencional: 
 
 Quem visita uma planta Siemens vê **hastes** de silício saindo do reator. A rota metalúrgica entrega outra coisa: **blocos**. O produto saía da Noruega em **pallets de 24 blocos**, cada um pesando **10–18 kg** e medindo tipicamente **14–15 cm de largura por 15–17 cm de altura e 27–28 cm de comprimento** — pallets de **300–350 kg** <Cite id="rec-solar-epd" />. Esses blocos seguiam para fusão e re-cristalização em lingotes mono ou multicristalinos.
 
-A operação tinha dois sítios: **Fiskå, em Kristiansand**, produzia o silício grau solar — cerca de **7.300 toneladas por ano** em 2018 — e **Herøya, em Porsgrunn**, transformava o material em lingotes e blocos para exportação, principalmente para a fábrica da REC em Singapura <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
+A operação tinha dois sítios: **Fiskå, em Kristiansand**, produzia o silício grau solar (cerca de **7.300 toneladas por ano** em 2018) e **Herøya, em Porsgrunn**, transformava o material em lingotes e blocos para exportação, principalmente para a fábrica da REC em Singapura <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
 
 <DiagramFigure src="/assets/heroyha-industripark.jpg" alt="Parque industrial de Herøya, em Porsgrunn, Noruega">
 O parque industrial de **Herøya**, em Porsgrunn, onde o silício de Kristiansand era fundido em lingotes e cortado em blocos antes de seguir para Singapura <Cite id="rec-solar-epd" />. Bitjungle — <a href="https://commons.wikimedia.org/wiki/File:Her%C3%B8ya_Industripark.JPG" target="_blank" rel="noopener noreferrer">Herøya Industripark</a> (CC BY-SA 4.0), Wikimedia Commons.
@@ -257,9 +257,9 @@ Repare também que a coluna do grau solar policristalino lista **apenas o teor d
 
 ### O ciclo do porco (*pork cycle*)
 
-O preço do polissilício não oscila por acaso. Entre **1981 e 2004**, o preço de contrato de longo prazo alternou entre pico e vale num intervalo **notavelmente regular de sete a oito anos** <Cite id="bernreuter-market" />. O padrão tem nome — *pork cycle*, o ciclo do porco — e a causa é sempre a mesma: **o atraso entre o sinal e a resposta**.
+O preço do polissilício não oscila por acaso. Entre **1981 e 2004**, o preço de contrato de longo prazo alternou entre pico e vale num intervalo **notavelmente regular de sete a oito anos** <Cite id="bernreuter-market" />. O padrão tem nome: *pork cycle*, o ciclo do porco, e a causa é sempre **o atraso entre o sinal e a resposta**.
 
-<DiagramFigure src="/assets/polysilicon-pork-cycle.svg" alt="Diagrama do ciclo do preço em quatro etapas — escassez, investimento, o atraso de dois a três anos até as plantas entrarem em operação e a sobreoferta — com uma seta de retorno mostrando que o investimento para e a escassez volta; abaixo, um gráfico de linha do preço mostrando o pico em que a decisão de construir é tomada e, dois a três anos depois, o vale em que a capacidade entra em operação">
+<DiagramFigure src="/assets/polysilicon-pork-cycle.svg" alt="Diagrama do ciclo do preço em quatro etapas (escassez, investimento, o atraso de dois a três anos até as plantas entrarem em operação e a sobreoferta) com uma seta de retorno mostrando que o investimento para e a escassez volta; abaixo, um gráfico de linha do preço mostrando o pico em que a decisão de construir é tomada e, dois a três anos depois, o vale em que a capacidade entra em operação">
 Por que o preço cicla. O sinal de preço é verdadeiro, mas a resposta chega tarde: uma planta de polissilício leva de dois a três anos entre engenharia, obra e ramp-up. Quando a capacidade finalmente entra em operação, o mercado que a justificava já não existe. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-market" /> <Cite id="bernreuter-pork-cycle" />.
 </DiagramFigure>
 
@@ -287,11 +287,11 @@ Ciclos de escassez (*shortage*) e sobreoferta (*oversupply*).
 
 <SourceNote :ids="['bernreuter']" />
 
-Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) para **61** (2010) — os projetos brotavam por toda parte, inclusive fora da China, e dezenas fracassaram <Cite id="bernreuter-market" />. A sobreoferta fechou **mais de 40 plantas** entre o fim de 2010 e o início de 2013, a maioria delas na China — que já havia perdido **36 unidades** de pequeno e médio porte em 2011/2012 <Cite id="bernreuter-market" />.
+Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) para **61** (2010). Os projetos brotavam por toda parte, inclusive fora da China, e dezenas fracassaram <Cite id="bernreuter-market" />. A sobreoferta fechou **mais de 40 plantas** entre o fim de 2010 e o início de 2013, a maioria delas na China, que já havia perdido **36 unidades** de pequeno e médio porte em 2011/2012 <Cite id="bernreuter-market" />.
 
 ### A ascensão chinesa
 
-Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar. As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%** — pouco dissuasivas —, enquanto os americanos apanharam com taxas de até **57%**, contornadas por algum tempo pelo regime de *processing trade* e fechadas em agosto de 2014 <Cite id="bernreuter-market" />.
+Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar. As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%**, pouco dissuasivas, enquanto os americanos apanharam com taxas de até **57%**, contornadas por algum tempo pelo regime de *processing trade* e fechadas em agosto de 2014 <Cite id="bernreuter-market" />.
 
 A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
 
@@ -299,13 +299,13 @@ A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
 - **Guerra de preços deliberada.** Em 2018, o então presidente da Daqo New Energy, Longgen Zhang, foi explícito sobre a estratégia: das **300.000 toneladas** de capacidade chinesa de 2017, cerca de **100.000** tinham custo baixo, e as outras **200.000** "seriam eliminadas" para dar lugar à capacidade nova <Cite id="bernreuter-market" />.
 - **Consumo específico em queda.** A quantidade de silício por watt instalado caiu a tal ponto que o polissilício consumido para cada gigawatt novo em **2023 era um quarto** do que se gastava em 2006. Contribuíram a redução da **espessura do wafer**, a troca da serra de lama pela **serra de fio diamantado** (menos perda de *kerf*), o ganho de eficiência das células, a virada para **células monocristalinas tipo n**, além de cortes de célula e outras melhorias de montagem <Cite id="bernreuter-market" />.
 
-A virada para o monocristalino não foi só técnica. Em **2015** a Administração Nacional de Energia da China lançou o programa **Top Runner**, cujos limites mínimos de eficiência **favoreciam o monocristalino em detrimento do multicristalino** — e isso deu o empurrão que faltava para a Longi e a Zhonghuan escalarem capacidade <Cite id="bernreuter-market" />. Como células monocristalinas, sobretudo tipo n, exigem insumo mais puro, o programa também favoreceu as plantas chinesas de polissilício de melhor qualidade — e manteve aberto um nicho para fornecedores estrangeiros como a Wacker e a OCI <Cite id="bernreuter-market" />.
+A virada para o monocristalino não foi só técnica. Em **2015** a Administração Nacional de Energia da China lançou o programa **Top Runner**, cujos limites mínimos de eficiência **favoreciam o monocristalino em detrimento do multicristalino**, e isso deu o empurrão que faltava para a Longi e a Zhonghuan escalarem capacidade <Cite id="bernreuter-market" />. Como células monocristalinas, sobretudo tipo n, exigem insumo mais puro, o programa também favoreceu as plantas chinesas de polissilício de melhor qualidade, e manteve aberto um nicho para fornecedores estrangeiros como a Wacker e a OCI <Cite id="bernreuter-market" />.
 
 No fim, o mapa virou geopolítico. Fora da China, o último grande projeto foi a planta da **Wacker no Tennessee (EUA)**, aberta em 2016 mas decidida ainda em 2010, antes de existirem os direitos antidumping americanos <Cite id="bernreuter-market" />. E o **Uyghur Forced Labor Prevention Act** criou um **segmento separado, de preço mais alto**, para polissilício não chinês, reabrindo a conversa sobre capacidade fora do país <Cite id="bernreuter-market" />.
 
 ### Uma nota sobre o presente
 
-Em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />. A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural — a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />. É esse tipo de ciclo curto, contra capacidade instalada abundante — e num mercado onde mais de 90% da oferta sai de um só país —, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
+Em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />. A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural: a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />. É esse tipo de ciclo curto, contra capacidade instalada abundante, num mercado onde mais de 90% da oferta sai de um só país, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
 
 <SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle']" />
 

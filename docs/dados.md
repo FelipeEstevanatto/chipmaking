@@ -30,7 +30,7 @@ A curva mais citada da indústria é também a mais difícil de atribuir, porque
 | 2020 | Apple M1 | **16 bilhões** | <Cite id="dados-transistor-count" /> |
 | 2024 | Apple M4 | **28 bilhões** | <Cite id="dados-transistor-count" /> |
 
-A leitura da série é mais interessante na escala **logarítmica**, que o botão acima alterna: em escala linear, as últimas duas linhas achatam todo o resto, e a impressão de continuidade da lei de Moore desaparece. O que a curva log mostra é uma reta — crescimento **exponencial** com tempo de duplicação de poucos anos — e é essa regularidade, não o valor absoluto, que a indústria perseguiu por décadas.
+A leitura da série muda com o botão acima. Em escala linear, as últimas duas linhas achatam todo o resto e a impressão de continuidade da lei de Moore desaparece. Em escala **logarítmica**, o que se vê é uma reta: crescimento **exponencial** com tempo de duplicação de poucos anos, e é essa regularidade que a indústria perseguiu por décadas.
 
 ## Rendimento contra área
 
@@ -40,7 +40,7 @@ O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimen
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Vale olhar a inclinação antes dos valores. Dobrar a área de um die derruba o rendimento **mais que pela metade**, e a perda cresce com a densidade de defeitos — é o motivo econômico pelo qual dies muito grandes são raros e pelos quais a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é otimista para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
+Dobrar a área de um die derruba o rendimento **mais que pela metade**, e a perda cresce com a densidade de defeitos — é o motivo econômico pelo qual dies muito grandes são raros e pelos quais a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é otimista para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
 ## As séries em arquivo
 
@@ -57,7 +57,7 @@ O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.
 
 ## O selo de atualidade
 
-Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usava, para a escala e o custo do setor, números de **2011** — que o próprio texto admite estarem defasados —, enquanto [estrutura e tipos](/estrutura-wafers) cita dados do ano corrente.
+Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usava, para a escala e o custo do setor, números de **2011** (que o próprio texto admite estarem defasados), enquanto [estrutura e tipos](/estrutura-wafers) cita dados do ano corrente.
 
 Por isso cada capítulo declara, abaixo do título, o **ano do dado mais recente que cita**. É uma informação de leitura, não de validade: um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
 

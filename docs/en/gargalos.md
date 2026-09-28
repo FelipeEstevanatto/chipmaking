@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 This site describes the silicon chain step by step, and the geographical facts ended up scattered: the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine-onde-o-quartzo-e-puro-o-suficiente), [Chinese](/en/polissilicio#a-ascensao-chinesa) polysilicon, [Japanese](/en/estrutura-wafers#quem-fabrica-os-wafers) wafers, [single-source](/en/historia-fotolitografia) lithography. This page puts the pieces into one table and asks the question they do not ask separately: **what stops in the world if each of these points stops?**
 
-The answer has a pattern, and the pattern is this chapter's argument.
+The answer has a pattern, and it repeats step by step.
 
 ## The map
 
@@ -27,7 +27,7 @@ The answer has a pattern, and the pattern is this chapter's argument.
 
 <Cite id="sibelco-hpq" /> <Cite id="usgs-mcs" /> <Cite id="bernreuter-market" /> <Cite id="nikkei-wafer-share" /> <Cite id="asml-euv-products" /> <Cite id="fabm-neon-2022" />
 
-Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored — and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is exactly the shape of the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
+Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored — and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same shape as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
 
 ## The money of policy
 
@@ -41,13 +41,13 @@ What these programmes buy is **capacity**, not self-sufficiency. A new wafer pla
 
 ## Export control is an engineered chokepoint
 
-There is a second category of chokepoint, more recent: one created neither by geology nor by economics, but by **rule**. The United States, the Netherlands and Japan aligned restrictions on the export of advanced lithography equipment — precisely the step where a single supplier exists <Cite id="choke-cset-controls" />.
+There is a second category of chokepoint, more recent: the one created by **rule**. The United States, the Netherlands and Japan aligned restrictions on the export of advanced lithography equipment — precisely the step where a single supplier exists <Cite id="choke-cset-controls" />.
 
 The technical point is that this chokepoint **cannot be worked around by buying elsewhere**. A fab cannot replace one EUV scanner with two DUV scanners without redoing the process: every machine is qualified inside a specific recipe. The trade restriction therefore acts with the same force as a mineral monopoly — except that it is reversible by political decision, which is an important difference.
 
 ## Why concentration is not an accident
 
-It is worth naming the mechanism, because intuition suggests the opposite: large markets should have many suppliers.
+Large markets should have many suppliers. Three forces push the other way.
 
 - **Idle capacity is punishingly expensive.** A polysilicon or wafer plant costs billions and has to run full. Two suppliers splitting a market of the same size both sit below break-even — it is more stable for there to be one.
 - **Qualification is an asset.** Changing a materials supplier means requalifying the process. That locks in the customer and deters the entrant, as discussed in [fab consumables](/en/insumos-fab).

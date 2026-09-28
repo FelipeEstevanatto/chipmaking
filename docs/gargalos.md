@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 Este site descreve a cadeia do silício etapa por etapa, e os fatos de geografia ficaram espalhados: o quartzo de [Spruce Pine](/mineracao-mg-si#spruce-pine-onde-o-quartzo-e-puro-o-suficiente), o polissilício [chinês](/polissilicio#a-ascensao-chinesa), os wafers [japoneses](/estrutura-wafers#quem-fabrica-os-wafers), a litografia [única](/historia-fotolitografia). Esta página junta os pedaços numa tabela só e faz a pergunta que eles, separados, não fazem: **o que para o mundo se cada um desses pontos parar?**
 
-A resposta tem um padrão, e o padrão é o argumento do capítulo.
+A resposta tem um padrão, e o padrão se repete etapa por etapa.
 
 ## O mapa
 
@@ -27,7 +27,7 @@ A resposta tem um padrão, e o padrão é o argumento do capítulo.
 
 <Cite id="sibelco-hpq" /> <Cite id="usgs-mcs" /> <Cite id="bernreuter-market" /> <Cite id="nikkei-wafer-share" /> <Cite id="asml-euv-products" /> <Cite id="fabm-neon-2022" />
 
-O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava — e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É exatamente o mesmo formato do gargalo de Spruce Pine: **um insumo barato, pouco visível e insubstituível a curto prazo**.
+O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava — e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo formato do gargalo de Spruce Pine: **um insumo barato, pouco visível e insubstituível a curto prazo**.
 
 ## O dinheiro da política
 
@@ -41,13 +41,13 @@ O que esses programas compram é **capacidade**, não autossuficiência. Uma pla
 
 ## O controle de exportação é um gargalo de projeto
 
-Há uma segunda categoria de gargalo, mais recente: aquele que não é criado pela geologia nem pela economia, e sim por **regra**. Estados Unidos, Holanda e Japão alinharam restrições à exportação de equipamento avançado de litografia — precisamente a etapa em que existe um fornecedor único <Cite id="choke-cset-controls" />.
+Há uma segunda categoria de gargalo, mais recente: o criado por **regra**. Estados Unidos, Holanda e Japão alinharam restrições à exportação de equipamento avançado de litografia — precisamente a etapa em que existe um fornecedor único <Cite id="choke-cset-controls" />.
 
 O ponto técnico é que esse gargalo **não se contorna comprando de outro**. Uma fab não substitui um scanner EUV por dois scanners DUV sem refazer o processo: cada máquina é qualificada dentro de uma receita específica. A restrição comercial funciona, portanto, com a mesma força de um monopólio mineral — só que reversível por decisão política, o que é uma diferença importante.
 
 ## Por que a concentração não é acidente
 
-Vale nomear o mecanismo, porque a intuição sugere o contrário: mercados grandes deveriam ter muitos fornecedores.
+Mercados grandes deveriam ter muitos fornecedores. Três forças empurram na direção oposta.
 
 - **Capacidade ociosa é caríssima.** Uma planta de polissilício ou de wafer custa bilhões e precisa rodar cheia. Dois fornecedores dividindo um mercado do mesmo tamanho ficam os dois abaixo do ponto de equilíbrio — é mais estável que haja um.
 - **Qualificação é um ativo.** Trocar de fornecedor de material exige requalificar o processo. Isso prende o cliente e desestimula o entrante, como se discute em [insumos da fab](/insumos-fab).

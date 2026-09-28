@@ -16,6 +16,18 @@ This is the part of the chain that usually gets left out of explanations, and th
 The wafer enters on the left as a single piece and leaves on the right as individual parts, tested and ready to be soldered onto a board.
 </DiagramFigure>
 
+The chapter's order is the production line's order:
+
+1. [Wafer test](#wafer-test-separating-the-wheat-before-paying-for-the-mould) — separating the good die before paying for the mould.
+2. [Dicing](#dicing-separating-the-dies) — separating the dies, and why the blade stops working.
+3. [Wire bonding](#wire-bonding-the-technology-that-assembles-80-of-the-world) — the technology that still assembles most of the world.
+4. [Flip-chip](#flip-chip-turning-the-die-face-down) — turning the die over, when the perimeter stops being enough.
+5. [Stacking](#_2-5d-3d-and-the-package-hierarchy) — 2.5D, 3D and hybrid bonding.
+6. [HBM](#hbm-the-memory-that-had-to-move-next-door) — the memory that had to move next door to the processor.
+7. [Chiplets](#chiplets-dividing-in-order-to-yield) — dividing the chip to get yield.
+8. [Final test](#final-test-burn-in-and-binning) — burn-in, binning and what gets sold.
+9. [What it is worth](#what-packaging-is-worth) — the economic size of this part of the chain.
+
 ## Wafer test: separating the wheat before paying for the mould
 
 The first thing that happens to the wafer is a measurement. A **probe card** descends onto each die, needles make contact with its pads, and an electrical tester checks whether it works <Cite id="semiprobe-wafer-test" />.
@@ -54,7 +66,7 @@ It is the answer to a growing problem: some defects only appear when the chip do
 
 With testing done, the wafer has to be **cut**. It looks like the most trivial step in the process, and it is not: every cut introduces microscopic cracks, and a crack at a die edge is a mechanical failure that will show up later, often in the customer's product.
 
-The most common method is the **diamond blade**, and the geometry matters. The width of the cut — the **kerf** — is not the blade thickness: it is the thickness **plus chipping**. In silicon, chipping adds about **20 µm on each side**; in glass, about **10 µm** <Cite id="ku-dicing-sop" />. The blade itself is tens of micrometres wide: a standard nickel-bonded blade measures **40 µm**, and resin-bonded blades for glass reach **100 µm** <Cite id="ku-dicing-sop" />.
+The most common method is the **diamond blade**, and the geometry matters. The width of the cut, the **kerf**, is not the blade thickness: it is the thickness **plus chipping**. In silicon, chipping adds about **20 µm on each side**; in glass, about **10 µm** <Cite id="ku-dicing-sop" />. The blade itself is tens of micrometres wide: a standard nickel-bonded blade measures **40 µm**, and resin-bonded blades for glass reach **100 µm** <Cite id="ku-dicing-sop" />.
 
 The parameters follow the material. For silicon the spindle runs at **30,000 rpm** with a feed of **5 to 10 mm/s**; for glass, slower <Cite id="disco-dad3221" />.
 
@@ -64,7 +76,7 @@ Three situations pushed the industry toward alternatives.
 
 The first is the **fragility of low-k dielectrics**. The *low-k* films of the [BEOL](/en/na-fab) are mechanically weak and are **easily damaged** by blade dicing, which motivated the search for other methods <Cite id="ectc-2016-dicing" />.
 
-The second is **chipping in thin wafers**. In a wafer **25 µm** thick — a common figure today in stacked memory — a standard blade causes substantial backside chipping; much finer grit is required <Cite id="disco-thin-wafer" />.
+The second is **chipping in thin wafers**. In a wafer **25 µm** thick (a common figure today in stacked memory), a standard blade causes substantial backside chipping; much finer grit is required <Cite id="disco-thin-wafer" />.
 
 The third is **HBM**, where the layers are thin and part strength is critical. A study comparing blade, laser and stealth dicing in wafers for 2.5D/3D integration found the **highest fracture strength with stealth dicing**, and observed that **60 µm** wafers resist more than 90 or 120 µm ones <Cite id="mdpi-singulation-hbm" />.
 
@@ -105,7 +117,7 @@ The limitation of wiring is geometric: the pads have to sit on the **edge** of t
 **Flip-chip** solves it by inverting the die. It is mounted **face down**, and the connection is made by solder bumps or copper pillars distributed across **the entire active surface** <Cite id="wiley-packaging-ch3" />.
 
 <DiagramFigure src="/assets/wirebond-vs-flipchip.svg" alt="Side-by-side comparison: on the left, the die face up with looping wires leaving the edge; on the right, the die face down with solder bumps distributed across the whole area">
-It is a single choice — face up or face down — and it determines how many connections the package can have.
+It is a single choice (face up or face down), and it determines how many connections the package can have.
 </DiagramFigure>
 
 The gain is threefold: the electrical path becomes **short**, **inductance** falls sharply, and the number of contacts is no longer limited by the perimeter. That is why microprocessors, GPUs and accelerators are flip-chip: they need **thousands** of simultaneous connections <Cite id="wiley-packaging-ch3" />.
@@ -140,7 +152,7 @@ TSMC calls its 2.5D platform **CoWoS** (*chip on wafer on substrate*), and it ha
 - **CoWoS-R**: instead of silicon, a **redistribution interposer** — polymer with copper traces. It has been in volume production **since 2023** and scales beyond 3.3× <Cite id="tsmc-cowos" />.
 - **CoWoS-L**: combines a redistribution interposer with **local silicon interconnect** (*LSI*) bridges, placed only where connection density demands <Cite id="tsmc-cowos" />.
 
-The first breach of the reticle barrier came in **March 2020**, when TSMC and Broadcom announced a **2× reticle** (~1,700 mm²) interposer. It supported up to **6 HBM cubes**, **96 GB** of memory and **2.7 TB/s** of bandwidth — **2.7 times** the 2016 CoWoS solution — using **mask stitching** to exceed the size of one exposure field <Cite id="tsmc-2x-cowos" />.
+The first breach of the reticle barrier came in **March 2020**, when TSMC and Broadcom announced a **2× reticle** (~1,700 mm²) interposer. It supported up to **6 HBM cubes**, **96 GB** of memory and **2.7 TB/s** of bandwidth, **2.7 times** the 2016 CoWoS solution, using **mask stitching** to exceed the size of one exposure field <Cite id="tsmc-2x-cowos" />.
 
 ### 3D: chips stacked
 
@@ -150,13 +162,13 @@ These are holes a few micrometres across, tens of micrometres deep, **filled wit
 
 ### Hybrid bonding
 
-Stacking by microbumps has a ceiling. Today's most advanced microbumps sit at around a **40 µm pitch** — meaning bumps of **20 to 25 µm** separated by **15 µm** — and the technology is viable down to about **10 to 20 µm**. Below that, solder no longer works <Cite id="semieng-bump-pitch" />.
+Stacking by microbumps has a ceiling. Today's most advanced microbumps sit at around a **40 µm pitch** (meaning bumps of **20 to 25 µm** separated by **15 µm**), and the technology is viable down to about **10 to 20 µm**. Below that, solder no longer works <Cite id="semieng-bump-pitch" />.
 
 The way out is to eliminate the solder. In **hybrid bonding**, the surfaces of **copper** and dielectric are polished until atomically flat, brought into contact and heated. The copper diffuses and bonds **directly** to the copper on the other side, with no solder in between.
 
 The numbers this unlocks are of another order: **more than one million interconnects per mm²** at a copper pitch of about **1 µm** <Cite id="imec-hybrid-bonding" />. imec demonstrated **die-to-wafer bonding at 2 µm pitch with better than 350 nm overlay** <Cite id="imec-d2w-hb" />, and **wafer-to-wafer bonding at 400 nm pitch** requires overlay **below 100 nm** <Cite id="imec-hybrid-bonding" />. imec itself estimates that solder-based die-to-wafer will **stagnate at 10 to 5 µm pitch** <Cite id="imec-hybrid-bonding" />.
 
-Intel describes its implementation — **Foveros Direct 3D** — as capable of **sub-10 µm pitch** and **up to 10 times** the interconnect density of conventional microbumps <Cite id="intel-foveros-direct" />.
+Intel describes its implementation, **Foveros Direct 3D**, as capable of **sub-10 µm pitch** and **up to 10 times** the interconnect density of conventional microbumps <Cite id="intel-foveros-direct" />.
 
 There is a yield argument behind this, and it is elegant: bonding **die to wafer** allows stacking only **known good dies**, raising compound yield, and allows joining **dies of different sizes** — which wafer-to-wafer bonding does not <Cite id="imec-d2w-hb" />.
 
@@ -178,7 +190,7 @@ HBM is a JEDEC standard, and the evolution of its versions is the history of the
 Each generation doubles something: the per-pin rate, the interface width or the channel count. The compound result is the jump visible in the chart.
 </DiagramFigure>
 
-HBM4 is the clearest example of why this memory **cannot** be a plug-in module. The standard doubles the interface from **1,024 to 2,048 bits** and the channels from **16 to 32 per stack**, with speeds up to **8 Gb/s** and densities from **4 to 64 GB** <Cite id="jedec-hbm4" />.
+HBM4 shows why this memory **cannot** be a plug-in module. The standard doubles the interface from **1,024 to 2,048 bits** and the channels from **16 to 32 per stack**, with speeds up to **8 Gb/s** and densities from **4 to 64 GB** <Cite id="jedec-hbm4" />.
 
 On the processor side, that means a trace count that has no way of existing on a board: there are already **more than a thousand wires** between the accelerator and a single HBM stack at the HBM3E generation, a density **impossible to route** on an organic substrate or circuit board <Cite id="semianalysis-hbm" />. In HBM4 there are **2,048 data wires** and about **3,000 traces** once clock, control and address are counted <Cite id="rambus-hbm" />.
 
@@ -202,7 +214,7 @@ Every defect kills an entire die. The larger the die, the more defects it runs i
 
 The alternative is to **split the product into smaller chips**. Instead of one large monolithic die, several *chiplets* are fabricated and then assembled together in the same package, communicating over fast interconnects rather than internal wiring.
 
-AMD's arithmetic, presented at Hot Chips 2017, is the classic example. Replacing a hypothetical **777 mm²** monolithic die with **four 213 mm² dies** — totalling **852 mm²**, that is, about **10% more silicon** — produced a cost of roughly **0.59 times** the monolithic one <Cite id="amd-chiplet-economics" />. More total area, **41% less cost**.
+AMD's arithmetic, presented at Hot Chips 2017, is the classic example. Replacing a hypothetical **777 mm²** monolithic die with **four 213 mm² dies** (totalling **852 mm²**, that is, about **10% more silicon**) produced a cost of roughly **0.59 times** the monolithic one <Cite id="amd-chiplet-economics" />. More total area, **41% less cost**.
 
 The reason is exactly the one in the figure: the four small dies each yield much better individually, and only the working ones go on to assembly.
 
@@ -228,19 +240,19 @@ It is an explicit trade: burn-in **reduces warranty cost at the cost of some yie
 
 ### Binning: one die, several products
 
-Not every working chip is equal. At **final test**, devices are sorted — ***binned*** — by **maximum operating frequency**, by **voltage**, by **temperature**, by **leakage current** or by output drive capability <Cite id="semieng-binning" />.
+Not every working chip is equal. At **final test**, devices are sorted, ***binned***, by **maximum operating frequency**, by **voltage**, by **temperature**, by **leakage current** or by output drive capability <Cite id="semieng-binning" />.
 
 That is why the same die appears in the shop in several versions at different prices. Binning happens **after packaging**, at final test <Cite id="semieng-binning" />, and it converts the process's natural variability into a **product line** instead of waste. A die that cannot reach the top model's frequency can still be sold as the model below.
 
 ## What packaging is worth
 
-It is worth closing with the economic size of this part of the chain, because it is counterintuitive in two directions at once.
+The economic size of this step misleads in two directions.
 
 The first: it is **small**. CSET cites an earlier report estimating assembly, test and packaging (*ATP*) at about **10% of the value of a finished chip**, against roughly **45%** contributed by design and front-end fabrication. A report by the SIA with BCG arrives at an even smaller number, **6%** — with the segment accounting for **3% of R&D** and **13% of industry capital expenditure** <Cite id="cset-packaging" />.
 
 The second: despite that, the **ITRS records that packaging cost often exceeds the cost of fabricating the integrated circuit itself** <Cite id="itrs-assembly" />. The two statements coexist because they measure different things — share of the product's final value on one hand, industrial cost of the step on the other.
 
-And there is a third, more recent figure that explains why the subject stopped being peripheral. The **advanced packaging** market — the part that does CoWoS, HBM and chiplets — was worth about **US$46 billion in 2024** and is heading for **more than US$79 billion by 2030** <Cite id="yole-advanced-packaging" />. It is a minority of the total, but it is the minority that **constrains** the rest: TSMC stated in 2024 that CoWoS capacity had **more than doubled** year on year and that it intended to double it again, and that customer demand still **far exceeded** its ability to supply <Cite id="tsmc-q3-2024" />.
+And there is a third, more recent figure that explains why the subject stopped being peripheral. The **advanced packaging** market (the part that does CoWoS, HBM and chiplets) was worth about **US$46 billion in 2024** and is heading for **more than US$79 billion by 2030** <Cite id="yole-advanced-packaging" />. It is a minority of the total, but it is the minority that **constrains** the rest: TSMC stated in 2024 that CoWoS capacity had **more than doubled** year on year and that it intended to double it again, and that customer demand still **far exceeded** its ability to supply <Cite id="tsmc-q3-2024" />.
 
 A bottleneck that is small in value can be large in consequence. That is what happened to packaging: for decades the cheap step at the end of the line, it is now the step that decides how many AI chips the world can assemble.
 

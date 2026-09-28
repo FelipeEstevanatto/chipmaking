@@ -30,7 +30,7 @@ Elas reaparecem em cada etapa da cadeia. O [forno de arco](/mineracao-mg-si) pre
 
 <Cite id="elem-ioffe" /> <Cite id="elem-sze" /> <Cite id="elem-ciaaw" />
 
-Três coisas nessa tabela merecem atenção, e as três têm consequência industrial.
+Três desses números têm consequência industrial.
 
 A primeira é a densidade. O silício sólido é **menos denso que o próprio fundido** — 2,33 contra cerca de 2,57 g/cm³. Quase todo material encolhe ao solidificar; o silício **expande**. É por isso que o cristal cresce flutuando sobre o banho no [Czochralski](/fabricacao-wafers), e não afundando nele <Cite id="zulehner-2000" />.
 
@@ -44,7 +44,7 @@ O silício tem gap de **1,12 eV**, estreito o suficiente para conduzir quando se
 
 O detalhe decisivo, porém, é que esse gap é **indireto**: o mínimo da banda de condução e o máximo da banda de valência não estão no mesmo ponto do espaço de momentos. Absorver ou emitir um fóton exige, então, a ajuda de uma vibração da rede, o que torna os dois processos muito menos prováveis <Cite id="elem-sze" />.
 
-Daí saem duas consequências que aparecem em capítulos separados deste site. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem** — o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="saimm" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio).
+Daí saem duas consequências. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem** — o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="saimm" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio).
 
 <ClientOnly>
   <DataChart chart="band-gap" />
@@ -64,11 +64,9 @@ O silício natural é uma mistura de três isótopos estáveis, e a proporção 
 
 A variação é pequena, mas não nula, e é medida com precisão suficiente para virar ferramenta: a razão entre isótopos de silício num sedimento conta a história do clima em que ele se formou <Cite id="elem-ciaaw" />.
 
-Para a indústria, a consequência prática é outra. Os **0,47% de ²⁹Si** não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo — não a substância, mas o **isótopo** — é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+Para a indústria, a consequência prática é outra. Os **0,47% de ²⁹Si** não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo (não a substância, mas o **isótopo**) é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Por que a indústria usa este elemento
-
-Vale fechar com a pergunta que os capítulos anteriores respondem por partes: por que **este** elemento, e por que ele virou sinônimo de eletrônica e de energia solar ao mesmo tempo?
 
 - Ele é o **segundo mais abundante** da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
 - Ele forma um **óxido nativo** estável, isolante e insolúvel em água, que serve de máscara e de dielétrico de porta — o que o germânio não faz <Cite id="ge-vs-si" />.

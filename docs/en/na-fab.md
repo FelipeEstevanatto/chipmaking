@@ -14,13 +14,25 @@ The [photolithography](/en/fotolitografia) chapter shows how a pattern is printe
 
 ## A fab is a loop, not an assembly line
 
-<DiagramFigure src="/assets/fab-loop.svg" alt="The wafer cycles repeatedly through seven modules — oxidation, deposition, lithography, etching, implantation, planarisation and metrology — accumulating about a thousand steps over roughly three months">
+<DiagramFigure src="/assets/fab-loop.svg" alt="The wafer cycles repeatedly through seven modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology) accumulating about a thousand steps over roughly three months">
 The wafer does not travel through the fab once: it goes round the same equipment dozens of times. Each lap adds a layer, erases part of it and measures the result.
 </DiagramFigure>
 
-The mental image of an assembly line — raw material in at one end, finished product out at the other — does not describe a semiconductor fab. The wafer is **processed in a loop**: it goes to lithography, back to a furnace, back to lithography, down to a plasma reactor, up again. That repetition is why the industry's numbers are so large.
+The loop has **seven modules**. Six of them have a section in this chapter, in the order the wafer visits them; the seventh, lithography, has [its own chapter](/en/fotolitografia), because that is where the whole difficulty of scaling sits:
 
-An advanced process can have **600 to more than 1,000 steps**, with 5 nm flows quoted above **1,100** <Cite id="semieng-cycle-time" />. Hitachi High-Tech, which builds the inspection equipment, describes the same process as **400 to 600 steps** taking **one to two months** <Cite id="hitachi-metrology" />. Both counts coexist because they measure different things — one counts recipe steps, the other counts equipment visits — and because the boundary between "one step" and "one set of steps" is a convention, not physics.
+1. [Thermal oxidation](#thermal-oxidation-silicon-growing-its-own-insulator) — silicon growing its own insulator.
+2. [Deposition](#deposition-putting-material-where-there-was-none) — putting material where there was none.
+3. [Lithography](/en/fotolitografia) — drawing the pattern, in a separate chapter.
+4. [Etching](#etching-removing-material-on-purpose) — removing material on purpose.
+5. [Ion implantation](#ion-implantation-doping-by-force) — doping by force.
+6. [Planarisation](#planarisation-erasing-the-relief) — erasing the relief so layers can stack.
+7. [Metrology](#metrology-measuring-so-you-can-continue) — measuring so you can continue.
+
+Outside the loop, two sections close the chapter: [interconnection](#interconnection-the-part-of-the-chip-nobody-sees), which builds what the loop patterned, and [yield](#yield-the-number-that-decides-whether-a-product-exists), which measures whether it worked.
+
+The mental image of an assembly line (raw material in at one end, finished product out at the other) does not describe a semiconductor fab. The wafer is **processed in a loop**: it goes to lithography, back to a furnace, back to lithography, down to a plasma reactor, up again. That repetition is why the industry's numbers are so large.
+
+An advanced process can have **600 to more than 1,000 steps**, with 5 nm flows quoted above **1,100** <Cite id="semieng-cycle-time" />. Hitachi High-Tech, which builds the inspection equipment, describes the same process as **400 to 600 steps** taking **one to two months** <Cite id="hitachi-metrology" />. Both counts coexist because they measure different things (one counts recipe steps, the other counts equipment visits) and because the boundary between "one step" and "one set of steps" is a convention, not physics.
 
 The metric the industry actually plans with is different, and more useful: **days per mask layer**. The average sits between **1 and 1.5 days per layer**, and the best fabs reach **0.8 days** <Cite id="semieng-cycle-time" />. Because the mask count grows with the node, total time grows with it:
 
@@ -37,9 +49,9 @@ The standard lot is **25 wafers** <Cite id="semieng-cycle-time" />, and that is 
 
 ### The honest count of exposures
 
-There is a line that circulates widely in presentations — "a wafer goes through lithography about 50 to 80 times" — and it **has no clear primary source**. What can be documented is more precise and less round: a **32/28 nm** flow used **38 lithography exposures**, **15 of them immersion**; a **22/20 nm** flow used **52 exposures**, with **31 immersion** and **11 multi-patterning steps** <Cite id="semieng-litho-layers" />.
+There is a line that circulates widely in presentations, "a wafer goes through lithography about 50 to 80 times", and it **has no clear primary source**. What can be documented is more precise and less round: a **32/28 nm** flow used **38 lithography exposures**, **15 of them immersion**; a **22/20 nm** flow used **52 exposures**, with **31 immersion** and **11 multi-patterning steps** <Cite id="semieng-litho-layers" />.
 
-The practical conclusion is the same — it is **dozens** of round trips, not one — but the exact number depends on the node and the manufacturer. When someone quotes a round number, it is worth asking where it came from.
+The practical conclusion is the same (it is **dozens** of round trips, not one), but the exact number depends on the node and the manufacturer. When someone quotes a round number, it is worth asking where it came from.
 
 ### The three zones of a chip
 
@@ -55,19 +67,19 @@ The FEOL runs hot, because it is still forming crystal and doping. The BEOL runs
 
 Before anything else, silicon needs an insulator. And it is not given one: it **grows** one. The surface is exposed to oxygen or water vapour at high temperature and the silicon itself converts into **silicon dioxide**.
 
-This is an advantage almost no other semiconductor has. Germanium, the first transistor material, was abandoned in large part because it **does not form a stable native oxide**. It is the quality of that interface — a defect density low enough not to swallow the transistor — that makes SiO₂ work as a gate insulator, and it is what germanium lacks <Cite id="ecs-sio2-limits" />.
+This is an advantage almost no other semiconductor has. Germanium, the first transistor material, was abandoned in large part because it **does not form a stable native oxide**. It is the quality of that interface (a defect density low enough not to swallow the transistor) that makes SiO₂ work as a gate insulator, and it is what germanium lacks <Cite id="ecs-sio2-limits" />.
 
 The model that describes the growth dates from **1965**, by Deal and Grove, and it is still taught: in compact notation,
 
 \[ x_0^2 + A\,x_0 = B\,(t + \tau) \]
 
-where \(x_0\) is the oxide thickness. The model has two regimes, and the reason is intuitive: while the oxide is thin, the oxidant reaches the surface quickly and the **reaction** dominates — growth is **linear** in time. As the oxide thickens, the oxidant has to **diffuse** through it, and diffusion dominates — growth becomes **parabolic**, meaning it slows down <Cite id="deal-grove-1965" />.
+where \(x_0\) is the oxide thickness. The model has two regimes, and the reason is intuitive: while the oxide is thin, the oxidant reaches the surface quickly and the **reaction** dominates: growth is **linear** in time. As the oxide thickens, the oxidant has to **diffuse** through it, and diffusion dominates: growth becomes **parabolic**, meaning it slows down <Cite id="deal-grove-1965" />.
 
 The fit of the original model is excellent over a range stated explicitly in the paper: **700 to 1,300 °C**, **0.1 to 1.0 atm**, and thicknesses from **300 to 20,000 Å**, for both oxidants <Cite id="deal-grove-1965" />. Note that this is the range over which the model was **validated** — not a process recipe. Quoting "800 to 1,200 °C" as an oxidation temperature is common, but the verifiable figure is the one in the paper.
 
 ### Dry versus wet
 
-The two oxidants are not equivalent. **Water vapour** penetrates the oxide far better than molecular oxygen: the solubility of water in SiO₂ at 1,000 °C is about **600 times** that of O₂ <Cite id="tu-wien-oxidation" />. Wet oxidation is therefore much faster — reaching **hundreds of nanometres per hour** — and is used for **thick oxides**: isolation, masks, passivation.
+The two oxidants are not equivalent. **Water vapour** penetrates the oxide far better than molecular oxygen: the solubility of water in SiO₂ at 1,000 °C is about **600 times** that of O₂ <Cite id="tu-wien-oxidation" />. Wet oxidation is therefore much faster (reaching **hundreds of nanometres per hour**) and is used for **thick oxides**: isolation, masks, passivation.
 
 The **dry** oxidant is slow but produces a better-quality oxide with a cleaner interface. It is the oxidant of the layer that matters most: the **gate**.
 
@@ -108,7 +120,7 @@ Depositing and then etching is the pair that gives a chip its shape. Lithography
 The mask sets the width; the chemistry sets the shape. An isotropic etch widens the hole underneath the mask itself.
 </DiagramFigure>
 
-The central difference is **direction**. A **wet** etch, in solution, removes material at the same rate in every direction — it is **isotropic** — and therefore also etches **underneath the mask**, opening the profile beyond what lithography drew. A **dry** etch, in plasma, is **directional**: ions are accelerated at the wafer and attack preferentially downward.
+The central difference is **direction**. A **wet** etch, in solution, removes material at the same rate in every direction. It is **isotropic**, and therefore also etches **underneath the mask**, opening the profile beyond what lithography drew. A **dry** etch, in plasma, is **directional**: ions are accelerated at the wafer and attack preferentially downward.
 
 **RIE** (*reactive ion etching*) is the technique that combines both and dominates the industry. It uses simultaneously the **chemical reactivity** of the plasma, which removes material quickly, and **ion bombardment**, which provides direction. The ions arrive perpendicular because the wafer sits on the electrode carrying the highest voltage, and that combination is what produces near-vertical walls <Cite id="mks-rie" />.
 
@@ -140,7 +152,7 @@ The wafer is tilted deliberately. Without it, some ions slide down the open chan
 
 ### Channelling and the 7° tilt
 
-The silicon lattice is not a uniform obstacle. Viewed along certain directions there are **channels** — empty corridors between rows of atoms — down which an ion travels almost without colliding. This is **channelling**, and it ruins the profile: a **deep tail** appears, made of ions that went far beyond the intended depth.
+The silicon lattice is not a uniform obstacle. Viewed along certain directions there are **channels** (empty corridors between rows of atoms) down which an ion travels almost without colliding. This is **channelling**, and it ruins the profile: a **deep tail** appears, made of ions that went far beyond the intended depth.
 
 The industrial fix is almost banal in its simplicity: **tilt the wafer about 7° relative to the beam** <Cite id="cityu-implant" />. No ion then enters aligned with a channel, and the profile stays narrow and predictable. In practice **8 to 9° of tilt with 30° of rotation** are used, and the values also depend on beam current <Cite id="implant-dose-rate" />.
 
@@ -156,7 +168,7 @@ Implanting ions at high energy **destroys the crystal lattice** along the way: s
 
 The cure is thermal. An **anneal** restores crystal order and, at the same time, electrically activates the dopants, which must occupy substitutional sites in the lattice to work. The catch is the thermal budget: the anneal must be hot enough to repair the crystal and **short enough** not to spread the dopants that were just placed with such precision.
 
-That tension is what led to rapid thermal processing — **RTP** — and, more recently, to laser anneals measured in **milliseconds**. The shallower the profile you want, the shorter the pulse has to be.
+That tension is what led to rapid thermal processing (**RTP**) and, more recently, to laser anneals measured in **milliseconds**. The shallower the profile you want, the shorter the pulse has to be.
 
 ## Planarisation: erasing the relief
 
@@ -166,7 +178,7 @@ That would be a cosmetic problem if lithography were not **photographic**. A pro
 
 The solution is **CMP** (*chemical mechanical planarization*), which does exactly what the name says: it combines **chemical** attack from a slurry with **mechanical** wear from a rotating pad. The wafer is pressed against a spinning pad with a **slurry** of abrasive particles and reagents, and the relief is worn away <Cite id="amat-cmp" />.
 
-CMP entered production in the **1980s**, at IBM, to planarise the dielectric between metal levels. It was widely adopted when the critical dimension reached **0.35 µm**, the point at which the alternatives — reflowed glass, reverse etch, spin-on glass — could no longer meet the requirement <Cite id="cmp-history" />. A CMP step can take **little more than 60 seconds**, including the post-polish clean <Cite id="amat-cmp" />.
+CMP entered production in the **1980s**, at IBM, to planarise the dielectric between metal levels. It was widely adopted when the critical dimension reached **0.35 µm**, the point at which the alternatives (reflowed glass, reverse etch, spin-on glass) could no longer meet the requirement <Cite id="cmp-history" />. A CMP step can take **little more than 60 seconds**, including the post-polish clean <Cite id="amat-cmp" />.
 
 The characteristic defects of CMP have names and are easy to picture. In **wide** metal areas the material sinks: that is **dishing**. In **dense** areas the dielectric between wires wears faster than the metal: that is **erosion** <Cite id="cmp-history" />. Both get worse with overpolishing, and both degrade the lithography of the next layer.
 
@@ -174,7 +186,7 @@ The characteristic defects of CMP have names and are easy to picture. In **wide*
 
 None of the steps above finishes without a measurement. KLA, which builds inspection equipment, describes the arrangement in one sentence: **most process steps have some metrology or inspection associated with them** <Cite id="kla-msa" />.
 
-The distinction between the two functions is worth keeping:
+Two distinct functions:
 
 - **Metrology** measures what **is there** — thickness, width, alignment.
 - **Inspection** looks for what **should not be there** — particles, scratches, defects <Cite id="kla-msa" />.
@@ -187,13 +199,13 @@ Two techniques deserve a name. **CD-SEM** uses an electron beam to measure a lin
 
 There is one detail that separates a semiconductor fab from an ordinary factory: the measurement is **not there only to reject**. It goes back into the process.
 
-**SPC** (*statistical process control*) monitors the process and **raises the alarm** when it shifts or drifts. But SPC only watches: it triggers an alert. What **closes the loop** is **run-to-run control**: comparing the post-process measurement against the process model, updating that model — typically with an exponential moving average — and **computing a bounded recipe adjustment** for the following wafers <Cite id="r2r-control" />.
+**SPC** (*statistical process control*) monitors the process and **raises the alarm** when it shifts or drifts. But SPC only watches: it triggers an alert. What **closes the loop** is **run-to-run control**: comparing the post-process measurement against the process model, updating that model (typically with an exponential moving average) and **computing a bounded recipe adjustment** for the following wafers <Cite id="r2r-control" />.
 
 In the paper that consolidated the technique, the authors distinguish two modes: a **rapid** one for sudden shifts and a **gradual** one for slow drifts <Cite id="r2r-control" />. It is this feedback mesh that allows a process with a tolerance of a few nanometres to stay stable for months without human intervention on every lot.
 
 ## Interconnection: the part of the chip nobody sees
 
-The transistor is the famous part, but it occupies a small fraction of the volume of a modern chip. Above it sits a **city of wires** — the BEOL — distributing signal, power and clock to billions of devices across dozens of stacked levels.
+The transistor is the famous part, but it occupies a small fraction of the volume of a modern chip. Above it sits a **city of wires**, the BEOL, distributing signal, power and clock to billions of devices across dozens of stacked levels.
 
 For a long time those wires were **aluminium**. In **September 1997**, IBM announced the first manufacturable integrated **copper** interconnect technology, and began shipping product in 1998 <Cite id="ibm-copper" />. The gain was not cosmetic: copper conducts about **twice** as well as aluminium, with wire resistance about **40 to 45% lower**, and **electromigration** lifetime more than **two orders of magnitude** longer <Cite id="ibm-cu-electroplating" />.
 
@@ -221,7 +233,7 @@ Measurements on air-gap structures find effective k around **2.2** <Cite id="air
 
 ### How many metal levels
 
-The number grew, and it is larger than intuition suggests. imec describes BEOL stacks with **up to 15 layers**, with **3 to 6** being the thin "Mx" levels <Cite id="imec-roadmap" />. Physical analysis of real products goes further: the **TSMC N3** die used in Lunar Lake has **20 metal interconnection layers** <Cite id="techinsights-n3-beol" />.
+imec describes BEOL stacks with **up to 15 layers**, with **3 to 6** being the thin "Mx" levels <Cite id="imec-roadmap" />. Physical analysis of real products goes further: the **TSMC N3** die used in Lunar Lake has **20 metal interconnection layers** <Cite id="techinsights-n3-beol" />.
 
 Each of those layers has its own lithography, its own CMP and its own metrology. It is this multiplication, not the transistor, that pushes the step count into the thousands.
 
@@ -233,13 +245,13 @@ The simplest model assumes defects are distributed randomly, in which case yield
 
 \[ Y = e^{-D_0 A} \]
 
-where \(D_0\) is the defect density and \(A\) the die area <Cite id="leachman-yield" />. The model is good for small dies — the Berkeley reference considers it adequate up to about **0.25 cm²** — and conservative for large dies, which are precisely the ones that matter <Cite id="leachman-yield" />.
+where \(D_0\) is the defect density and \(A\) the die area <Cite id="leachman-yield" />. The model is good for small dies (the Berkeley reference considers it adequate up to about **0.25 cm²**) and conservative for large dies, which are precisely the ones that matter <Cite id="leachman-yield" />.
 
 The first important refinement comes from **1964**, from B. T. Murphy at Bell Labs: defects are **not** distributed at random, they **cluster**. Treating the density as a random variable and integrating over its distribution gives Murphy's model <Cite id="murphy-1964" />. In practice the formulation the industry later adopted was the **negative binomial**, easier to manipulate and in better agreement with real data <Cite id="murphy-integral" />.
 
 ### Why yield takes months
 
-The counterintuitive part is that yield is not **fixed** by an adjustment. It is **learned**.
+Yield is **learned**, not fixed by an adjustment.
 
 The Competitive Semiconductor Manufacturing survey at Berkeley measured this across companies. For a **new** technology, the average process qualification time was **12 months**, with the best case at **7**. For a technology **similar to one already in production**, the average fell to **7 months**, with a best case of **4** <Cite id="berkeley-csm" />. And the gap between the average and the benchmark in yield ramp time was around **40%** <Cite id="berkeley-csm" />.
 

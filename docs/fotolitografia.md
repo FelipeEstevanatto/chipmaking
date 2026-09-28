@@ -79,7 +79,7 @@ A última lente, a água e o wafer na litografia por imersão — <a href="https
 
 O **EUV** segue o caminho oposto. Como **tudo absorve EUV**, ele não usa lentes nem imersão: a luz viaja **refletida por espelhos multicamada**, dentro de vácuo, e a própria máscara é **refletiva** <Cite id="asianometry-euv" />. Por isso o EUV entrou como uma tecnologia paralela, para os nós de **7 nm e abaixo**, e não como substituto do parque de 193 nm por imersão.
 
-A história de como se chegou a essa combinação — as quatro gerações ópticas, os candidatos descartados e a eleição do EUV — está em [História da fotolitografia](/historia-fotolitografia).
+A história de como se chegou a essa combinação (as quatro gerações ópticas, os candidatos descartados e a eleição do EUV) está em [História da fotolitografia](/historia-fotolitografia).
 
 ## DUV: o que a luz de 193 nm ainda faz
 
@@ -118,15 +118,15 @@ A fonte de plasma de estanho, da gota ao foco intermediário. Desenho do autor, 
 
 O laser de CO₂ que faz a explosão é uma das máquinas mais potentes já produzidas em série: cerca de **40 kW** de potência pulsada a 50 kHz, alimentados por uma fonte de **1 MW**, e ainda assim só cerca de **200 W** chegam ao wafer <Cite id="laserfocus-euv" />. O motivo está na seção seguinte — as perdas do caminho óptico.
 
-Chegar a essa potência levou muito mais tempo do que o prometido. Quando o desenvolvimento industrial começou, a fonte entregava **poucos watts**; a meta para viabilizar 125 wafers por hora era de **250 W**, ou seja, faltavam **duas ordens de grandeza** <Cite id="asml-euv-podcast" />. A potência subiu em degraus — 40 W, 80 W, 125 W e, por fim, 250 W —, e a primeira demonstração de 250 W contínuos num cliente só veio no **início de 2018**, cerca de **seis anos depois** da data originalmente prometida <Cite id="asml-euv-podcast" />.
+Chegar a essa potência levou muito mais tempo do que o prometido. Quando o desenvolvimento industrial começou, a fonte entregava **poucos watts**; a meta para viabilizar 125 wafers por hora era de **250 W**, ou seja, faltavam **duas ordens de grandeza** <Cite id="asml-euv-podcast" />. A potência subiu em degraus (40 W, 80 W, 125 W e, por fim, 250 W), e a primeira demonstração de 250 W contínuos num cliente só veio no **início de 2018**, cerca de **seis anos depois** da data originalmente prometida <Cite id="asml-euv-podcast" />.
 
-Três obstáculos dominaram esse período <Cite id="asml-euv-podcast" />. O primeiro foi o **pré-pulso**. O segundo apareceu depois dele: parte da luz voltava **refletida para dentro do laser** e roubava potência da pulsação seguinte, o que exigiu um "interruptor de luz" — um módulo de isolamento óptico. O terceiro foi o **estanho sujando o espelho coletor**: a explosão jogava detritos em todas as direções, e a refletividade do coletor caía. A solução veio em parte por acaso — a refletividade melhorava depois de cada manutenção, e a causa acabou sendo uma pequena quantidade de **oxigênio** que limpava o espelho por reação química <Cite id="asml-euv-podcast" />.
+Três obstáculos dominaram esse período <Cite id="asml-euv-podcast" />. O primeiro foi o **pré-pulso**. O segundo apareceu depois dele: parte da luz voltava **refletida para dentro do laser** e roubava potência da pulsação seguinte, o que exigiu um "interruptor de luz", um módulo de isolamento óptico. O terceiro foi o **estanho sujando o espelho coletor**: a explosão jogava detritos em todas as direções, e a refletividade do coletor caía. A solução veio em parte por acaso: a refletividade melhorava depois de cada manutenção, e a causa acabou sendo uma pequena quantidade de **oxigênio** que limpava o espelho por reação química <Cite id="asml-euv-podcast" />.
 
 <YouTubeEmbed id="EWVJ1Iwa00E" title="Making EUV work: Episode 3 — from lab to fab" />
 
 ## Espelhos em vez de lentes
 
-Como **tudo absorve EUV** — o ar, o vidro, a própria máscara —, o caminho da luz inteiro tem de estar em **vácuo**, e não existe lente: só **espelhos** <Cite id="asml-euv-products" />.
+Como **tudo absorve EUV** (o ar, o vidro, a própria máscara), o caminho da luz inteiro tem de estar em **vácuo**, e não existe lente: só **espelhos** <Cite id="asml-euv-products" />.
 
 Um espelho de EUV não se parece com um espelho comum. Ele é um **refletor de Bragg**: dezenas de pares alternados de **molibdênio e silício**, cada camada com poucos nanômetros de espessura <Cite id="branch-euv" />. Em cada fronteira entre as duas camadas, só cerca de **3%** da luz é refletida e o resto atravessa <Cite id="branch-euv" />. Mas como todas essas reflexões saem **em fase**, elas se somam por interferência construtiva até cerca de **70% por espelho** <Cite id="branch-euv" />.
 
@@ -181,7 +181,7 @@ A plataforma tem três marcos até agora:
 
 ### A família de máquinas
 
-As vazões abaixo são medidas em doses diferentes — 30 mJ/cm² nos NXE e 50 mJ/cm² no EXE —, então os números não são diretamente comparáveis entre as colunas <Cite id="asml-nxe3600d" /> <Cite id="asml-exe5200b" />.
+As vazões abaixo são medidas em doses diferentes (30 mJ/cm² nos NXE e 50 mJ/cm² no EXE), então os números não são diretamente comparáveis entre as colunas <Cite id="asml-nxe3600d" /> <Cite id="asml-exe5200b" />.
 
 | Plataforma | NA | Luz | Resolução | Vazão |
 |---|---|---|---|---|

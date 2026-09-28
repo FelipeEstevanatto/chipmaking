@@ -28,7 +28,7 @@ The chart below is a **schematic**, not a data set: it exists to fix the three r
 
 [Burn-in](/en/empacotamento) exists to attack the first region. Components are subjected to conditions **at or above the specified maximum**, in order to **stress the defects out** before shipment <Cite id="mil-std-883" />; in production this happens on the already assembled part, typically for **24 to 48 hours** <Cite id="semieng-burnin" />. It is an explicit trade: burn-in **reduces warranty cost at the cost of some yield** <Cite id="ieee-burnin" />, and it can itself **damage** devices through thermal runaway, electrostatic discharge or overvoltage <Cite id="semieng-burnin" />.
 
-The point that matters here: burn-in moves the **infant mortality**. It does nothing for the flat region or the wear-out region — what decides a product's long life is the physics that follows.
+Burn-in moves the **infant mortality**. It does nothing for the flat region or the wear-out region; what decides a product's long life is the physics that follows.
 
 ## Wear-out mechanisms
 
@@ -75,7 +75,7 @@ Be wary of any \(n\) or \(E_a\) presented as a universal constant: qualification
 
 ## Quantifying failure
 
-To compare components, the industry needed a common unit. That is the **FIT** — *failure in time* — defined as **one failure per 10⁹ device-hours**, and whose calculation JEDEC standardises in JESD85A <Cite id="rel-jesd85a" />.
+To compare components, the industry needed a common unit. That is the **FIT** (*failure in time*), defined as **one failure per 10⁹ device-hours**, and whose calculation JEDEC standardises in JESD85A <Cite id="rel-jesd85a" />.
 
 The arithmetic is what makes the number usable. Since 10⁹ divided by the rate in FIT gives the **MTTF** in hours, a component at 10 FIT has an MTTF of 10⁸ h <Cite id="rel-jesd85a" />. Converting: **100,000 h** is about **11 years** of continuous operation, and ten calendar years add up to **87,600 h** (10 × 8,760 h). Writing the goal in hours and the failure in FIT is what lets you compare a single chip with a customer's entire installed base.
 
@@ -85,11 +85,11 @@ Those goals differ by market. AEC-Q100 demonstrates the method with an automotiv
 
 Nobody can wait ten years. The way to measure a long life is to **accelerate** the mechanism and extrapolate back with a model. For thermally activated mechanisms the model is **Arrhenius**, with an acceleration factor depending on \(\exp[-(E_a/k_B)(1/T_u - 1/T_t)]\), where \(u\) and \(t\) subscripts are use and test <Cite id="rel-aec-q100" />.
 
-AEC-Q100 fixes the constants for the example: \(E_a = 0.7\) eV and \(k_B = 8.61733 \times 10^{-5}\) eV/K, arriving at a test duration of **1,393 h** for the case shown <Cite id="rel-aec-q100" />. The warning that comes with the calculation is the part that matters: pushing conditions beyond the reasonable can **induce unrealistic failure mechanisms** and destroy the extrapolation <Cite id="rel-aec-q100" />. Accelerating is not exaggerating — it is choosing a regime where the *same* mechanism still governs.
+AEC-Q100 fixes the constants for the example: \(E_a = 0.7\) eV and \(k_B = 8.61733 \times 10^{-5}\) eV/K, arriving at a test duration of **1,393 h** for the case shown <Cite id="rel-aec-q100" />. Pushing conditions beyond the reasonable can **induce unrealistic failure mechanisms** and destroy the extrapolation <Cite id="rel-aec-q100" />. Accelerating means choosing a regime where the *same* mechanism still governs.
 
 ## Soft errors
 
-There is a class of failure that leaves no scar. In the late 1970s it became clear that **alpha particles** — from radioactive traces in the packaging materials themselves — deposited enough charge to **flip a bit** in a DRAM. The bit worked again on the next write: hence the name **soft error** <Cite id="rel-may-woods-1979" />.
+There is a class of failure that leaves no scar. In the late 1970s it became clear that **alpha particles** (from radioactive traces in the packaging materials themselves) deposited enough charge to **flip a bit** in a DRAM. The bit worked again on the next write: hence the name **soft error** <Cite id="rel-may-woods-1979" />.
 
 Then came the uncomfortable generalisation: it was not just the package. **Cosmic-ray neutrons** do the same at sea level, and the error rate **increases with altitude** — which turned a materials problem into an environment problem <Cite id="rel-ziegler-1979" />. The relevant radiation sources came to be known as a set of three <Cite id="rel-baumann-2001" />.
 
@@ -114,7 +114,7 @@ A high-temperature operating life (**HTOL**) test at grade 0 stresses the device
 
 ## Why this is a materials story
 
-It is worth closing on what this chapter shares with the rest of the site: **reliability starts in the material, not in the design**.
+A device's reliability starts with the material.
 
 - Oxide breakdown is governed by the **defect density** in the dielectric, not by the circuit geometry <Cite id="rel-mcpherson-2012" />.
 - The quality of the **oxide–silicon interface** is what let silicon work as a semiconductor — and what germanium could not deliver <Cite id="ecs-sio2-limits" />.

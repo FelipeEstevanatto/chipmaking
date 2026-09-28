@@ -28,7 +28,7 @@ O gráfico abaixo é um **esquema**, não um conjunto de dados: ele existe para 
 
 A [queima](/empacotamento) existe para atacar a primeira região. Os componentes são submetidos a condições **no nível ou acima do máximo especificado**, com o objetivo de **estressar os defeitos para fora** antes do embarque <Cite id="mil-std-883" />; na produção, isso acontece no componente já montado, tipicamente por **24 a 48 horas** <Cite id="semieng-burnin" />. É uma troca explícita: a queima **reduz o custo de garantia ao custo de algum rendimento** <Cite id="ieee-burnin" />, e ela mesma pode **danificar** dispositivos por fuga térmica, descarga eletrostática ou sobretensão <Cite id="semieng-burnin" />.
 
-O ponto que importa aqui: a queima mexe na **mortalidade infantil**. Ela não faz nada pela região plana nem pela região de desgaste — quem decide a vida longa de um produto é a física que vem a seguir.
+A queima mexe na **mortalidade infantil**. Ela não faz nada pela região plana nem pela de desgaste; a vida longa de um produto depende da física que vem a seguir.
 
 ## Mecanismos de desgaste
 
@@ -75,7 +75,7 @@ Vale desconfiar de qualquer \(n\) ou \(E_a\) apresentado como constante universa
 
 ## Quantificar a falha
 
-Para comparar componentes, a indústria precisou de uma unidade comum. É o **FIT** — *failure in time* —, definido como **uma falha por 10⁹ horas-dispositivo**, e cujo cálculo é padronizado pela JEDEC na JESD85A <Cite id="rel-jesd85a" />.
+Para comparar componentes, a indústria precisou de uma unidade comum. É o **FIT** (*failure in time*), definido como **uma falha por 10⁹ horas-dispositivo**, e cujo cálculo é padronizado pela JEDEC na JESD85A <Cite id="rel-jesd85a" />.
 
 A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de **11 anos** de operação contínua, e dez anos de calendário somam **87.600 h** (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar um chip de 1.000 unidades com o parque inteiro de um cliente.
 
@@ -85,11 +85,11 @@ Essas metas variam por mercado. A AEC-Q100 demonstra o método com um perfil aut
 
 Ninguém pode esperar dez anos. O jeito de medir uma vida longa é **acelerar** o mecanismo e extrapolar de volta com um modelo. Para os mecanismos ativados termicamente, o modelo é **Arrhenius**, com fator de aceleração que depende de \(\exp[-(E_a/k_B)(1/T_u - 1/T_t)]\), onde os índices \(u\) e \(t\) são uso e teste <Cite id="rel-aec-q100" />.
 
-A AEC-Q100 fixa as constantes do exemplo: \(E_a = 0{,}7\) eV e \(k_B = 8{,}61733 \times 10^{-5}\) eV/K, chegando a uma duração de teste de **1.393 h** para o caso demonstrado <Cite id="rel-aec-q100" />. O aviso que acompanha a conta é o que importa: forçar condições além do razoável pode **induzir mecanismos de falha irreais** e destruir a extrapolação <Cite id="rel-aec-q100" />. Acelerar não é exagerar — é escolher um regime onde o *mesmo* mecanismo ainda governa.
+A AEC-Q100 fixa as constantes do exemplo: \(E_a = 0{,}7\) eV e \(k_B = 8{,}61733 \times 10^{-5}\) eV/K, chegando a uma duração de teste de **1.393 h** para o caso demonstrado <Cite id="rel-aec-q100" />. Forçar condições além do razoável pode **induzir mecanismos de falha irreais** e destruir a extrapolação <Cite id="rel-aec-q100" />. Acelerar é escolher um regime onde o *mesmo* mecanismo ainda governa.
 
 ## Erros suaves
 
-Há uma classe de falha que não deixa cicatriz. No fim da década de 1970, ficou claro que **partículas alfa** — vindas de traços radioativos nos próprios materiais do encapsulamento — depositavam carga suficiente para **inverter um bit** de uma memória DRAM. O bit voltava a funcionar na próxima escrita: daí o nome **erro suave** (*soft error*) <Cite id="rel-may-woods-1979" />.
+Há uma classe de falha que não deixa cicatriz. No fim da década de 1970, ficou claro que **partículas alfa** (vindas de traços radioativos nos próprios materiais do encapsulamento) depositavam carga suficiente para **inverter um bit** de uma memória DRAM. O bit voltava a funcionar na próxima escrita: daí o nome **erro suave** (*soft error*) <Cite id="rel-may-woods-1979" />.
 
 Logo depois veio a generalização desconfortável: não era só o encapsulamento. **Nêutrons de raios cósmicos** fazem o mesmo em nível do mar, e a taxa de erro **cresce com a altitude** — o que transformou um problema de material num problema de ambiente <Cite id="rel-ziegler-1979" />. As fontes de radiação relevantes ficaram conhecidas como um conjunto de três <Cite id="rel-baumann-2001" />.
 
@@ -114,7 +114,7 @@ Um teste de vida em operação (**HTOL**) no grau 0 estressa o dispositivo a **+
 
 ## Por que isso é uma história de materiais
 
-Vale fechar com o que este capítulo tem em comum com o resto do site: **confiabilidade começa no material, não no desenho**.
+A confiabilidade de um dispositivo começa no material.
 
 - A ruptura do óxido é governada pela **densidade de defeitos** no dielétrico, não pela geometria do circuito <Cite id="rel-mcpherson-2012" />.
 - A qualidade da **interface** óxido–silício é o que fez o silício funcionar como semicondutor — e o que o germânio não conseguiu entregar <Cite id="ecs-sio2-limits" />.

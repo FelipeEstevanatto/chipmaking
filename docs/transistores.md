@@ -14,25 +14,25 @@ Compare visualmente três arquiteturas principais:
 
 ## As quinze gerações de uma vez
 
-Antes da história, o mapa: uma linha por geração, com o que ela mudou e o que ela entregou. A coluna **Ano** marca a entrada em produção ou a demonstração; a coluna **Nó** é um rótulo de geração, não uma medida — o que isso significa é o assunto do [adendo no fim do capítulo](#adendo-o-que-o-numero-do-no-significa).
+Uma linha por geração, com o que ela mudou e o que ela entregou. A coluna **Ano** marca a entrada em produção ou a demonstração. A coluna **Nó** é um rótulo de geração, não uma medida; o que isso significa está no [adendo no fim do capítulo](#adendo-o-que-o-numero-do-no-significa).
 
 <TransistorTable />
 
-O que vem a seguir é a história de cada linha, na mesma ordem, com a figura correspondente.
+O resto do capítulo conta a história de cada linha, na mesma ordem, com a figura correspondente.
 
 ## 1960 — MOSFET planar
 
 <DiagramFigure src="/pdf-images/p17-1.png" alt="Transistor MOSFET planar">
-O transistor planar: canal, porta, fonte e dreno no plano do wafer — a estrutura que a litografia precisava desenhar de uma vez.
+Canal, porta, fonte e dreno no plano do wafer: a estrutura que a litografia precisava desenhar de uma vez.
 </DiagramFigure>
 
-Transistores planares (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. O primeiro dispositivo funcional, apresentado em **1960**, tinha porta de **20 µm** e óxido de porta de 100 nm — uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o "nó de 22 nm" de 2011 tem portas de 26 nm: em cinco décadas, essa dimensão encolheu quase mil vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
+Transistores planares (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. O primeiro dispositivo funcional, apresentado em **1960**, tinha porta de **20 µm** e óxido de porta de 100 nm — uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o "nó de 22 nm" de 2011 tem portas de 26 nm: em cinco décadas, essa dimensão encolheu quase mil vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
 
 Na prática, essa geração equipou as calculadoras de bolso e os primeiros microcomputadores domésticos: a família NMOS **6502**, por exemplo, movia o Apple II, o Commodore 64 e o NES.
 
 ## 1963 — CMOS (par complementar)
 
-Em **1963**, Frank Wanlass (Fairchild) patenteou o **CMOS** (*Complementary MOS*): um transistor NMOS e um PMOS ligados em série, de modo que **um conduz enquanto o outro está cortado**. Como nunca há um caminho direto entre alimentação e terra no estado estacionário, o consumo em repouso se resume à fuga — potência estática praticamente nula. A RCA levou a família 4000 ao mercado em 1968 e, desde então, CMOS é a base de praticamente toda a lógica digital — é o que permite bilhões de portas num único chip sem derreter.
+Em **1963**, Frank Wanlass (Fairchild) patenteou o **CMOS** (*Complementary MOS*): um transistor NMOS e um PMOS ligados em série, de modo que **um conduz enquanto o outro está cortado**. Como nunca há um caminho direto entre alimentação e terra no estado estacionário, o consumo em repouso se resume à fuga, potência estática praticamente nula. A RCA levou a família 4000 ao mercado em 1968 e, desde então, CMOS é a base de praticamente toda a lógica digital: é o que permite bilhões de portas num único chip sem derreter.
 
 <DiagramFigure src="/assets/cmos.svg" alt="Corte transversal de CMOS com NMOS em poço p e PMOS em poço n">
 Par complementar: NMOS em poço p e PMOS em poço n, com um único caminho entre V<sub>DD</sub> e GND.
@@ -78,7 +78,7 @@ A produção veio **antes do nó de 0,25 µm**, não nele. A IBM liderou a aplic
 
 ## 1998 — SOI (silício sobre isolante)
 
-Em **SOI** (*Silicon On Insulator*), o transistor é construído num **filme fino de silício** sobre uma camada de **óxido enterrado** (*buried oxide*, BOX). As junções deixam de tocar o substrato, o que derruba a **capacitância de junção** — comutação mais rápida com menos energia —, elimina o **latch-up** típico do CMOS em silício maciço e melhora a tolerância à radiação. A IBM popularizou a técnica em processadores de alto desempenho a partir de ~**0.22 µm**; hoje a variante **FD-SOI** (corpo ultrafino) ocupa nichos de baixo consumo e RF.
+Em **SOI** (*Silicon On Insulator*), o transistor é construído num **filme fino de silício** sobre uma camada de **óxido enterrado** (*buried oxide*, BOX). As junções deixam de tocar o substrato, o que derruba a **capacitância de junção** (comutação mais rápida com menos energia), elimina o **latch-up** típico do CMOS em silício maciço e melhora a tolerância à radiação. A IBM popularizou a técnica em processadores de alto desempenho a partir de ~**0.22 µm**; hoje a variante **FD-SOI** (corpo ultrafino) ocupa nichos de baixo consumo e RF.
 
 <DiagramFigure src="/assets/soi.svg" alt="Comparação entre transistor em silício maciço e transistor SOI sobre óxido enterrado">
 Acima, transistor em silício maciço; abaixo, filme fino de silício isolado por óxido enterrado.
@@ -126,7 +126,7 @@ O **Ivy Bridge** (22 nm, abril de 2012) foi o primeiro produto de alto volume <C
 
 ## 2012 — FD-SOI (corpo ultrafino)
 
-Enquanto o restante da indústria migrava para o FinFET, a **FD-SOI** seguiu outro caminho, retomando a ideia do SOI com um **filme de silício ultrafino** (~6 nm) sobre o óxido enterrado. Com o filme tão fino, o canal fica **totalmente depletado** — sem o “corpo flutuante” que causava efeitos indesejados no SOI parcialmente depletado — e um **plano traseiro** sob o BOX permite aplicar **polarização de corpo** (*back bias*) para subir ou baixar a tensão de limiar em tempo real. Na prática, isso permite gastar energia só quando o circuito precisa de desempenho, o que é valioso em IoT, RF e automotivo.
+Enquanto o restante da indústria migrava para o FinFET, a **FD-SOI** seguiu outro caminho, retomando a ideia do SOI com um **filme de silício ultrafino** (~6 nm) sobre o óxido enterrado. Com o filme tão fino, o canal fica **totalmente depletado** (sem o “corpo flutuante” que causava efeitos indesejados no SOI parcialmente depletado) e um **plano traseiro** sob o BOX permite aplicar **polarização de corpo** (*back bias*) para subir ou baixar a tensão de limiar em tempo real. Na prática, isso permite gastar energia só quando o circuito precisa de desempenho, o que é valioso em IoT, RF e automotivo.
 
 <DiagramFigure src="/assets/fdsoi.svg" alt="Comparação entre SOI parcialmente depletado com corpo flutuante e FD-SOI com filme ultrafino e plano traseiro">
 Acima, SOI parcialmente depletado com corpo flutuante; abaixo, FD-SOI com filme ultrafino e plano traseiro para back bias.
@@ -178,7 +178,7 @@ A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos
 
 ### 1. O número nasceu de uma coincidência
 
-O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*) — a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*) — metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
+O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*), a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*), metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
 
 Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />.
 
@@ -198,7 +198,7 @@ Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "n�
 
 ### O que veio no lugar
 
-Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1** — 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração** — e é exatamente assim que eles devem ser lidos na tabela do início do capítulo.
+Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1**: 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração**, e é exatamente assim que eles devem ser lidos na tabela do início do capítulo.
 
 <SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
 

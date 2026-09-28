@@ -32,7 +32,7 @@ timeline
 Comparação dos quatro arranjos de máquina. Desenho do autor.
 </DiagramFigure>
 
-Nas primeiras décadas, os circuitos integrados eram expostos por **impressão por contato**: a máscara era pressionada **fisicamente** contra o wafer. O arranjo é simples e barato — não usa lente alguma —, mas o contato repetido **danifica a máscara e contamina o wafer** <Cite id="kato-litho" />.
+Nas primeiras décadas, os circuitos integrados eram expostos por **impressão por contato**: a máscara era pressionada **fisicamente** contra o wafer. O arranjo é simples e barato (não usa lente alguma), mas o contato repetido **danifica a máscara e contamina o wafer** <Cite id="kato-litho" />.
 
 Em **1973** veio a **impressão por proximidade**, que introduz uma folga de ar entre máscara e wafer. O desgaste acaba, mas a difração piora a **resolução** — e ainda sem lente alguma no caminho <Cite id="kato-litho" />. Em seguida, a **impressão por projeção** adicionou **lentes** ao sistema, e foi essa a base do que veio depois <Cite id="kato-litho" />.
 
@@ -71,11 +71,11 @@ O calendário escorregou desde o início. Em **novembro de 1997**, a recomendaç
 
 Em **dezembro de 1999** e **setembro de 2000**, a recomendação foi manter **EUV e EPL** para o nó de **70 nm**, reconhecendo a possibilidade crescente de que a indústria precisasse de **mais de uma** tecnologia de ponta <Cite id="sematech-ngl" />. Em **agosto de 2001**, no quinto e último workshop, a recomendação oficial seguiu sendo **financiar a comercialização das duas** <Cite id="sematech-ngl" />.
 
-Vale registrar a nuance, porque ela costuma se perder na versão popular da história: o EUV **não foi ungido sozinho em 2001**. O que houve foi o **EPL morrer de produtividade**, reduzindo o campo a um candidato por **eliminação** — enquanto a recomendação formal de sustentar as duas frentes ainda constava do relatório daquele ano <Cite id="sematech-ngl" />. O efeito prático foi o alvo do EUV escorregar do nó de **130/100 nm** para o de **70 nm**, uma a duas gerações depois do plano original <Cite id="sematech-ngl" />.
+O EUV **não foi ungido sozinho em 2001**. O que houve foi o **EPL morrer de produtividade**, reduzindo o campo a um candidato por **eliminação** — enquanto a recomendação formal de sustentar as duas frentes ainda constava do relatório daquele ano <Cite id="sematech-ngl" />. O efeito prático foi o alvo do EUV escorregar do nó de **130/100 nm** para o de **70 nm**, uma a duas gerações depois do plano original <Cite id="sematech-ngl" />.
 
 ## Por que os concorrentes perderam
 
-**Raio X por proximidade.** Sem óptica de projeção, a máscara precisa ter **o mesmo tamanho** do padrão final — inviável quando os traços chegaram a 100 nm. A máscara tem de ser fina para não absorver nem distorcer, mas fina demais e os raios X a atravessam. E quanto menores os traços, mais perto a máscara precisa ficar do wafer, chegando a exigir folgas **abaixo de 10 µm** — com o wafer se movendo rapidamente durante a exposição. A IBM construiu uma instalação dedicada de cerca de **US$ 500 milhões** e já demonstrava exposições de 0,33 µm em 1991, mas o programa nunca chegou à produção comercial <Cite id="asianometry-euv" />.
+**Raio X por proximidade.** Sem óptica de projeção, a máscara precisa ter **o mesmo tamanho** do padrão final: inviável quando os traços chegaram a 100 nm. A máscara tem de ser fina para não absorver nem distorcer, mas fina demais e os raios X a atravessam. E quanto menores os traços, mais perto a máscara precisa ficar do wafer, chegando a exigir folgas **abaixo de 10 µm**, com o wafer se movendo rapidamente durante a exposição. A IBM construiu uma instalação dedicada de cerca de **US$ 500 milhões** e já demonstrava exposições de 0,33 µm em 1991, mas o programa nunca chegou à produção comercial <Cite id="asianometry-euv" />.
 
 A razão está registrada pelos próprios pesquisadores da IBM: gestores de fábrica **sempre preferem a melhoria incremental do óptico** a uma troca drástica de tecnologia, e a migração só viria quando a óptica atingisse o limite <Cite id="asianometry-euv" />. O raio X nunca fez o serviço completo.
 
@@ -95,7 +95,7 @@ As dificuldades técnicas decorrem de uma única propriedade: **tudo absorve EUV
 
 Em **1996**, o Congresso americano cortou o financiamento do Departamento de Energia para o EUV <Cite id="construction-physics-euv" />. A essa altura, uma força-tarefa da SEMATECH havia classificado o EUV como o **último colocado entre quatro** tecnologias, atrás de raio X, feixe de elétrons e projeção por íons <Cite id="construction-physics-euv" />. Em vez de deixar o time dos laboratórios se dispersar, a **Intel assumiu o risco** e, em **setembro de 1997**, montou com AMD e Motorola o consórcio **EUV LLC**, ao lado do *Virtual National Laboratory* — os laboratórios de Berkeley, Livermore e Sandia <Cite id="intel-euvllc" />.
 
-O valor anunciado foi de **US$ 250 milhões em três anos** — US$ 130 milhões em dinheiro e US$ 120 milhões em equipamento, material e pessoal —, o maior investimento privado já feito num projeto do Departamento de Energia dos EUA até então <Cite id="intel-euvllc" />. IBM, Micron, Infineon e a própria ASML entraram depois <Cite id="eet-euvlith" />. A Europa e o Japão responderam com consórcios próprios, o **EUCLIDES** e o **ASET** <Cite id="construction-physics-euv" />.
+O valor anunciado foi de **US$ 250 milhões em três anos** (US$ 130 milhões em dinheiro e US$ 120 milhões em equipamento, material e pessoal), o maior investimento privado já feito num projeto do Departamento de Energia dos EUA até então <Cite id="intel-euvllc" />. IBM, Micron, Infineon e a própria ASML entraram depois <Cite id="eet-euvlith" />. A Europa e o Japão responderam com consórcios próprios, o **EUCLIDES** e o **ASET** <Cite id="construction-physics-euv" />.
 
 O candidato que **menos** parecia capaz de durar várias gerações foi o que venceu — e é justamente a continuidade ao longo de várias gerações que explica por que ele venceu.
 

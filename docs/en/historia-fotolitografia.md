@@ -32,7 +32,7 @@ timeline
 The four machine arrangements compared. Drawn by the author.
 </DiagramFigure>
 
-In the early decades, integrated circuits were exposed by **contact printing**: the mask was pressed **physically** against the wafer. The arrangement is simple and cheap — it uses no lens at all — but repeated contact **damages the mask and contaminates the wafer** <Cite id="kato-litho" />.
+In the early decades, integrated circuits were exposed by **contact printing**: the mask was pressed **physically** against the wafer. The arrangement is simple and cheap (it uses no lens at all), but repeated contact **damages the mask and contaminates the wafer** <Cite id="kato-litho" />.
 
 In **1973** came **proximity printing**, which introduces an air gap between mask and wafer. The wear disappears, but diffraction worsens the **resolution** — still with no lens in the path <Cite id="kato-litho" />. Then **projection printing** added **lenses** to the system, and that became the basis of everything that followed <Cite id="kato-litho" />.
 
@@ -71,11 +71,11 @@ The schedule slipped from the start. In **November 1997** the recommendation was
 
 In **December 1999** and **September 2000**, the recommendation was to keep **EUV and EPL** for the **70 nm** node, acknowledging the growing possibility that the industry might need **more than one** mainstream technology <Cite id="sematech-ngl" />. In **August 2001**, at the fifth and final workshop, the official recommendation was still to **fund commercialisation of both** <Cite id="sematech-ngl" />.
 
-The nuance is worth recording, because it usually gets lost in the popular version of the story: EUV **was not anointed alone in 2001**. What happened is that **EPL died of throughput**, reducing the field to one candidate by **elimination** — while the formal recommendation to sustain both tracks was still in that year's report <Cite id="sematech-ngl" />. The practical effect was that EUV's target slipped from the **130/100 nm** node to the **70 nm** node, one to two generations later than the original plan <Cite id="sematech-ngl" />.
+EUV **was not anointed alone in 2001**. What happened is that **EPL died of throughput**, reducing the field to one candidate by **elimination** — while the formal recommendation to sustain both tracks was still in that year's report <Cite id="sematech-ngl" />. The practical effect was that EUV's target slipped from the **130/100 nm** node to the **70 nm** node, one to two generations later than the original plan <Cite id="sematech-ngl" />.
 
 ## Why the runners-up lost
 
-**Proximity X-ray.** With no projection optics, the mask has to be **the same size** as the final pattern — unworkable once features reached 100 nm. The mask must be thin so it neither absorbs nor distorts, but too thin and the X-rays pass straight through. And the smaller the features, the closer the mask has to sit to the wafer, eventually requiring gaps **below 10 µm** — with the wafer moving rapidly during exposure. IBM built a dedicated facility costing around **US$500 million** and was already demonstrating 0.33 µm exposures in 1991, but the programme never reached commercial production <Cite id="asianometry-euv" />.
+**Proximity X-ray.** With no projection optics, the mask has to be **the same size** as the final pattern: unworkable once features reached 100 nm. The mask must be thin so it neither absorbs nor distorts, but too thin and the X-rays pass straight through. And the smaller the features, the closer the mask has to sit to the wafer, eventually requiring gaps **below 10 µm**, with the wafer moving rapidly during exposure. IBM built a dedicated facility costing around **US$500 million** and was already demonstrating 0.33 µm exposures in 1991, but the programme never reached commercial production <Cite id="asianometry-euv" />.
 
 The reason is on the record from IBM's own researchers: fab managers **always prefer incremental optical improvement** to a drastic technology swap, and the migration would only come when optics hit its limit <Cite id="asianometry-euv" />. X-ray never did the whole job.
 
@@ -95,7 +95,7 @@ Its technical difficulties all stem from a single property: **everything absorbs
 
 In **1996** the US Congress cut Department of Energy funding for EUV <Cite id="construction-physics-euv" />. At that point a SEMATECH task force had ranked EUV **last of four** technologies, behind X-ray, electron beam and ion projection <Cite id="construction-physics-euv" />. Rather than let the national-lab team disperse, **Intel took on the risk** and, in **September 1997**, formed the **EUV LLC** consortium with AMD and Motorola, alongside the *Virtual National Laboratory* — Berkeley, Livermore and Sandia <Cite id="intel-euvllc" />.
 
-The announced figure was **US$250 million over three years** — US$130 million in cash and US$120 million in equipment, materials and personnel — the largest private investment ever made in a Department of Energy project at the time <Cite id="intel-euvllc" />. IBM, Micron, Infineon and ASML itself joined later <Cite id="eet-euvlith" />. Europe and Japan responded with their own consortia, **EUCLIDES** and **ASET** <Cite id="construction-physics-euv" />.
+The announced figure was **US$250 million over three years** (US$130 million in cash and US$120 million in equipment, materials and personnel), the largest private investment ever made in a Department of Energy project at the time <Cite id="intel-euvllc" />. IBM, Micron, Infineon and ASML itself joined later <Cite id="eet-euvlith" />. Europe and Japan responded with their own consortia, **EUCLIDES** and **ASET** <Cite id="construction-physics-euv" />.
 
 The candidate that **least** looked capable of lasting several generations is the one that won — and it is precisely that multi-generation continuity which explains why it won.
 

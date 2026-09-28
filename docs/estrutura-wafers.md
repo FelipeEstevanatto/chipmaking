@@ -41,15 +41,20 @@ Os primeiros transistores não eram de silício, e sim de **germânio** — o ma
 
 A primeira é o **gap de banda**. O germânio tem 0,7 eV; o silício, 1,1 eV. Um gap estreito significa que pares elétron-buraco se formam termicamente com pouca energia, e o material passa a conduzir sozinho quando esquenta. Dispositivos de germânio perdiam controle a temperaturas modestas, enquanto os de silício operavam centenas de graus mais alto, com correntes de fuga muito menores <Cite id="ge-vs-si" />.
 
-A segunda — e historicamente a decisiva — é o **óxido nativo**. O silício, exposto ao oxigênio, forma espontaneamente uma camada de **SiO₂** estável, isolante e insolúvel em água, que protege a superfície do cristal e ainda serve de máscara de difusão na fabricação. O óxido do germânio (**GeO₂**) é o oposto: termicamente instável e solúvel em água, inútil como proteção. Foi essa diferença que viabilizou o **processo planar** e, com ele, o circuito integrado — e mais tarde o próprio MOSFET, que depende de uma interface SiO₂–Si com densidade de estados de superfície baixíssima <Cite id="ge-vs-si" />.
+A segunda (e historicamente a decisiva) é o **óxido nativo**. O silício, exposto ao oxigênio, forma espontaneamente uma camada de **SiO₂** estável, isolante e insolúvel em água, que protege a superfície do cristal e ainda serve de máscara de difusão na fabricação. O óxido do germânio (**GeO₂**) é o oposto: termicamente instável e solúvel em água, inútil como proteção. Foi essa diferença que viabilizou o **processo planar** e, com ele, o circuito integrado — e mais tarde o próprio MOSFET, que depende de uma interface SiO₂–Si com densidade de estados de superfície baixíssima <Cite id="ge-vs-si" />.
 
 A terceira é a mais prosaica: o silício é **abundante** e, por isso, barato; o germânio é raro <Cite id="ge-vs-si" />.
 
 Nada disso tornou o germânio inútil: ele voltou como **SiGe**, estirando a rede do silício em canais avançados ([Evolução dos transistores](/transistores)) <Cite id="ge-vs-si" />. Mas o wafer de partida continua sendo de silício.
 
-## Tipos de wafer
+## Como ler um wafer
 
-Classificamos wafers por **tamanho**, **pureza**, **tipo de dopagem** e **índices de Miller** (orientação dos planos na rede cristalina). A orientação cristalográfica do silício é verificada por DRX e marcada no lingote (chanfro/entalhe) antes do processamento na fab.
+Um wafer se descreve por **quatro eixos**, e cada um tem onde ser conferido neste capítulo:
+
+- **Orientação cristalina** — verificada por DRX e gravada no lingote antes da fab; é o que os [índices de Miller](#indices-de-miller) nomeiam e o que a [borda](#como-identificar-um-wafer-pela-borda) depois codifica.
+- **Diâmetro e espessura** — o par que cresce junto, com os valores nominais da SEMI M1 em [o que o diâmetro informa](#o-que-o-diametro-informa).
+- **Tipo de dopagem** — P ou N: a borda informa até 150 mm, e a partir de 200 mm a informação passa a vir do certificado do lote, como se vê em [dopagem](#dopagem).
+- **Acabamento** — virgem ou processado, o que a cor da superfície denuncia em [superfície](#superficie-virgem-ou-processado).
 
 ## Como identificar um wafer pela borda
 
@@ -94,7 +99,7 @@ Diâmetro e espessura caminham juntos, porque a lâmina precisa continuar rígid
 | 200 mm | 725 µm | notch |
 | 300 mm | 775 µm | notch |
 
-A mesma norma limita a variação de espessura (**TTV**) a **10 µm** e a deformação da lâmina — *bow* e *warp*. Para 200 mm a M1 admite até **65 µm** de *bow* e **75 µm** de *warp*; para 300 mm o *bow* fica em aberto e o *warp* em **100 µm** <Cite id="semi-m1" />. Folhas de especificação de fornecedor costumam trazer números bem mais apertados, porque o limite da norma é o mínimo que um wafer *prime* precisa cumprir — não o que a indústria de fato entrega.
+A mesma norma limita a variação de espessura (**TTV**) a **10 µm** e a deformação da lâmina: *bow* e *warp*. Para 200 mm a M1 admite até **65 µm** de *bow* e **75 µm** de *warp*; para 300 mm o *bow* fica em aberto e o *warp* em **100 µm** <Cite id="semi-m1" />. Folhas de especificação de fornecedor costumam trazer números bem mais apertados, porque o limite da norma é o mínimo que um wafer *prime* precisa cumprir, não o que a indústria de fato entrega.
 
 ### 450 mm: a transição que não aconteceu
 

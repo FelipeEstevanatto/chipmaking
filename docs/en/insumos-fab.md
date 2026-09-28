@@ -1,6 +1,6 @@
 ---
 title: Fab consumables
-description: What a semiconductor fab consumes besides silicon — photoresist, mask, slurry, gases and ultrapure water — and why that list is as silent a chokepoint as quartz.
+description: What a semiconductor fab consumes besides silicon (photoresist, mask, slurry, gases and ultrapure water) and why that list is as silent a chokepoint as quartz.
 dataAsOf: 2026
 ---
 
@@ -36,13 +36,13 @@ DUV lithography excimer lasers need **neon** in the gas mixture, and recovering 
 
 The episode that exposed the dependency was the 2022 invasion of Ukraine. The country accounted for **about half** of world neon and **90%** of semiconductor-grade neon, produced as a by-product of steelmaking — and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="fabm-neon-2022" />.
 
-Worth keeping the shape, because it repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
+The shape repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
 
 ## Ultrapure water
 
 Water is, by volume, the most intimate input of a fab — and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around **18.2 MΩ·cm** at 25 °C and total organic carbon in the **parts per trillion** range <Cite id="fabm-upw" />.
 
-The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, **dopants** — sodium and potassium at the ppb level already shift a transistor's threshold voltage — and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified **on site**, with resistivity measured in line, because a specification like that does not survive transport.
+The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, **dopants** (sodium and potassium at the ppb level already shift a transistor's threshold voltage), and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified **on site**, with resistivity measured in line, because a specification like that does not survive transport.
 
 ## Why this list is a chokepoint
 

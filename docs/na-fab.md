@@ -14,13 +14,25 @@ O capítulo da [fotolitografia](/fotolitografia) mostra como um desenho é impre
 
 ## A fábrica é um laço, não uma linha de montagem
 
-<DiagramFigure src="/assets/fab-loop.svg" alt="O wafer circula repetidamente por sete módulos — oxidação, deposição, litografia, corrosão, implantação, planarização e metrologia — acumulando cerca de mil etapas ao longo de aproximadamente três meses">
+<DiagramFigure src="/assets/fab-loop.svg" alt="O wafer circula repetidamente por sete módulos (oxidação, deposição, litografia, corrosão, implantação, planarização e metrologia) acumulando cerca de mil etapas ao longo de aproximadamente três meses">
 O wafer não percorre a fábrica uma vez: ele dá dezenas de voltas pelos mesmos equipamentos. Cada volta acrescenta uma camada, apaga parte dela e mede o resultado.
 </DiagramFigure>
 
-A imagem mental de uma linha de montagem — entra matéria-prima de um lado, sai produto do outro — não descreve uma fábrica de semicondutores. O wafer é **processado em ciclo**: ele passa por litografia, volta para um forno, volta para a litografia, desce para um reator de plasma, sobe de novo. Essa repetição é o motivo pelo qual os números do setor são tão grandes.
+O laço tem **sete módulos**. Seis têm seção neste capítulo, na ordem em que o wafer os visita. O sétimo, a litografia, tem [capítulo próprio](/fotolitografia): é ali que está a dificuldade de escala.
 
-Um processo avançado pode ter de **600 a mais de 1.000 etapas**, com fluxos de 5 nm citados acima de **1.100** <Cite id="semieng-cycle-time" />. A Hitachi High-Tech, que fabrica os equipamentos de inspeção, descreve o mesmo processo como **400 a 600 etapas** ocupando **um a dois meses** <Cite id="hitachi-metrology" />. As duas contagens convivem porque medem coisas diferentes — uma conta passos de receita, a outra conta visitas a equipamentos — e porque a fronteira entre "uma etapa" e "um conjunto de etapas" é convenção, não física.
+1. [Oxidação](#oxidacao-termica-o-silicio-fabricando-o-proprio-isolante) — o silício fabricando o próprio isolante.
+2. [Deposição](#deposicao-colocar-material-onde-nao-havia) — colocar material onde não havia.
+3. [Litografia](/fotolitografia) — desenhar o padrão, em capítulo separado.
+4. [Corrosão](#corrosao-tirar-material-de-proposito) — tirar material de propósito.
+5. [Implantação iônica](#implantacao-ionica-dopar-a-forca) — dopar à força.
+6. [Planarização](#planarizacao-apagar-o-relevo) — apagar o relevo para poder empilhar.
+7. [Metrologia](#metrologia-medir-para-poder-continuar) — medir para poder continuar.
+
+Fora do laço, duas seções fecham o capítulo: [interconexão](#interconexao-a-parte-do-chip-que-ninguem-ve), que constrói o que o laço desenhou, e [rendimento](#rendimento-o-numero-que-decide-se-o-produto-existe), que mede se deu certo.
+
+A imagem mental de uma linha de montagem (entra matéria-prima de um lado, sai produto do outro) não descreve uma fábrica de semicondutores. O wafer é **processado em ciclo**: ele passa por litografia, volta para um forno, volta para a litografia, desce para um reator de plasma, sobe de novo. Essa repetição é o motivo pelo qual os números do setor são tão grandes.
+
+Um processo avançado pode ter de **600 a mais de 1.000 etapas**, com fluxos de 5 nm citados acima de **1.100** <Cite id="semieng-cycle-time" />. A Hitachi High-Tech, que fabrica os equipamentos de inspeção, descreve o mesmo processo como **400 a 600 etapas** ocupando **um a dois meses** <Cite id="hitachi-metrology" />. As duas contagens convivem porque medem coisas diferentes (uma conta passos de receita, a outra conta visitas a equipamentos) e porque a fronteira entre "uma etapa" e "um conjunto de etapas" é convenção, não física.
 
 A métrica que a indústria usa para se planejar é outra, e é mais útil: **dias por camada de máscara**. A média fica entre **1 e 1,5 dia por camada**, e as melhores fábricas chegam a **0,8 dia** <Cite id="semieng-cycle-time" />. Como o número de máscaras cresce com o nó, o tempo total cresce junto:
 
@@ -37,9 +49,9 @@ O lote padrão é de **25 wafers** <Cite id="semieng-cycle-time" />, e é assim 
 
 ### A contagem honesta de exposições
 
-Existe uma frase que circula muito em apresentações — "o wafer passa umas 50 a 80 vezes pela litografia" — e que **não tem fonte primária clara**. O que se consegue documentar é mais preciso e menos redondo: um fluxo de **32/28 nm** usava **38 exposições** de litografia, das quais **15 de imersão**; um fluxo de **22/20 nm** usava **52 exposições**, com **31 de imersão** e **11 passos de multipadronagem** <Cite id="semieng-litho-layers" />.
+Existe uma frase que circula muito em apresentações, "o wafer passa umas 50 a 80 vezes pela litografia", e que **não tem fonte primária clara**. O que se consegue documentar é mais preciso e menos redondo: um fluxo de **32/28 nm** usava **38 exposições** de litografia, das quais **15 de imersão**; um fluxo de **22/20 nm** usava **52 exposições**, com **31 de imersão** e **11 passos de multipadronagem** <Cite id="semieng-litho-layers" />.
 
-A conclusão prática continua a mesma — são **dezenas** de idas e voltas, não uma — mas o número exato depende do nó e do fabricante. Quando alguém citar um número redondo, vale perguntar de onde ele veio.
+A conclusão prática continua a mesma (são **dezenas** de idas e voltas, não uma), mas o número exato depende do nó e do fabricante. Quando alguém citar um número redondo, vale perguntar de onde ele veio.
 
 ### As três zonas do chip
 
@@ -55,19 +67,19 @@ O FEOL trabalha em temperaturas altas, porque ainda está formando cristal e dop
 
 Antes de qualquer coisa, o silício precisa de um isolante. E ele não recebe um: ele **cresce um**. A superfície é exposta a oxigênio ou vapor de água a alta temperatura e o próprio silício se converte em **dióxido de silício**.
 
-Isso é uma vantagem que quase nenhum outro semicondutor tem. O germânio, que foi o primeiro material dos transistores, foi abandonado em boa parte porque **não forma um óxido nativo estável**. É a qualidade dessa interface — uma densidade de defeitos baixa o bastante para não engolir o transistor — que faz o SiO₂ funcionar como isolante de porta, e é o que falta ao germânio <Cite id="ecs-sio2-limits" />.
+Isso é uma vantagem que quase nenhum outro semicondutor tem. O germânio, que foi o primeiro material dos transistores, foi abandonado em boa parte porque **não forma um óxido nativo estável**. É a qualidade dessa interface (uma densidade de defeitos baixa o bastante para não engolir o transistor) que faz o SiO₂ funcionar como isolante de porta, e é o que falta ao germânio <Cite id="ecs-sio2-limits" />.
 
 O modelo que descreve o crescimento é de **1965**, de Deal e Grove, e continua sendo ensinado: em notação compacta,
 
 \[ x_0^2 + A\,x_0 = B\,(t + \tau) \]
 
-onde \(x_0\) é a espessura do óxido. O modelo tem dois regimes, e a razão é intuitiva: quando o óxido é fino, o oxidante chega à superfície rápido e a **reação** manda — o crescimento é **linear** no tempo. Quando o óxido engrossa, o oxidante precisa **difundir** por dentro dele, e a difusão manda — o crescimento passa a ser **parabólico**, ou seja, desacelera <Cite id="deal-grove-1965" />.
+onde \(x_0\) é a espessura do óxido. O modelo tem dois regimes, e a razão é intuitiva: quando o óxido é fino, o oxidante chega à superfície rápido e a **reação** manda: o crescimento é **linear** no tempo. Quando o óxido engrossa, o oxidante precisa **difundir** por dentro dele, e a difusão manda: o crescimento passa a ser **parabólico**, ou seja, desacelera <Cite id="deal-grove-1965" />.
 
 O ajuste do modelo original é excelente numa faixa larga e declarada explicitamente no artigo: de **700 a 1.300 °C**, de **0,1 a 1,0 atm**, e espessuras de **300 a 20.000 Å**, para os dois oxidantes <Cite id="deal-grove-1965" />. Repare que essa é a faixa onde o modelo foi **validado** — não uma receita de processo. Citar "800 a 1.200 °C" como temperatura de oxidação é comum, mas a fonte verificável é a do artigo.
 
 ### Seco contra úmido
 
-Os dois oxidantes não são equivalentes. O **vapor de água** penetra o óxido muito melhor que o oxigênio molecular: a solubilidade da água no SiO₂ a 1.000 °C é cerca de **600 vezes** a do O₂ <Cite id="tu-wien-oxidation" />. Por isso a oxidação úmida é muito mais rápida — chega a **centenas de nanômetros por hora** — e é usada para **óxidos grossos**: isolamento, máscaras, passivação.
+Os dois oxidantes não são equivalentes. O **vapor de água** penetra o óxido muito melhor que o oxigênio molecular: a solubilidade da água no SiO₂ a 1.000 °C é cerca de **600 vezes** a do O₂ <Cite id="tu-wien-oxidation" />. Por isso a oxidação úmida é muito mais rápida (chega a **centenas de nanômetros por hora**) e é usada para **óxidos grossos**: isolamento, máscaras, passivação.
 
 O oxidante **seco** é lento, mas produz um óxido de melhor qualidade e interface mais limpa. É o oxidante da camada que mais importa: a **porta**.
 
@@ -108,7 +120,7 @@ Depositar e depois corrosão é o par que dá forma ao chip. A litografia define
 A máscara define a largura; a química define a forma. Um ataque isotrópico alarga o buraco por baixo da própria máscara.
 </DiagramFigure>
 
-A diferença central é a **direção**. Um ataque **úmido**, em solução, remove material em todas as direções no mesmo ritmo — é **isotrópico** — e por isso corrói também **por baixo da máscara**, abrindo o perfil além do que a litografia desenhou. Um ataque **seco**, a plasma, é **direcional**: íons são acelerados contra o wafer e atacam preferencialmente na vertical.
+A diferença central é a **direção**. Um ataque **úmido**, em solução, remove material em todas as direções no mesmo ritmo. É **isotrópico**, e por isso corrói também **por baixo da máscara**, abrindo o perfil além do que a litografia desenhou. Um ataque **seco**, a plasma, é **direcional**: íons são acelerados contra o wafer e atacam preferencialmente na vertical.
 
 O **RIE** (*reactive ion etching*) é a técnica que combina as duas coisas e domina a indústria. Ele usa ao mesmo tempo a **reatividade química** do plasma, que remove material rápido, e o **bombardeamento iônico**, que dá direção. Os íons chegam perpendiculares porque o wafer está no eletrodo que recebe a maior tensão, e é essa combinação que produz as paredes quase verticais <Cite id="mks-rie" />.
 
@@ -140,7 +152,7 @@ O wafer é inclinado de propósito. Sem isso, alguns íons escorregam pelos cana
 
 ### Canalização e a inclinação de 7°
 
-A rede cristalina do silício não é um obstáculo homogêneo. Visto ao longo de certas direções, existem **canais** — corredores vazios entre as fileiras de átomos — por onde um íon viaja quase sem colidir. É o efeito de **canalização**, e ele estraga o perfil: aparece uma **cauda profunda** de íons que foram muito além do previsto.
+A rede cristalina do silício não é um obstáculo homogêneo. Visto ao longo de certas direções, existem **canais** (corredores vazios entre as fileiras de átomos) por onde um íon viaja quase sem colidir. É o efeito de **canalização**, e ele estraga o perfil: aparece uma **cauda profunda** de íons que foram muito além do previsto.
 
 A solução industrial é quase banal de tão simples: **inclinar o wafer cerca de 7° em relação ao feixe** <Cite id="cityu-implant" />. Assim nenhum íon entra alinhado com um canal, e o perfil fica estreito e previsível. Na prática usam-se **8 a 9° de inclinação com 30° de rotação**, valores que também dependem da corrente do feixe <Cite id="implant-dose-rate" />.
 
@@ -156,7 +168,7 @@ Implantar íons a energia alta **destrói a rede cristalina** no caminho: os át
 
 A cura é térmica. Um **recozimento** devolve a ordem cristalina e, ao mesmo tempo, ativa eletricamente os dopantes, que precisam ocupar posições substitucionais na rede para funcionar. O problema é o orçamento térmico: o recozimento precisa ser quente o bastante para reparar o cristal e **curto** o bastante para não espalhar os dopantes que acabaram de ser colocados com precisão.
 
-É essa tensão que levou aos recozimentos rápidos — **RTP**, *rapid thermal processing* — e, mais recentemente, a recozimentos por laser, medidos em **milissegundos**. Quanto mais raso o perfil que se quer, mais curto tem que ser o pulso.
+É essa tensão que levou aos recozimentos rápidos (**RTP**, *rapid thermal processing*) e, mais recentemente, a recozimentos por laser, medidos em **milissegundos**. Quanto mais raso o perfil que se quer, mais curto tem que ser o pulso.
 
 ## Planarização: apagar o relevo
 
@@ -166,7 +178,7 @@ Isso seria um problema estético se a litografia não fosse **fotográfica**. Um
 
 A solução é o **CMP** (*chemical mechanical planarization*), que faz exatamente o que o nome diz: combina um ataque **químico** da suspensão com um desgaste **mecânico** do pad rotativo. O wafer é pressionado contra um pad giratório com uma **suspensão** de partículas abrasivas e reagentes, e o relevo vai embora <Cite id="amat-cmp" />.
 
-O CMP entrou na produção nos **anos 1980**, na IBM, para planarizar o dielétrico entre níveis de metal. Foi adotado de forma ampla quando a dimensão crítica chegou a **0,35 µm**, ponto em que as alternativas — vidro refluído, ataque reverso, *spin-on glass* — deixaram de atender <Cite id="cmp-history" />. Um passo de CMP pode levar **pouco mais de 60 segundos**, incluindo a limpeza posterior <Cite id="amat-cmp" />.
+O CMP entrou na produção nos **anos 1980**, na IBM, para planarizar o dielétrico entre níveis de metal. Foi adotado de forma ampla quando a dimensão crítica chegou a **0,35 µm**, ponto em que as alternativas (vidro refluído, ataque reverso, *spin-on glass*) deixaram de atender <Cite id="cmp-history" />. Um passo de CMP pode levar **pouco mais de 60 segundos**, incluindo a limpeza posterior <Cite id="amat-cmp" />.
 
 O defeito característico do CMP tem nome e é fácil de visualizar. Em áreas **largas** de metal, o material afunda: é o **dishing**. Em áreas **densas**, o dielétrico entre os fios se desgasta mais rápido que o metal: é a **erosão** <Cite id="cmp-history" />. Os dois pioram com o excesso de polimento, e os dois prejudicam a litografia da camada seguinte.
 
@@ -174,7 +186,7 @@ O defeito característico do CMP tem nome e é fácil de visualizar. Em áreas *
 
 Nenhuma das etapas acima termina sem uma medida. A KLA, que fabrica os equipamentos de inspeção, descreve o arranjo com uma frase simples: **a maior parte dos passos de processo tem alguma metrologia ou inspeção associada** <Cite id="kla-msa" />.
 
-A distinção entre as duas funções é útil e vale a pena guardar:
+São duas funções distintas:
 
 - **Metrologia** mede o que **está lá** — espessura, largura, alinhamento.
 - **Inspeção** procura o que **não deveria estar lá** — partículas, riscos, defeitos <Cite id="kla-msa" />.
@@ -187,13 +199,13 @@ Duas técnicas merecem nome. O **CD-SEM** usa um feixe de elétrons para medir a
 
 Existe um detalhe que distingue uma fábrica de semicondutores de uma fábrica comum: a medida **não serve só para rejeitar**. Ela volta para dentro do processo.
 
-O **SPC** (*statistical process control*) monitora o processo e **avisa** quando ele se desloca ou tende. Mas o SPC só olha: ele aciona o alarme. O que **fecha o laço** é o **controle run-to-run**: comparar a medida obtida depois do processo com o modelo dele, atualizar esse modelo — tipicamente com uma média exponencial — e **calcular um ajuste de receita limitado** para os wafers seguintes <Cite id="r2r-control" />.
+O **SPC** (*statistical process control*) monitora o processo e **avisa** quando ele se desloca ou tende. Mas o SPC só olha: ele aciona o alarme. O que **fecha o laço** é o **controle run-to-run**: comparar a medida obtida depois do processo com o modelo dele, atualizar esse modelo (tipicamente com uma média exponencial) e **calcular um ajuste de receita limitado** para os wafers seguintes <Cite id="r2r-control" />.
 
 No artigo que consolidou a técnica, os autores distinguem dois modos: um **rápido**, para deslocamentos súbitos, e um **gradual**, para derivas lentas <Cite id="r2r-control" />. É essa malha de realimentação que permite a um processo com tolerância de poucos nanômetros se manter estável por meses sem intervenção humana a cada lote.
 
 ## Interconexão: a parte do chip que ninguém vê
 
-O transistor é a parte famosa, mas ele ocupa uma fração pequena do volume de um chip moderno. Em cima dele está uma **cidade de fios** — o BEOL — que distribui sinal, alimentação e clock para bilhões de dispositivos, em dezenas de níveis empilhados.
+O transistor é a parte famosa, mas ele ocupa uma fração pequena do volume de um chip moderno. Em cima dele está uma **cidade de fios**, o BEOL, que distribui sinal, alimentação e clock para bilhões de dispositivos, em dezenas de níveis empilhados.
 
 Por muito tempo esses fios foram de **alumínio**. Em **setembro de 1997**, a IBM anunciou a primeira tecnologia de interconexão de **cobre** integrada de forma manufaturável, e começou a entregar produto em 1998 <Cite id="ibm-copper" />. O ganho não era cosmético: o cobre conduz cerca de **duas vezes** melhor que o alumínio, com resistência do fio cerca de **40 a 45% menor**, e a vida útil contra **eletromigração** mais de **duas ordens de grandeza** maior <Cite id="ibm-cu-electroplating" />.
 
@@ -221,7 +233,7 @@ Medições em estruturas com air gap encontram k efetivo da ordem de **2,2** <Ci
 
 ### Quantos níveis de metal
 
-O número cresceu, e é maior do que a intuição sugere. A imec descreve pilhas BEOL com **até 15 camadas**, com **3 a 6** sendo os níveis finos "Mx" <Cite id="imec-roadmap" />. Análises físicas de produtos reais vão além: o die do **TSMC N3** usado no Lunar Lake tem **20 camadas de interconexão metálica** <Cite id="techinsights-n3-beol" />.
+A imec descreve pilhas BEOL com **até 15 camadas**, com **3 a 6** sendo os níveis finos "Mx" <Cite id="imec-roadmap" />. Análises físicas de produtos reais vão além: o die do **TSMC N3** usado no Lunar Lake tem **20 camadas de interconexão metálica** <Cite id="techinsights-n3-beol" />.
 
 Cada uma dessas camadas tem sua própria litografia, seu próprio CMP e sua própria metrologia. É essa multiplicação, e não o transistor, que empurra a contagem de etapas para a casa do milhar.
 
@@ -233,13 +245,13 @@ O modelo mais simples supõe que os defeitos se distribuem aleatoriamente, e nes
 
 \[ Y = e^{-D_0 A} \]
 
-onde \(D_0\) é a densidade de defeitos e \(A\) a área do die <Cite id="leachman-yield" />. O modelo é bom para dies pequenos — a referência de Berkeley o considera adequado para áreas até cerca de **0,25 cm²** — e é conservador para dies grandes, justamente os que interessam <Cite id="leachman-yield" />.
+onde \(D_0\) é a densidade de defeitos e \(A\) a área do die <Cite id="leachman-yield" />. O modelo é bom para dies pequenos (a referência de Berkeley o considera adequado para áreas até cerca de **0,25 cm²**) e é conservador para dies grandes, justamente os que interessam <Cite id="leachman-yield" />.
 
 O primeiro refinamento importante é de **1964**, de B. T. Murphy, dos Bell Labs: defeitos **não** se distribuem ao acaso, eles se **agrupam**. Tratar a densidade como uma variável aleatória e integrar sobre a distribuição dá o modelo de Murphy <Cite id="murphy-1964" />. Na prática, a formulação que a indústria adotou depois foi a **binomial negativa**, mais fácil de manipular e mais aderente aos dados reais <Cite id="murphy-integral" />.
 
 ### Por que o rendimento demora meses
 
-A parte contraintuitiva é que o rendimento **não se resolve com um ajuste**. Ele se **aprende**.
+O rendimento se **aprende**, e não se resolve com um ajuste.
 
 O levantamento da Competitive Semiconductor Manufacturing, de Berkeley, mediu isso em número de empresas. Para uma tecnologia **nova**, o tempo médio de qualificação de processo foi de **12 meses**, com o melhor caso em **7**. Para uma tecnologia **parecida com uma que já estava em produção**, a média caiu para **7 meses**, com melhor caso em **4** <Cite id="berkeley-csm" />. E a diferença entre a média e o benchmark, no tempo de subida de rendimento, ficou em torno de **40%** <Cite id="berkeley-csm" />.
 

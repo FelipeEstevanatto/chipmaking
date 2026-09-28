@@ -79,7 +79,7 @@ The last lens, the water and the wafer in immersion lithography — <a href="htt
 
 **EUV** goes the opposite way. Because **everything absorbs EUV**, it uses neither lenses nor immersion: the light travels **reflected by multilayer mirrors**, in vacuum, and the mask itself is **reflective** <Cite id="asianometry-euv" />. That is why EUV arrived as a parallel technology, for the **7 nm node and below**, rather than as a replacement for the installed 193 nm immersion fleet.
 
-The story of how that combination came about — the four optical generations, the discarded candidates and the election of EUV — is in [History of photolithography](/en/historia-fotolitografia).
+The story of how that combination came about (the four optical generations, the discarded candidates and the election of EUV) is in [History of photolithography](/en/historia-fotolitografia).
 
 ## DUV: what 193 nm light still does
 
@@ -118,15 +118,15 @@ The tin plasma source, from droplet to intermediate focus. Drawn by the author, 
 
 The CO₂ laser that drives the explosion is one of the most powerful machines ever built in series: about **40 kW** of pulsed power at 50 kHz, fed by a **1 MW** supply, and even so only around **200 W** reach the wafer <Cite id="laserfocus-euv" />. The reason is in the next section — the losses along the optical path.
 
-Getting there took far longer than promised. When industrial development began the source delivered **single-digit watts**; the target that would make 125 wafers per hour viable was **250 W**, so it was **two orders of magnitude** short <Cite id="asml-euv-podcast" />. Power climbed in steps — 40 W, 80 W, 125 W and finally 250 W — and the first demonstration of continuous 250 W at a customer only came in **early 2018**, roughly **six years** after the date originally promised <Cite id="asml-euv-podcast" />.
+Getting there took far longer than promised. When industrial development began the source delivered **single-digit watts**; the target that would make 125 wafers per hour viable was **250 W**, so it was **two orders of magnitude** short <Cite id="asml-euv-podcast" />. Power climbed in steps (40 W, 80 W, 125 W and finally 250 W), and the first demonstration of continuous 250 W at a customer only came in **early 2018**, roughly **six years** after the date originally promised <Cite id="asml-euv-podcast" />.
 
-Three obstacles dominated that period <Cite id="asml-euv-podcast" />. The first was the **pre-pulse**. The second appeared because of it: some of the light came **reflected back into the laser** and stole power from the next pulse, which called for a "light switch" — an optical isolation module. The third was **tin fouling the collector mirror**: the explosion threw debris in every direction and the mirror's reflectivity dropped. The fix came partly by accident — reflectivity improved after every maintenance session, and the cause turned out to be a small amount of **oxygen** chemically cleaning the mirror <Cite id="asml-euv-podcast" />.
+Three obstacles dominated that period <Cite id="asml-euv-podcast" />. The first was the **pre-pulse**. The second appeared because of it: some of the light came **reflected back into the laser** and stole power from the next pulse, which called for a "light switch", an optical isolation module. The third was **tin fouling the collector mirror**: the explosion threw debris in every direction and the mirror's reflectivity dropped. The fix came partly by accident: reflectivity improved after every maintenance session, and the cause turned out to be a small amount of **oxygen** chemically cleaning the mirror <Cite id="asml-euv-podcast" />.
 
 <YouTubeEmbed id="EWVJ1Iwa00E" title="Making EUV work: Episode 3 — from lab to fab" />
 
 ## Mirrors instead of lenses
 
-Because **everything absorbs EUV** — air, glass, the mask itself — the whole light path must be in **vacuum**, and there are no lenses: only **mirrors** <Cite id="asml-euv-products" />.
+Because **everything absorbs EUV** (air, glass, the mask itself), the whole light path must be in **vacuum**, and there are no lenses: only **mirrors** <Cite id="asml-euv-products" />.
 
 An EUV mirror does not look like an ordinary mirror. It is a **Bragg reflector**: dozens of alternating pairs of **molybdenum and silicon**, each layer a few nanometres thick <Cite id="branch-euv" />. At every boundary between the two materials only about **3%** of the light is reflected and the rest passes through <Cite id="branch-euv" />. But because all of those reflections emerge **in phase**, they add up through constructive interference to about **70% per mirror** <Cite id="branch-euv" />.
 
@@ -181,7 +181,7 @@ The platform has three milestones so far:
 
 ### The family of machines
 
-The throughput figures below are measured at different doses — 30 mJ/cm² on the NXE systems and 50 mJ/cm² on the EXE — so the numbers are not directly comparable across columns <Cite id="asml-nxe3600d" /> <Cite id="asml-exe5200b" />.
+The throughput figures below are measured at different doses (30 mJ/cm² on the NXE systems and 50 mJ/cm² on the EXE), so the numbers are not directly comparable across columns <Cite id="asml-nxe3600d" /> <Cite id="asml-exe5200b" />.
 
 | Platform | NA | Light | Resolution | Throughput |
 |---|---|---|---|---|

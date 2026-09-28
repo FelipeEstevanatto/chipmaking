@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 # Células e módulos solares
 
-O wafer de silício tem dois destinos industriais. Um é a **fab** de semicondutores, que percorre a [fotolitografia](/fotolitografia) até chegar aos [transistores](/transistores). O outro é a **linha de células fotovoltaicas**, onde o mesmo material — só que multicristalino e com pureza menor — vira a célula que converte luz em eletricidade.
+O wafer de silício tem dois destinos industriais. Um é a **fab** de semicondutores, que percorre a [fotolitografia](/fotolitografia) até chegar aos [transistores](/transistores). O outro é a **linha de células fotovoltaicas**, onde o mesmo material (só que multicristalino e com pureza menor) vira a célula que converte luz em eletricidade.
 
 A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023** respondia por cerca de **97%** do mercado fotovoltaico, contra **3%** das tecnologias de filme fino <Cite id="itrpv-2024" />. Dentro do silício, o **monocristalino Czochralski** domina de forma praticamente absoluta — o wafer multicristalino deixou de ser produzido em massa <Cite id="itrpv-2024" />. O número mais antigo que aparece ao longo deste capítulo, de **pelo menos 80%**, vem do levantamento de 2011 de Xakalashe e Tangstad <Cite id="saimm" />.
 
@@ -18,6 +18,18 @@ A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023
 A célula pronta em corte: as camadas que a luz atravessa até a junção p-n, e os dois contatos que recolhem a corrente.
 </DiagramFigure>
 
+A célula pronta sai de **sete etapas**, nesta ordem:
+
+1. [Remoção da camada danificada](#remocao-da-camada-danificada) — o ataque que tira o dano deixado pela serra.
+2. [Texturização](#texturizacao) — a rugosidade que faz a luz entrar em vez de voltar.
+3. [Difusão do emissor](#difusao-do-emissor-juncao-p-n) — a junção p-n que transforma a lâmina em dispositivo.
+4. [Isolamento de borda](#isolamento-de-borda) — cortar o curto entre as duas faces.
+5. [Camada antirrefletora](#camada-antirrefletora) — menos reflexão, e de quebra passivação da superfície.
+6. [Metalização](#metalizacao) — os contatos, onde cada milímetro de prata é um milímetro sem luz.
+7. [Queima dos contatos](#queima-dos-contatos) — o tratamento térmico que faz o metal atravessar o antirrefletor.
+
+A escolha do dopante tipo p (boro ou gálio) atravessa a terceira etapa e virou subseção dentro dela: mudou o produto, não a sequência do processo.
+
 ### Remoção da camada danificada
 
 O wafer sai do corte com uma superfície **danificada e contaminada** pela serra. No início do processo, **10 a 20 µm** são atacados quimicamente de ambos os lados, tipicamente com soluções alcalinas, seguidos de enxágue em água deionizada <Cite id="saimm" />.
@@ -26,7 +38,7 @@ O wafer sai do corte com uma superfície **danificada e contaminada** pela serra
 
 Depois do ataque, a superfície fica espelhada e **reflete mais de 35% da luz incidente**. A texturização resolve isso criando rugosidade em escala micrométrica <Cite id="saimm" />.
 
-Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e potássio com isopropanol a **80 °C** ataca o silício de forma **anisotrópica** — planos cristalinos diferentes reagem a velocidades diferentes — e produz **pirâmides distribuídas aleatoriamente**, que fazem a luz entrar e ricochetear em vez de voltar <Cite id="saimm" />. Em wafers **multicristalinos** esse truque não funciona, porque a orientação muda de grão para grão; ali a textura é **mecânica** <Cite id="saimm" />. O resultado, nos dois casos, é a reflexão cair **abaixo de 10%** <Cite id="saimm" />.
+Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e potássio com isopropanol a **80 °C** ataca o silício de forma **anisotrópica** (planos cristalinos diferentes reagem a velocidades diferentes) e produz **pirâmides distribuídas aleatoriamente**, que fazem a luz entrar e ricochetear em vez de voltar <Cite id="saimm" />. Em wafers **multicristalinos** esse truque não funciona, porque a orientação muda de grão para grão; ali a textura é **mecânica** <Cite id="saimm" />. O resultado, nos dois casos, é a reflexão cair **abaixo de 10%** <Cite id="saimm" />.
 
 ### Difusão do emissor (junção p-n)
 
@@ -34,7 +46,7 @@ Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e pot
 
 O processo roda num forno a aproximadamente **900 °C por cerca de 30 minutos**, produzindo uma profundidade de penetração de **0,5 µm** — é essa camada rasa que a figura mostra como emissor. A fonte de dopante mais comum é o **POCl₃**, embora também se usem serigrafia ou deposição química de vapor <Cite id="saimm" />.
 
-### A troca do boro pelo gálio
+#### A troca do boro pelo gálio
 
 A lâmina de partida é **tipo p**, e por décadas isso significou **dopada com boro** <Cite id="saimm" />. A dopagem com boro traz um defeito que mudou o dopante usado pela indústria.
 
@@ -82,7 +94,7 @@ O **tempo de retorno de energia** fica entre **1 e 2 anos**. A vida útil do mó
 
 A fotovoltaica é mais antiga que a eletrônica de estado sólido. Em **1839**, Alexandre-Edmond Becquerel observou que uma corrente elétrica surgia num eletrodo de platina coberto de prata imerso em eletrólito quando exposto à luz — o **efeito fotovoltaico** <Cite id="saimm" />. Em **1876**, o mesmo efeito foi demonstrado num sistema inteiramente sólido, com selênio e contatos de platina <Cite id="saimm" />.
 
-A célula moderna nasce em **1954**, nos Bell Laboratories, com Chapin, Fuller e Pearson: silício com **6% de eficiência** <Cite id="saimm" />. Os números anteriores eram modestos — entre **0,1% e 0,5%** —, o que dá a medida do salto. Naquele mesmo ano surgiu uma célula de filme fino de sulfeto de cádmio com eficiência equivalente; em **1956** vieram as células de arseneto de gálio da RCA, também com 6%, e o silício já alcançava **10%** <Cite id="saimm" />.
+A célula moderna nasce em **1954**, nos Bell Laboratories, com Chapin, Fuller e Pearson: silício com **6% de eficiência** <Cite id="saimm" />. Os números anteriores eram modestos (entre **0,1% e 0,5%**), o que dá a medida do salto. Naquele mesmo ano surgiu uma célula de filme fino de sulfeto de cádmio com eficiência equivalente; em **1956** vieram as células de arseneto de gálio da RCA, também com 6%, e o silício já alcançava **10%** <Cite id="saimm" />.
 
 A primeira aplicação em escala foi espacial: em **1958** os Estados Unidos lançaram o primeiro satélite alimentado por células solares, e eram de silício <Cite id="saimm" />.
 
@@ -124,7 +136,7 @@ Alguns números do relatório mais recente dão a medida do que mudou:
 
 A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o **tandem** de perovskita sobre silício, que já chegou a **35%** em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](/referencias) <Cite id="nrel-efficiency" />.
 
-Vale registrar o que esse número significa para a cadeia do silício. Se o tandem se impuser, ele **não substitui** a lâmina de silício: ele a usa como substrato e acrescenta uma camada por cima — o que preserva todo o caminho de quartzo a wafer descrito neste site e ainda aumenta o valor por lâmina.
+Se o tandem se impuser, ele usa a lâmina de silício como substrato e acrescenta uma camada por cima. O caminho de quartzo a wafer descrito neste site continua o mesmo, e o valor por lâmina aumenta.
 
 <SourceNote :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
 

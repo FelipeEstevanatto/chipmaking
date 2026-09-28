@@ -14,19 +14,19 @@ Compare the three main architectures visually:
 
 ## The fifteen generations at a glance
 
-Before the story, the map: one row per generation, with what it changed and what it delivered. The **Year** column marks when it reached production or demonstration; the **Node** column is a generation label, not a measurement — what that means is the subject of the [addendum at the end of the chapter](#addendum-what-the-node-number-means).
+One row per generation, with what it changed and what it delivered. The **Year** column marks when it reached production or demonstration. The **Node** column is a generation label, not a measurement; what that means is in the [addendum at the end of the chapter](#addendum-what-the-node-number-means).
 
 <TransistorTable />
 
-What follows is the story of each row, in the same order, with its figure.
+The rest of the chapter tells the story of each row, in the same order, with its figure.
 
 ## 1960 — Planar MOSFET
 
 <DiagramFigure src="/pdf-images/p17-1.png" alt="Planar MOSFET transistor">
-The planar transistor: channel, gate, source and drain in the plane of the wafer — the structure lithography had to draw in one pass.
+Channel, gate, source and drain in the plane of the wafer: the structure lithography had to draw in one pass.
 </DiagramFigure>
 
-The original planar transistors (**MOSFET** — *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. The first working device, presented in **1960**, had a **20 µm** gate and a 100 nm gate oxide — a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has 26 nm gates: in five decades that dimension shrank almost a thousandfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
+The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. The first working device, presented in **1960**, had a **20 µm** gate and a 100 nm gate oxide — a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has 26 nm gates: in five decades that dimension shrank almost a thousandfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
 
 In practice this generation powered pocket calculators and the first home microcomputers: the NMOS **6502** family, for instance, drove the Apple II, the Commodore 64 and the NES.
 
@@ -78,7 +78,7 @@ Production arrived **before the 0.25 µm node**, not at it. IBM led the applicat
 
 ## 1998 — SOI (silicon on insulator)
 
-In **SOI** (*Silicon On Insulator*) the transistor is built in a **thin silicon film** on top of a **buried oxide** layer (BOX). The junctions no longer touch the substrate, which slashes **junction capacitance** — faster switching for less energy — eliminates the **latch-up** that plagues bulk CMOS, and improves radiation tolerance. IBM popularised the technique in high-performance processors from ~**0.22 µm**; today the **FD-SOI** variant (ultra-thin body) occupies niches in low-power and RF designs.
+In **SOI** (*Silicon On Insulator*) the transistor is built in a **thin silicon film** on top of a **buried oxide** layer (BOX). The junctions no longer touch the substrate, which slashes **junction capacitance** (faster switching for less energy), eliminates the **latch-up** that plagues bulk CMOS, and improves radiation tolerance. IBM popularised the technique in high-performance processors from ~**0.22 µm**; today the **FD-SOI** variant (ultra-thin body) occupies niches in low-power and RF designs.
 
 <DiagramFigure src="/assets/soi.svg" alt="Comparison of a bulk silicon transistor with an SOI transistor on a buried oxide">
 Above, a bulk silicon transistor; below, a thin silicon film isolated by a buried oxide.
@@ -126,7 +126,7 @@ Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at
 
 ## 2012 — FD-SOI (ultra-thin body)
 
-While the rest of the industry moved to FinFET, **FD-SOI** took a different route, reviving the SOI idea with an **ultra-thin silicon film** (~6 nm) on top of the buried oxide. With the film that thin the channel becomes **fully depleted** — no “floating body” effects as in partially depleted SOI — and a **back plane** under the BOX allows **body bias** to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
+While the rest of the industry moved to FinFET, **FD-SOI** took a different route, reviving the SOI idea with an **ultra-thin silicon film** (~6 nm) on top of the buried oxide. With the film that thin the channel becomes **fully depleted** (no “floating body” effects as in partially depleted SOI) and a **back plane** under the BOX allows **body bias** to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
 
 <DiagramFigure src="/assets/fdsoi.svg" alt="Comparison of partially depleted SOI with a floating body against FD-SOI with an ultra-thin film and a back plane">
 Above, partially depleted SOI with a floating body; below, FD-SOI with an ultra-thin film and a back plane for body bias.
@@ -178,7 +178,7 @@ The “Node” column only corresponds to a real physical dimension up to the mi
 
 ### 1. The number was born from a coincidence
 
-The “node” was not invented as a concept. It records the observation that **two different dimensions gave roughly the same number**. The first is the **gate length** — the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the **metal half-pitch** — half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
+The “node” was not invented as a concept. It records the observation that **two different dimensions gave roughly the same number**. The first is the **gate length**, the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the **metal half-pitch**, half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
 
 For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%** — and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />.
 
@@ -198,7 +198,7 @@ Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node num
 
 ### What replaced it
 
-Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1** — a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names** — and that is exactly how they should be read in the table at the top of the chapter.
+Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the table at the top of the chapter.
 
 <SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'intel-p856', 'shmj-sti', 'voldman-esd', 'ibm-cell', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
 

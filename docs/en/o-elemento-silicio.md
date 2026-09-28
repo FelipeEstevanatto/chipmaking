@@ -30,7 +30,7 @@ They come back at every step of the chain. The [submerged arc furnace](/en/miner
 
 <Cite id="elem-ioffe" /> <Cite id="elem-sze" /> <Cite id="elem-ciaaw" />
 
-Three things in that table deserve attention, and all three have industrial consequences.
+Three of those numbers have industrial consequences.
 
 The first is density. Solid silicon is **less dense than its own melt** — 2.33 against about 2.57 g/cm³. Almost every material shrinks as it solidifies; silicon **expands**. That is why the crystal grows floating on the melt in the [Czochralski](/en/fabricacao-wafers) process rather than sinking into it <Cite id="zulehner-2000" />.
 
@@ -44,7 +44,7 @@ Silicon's gap is **1.12 eV**, narrow enough to conduct when you want it to and w
 
 The decisive detail, though, is that this gap is **indirect**: the conduction-band minimum and the valence-band maximum do not sit at the same point in momentum space. Absorbing or emitting a photon therefore needs a lattice vibration to help, which makes both processes far less likely <Cite id="elem-sze" />.
 
-Two consequences follow, and they land in separate chapters of this site. The first is that **1 µm of gallium arsenide absorbs what 100 µm of silicon absorbs** — which explains the thickness of the solar wafer and the choice of thin-film materials in [solar cells and modules](/en/celulas-solares) <Cite id="saimm" />. The second is that silicon **does not emit light efficiently**, which forces silicon photonics to look for its laser in another material, as discussed in [Beyond silicon](/en/alem-do-silicio).
+Two consequences follow. The first is that **1 µm of gallium arsenide absorbs what 100 µm of silicon absorbs** — which explains the thickness of the solar wafer and the choice of thin-film materials in [solar cells and modules](/en/celulas-solares) <Cite id="saimm" />. The second is that silicon **does not emit light efficiently**, which forces silicon photonics to look for its laser in another material, as discussed in [Beyond silicon](/en/alem-do-silicio).
 
 <ClientOnly>
   <DataChart chart="band-gap" />
@@ -64,11 +64,9 @@ Natural silicon is a mixture of three stable isotopes, and the proportion betwee
 
 The variation is small but not zero, and it is measured precisely enough to become a tool: the ratio of silicon isotopes in a sediment records the climate in which it formed <Cite id="elem-ciaaw" />.
 
-For the industry the practical consequence is different. That **0.47% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope — not the substance, the **isotope** — is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+For the industry the practical consequence is different. That **0.47% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope (not the substance, the **isotope**) is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Why the industry uses this element
-
-It is worth closing with the question the earlier chapters answer in pieces: why **this** element, and why did it become a synonym for electronics and for solar power at the same time?
 
 - It is the **second most abundant** element in the Earth's crust, which keeps the feedstock cheap <Cite id="saimm" />.
 - It forms a stable, insulating, water-insoluble **native oxide**, which serves as a mask and as a gate dielectric — something germanium does not do <Cite id="ge-vs-si" />.

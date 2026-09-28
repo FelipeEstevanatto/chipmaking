@@ -41,15 +41,20 @@ The first transistors were not made of silicon but of **germanium** — the mate
 
 The first is the **band gap**. Germanium's is 0.7 eV; silicon's is 1.1 eV. A narrow gap means electron-hole pairs form thermally with little energy, and the material starts conducting on its own as it warms up. Germanium devices lost control at modest temperatures, whereas silicon ones operated hundreds of degrees higher, with far lower leakage currents <Cite id="ge-vs-si" />.
 
-The second — and historically the decisive one — is the **native oxide**. Exposed to oxygen, silicon spontaneously forms a layer of **SiO₂** that is stable, insulating and insoluble in water, protecting the crystal's surface and serving as a diffusion mask during manufacturing. Germanium's oxide (**GeO₂**) is the opposite: thermally unstable and water-soluble, useless as protection. That difference is what made the **planar process** possible and, with it, the integrated circuit — and later the MOSFET itself, which depends on an SiO₂–Si interface with a very low density of surface states <Cite id="ge-vs-si" />.
+The second (and historically the decisive one) is the **native oxide**. Exposed to oxygen, silicon spontaneously forms a layer of **SiO₂** that is stable, insulating and insoluble in water, protecting the crystal's surface and serving as a diffusion mask during manufacturing. Germanium's oxide (**GeO₂**) is the opposite: thermally unstable and water-soluble, useless as protection. That difference is what made the **planar process** possible and, with it, the integrated circuit — and later the MOSFET itself, which depends on an SiO₂–Si interface with a very low density of surface states <Cite id="ge-vs-si" />.
 
 The third is the most prosaic: silicon is **abundant** and therefore cheap, whereas germanium is rare <Cite id="ge-vs-si" />.
 
 None of that made germanium useless: it returned as **SiGe**, straining the silicon lattice in advanced channels ([Transistor evolution](/en/transistores)) <Cite id="ge-vs-si" />. But the starting wafer is still silicon.
 
-## Wafer types
+## Reading a wafer
 
-We classify wafers by **size**, **purity**, **doping type** and **Miller indices** (the orientation of planes in the crystal lattice). The crystallographic orientation of silicon is verified by XRD and marked on the ingot (flat/notch) before processing in the fab.
+A wafer is described by **four axes**, and each one has somewhere to be checked in this chapter:
+
+- **Crystal orientation** — verified by XRD and marked on the ingot before the fab; it is what the [Miller indices](#miller-indices) name and what the [edge](#reading-a-wafer-by-its-edge) later encodes.
+- **Diameter and thickness** — the pair that grows together, with the SEMI M1 nominal values in [what the diameter tells you](#what-the-diameter-tells-you).
+- **Doping type** — P or N: the edge tells you up to 150 mm, and from 200 mm on the information comes from the lot certificate, as seen in [doping](#doping).
+- **Finish** — virgin or processed, which the surface colour gives away in [surface](#surface-virgin-or-processed).
 
 ## Reading a wafer by its edge
 
@@ -94,7 +99,7 @@ Diameter and thickness move together, because the slice has to stay stiff as it 
 | 200 mm | 725 µm | notch |
 | 300 mm | 775 µm | notch |
 
-The same standard caps thickness variation (**TTV**) at **10 µm** and the wafer's shape deviation — *bow* and *warp*. For 200 mm, M1 allows up to **65 µm** of bow and **75 µm** of warp; for 300 mm, bow is left open and warp is **100 µm** <Cite id="semi-m1" />. Supplier datasheets usually quote much tighter numbers, because the standard's limit is the floor a prime wafer must meet — not what the industry actually ships.
+The same standard caps thickness variation (**TTV**) at **10 µm** and the wafer's shape deviation: *bow* and *warp*. For 200 mm, M1 allows up to **65 µm** of bow and **75 µm** of warp; for 300 mm, bow is left open and warp is **100 µm** <Cite id="semi-m1" />. Supplier datasheets usually quote much tighter numbers, because the standard's limit is the floor a prime wafer must meet, not what the industry actually ships.
 
 ### 450 mm: the transition that never happened
 

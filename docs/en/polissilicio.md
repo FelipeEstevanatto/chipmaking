@@ -39,7 +39,7 @@ flowchart TD
     WA --> CEL["Crystalline silicon solar cells"]
 ```
 
-This page follows the **chemical route**, which dominates the market and is the only one that reaches electronic grade. The **metallurgical route** — which produces upgraded metallurgical-grade (UMG) solar silicon without touching chlorine — is covered further down.
+This page follows the **chemical route**, which dominates the market and is the only one that reaches electronic grade. The **metallurgical route**, which produces upgraded metallurgical-grade (UMG) solar silicon without touching chlorine, is covered further down.
 
 ## From the arc furnace to MG-Si
 
@@ -111,7 +111,7 @@ The deposition reaction is exactly the **reverse** of the chlorination that prod
 SiHCl₃ + H₂ → Si + 3HCl
 ```
 
-When the process ends, the **steel bell jar is lifted off** and the assembly — U-shaped core plus deposited silicon — is removed whole and fractured into smaller chunks <Cite id="bernreuter-production" />. The rods reach **15 to 20 cm in diameter** <Cite id="bernreuter-production" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />.
+When the process ends, the **steel bell jar is lifted off** and the assembly (U-shaped core plus deposited silicon) is removed whole and fractured into smaller chunks <Cite id="bernreuter-production" />. The rods reach **15 to 20 cm in diameter** <Cite id="bernreuter-production" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />.
 
 The process uses **more than 100 kWh per kilogram** of deposited silicon, at low yield. That energy use is its main drawback <Cite id="saimm" />. Alternatives have been tried for decades. A 1985 survey listed **17 routes** besides Siemens, and few of them reached production <Cite id="bernreuter-production" />. Since 2004 the process's share of the global market **has fallen below 90% only once**, in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. The chemistry stayed. The operators changed. Chinese plants, with cheap electricity and domestic equipment, brought the **production cost** below **US$ 10 per kilogram** <Cite id="bernreuter-production" />.
 
@@ -124,10 +124,10 @@ Purity classes <Cite id="bernreuter-production" />:
 ### Fluidized bed reactor (FBR)
 
 <DiagramFigure src="/assets/fbr-reactor.svg" alt="Cross-section of the fluidized bed reactor: silicon seeds fall in from the top, silane gas injected at the base keeps the particles suspended, wall heaters hold 650 to 700 °C, and the granules grow until they are withdrawn continuously from the bottom">
-The fluidized bed reactor in cross-section. Seeds enter from above and sink; the silane injected at the base rises and keeps the particles suspended, so every grain is surrounded by fresh gas at all times. Wall heaters hold 650–700 °C, and silicon accumulates on the seeds — which thicken as they descend — until the granules are withdrawn continuously from the bottom. Author's drawing, after Bernreuter Research <Cite id="bernreuter-production" />.
+The fluidized bed reactor in cross-section. Seeds enter from above and sink; the silane injected at the base rises and keeps the particles suspended, so every grain is surrounded by fresh gas at all times. Wall heaters hold 650–700 °C, and silicon accumulates on the seeds, which thicken as they descend, until the granules are withdrawn continuously from the bottom. Author's drawing, after Bernreuter Research <Cite id="bernreuter-production" />.
 </DiagramFigure>
 
-A continuous-flow method in which silicon seed particles are kept suspended by a carrier gas containing monosilane (SiH₄) or TCS <Cite id="bernreuter-production" />. The gas decomposes at much lower temperatures — **650–700 °C** for monosilane — accumulating silicon on the seeds until granules form and are continuously harvested, with none of the rod-fracturing step. It consumes roughly **90% less electricity** than the Siemens process, produces more silicon per unit of reactor volume and delivers the product in a directly usable form, although it also produces an unwanted fraction of silicon dust <Cite id="bernreuter-production" /> <Cite id="saimm" />.
+A continuous-flow method in which silicon seed particles are kept suspended by a carrier gas containing monosilane (SiH₄) or TCS <Cite id="bernreuter-production" />. The gas decomposes at much lower temperatures, **650–700 °C** for monosilane, accumulating silicon on the seeds until granules form and are continuously harvested, with none of the rod-fracturing step. It consumes roughly **90% less electricity** than the Siemens process, produces more silicon per unit of reactor volume and delivers the product in a directly usable form, although it also produces an unwanted fraction of silicon dust <Cite id="bernreuter-production" /> <Cite id="saimm" />.
 
 There is a chemistry difference within the FBR family itself. REC Silicon feeds its reactors with **monosilane (SiH₄)**, which decomposes at **650–700 °C**; Wacker's smaller unit works with **TCS**, which only reacts at around **1000 °C** <Cite id="bernreuter-production" />. A lower temperature means less energy — and that is where the claim of consuming **one tenth** of the electricity of a conventional rod reactor comes from <Cite id="bernreuter-production" />.
 
@@ -171,7 +171,7 @@ And the volumes are not small. For every kilogram of polysilicon produced, the d
 
 The chemical route dominates, and it is expensive in **energy**. Chlorination, distillation and the Siemens reactor add up. It also **handles toxic and corrosive compounds** the whole way through, including chlorosilanes and hydrochloric acid <Cite id="saimm" />.
 
-TCS illustrates the problem well. It is a **colourless, volatile liquid** — density 1.34 g/cm³, melting point −126.5 °C, boiling at 31.8 °C — that **reacts violently with water**, including plain humidity, releasing hydrochloric acid and heat. Its flammable range in air runs from **1.2% to 90.5% by volume**, and it auto-ignites at just **185 °C** <Cite id="icsc-tcs" />. With a flash point of **−27 °C**, the liquid already gives off flammable vapour at room temperature, and that vapour is **4.7 times denser than air** — so it collects at floor level <Cite id="icsc-tcs" />. This is why TCS must be stored and handled under **inert gas**, and why the international safety card's firefighting instructions explicitly say **do not use water** <Cite id="icsc-tcs" />.
+TCS illustrates the problem well. It is a **colourless, volatile liquid** (density 1.34 g/cm³, melting point −126.5 °C, boiling at 31.8 °C) that **reacts violently with water**, including plain humidity, releasing hydrochloric acid and heat. Its flammable range in air runs from **1.2% to 90.5% by volume**, and it auto-ignites at just **185 °C** <Cite id="icsc-tcs" />. With a flash point of **−27 °C**, the liquid already gives off flammable vapour at room temperature, and that vapour is **4.7 times denser than air**, so it collects at floor level <Cite id="icsc-tcs" />. This is why TCS must be stored and handled under **inert gas**, and why the international safety card's firefighting instructions explicitly say **do not use water** <Cite id="icsc-tcs" />.
 
 In **2006** the solar industry **overtook the semiconductor industry** as the largest consumer of polysilicon <Cite id="saimm" />. In 2008 world production was approximately **75,000 tonnes**, of which **45,000** went to photovoltaics <Cite id="saimm" />.
 
@@ -186,7 +186,7 @@ The problem is that this principle does not hold for everyone. **Boron, carbon, 
 - **Phosphorus:** it is volatile, so it leaves through **vacuum refining** <Cite id="saimm" />.
 - **Boron:** it only leaves through **slag refining** or **plasma refining** — which also remove carbon and oxygen <Cite id="saimm" />.
 
-Because each technique is good at one target and weak at the others, the industry chains **combinations** of steps together <Cite id="saimm" />. Another precaution is to start from already-clean feedstock — purified quartz, carbon black and high-purity electrodes — so as not to introduce new impurities into the product <Cite id="saimm" />.
+Because each technique is good at one target and weak at the others, the industry chains **combinations** of steps together <Cite id="saimm" />. Another precaution is to start from already-clean feedstock (purified quartz, carbon black and high-purity electrodes) so as not to introduce new impurities into the product <Cite id="saimm" />.
 
 The route has the potential to become dominant, but in 2008 it accounted for **less than 8%** of solar silicon production <Cite id="saimm" />. The reason is simple: it does not reach electronic grade, so it cannot replace the chemical route for semiconductors.
 
@@ -210,7 +210,7 @@ The Kristiansand plant (Fiskå), where Elkem industrialised its metallurgical ro
 
 The energy gain is the core of the argument. The plant produced silicon with about **70% less energy** than the reference Siemens route, and CO₂-equivalent emissions were between **10 and 30%** of those of the Siemens process — **11 g against 40–150 g of CO₂-eq per kg**, depending on the route and plant location <Cite id="elkem-solar-route" />. The energy payback time of a solar module made from that material was **under one year** <Cite id="elkem-solar-route" />.
 
-Purification evolved too. In the 1980s the product carried nearly **4 ppmw of boron and phosphorus**; typical values reached **0.22 ppmw boron and 0.62 ppmw phosphorus** <Cite id="elkem-solar-route" />. That brought the material — sold under the **ESS™** brand — into **group IV** of the **SEMI PV17-0611** standard, which classifies precisely the qualities of solar-grade silicon <Cite id="elkem-solar-route" />.
+Purification evolved too. In the 1980s the product carried nearly **4 ppmw of boron and phosphorus**; typical values reached **0.22 ppmw boron and 0.62 ppmw phosphorus** <Cite id="elkem-solar-route" />. That brought the material, sold under the **ESS™** brand, into **group IV** of the **SEMI PV17-0611** standard, which classifies precisely the qualities of solar-grade silicon <Cite id="elkem-solar-route" />.
 
 In the cell, the practical result was parity with conventional polysilicon: efficiencies of **16.5–17%** in multicrystalline cells and **18–18.5%** in monocrystalline ones, even in blends of 40 to 80% ESS with virgin polysilicon <Cite id="elkem-solar-route" />. The route could also **recycle ingot cuts** (*carbide cuts*) that the solar industry normally discards <Cite id="elkem-solar-route" />.
 
@@ -218,7 +218,7 @@ In the cell, the practical result was parity with conventional polysilicon: effi
 
 Anyone who visits a Siemens plant sees **rods** of silicon coming out of the reactor. The metallurgical route delivers something else: **blocks**. The product left Norway on **pallets of 24 bricks**, each weighing **10–18 kg** and typically measuring **14–15 cm wide by 15–17 cm high and 27–28 cm long** — pallets of **300–350 kg** <Cite id="rec-solar-epd" />. Those bricks went on to be melted and re-crystallised into mono- or multicrystalline ingots.
 
-The operation had two sites: **Fiskå, in Kristiansand**, produced the solar-grade silicon — around **7,300 tonnes per year** in 2018 — and **Herøya, in Porsgrunn**, turned the material into ingots and blocks for export, mainly to REC's plant in Singapore <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
+The operation had two sites: **Fiskå, in Kristiansand**, produced the solar-grade silicon (around **7,300 tonnes per year** in 2018) and **Herøya, in Porsgrunn**, turned the material into ingots and blocks for export, mainly to REC's plant in Singapore <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
 
 <DiagramFigure src="/assets/heroyha-industripark.jpg" alt="Herøya industrial park in Porsgrunn, Norway">
 The **Herøya** industrial park in Porsgrunn, where the Kristiansand silicon was melted into ingots and cut into blocks before heading to Singapore <Cite id="rec-solar-epd" />. Bitjungle — <a href="https://commons.wikimedia.org/wiki/File:Her%C3%B8ya_Industripark.JPG" target="_blank" rel="noopener noreferrer">Herøya Industripark</a> (CC BY-SA 4.0), Wikimedia Commons.
@@ -257,9 +257,9 @@ Note also that the polycrystalline solar grade column lists **only the silicon c
 
 ### The pork cycle
 
-Polysilicon prices do not swing by accident. Between **1981 and 2004**, the long-term contract price alternated between peak and trough at a **remarkably regular interval of seven to eight years** <Cite id="bernreuter-market" />. The pattern has a name — the *pork cycle* — and the cause is always the same: **the delay between signal and response**.
+Polysilicon prices do not swing by accident. Between **1981 and 2004**, the long-term contract price alternated between peak and trough at a **remarkably regular interval of seven to eight years** <Cite id="bernreuter-market" />. The pattern has a name: the *pork cycle*, and the cause is always **the delay between signal and response**.
 
-<DiagramFigure src="/assets/polysilicon-pork-cycle.svg" alt="Diagram of the four-step price cycle — shortage, investment, the two-to-three-year delay before the plants start up, and oversupply — with a return arrow showing that investment stops and the shortage comes back; below it, a line chart of the price showing the peak at which the decision to build is taken and, two to three years later, the trough into which the capacity comes online">
+<DiagramFigure src="/assets/polysilicon-pork-cycle.svg" alt="Diagram of the four-step price cycle (shortage, investment, the two-to-three-year delay before the plants start up, and oversupply) with a return arrow showing that investment stops and the shortage comes back; below it, a line chart of the price showing the peak at which the decision to build is taken and, two to three years later, the trough into which the capacity comes online">
 Why the price cycles. The price signal is truthful, but the response arrives late: a polysilicon plant takes two to three years from engineering through construction to ramp-up. By the time the capacity actually starts up, the market that justified it no longer exists. Author's drawing, after Bernreuter Research <Cite id="bernreuter-market" /> <Cite id="bernreuter-pork-cycle" />.
 </DiagramFigure>
 
@@ -287,11 +287,11 @@ Shortage and oversupply cycles.
 
 <SourceNote label="Sources" :ids="['bernreuter']" />
 
-That growth during the 2000s made the number of plants jump from **11** (2004) to **61** (2010) — projects sprang up everywhere, including outside China, and dozens failed <Cite id="bernreuter-market" />. The oversupply closed **more than 40 plants** between late 2010 and early 2013, most of them in China — which had already lost **36 small and medium-scale units** in 2011/2012 <Cite id="bernreuter-market" />.
+That growth during the 2000s made the number of plants jump from **11** (2004) to **61** (2010). Projects sprang up everywhere, including outside China, and dozens failed <Cite id="bernreuter-market" />. The oversupply closed **more than 40 plants** between late 2010 and early 2013, most of them in China, which had already lost **36 small and medium-scale units** in 2011/2012 <Cite id="bernreuter-market" />.
 
 ### The Chinese ascent
 
-In 2004 China produced practically no polysilicon. By **2018** it held **55%** of global volume; by **2023**, **more than 90%** <Cite id="bernreuter-market" />. The path ran through tariffs. In **July 2013** the Chinese Ministry of Commerce (Mofcom) imposed duties on imports from the **United States and South Korea**, and several idle plants resumed production. The rates for the two main South Korean suppliers came in **below 3%** — hardly dissuasive — while US producers were hit with rates of up to **57%**, circumvented for a time through the *processing trade* loophole and closed in August 2014 <Cite id="bernreuter-market" />.
+In 2004 China produced practically no polysilicon. By **2018** it held **55%** of global volume; by **2023**, **more than 90%** <Cite id="bernreuter-market" />. The path ran through tariffs. In **July 2013** the Chinese Ministry of Commerce (Mofcom) imposed duties on imports from the **United States and South Korea**, and several idle plants resumed production. The rates for the two main South Korean suppliers came in **below 3%**, hardly dissuasive, while US producers were hit with rates of up to **57%**, circumvented for a time through the *processing trade* loophole and closed in August 2014 <Cite id="bernreuter-market" />.
 
 The expansion changed the nature of the market through three simultaneous forces:
 
@@ -299,13 +299,13 @@ The expansion changed the nature of the market through three simultaneous forces
 - **A deliberate price war.** In 2018 the then-CEO of Daqo New Energy, Longgen Zhang, was explicit about the strategy: of the **300,000 tonnes** of Chinese capacity in 2017, roughly **100,000** were low-cost, and the other **200,000** "will be wiped out" to make room for the new capacity <Cite id="bernreuter-market" />.
 - **Falling specific consumption.** The amount of silicon per installed watt dropped so far that the polysilicon consumed for each new gigawatt in **2023 was a quarter** of what it took in 2006. Contributors included the reduction of **wafer thickness**, the switch from slurry wire saws to **diamond wire saws** (less kerf loss), rising cell efficiency, the shift to **n-type monocrystalline cells**, and half-cut cells and other cell-to-module improvements <Cite id="bernreuter-market" />.
 
-The shift to monocrystalline was not purely technical. In **2015** China's National Energy Administration launched the **Top Runner** programme, whose minimum efficiency thresholds **favoured monocrystalline over multicrystalline** — and that provided the push Longi and Zhonghuan needed to scale up <Cite id="bernreuter-market" />. Because monocrystalline cells, especially n-type, require purer feedstock, the programme also favoured China's higher-quality polysilicon plants — and kept a niche open for foreign suppliers such as Wacker and OCI <Cite id="bernreuter-market" />.
+The shift to monocrystalline was not purely technical. In **2015** China's National Energy Administration launched the **Top Runner** programme, whose minimum efficiency thresholds **favoured monocrystalline over multicrystalline**, and that provided the push Longi and Zhonghuan needed to scale up <Cite id="bernreuter-market" />. Because monocrystalline cells, especially n-type, require purer feedstock, the programme also favoured China's higher-quality polysilicon plants, and kept a niche open for foreign suppliers such as Wacker and OCI <Cite id="bernreuter-market" />.
 
 In the end the map turned geopolitical. Outside China, the last major project was **Wacker's plant in Tennessee (USA)**, opened in 2016 but decided back in 2010, before US anti-dumping duties existed <Cite id="bernreuter-market" />. And the **Uyghur Forced Labor Prevention Act** created a **separate, higher-priced segment** for non-Chinese polysilicon, reopening the conversation about capacity outside the country <Cite id="bernreuter-market" />.
 
 ### A note on the present
 
-**2025** brought an attempted price recovery. The consultancy TrendForce projected polysilicon at **CNY 45/kg** for the second quarter, with modules at **CNY 0.70/W** and TOPCon cells rising about **1.7%** month on month <Cite id="trendforce-2025" />. The rise came from an artificial installation rush in China ahead of a regulatory change, not from structural demand — TrendForce itself already expected the reversal in the third quarter <Cite id="trendforce-2025" />. It is this kind of short cycle, against abundant installed capacity — and in a market where more than 90% of supply comes from a single country — that helps explain why European plants competitive on quality, such as the one in Kristiansand described above, could not sustain themselves.
+**2025** brought an attempted price recovery. The consultancy TrendForce projected polysilicon at **CNY 45/kg** for the second quarter, with modules at **CNY 0.70/W** and TOPCon cells rising about **1.7%** month on month <Cite id="trendforce-2025" />. The rise came from an artificial installation rush in China ahead of a regulatory change, not from structural demand. TrendForce itself already expected the reversal in the third quarter <Cite id="trendforce-2025" />. It is this kind of short cycle, against abundant installed capacity, in a market where more than 90% of supply comes from a single country, that helps explain why European plants competitive on quality, such as the one in Kristiansand described above, could not sustain themselves.
 
 <SourceNote label="Sources" :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle']" />
 
