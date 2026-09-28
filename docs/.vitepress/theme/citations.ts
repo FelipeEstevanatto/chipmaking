@@ -1898,6 +1898,14 @@ const list: Citation[] = [
     url: 'https://web.archive.org/web/20250428214515/https://www.semiaccurate.com/2009/12/10/fermi-a3-silicon-oven/',
     short: 'SemiAccurate (Fermi A3, 2009)',
   },
+  {
+    key: 'motorola-ldd-patent',
+    num: 237,
+    title: 'LDD CMOS process',
+    publisher: 'US Patent 4,753,898',
+    url: 'https://patents.google.com/patent/US4753898A/en',
+    short: 'US 4,753,898',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<
