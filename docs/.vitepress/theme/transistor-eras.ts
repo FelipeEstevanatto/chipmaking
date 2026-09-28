@@ -135,13 +135,13 @@ export const ERAS: Era[] = [
     node: '45 nm',
     namePt: 'HKMG (High-K metal gate)',
     nameEn: 'HKMG (high-K metal gate)',
-    descPt: 'Dielétrico High-K e porta metálica substituem SiO₂/polissilício e bloqueiam a fuga por tunelamento.',
-    descEn: 'A high-K dielectric and a metal gate replace SiO₂/polysilicon and block tunnelling leakage.',
+    descPt: 'Dielétrico High-K e porta metálica substituem SiO₂/polissilício e cortam a fuga por tunelamento.',
+    descEn: 'A high-K dielectric and a metal gate replace SiO₂/polysilicon and cut tunnelling leakage.',
     productsPt: 'Core 2 Extreme QX9650 (2007) e os Core 2 Duo/Quad de 45 nm que equiparam laptops e MacBooks.',
     productsEn: 'The Core 2 Extreme QX9650 (2007) and the 45 nm Core 2 Duo/Quad chips that went into laptops and MacBooks.',
     src: '/assets/hkmg-gate-stack.svg',
-    altPt: 'Comparação entre porta de SiO₂/polissilício e porta High-K metálica',
-    altEn: 'Comparison of an SiO₂/polysilicon gate with a high-K metal gate',
+    altPt: 'Corte de duas pilhas de porta: à esquerda, SiO₂ fino sob polissilício com setas de tunelamento; à direita, filme de high-k mais espesso sob eletrodo metálico',
+    altEn: 'Cross-sections of two gate stacks: left, a thin SiO₂ under polysilicon with tunnelling arrows; right, a thicker high-k film under a metal electrode',
   },
   {
     year: '2011',
@@ -263,8 +263,8 @@ export const ERA_GAINS: Record<string, { pt: string; en: string }> = {
     en: '+10–20% mobility at marginal cost',
   },
   '2007': {
-    pt: 'Bloqueia a fuga mantendo o acoplamento eletrostático',
-    en: 'Blocks leakage while keeping electrostatic coupling',
+    pt: 'Corta a fuga mantendo o acoplamento eletrostático',
+    en: 'Cuts leakage while keeping electrostatic coupling',
   },
   '2011': {
     pt: 'Controle eletrostático; corrente escalável por aletas',

@@ -130,10 +130,10 @@ const list: Citation[] = [
   {
     key: 'hkmg-paper',
     num: 16,
-    title: 'High Performance High-K + Metal Gate Strain Enhanced Transistors on (110) S',
-    publisher: 'Semantic Scholar, 2008',
+    title: 'High performance high-k + metal gate strain enhanced transistors on (110) silicon',
+    publisher: 'Intel (apresentação, IEDM 2008)',
     url: 'https://pdfs.semanticscholar.org/cd90/94aa1fd40650ba21d32d6b976f2f4b66a2d0.pdf',
-    short: 'HKMG (Semantic Scholar)',
+    short: 'Intel (IEDM 2008)',
   },
   {
     key: 'intel-4004',
@@ -186,9 +186,9 @@ const list: Citation[] = [
   {
     key: 'intel-45nm',
     num: 23,
-    title: "Intel's Fundamental Advance in Transistor Design Extends Moore's Law",
+    title: "Intel's Fundamental Advance in Transistor Design Extends Moore's Law (arquivo de 2008)",
     publisher: 'Intel (comunicado, 2007)',
-    url: 'https://www.intel.com/pressroom/archive/releases/20071111comp.htm',
+    url: 'http://web.archive.org/web/20081220132739/http://www.intel.com:80/pressroom/archive/releases/20071111comp.htm',
     short: 'Intel 45 nm Hi-k',
   },
   {

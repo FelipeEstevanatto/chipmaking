@@ -133,11 +133,13 @@ The first high-volume processor with strained silicon was the **Pentium 4 “Pre
 
 <TransistorFacts year="2007" />
 
-<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Comparison of an SiO₂/polysilicon gate with a high-K metal gate">
-The gate stack changes twice at once: the dielectric stops being SiO₂ and a metal replaces polysilicon.
+<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Cross-sections of two gate stacks on the same surface: left, a thin SiO₂ under polysilicon with tunnelling arrows crossing the oxide; right, a thicker high-k film under a metal electrode">
+Left, the SiO₂ gate with polysilicon: the thin oxide lets carriers tunnel through, the red arrows. Right, the <strong>high-k</strong> stack under a metal electrode: physically thicker, with the same equivalent oxide thickness (<strong>EOT</strong> of <strong>1.0 nm</strong> at the 45 nm node), and it is the physical thickness that pushes direct tunnelling down.
 </DiagramFigure>
 
-With the gate oxide (SiO₂) reduced to ~**1 nm**, tunnelling leakage became unworkable. In **2007** (45 nm), **High-K** dielectrics (hafnium) and **metal gates** replaced SiO₂/polysilicon, keeping electrostatic coupling with a thicker physical layer <Cite id="hkmg-paper" />.
+With the gate oxide already too thin to hold back **tunnelling**, leakage became the obstacle to scaling; the answer came in **2007**, at the **45 nm** node, by trading SiO₂ and polysilicon for a **hafnium-based high-k** dielectric and **metal electrodes** <Cite id="intel-45nm" />.
+
+The 45 nm process runs at **1.0 nm EOT** (*equivalent oxide thickness*, the thickness of SiO₂ that would give the same capacitance), and the high-k film is physically thicker than that <Cite id="hkmg-paper" />. The gate is **35 nm** long, the contacted gate pitch is **160 nm**, and the NMOS and PMOS transistors use metals with **different work functions**, in a *high-k first, metal gate last* flow where the metal goes in last, replacing the sacrificial gate <Cite id="hkmg-paper" />.
 
 The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line — the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
 

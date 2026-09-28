@@ -133,11 +133,13 @@ O primeiro processador de alto volume com silício esticado foi o **Pentium 4 �
 
 <TransistorFacts year="2007" />
 
-<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Comparação entre porta de SiO₂/polissilício e porta High-K metálica">
-A pilha de porta muda duas vezes de uma vez: o dielétrico deixa de ser SiO₂ e o metal substitui o polissilício.
+<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Corte de duas pilhas de porta na mesma superfície: à esquerda, SiO₂ fino sob polissilício, com setas de tunelamento atravessando o óxido; à direita, filme de high-k mais espesso sob eletrodo metálico">
+À esquerda, a porta de SiO₂ com polissilício: o óxido fino deixa os portadores atravessarem por <strong>tunelamento</strong>, as setas vermelhas. À direita, a pilha de <strong>High-K</strong> sob eletrodo metálico: fisicamente mais espessa, com a mesma espessura elétrica equivalente (<strong>EOT</strong> de <strong>1,0 nm</strong> no nó de 45 nm), e é a espessura física que derruba o tunelamento direto.
 </DiagramFigure>
 
-Com óxido de portão (SiO₂) reduzido a ~**1 nm**, o vazamento por tunelamento tornou-se inviável. Em **2007** (45 nm), dielétricos de **High-K** (háfnio) e **portões metálicos** substituíram SiO₂/polissilício, mantendo acoplamento eletrostático com espessura física maior <Cite id="hkmg-paper" />.
+Com o óxido de porta já fino demais para conter o **tunelamento**, o vazamento virou o obstáculo do escalonamento; a resposta veio em **2007**, no nó de **45 nm**, com a troca de SiO₂ e polissilício por um dielétrico **High-K à base de háfnio** e por **eletrodos metálicos** <Cite id="intel-45nm" />.
+
+O processo de 45 nm trabalha com **1,0 nm de EOT** (*equivalent oxide thickness*, a espessura de SiO₂ que daria a mesma capacitância), e o filme de high-k é fisicamente mais espesso que isso <Cite id="hkmg-paper" />. O comprimento de porta é de **35 nm**, o passo de contato é de **160 nm**, e os transistores NMOS e PMOS usam metais de **funções de trabalho diferentes**, num fluxo *high-k first, metal gate last* em que o metal entra por último, no lugar da porta sacrificial <Cite id="hkmg-paper" />.
 
 A estreia comercial foi o **Core 2 Extreme QX9650**, em novembro de 2007, seguido em janeiro de 2008 pela linha de volume — os Core 2 Duo e Quad de 45 nm que equiparam laptops e MacBooks da época <Cite id="intel-45nm" />.
 
