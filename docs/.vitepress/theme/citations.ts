@@ -1858,6 +1858,46 @@ const list: Citation[] = [
     url: 'https://www.extremetech.com/gaming/240926-amd-rx-460s-can-modded-unlock-missing-cores-additional-performance',
     short: 'ExtremeTech (RX 460)',
   },
+  {
+    key: 'semiaccurate-fermi-clusters',
+    num: 232,
+    title: 'Nvidia castrates Fermi to 448SPs (arquivo de 2021)',
+    publisher: 'SemiAccurate',
+    url: 'https://web.archive.org/web/20210415163050/https://semiaccurate.com/2009/12/21/nvidia-castrates-fermi-448sps/',
+    short: 'SemiAccurate (GF100, 2009)',
+  },
+  {
+    key: 'semiaccurate-fermi-yields',
+    num: 233,
+    title: 'Nvidia officially denies sub 20 percent Fermi yields (arquivo de 2019)',
+    publisher: 'SemiAccurate',
+    url: 'https://web.archive.org/web/20191209180134/https://semiaccurate.com/2010/04/28/nvidia-officially-denies-sub-20-percent-fermi-yields/',
+    short: 'SemiAccurate (Fermi yields, 2010)',
+  },
+  {
+    key: 'wikipedia-gf100',
+    num: 234,
+    title: 'GeForce 400 series (compilation of vendor specifications)',
+    publisher: 'Wikipedia',
+    url: 'https://en.wikipedia.org/wiki/GeForce_400_series',
+    short: 'Wikipedia (GeForce 400)',
+  },
+  {
+    key: 'semiaccurate-fermi-clocks',
+    num: 235,
+    title: 'Fermi massively misses clock targets (arquivo de 2019)',
+    publisher: 'SemiAccurate',
+    url: 'https://web.archive.org/web/20191208131940/https://www.semiaccurate.com/2009/11/16/fermi-massively-misses-clock-targets/',
+    short: 'SemiAccurate (Fermi A2, 2009)',
+  },
+  {
+    key: 'semiaccurate-fermi-silicon',
+    num: 236,
+    title: 'Fermi A3 silicon is in the oven (arquivo de 2025)',
+    publisher: 'SemiAccurate',
+    url: 'https://web.archive.org/web/20250428214515/https://www.semiaccurate.com/2009/12/10/fermi-a3-silicon-oven/',
+    short: 'SemiAccurate (Fermi A3, 2009)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<
