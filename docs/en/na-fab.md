@@ -12,10 +12,10 @@ At the end of [wafer fabrication](/en/fabricacao-wafers) there is a flawless, **
 
 The [photolithography](/en/fotolitografia) chapter shows how a pattern is printed onto that disc. This one shows what happens **around** the printing — because lithography on its own builds nothing. It only opens the door; the other processes are what walk through it.
 
-## A fab is a loop, not an assembly line
+## A fab line is a loop
 
-<DiagramFigure src="/assets/fab-loop.svg" alt="The wafer cycles repeatedly through seven modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology) accumulating about a thousand steps over roughly three months">
-The wafer does not travel through the fab once: it goes round the same equipment dozens of times. Each lap adds a layer, erases part of it and measures the result.
+<DiagramFigure src="/assets/fab-loop.svg" alt="The wafer cycles repeatedly through seven numbered modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology), accumulating 600 to over a thousand steps over about three months">
+The wafer goes round the same equipment dozens of times. The seven modules are numbered in the order the wafer visits them; lithography is highlighted because it has its own chapter, and metrology because it measures the result. Each lap adds a layer, erases part of it and measures what is left.
 </DiagramFigure>
 
 The loop has **seven modules**. Six of them have a section in this chapter, in the order the wafer visits them; the seventh, lithography, has [its own chapter](/en/fotolitografia), because that is where the whole difficulty of scaling sits:

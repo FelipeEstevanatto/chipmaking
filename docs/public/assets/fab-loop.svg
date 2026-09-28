@@ -1,53 +1,92 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680" role="img">
-  <title>A wafer is not processed on a line but in a loop: it circles repeatedly through oxidation, deposition, lithography, etching, implantation, planarisation and metrology, accumulating roughly a thousand process steps over about three months before it leaves the fab</title>
-  <desc>Seven process modules arranged on a circle with the wafer cycling through them, and the step count and elapsed time in the middle. Step counts are order-of-magnitude.</desc>
+  <title>A wafer is processed in a loop rather than on a line: it circles repeatedly through seven numbered modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology), accumulating hundreds to thousands of steps over about three months before it leaves the fab</title>
+  <desc>Seven modules numbered 1 to 7 around a ring, in the order the wafer visits them, with the direction of travel shown by arrows between them. Lithography is highlighted because it has its own chapter, and metrology because it measures the result. The centre carries the step count and the elapsed time. Numbers are order-of-magnitude, not to scale.</desc>
   <rect width="960" height="680" fill="#ffffff" />
   <defs>
-    <marker id="loopArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a94a6" />
-    </marker>
+    <g id="dir">
+      <path d="M -15,0 L 2,0" fill="none" stroke="#718096" stroke-width="3" />
+      <path d="M -7,-6 L 4,0 L -7,6 z" fill="#718096" />
+    </g>
   </defs>
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
-    .node { fill: #f0f4f8; stroke: #8a94a6; stroke-width: 1.5; }
-    .nt { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .ring { fill: none; stroke: #cbd5e0; stroke-width: 3; stroke-dasharray: 9 7; }
-    .big { font: 600 26px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .mid { font: 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
-    .kick { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2b6cb0; }
+    .sm { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .nt { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .ntLit { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a365d; }
+    .ntMet { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #276749; }
+    .num { font: 700 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .big { font: 600 27px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .note { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #718096; }
+    .ring { fill: none; stroke: #e2e8f0; stroke-width: 30; }
+    .card { fill: #f7fafc; stroke: #a0aec0; stroke-width: 1.6; }
+    .cardLit { fill: #b9d9f5; stroke: #2b6cb0; stroke-width: 1.8; }
+    .cardMet { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.8; }
+    .hub { fill: #f7fafc; stroke: #cbd5e0; stroke-width: 1.5; }
+    .badge { fill: #2c5282; stroke: #ffffff; stroke-width: 2.5; }
+    .badgeLit { fill: #1a365d; stroke: #ffffff; stroke-width: 2.5; }
+    .badgeMet { fill: #276749; stroke: #ffffff; stroke-width: 2.5; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .sw { stroke-width: 1.5; }
   </style>
 
-  <text class="h" x="40" y="36">A fab is a loop, not a line</text>
+  <text class="h" x="40" y="34">A fab is a loop, not a line</text>
+  <text class="sm" x="40" y="62">seven modules, dozens of passes</text>
 
-  <circle class="ring" cx="480" cy="350" r="196" />
-  <path d="M 676,350 A 196,196 0 0 1 620,490" fill="none" stroke="#8a94a6" stroke-width="3" marker-end="url(#loopArrow)" />
-  <path d="M 340,490 A 196,196 0 0 1 284,350" fill="none" stroke="#8a94a6" stroke-width="3" marker-end="url(#loopArrow)" />
+  <circle class="ring" cx="480" cy="372" r="196" />
 
-  <rect class="node" x="405" y="128" width="150" height="44" rx="9" />
-  <text class="nt" x="480" y="156" text-anchor="middle">Oxidation</text>
+  <use href="#dir" transform="translate(565.04,195.41) rotate(25.72)" />
+  <use href="#dir" transform="translate(671.09,328.39) rotate(77.14)" />
+  <use href="#dir" transform="translate(633.24,494.20) rotate(128.57)" />
+  <use href="#dir" transform="translate(480,568) rotate(180)" />
+  <use href="#dir" transform="translate(326.76,494.20) rotate(-128.57)" />
+  <use href="#dir" transform="translate(288.91,328.39) rotate(-77.14)" />
+  <use href="#dir" transform="translate(394.96,195.41) rotate(-25.72)" />
 
-  <rect class="node" x="561" y="198" width="150" height="44" rx="9" />
-  <text class="nt" x="636" y="226" text-anchor="middle">Deposition</text>
+  <circle class="hub" cx="480" cy="372" r="104" />
+  <text class="sm" x="480" y="346" text-anchor="middle">600 to 1,000+ steps</text>
+  <text class="big" x="480" y="392" text-anchor="middle">~3 months</text>
+  <text class="sm" x="480" y="418" text-anchor="middle">per wafer, in the fab</text>
 
-  <rect class="node" x="600" y="367" width="150" height="44" rx="9" />
-  <text class="nt" x="675" y="395" text-anchor="middle">Lithography</text>
+  <rect class="card" x="408" y="154" width="144" height="44" rx="10" />
+  <circle class="badge" cx="410" cy="156" r="12.5" />
+  <text class="num" x="410" y="161" text-anchor="middle">1</text>
+  <text class="nt" x="484" y="182" text-anchor="middle">Oxidation</text>
 
-  <rect class="node" x="492" y="503" width="150" height="44" rx="9" />
-  <text class="nt" x="567" y="531" text-anchor="middle">Etching</text>
+  <rect class="card" x="561" y="228" width="144" height="44" rx="10" />
+  <circle class="badge" cx="563" cy="230" r="12.5" />
+  <text class="num" x="563" y="235" text-anchor="middle">2</text>
+  <text class="nt" x="637" y="256" text-anchor="middle">Deposition</text>
 
-  <rect class="node" x="318" y="503" width="150" height="44" rx="9" />
-  <text class="nt" x="393" y="531" text-anchor="middle">Implantation</text>
+  <rect class="cardLit" x="599" y="394" width="144" height="44" rx="10" />
+  <circle class="badgeLit" cx="601" cy="396" r="12.5" />
+  <text class="num" x="601" y="401" text-anchor="middle">3</text>
+  <text class="ntLit" x="675" y="422" text-anchor="middle">Lithography</text>
 
-  <rect class="node" x="210" y="367" width="150" height="44" rx="9" />
-  <text class="nt" x="285" y="395" text-anchor="middle">Planarisation</text>
+  <rect class="card" x="493" y="527" width="144" height="44" rx="10" />
+  <circle class="badge" cx="495" cy="529" r="12.5" />
+  <text class="num" x="495" y="534" text-anchor="middle">4</text>
+  <text class="nt" x="569" y="555" text-anchor="middle">Etching</text>
 
-  <rect class="node" x="249" y="198" width="150" height="44" rx="9" />
-  <text class="nt" x="324" y="226" text-anchor="middle">Metrology</text>
+  <rect class="card" x="323" y="527" width="144" height="44" rx="10" />
+  <circle class="badge" cx="325" cy="529" r="12.5" />
+  <text class="num" x="325" y="534" text-anchor="middle">5</text>
+  <text class="nt" x="399" y="555" text-anchor="middle">Implantation</text>
 
-  <text class="kick" x="480" y="322" text-anchor="middle">about 1,000 steps on average</text>
-  <text class="big" x="480" y="360" text-anchor="middle">~3 months</text>
-  <text class="mid" x="480" y="390" text-anchor="middle">inside the fab, per wafer</text>
-  <text class="mid" x="480" y="418" text-anchor="middle">dozens of loops through lithography</text>
+  <rect class="card" x="217" y="394" width="144" height="44" rx="10" />
+  <circle class="badge" cx="219" cy="396" r="12.5" />
+  <text class="num" x="219" y="401" text-anchor="middle">6</text>
+  <text class="nt" x="293" y="422" text-anchor="middle">Planarisation</text>
 
+  <rect class="cardMet" x="255" y="228" width="144" height="44" rx="10" />
+  <circle class="badgeMet" cx="257" cy="230" r="12.5" />
+  <text class="num" x="257" y="235" text-anchor="middle">7</text>
+  <text class="ntMet" x="331" y="256" text-anchor="middle">Metrology</text>
+
+  <path class="lead" d="M746,416 L766,416" />
+  <text class="note" x="772" y="421">dozens of exposures</text>
+
+  <rect class="cardLit sw" x="286" y="627" width="24" height="16" rx="4" />
+  <text class="sm" x="320" y="640">separate chapter</text>
+  <rect class="cardMet sw" x="492" y="627" width="24" height="16" rx="4" />
+  <text class="sm" x="526" y="640">measures the result</text>
 </svg>
