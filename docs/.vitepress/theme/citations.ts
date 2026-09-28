@@ -1938,6 +1938,23 @@ const list: Citation[] = [
     url: 'https://patents.google.com/patent/US5374564A/en',
     short: 'US 5,374,564',
   },
+  {
+    key: 'wikipedia-22nm',
+    num: 242,
+    title: '22 nm process',
+    publisher: 'Wikipedia (CC BY-SA 4.0)',
+    url: 'https://en.wikipedia.org/wiki/22_nm_process',
+    short: 'Wikipedia (22 nm)',
+  },
+  {
+    key: 'wikipedia-photolithography',
+    num: 243,
+    title:
+      'Photolithography (compilation of the process flow and the typical recipe parameters: dehydration bake, HMDS, soft bake, PEB, developer, hard bake, stripping)',
+    publisher: 'Wikipedia (CC BY-SA 4.0)',
+    url: 'https://en.wikipedia.org/wiki/Photolithography',
+    short: 'Wikipedia (fotolitografia)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

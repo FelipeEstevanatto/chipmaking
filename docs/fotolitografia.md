@@ -44,20 +44,26 @@ Fotoresistor sendo espalhado por rotação sobre um wafer — <a href="https://c
 
 ## Passo a passo do processo
 
-<DiagramFigure src="/assets/lithography-process-steps.svg" alt="Seis etapas da litografia sobre resist positivo: preparo do substrato, revestimento, pré-cozimento, exposição, revelação e transferência de padrão">
-As seis etapas do ciclo, do substrato limpo ao padrão gravado. Desenho do autor.
+<DiagramFigure src="/assets/lithography-process-steps.svg" alt="Oito etapas da litografia sobre resiste positivo, cada painel mostrando o mesmo corte do wafer: limpeza e promotor de adesão, revestimento por rotação, pré-cozimento, alinhamento e exposição através de uma máscara de cromo, cozimento pós-exposição, revelação, cozimento final e gravação com remoção do resiste">
+As oito etapas do ciclo, do substrato limpo ao padrão gravado no silício. Cada painel mostra o mesmo corte do wafer, e o resiste que sobra fica exatamente embaixo das barras de cromo da máscara. Desenho do autor.
 </DiagramFigure>
 
-Executado em sequência, com controle rigoroso de temperatura e contaminantes:
+Executado em sequência, com controle rigoroso de temperatura e contaminantes <Cite id="wikipedia-photolithography" />:
 
-1. **Preparação e limpeza do substrato:** *dehydration bake* (200–400 °C); promotor de adesão **HMDS** (hexametildisilazano) torna a superfície hidrofóbica.
-2. **Revestimento (spin coating):** fotoresistor depositado e espalhado por rotação a milhares de RPM, formando filme uniforme micrométrico ou nanométrico.
-3. **Pré-cozimento (soft bake):** hotplate 90–100 °C — evapora solventes, estabiliza o filme.
-4. **Alinhamento e exposição:** steppers/scanners; retículo de quartzo com cromo; **DUV (193 nm)** ou **EUV (13,5 nm)** altera solubilidade da resina.
-5. **Cozimento pós-exposição (PEB):** 100–130 °C — catalisa reações latentes; reduz *standing waves* nas paredes do resiste.
-6. **Revelação (development):** TMAH ou poça; em resiste **positivo**, região exposta dissolve; enxágue com DIW e secagem com N₂.
-7. **Cozimento final (hard bake):** 120–150 °C — reticulação (*cross-linking*) para resistir a etch e implantação.
-8. **Transferência de padrão e stripping:** gravação por **etch** ou **implantação iônica**; remoção do resiste por solventes ou **plasma ashing**.
+1. **Limpeza e preparação do substrato:** um cozimento de desidratação tira a água da superfície, tipicamente por volta de **150 °C** durante dez minutos. Em seguida o promotor de adesão **HMDS** (hexametildisilazano) reage com o óxido nativo e deixa a superfície hidrofóbica, o que impede o revelador de se infiltrar por baixo do resiste.
+2. **Revestimento (*spin coating*):** o fotoresistor cai no centro do wafer e é espalhado por rotação a milhares de RPM até virar um filme uniforme, de espessura micrométrica ou nanométrica.
+3. **Pré-cozimento (*soft bake*):** placa quente a **90–100 °C** por 30 a 60 segundos, para o solvente sair e o filme se estabilizar.
+4. **Alinhamento e exposição:** o scanner posiciona o retículo sobre o padrão que já está no wafer e expõe. A luz é de **193 nm** no **DUV** e de **13,5 nm** no **EUV**; o cromo da máscara bloqueia, e só as aberturas mudam a solubilidade da resina.
+5. **Cozimento pós-exposição (PEB):** **100–130 °C**. Nas resinas quimicamente amplificadas é aqui que a reação catalisada pelo ácido acontece, e não durante a exposição. O cozimento também reduz as ondas estacionárias que a interferência da luz deixa nas paredes do resiste.
+6. **Revelação (*development*):** **TMAH** (hidróxido de tetrametilamônio) em poça sobre o wafer. Em resiste **positivo**, a região exposta é a que se dissolve. A temperatura do revelador é controlada com precisão de **0,2 °C**.
+7. **Cozimento final (*hard bake*):** **120–180 °C** por 20 a 30 minutos, para endurecer o resiste antes da gravação e da implantação. Esse passo é tradicional das resinas não amplificadas; nas quimicamente amplificadas o calor em excesso consome o ácido que forma a imagem, e o passo é ajustado ou dispensado <Cite id="wikipedia-photolithography" />.
+8. **Transferência de padrão e remoção:** gravação por **etch** ou **implantação iônica** nas áreas que ficaram sem resiste, e depois remoção por solvente como o **NMP** ou por **plasma ashing** de oxigênio.
+
+Os oito passos se dividem em duas máquinas. O **track** de coater/developer faz os cozimentos, o revestimento, a revelação e o enxágue; o scanner faz a exposição. Os dois ficam instalados lado a lado e ligados um ao outro, e o wafer passa de um para o outro sem sair do controle do sistema <Cite id="wikipedia-photolithography" />. A revelação é feita wafer a wafer, e não em lote, para que cada um receba a mesma dose.
+
+<DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Máquina automatizada de revestimento e revelação de fotoresistor dentro de uma sala iluminada por luz amarela">
+Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amarela. Essa luz não tem componente ultravioleta, então o resiste não é exposto enquanto é manuseado — <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
 
 ## Realce de resolução e multi-padrão
 

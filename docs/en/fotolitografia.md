@@ -44,20 +44,26 @@ Photoresist being spread by rotation over a wafer — <a href="https://commons.w
 
 ## Step-by-step process
 
-<DiagramFigure src="/assets/lithography-process-steps.svg" alt="Six steps of lithography on a positive resist: substrate preparation, coating, soft bake, exposure, development and pattern transfer">
-The six steps of the cycle, from the clean substrate to the etched pattern. Drawn by the author.
+<DiagramFigure src="/assets/lithography-process-steps.svg" alt="Eight steps of lithography on a positive resist, each panel showing the same wafer cross-section: cleaning and adhesion promoter, spin coating, soft bake, alignment and exposure through a chromium mask, post-exposure bake, development, hard bake, and etching with resist removal">
+The eight steps of the cycle, from the clean substrate to the pattern etched into the silicon. Every panel shows the same wafer cross-section, and the resist that survives sits exactly under the chromium bars of the mask. Drawn by the author.
 </DiagramFigure>
 
-Performed in sequence, under strict control of temperature and contaminants:
+Performed in sequence, under strict control of temperature and contaminants <Cite id="wikipedia-photolithography" />:
 
-1. **Substrate preparation and cleaning:** *dehydration bake* (200–400 °C); an adhesion promoter, **HMDS** (hexamethyldisilazane), makes the surface hydrophobic.
-2. **Photoresist coating:** resist is deposited and spread by spin coating at thousands of RPM, forming a uniform micrometre- or nanometre-thick film.
-3. **Soft bake:** hotplate at 90–100 °C — evaporates solvents, stabilises the film.
-4. **Alignment and exposure:** steppers/scanners; a quartz reticle with chromium; **DUV (193 nm)** or **EUV (13.5 nm)** alters the solubility of the resist.
-5. **Post-exposure bake (PEB):** 100–130 °C — catalyses latent reactions; reduces *standing waves* on the resist sidewalls.
-6. **Development:** TMAH or puddle method; in a **positive** resist the exposed region dissolves; rinse with DIW and dry with N₂.
-7. **Hard bake:** 120–150 °C — *cross-linking* so the resist withstands etching and implantation.
-8. **Pattern transfer and stripping:** etching or **ion implantation**; resist removal with solvents or **plasma ashing**.
+1. **Cleaning and substrate preparation:** a dehydration bake drives the water off the surface, typically around **150 °C** for ten minutes. An adhesion promoter, **HMDS** (hexamethyldisilazane), then reacts with the native oxide and leaves the surface hydrophobic, which stops the developer from creeping in under the resist.
+2. **Resist coating:** the photoresist is dropped at the centre of the wafer and spread by spin coating at thousands of RPM into a uniform film, micrometre- or nanometre-thick.
+3. **Soft bake:** hotplate at **90–100 °C** for 30 to 60 seconds, so the solvent leaves and the film stabilises.
+4. **Alignment and exposure:** the scanner positions the reticle over the pattern already on the wafer and exposes. The light is **193 nm** in **DUV** and **13.5 nm** in **EUV**; the chromium on the mask blocks it, and only the openings change the solubility of the resist.
+5. **Post-exposure bake (PEB):** **100–130 °C**. In chemically amplified resists the acid-catalysed reaction happens here rather than during the exposure. The bake also reduces the standing waves that light interference leaves on the resist sidewalls.
+6. **Development:** **TMAH** (tetramethylammonium hydroxide) puddled onto the wafer. In a **positive** resist the exposed region is the one that dissolves. The developer temperature is held to within **0.2 °C**.
+7. **Hard bake:** **120–180 °C** for 20 to 30 minutes, to harden the resist before etching and implantation. The step is traditional of non-amplified resists; in chemically amplified ones excess heat consumes the acid that forms the image, so it is adjusted or dropped <Cite id="wikipedia-photolithography" />.
+8. **Pattern transfer and removal:** etching or **ion implantation** in the areas left bare, then removal with a solvent such as **NMP** or with oxygen **plasma ashing**.
+
+The eight steps are split across two machines. The coater/developer **track** does the bakes, the coating, the development and the rinse; the scanner does the exposure. The two are installed side by side and linked, and the wafer passes from one to the other without leaving the system's control <Cite id="wikipedia-photolithography" />. Development runs one wafer at a time rather than in batches, so that each one receives the same dose.
+
+<DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Automated photoresist coater and developer inside a room lit by yellow light">
+An EVG coater/developer at the LAAS-CNRS laboratory in Toulouse, under yellow light. That light carries no ultraviolet, so the resist is not exposed while it is handled — <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
 
 ## Resolution enhancement and multi-patterning
 
