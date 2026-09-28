@@ -14,11 +14,11 @@ O exercício tem uma virtude e um limite. A virtude é que o preço é o resumo 
 
 | Degrau | Unidade | Ordem de grandeza | Fonte |
 | --- | --- | --- | --- |
-| Silício metalúrgico (MG-Si) | US$/kg | **poucos dólares**, conforme qualidade e granulometria | <Cite id="saimm" /> |
-| Polissilício — fundo do ciclo | US$/kg | **6,75** (junho de 2020, preço à vista) | <Cite id="bernreuter-pork-cycle" /> |
-| Polissilício — pico do ciclo | US$/kg | **39** (agosto de 2022) | <Cite id="bernreuter-pork-cycle" /> |
-| Célula solar | US$/Wp | **≈ 1** (2011) | <Cite id="saimm" /> |
-| Módulo solar | US$/Wp | **≈ 2** de silício cristalino (2011); **¥ 0,70/W** em 2025 | <Cite id="saimm" /> <Cite id="trendforce-2025" /> |
+| Silício metalúrgico (MG-Si) | US\$/kg | **poucos dólares**, conforme qualidade e granulometria | <Cite id="saimm" /> |
+| Polissilício — fundo do ciclo | US\$/kg | **6,75** (junho de 2020, preço à vista) | <Cite id="bernreuter-pork-cycle" /> |
+| Polissilício — pico do ciclo | US\$/kg | **39** (agosto de 2022) | <Cite id="bernreuter-pork-cycle" /> |
+| Célula solar | US\$/Wp | **≈ 1** (2011) | <Cite id="saimm" /> |
+| Módulo solar | US\$/Wp | **≈ 2** de silício cristalino (2011); **¥ 0,70/W** em 2025 | <Cite id="saimm" /> <Cite id="trendforce-2025" /> |
 | Teste do circuito integrado | % da receita | **menos de 2 a 3%** | <Cite id="itrs-2015-test" /> |
 | Montagem, teste e empacotamento | % do valor do chip pronto | **cerca de 10%** (SIA/BCG estima **6%**) | <Cite id="cset-packaging" /> |
 | Projeto + fabricação de front-end | % do valor do chip pronto | **cerca de 45%** | <Cite id="cset-packaging" /> |
@@ -29,11 +29,11 @@ A maior parte do valor, porém, não está no material. Projeto e front-end soma
 
 ## O degrau de commodity
 
-O polissilício é o degrau da cadeia em que o preço se comporta como commodity, e por isso é o único em que se observa o ciclo inteiro em números públicos: **6,75 US$/kg** no fundo histórico de junho de 2020 e **39 US$/kg** em agosto de 2022, com a subida completa em cerca de dois anos <Cite id="bernreuter-pork-cycle" />.
+O polissilício é o degrau da cadeia em que o preço se comporta como commodity, e por isso é o único em que se observa o ciclo inteiro em números públicos: **6,75 US\$/kg** no fundo histórico de junho de 2020 e **39 US\$/kg** em agosto de 2022, com a subida completa em cerca de dois anos <Cite id="bernreuter-pork-cycle" />.
 
 Esse intervalo (quase **6×** entre vale e pico) é o que decidiu quem construiu planta nova e quem fechou. A dinâmica do *pork cycle* e a lista de empresas que saíram do mercado estão no capítulo de [polissilício](/polissilicio).
 
-Do outro lado da cadeia, o preço do módulo desceu por um motivo diferente: escala e eficiência, com o custo caindo uma fração fixa a cada duplicação da produção acumulada <Cite id="fraunhofer-pv-report" />. É a mesma física que fez a célula sair de cerca de **1 US$/Wp** em 2011 para um módulo em torno de **¥ 0,70/W** em 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
+Do outro lado da cadeia, o preço do módulo desceu por um motivo diferente: escala e eficiência, com o custo caindo uma fração fixa a cada duplicação da produção acumulada <Cite id="fraunhofer-pv-report" />. É a mesma física que fez a célula sair de cerca de **1 US\$/Wp** em 2011 para um módulo em torno de **¥ 0,70/W** em 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
 
 ## O degrau que não se publica
 

@@ -14,11 +14,11 @@ Price is the most honest summary of an industrial chain: it already contains ene
 
 | Rung | Unit | Order of magnitude | Source |
 | --- | --- | --- | --- |
-| Metallurgical silicon (MG-Si) | US$/kg | **a few dollars**, depending on grade and particle size | <Cite id="saimm" /> |
-| Polysilicon — cycle trough | US$/kg | **6.75** (June 2020, spot price) | <Cite id="bernreuter-pork-cycle" /> |
-| Polysilicon — cycle peak | US$/kg | **39** (August 2022) | <Cite id="bernreuter-pork-cycle" /> |
-| Solar cell | US$/Wp | **≈ 1** (2011) | <Cite id="saimm" /> |
-| Solar module | US$/Wp | **≈ 2** for crystalline silicon (2011); **¥ 0.70/W** in 2025 | <Cite id="saimm" /> <Cite id="trendforce-2025" /> |
+| Metallurgical silicon (MG-Si) | US\$/kg | **a few dollars**, depending on grade and particle size | <Cite id="saimm" /> |
+| Polysilicon — cycle trough | US\$/kg | **6.75** (June 2020, spot price) | <Cite id="bernreuter-pork-cycle" /> |
+| Polysilicon — cycle peak | US\$/kg | **39** (August 2022) | <Cite id="bernreuter-pork-cycle" /> |
+| Solar cell | US\$/Wp | **≈ 1** (2011) | <Cite id="saimm" /> |
+| Solar module | US\$/Wp | **≈ 2** for crystalline silicon (2011); **¥ 0.70/W** in 2025 | <Cite id="saimm" /> <Cite id="trendforce-2025" /> |
 | Integrated-circuit test | % of revenue | **under 2 to 3%** | <Cite id="itrs-2015-test" /> |
 | Assembly, test and packaging | % of finished chip value | **about 10%** (SIA/BCG estimate **6%**) | <Cite id="cset-packaging" /> |
 | Design + front-end fabrication | % of finished chip value | **about 45%** | <Cite id="cset-packaging" /> |
@@ -29,11 +29,11 @@ Most of the value, however, is not in the material. Design and front-end togethe
 
 ## The commodity rung
 
-Polysilicon is the rung where price behaves like a commodity, and it is therefore the only one where the whole cycle is visible in public numbers: **US$ 6.75/kg** at the all-time low of June 2020 and **US$ 39/kg** in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
+Polysilicon is the rung where price behaves like a commodity, and it is therefore the only one where the whole cycle is visible in public numbers: **US\$ 6.75/kg** at the all-time low of June 2020 and **US\$ 39/kg** in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
 
 That range (nearly **6×** between trough and peak) is what decided who built new plants and who closed. The *pork cycle* dynamics and the list of companies that left the market are in the [polysilicon](/en/polissilicio) chapter.
 
-At the other end of the chain, the module price fell for a different reason: scale and efficiency, with cost dropping a fixed fraction for every doubling of cumulative production <Cite id="fraunhofer-pv-report" />. It is the same physics that took the cell from about **US$ 1/Wp** in 2011 to a module around **¥ 0.70/W** in 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
+At the other end of the chain, the module price fell for a different reason: scale and efficiency, with cost dropping a fixed fraction for every doubling of cumulative production <Cite id="fraunhofer-pv-report" />. It is the same physics that took the cell from about **US\$ 1/Wp** in 2011 to a module around **¥ 0.70/W** in 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
 
 ## The rung nobody publishes
 

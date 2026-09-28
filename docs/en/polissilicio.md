@@ -113,7 +113,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 When the process ends, the **steel bell jar is lifted off** and the assembly (U-shaped core plus deposited silicon) is removed whole and fractured into smaller chunks <Cite id="bernreuter-production" />. The rods reach **15 to 20 cm in diameter** <Cite id="bernreuter-production" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />.
 
-The process uses **more than 100 kWh per kilogram** of deposited silicon, at low yield. That energy use is its main drawback <Cite id="saimm" />. Alternatives have been tried for decades. A 1985 survey listed **17 routes** besides Siemens, and few of them reached production <Cite id="bernreuter-production" />. Since 2004 the process's share of the global market **has fallen below 90% only once**, in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. The chemistry stayed. The operators changed. Chinese plants, with cheap electricity and domestic equipment, brought the **production cost** below **US$ 10 per kilogram** <Cite id="bernreuter-production" />.
+The process uses **more than 100 kWh per kilogram** of deposited silicon, at low yield. That energy use is its main drawback <Cite id="saimm" />. Alternatives have been tried for decades. A 1985 survey listed **17 routes** besides Siemens, and few of them reached production <Cite id="bernreuter-production" />. Since 2004 the process's share of the global market **has fallen below 90% only once**, in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. The chemistry stayed. The operators changed. Chinese plants, with cheap electricity and domestic equipment, brought the **production cost** below **US\$ 10 per kilogram** <Cite id="bernreuter-production" />.
 
 Purity classes <Cite id="bernreuter-production" />:
 
@@ -226,7 +226,7 @@ The **Herøya** industrial park in Porsgrunn, where the Kristiansand silicon was
 
 #### The end of the Norwegian line
 
-The arc ends bitterly. In **November 2023** REC closed polysilicon production in Kristiansand and Porsgrunn, citing **high electricity prices** and accumulated losses of **NOK 335 million** (about **US$ 31 million**); the closure affected around **250 workers** <Cite id="rec-closure-2023" />. In **January 2024** Elkem bought the facilities for **US$ 22 million**, with no plans to revive the previous business model <Cite id="elkem-buys-rec" />.
+The arc ends bitterly. In **November 2023** REC closed polysilicon production in Kristiansand and Porsgrunn, citing **high electricity prices** and accumulated losses of **NOK 335 million** (about **US\$ 31 million**); the closure affected around **250 workers** <Cite id="rec-closure-2023" />. In **January 2024** Elkem bought the facilities for **US\$ 22 million**, with no plans to revive the previous business model <Cite id="elkem-buys-rec" />.
 
 It is worth being precise about why. The metallurgical route **did not lose on quality** — the cells proved electrical parity with Siemens polysilicon. It lost on economics: the route's cost is dominated by **electricity**, which in Norway spiked with the European energy crisis, while the global polysilicon price collapsed under oversupply. An input rising against a falling selling price is the worst possible setup.
 
@@ -267,7 +267,7 @@ The industry is, in Bernreuter Research's own words, **a supertanker with a long
 
 Before 2004, demand was dominated by the semiconductor industry, with its own cycles. The photovoltaic boom **halved the cycle**: the interval between trough and peak fell from eight to **four years** <Cite id="bernreuter-market" />. Afterwards, low-cost Chinese expansion practically **invalidated the cycle**, producing a sustained tendency to oversupply interrupted only by brief phases of shortage <Cite id="bernreuter-market" />. The cycle only returned once the slowdown in Chinese installations and the closure of more than a dozen manufacturers in 2018–2019 were followed by a rapid demand recovery in the second half of 2020 <Cite id="bernreuter-pork-cycle" />.
 
-The recent extremes show the scale of the movement: in **June 2020** the spot price hit its historical low of **US$ 6.75/kg**; by **August 2022** it stood at **US$ 39/kg** — the entire climb in about two years, followed by another wave of projects and, by the consultancy's own account, another inevitable shakeout <Cite id="bernreuter-pork-cycle" />.
+The recent extremes show the scale of the movement: in **June 2020** the spot price hit its historical low of **US\$ 6.75/kg**; by **August 2022** it stood at **US\$ 39/kg** — the entire climb in about two years, followed by another wave of projects and, by the consultancy's own account, another inevitable shakeout <Cite id="bernreuter-pork-cycle" />.
 
 ### The demand inversion
 

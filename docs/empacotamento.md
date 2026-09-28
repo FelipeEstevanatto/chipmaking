@@ -52,7 +52,7 @@ Em um pacote monolítico, um die ruim custa um die. Em um pacote 2.5D com oito p
 
 O mercado de testadores elétricos (**ATE**, *automated test equipment*) é um dos mais concentrados do setor. A Advantest estima ter **58% do mercado global em 2024**, e declara que **Advantest e Teradyne juntas somam cerca de 80%** do mercado de testadores <Cite id="advantest-ir" />.
 
-O custo do teste é frequentemente descrito como uma fração pequena do valor do chip, e isso é verdade — mas com nuances. O ITRS registra que melhorias contínuas levaram o custo típico de teste para **menos de 2 a 3% da receita** de um circuito integrado <Cite id="itrs-2015-test" />. O mesmo documento faz uma conta útil: em um dispositivo que custa **US$ 1,00** para fabricar, com teste a **5%**, cortar 10% do custo de teste economiza **US$ 0,005** por peça, enquanto ganhar 1% de rendimento economiza **US$ 0,01** <Cite id="itrs-2015-test" />.
+O custo do teste é frequentemente descrito como uma fração pequena do valor do chip, e isso é verdade — mas com nuances. O ITRS registra que melhorias contínuas levaram o custo típico de teste para **menos de 2 a 3% da receita** de um circuito integrado <Cite id="itrs-2015-test" />. O mesmo documento faz uma conta útil: em um dispositivo que custa **US\$ 1,00** para fabricar, com teste a **5%**, cortar 10% do custo de teste economiza **US\$ 0,005** por peça, enquanto ganhar 1% de rendimento economiza **US\$ 0,01** <Cite id="itrs-2015-test" />.
 
 A conclusão prática dessa aritmética é que o teste **não se paga por si**: ele se justifica pelo que evita. E o que ele evita tem nome próprio — em um piso de teste de memória analisado pelo ITRS, **o cartão de sondas representava 60% de todo o custo do teste de wafer** <Cite id="itrs-2013-test" />.
 
@@ -248,7 +248,7 @@ Ela corre sobre dois eixos. O primeiro é **frequência**: quanto o chip aguenta
 
 #### Frequência: o mesmo die, dois preços
 
-O par **Core i7-8700K e Core i7-8086K** mostra o eixo inteiro. É o mesmo die Coffee Lake, com os mesmos seis núcleos e *hyper-threading*, mas o 8086K saiu com frequências de turbo mais altas porque a Intel reservou para ele os melhores exemplares da produção: 50 mil unidades, US$ 75 mais caras que o 8700K <Cite id="tomshardware-8086k" />.
+O par **Core i7-8700K e Core i7-8086K** mostra o eixo inteiro. É o mesmo die Coffee Lake, com os mesmos seis núcleos e *hyper-threading*, mas o 8086K saiu com frequências de turbo mais altas porque a Intel reservou para ele os melhores exemplares da produção: 50 mil unidades, US\$ 75 mais caras que o 8700K <Cite id="tomshardware-8086k" />.
 
 A **Silicon Lottery** comprava processadores no varejo, media cada unidade antes de revender e publicava a distribuição. No lote de 8700K, 17 % das unidades chegavam a 5,2 GHz; no lote de 8086K, **nenhuma** ficou abaixo de 5,0 GHz <Cite id="siliconlottery-stats" />.
 
@@ -276,7 +276,7 @@ A primeira: é **pequeno**. A CSET cita um relatório anterior que estimava a mo
 
 A segunda: apesar disso, o **ITRS registra que o custo de empacotamento frequentemente excede o custo de fabricação do próprio circuito integrado** <Cite id="itrs-assembly" />. As duas afirmações convivem porque medem coisas diferentes — participação no valor final do produto, de um lado, e custo industrial da etapa, do outro.
 
-E há um terceiro dado, mais recente, que explica por que o assunto deixou de ser periférico. O mercado de **empacotamento avançado** (a parte que faz CoWoS, HBM e chiplets) movimentou cerca de **US$ 46 bilhões em 2024** e caminha para **mais de US$ 79 bilhões em 2030** <Cite id="yole-advanced-packaging" />. É uma fração menor do total, mas é a fração que **limita** o resto: a TSMC declarou em 2024 que a capacidade de CoWoS **mais que dobrou** em relação ao ano anterior e que pretendia dobrar de novo, e ainda assim a demanda dos clientes **excedia em muito** a capacidade de fornecimento <Cite id="tsmc-q3-2024" />.
+E há um terceiro dado, mais recente, que explica por que o assunto deixou de ser periférico. O mercado de **empacotamento avançado** (a parte que faz CoWoS, HBM e chiplets) movimentou cerca de **US\$ 46 bilhões em 2024** e caminha para **mais de US\$ 79 bilhões em 2030** <Cite id="yole-advanced-packaging" />. É uma fração menor do total, mas é a fração que **limita** o resto: a TSMC declarou em 2024 que a capacidade de CoWoS **mais que dobrou** em relação ao ano anterior e que pretendia dobrar de novo, e ainda assim a demanda dos clientes **excedia em muito** a capacidade de fornecimento <Cite id="tsmc-q3-2024" />.
 
 Um gargalo pequeno em valor pode ser um gargalo grande em consequência. Foi o que aconteceu com o empacotamento: durante décadas a etapa barata no fim da linha, hoje é a etapa que decide quantos chips de IA o mundo consegue montar.
 

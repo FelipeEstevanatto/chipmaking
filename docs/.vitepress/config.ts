@@ -4,6 +4,7 @@ import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import { glossaryTooltips } from './glossary-tooltips'
+import { stripMathStyles } from './math-styles'
 
 /**
  * Single source of truth for the GitHub Pages subpath. VitePress rewrites Markdown links and theme
@@ -263,9 +264,19 @@ export default withMermaid(
   defineConfig({
     ...shared,
     markdown: {
+      // Equations are delimited with $...$ and $$...$$ and typeset by MathJax at build time. MathJax
+      // renders to self-contained SVG, so no JavaScript or webfont reaches the client.
+      //
+      // This is also the only way the equations survive: markdown-it's inline escape rule strips the
+      // backslash from \, \; \[ \] and every other punctuation escape, so a \[ ... \] equation
+      // arrived at the page as [ ... ] with the thin spaces turned into commas.
+      math: true,
       // Adds the first-use expansion tooltip to glossary terms across every chapter; see
       // glossary-tooltips.ts.
       config: (md) => {
+        // VitePress installs the math plugin before calling this, which is what lets the wrapper find
+        // its renderer rules.
+        md.use(stripMathStyles)
         md.use(glossaryTooltips)
       },
     },

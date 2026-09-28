@@ -423,3 +423,35 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
     padding-inline: 16px;
   }
 }
+
+/*
+ * Equations (`math: true` in `config.ts`).
+ *
+ * markdown-it-mathjax3 writes a MathJax stylesheet beside every equation, but Vue discards `<style>`
+ * tags inside a component template, so none of those rules ever applied. `math-styles.ts` strips the
+ * dead blocks; what the pages actually need is here, in a file the build leaves alone.
+ */
+mjx-container[jax='SVG'][display='true'] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+/*
+ * MathJax mirrors every equation as MathML for screen readers. Clipped rather than hidden, so
+ * assistive tech still reads it; without this rule the copy is painted on screen and each equation
+ * appears twice.
+ */
+mjx-assistive-mml {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  user-select: none;
+}
+
+/* Where MathJax reports an expression it could not parse. */
+mjx-container svg g[data-mml-node='merror'] > g {
+  fill: #c53030;
+}

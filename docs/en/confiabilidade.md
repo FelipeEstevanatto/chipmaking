@@ -67,11 +67,13 @@ In metal wires, moving electrons transfer momentum to the metal atoms. At high c
 
 The time to failure follows **Black's equation**:
 
-\[ \mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right) \]
+$$
+\mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right)
+$$
 
-where \(J\) is the current density and \(T\) is the temperature <Cite id="rel-black-1969" />. The exponent \(n\) sits typically near **2** for aluminium, and the activation energy \(E_a\) depends on the metal and on the diffusion path, on the order of **0.5 to 0.7 eV** for aluminium and **0.8 to 1.0 eV** for copper <Cite id="rel-jep122" />.
+where $J$ is the current density and $T$ is the temperature <Cite id="rel-black-1969" />. The exponent $n$ sits typically near **2** for aluminium, and the activation energy $E_a$ depends on the metal and on the diffusion path, on the order of **0.5 to 0.7 eV** for aluminium and **0.8 to 1.0 eV** for copper <Cite id="rel-jep122" />.
 
-Be wary of any \(n\) or \(E_a\) presented as a universal constant: qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />. What is robust is the **direction**: doubling \(J\) shortens life far more than doubling room temperature — which is why swapping aluminium for copper in **1997** mattered so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
+Be wary of any $n$ or $E_a$ presented as a universal constant: qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />. What is robust is the **direction**: doubling $J$ shortens life far more than doubling room temperature — which is why swapping aluminium for copper in **1997** mattered so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
 
 ## Quantifying failure
 
@@ -83,9 +85,9 @@ Those goals differ by market. AEC-Q100 demonstrates the method with an automotiv
 
 ### Accelerated testing
 
-Nobody can wait ten years. The way to measure a long life is to **accelerate** the mechanism and extrapolate back with a model. For thermally activated mechanisms the model is **Arrhenius**, with an acceleration factor depending on \(\exp[-(E_a/k_B)(1/T_u - 1/T_t)]\), where \(u\) and \(t\) subscripts are use and test <Cite id="rel-aec-q100" />.
+Nobody can wait ten years. The way to measure a long life is to **accelerate** the mechanism and extrapolate back with a model. For thermally activated mechanisms the model is **Arrhenius**, with an acceleration factor depending on $\exp[-(E_a/k_B)(1/T_u - 1/T_t)]$, where $u$ and $t$ subscripts are use and test <Cite id="rel-aec-q100" />.
 
-AEC-Q100 fixes the constants for the example: \(E_a = 0.7\) eV and \(k_B = 8.61733 \times 10^{-5}\) eV/K, arriving at a test duration of **1,393 h** for the case shown <Cite id="rel-aec-q100" />. Pushing conditions beyond the reasonable can **induce unrealistic failure mechanisms** and destroy the extrapolation <Cite id="rel-aec-q100" />. Accelerating means choosing a regime where the *same* mechanism still governs.
+AEC-Q100 fixes the constants for the example: $E_a = 0.7$ eV and $k_B = 8.61733 \times 10^{-5}$ eV/K, arriving at a test duration of **1,393 h** for the case shown <Cite id="rel-aec-q100" />. Pushing conditions beyond the reasonable can **induce unrealistic failure mechanisms** and destroy the extrapolation <Cite id="rel-aec-q100" />. Accelerating means choosing a regime where the *same* mechanism still governs.
 
 ## Soft errors
 

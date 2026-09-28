@@ -58,9 +58,10 @@ by the type, which stops the locales from drifting), the chapter that explains i
 `variants`, and `tooltip: false` for spellings too ambiguous to annotate in running prose.
 `theme/GlossaryTable.vue` renders `/glossario` and `/en/glossario` from it; never write the table by
 hand. `glossary-tooltips.ts` annotates the first occurrence of each term per page, but it cannot reach
-code (including Mermaid), link labels, headings, `figcaption`, or text a component builds from props.
-A term may therefore appear bare near the top and be annotated further down. Any component that
-renders prose from props goes on the audit's ignore list.
+code (including Mermaid), link labels, headings, `figcaption`, equations, or text a component builds
+from props. A term may therefore appear bare near the top and be annotated further down, and a term
+first used inside an equation is annotated at its first prose mention. Any component that renders
+prose from props goes on the audit's ignore list.
 
 ## Charts
 
@@ -124,6 +125,28 @@ and lazy-loaded; credit the source in the text and in the references. Mermaid fe
 client through `theme/Mermaid.vue`, with the renderer swapped for an async import so the ~680 kB
 library is not preloaded on pages without a diagram. Timelines set `useMaxWidth: false` to keep their
 labels legible.
+
+## Equations
+
+Maths is delimited with `$...$` and `$$...$$` and typeset by MathJax at build time (`math: true` in
+`config.ts`). The output is SVG, so a page with equations adds no JavaScript and no webfont to the
+client.
+
+`\[ ... \]` and `\( ... \)` do not work, and never did: markdown-it's inline escape rule strips the
+backslash from every punctuation escape, so `\,` arrives as a comma and `\[` as a literal bracket.
+
+A literal dollar sign in prose must be written `\$`. Two unescaped `$` in the same block are read as
+delimiters and the text between them disappears into a formula, which is how `US$/Wp` and `US$/kg`
+used to swallow the sentence around them. Every currency amount in the chapters is escaped this way.
+
+`scripts/audit-math.py` holds the list of pages that are supposed to carry maths, so an equation that
+loses its delimiters, or a currency amount that regains them, fails a check instead of the page.
+
+`markdown-it-mathjax3` writes a MathJax stylesheet beside every equation, and Vue discards `<style>`
+tags found inside a component template, so those blocks never applied and `vite dev` logged one warning
+per equation. `math-styles.ts` strips them and restores the `tabindex` VitePress wants on display
+maths; the rules the pages need (the display centring, the clipped accessibility copy, the error
+colour) live in `theme/custom.css`, where the build leaves them alone.
 
 # How it reads
 
@@ -237,3 +260,5 @@ Never touch an em dash that is data:
   parity).
 - `python scripts/audit-svgs.py` — must print `OK` (structure, title/desc, background, long text,
   Portuguese labels, named entities).
+- `python scripts/audit-math.py` — after the build; must print `OK` (maths renders only on the pages
+  that declare it).

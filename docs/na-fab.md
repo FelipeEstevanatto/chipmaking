@@ -71,9 +71,11 @@ Isso é uma vantagem que quase nenhum outro semicondutor tem. O germânio, que f
 
 O modelo que descreve o crescimento é de **1965**, de Deal e Grove, e continua sendo ensinado: em notação compacta,
 
-\[ x_0^2 + A\,x_0 = B\,(t + \tau) \]
+$$
+x_0^2 + A\,x_0 = B\,(t + \tau)
+$$
 
-onde \(x_0\) é a espessura do óxido. O modelo tem dois regimes, e a razão é intuitiva: quando o óxido é fino, o oxidante chega à superfície rápido e a **reação** manda: o crescimento é **linear** no tempo. Quando o óxido engrossa, o oxidante precisa **difundir** por dentro dele, e a difusão manda: o crescimento passa a ser **parabólico**, ou seja, desacelera <Cite id="deal-grove-1965" />.
+onde $x_0$ é a espessura do óxido. O modelo tem dois regimes, e a razão é intuitiva: quando o óxido é fino, o oxidante chega à superfície rápido e a **reação** manda: o crescimento é **linear** no tempo. Quando o óxido engrossa, o oxidante precisa **difundir** por dentro dele, e a difusão manda: o crescimento passa a ser **parabólico**, ou seja, desacelera <Cite id="deal-grove-1965" />.
 
 O ajuste do modelo original é excelente numa faixa larga e declarada explicitamente no artigo: de **700 a 1.300 °C**, de **0,1 a 1,0 atm**, e espessuras de **300 a 20.000 Å**, para os dois oxidantes <Cite id="deal-grove-1965" />. Repare que essa é a faixa onde o modelo foi **validado** — não uma receita de processo. Citar "800 a 1.200 °C" como temperatura de oxidação é comum, mas a fonte verificável é a do artigo.
 
@@ -243,9 +245,11 @@ De tudo que se mede numa fábrica, um número decide mais que os outros: o **ren
 
 O modelo mais simples supõe que os defeitos se distribuem aleatoriamente, e nesse caso o rendimento cai exponencialmente com a área:
 
-\[ Y = e^{-D_0 A} \]
+$$
+Y = e^{-D_0 A}
+$$
 
-onde \(D_0\) é a densidade de defeitos e \(A\) a área do die <Cite id="leachman-yield" />. O modelo é bom para dies pequenos (a referência de Berkeley o considera adequado para áreas até cerca de **0,25 cm²**) e é conservador para dies grandes, justamente os que interessam <Cite id="leachman-yield" />.
+onde $D_0$ é a densidade de defeitos e $A$ a área do die <Cite id="leachman-yield" />. O modelo é bom para dies pequenos (a referência de Berkeley o considera adequado para áreas até cerca de **0,25 cm²**) e é conservador para dies grandes, justamente os que interessam <Cite id="leachman-yield" />.
 
 O primeiro refinamento importante é de **1964**, de B. T. Murphy, dos Bell Labs: defeitos **não** se distribuem ao acaso, eles se **agrupam**. Tratar a densidade como uma variável aleatória e integrar sobre a distribuição dá o modelo de Murphy <Cite id="murphy-1964" />. Na prática, a formulação que a indústria adotou depois foi a **binomial negativa**, mais fácil de manipular e mais aderente aos dados reais <Cite id="murphy-integral" />.
 

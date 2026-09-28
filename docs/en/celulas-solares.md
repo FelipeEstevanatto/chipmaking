@@ -115,7 +115,7 @@ The industry figures at the time of the Xakalashe and Tangstad review give a sen
 - Solar cell production jumped from **1 GW (2004)** to **10 GW (2009)**, with crystalline silicon accounting for at least **80%**.
 - Cumulative global photovoltaic capacity reached almost **40 GW** by the end of 2010.
 - Efficiencies of up to **22%** were reported in industry.
-- Cell prices were approaching **US$1 per watt-peak**; the cheapest crystalline silicon module was around **US$2/Wp**, while CdTe modules were already **below US$1/Wp**.
+- Cell prices were approaching **US\$1 per watt-peak**; the cheapest crystalline silicon module was around **US\$2/Wp**, while CdTe modules were already **below US\$1/Wp**.
 
 These are 2011 numbers and they aged fast — annual production today is measured in hundreds of gigawatts, not tens. But they show the shape of the contest that has defined photovoltaics since: silicon wins on scale and industrial chain, not on physics.
 

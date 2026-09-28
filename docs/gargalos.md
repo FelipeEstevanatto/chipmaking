@@ -33,7 +33,7 @@ O neônio é o caso que ilustra melhor o padrão, porque ele não é um material
 
 Gargalos visíveis geram política industrial, e os valores envolvidos são a medida do quanto cada governo levou o risco a sério.
 
-- **Estados Unidos.** O *CHIPS and Science Act*, de 2022, destinou **US$ 50 bilhões** ao Departamento de Comércio, divididos em **US$ 39 bilhões** de incentivos à fabricação e **US$ 11 bilhões** para P&D <Cite id="choke-nist-chips" />. O número de manchete, **US$ 52,7 bilhões**, inclui itens que ficam fora desse envelope — vale saber qual dos dois está sendo citado.
+- **Estados Unidos.** O *CHIPS and Science Act*, de 2022, destinou **US\$ 50 bilhões** ao Departamento de Comércio, divididos em **US\$ 39 bilhões** de incentivos à fabricação e **US\$ 11 bilhões** para P&D <Cite id="choke-nist-chips" />. O número de manchete, **US\$ 52,7 bilhões**, inclui itens que ficam fora desse envelope — vale saber qual dos dois está sendo citado.
 - **União Europeia.** O *European Chips Act* entrou em vigor em **21 de setembro de 2023** e, por sua via de auxílios estatais, a Comissão já aprovou **18 decisões** que somam **mais de EUR 32 bilhões** de investimento público e privado. Uma segunda rodada, o **Chips Act 2.0**, foi proposta em **junho de 2026** <Cite id="choke-eu-chips-act" />.
 - **China.** O fundo estatal conhecido como *Big Fund* já teve três fases, e a terceira foi lançada em **2024** com porte comparável ao de um programa nacional <Cite id="choke-big-fund" />.
 

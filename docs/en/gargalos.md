@@ -33,7 +33,7 @@ Neon is the case that best illustrates the pattern, because it is not a silicon 
 
 Visible chokepoints generate industrial policy, and the amounts involved are the measure of how seriously each government took the risk.
 
-- **United States.** The *CHIPS and Science Act* of 2022 gave the Department of Commerce **US$ 50 billion**, split into **US$ 39 billion** of manufacturing incentives and **US$ 11 billion** for R&D <Cite id="choke-nist-chips" />. The headline figure of **US$ 52.7 billion** includes items outside that envelope — it is worth knowing which of the two is being quoted.
+- **United States.** The *CHIPS and Science Act* of 2022 gave the Department of Commerce **US\$ 50 billion**, split into **US\$ 39 billion** of manufacturing incentives and **US\$ 11 billion** for R&D <Cite id="choke-nist-chips" />. The headline figure of **US\$ 52.7 billion** includes items outside that envelope — it is worth knowing which of the two is being quoted.
 - **European Union.** The *European Chips Act* entered into force on **21 September 2023** and, through its state-aid track, the Commission has already approved **18 decisions** totalling **more than EUR 32 billion** of public and private investment. A second round, **Chips Act 2.0**, was proposed in **June 2026** <Cite id="choke-eu-chips-act" />.
 - **China.** The state fund known as the *Big Fund* has had three phases, and the third was launched in **2024** at a scale comparable to a national programme <Cite id="choke-big-fund" />.
 

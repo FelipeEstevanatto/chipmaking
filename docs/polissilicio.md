@@ -113,7 +113,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 Quando o processo termina, a **redoma de aço é erguida** e o conjunto (núcleo em “U” e silício depositado) é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
 
-O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou. Quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US$ 10 por quilograma** <Cite id="bernreuter-production" />.
+O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou. Quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US\$ 10 por quilograma** <Cite id="bernreuter-production" />.
 
 Classes de pureza <Cite id="bernreuter-production" />:
 
@@ -226,7 +226,7 @@ O parque industrial de **Herøya**, em Porsgrunn, onde o silício de Kristiansan
 
 #### O fim da linha norueguesa
 
-O arco termina de forma amarga. Em **novembro de 2023** a REC fechou a produção de polissilício em Kristiansand e Porsgrunn, citando **preços de eletricidade altos** e prejuízos acumulados de **335 milhões de coroas norueguesas** (cerca de **US$ 31 milhões**); o fechamento atingiu cerca de **250 trabalhadores** <Cite id="rec-closure-2023" />. Em **janeiro de 2024** a Elkem comprou as instalações por **US$ 22 milhões**, sem planos de retomar o modelo de negócio anterior <Cite id="elkem-buys-rec" />.
+O arco termina de forma amarga. Em **novembro de 2023** a REC fechou a produção de polissilício em Kristiansand e Porsgrunn, citando **preços de eletricidade altos** e prejuízos acumulados de **335 milhões de coroas norueguesas** (cerca de **US\$ 31 milhões**); o fechamento atingiu cerca de **250 trabalhadores** <Cite id="rec-closure-2023" />. Em **janeiro de 2024** a Elkem comprou as instalações por **US\$ 22 milhões**, sem planos de retomar o modelo de negócio anterior <Cite id="elkem-buys-rec" />.
 
 Vale ser preciso sobre o motivo. A rota metalúrgica **não perdeu por qualidade** — as células provaram paridade elétrica com o polissilício Siemens. Perdeu por economia: o custo da rota é dominado pela **eletricidade**, que na Noruega disparou com a crise energética europeia, enquanto o preço global do polissilício despencava diante da sobreoferta. Insumo em alta contra preço de venda em queda é o pior cenário possível.
 
@@ -267,7 +267,7 @@ A indústria é, nas palavras da própria Bernreuter Research, **um superpetrole
 
 Antes de 2004, a demanda era dominada pelos semicondutores, com seus próprios ciclos. A explosão da fotovoltaica **encurtou o ciclo pela metade**: o intervalo entre vale e pico caiu de oito para **quatro anos** <Cite id="bernreuter-market" />. Depois, a expansão chinesa de baixo custo praticamente **invalidou o ciclo**, produzindo uma tendência sustentada de sobreoferta interrompida apenas por fases curtas de escassez <Cite id="bernreuter-market" />. O ciclo só voltou quando a retração das instalações na China e o fechamento de mais de uma dúzia de fabricantes em 2018–2019 foram seguidos pela recuperação rápida da demanda no segundo semestre de 2020 <Cite id="bernreuter-pork-cycle" />.
 
-Os extremos recentes mostram o tamanho do movimento: em **junho de 2020** o preço à vista tocou o fundo histórico de **US$ 6,75/kg**; em **agosto de 2022** estava em **US$ 39/kg** — a subida inteira em cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
+Os extremos recentes mostram o tamanho do movimento: em **junho de 2020** o preço à vista tocou o fundo histórico de **US\$ 6,75/kg**; em **agosto de 2022** estava em **US\$ 39/kg** — a subida inteira em cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
 
 ### A inversão da demanda
 

@@ -67,11 +67,13 @@ Nos fios metálicos, os elétrons em movimento transferem momento para os átomo
 
 O tempo até a falha segue a **equação de Black**:
 
-\[ \mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right) \]
+$$
+\mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right)
+$$
 
-onde \(J\) é a densidade de corrente e \(T\) é a temperatura <Cite id="rel-black-1969" />. O expoente \(n\) fica tipicamente perto de **2** para o alumínio, e a energia de ativação \(E_a\) depende do metal e do caminho de difusão, na casa de **0,5 a 0,7 eV** para o alumínio e **0,8 a 1,0 eV** para o cobre <Cite id="rel-jep122" />.
+onde $J$ é a densidade de corrente e $T$ é a temperatura <Cite id="rel-black-1969" />. O expoente $n$ fica tipicamente perto de **2** para o alumínio, e a energia de ativação $E_a$ depende do metal e do caminho de difusão, na casa de **0,5 a 0,7 eV** para o alumínio e **0,8 a 1,0 eV** para o cobre <Cite id="rel-jep122" />.
 
-Vale desconfiar de qualquer \(n\) ou \(E_a\) apresentado como constante universal: o próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até **1,4 eV**, com **0,7 eV** como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />. O que é robusto é a **direção**: dobrar \(J\) encolhe a vida muito mais que dobrar a temperatura ambiente — e é por isso que a troca do alumínio pelo cobre, em **1997**, foi tão importante <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
+Vale desconfiar de qualquer $n$ ou $E_a$ apresentado como constante universal: o próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até **1,4 eV**, com **0,7 eV** como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />. O que é robusto é a **direção**: dobrar $J$ encolhe a vida muito mais que dobrar a temperatura ambiente — e é por isso que a troca do alumínio pelo cobre, em **1997**, foi tão importante <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
 
 ## Quantificar a falha
 
@@ -83,9 +85,9 @@ Essas metas variam por mercado. A AEC-Q100 demonstra o método com um perfil aut
 
 ### Teste acelerado
 
-Ninguém pode esperar dez anos. O jeito de medir uma vida longa é **acelerar** o mecanismo e extrapolar de volta com um modelo. Para os mecanismos ativados termicamente, o modelo é **Arrhenius**, com fator de aceleração que depende de \(\exp[-(E_a/k_B)(1/T_u - 1/T_t)]\), onde os índices \(u\) e \(t\) são uso e teste <Cite id="rel-aec-q100" />.
+Ninguém pode esperar dez anos. O jeito de medir uma vida longa é **acelerar** o mecanismo e extrapolar de volta com um modelo. Para os mecanismos ativados termicamente, o modelo é **Arrhenius**, com fator de aceleração que depende de $\exp[-(E_a/k_B)(1/T_u - 1/T_t)]$, onde os índices $u$ e $t$ são uso e teste <Cite id="rel-aec-q100" />.
 
-A AEC-Q100 fixa as constantes do exemplo: \(E_a = 0{,}7\) eV e \(k_B = 8{,}61733 \times 10^{-5}\) eV/K, chegando a uma duração de teste de **1.393 h** para o caso demonstrado <Cite id="rel-aec-q100" />. Forçar condições além do razoável pode **induzir mecanismos de falha irreais** e destruir a extrapolação <Cite id="rel-aec-q100" />. Acelerar é escolher um regime onde o *mesmo* mecanismo ainda governa.
+A AEC-Q100 fixa as constantes do exemplo: $E_a = 0{,}7$ eV e $k_B = 8{,}61733 \times 10^{-5}$ eV/K, chegando a uma duração de teste de **1.393 h** para o caso demonstrado <Cite id="rel-aec-q100" />. Forçar condições além do razoável pode **induzir mecanismos de falha irreais** e destruir a extrapolação <Cite id="rel-aec-q100" />. Acelerar é escolher um regime onde o *mesmo* mecanismo ainda governa.
 
 ## Erros suaves
 

@@ -83,7 +83,11 @@ class Annotated(HTMLParser):
             return "abbr"
         if "figcaption" in tags:
             return "caption"
-        if any(t in ("pre", "code", "svg", "script") for t in tags) or "mermaid" in classes:
+        # MathJax renders an equation to SVG plus an accessibility copy in MathML, and
+        # markdown-it-mathjax3 writes a <style> block beside each one. All three carry text that no
+        # author wrote, so they must not count as a term's first use; only the svg was covered before.
+        if any(t in ("pre", "code", "svg", "script", "style", "mjx-container") for t in tags) \
+                or "mermaid" in classes:
             return "code"
         if any(c in classes for c in ("transistor-timeline", "transistor-facts",
                                       "see-also", "glossary", "doc-meta", "build-footer",

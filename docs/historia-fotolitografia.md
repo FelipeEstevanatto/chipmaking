@@ -38,7 +38,7 @@ Em **1973** veio a **impressão por proximidade**, que introduz uma folga de ar 
 
 Em **1978**, a GCA lançou o **DSW 4800**, o primeiro *stepper* de wafer bem-sucedido: óptica de redução **10×**, lente Zeiss de 0,28 de abertura numérica, campo de 10 × 10 mm e luz de **g-line (436 nm)** <Cite id="kato-litho" />. Em vez de expor o wafer inteiro num disparo, a máquina **anda de campo em campo**. A Nikon lançou seu primeiro stepper comercial em 1980.
 
-O stepper não venceu por ser melhor em tudo. Um stepper 10× fazia cerca de **11 wafers de 100 mm por hora**, contra **40** de um alinhador de projeção, e custava cerca de **US$ 450–600 mil** contra **US$ 240 mil** do concorrente <Cite id="chiphistory-litho" />. Ele ganhou por **custo por die bom** e porque, quando os traços cruzaram a marca de 1 µm, só ele entregava a resolução <Cite id="chiphistory-litho" />. Hoje o mesmo arranjo custa **US$ 50–60 milhões** e processa mais de **200 wafers de 300 mm por hora** <Cite id="chiphistory-litho" />.
+O stepper não venceu por ser melhor em tudo. Um stepper 10× fazia cerca de **11 wafers de 100 mm por hora**, contra **40** de um alinhador de projeção, e custava cerca de **US\$ 450–600 mil** contra **US\$ 240 mil** do concorrente <Cite id="chiphistory-litho" />. Ele ganhou por **custo por die bom** e porque, quando os traços cruzaram a marca de 1 µm, só ele entregava a resolução <Cite id="chiphistory-litho" />. Hoje o mesmo arranjo custa **US\$ 50–60 milhões** e processa mais de **200 wafers de 300 mm por hora** <Cite id="chiphistory-litho" />.
 
 ### Os comprimentos de onda
 
@@ -75,7 +75,7 @@ O EUV **não foi ungido sozinho em 2001**. O que houve foi o **EPL morrer de pro
 
 ## Por que os concorrentes perderam
 
-**Raio X por proximidade.** Sem óptica de projeção, a máscara precisa ter **o mesmo tamanho** do padrão final: inviável quando os traços chegaram a 100 nm. A máscara tem de ser fina para não absorver nem distorcer, mas fina demais e os raios X a atravessam. E quanto menores os traços, mais perto a máscara precisa ficar do wafer, chegando a exigir folgas **abaixo de 10 µm**, com o wafer se movendo rapidamente durante a exposição. A IBM construiu uma instalação dedicada de cerca de **US$ 500 milhões** e já demonstrava exposições de 0,33 µm em 1991, mas o programa nunca chegou à produção comercial <Cite id="asianometry-euv" />.
+**Raio X por proximidade.** Sem óptica de projeção, a máscara precisa ter **o mesmo tamanho** do padrão final: inviável quando os traços chegaram a 100 nm. A máscara tem de ser fina para não absorver nem distorcer, mas fina demais e os raios X a atravessam. E quanto menores os traços, mais perto a máscara precisa ficar do wafer, chegando a exigir folgas **abaixo de 10 µm**, com o wafer se movendo rapidamente durante a exposição. A IBM construiu uma instalação dedicada de cerca de **US\$ 500 milhões** e já demonstrava exposições de 0,33 µm em 1991, mas o programa nunca chegou à produção comercial <Cite id="asianometry-euv" />.
 
 A razão está registrada pelos próprios pesquisadores da IBM: gestores de fábrica **sempre preferem a melhoria incremental do óptico** a uma troca drástica de tecnologia, e a migração só viria quando a óptica atingisse o limite <Cite id="asianometry-euv" />. O raio X nunca fez o serviço completo.
 
@@ -95,13 +95,13 @@ As dificuldades técnicas decorrem de uma única propriedade: **tudo absorve EUV
 
 Em **1996**, o Congresso americano cortou o financiamento do Departamento de Energia para o EUV <Cite id="construction-physics-euv" />. A essa altura, uma força-tarefa da SEMATECH havia classificado o EUV como o **último colocado entre quatro** tecnologias, atrás de raio X, feixe de elétrons e projeção por íons <Cite id="construction-physics-euv" />. Em vez de deixar o time dos laboratórios se dispersar, a **Intel assumiu o risco** e, em **setembro de 1997**, montou com AMD e Motorola o consórcio **EUV LLC**, ao lado do *Virtual National Laboratory* — os laboratórios de Berkeley, Livermore e Sandia <Cite id="intel-euvllc" />.
 
-O valor anunciado foi de **US$ 250 milhões em três anos** (US$ 130 milhões em dinheiro e US$ 120 milhões em equipamento, material e pessoal), o maior investimento privado já feito num projeto do Departamento de Energia dos EUA até então <Cite id="intel-euvllc" />. IBM, Micron, Infineon e a própria ASML entraram depois <Cite id="eet-euvlith" />. A Europa e o Japão responderam com consórcios próprios, o **EUCLIDES** e o **ASET** <Cite id="construction-physics-euv" />.
+O valor anunciado foi de **US\$ 250 milhões em três anos** (US\$ 130 milhões em dinheiro e US\$ 120 milhões em equipamento, material e pessoal), o maior investimento privado já feito num projeto do Departamento de Energia dos EUA até então <Cite id="intel-euvllc" />. IBM, Micron, Infineon e a própria ASML entraram depois <Cite id="eet-euvlith" />. A Europa e o Japão responderam com consórcios próprios, o **EUCLIDES** e o **ASET** <Cite id="construction-physics-euv" />.
 
 O candidato que **menos** parecia capaz de durar várias gerações foi o que venceu — e é justamente a continuidade ao longo de várias gerações que explica por que ele venceu.
 
 ## O desvio de 157 nm e o resgate pela imersão
 
-Para cobrir o vão entre o óptico e o EUV, a indústria apostou no **157 nm** (laser de F₂), o último comprimento de onda óptico possível. As empresas de laser defenderam a rota em 1998, argumentando que ela adiava a litografia de próxima geração até pelo menos **2010**, e cerca de **US$ 2 bilhões** foram investidos em toda a cadeia <Cite id="asianometry-euv" />.
+Para cobrir o vão entre o óptico e o EUV, a indústria apostou no **157 nm** (laser de F₂), o último comprimento de onda óptico possível. As empresas de laser defenderam a rota em 1998, argumentando que ela adiava a litografia de próxima geração até pelo menos **2010**, e cerca de **US\$ 2 bilhões** foram investidos em toda a cadeia <Cite id="asianometry-euv" />.
 
 O 157 nm não era fácil: os materiais de lente de **fluoreto de cálcio**, o fotoresistor e a máscara se mostraram obstáculos substanciais <Cite id="asianometry-euv" />. Enquanto isso, o desvio consumia tempo que o EUV não tinha.
 

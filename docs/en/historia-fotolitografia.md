@@ -38,7 +38,7 @@ In **1973** came **proximity printing**, which introduces an air gap between mas
 
 In **1978** GCA launched the **DSW 4800**, the first successful wafer **stepper**: **10×** reduction optics, a Zeiss lens with 0.28 numerical aperture, a 10 × 10 mm field and **g-line (436 nm)** light <Cite id="kato-litho" />. Instead of exposing the whole wafer in one shot, the machine **steps from field to field**. Nikon launched its first commercial stepper in 1980.
 
-The stepper did not win by being better at everything. A 10× stepper managed about **11 100 mm wafers per hour**, against **40** for a projection aligner, and cost around **US$450–600 thousand** against **US$240 thousand** for its rival <Cite id="chiphistory-litho" />. It won on **cost per good die**, and because once features crossed the 1 µm mark, only the stepper delivered the resolution <Cite id="chiphistory-litho" />. Today the same arrangement costs **US$50–60 million** and processes more than **200 300 mm wafers per hour** <Cite id="chiphistory-litho" />.
+The stepper did not win by being better at everything. A 10× stepper managed about **11 100 mm wafers per hour**, against **40** for a projection aligner, and cost around **US\$450–600 thousand** against **US\$240 thousand** for its rival <Cite id="chiphistory-litho" />. It won on **cost per good die**, and because once features crossed the 1 µm mark, only the stepper delivered the resolution <Cite id="chiphistory-litho" />. Today the same arrangement costs **US\$50–60 million** and processes more than **200 300 mm wafers per hour** <Cite id="chiphistory-litho" />.
 
 ### The wavelengths
 
@@ -75,7 +75,7 @@ EUV **was not anointed alone in 2001**. What happened is that **EPL died of thro
 
 ## Why the runners-up lost
 
-**Proximity X-ray.** With no projection optics, the mask has to be **the same size** as the final pattern: unworkable once features reached 100 nm. The mask must be thin so it neither absorbs nor distorts, but too thin and the X-rays pass straight through. And the smaller the features, the closer the mask has to sit to the wafer, eventually requiring gaps **below 10 µm**, with the wafer moving rapidly during exposure. IBM built a dedicated facility costing around **US$500 million** and was already demonstrating 0.33 µm exposures in 1991, but the programme never reached commercial production <Cite id="asianometry-euv" />.
+**Proximity X-ray.** With no projection optics, the mask has to be **the same size** as the final pattern: unworkable once features reached 100 nm. The mask must be thin so it neither absorbs nor distorts, but too thin and the X-rays pass straight through. And the smaller the features, the closer the mask has to sit to the wafer, eventually requiring gaps **below 10 µm**, with the wafer moving rapidly during exposure. IBM built a dedicated facility costing around **US\$500 million** and was already demonstrating 0.33 µm exposures in 1991, but the programme never reached commercial production <Cite id="asianometry-euv" />.
 
 The reason is on the record from IBM's own researchers: fab managers **always prefer incremental optical improvement** to a drastic technology swap, and the migration would only come when optics hit its limit <Cite id="asianometry-euv" />. X-ray never did the whole job.
 
@@ -95,13 +95,13 @@ Its technical difficulties all stem from a single property: **everything absorbs
 
 In **1996** the US Congress cut Department of Energy funding for EUV <Cite id="construction-physics-euv" />. At that point a SEMATECH task force had ranked EUV **last of four** technologies, behind X-ray, electron beam and ion projection <Cite id="construction-physics-euv" />. Rather than let the national-lab team disperse, **Intel took on the risk** and, in **September 1997**, formed the **EUV LLC** consortium with AMD and Motorola, alongside the *Virtual National Laboratory* — Berkeley, Livermore and Sandia <Cite id="intel-euvllc" />.
 
-The announced figure was **US$250 million over three years** (US$130 million in cash and US$120 million in equipment, materials and personnel), the largest private investment ever made in a Department of Energy project at the time <Cite id="intel-euvllc" />. IBM, Micron, Infineon and ASML itself joined later <Cite id="eet-euvlith" />. Europe and Japan responded with their own consortia, **EUCLIDES** and **ASET** <Cite id="construction-physics-euv" />.
+The announced figure was **US\$250 million over three years** (US\$130 million in cash and US\$120 million in equipment, materials and personnel), the largest private investment ever made in a Department of Energy project at the time <Cite id="intel-euvllc" />. IBM, Micron, Infineon and ASML itself joined later <Cite id="eet-euvlith" />. Europe and Japan responded with their own consortia, **EUCLIDES** and **ASET** <Cite id="construction-physics-euv" />.
 
 The candidate that **least** looked capable of lasting several generations is the one that won — and it is precisely that multi-generation continuity which explains why it won.
 
 ## The 157 nm detour and the rescue by immersion
 
-To bridge the gap between optical and EUV, the industry bet on **157 nm** (the F₂ laser), the last possible optical wavelength. Laser companies backed the route in 1998, arguing it postponed next-generation lithography until at least **2010**, and roughly **US$2 billion** was invested across the chain <Cite id="asianometry-euv" />.
+To bridge the gap between optical and EUV, the industry bet on **157 nm** (the F₂ laser), the last possible optical wavelength. Laser companies backed the route in 1998, arguing it postponed next-generation lithography until at least **2010**, and roughly **US\$2 billion** was invested across the chain <Cite id="asianometry-euv" />.
 
 The 157 nm route was not easy: **calcium fluoride** lens materials, the photoresist and the mask all proved substantial obstacles <Cite id="asianometry-euv" />. Meanwhile the detour consumed time EUV did not have.
 

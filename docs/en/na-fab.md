@@ -71,9 +71,11 @@ This is an advantage almost no other semiconductor has. Germanium, the first tra
 
 The model that describes the growth dates from **1965**, by Deal and Grove, and it is still taught: in compact notation,
 
-\[ x_0^2 + A\,x_0 = B\,(t + \tau) \]
+$$
+x_0^2 + A\,x_0 = B\,(t + \tau)
+$$
 
-where \(x_0\) is the oxide thickness. The model has two regimes, and the reason is intuitive: while the oxide is thin, the oxidant reaches the surface quickly and the **reaction** dominates: growth is **linear** in time. As the oxide thickens, the oxidant has to **diffuse** through it, and diffusion dominates: growth becomes **parabolic**, meaning it slows down <Cite id="deal-grove-1965" />.
+where $x_0$ is the oxide thickness. The model has two regimes, and the reason is intuitive: while the oxide is thin, the oxidant reaches the surface quickly and the **reaction** dominates: growth is **linear** in time. As the oxide thickens, the oxidant has to **diffuse** through it, and diffusion dominates: growth becomes **parabolic**, meaning it slows down <Cite id="deal-grove-1965" />.
 
 The fit of the original model is excellent over a range stated explicitly in the paper: **700 to 1,300 °C**, **0.1 to 1.0 atm**, and thicknesses from **300 to 20,000 Å**, for both oxidants <Cite id="deal-grove-1965" />. Note that this is the range over which the model was **validated** — not a process recipe. Quoting "800 to 1,200 °C" as an oxidation temperature is common, but the verifiable figure is the one in the paper.
 
@@ -243,9 +245,11 @@ Of everything measured in a fab, one number decides more than the others: **yiel
 
 The simplest model assumes defects are distributed randomly, in which case yield falls exponentially with area:
 
-\[ Y = e^{-D_0 A} \]
+$$
+Y = e^{-D_0 A}
+$$
 
-where \(D_0\) is the defect density and \(A\) the die area <Cite id="leachman-yield" />. The model is good for small dies (the Berkeley reference considers it adequate up to about **0.25 cm²**) and conservative for large dies, which are precisely the ones that matter <Cite id="leachman-yield" />.
+where $D_0$ is the defect density and $A$ the die area <Cite id="leachman-yield" />. The model is good for small dies (the Berkeley reference considers it adequate up to about **0.25 cm²**) and conservative for large dies, which are precisely the ones that matter <Cite id="leachman-yield" />.
 
 The first important refinement comes from **1964**, from B. T. Murphy at Bell Labs: defects are **not** distributed at random, they **cluster**. Treating the density as a random variable and integrating over its distribution gives Murphy's model <Cite id="murphy-1964" />. In practice the formulation the industry later adopted was the **negative binomial**, easier to manipulate and in better agreement with real data <Cite id="murphy-integral" />.
 

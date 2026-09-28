@@ -115,7 +115,7 @@ Os números do setor, na época do levantamento de Xakalashe e Tangstad, dão a 
 - A produção de células solares saltou de **1 GW (2004)** para **10 GW (2009)**, com o silício cristalino respondendo por pelo menos **80%**.
 - A capacidade fotovoltaica **acumulada** mundial chegou a quase **40 GW** ao fim de 2010.
 - Eficiências de até **22%** foram reportadas na indústria.
-- O preço das células se aproximava de **1 dólar por watt-pico (US$/Wp)**; o módulo de silício cristalino mais barato ficava em torno de **2 US$/Wp**, enquanto módulos de CdTe já ficavam **abaixo de 1 US$/Wp**.
+- O preço das células se aproximava de **1 dólar por watt-pico (US\$/Wp)**; o módulo de silício cristalino mais barato ficava em torno de **2 US\$/Wp**, enquanto módulos de CdTe já ficavam **abaixo de 1 US\$/Wp**.
 
 São números de 2011 e envelheceram rápido — a produção anual hoje se mede em centenas de gigawatts, não em dezenas. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva, não em física.
 

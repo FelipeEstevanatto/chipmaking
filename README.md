@@ -68,7 +68,7 @@ Pull requests são bem-vindos. Quatro regras:
 1. **Cite a fonte de tudo que é factual.** Toda afirmação numérica ou factual entra com um `<Cite id="…" />` e uma entrada em `docs/.vitepress/theme/citations.ts`. PR sem fonte não entra, e fonte inventada é motivo para fechar. Quando nenhuma fonte primária tabula o dado, a entrada diz que é uma **compilação** e nomeia quem agregou, em vez de emprestar a autoridade de um paper a um número que ele não publica.
 2. **Espelhe os dois idiomas.** Toda mudança em `docs/<slug>.md` vai no mesmo commit que `docs/en/<slug>.md`. Traduza a frase, não a translitera.
 3. **Uma mudança por PR.** Capítulo novo, correção de dados e troca de layout vão em PRs separados, para a revisão conseguir olhar cada um.
-4. **Rode as verificações.** `bun run build`, `python scripts/audit-glossary.py` e `python scripts/audit-svgs.py`, os três têm de passar antes de abrir o PR.
+4. **Rode as verificações.** `bun run build`, `python scripts/audit-glossary.py`, `python scripts/audit-svgs.py` e `python scripts/audit-math.py`; as quatro têm de passar antes de abrir o PR.
 
 Imagem de terceiro entra só com licença livre (domínio público, CC BY ou CC BY-SA) e crédito completo de autor, arquivo original e licença na legenda.
 
