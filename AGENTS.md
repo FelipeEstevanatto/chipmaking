@@ -73,6 +73,12 @@ prose from props goes on the audit's ignore list.
 - Captions render as plain text, so no `[links](…)` and no `**bold**` inside a spec.
 - A chart with data cites `sourceIds`; a drawing with no data behind it sets `schematic: true` and the
   caption says it is a diagram.
+- Every string a chart draws carries both locales: axis titles, series names, and category labels,
+  which `ChartSpec.labels` types as a pair so a word cannot reach the wrong page. A number is its own
+  label in either language. `scripts/export-chart-data.ts` refuses a bare string label, since the
+  build strips types without checking them.
+- The CSVs are the one place the site writes English. Both locales link the same file, so it follows
+  the drawings' rule rather than either page's language.
 
 ## The 3D viewer
 
@@ -84,6 +90,21 @@ over the result. A new structure is a data entry, never a hand-placed set of coo
 - Distances follow the published cell and the display radii are one common fraction of the covalent
   radii; the panel states that in the reader's language, because a drawing that shrinks atoms has to
   say so.
+- The occupancy panel beside the view draws one unit cell at true size, cut open at its own faces,
+  so a corner atom shows the fraction that belongs to the cell rather than a whole sphere hanging
+  outside it. The percentage is computed from the cell contents and the covalent radii, never typed
+  in, and the model it uses (spheres touching along the bond) is printed with it: for silicon it
+  reproduces the textbook 34%, which is what keeps the number honest for the other four.
+- A cut atom is solved, not clipped: the fragment finds where the eye ray first meets the sphere
+  inside the cell, and draws the cell face it was cut on as a section, hatched at 45 degrees at a
+  fixed pitch on the screen. Clipping the sphere and trusting the depth buffer instead leaves the
+  atom's far inside wall in place of the cut, which reads as a scooped-out ball.
+- The panel opens on a corner of the cell, where those cut faces point at the reader rather than
+  away from them; `CrystalRenderer.create` takes the opening angle and `reset` returns to it.
+- Both drawings can take the whole screen. The unit cell expands the panel and not just the canvas,
+  so the percentage and the model line travel with the picture; the buttons are left out where the
+  browser says full screen is not available, which is what an embedded frame without the permission
+  reports.
 - The viewer is wrapped in `<ClientOnly>` and its class sits on the glossary audit's ignore list, like
   every component that renders prose from props.
 - It has to work without a pointer and without a mouse: the buttons, the arrow keys and `Home` are

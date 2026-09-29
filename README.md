@@ -84,4 +84,5 @@ docs/public/assets/       esquemas SVG e fotos
 docs/public/data/         CSV gerado das séries
 docs/public/pdf-images/   figuras extraídas do PDF
 scripts/                  audits, exportação de dados, geradores de SVG
+audit/                    prompt de auditoria e achados da revisão de conteúdo
 ```
