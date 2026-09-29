@@ -17,6 +17,11 @@
  *  - **The page owns the colours.** The viewer asks for the panel background and nothing else; the
  *    species palette comes from `structures.ts`, so a light and a dark reader see the same
  *    material.
+ *  - **A cut atom is solved, not clipped.** The unit-cell panel cuts its atoms at the cell's faces,
+ *    and each fragment works out where the eye ray first touches the sphere-and-cell solid. Clipping
+ *    the sphere and trusting the depth buffer instead leaves the atom's far inside wall visible
+ *    where it was cut away, and the exact intersection costs one `gl_FragDepth` write, which is early
+ *    depth testing for the atoms — a few hundred thousand fragments, and not worth a second program.
  *  - **Nothing runs when nothing moves.** The animation loop stops when the canvas leaves the
  *    viewport or when the scene is still, and a lost context is rebuilt rather than left frozen.
  */
@@ -120,6 +125,20 @@ uniform vec3 uLightFill;
 uniform vec3 uInk;
 uniform float uInkStrength;
 uniform float uInkMix;
+uniform float uHatchPitch;
+uniform vec3 uReciprocalA;
+uniform vec3 uReciprocalB;
+uniform vec3 uReciprocalC;
+uniform bool uClipOn;
+uniform float uClipMargin;
+
+/* The occupancy panel cuts the cell open: anything outside its faces is dropped, and the faces
+   themselves are left a hair outside so the frame drawn on them is not shaved in half. */
+bool outsideCell(vec3 world) {
+  if (!uClipOn) return false;
+  vec3 f = vec3(dot(world, uReciprocalA), dot(world, uReciprocalB), dot(world, uReciprocalC));
+  return any(lessThan(f, vec3(-uClipMargin))) || any(greaterThan(f, vec3(1.0 + uClipMargin)));
+}
 
 vec3 shade(vec3 base, vec3 ink, vec3 normal, vec3 world) {
   vec3 n = normalize(normal);
@@ -137,6 +156,14 @@ vec3 shade(vec3 base, vec3 ink, vec3 normal, vec3 world) {
   // would sit invisible on its own background.
   vec3 edge = mix(ink, vec3(1.0), uInkMix);
   return mix(color, edge, rim * uInkStrength);
+}
+
+/**
+ * The inside of an atom, where the surface the eye is looking at has been cut away: matte and flat,
+ * so it never reads as more sphere. The bonds use it; the atoms are cut by the first-touch test instead.
+ */
+vec3 sectionShade(vec3 base, vec3 normal) {
+  return base * (0.55 + 0.28 * max(dot(normalize(normal), uLightKey), 0.0));
 }
 `
 
@@ -156,6 +183,8 @@ out vec3 vNormal;
 out vec3 vWorld;
 out vec3 vColor;
 out vec3 vInk;
+out vec3 vCentre;
+out float vRadius;
 
 void main() {
   vec3 world = iCenter + aPosition * iRadius;
@@ -163,6 +192,8 @@ void main() {
   vNormal = aNormal;
   vColor = iColor;
   vInk = iInk;
+  vCentre = iCenter;
+  vRadius = iRadius;
   gl_Position = uViewProjection * vec4(world, 1.0);
 }
 `
@@ -170,17 +201,115 @@ void main() {
 const SPHERE_FRAGMENT = `#version 300 es
 precision highp float;
 
-in vec3 vNormal;
 in vec3 vWorld;
 in vec3 vColor;
 in vec3 vInk;
+in vec3 vCentre;
+in float vRadius;
 
 out vec4 outColor;
 
 ${SHADING}
 
+uniform mat4 uViewProjection;
+
+/**
+ * Where the eye ray first enters the solid being drawn: the atom's sphere where it lies inside the
+ * cell, and the cell's own far face where the atom runs out of it. The intersection is solved here
+ * rather than left to the depth buffer for two reasons, and both of them are the reason the cut is
+ * drawn at all.
+ *
+ * A clipped sphere loses the surface the eye is looking at, and what is left of it is the far inside
+ * wall: drawing that wall is the hollow look of an atom that has not been cut but scooped out. And
+ * near a cell edge that cuts an atom diagonally, both the near and the far surface of the sphere can
+ * fall outside the cell, so no fragment of it is left inside and the corner would be missing
+ * altogether.
+ *
+ * The point this returns is the whole surface of the solid, so the depth written for it belongs to
+ * the pixel and not to the fragment: every fragment of the pixel lands on the same point, and it
+ * does not matter which one the rasteriser keeps.
+ */
+bool firstTouch(out vec3 point, out vec3 normal, out bool cut) {
+  vec3 direction = normalize(vWorld - uEye);
+  vec3 offset = uEye - vCentre;
+  float along = dot(offset, direction);
+  float discriminant = along * along - dot(offset, offset) + vRadius * vRadius;
+  if (discriminant <= 0.0) return false;
+
+  float root = sqrt(discriminant);
+  float start = -along - root;
+  float stop = -along + root;
+  vec3 faceNormal = vec3(0.0);
+  cut = false;
+
+  if (uClipOn) {
+    // The cell as three slabs in its own reciprocal basis, a hair outside the faces so the frame
+    // drawn on them is not shaved in half.
+    float low = -uClipMargin;
+    float high = 1.0 + uClipMargin;
+    vec3 eye = vec3(dot(uEye, uReciprocalA), dot(uEye, uReciprocalB), dot(uEye, uReciprocalC));
+    vec3 slope = vec3(
+      dot(direction, uReciprocalA),
+      dot(direction, uReciprocalB),
+      dot(direction, uReciprocalC)
+    );
+
+    for (int axis = 0; axis < 3; axis += 1) {
+      float rate = slope[axis];
+      if (abs(rate) < 1e-9) {
+        if (eye[axis] < low || eye[axis] > high) return false;
+        continue;
+      }
+      float one = (low - eye[axis]) / rate;
+      float other = (high - eye[axis]) / rate;
+      float enter = min(one, other);
+      if (enter > start) {
+        start = enter;
+        vec3 reciprocal = axis == 0 ? uReciprocalA : (axis == 1 ? uReciprocalB : uReciprocalC);
+        faceNormal = normalize(reciprocal) * (one <= other ? -1.0 : 1.0);
+        cut = true;
+      }
+      stop = min(stop, max(one, other));
+    }
+  }
+
+  // The camera orbits outside the block, so the ray never starts inside the solid.
+  if (start > stop || start <= 0.0) return false;
+
+  point = uEye + direction * start;
+  normal = cut ? faceNormal : (point - vCentre) / vRadius;
+  return true;
+}
+
+/**
+ * A cut face is drawn like a section on paper: a flat plate crossed by parallel lines at 45 degrees,
+ * a fixed distance apart on the screen. A hatch laid out in the plane of the face turns into a moiré
+ * band wherever the face is seen at a grazing angle, which is where a cut face spends its time.
+ */
+vec3 hatched(vec3 base, vec3 ink, vec3 point, vec3 normal) {
+  float diagonal = (gl_FragCoord.x + gl_FragCoord.y) / uHatchPitch;
+  float gap = uHatchPitch * (0.5 - abs(fract(diagonal) - 0.5));
+  float stripe = 1.0 - smoothstep(0.6, 1.2, gap);
+
+  float light = 0.76 + 0.22 * max(dot(normal, uLightKey), 0.0);
+  vec3 plate = mix(base, vec3(1.0), 0.24) * light;
+  vec3 line = mix(base, ink, 0.72) * light;
+  vec3 color = mix(plate, line, stripe);
+
+  // The section meets the sphere at its rim, and a drawn section carries a line there.
+  float rim = smoothstep(0.9, 1.0, distance(point, vCentre) / vRadius);
+  return mix(color, mix(ink, vec3(1.0), uInkMix), rim * 0.65);
+}
+
 void main() {
-  outColor = vec4(shade(vColor, vInk, vNormal, vWorld), 1.0);
+  vec3 point;
+  vec3 normal;
+  bool cut;
+  if (!firstTouch(point, normal, cut)) discard;
+
+  vec4 projected = uViewProjection * vec4(point, 1.0);
+  gl_FragDepth = projected.z / projected.w * 0.5 + 0.5;
+  outColor = vec4(cut ? hatched(vColor, vInk, point, normal) : shade(vColor, vInk, normal, point), 1.0);
 }
 `
 
@@ -239,8 +368,13 @@ out vec4 outColor;
 ${SHADING}
 
 void main() {
+  if (outsideCell(vWorld)) discard;
   // The bond changes material at its midpoint: grey up to a carbon, dark past it, and so on.
   vec3 base = mix(vColorFrom, vColorTo, smoothstep(0.42, 0.58, vAlong));
+  if (!gl_FrontFacing) {
+    outColor = vec4(sectionShade(base, -vNormal), 1.0);
+    return;
+  }
   outColor = vec4(shade(base, uInk, vNormal, vWorld), 1.0);
 }
 `
@@ -269,10 +403,13 @@ export class CrystalRenderer {
 
   private background: Vec3 = [0.97, 0.97, 0.98]
   private inkMix = 0
+  /** Reciprocal vectors of the drawn cell when the view is cut open, null otherwise. */
+  private clip: [Vec3, Vec3, Vec3] | null = null
   private target: Vec3 = [0, 0, 0]
   private fit = 10
-  private yaw = 0.6
-  private pitch = 0.32
+  private readonly opening: { yaw: number; pitch: number }
+  private yaw: number
+  private pitch: number
   private zoom = 1
   private spin = true
   private lost = false
@@ -296,19 +433,34 @@ export class CrystalRenderer {
   private readonly observer: IntersectionObserver | null
   private readonly resizeObserver: ResizeObserver | null
 
-  static create(canvas: HTMLCanvasElement): CrystalRenderer | null {
+  /**
+   * `view` is the angle the drawing opens on, in degrees, and the one `reset` returns to. The unit
+   * cell asks for a corner: its cut faces have to face the reader, or the panel reads as a handful of
+   * whole spheres.
+   */
+  static create(
+    canvas: HTMLCanvasElement,
+    view: { yaw: number; pitch: number } = { yaw: 34, pitch: 18 },
+  ): CrystalRenderer | null {
     const gl = canvas.getContext('webgl2', {
       alpha: false,
       antialias: true,
       depth: true,
       powerPreference: 'low-power',
     })
-    return gl ? new CrystalRenderer(canvas, gl) : null
+    return gl ? new CrystalRenderer(canvas, gl, view) : null
   }
 
-  private constructor(canvas: HTMLCanvasElement, gl: WebGL2RenderingContext) {
+  private constructor(
+    canvas: HTMLCanvasElement,
+    gl: WebGL2RenderingContext,
+    view: { yaw: number; pitch: number },
+  ) {
     this.canvas = canvas
     this.gl = gl
+    this.opening = { yaw: (view.yaw * Math.PI) / 180, pitch: (view.pitch * Math.PI) / 180 }
+    this.yaw = this.opening.yaw
+    this.pitch = this.opening.pitch
 
     this.observer =
       typeof IntersectionObserver === 'undefined'
@@ -361,6 +513,12 @@ export class CrystalRenderer {
     this.request()
   }
 
+  /** Cuts the drawing at the faces of one cell: what the occupancy panel needs, and nothing else. */
+  setClip(reciprocal: [Vec3, Vec3, Vec3] | null): void {
+    this.clip = reciprocal
+    this.request()
+  }
+
   setAutoRotate(enabled: boolean): void {
     this.spin = enabled
     this.settledAt = Math.max(this.settledAt, performance.now() - RESUME_MS)
@@ -382,8 +540,8 @@ export class CrystalRenderer {
   }
 
   reset(): void {
-    this.yaw = 0.6
-    this.pitch = 0.32
+    this.yaw = this.opening.yaw
+    this.pitch = this.opening.pitch
     this.zoom = 1
     this.velocity = { yaw: 0, pitch: 0 }
     this.touch()
@@ -487,6 +645,12 @@ export class CrystalRenderer {
       'uInk',
       'uInkStrength',
       'uInkMix',
+      'uHatchPitch',
+      'uReciprocalA',
+      'uReciprocalB',
+      'uReciprocalC',
+      'uClipOn',
+      'uClipMargin',
     ]) {
       uniforms[name] = gl.getUniformLocation(program, name)
     }
@@ -659,18 +823,24 @@ export class CrystalRenderer {
     lookAt(this.view, this.eye, this.target, [0, 1, 0])
     multiply(this.viewProjection, this.projection, this.view)
 
+    // The section hatch is a screen-space pattern, so its pitch is a plain number of device pixels:
+    // seven CSS pixels, whatever the ratio this display runs at.
+    const ratio = this.canvas.width / Math.max(1, this.canvas.clientWidth)
+
     gl.viewport(0, 0, this.canvas.width, this.canvas.height)
     gl.clearColor(this.background[0], this.background[1], this.background[2], 1)
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 
     // Spheres: their own ink, mixed into the silhouette.
     gl.useProgram(this.sphere.program)
+    this.setClipUniforms(this.sphere)
     gl.uniformMatrix4fv(this.sphere.uniforms.uViewProjection, false, this.viewProjection)
     gl.uniform3fv(this.sphere.uniforms.uEye, this.eye)
     gl.uniform3fv(this.sphere.uniforms.uLightKey, LIGHT_KEY)
     gl.uniform3fv(this.sphere.uniforms.uLightFill, LIGHT_FILL)
     gl.uniform1f(this.sphere.uniforms.uInkStrength, 0.72)
     gl.uniform1f(this.sphere.uniforms.uInkMix, this.inkMix)
+    gl.uniform1f(this.sphere.uniforms.uHatchPitch, 7 * ratio)
     gl.bindVertexArray(this.sphereVao)
     gl.drawElementsInstanced(
       gl.TRIANGLES,
@@ -682,6 +852,7 @@ export class CrystalRenderer {
 
     // Bonds and the cell frame: one neutral ink for all of them.
     gl.useProgram(this.bond.program)
+    this.setClipUniforms(this.bond)
     gl.uniformMatrix4fv(this.bond.uniforms.uViewProjection, false, this.viewProjection)
     gl.uniform3fv(this.bond.uniforms.uEye, this.eye)
     gl.uniform3fv(this.bond.uniforms.uLightKey, LIGHT_KEY)
@@ -699,6 +870,18 @@ export class CrystalRenderer {
     )
 
     gl.bindVertexArray(null)
+  }
+
+  /** Called with the program already bound. */
+  private setClipUniforms(program: Program): void {
+    const gl = this.gl
+    const margin = 0.015
+    gl.uniform1i(program.uniforms.uClipOn, this.clip ? 1 : 0)
+    gl.uniform1f(program.uniforms.uClipMargin, this.clip ? margin : 0)
+    if (!this.clip) return
+    gl.uniform3fv(program.uniforms.uReciprocalA, this.clip[0])
+    gl.uniform3fv(program.uniforms.uReciprocalB, this.clip[1])
+    gl.uniform3fv(program.uniforms.uReciprocalC, this.clip[2])
   }
 
   /* ------------------------------------------------------------------ input */

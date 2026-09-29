@@ -1,5 +1,5 @@
 /**
- * The four crystals drawn by `CrystalViewer.vue`, and the numbers each one carries.
+ * The five crystals drawn by `CrystalViewer.vue`, and the numbers each one carries.
  *
  * A structure is a cell plus a list of fractional basis sites, exactly as a crystallographic
  * database states it — so the geometry is *derived* from published data rather than hand-placed.
@@ -16,15 +16,15 @@
  *  - the notes are in both locales and use each locale's decimal separator.
  *
  * Every crystal here is one the chain actually meets: the silicon the wafer is pulled from, the
- * carbide of power devices, the germanium that strains a channel, and the quartz the whole chain
- * starts in — which is also the local structure of the gate oxide.
+ * carbide of power devices, the germanium that strains a channel, the silica of the quartz and of
+ * the gate oxide, and the nitride that masks, insulates and coats.
  *
- * `Si₃N₄` is deliberately absent: the industrial nitride is the β phase, and the structure records
- * that ship it (COD, AMCSD) either project every atom onto one plane or describe a √3 × √3 × 3
- * superstructure, neither of which is the cell a reader should see.
+ * The nitride is drawn in its α phase, because that is the cell a structure determination publishes
+ * in a form a reader can check. The bond is the point either way: α and β share the SiN₄ tetrahedron
+ * with nitrogen bridging three silicons, and only the stacking differs.
  */
 
-/** The elements that appear in the four structures, keyed by symbol. */
+/** The elements that appear in the structures, keyed by symbol. */
 export interface Species {
   symbol: string
   pt: string
@@ -49,6 +49,8 @@ export const SPECIES: Record<string, Species> = {
   Si: { symbol: 'Si', pt: 'silício', en: 'silicon', color: '#cfd8e3', ink: '#7d8b9c', covalent: 1.11 },
   C: { symbol: 'C', pt: 'carbono', en: 'carbon', color: '#3b5b8c', ink: '#152744', covalent: 0.76 },
   O: { symbol: 'O', pt: 'oxigênio', en: 'oxygen', color: '#e05252', ink: '#9c1f1f', covalent: 0.66 },
+  // The site already paints silicon nitride as the mask and dielectric it is.
+  N: { symbol: 'N', pt: 'nitrogênio', en: 'nitrogen', color: '#805ad5', ink: '#3f2a70', covalent: 0.71 },
   Ge: { symbol: 'Ge', pt: 'germânio', en: 'germanium', color: '#4db59a', ink: '#1f6b58', covalent: 1.20 },
 }
 
@@ -237,6 +239,44 @@ export const STRUCTURES: Structure[] = [
     bonds: [{ a: 'Si', b: 'O', max: 1.9 }],
     maxRepeat: 3,
     sourceIds: ['struct-quartz-levien', 'elem-sze'],
+  },
+  {
+    id: 'si3n4',
+    formula: 'Si₃N₄',
+    namePt: 'Nitreto, α',
+    nameEn: 'Nitride, α',
+    notePt:
+      'O nitrogênio muda o papel da ponte: cada N liga três silícios, e cada silício fica no centro de um tetraedro SiN₄. É este o nitreto que reveste o cadinho, serve de máscara e faz a camada antirrefletora da célula. A célula desenhada é a α; a β, que domina os cerâmicos, tem os mesmos tetraedros empilhados de outro jeito.',
+    noteEn:
+      'Nitrogen changes the bridge: every N bonds three silicons, and every silicon sits at the centre of a SiN₄ tetrahedron. This is the nitride that lines the crucible, serves as a mask and forms the cell’s anti-reflection layer. The cell drawn here is α; β, which dominates ceramics, has the same tetrahedra stacked differently.',
+    metrics: [
+      {
+        labelPt: 'Constante de rede',
+        labelEn: 'Lattice constant',
+        valuePt: 'a = 7,766 Å · c = 5,615 Å',
+        valueEn: 'a = 7.766 Å · c = 5.615 Å',
+      },
+      { labelPt: 'Ligação Si–N', labelEn: 'Si–N bond', valuePt: '1,70 a 1,77 Å', valueEn: '1.70 to 1.77 Å' },
+      { labelPt: 'Coordenação', labelEn: 'Coordination', valuePt: 'Si 4 · N 3', valueEn: 'Si 4 · N 3' },
+    ],
+    // α-Si₃N₄, space group P31c, Z = 4: two general silicon sites and four nitrogen sites (two of
+    // them special) give the 28 atoms of the cell. The measured occupancies of that specimen
+    // (0.96–0.99) are ignored here — a teaching cell keeps every site filled.
+    cell: { a: 7.766, b: 7.766, c: 5.615, alpha: 90, beta: 90, gamma: 120 },
+    basis: [
+      { at: [0.513, 0.4305, 0.658], species: 'Si' },
+      { at: [0.168, 0.915, 0.4504], species: 'Si' },
+      { at: [0.6124, 0.9592, 0.4343], species: 'N' },
+      { at: [0.3199, 0.0046, 0.7045], species: 'N' },
+      { at: [0.66667, 0.33333, 0.6015], species: 'N' },
+      { at: [0, 0, 0.452], species: 'N' },
+    ],
+    ops: ['x,y,z', 'x-y,-y,1/2+z', '-y,x-y,z', 'y,x,1/2+z', '-x+y,-x,z', '-x,-x+y,1/2+z'],
+    // Si–N sits between 1.70 and 1.78 Å; the next contacts are Si–Si near 2.9 Å and N–N past 2.6 Å.
+    bonds: [{ a: 'Si', b: 'N', max: 2.05 }],
+    // 28 atoms in the cell; 3 × 3 × 3 would be 756 of them, which is more than the panel needs.
+    maxRepeat: 2,
+    sourceIds: ['struct-si3n4-kohatsu', 'saimm'],
   },
 ]
 

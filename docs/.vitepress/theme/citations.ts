@@ -1974,19 +1974,85 @@ const list: Citation[] = [
   {
     key: 'abc-silicon-smelter-video',
     num: 246,
-    title: '“It’s Like Working In A Volcano”: How Silicon Is Made',
-    publisher: 'ABC Science — trecho de Catalyst: The Grid (vídeo)',
-    url: 'https://www.youtube.com/watch?v=5eVsQSn_EWc',
-    short: 'ABC Science (vídeo)',
+    title: 'Ferrosilicon submerged arc furnace: smelting, tapping and casting',
+    publisher: 'SR Furnace (fabricante de fornos de arco submerso) — vídeo',
+    url: 'https://www.youtube.com/watch?v=2LKOG6wrEY8',
+    short: 'SR Furnace (vídeo)',
+  },
+  {
+    key: 'saevarsdottir-2010',
+    num: 247,
+    title: 'Current distribution in submerged arc furnaces for silicon metal / ferrosilicon production',
+    publisher: 'Sævarsdóttir & Bakken — INFACON XII, Helsinque, 2010',
+    url: 'https://www.pyro.co.za/InfaconXII/717-Saevarsdottir.pdf',
+    short: 'Sævarsdóttir & Bakken (2010)',
+  },
+  {
+    key: 'vangskasen-2013',
+    num: 248,
+    title: 'Condensate in the metallurgical silicon process — reaction mechanisms',
+    publisher: 'Vangskåsen & Tangstad — INFACON XIII, Almaty, 2013',
+    url: 'https://www.pyrometallurgy.co.za/InfaconXIII/0283-Vangskasen.pdf',
+    short: 'Vangskåsen & Tangstad (2013)',
+  },
+  {
+    key: 'elkem-electrodes',
+    num: 249,
+    title: 'Prebaked electrodes (ELBAKE®) — carbon electrodes for submerged arc furnaces',
+    publisher: 'Elkem',
+    url: 'https://www.elkem.com/markets/advanced-manufacturing-industrial/pyrometallurgical/prebaked-electrodes/',
+    short: 'Elkem (eletrodos)',
   },
   {
     key: 'struct-quartz-levien',
-    num: 247,
+    num: 250,
     title: 'Quartz (SiO₂) crystal structure at 1 atm — determination by Levien, Prewitt & Weidner',
     publisher:
       'American Mineralogist 65, 920–930 — entry 9000775 of the Crystallography Open Database',
     url: 'https://www.crystallography.net/cod/9000775.html',
     short: 'Levien et al. (1980)',
+  },
+  {
+    key: 'struct-si3n4-kohatsu',
+    num: 251,
+    title:
+      'α-Si₃N₄ crystal structure (P31c, Z = 4) — re-examination by Kohatsu & McCauley',
+    publisher:
+      'Materials Research Bulletin 9, 917–920 — entry 9012057 of the Crystallography Open Database',
+    url: 'https://www.crystallography.net/cod/9012057.html',
+    short: 'Kohatsu & McCauley (1974)',
+  },
+  {
+    key: 'usgs-mcs-2026',
+    num: 252,
+    title: 'Mineral Commodity Summaries 2026 — Silicon',
+    publisher: 'U.S. Geological Survey (USGS)',
+    url: 'https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-silicon.pdf',
+    short: 'USGS (MCS 2026)',
+  },
+  {
+    key: 'asml-history',
+    num: 253,
+    title: 'History — over 40 years of ingenuity and perseverance',
+    publisher: 'ASML',
+    url: 'https://www.asml.com/en/company/about-asml/history',
+    short: 'ASML (history)',
+  },
+  {
+    key: 'usgs-mcs-2024',
+    num: 254,
+    title: 'Mineral Commodity Summaries 2024 — Silicon',
+    publisher: 'U.S. Geological Survey (USGS)',
+    url: 'https://pubs.usgs.gov/periodicals/mcs2024/mcs2024-silicon.pdf',
+    short: 'USGS (MCS 2024)',
+  },
+  {
+    key: 'usgs-mcs-2025',
+    num: 255,
+    title: 'Mineral Commodity Summaries 2025 — Silicon',
+    publisher: 'U.S. Geological Survey (USGS)',
+    url: 'https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silicon.pdf',
+    short: 'USGS (MCS 2025)',
   },
 ]
 
@@ -2004,7 +2070,7 @@ export function getCitation(key: string): Citation | undefined {
   return citationsByKey[key]
 }
 
-export const USGS_MCS_YEARS = [2020, 2021, 2022, 2023, 2024, 2025] as const
+export const USGS_MCS_YEARS = [2020, 2021, 2022, 2023, 2024, 2025, 2026] as const
 
 export function usgsMcsUrl(year: number): string {
   return `https://pubs.usgs.gov/periodicals/mcs${year}/mcs${year}-silicon.pdf`

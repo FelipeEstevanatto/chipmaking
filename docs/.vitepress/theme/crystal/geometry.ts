@@ -17,7 +17,7 @@
  *    crystallographic convention. It is what makes quartz come out with its 120° angle visible.
  */
 
-import type { Species, Structure } from './structures'
+import type { Site, Species, Structure } from './structures'
 import { SPECIES, displayRadius } from './structures'
 
 export type Vec3 = [number, number, number]
@@ -174,6 +174,38 @@ function mulberry32(seed: number): () => number {
   }
 }
 
+const ALLOY_SEED = 0x51c0de
+
+/** A seed per cell, so every cell draws its own pattern but the same count. */
+function cellSeed(i: number, j: number, k: number): number {
+  return (ALLOY_SEED + Math.imul(i, 73856093) + Math.imul(j, 19349663) + Math.imul(k, 83492791)) >>> 0
+}
+
+/**
+ * Which of a cell's sites the substituting element takes over: exactly `round(sites × fraction)` of
+ * them, chosen at random, so the picture agrees with the metric the panel prints. A per-atom coin
+ * flip would drift — one cell showing 1 site in 8, the next 3 — and the number would be a claim the
+ * drawing does not keep.
+ */
+function substitutedSites(count: number, fraction: number, seed: number): Set<number> {
+  const random = mulberry32(seed)
+  const order = Array.from({ length: count }, (_, index) => index)
+  for (let i = order.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1))
+    const held = order[i]
+    order[i] = order[j]
+    order[j] = held
+  }
+  return new Set(order.slice(0, Math.round(count * fraction)))
+}
+
+/** The species a basis site carries in this cell, once the alloy has had its say. */
+function speciesAt(structure: Structure, site: Site, chosen: Set<number> | null, index: number): string {
+  const alloy = structure.alloy
+  if (!alloy || !chosen || !chosen.has(index) || site.species !== alloy.on) return site.species
+  return alloy.species
+}
+
 export function buildCrystal(structure: Structure, repeats: number): BuiltCrystal {
   const n = Math.max(1, Math.min(Math.round(repeats), structure.maxRepeat))
   const [va, vb, vc] = latticeMatrix(structure.cell)
@@ -183,11 +215,15 @@ export function buildCrystal(structure: Structure, repeats: number): BuiltCrysta
   for (let i = 0; i <= n; i += 1) {
     for (let j = 0; j <= n; j += 1) {
       for (let k = 0; k <= n; k += 1) {
-        for (const site of basis) {
+        const alloy = structure.alloy
+        const chosen = alloy
+          ? substitutedSites(basis.length, alloy.fraction, cellSeed(i, j, k))
+          : null
+        basis.forEach((site, index) => {
           const f: Vec3 = [site.at[0] + i, site.at[1] + j, site.at[2] + k]
-          if (f[0] > n + EPS || f[1] > n + EPS || f[2] > n + EPS) continue
-          atoms.push(toCartesian(f, va, vb, vc, site.species))
-        }
+          if (f[0] > n + EPS || f[1] > n + EPS || f[2] > n + EPS) return
+          atoms.push(toCartesian(f, va, vb, vc, speciesAt(structure, site, chosen, index)))
+        })
       }
     }
   }
@@ -203,21 +239,26 @@ export function buildCrystal(structure: Structure, repeats: number): BuiltCrysta
 export function buildCell(structure: Structure): BuiltCrystal {
   const [va, vb, vc] = latticeMatrix(structure.cell)
   const basis = structure.ops ? expandBasis(structure.basis, structure.ops) : structure.basis
-  const atoms = basis.map((site) => toCartesian(site.at, va, vb, vc, site.species))
+  const alloy = structure.alloy
+  // Seed zero: the panel draws the same cell the block starts with, so the two views agree.
+  const chosen = alloy ? substitutedSites(basis.length, alloy.fraction, ALLOY_SEED) : null
+  const atoms = basis.map((site, index) =>
+    toCartesian(site.at, va, vb, vc, speciesAt(structure, site, chosen, index)),
+  )
+  const built = assemble(structure, atoms, blockOutline(va, vb, vc, 1))
 
-  return assemble(structure, atoms, blockOutline(va, vb, vc, 1))
+  // The panel frames the cell, not the atom cloud: the atoms are cut at its faces, so the box is
+  // what should hold still while the reader switches structures.
+  const corner: Vec3 = [va[0] + vb[0] + vc[0], va[1] + vb[1] + vc[1], va[2] + vb[2] + vc[2]]
+  return {
+    ...built,
+    center: [corner[0] / 2, corner[1] / 2, corner[2] / 2],
+    radius: Math.hypot(corner[0], corner[1], corner[2]) / 2,
+  }
 }
 
-/** Bonds, substitution and bounds — everything the two builders do after the atoms are placed. */
+/** Bonds and bounds — everything the two builders do after the atoms are placed. */
 function assemble(structure: Structure, atoms: Atom[], outline: Edge[]): BuiltCrystal {
-  const alloy = structure.alloy
-  if (alloy) {
-    const random = mulberry32(0x51c0de)
-    for (const atom of atoms) {
-      if (atom.species === alloy.on && random() < alloy.fraction) atom.species = alloy.species
-    }
-  }
-
   const bonds: Bond[] = []
   for (let i = 0; i < atoms.length; i += 1) {
     for (let j = i + 1; j < atoms.length; j += 1) {
@@ -243,6 +284,118 @@ function toCartesian(f: Vec3, va: Vec3, vb: Vec3, vc: Vec3, species: string): At
     z: f[0] * va[2] + f[1] * vb[2] + f[2] * vc[2],
     species,
   }
+}
+
+export interface Occupancy {
+  /** Share of the cell volume that lies inside an atom, under the touching-sphere model. */
+  fraction: number
+  /** Atoms in the cell, with the alloy counted at its nominal composition. */
+  atoms: number
+  /** Radii in Å, per species: the size the panel draws and the size it sums. */
+  radii: Record<string, number>
+  /** The mean bond length the radii were split along, in Å. */
+  bond: number
+}
+
+/**
+ * How much of the cell is matter and how much is void.
+ *
+ * The model is the one the number depends on, so the panel states it: the spheres touch along the
+ * bond, and two bonded atoms share that bond in the ratio of their covalent radii. For silicon this
+ * reproduces the textbook packing fraction of diamond cubic (34%), and for quartz it is the number
+ * that makes the point — a silica network is mostly empty space.
+ *
+ * The composition comes from the cell contents rather than from the drawn block, so the alloy's
+ * random draw cannot leak into a percentage.
+ */
+export function occupancy(structure: Structure, crystal: BuiltCrystal): Occupancy {
+  const content = structure.ops ? expandBasis(structure.basis, structure.ops) : structure.basis
+  const counts = new Map<string, number>()
+  for (const site of content) counts.set(site.species, (counts.get(site.species) ?? 0) + 1)
+
+  const alloy = structure.alloy
+  if (alloy) {
+    const moved = (counts.get(alloy.on) ?? 0) * alloy.fraction
+    counts.set(alloy.on, (counts.get(alloy.on) ?? 0) - moved)
+    counts.set(alloy.species, (counts.get(alloy.species) ?? 0) + moved)
+  }
+
+  // The bond length is a property of the cell, and the drawn block is the cheapest place to read it.
+  // The mean, not the shortest: a cell with two slightly different bonds (quartz, the nitride) has to
+  // split one radius per element, and the average is the one that keeps the spheres touching.
+  let bond = 0
+  for (const pair of crystal.bonds) {
+    const from = crystal.atoms[pair.i]
+    const to = crystal.atoms[pair.j]
+    bond += Math.hypot(from.x - to.x, from.y - to.y, from.z - to.z)
+  }
+  if (crystal.bonds.length) bond /= crystal.bonds.length
+
+  // A species that bonds through a wildcard rule has no single partner, so it is split against the
+  // composition's mean radius: what an alloy does on average.
+  const total = [...counts.values()].reduce((sum, count) => sum + count, 0)
+  const mean = total
+    ? [...counts].reduce(
+        (sum, [symbol, count]) => sum + (SPECIES[symbol]?.covalent ?? 0) * count,
+        0,
+      ) / total
+    : 0
+
+  const radii: Record<string, number> = {}
+  let filled = 0
+  for (const [symbol, count] of counts) {
+    const own = SPECIES[symbol]?.covalent ?? 0
+    const partner = partnerCovalent(structure.bonds, symbol) ?? mean
+    const radius = own + partner > 0 ? (bond * own) / (own + partner) : 0
+    radii[symbol] = radius
+    filled += count * (4 / 3) * Math.PI * radius ** 3
+  }
+
+  return {
+    fraction: filled / cellVolume(structure.cell),
+    atoms: Math.round(total),
+    radii,
+    bond,
+  }
+}
+
+/** The covalent radius of the species a rule bonds this one to, or null when the rule is a wildcard. */
+function partnerCovalent(rules: Structure['bonds'], species: string): number | null {
+  for (const rule of rules) {
+    if (rule.a === species && rule.b !== '*') return SPECIES[rule.b]?.covalent ?? null
+    if (rule.b === species && rule.a !== '*') return SPECIES[rule.a]?.covalent ?? null
+  }
+  return null
+}
+
+/** Cell volume in Å³: the determinant of the lattice vectors. */
+export function cellVolume(cell: Structure['cell']): number {
+  const [va, vb, vc] = latticeMatrix(cell)
+  return Math.abs(determinant(va, vb, vc))
+}
+
+const cross = (a: Vec3, b: Vec3): Vec3 => [
+  a[1] * b[2] - a[2] * b[1],
+  a[2] * b[0] - a[0] * b[2],
+  a[0] * b[1] - a[1] * b[0],
+]
+
+const determinant = (a: Vec3, b: Vec3, c: Vec3): number =>
+  a[0] * (b[1] * c[2] - b[2] * c[1]) - a[1] * (b[0] * c[2] - b[2] * c[0]) + a[2] * (b[0] * c[1] - b[1] * c[0])
+
+/**
+ * The reciprocal vectors of the cell: `dot(position, reciprocal[i])` is the fractional coordinate
+ * along axis i. The renderer cuts the drawn cell with them, which is what lets the cut follow the
+ * hexagonal cell of quartz and of the nitride instead of an axis-aligned box.
+ */
+export function cellReciprocal(cell: Structure['cell']): [Vec3, Vec3, Vec3] {
+  const [va, vb, vc] = latticeMatrix(cell)
+  const volume = determinant(va, vb, vc)
+  const scale = volume === 0 ? 0 : 1 / volume
+
+  return [cross(vb, vc), cross(vc, va), cross(va, vb)].map((vector) =>
+    vector.map((value) => value * scale),
+  ) as [Vec3, Vec3, Vec3]
 }
 
 /**

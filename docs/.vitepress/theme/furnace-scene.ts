@@ -11,19 +11,25 @@
  * stretch across the panel while its atoms are still far apart.
  */
 
-import { FURNACE_STAGES, type ActorSpec, type FurnaceStage, type Point } from './furnace-stages'
+import {
+  FURNACE_STAGES,
+  MOLECULE_HALF,
+  type ActorSpec,
+  type AtomElement,
+  type FurnaceStage,
+  type Point,
+} from './furnace-stages'
 
 export const SCENE_W = 900
 export const SCENE_H = 470
 
 /** Longest bond drawn between two atoms, in scene units. */
-const BOND_LENGTH = 122
-/** Half the distance between the two atoms of a diatomic molecule. */
-const MOLECULE_HALF = 14
-
+const BOND_LENGTH = 130
 /** Milliseconds within which an actor gets most of the way to its target. */
-const TAU = 210
-const ALPHA_TAU = 150
+const TAU = 420
+const ALPHA_TAU = 280
+/** How close the pointer has to be to an actor for it to answer with its name. */
+const PICK_RADIUS = 30
 
 export interface Palette {
   text: string
@@ -49,13 +55,13 @@ export const LIGHT: Palette = {
   strip: '#f7fafc',
   stripLine: '#cbd5e0',
   charge: '#fefcbf',
-  chargeHot: '#fdf3a2',
+  chargeHot: '#f6e05e',
   bath: '#fed7d7',
-  bathHot: '#fbc4c4',
+  bathHot: '#feb2b2',
   sump: '#c6f6d5',
-  sumpHot: '#a9efc0',
-  bond: '#a0aec0',
-  bubble: 'rgba(113, 128, 150, 0.5)',
+  sumpHot: '#9ae6b4',
+  bond: '#8a94a6',
+  bubble: 'rgba(113, 128, 150, 0.55)',
   droplet: 'rgba(246, 173, 85, 0.55)',
   hot: '#dd6b20',
   atomText: '#1a202c',
@@ -66,29 +72,47 @@ export const DARK: Palette = {
   muted: '#a0aec0',
   strip: '#232329',
   stripLine: '#4a5568',
-  charge: 'rgba(183, 121, 31, 0.28)',
-  chargeHot: 'rgba(237, 137, 54, 0.42)',
-  bath: 'rgba(197, 48, 48, 0.26)',
-  bathHot: 'rgba(197, 48, 48, 0.42)',
-  sump: 'rgba(47, 133, 90, 0.26)',
-  sumpHot: 'rgba(47, 133, 90, 0.44)',
+  charge: 'rgba(183, 121, 31, 0.26)',
+  chargeHot: 'rgba(237, 137, 54, 0.55)',
+  bath: 'rgba(197, 48, 48, 0.24)',
+  bathHot: 'rgba(197, 48, 48, 0.55)',
+  sump: 'rgba(47, 133, 90, 0.24)',
+  sumpHot: 'rgba(47, 133, 90, 0.55)',
   bond: '#718096',
-  bubble: 'rgba(160, 174, 192, 0.45)',
+  bubble: 'rgba(160, 174, 192, 0.5)',
   droplet: 'rgba(246, 173, 85, 0.4)',
   hot: '#ed8936',
   atomText: '#1a202c',
 }
 
 const ATOM_COLOURS = {
-  Si: { fill: '#cfd8e3', line: '#7d8b9c', r: 17 },
-  O: { fill: '#fed7d7', line: '#c53030', r: 12.5 },
-  C: { fill: '#4a5568', line: '#1a202c', r: 14.5 },
+  Si: { fill: '#cfd8e3', line: '#7d8b9c', r: 21 },
+  O: { fill: '#fed7d7', line: '#c53030', r: 15.5 },
+  C: { fill: '#4a5568', line: '#1a202c', r: 17.5 },
 } as const
 
 const MOLECULE_COLOURS = {
   CO: { first: 'O', second: 'C' },
   SiO: { first: 'O', second: 'Si' },
 } as const
+
+/** What the pointer found, so the component can name it in the reader's language. */
+export interface Pick {
+  id: string
+  kind: 'atom' | 'molecule'
+  element?: AtomElement
+  molecule?: 'CO' | 'SiO'
+  /** Scene coordinates of the actor, so the tooltip can point at it. */
+  x: number
+  y: number
+}
+
+export interface Tooltip {
+  text: string
+  /** Scene coordinates the tip points at. */
+  x: number
+  y: number
+}
 
 interface Live {
   spec: ActorSpec
@@ -121,10 +145,13 @@ const ease = (current: number, target: number, dt: number, tau: number) =>
 
 export class FurnaceScene {
   /**
-   * Off for readers who asked for reduced motion: the bubbles are pure decoration, and a scene that
-   * snaps between stages should not still be spawning them.
+   * Off for readers who asked for reduced motion: the bubbles and the breathing glow are pure
+   * decoration, and a scene that snaps between stages should not still be spawning them.
    */
   motion = true
+
+  /** Actor the pointer is on, drawn with a ring so the name has something to point at. */
+  highlighted: string | null = null
 
   private live = new Map<string, Live>()
   private bubbles: Bubble[] = []
@@ -145,6 +172,7 @@ export class FurnaceScene {
     const stage = FURNACE_STAGES[index]
     if (!stage) return
     this.stageIndex = index
+    this.highlighted = null
 
     const declared = new Set(stage.actors.map((actor) => actor.id))
     for (const [id, actor] of this.live) {
@@ -210,14 +238,14 @@ export class FurnaceScene {
     if (this.motion && this.stage?.exhaust) {
       this.spawnIn -= dt
       if (this.spawnIn <= 0) {
-        this.spawnIn = 760 + Math.random() * 420
-        if (this.bubbles.length < 16) {
+        this.spawnIn = 900 + Math.random() * 500
+        if (this.bubbles.length < 14) {
           this.bubbles.push({
             x: 60 + Math.random() * 520,
             y: 430 + Math.random() * 30,
-            r: 2 + Math.random() * 2.4,
-            vy: -(34 + Math.random() * 24),
-            alpha: 0.16 + Math.random() * 0.18,
+            r: 2.5 + Math.random() * 3,
+            vy: -(28 + Math.random() * 18),
+            alpha: 0.2 + Math.random() * 0.2,
           })
         }
       }
@@ -225,20 +253,81 @@ export class FurnaceScene {
 
     for (const bubble of this.bubbles) {
       bubble.y += bubble.vy * step
-      bubble.x += Math.sin((this.now + bubble.y * 8) / 700) * 0.35
+      bubble.x += Math.sin((this.now + bubble.y * 8) / 900) * 0.3
     }
     this.bubbles = this.bubbles.filter((bubble) => bubble.y > 30)
   }
 
-  draw(ctx: CanvasRenderingContext2D, palette: Palette) {
-    this.drawBubbles(ctx, palette)
+  /** The actor under a scene-space point, if there is one. Formula tags do not answer. */
+  pick(x: number, y: number): Pick | null {
+    let best: { actor: Live; distance: number } | null = null
+
+    for (const actor of this.live.values()) {
+      const spec = actor.spec
+      if (spec.kind !== 'atom' && spec.kind !== 'molecule') continue
+      if (actor.alpha < 0.4) continue
+      const reach = spec.kind === 'atom' ? ATOM_COLOURS[spec.element].r + PICK_RADIUS : 36
+      const distance = Math.hypot(actor.x - x, actor.y - y)
+      if (distance > reach) continue
+      if (!best || distance < best.distance) best = { actor, distance }
+    }
+
+    const actor = best?.actor
+    if (!actor) return null
+    if (actor.spec.kind === 'atom') {
+      return { id: actor.spec.id, kind: 'atom', element: actor.spec.element, x: actor.x, y: actor.y }
+    }
+    if (actor.spec.kind === 'molecule') {
+      return {
+        id: actor.spec.id,
+        kind: 'molecule',
+        molecule: actor.spec.molecule,
+        x: actor.x,
+        y: actor.y,
+      }
+    }
+    return null
+  }
+
+  draw(ctx: CanvasRenderingContext2D, palette: Palette, tooltip: Tooltip | null = null) {
+    this.drawMelt(ctx, palette)
     this.drawBlobs(ctx, palette)
+    this.drawBubbles(ctx, palette)
     this.drawBonds(ctx, palette)
     this.drawAtoms(ctx, palette)
+    this.drawLabels(ctx, palette)
     this.drawColumn(ctx, palette)
+    if (tooltip) this.drawTooltip(ctx, palette, tooltip)
   }
 
   /* ------------------------------------------------------------- layers */
+
+  private drawMelt(ctx: CanvasRenderingContext2D, palette: Palette) {
+    if (!this.stage?.melt) return
+    const top = 404
+
+    const gradient = ctx.createLinearGradient(0, top, 0, SCENE_H)
+    gradient.addColorStop(0, palette.droplet)
+    gradient.addColorStop(1, 'rgba(246, 173, 85, 0)')
+    ctx.fillStyle = gradient
+    ctx.beginPath()
+    ctx.moveTo(20, top)
+    ctx.lineTo(600, top)
+    ctx.lineTo(600, SCENE_H)
+    ctx.lineTo(20, SCENE_H)
+    ctx.closePath()
+    ctx.fill()
+
+    ctx.strokeStyle = palette.hot
+    ctx.globalAlpha = 0.55
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.moveTo(20, top)
+    ctx.bezierCurveTo(160, top - 6, 300, top + 6, 460, top - 2)
+    ctx.bezierCurveTo(520, top - 5, 570, top + 2, 600, top)
+    ctx.stroke()
+    ctx.globalAlpha = 1
+  }
 
   private drawBlobs(ctx: CanvasRenderingContext2D, palette: Palette) {
     for (const actor of this.live.values()) {
@@ -275,7 +364,7 @@ export class FurnaceScene {
 
       ctx.globalAlpha = Math.min(a.alpha, b.alpha) * 0.95
       ctx.strokeStyle = palette.bond
-      ctx.lineWidth = 3
+      ctx.lineWidth = 4
       ctx.beginPath()
       ctx.moveTo(a.x, a.y)
       ctx.lineTo(b.x, b.y)
@@ -294,6 +383,15 @@ export class FurnaceScene {
       } else if (spec.kind === 'molecule') {
         this.drawMolecule(ctx, actor.x, actor.y, spec.molecule, actor.angle, palette)
       }
+      if (this.highlighted === spec.id) {
+        ctx.strokeStyle = palette.hot
+        ctx.lineWidth = 2.5
+        ctx.setLineDash([5, 4])
+        ctx.beginPath()
+        ctx.arc(actor.x, actor.y, (spec.kind === 'atom' ? ATOM_COLOURS[spec.element].r : 30) + 9, 0, Math.PI * 2)
+        ctx.stroke()
+        ctx.setLineDash([])
+      }
     }
     ctx.globalAlpha = 1
   }
@@ -302,7 +400,7 @@ export class FurnaceScene {
     ctx: CanvasRenderingContext2D,
     x: number,
     y: number,
-    element: keyof typeof ATOM_COLOURS,
+    element: AtomElement,
     palette: Palette,
   ) {
     const colours = ATOM_COLOURS[element]
@@ -310,12 +408,12 @@ export class FurnaceScene {
     ctx.arc(x, y, colours.r, 0, Math.PI * 2)
     ctx.fillStyle = colours.fill
     ctx.fill()
-    ctx.lineWidth = 2
+    ctx.lineWidth = 2.5
     ctx.strokeStyle = colours.line
     ctx.stroke()
 
     ctx.fillStyle = element === 'C' ? '#ffffff' : palette.atomText
-    ctx.font = '600 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    ctx.font = '600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.fillText(element, x, y + 0.5)
@@ -335,10 +433,10 @@ export class FurnaceScene {
     const second = { x: x - ux * MOLECULE_HALF, y: y - uy * MOLECULE_HALF }
 
     // A double line, offset perpendicular to the axis.
-    const px = -uy * 2.6
-    const py = ux * 2.6
+    const px = -uy * 3.2
+    const py = ux * 3.2
     ctx.strokeStyle = palette.bond
-    ctx.lineWidth = 1.7
+    ctx.lineWidth = 2.2
     for (const sign of [-1, 1]) {
       ctx.beginPath()
       ctx.moveTo(first.x + px * sign, first.y + py * sign)
@@ -349,11 +447,31 @@ export class FurnaceScene {
     const definition = MOLECULE_COLOURS[molecule]
     this.drawAtom(ctx, first.x, first.y, definition.first, palette)
     this.drawAtom(ctx, second.x, second.y, definition.second, palette)
+
+    // The formula, so the two circles are never just two circles.
+    ctx.font = '600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    ctx.fillStyle = palette.muted
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText(molecule, x, y + 56)
+  }
+
+  private drawLabels(ctx: CanvasRenderingContext2D, palette: Palette) {
+    for (const actor of this.live.values()) {
+      if (actor.spec.kind !== 'label' || actor.alpha <= 0.03) continue
+      ctx.globalAlpha = actor.alpha
+      ctx.font = '600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+      ctx.fillStyle = palette.muted
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.fillText(actor.spec.text, actor.x, actor.y)
+    }
+    ctx.globalAlpha = 1
   }
 
   private drawBubbles(ctx: CanvasRenderingContext2D, palette: Palette) {
     ctx.strokeStyle = palette.bubble
-    ctx.lineWidth = 1.4
+    ctx.lineWidth = 1.5
     for (const bubble of this.bubbles) {
       ctx.globalAlpha = Math.max(0, Math.min(1, (bubble.alpha * (bubble.y - 20)) / 380))
       ctx.beginPath()
@@ -383,16 +501,28 @@ export class FurnaceScene {
     ctx.fill()
     ctx.stroke()
 
-    const band = (top: number, bottom: number, fill: string, hot: string, active: boolean) => {
+    const band = (
+      top: number,
+      bottom: number,
+      fill: string,
+      hot: string,
+      active: boolean,
+    ) => {
       ctx.fillStyle = active ? hot : fill
       this.roundRect(ctx, x0 + 8, top, x1 - x0 - 16, bottom - top, 7)
       ctx.fill()
+      if (active) {
+        // A ring in the accent colour, so which zone the beat happens in is never a guess.
+        ctx.strokeStyle = palette.hot
+        ctx.lineWidth = 2
+        ctx.stroke()
+      }
     }
 
     // Charge at the top, the reaction bath below it, the metal pool at the bottom.
-    band(chargeTop + 8, chargeBottom, palette.charge, palette.chargeHot, zone === 'charge' || zone === 'return')
+    band(chargeTop + 8, chargeBottom, palette.charge, palette.chargeHot, zone === 'charge' || zone === 'return' || zone === 'rise')
     band(chargeBottom + 4, bathBottom, palette.bath, palette.bathHot, zone === 'bath' || zone === 'rise')
-    band(bathBottom + 4, sumpBottom - 8, palette.sump, palette.sumpHot, zone === 'bath')
+    band(bathBottom + 4, sumpBottom - 8, palette.sump, palette.sumpHot, false)
 
     ctx.textBaseline = 'alphabetic'
     ctx.textAlign = 'left'
@@ -400,12 +530,10 @@ export class FurnaceScene {
     ctx.fillStyle = zone === 'charge' || zone === 'return' ? palette.hot : palette.muted
     ctx.fillText('~1600 \u00b0C', x0 + 20, chargeTop + 34)
 
-    ctx.font = '600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
     ctx.fillStyle = zone === 'bath' || zone === 'rise' ? palette.hot : palette.muted
     ctx.fillText('> 1780 \u00b0C', x0 + 20, chargeBottom + 32)
 
     ctx.textAlign = 'center'
-    ctx.font = '600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
     ctx.fillStyle = palette.text
     ctx.fillText('Si (l)', (x0 + x1) / 2, sumpBottom - 22)
 
@@ -432,6 +560,26 @@ export class FurnaceScene {
     } else if (zone === 'return') {
       this.arrow(ctx, axisX, chargeTop + 26, axisX, chargeBottom - 14, palette.hot, 2.6)
     }
+  }
+
+  private drawTooltip(ctx: CanvasRenderingContext2D, palette: Palette, tooltip: Tooltip) {
+    ctx.font = '600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif'
+    const width = ctx.measureText(tooltip.text).width + 22
+    const height = 32
+    const x = Math.min(Math.max(tooltip.x - width / 2, 8), SCENE_W - width - 8)
+    const y = Math.max(tooltip.y - 74, 8)
+
+    ctx.fillStyle = palette.strip
+    ctx.strokeStyle = palette.stripLine
+    ctx.lineWidth = 1.4
+    this.roundRect(ctx, x, y, width, height, 8)
+    ctx.fill()
+    ctx.stroke()
+
+    ctx.fillStyle = palette.text
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText(tooltip.text, x + width / 2, y + height / 2 + 0.5)
   }
 
   private arrow(

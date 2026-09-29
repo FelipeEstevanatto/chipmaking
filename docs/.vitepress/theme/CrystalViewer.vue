@@ -2,7 +2,16 @@
 import { computed, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import Cite from './Cite.vue'
 import { useIsEnglish } from './locale'
-import { buildCrystal, buildInstances, legendFor, parseColor, type Vec3 } from './crystal/geometry'
+import {
+  buildCell,
+  buildCrystal,
+  buildInstances,
+  cellReciprocal,
+  legendFor,
+  occupancy,
+  parseColor,
+  type Vec3,
+} from './crystal/geometry'
 import { CrystalRenderer } from './crystal/renderer'
 import { STRUCTURES, getStructure, type Metric, type Structure } from './crystal/structures'
 
@@ -30,17 +39,31 @@ const props = withDefaults(
   { initial: 'si', initialSize: 1 },
 )
 
+/**
+ * The angle the unit-cell panel opens on, in degrees: a corner of the cell, where the cut faces the
+ * reader instead of turning away from them.
+ */
+const CELL_VIEW = { yaw: 248, pitch: -4 }
+
 const isEnglish = useIsEnglish()
 const selected = ref(getStructure(props.initial).id)
 const size = ref(Math.min(Math.max(Math.round(props.initialSize), 1), 3))
 const failed = ref(false)
+/** The unit cell panel, which the reader can put away and bring back. */
+const showCell = ref(true)
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
+const occupancyRef = ref<HTMLCanvasElement | null>(null)
 const renderer = shallowRef<CrystalRenderer | null>(null)
+const occupancyRenderer = shallowRef<CrystalRenderer | null>(null)
 
 const structure = computed(() => getStructure(selected.value))
 const crystal = computed(() => buildCrystal(structure.value, size.value))
 const legend = computed(() => legendFor(crystal.value))
+/** The cell on its own, and how full of matter it is — both independent of the extent control. */
+const cell = computed(() => buildCell(structure.value))
+const fill = computed(() => occupancy(structure.value, cell.value))
+const percent = computed(() => Math.round(fill.value.fraction * 100))
 
 const structureName = computed(() => (isEnglish.value ? structure.value.nameEn : structure.value.namePt))
 const note = computed(() => (isEnglish.value ? structure.value.noteEn : structure.value.notePt))
@@ -68,14 +91,31 @@ const text = computed(() => ({
   zoomOut: isEnglish.value ? 'Zoom out' : 'Afastar',
   hintPointer: isEnglish.value ? 'drag to rotate · scroll to zoom' : 'arraste para girar · role para aproximar',
   hintTouch: isEnglish.value ? 'drag to rotate · pinch to zoom' : 'arraste para girar · pinça para aproximar',
+  occupancy: isEnglish.value ? 'One unit cell' : 'Uma célula unitária',
+  hideCell: isEnglish.value ? 'Hide the unit cell' : 'Ocultar a célula unitária',
+  showCell: isEnglish.value ? 'Show the unit cell' : 'Mostrar a célula unitária',
+  filled: isEnglish.value
+    ? 'of the cell volume sits inside the atoms'
+    : 'do volume da célula está dentro dos átomos',
+  model: isEnglish.value
+    ? 'Spheres at true size, touching along the bond and cut by the faces of the cell.'
+    : 'Esferas no tamanho real, encostando ao longo da ligação e cortadas pelas faces da célula.',
+  atoms: (count: number) =>
+    isEnglish.value ? `${count} atoms in the cell` : `${count} átomos na célula`,
   scale: isEnglish.value
-    ? 'The lattice is to scale; the atoms are drawn at 72% of their covalent radius so the bonds show.'
-    : 'A rede está em escala; os átomos são desenhados a 72% do raio covalente, para as ligações aparecerem.',
+    ? 'The lattice is to scale. In the main view the atoms are drawn at 72% of their covalent radius; in the unit cell they are at true size.'
+    : 'A rede está em escala. Na estrutura principal os átomos são desenhados a 72% do raio covalente; na célula unitária, no tamanho real.',
   failed: isEnglish.value
     ? 'This browser does not provide WebGL2, so the structure cannot be drawn here.'
     : 'Este navegador não oferece WebGL2, então a estrutura não pode ser desenhada aqui.',
   structures: isEnglish.value ? 'Structure' : 'Estrutura',
 }))
+
+const occupancyLabel = computed(() =>
+  isEnglish.value
+    ? `One unit cell of ${structureName.value}: ${percent.value}% of its volume is inside the atoms.`
+    : `Uma célula unitária de ${structureName.value}: ${percent.value}% do volume está dentro dos átomos.`,
+)
 
 /** A CSS custom property to the three floats the renderer wants. */
 function cssColor(variable: string, fallback: Vec3): Vec3 {
@@ -94,6 +134,15 @@ function paint() {
   if (!instance) return
   const built = crystal.value
   instance.setGeometry(buildInstances(built), built.center, built.radius)
+}
+
+/** The unit cell at full-size radii, cut open at its own faces. */
+function paintOccupancy() {
+  const instance = occupancyRenderer.value
+  if (!instance) return
+  const built = cell.value
+  instance.setClip(cellReciprocal(structure.value.cell))
+  instance.setGeometry(buildInstances(built, fill.value.radii), built.center, built.radius * 1.06)
 }
 
 let themeObserver: MutationObserver | null = null
@@ -121,18 +170,34 @@ onMounted(() => {
   applyMotionPreference()
   paint()
 
-  // The panel follows the site theme, so the canvas background is read back on every switch.
-  themeObserver = new MutationObserver(() => instance.setBackground(background()))
+  const inset = occupancyRef.value
+  const insetRenderer = inset ? CrystalRenderer.create(inset, CELL_VIEW) : null
+  if (insetRenderer) {
+    occupancyRenderer.value = insetRenderer
+    insetRenderer.setBackground(background())
+    insetRenderer.setAutoRotate(!motionQuery.matches)
+    paintOccupancy()
+  }
+
+  // The panel follows the site theme, so both canvases are repainted on every switch.
+  themeObserver = new MutationObserver(() => {
+    const color = background()
+    instance.setBackground(color)
+    insetRenderer?.setBackground(color)
+  })
   themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 })
 
 watch([selected, size], paint)
+watch(cell, paintOccupancy)
 
 onBeforeUnmount(() => {
   motionQuery?.removeEventListener('change', applyMotionPreference)
   themeObserver?.disconnect()
   renderer.value?.dispose()
+  occupancyRenderer.value?.dispose()
   renderer.value = null
+  occupancyRenderer.value = null
 })
 
 function onKeydown(event: KeyboardEvent) {
@@ -194,40 +259,72 @@ const choose = (next: Structure) => {
       </button>
     </div>
 
-    <div class="crystal-viewer__stage">
-      <canvas
-        ref="canvasRef"
-        class="crystal-viewer__canvas"
-        role="application"
-        tabindex="0"
-        :aria-label="canvasLabel"
-        @keydown="onKeydown"
-      />
+    <div class="crystal-viewer__grid" :class="{ 'is-collapsed': !showCell }">
+      <div class="crystal-viewer__stage">
+        <canvas
+          ref="canvasRef"
+          class="crystal-viewer__canvas"
+          role="application"
+          tabindex="0"
+          :aria-label="canvasLabel"
+          @keydown="onKeydown"
+        />
 
-      <div v-if="!failed" class="crystal-viewer__tools">
-        <button type="button" :title="text.zoomIn" :aria-label="text.zoomIn" @click="renderer?.zoomBy(0.85)">
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M10 5v10M5 10h10" />
-          </svg>
-        </button>
-        <button type="button" :title="text.zoomOut" :aria-label="text.zoomOut" @click="renderer?.zoomBy(1.18)">
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M5 10h10" />
-          </svg>
-        </button>
-        <button type="button" :title="text.reset" :aria-label="text.reset" @click="renderer?.reset()">
-          <svg viewBox="0 0 20 20" aria-hidden="true">
-            <path d="M15.5 7.5A6 6 0 1 0 16 11M15.5 3.5v4h-4" />
-          </svg>
-        </button>
+        <div v-if="!failed" class="crystal-viewer__tools">
+          <button
+            type="button"
+            class="crystal-viewer__toggle"
+            :class="{ 'is-current': showCell }"
+            :aria-pressed="showCell"
+            :title="showCell ? text.hideCell : text.showCell"
+            :aria-label="showCell ? text.hideCell : text.showCell"
+            @click="showCell = !showCell"
+          >
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="3" y="4" width="14" height="12" rx="2" />
+              <path d="M12.5 4v12" />
+            </svg>
+          </button>
+          <button type="button" :title="text.zoomIn" :aria-label="text.zoomIn" @click="renderer?.zoomBy(0.85)">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 5v10M5 10h10" />
+            </svg>
+          </button>
+          <button type="button" :title="text.zoomOut" :aria-label="text.zoomOut" @click="renderer?.zoomBy(1.18)">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M5 10h10" />
+            </svg>
+          </button>
+          <button type="button" :title="text.reset" :aria-label="text.reset" @click="renderer?.reset()">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M15.5 7.5A6 6 0 1 0 16 11M15.5 3.5v4h-4" />
+            </svg>
+          </button>
+        </div>
+
+        <p v-if="failed" class="crystal-viewer__fallback">{{ text.failed }}</p>
+
+        <p v-if="!failed" class="crystal-viewer__hint">
+          <span class="crystal-viewer__hint-pointer">{{ text.hintPointer }}</span>
+          <span class="crystal-viewer__hint-touch">{{ text.hintTouch }}</span>
+        </p>
       </div>
 
-      <p v-if="failed" class="crystal-viewer__fallback">{{ text.failed }}</p>
-
-      <p v-if="!failed" class="crystal-viewer__hint">
-        <span class="crystal-viewer__hint-pointer">{{ text.hintPointer }}</span>
-        <span class="crystal-viewer__hint-touch">{{ text.hintTouch }}</span>
-      </p>
+      <aside v-show="showCell && !failed" class="crystal-viewer__occupancy">
+        <div class="crystal-viewer__stage crystal-viewer__stage--inset">
+          <canvas ref="occupancyRef" class="crystal-viewer__canvas" aria-hidden="true" />
+        </div>
+        <p class="crystal-viewer__fill">
+          <span class="crystal-viewer__fill-value">{{ percent }}%</span>
+          <span class="crystal-viewer__fill-label">{{ text.filled }}</span>
+        </p>
+        <div class="crystal-viewer__meter" role="img" :aria-label="occupancyLabel">
+          <span class="crystal-viewer__meter-filled" :style="{ width: `${(fill.fraction * 100).toFixed(1)}%` }" />
+        </div>
+        <p class="crystal-viewer__occupancy-note">
+          {{ text.model }} {{ text.atoms(fill.atoms) }}.
+        </p>
+      </aside>
     </div>
 
     <div class="crystal-viewer__bar">
@@ -324,12 +421,89 @@ const choose = (next: Structure) => {
 
 /* ------------------------------------------------------------------- stage */
 
+/* The unit cell sits beside the main view on a wide screen and under it on a narrow one. */
+.crystal-viewer__grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.crystal-viewer__grid.is-collapsed {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .crystal-viewer__stage {
   position: relative;
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
+}
+
+.crystal-viewer__stage--inset {
+  aspect-ratio: 1 / 1;
+}
+
+.crystal-viewer__occupancy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.crystal-viewer__fill {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  color: var(--vp-c-text-2);
+}
+
+.crystal-viewer__fill-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.crystal-viewer__meter {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--vp-c-divider);
+  overflow: hidden;
+}
+
+.crystal-viewer__meter-filled {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--vp-c-brand-1);
+}
+
+.crystal-viewer__occupancy-note {
+  margin: 0;
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: var(--vp-c-text-3);
+}
+
+@media (min-width: 760px) {
+  .crystal-viewer__grid {
+    grid-template-columns: minmax(0, 1fr) 12.5rem;
+  }
+
+  /* With the panel away the block gets the whole width, which is what the reader asked for. */
+  .crystal-viewer__grid.is-collapsed {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .crystal-viewer__stage--inset {
+    flex: 1 1 auto;
+    aspect-ratio: auto;
+    min-height: 9rem;
+  }
 }
 
 .crystal-viewer__canvas {
@@ -375,6 +549,12 @@ const choose = (next: Structure) => {
 .crystal-viewer__tools button:hover {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
+}
+
+.crystal-viewer__tools button.is-current {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
 }
 
 .crystal-viewer__tools svg {

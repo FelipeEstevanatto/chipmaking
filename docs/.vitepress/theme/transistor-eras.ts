@@ -38,9 +38,9 @@ export const ERAS: Era[] = [
       'Calculadoras de bolso e os primeiros microprocessadores MOS; a família NMOS 6502 equipou o Apple II, o Commodore 64 e o NES.',
     productsEn:
       'Pocket calculators and the first MOS microprocessors; the NMOS 6502 family powered the Apple II, Commodore 64 and NES.',
-    src: '/pdf-images/p17-1.png',
-    altPt: 'Transistor MOSFET planar',
-    altEn: 'Planar MOSFET transistor',
+    src: '/assets/mosfet-planar.svg',
+    altPt: 'Vista isométrica de um MOSFET planar: o silício à frente da área ativa foi removido, e a face dianteira do bloco é um corte transversal por fonte, canal e dreno, com a porta de alumínio cruzando sobre o óxido de porta',
+    altEn: 'Isometric view of a planar MOSFET: the silicon in front of the active area is cut away, so the front face of the slab is a section through source, channel and drain, with the aluminium gate crossing over the gate oxide',
   },
   {
     year: '1963',

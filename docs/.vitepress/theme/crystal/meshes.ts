@@ -31,7 +31,9 @@ export function sphereMesh(longitudes = 20, latitudes = 14): Mesh {
     for (let longitude = 0; longitude < longitudes; longitude += 1) {
       const a = latitude * (longitudes + 1) + longitude
       const b = a + longitudes + 1
-      indices.push(a, b, a + 1, b, b + 1, a + 1)
+      // Wound counter-clockwise seen from outside, like the cylinder below, so a shader that asks
+      // whether a fragment is a front face gets the answer it expects.
+      indices.push(a, a + 1, b, b, a + 1, b + 1)
     }
   }
 
@@ -64,6 +66,8 @@ export function cylinderMesh(segments = 18): Mesh {
     const b = segment + 1
     const c = segments + 1 + segment
     const d = segments + 1 + segment + 1
+    // Counter-clockwise seen from outside: a bond's visible side is then a front face, which is what
+    // its ink edge and highlight hang on, and the inside the panel cuts open is a back one.
     indices.push(a, c, b, b, c, d)
   }
 
@@ -80,8 +84,10 @@ export function cylinderMesh(segments = 18): Mesh {
       normals.push(0, height === 0 ? -1 : 1, 0)
     }
 
+    // The fan of the lower cap winds one way and the upper one the other, so both face outwards.
     for (let segment = 0; segment < segments; segment += 1) {
-      indices.push(centre, ring + segment, ring + segment + 1)
+      if (height === 0) indices.push(centre, ring + segment, ring + segment + 1)
+      else indices.push(centre, ring + segment + 1, ring + segment)
     }
   }
 

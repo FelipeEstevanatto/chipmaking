@@ -2,7 +2,7 @@
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useIsEnglish } from './locale'
 import { FURNACE_STAGES } from './furnace-stages'
-import { DARK, FurnaceScene, LIGHT, SCENE_H, SCENE_W } from './furnace-scene'
+import { DARK, FurnaceScene, LIGHT, SCENE_H, SCENE_W, type Pick, type Tooltip } from './furnace-scene'
 
 /**
  * The chemistry inside the submerged-arc furnace, drawn as an animated canvas.
@@ -30,10 +30,14 @@ const canvasRef = ref<HTMLCanvasElement | null>(null)
 const rootRef = ref<HTMLElement | null>(null)
 
 /** How long an autoplaying stage holds before the next one takes over. */
-const DWELL = 5600
+const DWELL = 9200
 
 const scene = new FurnaceScene()
 const reduced = ref(false)
+
+/** The name of whatever the pointer is on, drawn by the scene; null when it is on nothing. */
+let tooltip: Tooltip | null = null
+let hovered: Pick | null = null
 
 let ctx: CanvasRenderingContext2D | null = null
 let raf = 0
@@ -60,7 +64,20 @@ const labels = computed(() => ({
   legend: isEnglish.value
     ? 'Si silicon · O oxygen · C carbon — a schematic of the bond changes, not a balanced atom count'
     : 'Si silício · O oxigênio · C carbono — esquema das trocas de ligação, não uma contagem balanceada de átomos',
+  hint: isEnglish.value
+    ? 'Point at an atom to see its name.'
+    : 'Aponte para um átomo para ver o nome dele.',
+  names: isEnglish.value
+    ? { Si: 'Silicon (Si)', O: 'Oxygen (O)', C: 'Carbon (C)', CO: 'Carbon monoxide (CO)', SiO: 'Silicon monoxide (SiO)' }
+    : { Si: 'Silício (Si)', O: 'Oxigênio (O)', C: 'Carbono (C)', CO: 'Monóxido de carbono (CO)', SiO: 'Monóxido de silício (SiO)' },
 }))
+
+/** Turns whatever the pointer found into the name shown in the canvas. */
+function nameOf(hit: Pick): string {
+  if (hit.kind === 'atom' && hit.element) return labels.value.names[hit.element]
+  if (hit.kind === 'molecule' && hit.molecule) return labels.value.names[hit.molecule]
+  return ''
+}
 
 const palette = () => (dark ? DARK : LIGHT)
 
@@ -84,7 +101,47 @@ function paint() {
   if (!ctx) return
   // The scene transform set in `resize` is still in place, so this clears the whole canvas.
   ctx.clearRect(0, 0, SCENE_W, SCENE_H)
-  scene.draw(ctx, palette())
+  scene.draw(ctx, palette(), tooltip)
+}
+
+/** Canvas pixels to scene units, for pointer hit-testing. */
+function toScene(event: PointerEvent) {
+  const canvas = canvasRef.value
+  if (!canvas) return null
+  const rect = canvas.getBoundingClientRect()
+  if (!rect.width) return null
+  return {
+    x: ((event.clientX - rect.left) * SCENE_W) / rect.width,
+    y: ((event.clientY - rect.top) * SCENE_H) / rect.height,
+  }
+}
+
+function onPointerMove(event: PointerEvent) {
+  const point = toScene(event)
+  if (!point) return
+  const hit = scene.pick(point.x, point.y)
+  const same = hit && hovered && hit.id === hovered.id
+  hovered = hit
+  scene.highlighted = hit ? hit.id : null
+  if (!hit) {
+    tooltip = null
+    return
+  }
+  if (same) {
+    // Keep following the actor, which may still be travelling.
+    if (tooltip) {
+      tooltip.x = hit.x
+      tooltip.y = hit.y
+    }
+    return
+  }
+  tooltip = { text: nameOf(hit), x: hit.x, y: hit.y }
+}
+
+function onPointerLeave() {
+  hovered = null
+  tooltip = null
+  scene.highlighted = null
 }
 
 function goTo(index: number) {
@@ -183,12 +240,22 @@ onBeforeUnmount(() => {
       </li>
     </ol>
 
-    <canvas ref="canvasRef" class="fc-canvas" role="img" :aria-label="labels.canvas" />
+    <canvas
+      ref="canvasRef"
+      class="fc-canvas"
+      role="img"
+      :aria-label="labels.canvas"
+      @pointermove="onPointerMove"
+      @pointerdown="onPointerMove"
+      @pointerleave="onPointerLeave"
+      @pointercancel="onPointerLeave"
+    />
 
     <div class="fc-caption">
       <p class="fc-equation">{{ current.equation }}</p>
       <p class="fc-note">{{ text(current.note) }}</p>
       <p class="fc-legend">{{ labels.legend }}</p>
+      <p class="fc-hint">{{ labels.hint }}</p>
     </div>
   </div>
 </template>
@@ -300,6 +367,12 @@ onBeforeUnmount(() => {
 
 .fc-legend {
   margin: 0;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+
+.fc-hint {
+  margin: 0.15rem 0 0;
   font-size: 0.78rem;
   color: var(--vp-c-text-3);
 }

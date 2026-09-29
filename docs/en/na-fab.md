@@ -209,7 +209,7 @@ In the paper that consolidated the technique, the authors distinguish two modes:
 
 The transistor is the famous part, but it occupies a small fraction of the volume of a modern chip. Above it sits a **city of wires**, the BEOL, distributing signal, power and clock to billions of devices across dozens of stacked levels.
 
-For a long time those wires were **aluminium**. In **September 1997**, IBM announced the first manufacturable integrated **copper** interconnect technology, and began shipping product in 1998 <Cite id="ibm-copper" />. The gain was not cosmetic: copper conducts about **twice** as well as aluminium, with wire resistance about **40 to 45% lower**, and **electromigration** lifetime more than **two orders of magnitude** longer <Cite id="ibm-cu-electroplating" />.
+For a long time those wires were **aluminium**. In **September 1997**, IBM announced the first manufacturable integrated **copper** interconnect technology, and began shipping product in 1998 <Cite id="ibm-copper" />. The gain was not cosmetic: copper wiring showed **40 to 45% lower resistance** than aluminium and a substantial improvement in **electromigration** resistance <Cite id="ibm-cu-electroplating" />.
 
 The reason for the switch became clear in the same period. As wires grew thinner and closer together, the **RC time constant** of the wire grew while the intrinsic delay of the transistor fell. Around **0.25 µm** the two curves crossed: the **wire became slower than the gate** <Cite id="mpr-rc-limits" />. The ITRS itself recorded the problem, noting that RC delay had come to be dominated by **global interconnect** and that changing materials alone was not enough <Cite id="itrs-interconnect" />.
 
