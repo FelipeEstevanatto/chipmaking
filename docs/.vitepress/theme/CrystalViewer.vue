@@ -57,6 +57,24 @@ const occupancyRef = ref<HTMLCanvasElement | null>(null)
 const renderer = shallowRef<CrystalRenderer | null>(null)
 const occupancyRenderer = shallowRef<CrystalRenderer | null>(null)
 
+/** The two elements that can go on the whole screen: the block, and the cell with its number. */
+const stageRef = ref<HTMLElement | null>(null)
+const cellRef = ref<HTMLElement | null>(null)
+const expanded = ref<'stage' | 'cell' | null>(null)
+const canExpand = ref(false)
+
+function syncExpanded() {
+  const element = document.fullscreenElement
+  expanded.value = element === stageRef.value ? 'stage' : element === cellRef.value ? 'cell' : null
+}
+
+function toggleExpanded(which: 'stage' | 'cell') {
+  const element = which === 'stage' ? stageRef.value : cellRef.value
+  if (!element) return
+  if (document.fullscreenElement === element) void document.exitFullscreen()
+  else void element.requestFullscreen().catch(() => undefined)
+}
+
 const structure = computed(() => getStructure(selected.value))
 const crystal = computed(() => buildCrystal(structure.value, size.value))
 const legend = computed(() => legendFor(crystal.value))
@@ -91,6 +109,8 @@ const text = computed(() => ({
   zoomOut: isEnglish.value ? 'Zoom out' : 'Afastar',
   hintPointer: isEnglish.value ? 'drag to rotate · scroll to zoom' : 'arraste para girar · role para aproximar',
   hintTouch: isEnglish.value ? 'drag to rotate · pinch to zoom' : 'arraste para girar · pinça para aproximar',
+  fullscreen: isEnglish.value ? 'Full screen' : 'Tela cheia',
+  exitFullscreen: isEnglish.value ? 'Exit full screen' : 'Sair da tela cheia',
   occupancy: isEnglish.value ? 'One unit cell' : 'Uma célula unitária',
   hideCell: isEnglish.value ? 'Hide the unit cell' : 'Ocultar a célula unitária',
   showCell: isEnglish.value ? 'Show the unit cell' : 'Mostrar a célula unitária',
@@ -170,6 +190,11 @@ onMounted(() => {
   applyMotionPreference()
   paint()
 
+  // Full screen is not offered where the browser will not grant it, an embedded frame without the
+  // permission being the case a reader here would actually meet.
+  canExpand.value = document.fullscreenEnabled === true
+  document.addEventListener('fullscreenchange', syncExpanded)
+
   const inset = occupancyRef.value
   const insetRenderer = inset ? CrystalRenderer.create(inset, CELL_VIEW) : null
   if (insetRenderer) {
@@ -193,6 +218,7 @@ watch(cell, paintOccupancy)
 
 onBeforeUnmount(() => {
   motionQuery?.removeEventListener('change', applyMotionPreference)
+  document.removeEventListener('fullscreenchange', syncExpanded)
   themeObserver?.disconnect()
   renderer.value?.dispose()
   occupancyRenderer.value?.dispose()
@@ -260,7 +286,7 @@ const choose = (next: Structure) => {
     </div>
 
     <div class="crystal-viewer__grid" :class="{ 'is-collapsed': !showCell }">
-      <div class="crystal-viewer__stage">
+      <div ref="stageRef" class="crystal-viewer__stage">
         <canvas
           ref="canvasRef"
           class="crystal-viewer__canvas"
@@ -283,6 +309,21 @@ const choose = (next: Structure) => {
             <svg viewBox="0 0 20 20" aria-hidden="true">
               <rect x="3" y="4" width="14" height="12" rx="2" />
               <path d="M12.5 4v12" />
+            </svg>
+          </button>
+          <button
+            v-if="canExpand"
+            type="button"
+            :title="expanded === 'stage' ? text.exitFullscreen : text.fullscreen"
+            :aria-label="expanded === 'stage' ? text.exitFullscreen : text.fullscreen"
+            :aria-pressed="expanded === 'stage'"
+            @click="toggleExpanded('stage')"
+          >
+            <svg v-if="expanded === 'stage'" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M17 8h-5V3M12 8l4.5-4.5M3 12h5v5M8 12l-4.5 4.5" />
+            </svg>
+            <svg v-else viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M12 3h5v5M17 3l-4.5 4.5M8 17H3v-5M3 17l4.5-4.5" />
             </svg>
           </button>
           <button type="button" :title="text.zoomIn" :aria-label="text.zoomIn" @click="renderer?.zoomBy(0.85)">
@@ -310,9 +351,25 @@ const choose = (next: Structure) => {
         </p>
       </div>
 
-      <aside v-show="showCell && !failed" class="crystal-viewer__occupancy">
+      <aside v-show="showCell && !failed" ref="cellRef" class="crystal-viewer__occupancy">
         <div class="crystal-viewer__stage crystal-viewer__stage--inset">
           <canvas ref="occupancyRef" class="crystal-viewer__canvas" aria-hidden="true" />
+          <div v-if="canExpand" class="crystal-viewer__tools crystal-viewer__tools--inset">
+            <button
+              type="button"
+              :title="expanded === 'cell' ? text.exitFullscreen : text.fullscreen"
+              :aria-label="expanded === 'cell' ? text.exitFullscreen : text.fullscreen"
+              :aria-pressed="expanded === 'cell'"
+              @click="toggleExpanded('cell')"
+            >
+              <svg v-if="expanded === 'cell'" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M17 8h-5V3M12 8l4.5-4.5M3 12h5v5M8 12l-4.5 4.5" />
+              </svg>
+              <svg v-else viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M12 3h5v5M17 3l-4.5 4.5M8 17H3v-5M3 17l4.5-4.5" />
+              </svg>
+            </button>
+          </div>
         </div>
         <p class="crystal-viewer__fill">
           <span class="crystal-viewer__fill-value">{{ percent }}%</span>
@@ -564,6 +621,72 @@ const choose = (next: Structure) => {
   stroke: currentColor;
   stroke-width: 1.6;
   stroke-linecap: round;
+}
+
+/* The unit cell is a small panel, so its buttons come down to its size. */
+.crystal-viewer__tools--inset button {
+  width: 24px;
+  height: 24px;
+}
+
+.crystal-viewer__tools--inset svg {
+  width: 13px;
+  height: 13px;
+}
+
+/*
+ * Full screen. The drawing keeps the page's own background rather than the black a backdrop would
+ * show, and the controls grow with it. The unit cell takes its percentage and its model line along,
+ * which is the reason it expands the panel and not just the canvas: a number left behind on a page
+ * the reader can no longer see is worse than no number.
+ */
+.crystal-viewer__stage:fullscreen {
+  border: 0;
+  border-radius: 0;
+  background: var(--vp-c-bg-soft);
+}
+
+.crystal-viewer__stage:fullscreen .crystal-viewer__hint {
+  font-size: 0.85rem;
+}
+
+.crystal-viewer__occupancy:fullscreen {
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+}
+
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__stage {
+  width: min(100%, calc(100vh - 14rem));
+  margin: 0 auto;
+}
+
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__fill {
+  font-size: 1rem;
+}
+
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__fill-value {
+  font-size: 2.2rem;
+}
+
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__occupancy-note {
+  font-size: 0.95rem;
+}
+
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__meter {
+  height: 10px;
+}
+
+.crystal-viewer__stage:fullscreen .crystal-viewer__tools button,
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__tools button {
+  width: 36px;
+  height: 36px;
+}
+
+.crystal-viewer__stage:fullscreen .crystal-viewer__tools svg,
+.crystal-viewer__occupancy:fullscreen .crystal-viewer__tools svg {
+  width: 18px;
+  height: 18px;
 }
 
 .crystal-viewer__hint {
