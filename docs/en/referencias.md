@@ -11,9 +11,9 @@ In footnote style: each **\[n\]** in the text points to the entry below. Where a
 
 <RefList />
 
-## USGS — annual reports (metallurgical silicon)
+## USGS — annual reports (silicon metal and ferrosilicon)
 
-Annual USGS series for metallurgical silicon; the 2024–2026 editions are the source of the [production estimates table](/en/introducao#producao-estimada) and the interactive chart:
+Annual USGS series for silicon metal and ferrosilicon; the 2024–2026 editions, which report the two products separately, are the source of the [production estimates table](/en/introducao#producao-estimada) and the interactive chart. The 2020–2023 editions published only the two added together, on a silicon-content basis:
 
 <UsgsMcsLinks />
 

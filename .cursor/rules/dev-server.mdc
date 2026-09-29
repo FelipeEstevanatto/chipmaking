@@ -1,0 +1,13 @@
+---
+description: The VitePress dev server is pinned to port 5000 and is normally already running; reuse it
+alwaysApply: true
+---
+
+# Reuse the dev server on port 5000
+
+The VitePress dev server is fixed to port 5000 (`bun run dev` in `package.json`) and is normally
+already running.
+
+- Check `http://localhost:5000` before starting anything; if it answers, use it.
+- Never start a second dev server, and never change the port.
+- Do not restart or stop the running instance unless the user asks.

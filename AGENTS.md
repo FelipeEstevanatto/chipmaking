@@ -6,6 +6,12 @@ in `docs/.vitepress/theme/*.vue`, the drawings in `docs/public/assets/`, and com
 Two halves. First how the site is put together, then how it reads. Both apply while writing, not as a
 cleanup pass afterwards.
 
+## Dev server
+
+The VitePress dev server is pinned to port 5000 (`bun run dev` in `package.json`) and is normally
+already running. Reuse the live instance: open `http://localhost:5000` instead of starting a second
+server, and do not restart or move it without being asked.
+
 ## Sources
 
 Every factual claim carries a `<Cite id="…" />` that resolves to a key in
@@ -68,6 +74,9 @@ prose from props goes on the audit's ignore list.
 - `theme/charts/specs.ts` is the single source for every chart. A spec is deliberately serialisable,
   no functions, because `scripts/export-chart-data.ts` reads the same list into
   `docs/public/data/<slug>.csv`. Run it after touching a series; the chart and the CSV cannot diverge.
+- A chart that shares its series with a table reads the series from a module, never from a second
+  copy. `theme/usgs-silicon.ts` feeds the interactive USGS chart and the production table in the
+  Introduction, and names the edition behind each column.
 - A chart in Markdown goes inside `<ClientOnly>`. Without it the caption text lands in the built HTML
   and counts as a glossary first use the plugin cannot reach.
 - Captions render as plain text, so no `[links](…)` and no `**bold**` inside a spec.

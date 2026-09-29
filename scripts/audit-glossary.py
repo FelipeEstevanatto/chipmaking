@@ -91,7 +91,8 @@ class Annotated(HTMLParser):
             return "code"
         if any(c in classes for c in ("transistor-timeline", "transistor-facts",
                                       "see-also", "glossary", "doc-meta", "build-footer",
-                                      "data-chart", "furnace-chemistry", "crystal-viewer")):
+                                      "data-chart", "furnace-chemistry", "crystal-viewer",
+                                      "usgs-production-table")):
             return "foreign"
         if "a" in tags:
             return "link"

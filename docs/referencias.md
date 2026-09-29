@@ -11,9 +11,9 @@ No estilo de notas de rodapé: cada **\[n\]** no texto aponta para a entrada aba
 
 <RefList />
 
-## USGS — relatórios anuais (silício metálico)
+## USGS — relatórios anuais (silício metálico e ferrossilício)
 
-Série anual do USGS para silício metálico; as edições de 2024 a 2026 são a fonte da [tabela de produção estimada](/introducao#producao-estimada) e do gráfico interativo:
+Série anual do USGS para silício metálico e ferrossilício; as edições de 2024 a 2026, que trazem os dois produtos separados, são a fonte da [tabela de produção estimada](/introducao#producao-estimada) e do gráfico interativo. As edições de 2020 a 2023 publicavam só o total dos dois somados, em teor de silício:
 
 <UsgsMcsLinks />
 

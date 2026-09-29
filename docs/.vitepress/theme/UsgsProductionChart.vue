@@ -3,37 +3,46 @@ import { onMounted, ref, watch } from 'vue'
 import { withBase } from 'vitepress'
 import type { Chart as ChartInstance } from 'chart.js/auto'
 import { useIsEnglish, useLocalePath } from './locale'
+import {
+  USGS_SILICON_PRODUCERS,
+  USGS_SILICON_PRODUCT_NAMES,
+  USGS_SILICON_YEARS,
+} from './usgs-silicon'
+import type { UsgsSiliconProduct } from './usgs-silicon'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const isEnglish = useIsEnglish()
 const localePath = useLocalePath()
 
-const years = ['2020', '2021', '2022', '2023', '2024', '2025']
-
-/** Index at which USGS figures stop being reported output and become estimates. */
-const ESTIMATE_FROM = 4
-const pointStyle = years.map((_, i) => (i >= ESTIMATE_FROM ? 'rectRot' : 'circle'))
-const pointRadius = pointStyle.map((style) => (style === 'circle' ? 3 : 5))
-
-/** Every row of the production table, so the chart and table never disagree. */
-const producers = [
-  { pt: 'China', en: 'China', data: [1700, 2300, 2100, 2300, 2300, 2300], color: '#2b6cb0', fill: true },
-  { pt: 'Rússia', en: 'Russia', data: [54, 54, 50, 50, 50, 50], color: '#e53e3e' },
-  { pt: 'Brasil', en: 'Brazil', data: [207, 199, 210, 210, 210, 210], color: '#38a169' },
-  { pt: 'Noruega', en: 'Norway', data: [105, 122, 120, 120, 120, 120], color: '#805ad5' },
-  { pt: 'Estados Unidos', en: 'United States', data: [88, 113, 110, 110, 110, 110], color: '#dd6b20' },
-  { pt: 'França', en: 'France', data: [32, 47, 40, 40, 40, 40], color: '#a0aec0' },
-  {
-    pt: 'Mundo - total',
-    en: 'World - total',
-    data: [2600, 3300, 3000, 3300, 3300, 3300],
-    color: '#4a5568',
-    dashed: true,
-  },
-]
-
+/** Which product the chart is showing; the table above carries both at once. */
+const product = ref<UsgsSiliconProduct>('metal')
 const logScale = ref(false)
 let chart: ChartInstance | undefined
+
+function productName(id: UsgsSiliconProduct) {
+  const names = USGS_SILICON_PRODUCT_NAMES[id]
+  return isEnglish.value ? names.en : names.pt
+}
+
+function datasets() {
+  return USGS_SILICON_PRODUCERS.map((producer) => ({
+    label: `${isEnglish.value ? producer.en : producer.pt} (kt)`,
+    data: producer[product.value],
+    borderColor: producer.color,
+    backgroundColor: producer.fill ? 'rgba(43, 108, 176, 0.15)' : 'transparent',
+    borderDash: producer.total ? [6, 4] : undefined,
+    pointBackgroundColor: producer.color,
+    pointHoverRadius: 6,
+    tension: 0.2,
+    fill: !!producer.fill,
+  }))
+}
+
+function chartTitle() {
+  return isEnglish.value
+    ? `${productName(product.value)} production (thousand tonnes)`
+    : `Produção de ${productName(product.value).toLowerCase()} (milhares de toneladas)`
+}
 
 onMounted(async () => {
   if (!canvasRef.value) return
@@ -42,20 +51,8 @@ onMounted(async () => {
   chart = new Chart(canvasRef.value, {
     type: 'line',
     data: {
-      labels: years,
-      datasets: producers.map((producer) => ({
-        label: `${isEnglish.value ? producer.en : producer.pt} (kt)`,
-        data: producer.data,
-        borderColor: producer.color,
-        backgroundColor: producer.fill ? 'rgba(43, 108, 176, 0.15)' : 'transparent',
-        borderDash: producer.dashed ? [6, 4] : undefined,
-        pointBackgroundColor: producer.color,
-        pointStyle,
-        pointRadius,
-        pointHoverRadius: 6,
-        tension: 0.2,
-        fill: !!producer.fill,
-      })),
+      labels: USGS_SILICON_YEARS.map(String),
+      datasets: datasets(),
     },
     options: {
       responsive: true,
@@ -63,12 +60,7 @@ onMounted(async () => {
       interaction: { mode: 'nearest', intersect: false },
       plugins: {
         legend: { position: 'bottom' },
-        title: {
-          display: true,
-          text: isEnglish.value
-            ? 'Metallurgical silicon production (thousand tonnes)'
-            : 'Produção de silício metálico (milhares de toneladas)',
-        },
+        title: { display: true, text: chartTitle() },
       },
       scales: {
         y: {
@@ -78,6 +70,14 @@ onMounted(async () => {
       },
     },
   })
+})
+
+watch(product, () => {
+  if (!chart) return
+  chart.data.datasets = datasets()
+  const title = chart.options.plugins?.title
+  if (title) title.text = chartTitle()
+  chart.update()
 })
 
 watch(logScale, (enabled) => {
@@ -93,6 +93,11 @@ watch(logScale, (enabled) => {
 <template>
   <div class="chart-panel">
     <p class="chart-controls">
+      <button type="button" @click="product = product === 'metal' ? 'ferro' : 'metal'">
+        {{ isEnglish
+          ? (product === 'metal' ? 'Show ferrosilicon' : 'Show silicon metal')
+          : (product === 'metal' ? 'Ver ferrossilício' : 'Ver silício metálico') }}
+      </button>
       <button type="button" @click="logScale = !logScale">
         {{ logScale
           ? (isEnglish ? 'Linear scale' : 'Escala linear')
@@ -103,19 +108,21 @@ watch(logScale, (enabled) => {
       ref="canvasRef"
       role="img"
       :aria-label="isEnglish
-        ? 'Metallurgical silicon production by country, 2020 to 2025'
-        : 'Produção de silício metálico por país, 2020 a 2025'"
+        ? `${productName(product)} production by country, 2022 to 2025`
+        : `Produção de ${productName(product).toLowerCase()} por país, 2022 a 2025`"
     />
     <p class="chart-caption">
       <small v-if="isEnglish">
-        Diamond points (2024–2025) are USGS estimates. Source: USGS Mineral Commodity
-        Summaries (2020–2025) - see the per-year links in
+        Silicon metal and ferrosilicon, 2022–2025, from the USGS editions of 2024 to 2026; each
+        point is the most recent estimate published for that year, and the editions revise earlier
+        years. Source: the series links in
         <a :href="withBase(localePath('/referencias'))">References</a> or the table in
         <a :href="withBase(localePath('/introducao#producao-estimada'))">Introduction</a>.
       </small>
       <small v-else>
-        Pontos em losango (2024–2025) são estimativas do USGS. Fonte: USGS Mineral
-        Commodity Summaries (2020–2025) - ver links por ano em
+        Silício metálico e ferrossilício, 2022 a 2025, das edições de 2024 a 2026 do USGS; cada
+        ponto é a estimativa mais recente publicada para o ano, e as edições revisam os anos
+        anteriores. Fonte: ver os links da série em
         <a :href="withBase(localePath('/referencias'))">Referências</a> ou na tabela em
         <a :href="withBase(localePath('/introducao#producao-estimada'))">Introdução</a>.
       </small>
@@ -126,7 +133,9 @@ watch(logScale, (enabled) => {
 <style scoped>
 .chart-controls {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+  gap: 0.5rem;
   margin: 0 0 0.5rem;
 }
 
