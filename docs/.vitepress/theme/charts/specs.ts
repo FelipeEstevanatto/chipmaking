@@ -1,4 +1,7 @@
-import type { ChartSpec } from './types'
+import type { ChartLabel, ChartSpec } from './types'
+
+/** A blank category tick: the bathtub chart names only the two ends of its time axis. */
+const blank: ChartLabel = { pt: '', en: '' }
 
 /**
  * Every chart on the site, keyed by id. Markdown refers to one with
@@ -42,7 +45,7 @@ export const CHARTS: Record<string, ChartSpec> = {
           { x: 5.431, y: 1.12, label: 'Si' },
           { x: 5.658, y: 0.66, label: 'Ge' },
           { x: 3.073, y: 3.26, label: '4H-SiC' },
-          { x: 3.567, y: 5.47, label: 'Diamante' },
+          { x: 3.567, y: 5.47, label: { pt: 'Diamante', en: 'Diamond' } },
         ],
       },
     ],
@@ -63,7 +66,7 @@ export const CHARTS: Record<string, ChartSpec> = {
     schematic: true,
     xLabel: { pt: 'Tempo em operação', en: 'Time in operation' },
     yLabel: { pt: 'Taxa de falhas (esquema)', en: 'Failure rate (schematic)' },
-    labels: ['0', '', '', '', '', '', '', '', '', '10 anos'],
+    labels: [0, blank, blank, blank, blank, blank, blank, blank, blank, { pt: '10 anos', en: '10 years' }],
     datasets: [
       {
         pt: 'Taxa instantânea',
@@ -93,11 +96,11 @@ export const CHARTS: Record<string, ChartSpec> = {
     xLabel: { pt: 'Participação do líder (%)', en: 'Leader share (%)' },
     yLabel: { pt: '', en: '' },
     labels: [
-      'Quartzo HPQ — Spruce Pine',
-      'Polissilício — China',
-      'Wafers 300 mm — cinco maiores',
-      'Neônio grau semicondutor — Ucrânia',
-      'Litografia EUV — ASML',
+      { pt: 'Quartzo HPQ — Spruce Pine', en: 'HPQ quartz — Spruce Pine' },
+      { pt: 'Polissilício — China', en: 'Polysilicon — China' },
+      { pt: 'Wafers 300 mm — cinco maiores', en: '300 mm wafers — five largest' },
+      { pt: 'Neônio grau semicondutor — Ucrânia', en: 'Semiconductor-grade neon — Ukraine' },
+      { pt: 'Litografia EUV — ASML', en: 'EUV lithography — ASML' },
     ],
     datasets: [
       {
@@ -132,11 +135,11 @@ export const CHARTS: Record<string, ChartSpec> = {
     xLabel: { pt: 'Eficiência (%)', en: 'Efficiency (%)' },
     yLabel: { pt: '', en: '' },
     labels: [
-      'Módulo de silício comercial',
-      'Célula de laboratório (mono-Si)',
-      'Célula de perovskita (laboratório)',
-      'Tandem perovskita–silício (laboratório)',
-      'Célula concentradora (laboratório)',
+      { pt: 'Módulo de silício comercial', en: 'Commercial silicon module' },
+      { pt: 'Célula de laboratório (mono-Si)', en: 'Laboratory cell (mono-Si)' },
+      { pt: 'Célula de perovskita (laboratório)', en: 'Perovskite cell (laboratory)' },
+      { pt: 'Tandem perovskita–silício (laboratório)', en: 'Perovskite–silicon tandem (laboratory)' },
+      { pt: 'Célula concentradora (laboratório)', en: 'Concentrator cell (laboratory)' },
     ],
     datasets: [
       {
@@ -221,7 +224,14 @@ export const CHARTS: Record<string, ChartSpec> = {
     type: 'bar',
     xLabel: { pt: 'Frequência máxima estável (GHz)', en: 'Highest stable frequency (GHz)' },
     yLabel: { pt: 'Fatia do lote (%)', en: 'Share of the batch (%)' },
-    labels: ['4.8', '4.9', '5.0', '5.1', '5.2', '5.3'],
+    labels: [
+      { pt: '4,8', en: '4.8' },
+      { pt: '4,9', en: '4.9' },
+      { pt: '5,0', en: '5.0' },
+      { pt: '5,1', en: '5.1' },
+      { pt: '5,2', en: '5.2' },
+      { pt: '5,3', en: '5.3' },
+    ],
     datasets: [
       { pt: 'Core i7-8700K', en: 'Core i7-8700K', color: '#2b6cb0', data: [1, 16, 34, 32, 13, 4] },
       { pt: 'Core i7-8086K', en: 'Core i7-8086K', color: '#ed8936', data: [0, 0, 6, 29, 50, 15] },

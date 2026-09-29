@@ -190,7 +190,7 @@ O HBM é um padrão JEDEC, e a evolução das versões é a própria história d
 Cada geração dobra algo: a taxa por pino, a largura da interface ou a contagem de canais. O resultado composto é o salto que se vê no gráfico.
 </DiagramFigure>
 
-O HBM4 mostra por que essa memória **não pode** ser um módulo encaixado. O padrão dobra a interface de **1.024 para 2.048 bits** e os canais de **16 para 32 por pilha**, com velocidade de até **8 Gb/s** e densidades de **4 a 64 GB** <Cite id="jedec-hbm4" />.
+O HBM4 mostra por que essa memória **não pode** ser um módulo encaixado. O padrão dobra a interface de **1.024 para 2.048 bits** e os canais de **16 para 32 por pilha**, com velocidade de até **8 Gb/s**, dies de **24 ou 32 Gb** em pilhas de **4, 8, 12 ou 16 camadas** e até **64 GB** por cubo <Cite id="jedec-hbm4" />.
 
 Do lado do processador, isso significa uma contagem de trilhas que não tem como existir em placa: são **mais de mil fios** entre o acelerador e uma única pilha de HBM já na geração HBM3E, densidade **impossível de rotear** em substrato orgânico ou placa de circuito <Cite id="semianalysis-hbm" />. No HBM4, são **2.048 fios de dados** e cerca de **3.000 trilhas** contando clock, controle e endereço <Cite id="rambus-hbm" />.
 

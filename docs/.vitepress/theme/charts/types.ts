@@ -12,6 +12,21 @@
  * here rather than as an exception in the component.
  */
 
+/** A string a chart draws: a word that has to be authored once per locale. */
+export type ChartText = { pt: string; en: string }
+
+/**
+ * A category label. A number is its own label in either language; a word carries both locales, so a
+ * chart cannot draw Portuguese under an English caption — the type is what enforces that.
+ */
+export type ChartLabel = number | ChartText
+
+/**
+ * A point's name in a scatter tooltip. A symbol that reads the same in both languages (GaAs, Si)
+ * stays a plain string; a word is paired like every other string a chart draws.
+ */
+export type ChartName = string | ChartText
+
 /** One series. Labels are authored per locale; the numbers never are. */
 export interface ChartDataset {
   pt: string
@@ -21,7 +36,7 @@ export interface ChartDataset {
    * `{ x, y, label }` points for a scatter. `label` survives in `ctx.raw`, which is how a scatter
    * point gets a name in its tooltip.
    */
-  data: number[] | Array<[number, number]> | Array<{ x: number; y: number; label?: string }>
+  data: number[] | Array<[number, number]> | Array<{ x: number; y: number; label?: ChartName }>
   color: string
   /** Paired with `logY`, so toggling the axis cannot hide which series was the reference fit. */
   dashed?: boolean
@@ -33,13 +48,13 @@ export interface ChartSpec {
   type: 'line' | 'bar' | 'scatter'
   /** Horizontal bars read as a ranking, which is what the chokepoint chart is. */
   horizontal?: boolean
-  xLabel: { pt: string; en: string }
-  yLabel: { pt: string; en: string }
+  xLabel: ChartText
+  yLabel: ChartText
   /** Category labels for `line` and `bar`; unused by `scatter`. */
-  labels?: Array<string | number>
+  labels?: ChartLabel[]
   datasets: ChartDataset[]
   /** Right-hand second axis, for a series whose unit differs from the left one. */
-  y2Label?: { pt: string; en: string }
+  y2Label?: ChartText
   logY?: boolean
   /** Readers can switch a log axis back to linear, as in the USGS chart. */
   toggleLogY?: boolean
@@ -48,7 +63,7 @@ export interface ChartSpec {
    * The caption must say so, in both locales.
    */
   schematic?: boolean
-  caption: { pt: string; en: string }
+  caption: ChartText
   /** Keys from `citations.ts`, rendered as [n] after the caption. */
   sourceIds: string[]
   /** File name under `docs/public/data/`. */

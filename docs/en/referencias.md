@@ -13,7 +13,7 @@ In footnote style: each **\[n\]** in the text points to the entry below. Where a
 
 ## USGS — annual reports (metallurgical silicon)
 
-Annual USGS series for metallurgical silicon; the 2026 edition is the source of the [production estimates table](/en/introducao#producao-estimada) and the interactive chart:
+Annual USGS series for metallurgical silicon; the 2024–2026 editions are the source of the [production estimates table](/en/introducao#producao-estimada) and the interactive chart:
 
 <UsgsMcsLinks />
 

@@ -190,7 +190,7 @@ HBM is a JEDEC standard, and the evolution of its versions is the history of the
 Each generation doubles something: the per-pin rate, the interface width or the channel count. The compound result is the jump visible in the chart.
 </DiagramFigure>
 
-HBM4 shows why this memory **cannot** be a plug-in module. The standard doubles the interface from **1,024 to 2,048 bits** and the channels from **16 to 32 per stack**, with speeds up to **8 Gb/s** and densities from **4 to 64 GB** <Cite id="jedec-hbm4" />.
+HBM4 shows why this memory **cannot** be a plug-in module. The standard doubles the interface from **1,024 to 2,048 bits** and the channels from **16 to 32 per stack**, with speeds up to **8 Gb/s**, dies of **24 or 32 Gb** in **4-, 8-, 12- or 16-high stacks**, and up to **64 GB** per cube <Cite id="jedec-hbm4" />.
 
 On the processor side, that means a trace count that has no way of existing on a board: there are already **more than a thousand wires** between the accelerator and a single HBM stack at the HBM3E generation, a density **impossible to route** on an organic substrate or circuit board <Cite id="semianalysis-hbm" />. In HBM4 there are **2,048 data wires** and about **3,000 traces** once clock, control and address are counted <Cite id="rambus-hbm" />.
 

@@ -13,7 +13,7 @@ No estilo de notas de rodapé: cada **\[n\]** no texto aponta para a entrada aba
 
 ## USGS — relatórios anuais (silício metálico)
 
-Série anual do USGS para silício metálico; a edição de 2026 é a fonte da [tabela de produção estimada](/introducao#producao-estimada) e do gráfico interativo:
+Série anual do USGS para silício metálico; as edições de 2024 a 2026 são a fonte da [tabela de produção estimada](/introducao#producao-estimada) e do gráfico interativo:
 
 <UsgsMcsLinks />
 

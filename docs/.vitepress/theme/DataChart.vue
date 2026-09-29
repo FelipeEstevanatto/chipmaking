@@ -3,6 +3,7 @@ import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { withBase } from 'vitepress'
 import type { Chart as ChartInstance } from 'chart.js/auto'
 import { CHARTS } from './charts'
+import type { ChartName, ChartText } from './charts/types'
 import { useIsEnglish, useLocalePath } from './locale'
 import Cite from './Cite.vue'
 
@@ -32,7 +33,10 @@ if (!spec) {
   console.warn(`[DataChart] unknown chart id: ${props.chart}`)
 }
 
-const text = (value: { pt: string; en: string }) => (isEnglish.value ? value.en : value.pt)
+const text = (value: ChartText) => (isEnglish.value ? value.en : value.pt)
+
+/** A point's name: a symbol both languages share, or a word that carries both. */
+const name = (value: ChartName) => (typeof value === 'string' ? value : text(value))
 
 let chart: ChartInstance | undefined
 
@@ -60,7 +64,8 @@ onMounted(async () => {
   chart = new Chart(canvasRef.value, {
     type: spec.type,
     data: {
-      labels: spec.labels,
+      // Category labels switch locale like the axis titles do; a plain number is its own label.
+      labels: spec.labels?.map((label) => (typeof label === 'number' ? label : text(label))),
       datasets: spec.datasets.map(datasetFor),
     },
     options: {
@@ -74,9 +79,9 @@ onMounted(async () => {
           callbacks: {
             // Scatter points carry their material name on the raw object; bars and lines do not.
             label: (ctx) => {
-              const raw = ctx.raw as { x?: number; y?: number; label?: string } | number | [number, number]
-              if (typeof raw === 'object' && raw !== null && 'label' in raw && raw.label) {
-                return `${raw.label}: (${(raw as { x: number }).x}, ${(raw as { y: number }).y})`
+              const raw = ctx.raw as { x?: number; y?: number; label?: ChartName } | number | [number, number]
+              if (typeof raw === 'object' && raw !== null && 'label' in raw && raw.label !== undefined) {
+                return `${name(raw.label)}: (${(raw as { x: number }).x}, ${(raw as { y: number }).y})`
               }
               if (Array.isArray(raw)) return `${ctx.dataset.label}: ${raw[0]}–${raw[1]}`
               return `${ctx.dataset.label}: ${ctx.formattedValue}`
