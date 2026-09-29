@@ -12,6 +12,21 @@ The VitePress dev server is pinned to port 5000 (`bun run dev` in `package.json`
 already running. Reuse the live instance: open `http://localhost:5000` instead of starting a second
 server, and do not restart or move it without being asked.
 
+## Scratch files
+
+Anything an agent downloads, caches or generates along the way (PDFs, screenshots, preview
+harnesses, one-off scripts) goes in `.temp/` at the repo root, which is gitignored. Scratch files
+belong nowhere else, and nothing in that folder ships.
+
+## Home page
+
+The landing page is built from three components rather than VitePress `features`: `HomeSections`
+renders the cards from `theme/home-sections.ts`, `ChainFlow` draws the production route from
+`theme/chain.ts` (shared with `SupplyChainMap`, so the strip and the page cannot drift), and
+`HeroWafer` is the hero drawing. The icons and the stage colours live in `theme/stage-visuals.ts`;
+a card stores the accent key, never a hex. The cards' and the flow's classes are on the glossary
+audit's ignore list.
+
 ## Sources
 
 Every factual claim carries a `<Cite id="…" />` that resolves to a key in
@@ -288,15 +303,17 @@ list where two sentences of prose read better. No header over a two-sentence sec
 
 ## Em dashes
 
-The appositive dash (a pair setting off a clause) is part of the author's voice and can stay. But
-**any line carrying two or more em dashes is a cluster** and should be thinned to commas,
-parentheses, a colon, or a split sentence. Watch for the `— …,` sequence, which is always a mistake.
+The `no-ai-slop` skill lets the appositive dash stay; this repo does not. Avoid the em dash: it
+has become a tell of machine-written prose, and there is always a better mark, whether a comma,
+parentheses, a colon, or a second sentence. Rewrite the dash out; do not trade it for a semicolon,
+which only dresses the same habit differently.
 
 Never touch an em dash that is data:
 
 - empty-cell placeholders in tables (`| O | 3 000 | < 10 | — | — |`);
 - bibliography separators and dashes inside a cited title in `referencias.md`;
-- dashes in URLs, file names, or slugs.
+- dashes in URLs, file names, or slugs;
+- site and page titles (`Silício — Chip Making`), which are names rather than prose.
 
 ## Fundamentals
 

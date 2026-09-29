@@ -1,72 +1,43 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useData, withBase } from 'vitepress'
+import {
+  CHAIN_CHIP_BRANCH,
+  CHAIN_LABELS,
+  CHAIN_SOLAR_BRANCH,
+  CHAIN_UPSTREAM,
+} from './chain'
+import type { ChainNode } from './chain'
 
 /**
  * Persistent orientation strip for the nine production chapters.
  *
  * The docs are a *chain*, but they read as a flat list of pages: nothing tells a reader what sits
- * upstream or downstream of the page they are on. This renders the whole route - including the
- * point where the wafer forks into a solar branch and a chip branch - and marks the current page.
+ * upstream or downstream of the page they are on. This renders the whole route, including the
+ * point where the wafer forks into a solar branch and a chip branch, and marks the current page.
  *
- * It is mounted globally through the `doc-before` slot (see Layout.vue) and renders nothing on
- * pages that are not part of the chain (home, glossary, timeline, references), so chapters do not
- * have to opt in individually.
+ * The route itself lives in `chain.ts`, shared with the home-page flow, so the two renderings
+ * cannot drift. This component is mounted globally through the `doc-before` slot (see Layout.vue)
+ * and renders nothing on pages that are not part of the chain (home, glossary, timeline,
+ * references), so chapters do not have to opt in individually.
  */
-
-interface ChainNode {
-  pt: string
-  en: string
-  /** Portuguese content path; English is derived by prefixing `/en`. */
-  path: string
-  /** Supporting chapter for this step - related, but not part of the production flow. */
-  extra?: { pt: string; en: string; path: string }
-}
 
 const { page, lang } = useData()
 
 const isEnglish = computed(() => String(lang.value).toLowerCase().startsWith('en'))
 
-/** Shared trunk: everything before the wafer is common to both industries. */
-const upstream: ChainNode[] = [
-  { pt: 'Quartzo + MG-Si', en: 'Quartz + MG-Si', path: '/mineracao-mg-si' },
-  { pt: 'Polissilício', en: 'Polysilicon', path: '/polissilicio' },
-  {
-    pt: 'Lingote e wafer',
-    en: 'Ingot and wafer',
-    path: '/fabricacao-wafers',
-    extra: { pt: 'Estrutura e tipos', en: 'Crystal structure', path: '/estrutura-wafers' },
-  },
-]
-
-const solarBranch: ChainNode[] = [
-  { pt: 'Células e módulos', en: 'Cells and modules', path: '/celulas-solares' },
-]
-
-const chipBranch: ChainNode[] = [
-  {
-    pt: 'Fotolitografia',
-    en: 'Photolithography',
-    path: '/fotolitografia',
-    extra: {
-      pt: 'História da fotolitografia',
-      en: 'History of photolithography',
-      path: '/historia-fotolitografia',
-    },
-  },
-  { pt: 'Transistores', en: 'Transistors', path: '/transistores' },
-]
-
-const allNodes = computed<ChainNode[]>(() => [
-  ...upstream,
-  ...solarBranch,
-  ...chipBranch,
-  ...upstream.flatMap((n) => (n.extra ? [{ ...n.extra, path: n.extra.path }] : [])),
-  ...chipBranch.flatMap((n) => (n.extra ? [{ ...n.extra, path: n.extra.path }] : [])),
-])
+const pick = (text: { pt: string; en: string }) => (isEnglish.value ? text.en : text.pt)
 
 const localize = (path: string) => (isEnglish.value ? `/en${path}` : path)
 const label = (node: { pt: string; en: string }) => (isEnglish.value ? node.en : node.pt)
+
+/** Every path the chain touches, side chapters included. */
+const chainPaths = computed(() =>
+  [...CHAIN_UPSTREAM, ...CHAIN_SOLAR_BRANCH, ...CHAIN_CHIP_BRANCH].flatMap((node) => [
+    node.path,
+    ...(node.extra ? [node.extra.path] : []),
+  ]),
+)
 
 /** `polissilicio.md` -> `/polissilicio`; `en/index.md` -> `/en/`. */
 const currentPath = computed(() => {
@@ -77,18 +48,14 @@ const currentPath = computed(() => {
 })
 
 /** Chapters outside the production chain get no strip at all. */
-const isChainPage = computed(() =>
-  allNodes.value.some((node) => localize(node.path) === currentPath.value),
-)
+const isChainPage = computed(() => chainPaths.value.some((path) => localize(path) === currentPath.value))
 
 const isCurrent = (node: ChainNode) => localize(node.path) === currentPath.value
 
-const title = computed(() => (isEnglish.value ? 'In the silicon chain' : 'Na cadeia do silício'))
-const forkLabel = computed(() =>
-  isEnglish.value ? 'the wafer forks into two destinations' : 'o wafer se divide em dois destinos',
-)
-const solarTag = computed(() => (isEnglish.value ? 'photovoltaics' : 'fotovoltaica'))
-const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondutores'))
+const title = computed(() => pick(CHAIN_LABELS.title))
+const forkLabel = computed(() => pick(CHAIN_LABELS.fork))
+const solarTag = computed(() => pick(CHAIN_LABELS.solar))
+const chipTag = computed(() => pick(CHAIN_LABELS.chip))
 </script>
 
 <template>
@@ -96,7 +63,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
     <p class="chain-map__title">{{ title }}</p>
 
     <ol class="chain-map__row">
-      <li v-for="(node, i) in upstream" :key="node.path" class="chain-map__item">
+      <li v-for="(node, i) in CHAIN_UPSTREAM" :key="node.path" class="chain-map__item">
         <a
           :href="withBase(localize(node.path))"
           :class="['chain-map__chip', { 'is-current': isCurrent(node) }]"
@@ -109,7 +76,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
           :class="['chain-map__side', { 'is-current': isCurrent({ ...node, path: node.extra.path }) }]"
           >{{ label(node.extra) }}</a
         >
-        <span v-if="i < upstream.length - 1" class="chain-map__arrow" aria-hidden="true">→</span>
+        <span v-if="i < CHAIN_UPSTREAM.length - 1" class="chain-map__arrow" aria-hidden="true">→</span>
       </li>
     </ol>
 
@@ -119,7 +86,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
       <div class="chain-map__branch">
         <span class="chain-map__tag">{{ solarTag }}</span>
         <a
-          v-for="node in solarBranch"
+          v-for="node in CHAIN_SOLAR_BRANCH"
           :key="node.path"
           :href="withBase(localize(node.path))"
           :class="['chain-map__chip', { 'is-current': isCurrent(node) }]"
@@ -130,7 +97,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
 
       <div class="chain-map__branch">
         <span class="chain-map__tag">{{ chipTag }}</span>
-        <template v-for="(node, i) in chipBranch" :key="node.path">
+        <template v-for="(node, i) in CHAIN_CHIP_BRANCH" :key="node.path">
           <a
             :href="withBase(localize(node.path))"
             :class="['chain-map__chip', { 'is-current': isCurrent(node) }]"
@@ -143,7 +110,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
             :class="['chain-map__side', { 'is-current': isCurrent({ ...node, path: node.extra.path }) }]"
             >{{ label(node.extra) }}</a
           >
-          <span v-if="i < chipBranch.length - 1" class="chain-map__arrow" aria-hidden="true">→</span>
+          <span v-if="i < CHAIN_CHIP_BRANCH.length - 1" class="chain-map__arrow" aria-hidden="true">→</span>
         </template>
       </div>
     </div>
@@ -204,7 +171,7 @@ const chipTag = computed(() => (isEnglish.value ? 'semiconductors' : 'semicondut
   color: var(--vp-c-brand-1);
 }
 
-/* The reader's own chapter - deliberately the only high-contrast element. */
+/* The reader's own chapter: deliberately the only high-contrast element. */
 .chain-map__chip.is-current {
   border-color: var(--vp-c-brand-1);
   background: var(--vp-c-brand-1);

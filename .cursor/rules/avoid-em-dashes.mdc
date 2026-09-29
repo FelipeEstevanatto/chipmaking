@@ -1,0 +1,13 @@
+---
+description: Avoid em dashes in written text; they read as machine-written prose
+alwaysApply: true
+---
+
+# Avoid em dashes
+
+Do not write em dashes in prose. Rewrite them into a comma, parentheses, a colon, or a second
+sentence. Swapping the dash for a semicolon keeps the same habit in different clothes.
+
+Data dashes stay untouched: empty-cell placeholders in tables, bibliography separators, dashes
+inside a cited title, dashes in URLs and file names, and site or page titles such as
+`Silício — Chip Making`.

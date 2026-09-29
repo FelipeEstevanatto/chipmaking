@@ -5,6 +5,8 @@ import YouTubeEmbed from './YouTubeEmbed.vue'
 import VideoPressEmbed from './VideoPressEmbed.vue'
 import UsgsProductionChart from './UsgsProductionChart.vue'
 import UsgsProductionTable from './UsgsProductionTable.vue'
+import HomeSections from './HomeSections.vue'
+import ChainFlow from './ChainFlow.vue'
 import DataChart from './DataChart.vue'
 import FurnaceChemistry from './FurnaceChemistry.vue'
 import TransistorFacts from './TransistorFacts.vue'
@@ -30,6 +32,8 @@ export default {
     app.component('VideoPressEmbed', VideoPressEmbed)
     app.component('UsgsProductionChart', UsgsProductionChart)
     app.component('UsgsProductionTable', UsgsProductionTable)
+    app.component('HomeSections', HomeSections)
+    app.component('ChainFlow', ChainFlow)
     app.component('DataChart', DataChart)
     app.component('FurnaceChemistry', FurnaceChemistry)
     app.component('TransistorFacts', TransistorFacts)

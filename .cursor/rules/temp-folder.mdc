@@ -1,0 +1,14 @@
+---
+description: Downloads, caches and generated scratch files belong in the gitignored .temp/ folder
+alwaysApply: true
+---
+
+# Scratch files live in `.temp/`
+
+Whatever an agent needs to download, cache or generate (PDFs, screenshots, preview harnesses,
+one-off scripts) goes in `.temp/` at the repository root. The folder is gitignored, so nothing in
+it can reach a commit.
+
+- Create the folder on demand.
+- Keep scratch artefacts out of the tracked tree.
+- Delete the contents once they stop being useful.

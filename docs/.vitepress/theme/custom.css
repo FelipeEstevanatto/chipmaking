@@ -218,8 +218,42 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
   max-height: 360px;
 }
 
-.supply-chain {
-  margin: 2rem 0;
+/*
+ * Home: the reading path as a numbered trail. The list is the page's own syllabus, so the number
+ * gets a chip of its own instead of the default marker, which is too small to scan at this width.
+ */
+.reading-path ol {
+  counter-reset: reading-step;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.reading-path li {
+  counter-increment: reading-step;
+  position: relative;
+  margin-bottom: 0.8rem;
+  padding-left: 2.4rem;
+  line-height: 1.6;
+}
+
+.reading-path li::before {
+  content: counter(reading-step);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand-1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 /* --- Citations (Wikipedia-style) --- */
