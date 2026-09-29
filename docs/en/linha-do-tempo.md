@@ -24,7 +24,7 @@ More context and Bernreuter charts in [Polysilicon](/en/polissilicio).
 
 ## Transistor architecture
 
-All fifteen generations, each with the transistor's structure and examples of the products that used it. The component below is generated from the same list the [transistor evolution](/en/transistores) chapter uses, so the chronology and the chapter cannot diverge — click to enlarge:
+All fourteen generations, each with the transistor's structure and examples of the products that used it. The component below is generated from the same list the [transistor evolution](/en/transistores) chapter uses, so the chronology and the chapter cannot diverge — click to enlarge:
 
 <ClientOnly>
   <TransistorTimeline />

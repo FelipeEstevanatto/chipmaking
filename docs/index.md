@@ -37,7 +37,7 @@ A cadeia tem uma ordem, e a barra lateral a numera. Se você está começando, s
 6. [Estrutura e tipos](/estrutura-wafers): a rede cristalina, a dopagem e como ler um wafer.
 7. [Na fab](/na-fab): a fábrica como laço, da oxidação à implantação.
 8. [Fotolitografia](/fotolitografia): como o desenho é impresso, do DUV ao High-NA.
-9. [Evolução dos transistores](/transistores): as quinze gerações, do planar ao CFET.
+9. [Evolução dos transistores](/transistores): as catorze gerações, do planar ao CFET.
 10. [Confiabilidade](/confiabilidade): por que um chip deixa de funcionar.
 11. [Empacotamento e teste](/empacotamento): do wafer fatiado ao produto vendável.
 

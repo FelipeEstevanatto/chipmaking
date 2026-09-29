@@ -84,7 +84,7 @@ A monocrystalline ingot (*boule*) and silicon rods. Sebastian Wallroth — <a hr
 
 ## Wafer slicing
 
-The ground ingot is **divided into blocks** and sliced using **diamond wire saws (DWS)** <Cite id="moller-2012" />. A parallel set of steel wires coated with diamond microparticles moves at very high speed under controlled tension, cutting hundreds of wafers simultaneously at typical thicknesses of **700–800 µm**, maximising yield and reducing **kerf** loss.
+The ground ingot is **divided into blocks** and sliced using **diamond wire saws (DWS)** <Cite id="moller-2012" />. A parallel set of steel wires coated with diamond microparticles moves at very high speed under controlled tension, cutting hundreds of wafers simultaneously, maximising yield and reducing **kerf** loss.
 
 ### From the inner-diameter saw to diamond wire
 
@@ -96,7 +96,7 @@ The turning point came with the **multi-wire saw**. At first the wire cut nothin
 
 The third stage is under way. With **diamond wire**, the abrasive leaves the slurry and becomes **fixed to the wire itself** — steel coated with diamond. Throughput rises, kerf falls, the slice can be thinner, and the process does away with SiC slurry in favour of a water-based cutting fluid with a far smaller environmental footprint. In exchange, the wire costs more, breaks more easily and demands careful cleaning <Cite id="pv-tech-dws" />.
 
-It is worth noting that, for fab wafers, the goal of slicing is not minimum thickness: it is **flatness**. A 300 mm slice comes out at 775 µm and will *lose* material in lapping and polishing precisely to guarantee parallelism and the absence of subsurface damage <Cite id="semi-m1" />. It is in photovoltaics, which accepts slices three times thinner, that kerf becomes the decisive economic variable, as seen in [Solar wafers](#solar-wafers-the-other-product-of-the-same-chain).
+For fab wafers, the goal of slicing is not minimum thickness: it is **flatness**. A 300 mm slice leaves the saw **thicker than the 775 µm of the final spec** and will *lose* material in lapping and polishing precisely to guarantee parallelism and the absence of subsurface damage <Cite id="semi-m1" />. It is in photovoltaics, which accepts slices about four to five times thinner, that kerf becomes the decisive economic variable, as seen in [Solar wafers](#solar-wafers-the-other-product-of-the-same-chain).
 
 ## Edge profiling and lapping
 

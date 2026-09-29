@@ -40,7 +40,7 @@ The second chart is not a measurement: it is the **Poisson model** of yield, eva
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Doubling a die's area cuts yield by **more than half**, and the loss grows with defect density — the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividir-para-render) instead of continuing to enlarge the monolithic die. The Poisson model is optimistic at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
+Doubling a die's area **costs more than twice as much per good die**: at D₀ = 0.1 defect/cm², yield falls from 90% to 82% when the area doubles from 1 to 2 cm². That is the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividing-in-order-to-yield) instead of continuing to enlarge the monolithic die. The Poisson model is conservative at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
 
 ## Binning by frequency
 

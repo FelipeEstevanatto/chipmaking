@@ -40,7 +40,7 @@ O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimen
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Dobrar a área de um die derruba o rendimento **mais que pela metade**, e a perda cresce com a densidade de defeitos — é o motivo econômico pelo qual dies muito grandes são raros e pelos quais a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é otimista para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
+Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
 ## Classificação por frequência
 

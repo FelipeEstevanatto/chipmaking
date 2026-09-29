@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # The chokepoint map
 
-This site describes the silicon chain step by step, and the geographical facts ended up scattered: the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine-onde-o-quartzo-e-puro-o-suficiente), [Chinese](/en/polissilicio#a-ascensao-chinesa) polysilicon, [Japanese](/en/estrutura-wafers#quem-fabrica-os-wafers) wafers, [single-source](/en/historia-fotolitografia) lithography. This page puts the pieces into one table and asks the question they do not ask separately: **what stops in the world if each of these points stops?**
+This site describes the silicon chain step by step, and the geographical facts ended up scattered: the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine-where-the-quartz-is-pure-enough), [Chinese](/en/polissilicio#the-chinese-ascent) polysilicon, [Japanese](/en/estrutura-wafers#who-makes-the-wafers) wafers, [single-source](/en/historia-fotolitografia) lithography. This page puts the pieces into one table and asks the question they do not ask separately: **what stops in the world if each of these points stops?**
 
 The answer has a pattern, and it repeats step by step.
 
@@ -51,7 +51,7 @@ Large markets should have many suppliers. Three forces push the other way.
 
 - **Idle capacity is punishingly expensive.** A polysilicon or wafer plant costs billions and has to run full. Two suppliers splitting a market of the same size both sit below break-even — it is more stable for there to be one.
 - **Qualification is an asset.** Changing a materials supplier means requalifying the process. That locks in the customer and deters the entrant, as discussed in [fab consumables](/en/insumos-fab).
-- **The risk is correlated.** When each step has one supplier, the risk of each step does not diversify: it adds up. That is the argument [wafer fabrication](/en/estrutura-wafers#quem-fabrica-os-wafers) already makes about Japan, and the one the [history of lithography](/en/historia-fotolitografia) makes about the consortium that bet on EUV when the candidate list still had six names.
+- **The risk is correlated.** When each step has one supplier, the risk of each step does not diversify: it adds up. That is the argument [wafer fabrication](/en/estrutura-wafers#who-makes-the-wafers) already makes about Japan, and the one the [history of lithography](/en/historia-fotolitografia) makes about the consortium that bet on EUV when the candidate list still had six names.
 
 The conclusion is not that the chain is fragile through carelessness. It is that it was **optimised for cost** for decades, and concentration is the result of that optimisation. The price of efficiency is the absence of a plan B.
 

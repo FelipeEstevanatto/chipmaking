@@ -49,6 +49,10 @@ PDFs remain to be spot-checked against the MCS editions.
 
 ## Open blockers (fix queue)
 
+> **Status — fixed (2026-09-29).** All ten below are applied in the working tree: `bun run build`
+> and the three audits pass, and every corrected EN anchor was checked against the built HTML.
+> The steps are kept as the record of what each fix entailed.
+
 1. **Generation count** (`index-01` + `linha-do-tempo-01` + `transistores-08`): "quinze" → "quatorze"
    and "fifteen" → "fourteen" at `docs/index.md:40`, `docs/en/index.md:40`,
    `docs/linha-do-tempo.md:27`, `docs/en/linha-do-tempo.md:27`, and the comment at

@@ -154,7 +154,7 @@ O consumo elétrico do forno fica entre **11 e 13 MWh por tonelada** de silício
 
 ### Escala e uso do MG-Si
 
-A produção mundial de MG-Si passa de **1 milhão de toneladas métricas por ano**, a um custo de poucos dólares por quilograma, conforme qualidade, pureza e granulometria <Cite id="saimm" />. A demanda vem sobretudo das **indústrias de alumínio e química**, e apenas uma fração pequena segue para refino em grau semicondutor <Cite id="saimm" />.
+A produção mundial de silício metálico foi de cerca de **4,6 milhões de toneladas** em 2025 <Cite id="usgs-mcs-2026" />, a um custo de poucos dólares por quilograma, conforme qualidade, pureza e granulometria <Cite id="saimm" />. A demanda vem sobretudo das **indústrias de alumínio e química**, e apenas uma fração pequena segue para refino em grau semicondutor <Cite id="saimm" />.
 
 Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chips. Sai como **ferrossilício**, usado na desoxidação e na liga de aços e ferros fundidos <Cite id="saimm" />. O fotovoltaico é o destino que mais cresce para o metal que segue para purificação <Cite id="saimm" />.
 
@@ -164,7 +164,7 @@ Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chi
 A planta da Elkem em Salten, em Straumen, no norte da Noruega, produz ferrossilício desde 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer']" />
+<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer', 'usgs-mcs-2026']" />
 
 <SeeAlso :links="[
   { text: 'Introdução', href: '/introducao', note: 'produção mundial de silício metálico', cite: 'usgs-mcs-2026' },

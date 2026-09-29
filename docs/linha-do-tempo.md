@@ -24,7 +24,7 @@ Mais contexto e gráficos Bernreuter em [Polissilício](/polissilicio).
 
 ## Arquitetura dos transistores
 
-As quinze gerações, cada uma com a estrutura do transistor e exemplos de produtos que a usaram. O componente abaixo é gerado a partir da mesma lista que o capítulo de [evolução dos transistores](/transistores) usa, então a cronologia e o capítulo não podem divergir — clique para ampliar:
+As catorze gerações, cada uma com a estrutura do transistor e exemplos de produtos que a usaram. O componente abaixo é gerado a partir da mesma lista que o capítulo de [evolução dos transistores](/transistores) usa, então a cronologia e o capítulo não podem divergir — clique para ampliar:
 
 <ClientOnly>
   <TransistorTimeline />

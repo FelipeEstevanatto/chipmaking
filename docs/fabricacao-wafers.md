@@ -84,7 +84,7 @@ Um lingote monocristalino (*boule*) e hastes de silício. Sebastian Wallroth —
 
 ## Corte em fatias (wafer slicing)
 
-O lingote retificado é **dividido em blocos** e fatiado com **serras de múltiplos fios diamantados (DWS)** <Cite id="moller-2012" />. Um conjunto paralelo de fios de aço revestidos com micropartículas de diamante move-se em altíssima velocidade sob tensão controlada, cortando centenas de wafers simultaneamente, com espessuras típicas de **700–800 µm**, maximizando rendimento e reduzindo perda de **kerf**.
+O lingote retificado é **dividido em blocos** e fatiado com **serras de múltiplos fios diamantados (DWS)** <Cite id="moller-2012" />. Um conjunto paralelo de fios de aço revestidos com micropartículas de diamante move-se em altíssima velocidade sob tensão controlada, cortando centenas de wafers simultaneamente, maximizando rendimento e reduzindo perda de **kerf**.
 
 ### Da serra de disco interno ao fio diamantado
 
@@ -96,7 +96,7 @@ A virada veio com a **serra de fio múltiplo** (*multi-wire*). A princípio o fi
 
 A terceira etapa está em curso. No **fio diamantado**, o abrasivo deixa de estar na lama e passa a estar **fixo no próprio fio** — aço revestido com diamante. A produtividade sobe, o *kerf* cai, a lâmina pode ser mais fina e o processo dispensa a lama de SiC, trocando-a por fluido de corte à base de água, com impacto ambiental menor. Em contrapartida, o fio custa mais, quebra com mais facilidade e exige limpeza criteriosa <Cite id="pv-tech-dws" />.
 
-Vale notar que, nos wafers de fab, o objetivo do corte não é a espessura mínima: é a **planura**. Uma lâmina de 300 mm sai com 775 µm e vai *perder* material na lapidação e no polimento, justamente para garantir paralelismo e ausência de dano subsuperficial <Cite id="semi-m1" />. É no ramo fotovoltaico, que aceita lâminas três vezes mais finas, que o *kerf* se torna a variável econômica decisiva, como se vê em [Wafers solares](#wafers-solares-o-outro-produto-da-mesma-cadeia).
+Nos wafers de fab, o objetivo do corte não é a espessura mínima: é a **planura**. A lâmina de 300 mm sai da serra **mais espessa que os 775 µm do padrão final** e vai *perder* material na lapidação e no polimento, justamente para garantir paralelismo e ausência de dano subsuperficial <Cite id="semi-m1" />. É no ramo fotovoltaico, que aceita lâminas cerca de quatro a cinco vezes mais finas, que o *kerf* se torna a variável econômica decisiva, como se vê em [Wafers solares](#wafers-solares-o-outro-produto-da-mesma-cadeia).
 
 ## Arredondamento de bordas e lapidação
 

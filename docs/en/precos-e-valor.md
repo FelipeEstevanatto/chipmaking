@@ -39,7 +39,7 @@ At the other end of the chain, the module price fell for a different reason: sca
 
 Missing from the table is the rung most interesting to anyone trying to understand the real cost of a chip: the **wafer price**, and above all the price of a wafer **processed** at a leading-edge node.
 
-It is absent because it is not published in a comparable way. Wafer supply contracts are negotiated case by case and covered by confidentiality, so the numbers that circulate in presentations rarely have a primary source behind them — the same problem this site already recorded when handling wafer makers' market share in [crystal structure](/en/estrutura-wafers#quem-fabrica-os-wafers), where the round "60%" figure did not survive the data.
+It is absent because it is not published in a comparable way. Wafer supply contracts are negotiated case by case and covered by confidentiality, so the numbers that circulate in presentations rarely have a primary source behind them — the same problem this site already recorded when handling wafer makers' market share in [crystal structure](/en/estrutura-wafers#who-makes-the-wafers), where the round "60%" figure did not survive the data.
 
 The practical consequence is a reading rule: **when a rung is presented as a closed number, ask where it came from**. Where a public index exists (as with polysilicon contract prices) the series is auditable; where it does not, what exists is a consultancy estimate.
 

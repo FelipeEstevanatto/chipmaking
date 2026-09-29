@@ -271,7 +271,7 @@ Os extremos recentes mostram o tamanho do movimento: em **junho de 2020** o pre�
 
 ### A inversão da demanda
 
-Em **1995**, cerca de 90% da demanda global por polissilício ia para semicondutores e 10% para fotovoltaica <Cite id="bernreuter" />. Em **2014**, a proporção inverteu-se: o setor fotovoltaico passou a consumir a esmagadora maioria, elevando a demanda de **1.500 toneladas** (1995) para **420.000 toneladas** (2018).
+Em **1995**, cerca de 90% da demanda global por polissilício ia para semicondutores e 10% para fotovoltaica <Cite id="bernreuter" />. Em **2014**, a proporção inverteu-se: o setor fotovoltaico passou a consumir a esmagadora maioria, e a demanda do setor saiu de **1.500 toneladas** (1995) para cerca de **250.000 toneladas** (2014) e **420.000 toneladas** em 2018 <Cite id="bernreuter" />.
 
 <DiagramFigure src="/pdf-images/p05-1.png" alt="Demanda de polissilício semicondutores vs fotovoltaica 1995 e 2014">
 Inversão das fatias de mercado e crescimento de **18,4×** entre 1995 e 2014 (15,1 kt → 278 kt).

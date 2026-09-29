@@ -271,7 +271,7 @@ The recent extremes show the scale of the movement: in **June 2020** the spot pr
 
 ### The demand inversion
 
-In **1995**, about 90% of global polysilicon demand went to semiconductors and 10% to photovoltaics <Cite id="bernreuter" />. By **2014** the proportions had reversed completely: the photovoltaic sector consumed the overwhelming majority, raising demand from **1,500 tonnes** (1995) to **420,000 tonnes** (2018).
+In **1995**, about 90% of global polysilicon demand went to semiconductors and 10% to photovoltaics <Cite id="bernreuter" />. By **2014** the proportions had reversed completely: the photovoltaic sector consumed the overwhelming majority, and its demand climbed from **1,500 tonnes** (1995) to about **250,000 tonnes** (2014) and **420,000 tonnes** in 2018 <Cite id="bernreuter" />.
 
 <DiagramFigure src="/pdf-images/p05-1.png" alt="Polysilicon demand, semiconductors vs photovoltaics, 1995 and 2014">
 Inversion of market shares and **18.4×** growth between 1995 and 2014 (15.1 kt → 278 kt).

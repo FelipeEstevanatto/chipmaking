@@ -154,7 +154,7 @@ The furnace's own electricity consumption runs at **11 to 13 MWh per tonne** of 
 
 ### Scale and uses of MG-Si
 
-World MG-Si production exceeds **1 million metric tonnes per year**, at a cost of a few US dollars per kilogram depending on quality, purity and particle size <Cite id="saimm" />. Demand comes mainly from the **aluminium and chemical industries**, and only a small fraction goes on to be refined to semiconductor grade <Cite id="saimm" />.
+World silicon-metal production was about **4.6 million tonnes** in 2025 <Cite id="usgs-mcs-2026" />, at a cost of a few US dollars per kilogram depending on quality, purity and particle size <Cite id="saimm" />. Demand comes mainly from the **aluminium and chemical industries**, and only a small fraction goes on to be refined to semiconductor grade <Cite id="saimm" />.
 
 Much of the silicon made in these furnaces never becomes MG-Si for chemicals or chips. It leaves as **ferrosilicon**, used to deoxidise and alloy steel and cast iron <Cite id="saimm" />. Photovoltaics is the fastest-growing outlet for the metal that does go on to be purified <Cite id="saimm" />.
 
@@ -164,7 +164,7 @@ That set of factors, not the ore, is what decides where a plant is built.
 Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer']" />
+<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer', 'usgs-mcs-2026']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs-2026' },

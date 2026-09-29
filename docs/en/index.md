@@ -37,7 +37,7 @@ The chain has an order, and the sidebar numbers it. If you are starting out, fol
 6. [Crystal structure](/en/estrutura-wafers): the lattice, doping, and how to read a wafer.
 7. [In the fab](/en/na-fab): the factory as a loop, from oxidation to implant.
 8. [Photolithography](/en/fotolitografia): how the pattern is printed, from DUV to High-NA.
-9. [Transistor evolution](/en/transistores): the fifteen generations, from planar to CFET.
+9. [Transistor evolution](/en/transistores): the fourteen generations, from planar to CFET.
 10. [Reliability](/en/confiabilidade): why a chip stops working.
 11. [Packaging and test](/en/empacotamento): from sliced wafer to sellable product.
 

@@ -74,7 +74,7 @@ The parameters follow the material. For silicon the spindle runs at **30,000 rpm
 
 Three situations pushed the industry toward alternatives.
 
-The first is the **fragility of low-k dielectrics**. The *low-k* films of the [BEOL](/en/na-fab) are mechanically weak and are **easily damaged** by blade dicing, which motivated the search for other methods <Cite id="ectc-2016-dicing" />.
+The first is the **fragility of low-k dielectrics**. The *low-k* films of the [BEOL](/en/na-fab#interconnection-the-part-of-the-chip-nobody-sees) are mechanically weak and are **easily damaged** by blade dicing, which motivated the search for other methods <Cite id="ectc-2016-dicing" />.
 
 The second is **chipping in thin wafers**. In a wafer **25 µm** thick (a common figure today in stacked memory), a standard blade causes substantial backside chipping; much finer grit is required <Cite id="disco-thin-wafer" />.
 
