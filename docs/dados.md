@@ -30,6 +30,10 @@ A curva mais citada da indústria é também a mais difícil de atribuir, porque
 | 2020 | Apple M1 | **16 bilhões** | 5 nm | <Cite id="apple-m1" /> |
 | 2024 | Apple M4 | **28 bilhões** | 3 nm | <Cite id="apple-m4" /> |
 
+<DiagramFigure src="/assets/die-80386.jpg" alt="Fotografia do die de um Intel 80386 DX, com faixas regulares de células repetidas emolduradas por blocos irregulares de lógica e por uma borda de pads">
+O die do Intel 80386, o chip de 1985 da tabela: 275.000 transistores <Cite id="dados-transistor-count" />. As faixas de blocos densos e repetitivos são as matrizes de PLA e ROM, onde a mesma célula se repete em grade; entre elas ficam os blocos irregulares da lógica e dos caminhos de dados, e na borda a moldura de pads de contato. Pauli Rautakorpi — <a href="https://commons.wikimedia.org/wiki/File:Intel_80386_DX_die.JPG" target="_blank" rel="noopener noreferrer">Intel 80386 DX die</a> (CC BY 3.0, imagem reduzida), Wikimedia Commons.
+</DiagramFigure>
+
 A leitura da série muda com o botão acima. Em escala linear, as últimas duas linhas achatam todo o resto e a impressão de continuidade da lei de Moore desaparece. Em escala **logarítmica**, o que se vê é uma reta: crescimento **exponencial** com tempo de duplicação de poucos anos, e é essa regularidade que a indústria perseguiu por décadas.
 
 O ponto mais recente da série é de 2024. O **M6**, anunciado em agosto de 2026 e estreando no Mac mini, é o primeiro chip da Apple em **2 nm**, mas o comunicado descreve apenas “densidade maior de transistores num die menor” e não publica a contagem <Cite id="apple-m6" />. O valor de **cerca de 46 bilhões de transistores** que aparece em resumos de terceiros não tem fonte primária que o sustente, e o chip também não está na compilação que sustenta a tabela. O M6 fica de fora da série, pela mesma regra que vale para o resto do site: um número sem fonte não entra no texto.
@@ -43,6 +47,12 @@ O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimen
 </ClientOnly>
 
 Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
+
+O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o **fator de agrupamento** α do binomial negativo: em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson; conforme α desce, eles chegam em blocos, a maior parte dos dies sai limpa e as falhas se concentram em poucos. O Poisson não vê isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
+
+<ClientOnly>
+  <YieldExplorer />
+</ClientOnly>
 
 ## Classificação por frequência
 

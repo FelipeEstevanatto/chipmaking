@@ -18,6 +18,7 @@ import UsgsMcsLinks from './UsgsMcsLinks.vue'
 import SeeAlso from './SeeAlso.vue'
 import SupplyChainMap from './SupplyChainMap.vue'
 import CrystalViewer from './CrystalViewer.vue'
+import YieldExplorer from './YieldExplorer.vue'
 import ReadingProgress from './ReadingProgress.vue'
 import DocMeta from './DocMeta.vue'
 import GlossaryTable from './GlossaryTable.vue'
@@ -45,6 +46,7 @@ export default {
     app.component('SeeAlso', SeeAlso)
     app.component('SupplyChainMap', SupplyChainMap)
     app.component('CrystalViewer', CrystalViewer)
+    app.component('YieldExplorer', YieldExplorer)
     app.component('ReadingProgress', ReadingProgress)
     app.component('DocMeta', DocMeta)
     app.component('GlossaryTable', GlossaryTable)

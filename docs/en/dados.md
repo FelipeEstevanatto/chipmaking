@@ -30,6 +30,10 @@ The industry's most quoted curve is also the hardest to attribute, because no si
 | 2020 | Apple M1 | **16 billion** | 5 nm | <Cite id="apple-m1" /> |
 | 2024 | Apple M4 | **28 billion** | 3 nm | <Cite id="apple-m4" /> |
 
+<DiagramFigure src="/assets/die-80386.jpg" alt="Die photograph of an Intel 80386 DX, showing bands of repeated cells framed by irregular logic blocks and a rim of bond pads">
+The die of the Intel 80386, the 1985 chip in the table: 275,000 transistors <Cite id="dados-transistor-count" />. The bands of dense, repetitive blocks are the PLA and ROM arrays, where the same cell repeats in a grid; between them sit the irregular blocks of logic and datapath, and along the rim the frame of bond pads. Pauli Rautakorpi — <a href="https://commons.wikimedia.org/wiki/File:Intel_80386_DX_die.JPG" target="_blank" rel="noopener noreferrer">Intel 80386 DX die</a> (CC BY 3.0, downscaled), Wikimedia Commons.
+</DiagramFigure>
+
 The reading changes with the button above. On a linear scale the last two rows flatten everything before them and the impression of Moore's law continuity disappears. On a **logarithmic** scale what you see is a straight line: **exponential** growth with a doubling time of a few years, and it is that regularity the industry chased for decades.
 
 The most recent point in the series is from 2024. Announced in August 2026 and debuting in the Mac mini, the **M6** is Apple's first chip on a **2 nm** process, but the release only describes "greater transistor density into a smaller die" and does not publish the count <Cite id="apple-m6" />. The figure of **around 46 billion transistors** that appears in third-party summaries has no primary source behind it, and the chip is not in the compilation the table rests on either. The M6 stays out of the series, by the same rule that governs the rest of the site: a number without a source does not go into the text.
@@ -43,6 +47,12 @@ The second chart is not a measurement: it is the **Poisson model** of yield, eva
 </ClientOnly>
 
 Doubling a die's area **costs more than twice as much per good die**: at D₀ = 0.1 defect/cm², yield falls from 90% to 82% when the area doubles from 1 to 2 cm². That is the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividing-in-order-to-yield) instead of continuing to enlarge the monolithic die. The Poisson model is conservative at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
+
+The chart above is a curve; clustering shows up in a map. The two controls below move the die area and the **clustering factor** α of the negative binomial: at α = ∞ defects land at random across the wafer and the model is the Poisson law itself; as α falls they arrive in clumps, most dies come out clean and the failures concentrate in a few. Poisson cannot see that, which is why it understates the yield of a real wafer; the gap between the two bars is the size of the error.
+
+<ClientOnly>
+  <YieldExplorer />
+</ClientOnly>
 
 ## Binning by frequency
 
