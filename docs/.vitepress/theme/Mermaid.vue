@@ -7,7 +7,8 @@ import { onMounted, onUnmounted, ref } from 'vue'
  * This replaces `vitepress-plugin-mermaid/Mermaid.vue` through a Vite alias (see config.ts).
  * The plugin ships mermaid as a *static* import, which pulls ~450 kB of mermaid plus its
  * diagram-type chunks into the main bundle on every page. Importing it dynamically here means
- * mermaid is only downloaded on the four pages that actually contain a diagram.
+ * mermaid is only downloaded on the two pages that actually contain a diagram (`polissilicio`, both
+ * locales, carries a flowchart).
  *
  * Mermaid's own options are set below rather than in the VitePress config, because the plugin's
  * `virtual:mermaid-config` module is no longer read by this component.
@@ -34,10 +35,9 @@ async function render() {
     securityLevel: 'loose',
     theme: dark ? 'dark' : 'default',
     fontFamily: 'inherit',
-    // Timelines carry fourteen entries: squeezing them into the text column makes the labels
-    // unreadable, so let them keep their natural width and scroll sideways instead (see
-    // `.mermaid` in custom.css). Flowcharts fit the column fine.
-    timeline: { useMaxWidth: false },
+    // Flowcharts fit the prose column, so they may scale down to it. The site's chronologies used to
+    // be mermaid timelines, which were drawn at natural width and scrolled sideways; they are now
+    // `MilestoneRail.vue`, which is a Vue component and needs none of this.
     flowchart: { useMaxWidth: true },
   })
 

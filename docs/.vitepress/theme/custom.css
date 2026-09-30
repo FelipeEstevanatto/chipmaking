@@ -342,7 +342,8 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
   color: var(--vp-c-brand-1);
 }
 
-/* Mermaid diagrams (rendered client-side by theme/Mermaid.vue) */
+/* Mermaid diagrams (rendered client-side by theme/Mermaid.vue). Only flowcharts are left:
+   the site's chronologies are `MilestoneRail.vue` now, and a flowchart fits the prose column. */
 .mermaid {
   margin: 1.5rem 0;
   overflow-x: auto;
@@ -353,11 +354,6 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
-}
-
-/* Timelines render at natural width so their labels stay legible. */
-.mermaid svg[aria-roledescription='timeline'] {
-  max-width: none;
 }
 
 /* --- Build provenance bar (injected into the layout-bottom slot) --- */

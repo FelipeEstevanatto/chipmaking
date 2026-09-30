@@ -7,24 +7,16 @@ description: Da impressão por contato ao EUV — as quatro gerações ópticas,
 
 A litografia óptica passou por quatro arranjos de máquina antes de chegar ao scanner atual <Cite id="kato-litho" />. Esta página conta essa trajetória: como a indústria escolheu uma litografia de próxima geração, por que quase todas as candidatas perderam e por que o **193 nm de 2002 ainda sustenta os nós avançados**. Para como o processo funciona hoje, veja [Fotolitografia](/fotolitografia).
 
-## Linha do tempo
+A trajetória tem seis partes:
 
-```mermaid
-timeline
-    title Litografia, da máscara em contato ao EUV
-    1960 : Impressão por contato (máscara contra o wafer)
-    1973 : Impressão por proximidade (folga de ar)
-    1978 : Stepper de projeção (GCA DSW 4800, g-line 436 nm)
-    1980 : Nikon lança seu primeiro stepper comercial
-    1990 : i-line (365 nm), depois 248 nm (KrF) e 193 nm (ArF)
-    1995 : Comitê da litografia de próxima geração (NGL)
-    1996 : International SEMATECH estreita as opções
-    1998 : O campo cai para EUV e EPL
-    2001 : EPL morre por vazão e sobra um candidato
-    2002 : Burn Lin propõe imersão em água no 193 nm
-    2003 : ASML XT 1250i; a Intel abandona o 157 nm
-    2019 : EUV entra em produção de alto volume (7 nm e abaixo)
-```
+1. [As quatro gerações ópticas](#as-quatro-geracoes-opticas): os arranjos de máquina, da máscara em contato ao stepper de redução.
+2. [A lista de candidatos](#a-lista-de-candidatos): as apostas de 1995 e o destino de cada uma.
+3. [A decisão do século](#a-decisao-do-seculo): como o campo se estreitou até sobrar uma tecnologia.
+4. [Por que os concorrentes perderam](#por-que-os-concorrentes-perderam): raio X, projeção por íons e EPL.
+5. [O EUV: de raio X mole a consórcio](#o-euv-de-raio-x-mole-a-consorcio): a troca de nome e o risco assumido pela Intel.
+6. [O desvio de 157 nm e o resgate pela imersão](#o-desvio-de-157-nm-e-o-resgate-pela-imersao): a saída que salvou o 193 nm.
+
+As seções abaixo seguem essa ordem, e a cronologia completa, com a fonte de cada data, está em [Linha do tempo](#linha-do-tempo), no fim do capítulo.
 
 ## As quatro gerações ópticas
 
@@ -107,9 +99,15 @@ O 157 nm não era fácil: os materiais de lente de **fluoreto de cálcio**, o fo
 
 A saída veio de outro lugar. Em **2002**, **Burn Lin**, então na TSMC, apresentou num workshop da SEMATECH sobre 157 nm a proposta de aplicar **imersão em água** à litografia de **193 nm** que já existia. A plateia de mais de 200 pessoas reagiu com entusiasmo, e a SEMATECH assumiu o papel de consolidar as preocupações técnicas levantadas <Cite id="lin-immersion" />. A ideia era quase de graça: trocar o ar entre a última lente e o wafer por **água purificada** reduz o comprimento de onda **efetivo** de 193 nm para cerca de **135 nm** e reaproveita **óptica, máscara e fotoresistor existentes** <Cite id="asml-immersion" />.
 
-A execução foi rápida. Em **outubro de 2003** a ASML já tinha imagens de um protótipo, o **TWINSCAN AT:1150i** <Cite id="asml-immersion" />; em **3 de dezembro** do mesmo ano veio o primeiro pedido do scanner de produção **XT:1250i**, feito pela **TSMC** <Cite id="lin-immersion" />. Em **maio de 2003** a Intel abandonou o 157 nm <Cite id="asianometry-euv" />.
+A execução foi rápida. Em **maio de 2003** a Intel abandonou o 157 nm <Cite id="asianometry-euv" />; em **outubro** a ASML já tinha imagens de um protótipo, o **TWINSCAN AT:1150i** <Cite id="asml-immersion" />; e em **3 de dezembro** do mesmo ano veio o primeiro pedido do scanner de produção **XT:1250i**, feito pela **TSMC** <Cite id="lin-immersion" />.
 
 O efeito foi duplo: a imersão salvou o 193 nm e levou a indústria pelos nós de 65, 45, 32 e 22 nm sem precisar do EUV — o que empurrou o EUV ainda mais para frente. Ele só entrou em produção de alto volume nos nós de 7 nm e abaixo, cerca de **duas décadas** depois de ter sido escolhido.
+
+## Linha do tempo
+
+A cronologia reúne as datas do capítulo em ordem, da máscara em contato ao EUV.
+
+<MilestoneRail set="litho" />
 
 <SourceNote :ids="['kato-litho', 'chiphistory-litho', 'sematech-ngl', 'cset-euv', 'construction-physics-euv', 'intel-euvllc', 'spectrum-epl', 'eet-euvlith', 'lin-immersion', 'asml-immersion', 'asianometry-euv']" />
 

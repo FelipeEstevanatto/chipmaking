@@ -84,6 +84,15 @@ from props. A term may therefore appear bare near the top and be annotated furth
 first used inside an equation is annotated at its first prose mention. Any component that renders
 prose from props goes on the audit's ignore list.
 
+## Chronologies
+
+`theme/milestones.ts` holds the site's chronologies as data — `market` (polysilicon) and `litho`
+(lithography) — rendered by `MilestoneRail.vue`: one dated entry per row, each carrying the
+`citations.ts` keys behind its numbers, so the rail prints the same `[n]` markers as the prose. A new
+chronology is a data entry, never a hand-built list or a diagram. The market rail sits on the timeline
+page; the lithography rail closes `historia-fotolitografia`, because a chronology is reference
+material and never opens a chapter. The rail's class sits on the glossary audit's ignore list.
+
 ## Charts
 
 - `theme/charts/specs.ts` is the single source for every chart. A spec is deliberately serialisable,
@@ -200,8 +209,8 @@ Own schematics live in `docs/public/assets/*.svg`; PDF-extracted figures in `doc
 `YouTubeEmbed` (youtube-nocookie.com) and `VideoPressEmbed` (the PV-Manufacturing.org player) are 16:9
 and lazy-loaded; credit the source in the text and in the references. Mermaid fences render in the
 client through `theme/Mermaid.vue`, with the renderer swapped for an async import so the ~680 kB
-library is not preloaded on pages without a diagram. Timelines set `useMaxWidth: false` to keep their
-labels legible.
+library is not preloaded on pages without a diagram. The only diagram left is the flowchart on
+`polissilicio`; the site's chronologies are `MilestoneRail.vue` and need no diagram library.
 
 ## Equations
 

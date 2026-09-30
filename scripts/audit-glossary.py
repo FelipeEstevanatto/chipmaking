@@ -90,6 +90,7 @@ class Annotated(HTMLParser):
                 or "mermaid" in classes:
             return "code"
         if any(c in classes for c in ("transistor-timeline", "transistor-facts",
+                                      "milestone-rail",
                                       "see-also", "glossary", "doc-meta", "build-footer",
                                       "data-chart", "furnace-chemistry", "crystal-viewer",
                                       "yield-explorer",

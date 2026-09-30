@@ -11,6 +11,7 @@ import DataChart from './DataChart.vue'
 import FurnaceChemistry from './FurnaceChemistry.vue'
 import TransistorFacts from './TransistorFacts.vue'
 import TransistorTimeline from './TransistorTimeline.vue'
+import MilestoneRail from './MilestoneRail.vue'
 import Cite from './Cite.vue'
 import SourceNote from './SourceNote.vue'
 import RefList from './RefList.vue'
@@ -39,6 +40,7 @@ export default {
     app.component('FurnaceChemistry', FurnaceChemistry)
     app.component('TransistorFacts', TransistorFacts)
     app.component('TransistorTimeline', TransistorTimeline)
+    app.component('MilestoneRail', MilestoneRail)
     app.component('Cite', Cite)
     app.component('SourceNote', SourceNote)
     app.component('RefList', RefList)
