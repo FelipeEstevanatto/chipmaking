@@ -2,11 +2,13 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useIsEnglish } from './locale'
 import Cite from './Cite.vue'
+import { YIELD_PRESETS, type YieldPreset } from './yield-presets'
 import {
   ALPHAS,
   AREA_MAX,
   AREA_MIN,
   AREA_STEP,
+  DEFECT_DENSITIES,
   DIE_COLORS,
   WAFER_MM,
   clusteredYield,
@@ -22,13 +24,13 @@ import {
  *
  * The chapter presents `Y = e^(−D₀A)` and names the negative binomial as the correction, but the
  * correction only makes sense if you can see what clustering does to a die map. The model lives in
- * `yield-model.ts`, so this file is only the frame: two controls, the map, and the two yields side
- * by side.
+ * `yield-model.ts` and the real die areas in `yield-presets.ts`, so this file is only the frame:
+ * the presets, three controls, the map, and the two yields side by side.
  *
  * Everything the reader sees is either the model's curve or one seeded sample of it. There is no
  * animation, so reduced motion needs nothing here, and the palette is fixed rather than themed: the
- * dies have to keep their meaning against either page background. Both controls are native range
- * inputs, so the whole thing works from the keyboard.
+ * dies have to keep their meaning against either page background. Every control is a native range
+ * input or a button, so the whole thing works from the keyboard.
  *
  * It is used inside `<ClientOnly>`. The canvas is drawn on mount and the readout repeats numbers
  * that also live in the prose, so keeping it out of the server HTML keeps the glossary audit's
@@ -39,14 +41,22 @@ const isEnglish = useIsEnglish()
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const area = ref(400)
+/** Index into `DEFECT_DENSITIES`; 0.25 cm⁻² is the middle of the set the chart above plots. */
+const densityIndex = ref(2)
 const alphaIndex = ref(ALPHAS.indexOf(1))
 
+const density = computed(() => DEFECT_DENSITIES[densityIndex.value])
 const alpha = computed(() => ALPHAS[alphaIndex.value])
-const lambda = computed(() => lambdaFor(area.value))
+const lambda = computed(() => lambdaFor(area.value, density.value))
 const dies = computed(() => dieGrid(area.value))
 
-/** One seed per setting: the same controls always draw the same wafer, so two settings compare. */
-const seed = computed(() => 1000 * (alphaIndex.value + 1) + area.value)
+/**
+ * One seed per setting: the same controls always draw the same wafer, so two settings compare. The
+ * three indices are packed into one integer, and the area keeps its half millimetres.
+ */
+const seed = computed(
+  () => Math.round(area.value * 100) * 1000 + alphaIndex.value * 10 + densityIndex.value,
+)
 
 const sample = computed(() => sampleWafer(dies.value, lambda.value, alpha.value, seed.value))
 
@@ -58,6 +68,22 @@ const clean = computed(() => sample.value.filter((defects) => defects === 0).len
 function formatNumber(value: number, digits: number): string {
   const text = value.toFixed(digits)
   return isEnglish.value ? text : text.replace('.', ',')
+}
+
+/** A trailing zero is noise: 16 stays 16, 0,5 stays 0,5. */
+function formatCompact(value: number): string {
+  return Number.isInteger(value) ? String(value) : formatNumber(value, 1)
+}
+
+/** Densities need two decimals: 0,05 and 0,25 have to stay distinguishable. */
+function formatDensity(value: number): string {
+  const text = value.toFixed(2).replace(/0+$/, '').replace(/\.$/, '')
+  return isEnglish.value ? text : text.replace('.', ',')
+}
+
+/** The area as published: 750 mm², and 608,5 mm² where the die really is that size. */
+function formatArea(value: number): string {
+  return `${Number.isInteger(value) ? String(value) : formatNumber(value, 1)} mm²`
 }
 
 function formatPercent(fraction: number): string {
@@ -72,14 +98,26 @@ function goodDies(yieldFraction: number): string {
   return `${count.toLocaleString(isEnglish.value ? 'en-US' : 'pt-BR')} ${noun}`
 }
 
-const alphaText = computed(() => `α = ${Number.isFinite(alpha.value) ? alpha.value : '∞'}`)
-const areaText = computed(() => `${area.value} mm²`)
-const lambdaText = computed(() => formatNumber(lambda.value, 1))
+const areaText = computed(() => formatArea(area.value))
+const densityText = computed(() => `${formatDensity(density.value)} ${text.value.perCm2}`)
+const alphaText = computed(() => `α = ${Number.isFinite(alpha.value) ? formatCompact(alpha.value) : '∞'}`)
+const lambdaText = computed(() => formatNumber(lambda.value, lambda.value < 1 ? 2 : 1))
+
+function presetLabel(preset: YieldPreset): string {
+  return `${preset.die}, ${formatArea(preset.areaMm2)}, ${preset.year}`
+}
+
+function isActive(preset: YieldPreset): boolean {
+  return Math.abs(area.value - preset.areaMm2) < 0.01
+}
 
 const text = computed(() => {
   const en = isEnglish.value
   return {
+    presets: en ? 'Compare with published dies:' : 'Comparar com dies publicados:',
     area: en ? 'Die area' : 'Área do die',
+    density: en ? 'Defect density (D₀)' : 'Densidade de defeitos (D₀)',
+    perCm2: en ? 'defect/cm²' : 'defeito/cm²',
     clustering: en ? 'Defect clustering' : 'Agrupamento dos defeitos',
     uniform: en ? 'uniform (Poisson)' : 'uniforme (Poisson)',
     clumped: en ? 'clumped' : 'agrupado',
@@ -94,8 +132,9 @@ const text = computed(() => {
       ? 'At α = ∞ the negative binomial is the Poisson law itself, so the two curves coincide.'
       : 'Com α = ∞ o binomial negativo é o próprio Poisson, e as duas curvas coincidem.',
     note: en
-      ? 'The map is one seeded draw of the model, die by die; the two numbers are that model’s curve, not a count of the drawing.'
-      : 'O mapa é um sorteio do modelo, die a die; os dois números são a curva desse modelo, não uma contagem do desenho.',
+      ? 'The map is one seeded draw of the model, die by die; the two numbers are that model’s curve, not a count of the drawing. A preset carries only the published area of the die, and the density is yours to set: holding it equal is what makes two chips comparable.'
+      : 'O mapa é um sorteio do modelo, die a die; os dois números são a curva desse modelo, não uma contagem do desenho. Um preset traz apenas a área publicada do die, e a densidade é você quem escolhe; mantê-la igual dos dois lados é o que torna dois chips comparáveis.',
+    areas: en ? 'Die areas as published by their makers:' : 'Áreas dos dies publicadas por quem os desenhou:',
     models: en ? 'Models:' : 'Modelos:',
     canvas: en
       ? `Sampled wafer map: ${dies.value.length} dies on a 300 mm wafer, ${clean.value} of them with no defect.`
@@ -154,11 +193,31 @@ onMounted(() => {
 
 onBeforeUnmount(() => sizeObserver?.disconnect())
 
-watch([area, alphaIndex], () => paint(), { flush: 'post' })
+watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
 </script>
 
 <template>
   <div class="yield-explorer">
+    <div class="yield-explorer__presets">
+      <span class="yield-explorer__presets-label">{{ text.presets }}</span>
+      <div class="yield-explorer__preset-row" role="group" :aria-label="text.presets">
+        <button
+          v-for="preset in YIELD_PRESETS"
+          :key="preset.id"
+          type="button"
+          class="yield-explorer__preset"
+          :class="{ 'yield-explorer__preset--active': isActive(preset) }"
+          :aria-pressed="isActive(preset)"
+          :aria-label="presetLabel(preset)"
+          :title="presetLabel(preset)"
+          @click="area = preset.areaMm2"
+        >
+          <span class="yield-explorer__preset-product">{{ preset.product }}</span>
+          <span class="yield-explorer__preset-area">{{ preset.die }} · {{ formatArea(preset.areaMm2) }}</span>
+        </button>
+      </div>
+    </div>
+
     <div class="yield-explorer__grid">
       <div class="yield-explorer__panel">
         <canvas ref="canvasRef" class="yield-explorer__canvas" role="img" :aria-label="text.canvas" />
@@ -174,8 +233,28 @@ watch([area, alphaIndex], () => paint(), { flush: 'post' })
       <div class="yield-explorer__side">
         <label class="yield-explorer__control">
           <span class="yield-explorer__control-label">{{ text.area }}</span>
-          <input v-model.number="area" type="range" :min="AREA_MIN" :max="AREA_MAX" :step="AREA_STEP" />
+          <input
+            v-model.number="area"
+            type="range"
+            :min="AREA_MIN"
+            :max="AREA_MAX"
+            :step="AREA_STEP"
+            :aria-valuetext="areaText"
+          />
           <span class="yield-explorer__control-value">{{ areaText }}</span>
+        </label>
+
+        <label class="yield-explorer__control">
+          <span class="yield-explorer__control-label">{{ text.density }}</span>
+          <input
+            v-model.number="densityIndex"
+            type="range"
+            min="0"
+            :max="DEFECT_DENSITIES.length - 1"
+            step="1"
+            :aria-valuetext="densityText"
+          />
+          <span class="yield-explorer__control-value">{{ densityText }}</span>
         </label>
 
         <label class="yield-explorer__control">
@@ -236,8 +315,11 @@ watch([area, alphaIndex], () => paint(), { flush: 'post' })
       </div>
     </div>
 
-    <p class="yield-explorer__note">
-      {{ text.note }} <span class="yield-explorer__models">{{ text.models }}</span>
+    <p class="yield-explorer__note">{{ text.note }}</p>
+    <p class="yield-explorer__sources">
+      {{ text.areas }} NVIDIA (TU102, GA102, AD102, GB202) <Cite id="nvidia-ada-whitepaper" />
+      <Cite id="nvidia-blackwell-whitepaper" />, AMD (Zeppelin) <Cite id="amd-chiplet-economics" />.
+      <span class="yield-explorer__models">{{ text.models }}</span>
       <Cite id="leachman-yield" /> <Cite id="murphy-1964" />
     </p>
   </div>
@@ -250,6 +332,64 @@ watch([area, alphaIndex], () => paint(), { flush: 'post' })
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
   background: var(--vp-c-bg);
+}
+
+.yield-explorer__presets {
+  margin-bottom: 1rem;
+}
+
+.yield-explorer__presets-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--vp-c-text-3);
+}
+
+.yield-explorer__preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.yield-explorer__preset {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  font-size: 0.78rem;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+}
+
+.yield-explorer__preset:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+}
+
+.yield-explorer__preset:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 1px;
+}
+
+.yield-explorer__preset--active {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+}
+
+.yield-explorer__preset-product {
+  font-weight: 600;
+}
+
+.yield-explorer__preset-area {
+  font-size: 0.7rem;
+  color: var(--vp-c-text-3);
+  font-variant-numeric: tabular-nums;
 }
 
 .yield-explorer__grid {
@@ -417,7 +557,8 @@ watch([area, alphaIndex], () => paint(), { flush: 'post' })
   color: var(--vp-c-text-2);
 }
 
-.yield-explorer__note {
+.yield-explorer__note,
+.yield-explorer__sources {
   margin: 0.9rem 0 0;
   font-size: 0.8rem;
   line-height: 1.5;

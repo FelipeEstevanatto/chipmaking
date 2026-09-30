@@ -168,28 +168,30 @@ export const CHARTS: Record<string, ChartSpec> = {
     toggleLogY: true,
     xLabel: { pt: 'Ano', en: 'Year' },
     yLabel: { pt: 'Transistores', en: 'Transistors' },
-    labels: [1971, 1978, 1985, 1993, 2000, 2006, 2013, 2020, 2024],
+    labels: [1971, 1978, 1985, 1993, 2000, 2006, 2013, 2018, 2020, 2022, 2024, 2025],
     datasets: [
       {
         pt: 'Transistores por chip',
         en: 'Transistors per chip',
         color: '#2b6cb0',
         fill: true,
-        data: [2300, 29000, 275000, 3100000, 42000000, 291000000, 1000000000, 16000000000, 28000000000],
+        data: [2300, 29000, 275000, 3100000, 42000000, 291000000, 1000000000, 18600000000, 16000000000, 76300000000, 28000000000, 92200000000],
       },
     ],
     caption: {
       pt: 'Contagem de transistores em produtos que marcaram cada época — do Intel 4004 ao silício atual. Como as três primeiras décadas não estão tabuladas em nenhuma fonte primária única, a série é uma compilação, e a tabela do capítulo nomeia cada chip e sua fonte.',
       en: 'Transistor counts of landmark products — from the Intel 4004 to current silicon. Because the first three decades are not tabulated in any single primary source, the series is a compilation, and the chapter\'s table names each chip and its source.',
     },
-    sourceIds: ['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4'],
+    sourceIds: ['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper'],
     slug: 'transistor-count',
   },
 
   /**
    * Poisson yield model. The curve is arithmetic, not data: it is `Y = e^(-D0·A)` evaluated over
    * the defect densities the yield literature uses, and the point of the chart is the *slope* —
-   * why a die twice as large is worse than twice as costly.
+   * why a die twice as large is worse than twice as costly. The x range runs to 8 cm², which is
+   * where real flagship dies sit, just below the reticle limit; at D₀ = 1 the last two points round
+   * to zero, which is the honest end of that curve.
    */
   'yield-vs-area': {
     id: 'yield-vs-area',
@@ -197,13 +199,13 @@ export const CHARTS: Record<string, ChartSpec> = {
     toggleLogY: true,
     xLabel: { pt: 'Área do die (cm²)', en: 'Die area (cm²)' },
     yLabel: { pt: 'Rendimento Y = e^(−D₀A)', en: 'Yield Y = e^(−D₀A)' },
-    labels: [0.05, 0.1, 0.25, 0.5, 0.75, 1, 1.5, 2],
+    labels: [0.05, 0.1, 0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 6, 8],
     datasets: [
-      { pt: 'D₀ = 0,05 defeito/cm²', en: 'D₀ = 0.05 defect/cm²', color: '#2f855a', data: [100, 100, 99, 98, 96, 95, 93, 90] },
-      { pt: 'D₀ = 0,1', en: 'D₀ = 0.1', color: '#38a169', data: [100, 99, 98, 95, 93, 90, 86, 82] },
-      { pt: 'D₀ = 0,25', en: 'D₀ = 0.25', color: '#dd6b20', data: [99, 98, 94, 88, 83, 78, 69, 61] },
-      { pt: 'D₀ = 0,5', en: 'D₀ = 0.5', color: '#c53030', data: [98, 95, 88, 78, 69, 61, 47, 37] },
-      { pt: 'D₀ = 1', en: 'D₀ = 1', color: '#742a2a', data: [95, 90, 78, 61, 47, 37, 22, 14] },
+      { pt: 'D₀ = 0,05 defeito/cm²', en: 'D₀ = 0.05 defect/cm²', color: '#2f855a', data: [100, 100, 99, 98, 96, 95, 93, 90, 86, 82, 74, 67] },
+      { pt: 'D₀ = 0,1', en: 'D₀ = 0.1', color: '#38a169', data: [100, 99, 98, 95, 93, 90, 86, 82, 74, 67, 55, 45] },
+      { pt: 'D₀ = 0,25', en: 'D₀ = 0.25', color: '#dd6b20', data: [99, 98, 94, 88, 83, 78, 69, 61, 47, 37, 22, 14] },
+      { pt: 'D₀ = 0,5', en: 'D₀ = 0.5', color: '#c53030', data: [98, 95, 88, 78, 69, 61, 47, 37, 22, 14, 5, 2] },
+      { pt: 'D₀ = 1', en: 'D₀ = 1', color: '#742a2a', data: [95, 90, 78, 61, 47, 37, 22, 14, 5, 2, 0, 0] },
     ],
     caption: {
       pt: 'O modelo de Poisson do rendimento, calculado para cinco densidades de defeito. O modelo é conservador para dies grandes, e é por isso que o capítulo Na fab usa a distribuição binomial negativa; a inclinação é a lição: dobrar a área custa mais que o dobro por die bom.',

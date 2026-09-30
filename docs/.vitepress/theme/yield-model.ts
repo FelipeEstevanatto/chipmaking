@@ -8,12 +8,15 @@
  * Seeds model, and smaller α means the defects arrive in worsening clumps.
  *
  * `sampleWafer` draws exactly that mixture, die by die, so the picture and the curve come from one
- * definition. The numbers are the model's, not a measurement: D₀ is fixed at a value that makes the
- * difference legible on a 300 mm wafer, and the map is one draw of it.
+ * definition. The numbers are the model's, not a measurement: the defect density is a control the
+ * reader moves, and the map is one draw of whatever it is set to.
  */
 
-/** Defects per cm². The yield chart on the page uses the same order of magnitude. */
-export const DEFECT_DENSITY = 0.5
+/**
+ * Defect densities on offer, in defects per cm². The same five values the `/dados` chart plots, so
+ * the curve above the explorer and the explorer itself are the same function over the same set.
+ */
+export const DEFECT_DENSITIES = [0.05, 0.1, 0.25, 0.5, 1] as const
 
 /** The wafer every drawing is cut from, and how much of the rim is unusable. */
 export const WAFER_MM = 300
@@ -22,10 +25,14 @@ export const EDGE_MM = 3
 /** Clustering factors on offer, from Poisson to heavily clumped. */
 export const ALPHAS = [Infinity, 16, 8, 4, 2, 1, 0.5] as const
 
-/** Die area in mm², the other control. */
-export const AREA_MIN = 200
-export const AREA_MAX = 800
-export const AREA_STEP = 50
+/**
+ * Die area in mm², the other control. The range is the one real dies live in: the smallest chiplet
+ * on the page's preset row is ~200 mm², and no die can be drawn larger than the reticle, around
+ * 830 mm², which is why the ceiling sits just above it.
+ */
+export const AREA_MIN = 50
+export const AREA_MAX = 900
+export const AREA_STEP = 1
 
 export type DieCentre = { x: number; y: number }
 
@@ -46,9 +53,9 @@ export function dieGrid(areaMm2: number): DieCentre[] {
   return dies
 }
 
-/** Mean defects per die for a die of this area. */
-export function lambdaFor(areaMm2: number): number {
-  return (DEFECT_DENSITY * areaMm2) / 100
+/** Mean defects per die: density in defects/cm² times area in mm², with the unit conversion. */
+export function lambdaFor(areaMm2: number, density: number): number {
+  return (density * areaMm2) / 100
 }
 
 export function poissonYield(lambda: number): number {

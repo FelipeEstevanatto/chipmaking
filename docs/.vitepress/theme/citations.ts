@@ -2078,6 +2078,22 @@ const list: Citation[] = [
     url: 'https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/',
     short: 'Apple (M6)',
   },
+  {
+    key: 'nvidia-ada-whitepaper',
+    num: 259,
+    title: 'NVIDIA Ada GPU Architecture',
+    publisher: 'NVIDIA (whitepaper, 2022) — tabela com tamanho de die e contagem de transistores de TU102, GA102 e AD102',
+    url: 'https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf',
+    short: 'NVIDIA (Ada)',
+  },
+  {
+    key: 'nvidia-blackwell-whitepaper',
+    num: 260,
+    title: 'NVIDIA RTX Blackwell GPU Architecture',
+    publisher: 'NVIDIA (whitepaper, 2025) — tabela com tamanho de die e contagem de transistores de GB202',
+    url: 'https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf',
+    short: 'NVIDIA (Blackwell)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<
