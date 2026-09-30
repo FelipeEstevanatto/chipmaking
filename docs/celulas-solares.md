@@ -14,8 +14,8 @@ A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023
 
 ## As sete etapas da célula
 
-<DiagramFigure src="/assets/solar-cell.svg" alt="Corte de uma célula solar de silício cristalino: contatos frontais de prata, camada antirrefletora de nitreto de silício, emissor n+ dopado com fósforo, base p dopada com boro, campo retroativo p+ e contato traseiro de alumínio">
-A célula pronta em corte: as camadas que a luz atravessa até a junção p-n, e os dois contatos que recolhem a corrente. Sem escala: o wafer tem cerca de 200 µm e o emissor, cerca de 0,5 µm.
+<DiagramFigure src="/assets/solar-cell.svg" alt="Corte de uma célula solar de silício cristalino com a face frontal texturizada em pirâmides: contatos frontais de prata, camada antirrefletora de nitreto de silício, emissor n+ dopado com fósforo, base p, campo retroativo p+ e contato traseiro de alumínio, com a luz entrando pela textura e o circuito que recolhe a corrente">
+A célula pronta em corte. O raio que uma pirâmide reflete é aproveitado pela seguinte, a luz atravessa o antirrefletor e o emissor até a junção p-n, e os dois contatos levam a corrente à carga. Sem escala: o wafer tem cerca de 200 µm e o emissor, cerca de 0,5 µm.
 </DiagramFigure>
 
 A célula pronta sai de **sete etapas**, nesta ordem:

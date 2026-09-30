@@ -1,82 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540" role="img">
-  <title>Cross-section of a finished crystalline silicon solar cell: silver front fingers, silicon nitride anti-reflection coating, phosphorus-doped n+ emitter, boron-doped p base, p+ back surface field and full-area aluminium rear contact</title>
-  <desc>Cross-section of a finished cell with the front contacts, anti-reflection coating, n+ emitter, p base, back surface field and rear contact. Layers not to scale.</desc>
-  <rect width="900" height="540" fill="#ffffff" />
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
+  <title>Cross-section of a finished crystalline silicon solar cell: the textured front face under the silver fingers and the silicon nitride coating, the n+ emitter and its p-n junction, the p-type base, the p+ back surface field and the full-area aluminium rear contact, with the light path into the wafer and the circuit that takes the current out</title>
+  <desc>The finished cell in cross-section. Light hits the pyramids of the textured front: the ray a facet reflects lands on the next facet, enters the silicon and crosses the emitter and the junction before being absorbed in the wafer. The junction separates the carriers this frees, and the two metal contacts take the current out through a load. Not to scale: the wafer is about 200 &#181;m thick and the emitter about 0.5 &#181;m.</desc>
+  <rect width="960" height="540" fill="#ffffff" />
   <defs>
-    <marker id="sunArrow" markerWidth="7" markerHeight="7" refX="3.5" refY="6" orient="auto">
-      <path d="M0,0 L7,0 L3.5,7 z" fill="#d69e2e" />
+    <marker id="rayArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b7791f" />
     </marker>
-    <marker id="leadArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 z" fill="#a0aec0" />
+    <marker id="wireArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568" />
+    </marker>
+    <marker id="dimArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096" />
     </marker>
   </defs>
   <style>
-    .t { font: 600 13.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .s { font: 11.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
-    .sym { font: 600 12.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1a202c; }
-    .ag { fill: #e2e8f0; stroke: #718096; stroke-width: 1.5; }
-    .arc { fill: #e9d8fd; stroke: #6b46c1; stroke-width: 1; }
-    .emit { fill: #bee3f8; stroke: #2b6cb0; stroke-width: 1; }
-    .base { fill: #fed7d7; stroke: #c53030; stroke-width: 1; }
-    .bsf { fill: #feb2b2; stroke: #9b2c2c; stroke-width: 1; }
-    .alu { fill: #cbd5e0; stroke: #4a5568; stroke-width: 1; }
-    .edge { fill: none; stroke: #4a5568; stroke-width: 2; }
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .s { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
+    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .inv { font: 600 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .v { font-weight: 600; fill: #1a202c; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.6; }
+    .emit { fill: #b9d9f5; }
+    .arc { fill: #b794f4; stroke: #553c9a; stroke-width: 0.9; }
+    .junc { fill: none; stroke: #2c5282; stroke-width: 2.2; stroke-dasharray: 7 5; }
+    .bsf { fill: #8a94a6; }
+    .alu { fill: #e2e8f0; stroke: #4a5568; stroke-width: 1.4; }
+    .ag { fill: #e2e8f0; stroke: #4a5568; stroke-width: 1.4; }
+    .surf { fill: none; stroke: #7d8b9c; stroke-width: 1.8; }
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
-    .sun { stroke: #d69e2e; stroke-width: 2.5; fill: none; }
-    .junc { stroke: #c53030; stroke-width: 2; stroke-dasharray: 6 4; fill: none; }
+    .ray { fill: none; stroke: #b7791f; stroke-width: 2.4; }
+    .wire { fill: none; stroke: #4a5568; stroke-width: 2.2; }
+    .load { fill: #f7fafc; stroke: #4a5568; stroke-width: 1.6; }
+    .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
   </style>
 
-  <!-- ============ incident light ============ -->
-  <text class="s" x="345" y="44" text-anchor="middle">incident sunlight</text>
-  <path class="sun" d="M250,58 L250,128" marker-end="url(#sunArrow)" />
-  <path class="sun" d="M425,58 L425,128" marker-end="url(#sunArrow)" />
-  <path class="sun" d="M565,58 L565,128" marker-end="url(#sunArrow)" />
+  <text class="h" x="40" y="40">Crystalline silicon solar cell in cross-section</text>
 
-  <!-- ============ layer stack ============ -->
-  <rect class="arc" x="90" y="162" width="510" height="30" />
-  <rect class="emit" x="90" y="192" width="510" height="30" />
-  <rect class="base" x="90" y="222" width="510" height="198" />
-  <rect class="bsf" x="90" y="420" width="510" height="25" />
-  <rect class="alu" x="90" y="445" width="510" height="25" />
+  <!-- ===================== sunlight ===================== -->
+  <path class="ray" d="M 257,100 L 286,266" marker-end="url(#rayArrow)" />
+  <path class="ray" d="M 497,100 L 526,266" marker-end="url(#rayArrow)" />
+  <path class="ray" d="M 790,100 L 818,259" />
+  <text class="sm" x="222" y="100" text-anchor="end">sunlight</text>
 
-  <!-- front fingers sit on the coating, leaving gaps for light -->
-  <rect class="ag" x="150" y="138" width="40" height="24" rx="2" />
-  <rect class="ag" x="320" y="138" width="40" height="24" rx="2" />
-  <rect class="ag" x="490" y="138" width="40" height="24" rx="2" />
+  <!-- ===================== the cell ===================== -->
+  <path class="si" d="M 180,280 L 204,245 L 228,280 L 252,245 L 276,280 L 300,245 L 324,280 L 348,245 L 372,280 L 396,245 L 420,280 L 444,245 L 468,280 L 492,245 L 516,280 L 540,245 L 564,280 L 588,245 L 612,280 L 636,245 L 660,280 L 684,245 L 708,280 L 732,245 L 756,280 L 780,245 L 804,280 L 828,245 L 852,280 L 876,245 L 900,280 L 900,470 L 180,470 Z" />
+  <path class="emit" d="M 180,280 L 204,245 L 228,280 L 252,245 L 276,280 L 300,245 L 324,280 L 348,245 L 372,280 L 396,245 L 420,280 L 444,245 L 468,280 L 492,245 L 516,280 L 540,245 L 564,280 L 588,245 L 612,280 L 636,245 L 660,280 L 684,245 L 708,280 L 732,245 L 756,280 L 780,245 L 804,280 L 828,245 L 852,280 L 876,245 L 900,280 L 900,293 L 876,258 L 852,293 L 828,258 L 804,293 L 780,258 L 756,293 L 732,258 L 708,293 L 684,258 L 660,293 L 636,258 L 612,293 L 588,258 L 564,293 L 540,258 L 516,293 L 492,258 L 468,293 L 444,258 L 420,293 L 396,258 L 372,293 L 348,258 L 324,293 L 300,258 L 276,293 L 252,258 L 228,293 L 204,258 L 180,293 Z" />
+  <path class="arc" d="M 180,275 L 204,240 L 228,275 L 252,240 L 276,275 L 300,240 L 324,275 L 348,240 L 372,275 L 396,240 L 420,275 L 444,240 L 468,275 L 492,240 L 516,275 L 540,240 L 564,275 L 588,240 L 612,275 L 636,240 L 660,275 L 684,240 L 708,275 L 732,240 L 756,275 L 780,240 L 804,275 L 828,240 L 852,275 L 876,240 L 900,275 L 900,280 L 876,245 L 852,280 L 828,245 L 804,280 L 780,245 L 756,280 L 732,245 L 708,280 L 684,245 L 660,280 L 636,245 L 612,280 L 588,245 L 564,280 L 540,245 L 516,280 L 492,245 L 468,280 L 444,245 L 420,280 L 396,245 L 372,280 L 348,245 L 324,280 L 300,245 L 276,280 L 252,245 L 228,280 L 204,245 L 180,280 Z" />
+  <path class="surf" d="M 180,280 L 204,245 L 228,280 L 252,245 L 276,280 L 300,245 L 324,280 L 348,245 L 372,280 L 396,245 L 420,280 L 444,245 L 468,280 L 492,245 L 516,280 L 540,245 L 564,280 L 588,245 L 612,280 L 636,245 L 660,280 L 684,245 L 708,280 L 732,245 L 756,280 L 780,245 L 804,280 L 828,245 L 852,280 L 876,245 L 900,280" />
 
-  <!-- p-n junction -->
-  <path class="junc" d="M90,222 L600,222" />
+  <path class="junc" d="M 180,293 L 204,258 L 228,293 L 252,258 L 276,293 L 300,258 L 324,293 L 348,258 L 372,293 L 396,258 L 420,293 L 444,258 L 468,293 L 492,258 L 516,293 L 540,258 L 564,293 L 588,258 L 612,293 L 636,258 L 660,293 L 684,258 L 708,293 L 732,258 L 756,293 L 780,258 L 804,293 L 828,258 L 852,293 L 876,258 L 900,293" />
+  <path class="ag" d="M 180,280 L 180,244 Q 228,236 276,244 L 276,280 Z" />
+  <path class="ag" d="M 420,280 L 420,244 Q 468,236 516,244 L 516,280 Z" />
+  <path class="ag" d="M 660,280 L 660,244 Q 708,236 756,244 L 756,280 Z" />
 
-  <!-- symbols inside the layers -->
-  <text class="sym" x="345" y="212" text-anchor="middle">n+</text>
-  <text class="sym" x="345" y="326" text-anchor="middle">p</text>
-  <text class="sym" x="345" y="438" text-anchor="middle">p+</text>
+  <!-- the light path: off one facet, onto the next, then into the wafer -->
+  <path class="ray" d="M 818,259 L 793,264" marker-end="url(#rayArrow)" />
+  <path class="ray" d="M 793,264 L 537,400" />
 
-  <!-- ============ annotation column ============ -->
-  <line class="lead" x1="630" y1="150" x2="606" y2="150" marker-end="url(#leadArrow)" />
-  <text class="t" x="644" y="146">Silver front contact</text>
-  <text class="s" x="644" y="163">screen-printed fingers</text>
+  <!-- back of the cell -->
+  <path class="bsf" d="M 180,450 L 900,450 L 900,470 L 180,470 Z" />
+  <rect class="alu" x="180" y="470" width="720" height="30" />
+  <text class="inv" x="540" y="465" text-anchor="middle">p+ back surface field</text>
+  <text class="t" x="540" y="494" text-anchor="middle">aluminium rear contact</text>
 
-  <line class="lead" x1="630" y1="180" x2="606" y2="177" marker-end="url(#leadArrow)" />
-  <text class="t" x="644" y="180">Anti-reflection coating</text>
-  <text class="s" x="644" y="197">silicon nitride by PECVD</text>
+  <!-- ===================== the two contacts in a circuit ===================== -->
+  <path class="wire" d="M 110,266 L 180,266" marker-end="url(#wireArrow)" />
+  <path class="wire" d="M 110,266 L 110,330" />
+  <path class="wire" d="M 110,485 L 110,392" marker-end="url(#wireArrow)" />
+  <path class="wire" d="M 110,485 L 180,485" />
+  <rect class="load" x="80" y="330" width="60" height="62" rx="5" />
+  <text class="sm" x="110" y="366" text-anchor="middle">load</text>
+  <text class="sm" x="172" y="256" text-anchor="end">current</text>
 
-  <line class="lead" x1="630" y1="216" x2="606" y2="207" marker-end="url(#leadArrow)" />
-  <text class="t" x="644" y="214">n+ emitter</text>
-  <text class="s" x="644" y="231">phosphorus, ~900 &#176;C</text>
+  <!-- ===================== labels ===================== -->
+  <text class="t" x="172" y="194" text-anchor="end">silver finger</text>
+  <text class="s" x="172" y="216" text-anchor="end">screen-printed</text>
+  <path class="lead" d="M 178,200 L 212,238" />
 
-  <text class="s" x="644" y="252">&#8593; dashed line: the p-n junction</text>
+  <text class="t" x="340" y="132">SiNx coating</text>
+  <text class="s" x="340" y="154">anti-reflection</text>
+  <path class="lead" d="M 344,160 L 324,276" />
 
-  <line class="lead" x1="630" y1="300" x2="606" y2="310" marker-end="url(#leadArrow)" />
-  <text class="t" x="644" y="298">p base</text>
-  <text class="s" x="644" y="315">boron-doped wafer</text>
+  <text class="t" x="340" y="192">n+ emitter</text>
+  <text class="s" x="340" y="214">phosphorus doped</text>
+  <path class="lead" d="M 370,220 L 324,288" />
 
-  <line class="lead" x1="630" y1="428" x2="606" y2="432" marker-end="url(#leadArrow)" />
-  <text class="t" x="644" y="428">p+ back surface field</text>
-  <text class="s" x="644" y="445">aluminium diffused in</text>
+  <text class="t" x="560" y="140">p-n junction</text>
+  <text class="s" x="560" y="162">separates charge</text>
+  <path class="lead" d="M 556,146 L 564,291" />
 
-  <line class="lead" x1="630" y1="462" x2="606" y2="457" marker-end="url(#leadArrow)" />
-  <text class="t" x="644" y="462">Aluminium rear contact</text>
-  <text class="s" x="644" y="479">full area</text>
+  <text class="sm" x="700" y="204" text-anchor="end">second facet</text>
+  <path class="lead" d="M 700,210 L 800,255" />
 
+  <text class="t" x="640" y="392">p base</text>
+  <text class="s" x="640" y="414">p-type wafer</text>
+
+  <text class="s" x="530" y="430" text-anchor="end">absorbed in the wafer</text>
+  <path class="lead" d="M 533,424 L 540,406" />
+
+  <!-- ===================== wafer thickness ===================== -->
+  <path class="dim" d="M 880,245 L 880,470" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+  <path class="dim" d="M 876,245 L 894,245" />
+  <path class="dim" d="M 862,470 L 894,470" />
+  <text class="s" x="868" y="352" text-anchor="end"><tspan class="v">~200</tspan> &#181;m</text>
 </svg>

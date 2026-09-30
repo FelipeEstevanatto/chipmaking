@@ -14,8 +14,8 @@ The crystalline silicon cell is by far the dominant technology: in **2023** it a
 
 ## The seven steps of a cell
 
-<DiagramFigure src="/assets/solar-cell.svg" alt="Cross-section of a crystalline silicon solar cell: silver front contacts, silicon nitride anti-reflection coating, phosphorus-doped n+ emitter, boron-doped p base, p+ back surface field and aluminium rear contact">
-The finished cell in cross-section: the layers light crosses on its way to the p-n junction, and the two contacts that collect the current. Not to scale: the wafer is about 200 µm thick and the emitter about 0.5 µm.
+<DiagramFigure src="/assets/solar-cell.svg" alt="Cross-section of a crystalline silicon solar cell with its front face textured into pyramids: silver front contacts, silicon nitride anti-reflection coating, phosphorus-doped n+ emitter, p-type base, p+ back surface field and aluminium rear contact, with light entering through the texture and the circuit that collects the current">
+The finished cell in cross-section. The ray one pyramid reflects is caught by the next one, light crosses the anti-reflection coating and the emitter down to the p-n junction, and the two contacts take the current to the load. Not to scale: the wafer is about 200 µm thick and the emitter about 0.5 µm.
 </DiagramFigure>
 
 A finished cell comes out of **seven steps**, in this order:
