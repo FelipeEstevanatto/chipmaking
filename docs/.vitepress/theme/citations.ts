@@ -2054,6 +2054,30 @@ const list: Citation[] = [
     url: 'https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silicon.pdf',
     short: 'USGS (MCS 2025)',
   },
+  {
+    key: 'apple-m1',
+    num: 256,
+    title: 'Apple unleashes M1',
+    publisher: 'Apple Newsroom, 10 de novembro de 2020',
+    url: 'https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/',
+    short: 'Apple (M1)',
+  },
+  {
+    key: 'apple-m4',
+    num: 257,
+    title: 'Apple introduces M4 chip',
+    publisher: 'Apple Newsroom, 7 de maio de 2024',
+    url: 'https://www.apple.com/newsroom/2024/05/apple-introduces-m4-chip/',
+    short: 'Apple (M4)',
+  },
+  {
+    key: 'apple-m6',
+    num: 258,
+    title: 'Apple introduces M6 and M5 Ultra for a big leap in performance and AI compute',
+    publisher: 'Apple Newsroom, 25 de agosto de 2026',
+    url: 'https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/',
+    short: 'Apple (M6)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

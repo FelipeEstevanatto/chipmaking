@@ -182,7 +182,7 @@ export const CHARTS: Record<string, ChartSpec> = {
       pt: 'Contagem de transistores em produtos que marcaram cada época — do Intel 4004 ao silício atual. Como as três primeiras décadas não estão tabuladas em nenhuma fonte primária única, a série é uma compilação, e a tabela do capítulo nomeia cada chip e sua fonte.',
       en: 'Transistor counts of landmark products — from the Intel 4004 to current silicon. Because the first three decades are not tabulated in any single primary source, the series is a compilation, and the chapter\'s table names each chip and its source.',
     },
-    sourceIds: ['dados-transistor-count', 'intel-4004'],
+    sourceIds: ['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4'],
     slug: 'transistor-count',
   },
 

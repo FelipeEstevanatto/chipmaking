@@ -12,25 +12,27 @@ This page is the other side of that rule: gathering the **series** behind the ch
 
 ## Transistors per chip
 
-The industry's most quoted curve is also the hardest to attribute, because no single primary source tabulates transistor counts across five decades and several vendors. The series below is a **compilation**, and the table names each product so that every point is traceable <Cite id="dados-transistor-count" />.
+The industry's most quoted curve is also the hardest to attribute, because no single primary source tabulates transistor counts across five decades and several vendors. The series below is a **compilation**, and the table names each product so that every point is traceable; where the manufacturer publishes the count, the row cites the manufacturer <Cite id="dados-transistor-count" />.
 
 <ClientOnly>
   <DataChart chart="transistor-count" />
 </ClientOnly>
 
-| Year | Product | Transistors | Source |
-| --- | --- | --- | --- |
-| 1971 | Intel 4004 | **2,300** | <Cite id="intel-4004" /> |
-| 1978 | Intel 8086 | **29,000** | <Cite id="dados-transistor-count" /> |
-| 1985 | Intel 80386 | **275,000** | <Cite id="dados-transistor-count" /> |
-| 1993 | Intel Pentium | **3.1 million** | <Cite id="dados-transistor-count" /> |
-| 2000 | Pentium 4 | **42 million** | <Cite id="dados-transistor-count" /> |
-| 2006 | Core 2 Duo | **291 million** | <Cite id="dados-transistor-count" /> |
-| 2013 | Apple A7 | **1 billion** | <Cite id="dados-transistor-count" /> |
-| 2020 | Apple M1 | **16 billion** | <Cite id="dados-transistor-count" /> |
-| 2024 | Apple M4 | **28 billion** | <Cite id="dados-transistor-count" /> |
+| Year | Product | Transistors | Process node | Source |
+| --- | --- | --- | --- | --- |
+| 1971 | Intel 4004 | **2,300** | 10 µm | <Cite id="intel-4004" /> <Cite id="dados-transistor-count" /> |
+| 1978 | Intel 8086 | **29,000** | 3 µm | <Cite id="dados-transistor-count" /> |
+| 1985 | Intel 80386 | **275,000** | 1.5 µm | <Cite id="dados-transistor-count" /> |
+| 1993 | Intel Pentium | **3.1 million** | 0.8 µm | <Cite id="dados-transistor-count" /> |
+| 2000 | Pentium 4 | **42 million** | 180 nm | <Cite id="dados-transistor-count" /> |
+| 2006 | Core 2 Duo | **291 million** | 65 nm | <Cite id="dados-transistor-count" /> |
+| 2013 | Apple A7 | **1 billion** | 28 nm | <Cite id="dados-transistor-count" /> |
+| 2020 | Apple M1 | **16 billion** | 5 nm | <Cite id="apple-m1" /> |
+| 2024 | Apple M4 | **28 billion** | 3 nm | <Cite id="apple-m4" /> |
 
 The reading changes with the button above. On a linear scale the last two rows flatten everything before them and the impression of Moore's law continuity disappears. On a **logarithmic** scale what you see is a straight line: **exponential** growth with a doubling time of a few years, and it is that regularity the industry chased for decades.
+
+The most recent point in the series is from 2024. Announced in August 2026 and debuting in the Mac mini, the **M6** is Apple's first chip on a **2 nm** process, but the release only describes "greater transistor density into a smaller die" and does not publish the count <Cite id="apple-m6" />. The figure of **around 46 billion transistors** that appears in third-party summaries has no primary source behind it, and the chip is not in the compilation the table rests on either. The M6 stays out of the series, by the same rule that governs the rest of the site: a number without a source does not go into the text.
 
 ## Yield against area
 
@@ -72,7 +74,7 @@ Not every chapter is equally recent, and until now a reader had no way to know. 
 
 That is why each chapter declares, below its title, the **year of the most recent data it cites**. It is a reading aid, not a validity stamp: a 2011 number may still be the best reference for what it describes, but the reader is entitled to know they are reading 2011.
 
-<SourceNote label="Sources" :ids="['dados-transistor-count', 'intel-4004', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
+<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'apple-m6', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'In the fab', href: '/en/na-fab', note: 'where the yield equation comes from' },

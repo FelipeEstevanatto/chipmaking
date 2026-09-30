@@ -12,25 +12,27 @@ Esta página é o outro lado dessa regra: reunir as **séries** que sustentam os
 
 ## Transistores por chip
 
-A curva mais citada da indústria é também a mais difícil de atribuir, porque nenhuma fonte primária tabula contagens de transistores atravessando cinco décadas e vários fabricantes. A série abaixo é uma **compilação**, e a tabela nomeia cada produto para que a origem de cada ponto seja rastreável <Cite id="dados-transistor-count" />.
+A curva mais citada da indústria é também a mais difícil de atribuir, porque nenhuma fonte primária tabula contagens de transistores atravessando cinco décadas e vários fabricantes. A série abaixo é uma **compilação**, e a tabela nomeia cada produto para que a origem de cada ponto seja rastreável; onde o fabricante publica a contagem, a linha cita o fabricante <Cite id="dados-transistor-count" />.
 
 <ClientOnly>
   <DataChart chart="transistor-count" />
 </ClientOnly>
 
-| Ano | Produto | Transistores | Fonte |
-| --- | --- | --- | --- |
-| 1971 | Intel 4004 | **2.300** | <Cite id="intel-4004" /> |
-| 1978 | Intel 8086 | **29.000** | <Cite id="dados-transistor-count" /> |
-| 1985 | Intel 80386 | **275.000** | <Cite id="dados-transistor-count" /> |
-| 1993 | Intel Pentium | **3,1 milhões** | <Cite id="dados-transistor-count" /> |
-| 2000 | Pentium 4 | **42 milhões** | <Cite id="dados-transistor-count" /> |
-| 2006 | Core 2 Duo | **291 milhões** | <Cite id="dados-transistor-count" /> |
-| 2013 | Apple A7 | **1 bilhão** | <Cite id="dados-transistor-count" /> |
-| 2020 | Apple M1 | **16 bilhões** | <Cite id="dados-transistor-count" /> |
-| 2024 | Apple M4 | **28 bilhões** | <Cite id="dados-transistor-count" /> |
+| Ano | Produto | Transistores | Nó de processo | Fonte |
+| --- | --- | --- | --- | --- |
+| 1971 | Intel 4004 | **2.300** | 10 µm | <Cite id="intel-4004" /> <Cite id="dados-transistor-count" /> |
+| 1978 | Intel 8086 | **29.000** | 3 µm | <Cite id="dados-transistor-count" /> |
+| 1985 | Intel 80386 | **275.000** | 1,5 µm | <Cite id="dados-transistor-count" /> |
+| 1993 | Intel Pentium | **3,1 milhões** | 0,8 µm | <Cite id="dados-transistor-count" /> |
+| 2000 | Pentium 4 | **42 milhões** | 180 nm | <Cite id="dados-transistor-count" /> |
+| 2006 | Core 2 Duo | **291 milhões** | 65 nm | <Cite id="dados-transistor-count" /> |
+| 2013 | Apple A7 | **1 bilhão** | 28 nm | <Cite id="dados-transistor-count" /> |
+| 2020 | Apple M1 | **16 bilhões** | 5 nm | <Cite id="apple-m1" /> |
+| 2024 | Apple M4 | **28 bilhões** | 3 nm | <Cite id="apple-m4" /> |
 
 A leitura da série muda com o botão acima. Em escala linear, as últimas duas linhas achatam todo o resto e a impressão de continuidade da lei de Moore desaparece. Em escala **logarítmica**, o que se vê é uma reta: crescimento **exponencial** com tempo de duplicação de poucos anos, e é essa regularidade que a indústria perseguiu por décadas.
+
+O ponto mais recente da série é de 2024. O **M6**, anunciado em agosto de 2026 e estreando no Mac mini, é o primeiro chip da Apple em **2 nm**, mas o comunicado descreve apenas “densidade maior de transistores num die menor” e não publica a contagem <Cite id="apple-m6" />. O valor de **cerca de 46 bilhões de transistores** que aparece em resumos de terceiros não tem fonte primária que o sustente, e o chip também não está na compilação que sustenta a tabela. O M6 fica de fora da série, pela mesma regra que vale para o resto do site: um número sem fonte não entra no texto.
 
 ## Rendimento contra área
 
@@ -72,7 +74,7 @@ Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como 
 
 Por isso cada capítulo declara, abaixo do título, o **ano do dado mais recente que cita**. É uma informação de leitura, não de validade: um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
 
-<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
+<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'apple-m6', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
 
 <SeeAlso :links="[
   { text: 'Na fab', href: '/na-fab', note: 'de onde sai a equação do rendimento' },
