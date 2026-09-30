@@ -20,8 +20,8 @@ As seções abaixo seguem essa ordem, e a cronologia completa, com a fonte de ca
 
 ## As quatro gerações ópticas
 
-<DiagramFigure src="/assets/lithography-generations.svg" alt="Comparação entre impressão por contato, por proximidade, por projeção 1:1 e o stepper de redução">
-Comparação dos quatro arranjos de máquina. Desenho do autor.
+<DiagramFigure src="/assets/lithography-generations.svg" alt="Comparação dos quatro arranjos: impressão por contato, com a máscara sobre o wafer; por proximidade, com uma folga de ar; por projeção 1:1, com a máscara do tamanho do wafer; e o stepper de redução, que expõe um campo por vez">
+Comparação dos quatro arranjos, fora de escala. Desenho do autor, a partir de Kato <Cite id="kato-litho" /> e chiphistory.org <Cite id="chiphistory-litho" />.
 </DiagramFigure>
 
 Nas primeiras décadas, os circuitos integrados eram expostos por **impressão por contato**: a máscara era pressionada **fisicamente** contra o wafer. O arranjo é simples e barato (não usa lente alguma), mas o contato repetido **danifica a máscara e contamina o wafer** <Cite id="kato-litho" />.

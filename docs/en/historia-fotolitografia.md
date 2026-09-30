@@ -20,8 +20,8 @@ The sections below follow that order, and the full chronology, with the source b
 
 ## The four optical generations
 
-<DiagramFigure src="/assets/lithography-generations.svg" alt="Comparison of contact printing, proximity printing, 1:1 projection printing and the reduction stepper">
-The four machine arrangements compared. Drawn by the author.
+<DiagramFigure src="/assets/lithography-generations.svg" alt="The four arrangements compared: contact printing, with the mask on the wafer; proximity printing, with an air gap; 1:1 projection printing, with a mask the size of the wafer; and the reduction stepper, which exposes one field at a time">
+The four machine arrangements compared, not to scale. Drawn by the author from Kato <Cite id="kato-litho" /> and chiphistory.org <Cite id="chiphistory-litho" />.
 </DiagramFigure>
 
 In the early decades, integrated circuits were exposed by **contact printing**: the mask was pressed **physically** against the wafer. The arrangement is simple and cheap (it uses no lens at all), but repeated contact **damages the mask and contaminates the wafer** <Cite id="kato-litho" />.
