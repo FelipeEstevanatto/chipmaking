@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780" role="img">
-  <title>Cross-section of a submerged-arc furnace for silicon, with its zones, gas path and tapping</title>
-  <desc>Cross-section of an industrial silicon furnace: three pre-baked carbon electrodes piercing a charge of quartz and carbon, cavities (craters) around the electrode tips where the metal is produced at about 2000 &#176;C, a crust of condensate bridging over each cavity, SiO and CO rising through the cooler charge where the SiO is recovered, a pool of molten silicon tapped through a hole at the bottom, and the off-gas taken to a bag filter and a heat recovery unit. The zones and their reactions are listed in the key on the left. Not to scale.</desc>
+  <title>Cross-section of a submerged-arc furnace for silicon: three pre-baked electrodes pierce the charge, each opening a carbide-walled crater roofed by a crust, with gas rising through the charge, the pool of molten silicon at the hearth and the off-gas led to a bag filter and a heat-recovery unit</title>
+  <desc>Cross-section of an industrial silicon furnace. Three pre-baked carbon electrodes, about 1 m across, pass through the roof and the charge. Around each electrode tip a crater opens, its wall lined with silicon carbide and roofed by a crust of condensate, where silica and carbide react at about 2000 &#176;C. SiO and CO rise through the cooler charge, where the SiO is recovered by condensation, and the liquid silicon collects at the hearth and is tapped through a hole in the side. The off-gas leaves through the hood to a bag filter that collects silica fume and to a heat-recovery unit. The plan inset shows the electrodes at 120&#176;. Not to scale.</desc>
   <rect width="1000" height="780" fill="#ffffff" />
   <style>
     .t { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -12,16 +12,17 @@
     .lining { fill: none; stroke: #4a5568; stroke-width: 9; }
     .charge { fill: #fefcbf; stroke: #b7791f; stroke-width: 1.6; }
     .crust { fill: none; stroke: #b7791f; stroke-width: 7; stroke-linecap: round; }
-    .crater { fill: url(#craterGlow); stroke: #4a5568; stroke-width: 5; }
+    .crater { fill: url(#craterGlow); stroke: #2d3748; stroke-width: 5; }
     .metal { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 2; }
     .rod { fill: #2d3748; stroke: #1a202c; stroke-width: 1.5; }
-    .rodBack { fill: #4a5568; stroke: #2d3748; stroke-width: 1.5; }
     .clamp { fill: #718096; stroke: #4a5568; stroke-width: 1.5; }
     .gas { fill: none; stroke: #a0aec0; stroke-width: 2; }
     .duct { fill: #edf2f7; stroke: #a0aec0; stroke-width: 1.8; }
     .heat { fill: none; stroke: #dd6b20; stroke-width: 2.4; }
+    .hpipe { fill: none; stroke: #dd6b20; stroke-width: 6; stroke-linejoin: round; stroke-linecap: round; }
     .pour { fill: none; stroke: #c53030; stroke-width: 4; stroke-linecap: round; }
     .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
+    .slip { fill: none; stroke: #718096; stroke-width: 2; stroke-linecap: round; }
   </style>
 
   <defs>
@@ -41,110 +42,117 @@
     </radialGradient>
   </defs>
 
-  <!-- ==================== key: the zones and their reactions ==================== -->
-  <text class="t" x="20" y="306">Inside the furnace</text>
-
-  <rect x="20" y="322" width="20" height="20" fill="#fefcbf" stroke="#b7791f" stroke-width="1.4" />
-  <text class="in" x="52" y="338">Outer reaction zone</text>
-  <text class="s" x="52" y="362">~1600 &#176;C</text>
-  <text class="eq" x="52" y="386">SiO&#8322; + 3C &#8594; SiC + 2CO</text>
-
-  <rect x="20" y="410" width="20" height="20" fill="#fed7d7" stroke="#c53030" stroke-width="1.4" />
-  <text class="in" x="52" y="426">Inner reaction zone (crater)</text>
-  <text class="s" x="52" y="450">~2000 &#176;C</text>
-  <text class="eq" x="52" y="474">SiO&#8322; + 2SiC &#8594; 3Si + 2CO</text>
-
-  <rect x="20" y="498" width="20" height="20" fill="#a0aec0" stroke="#718096" stroke-width="1.4" />
-  <text class="in" x="52" y="514">SiO gas, recovered in the charge</text>
-  <text class="s" x="52" y="538">above 1500 &#176;C, and by condensation</text>
-  <text class="eq" x="52" y="562">2SiO&#8322; + SiC &#8594; 3SiO + CO</text>
-
   <!-- ==================== plan view inset ==================== -->
   <circle cx="105" cy="140" r="40" fill="#f7fafc" stroke="#a0aec0" stroke-width="1.6" />
-  <circle cx="105" cy="110" r="11" class="rod" />
-  <circle cx="79" cy="155" r="11" class="rodBack" />
-  <circle cx="131" cy="155" r="11" class="rodBack" />
+  <circle cx="105" cy="117" r="11" class="rod" />
+  <circle cx="85" cy="152" r="11" class="rod" />
+  <circle cx="125" cy="152" r="11" class="rod" />
   <text class="s" x="105" y="200" text-anchor="middle">Plan: electrodes at 120&#176;</text>
 
-  <!-- ==================== off-gas hood, duct, filter and heat recovery ==================== -->
-  <path class="duct" d="M390,306 L690,306 L680,258 L400,258 Z" />
-  <path class="duct" d="M680,258 L800,258 L800,306" />
-  <rect class="duct" x="800" y="306" width="150" height="92" rx="4" />
-  <path class="gas" d="M824,318 L824,386 M846,318 L846,386 M868,318 L868,386 M890,318 L890,386 M912,318 L912,386 M934,318 L934,386" />
-  <text class="in" x="875" y="424" text-anchor="middle">Bag filter</text>
-  <text class="s" x="875" y="446" text-anchor="middle">silica fume</text>
-  <path class="duct" d="M875,258 L875,120" />
-  <path class="gas" d="M875,120 L875,86" marker-end="url(#fArrow)" />
-  <text class="s" x="890" y="106">clean gas</text>
+  <!-- ==================== key: the zones and their reactions ==================== -->
+  <text class="t" x="20" y="300">Inside the furnace</text>
 
-  <rect class="duct" x="800" y="462" width="150" height="50" rx="4" />
-  <path class="heat" d="M814,502 L814,472 L836,502 L836,472 L858,502 L858,472 L880,502 L880,472 L902,502 L902,472 L924,502 L924,472 L946,502 L946,472" />
-  <text class="in" x="875" y="538" text-anchor="middle">Heat recovery</text>
-  <text class="s" x="875" y="558" text-anchor="middle">hot water, steam</text>
-  <path class="heat" d="M800,300 Q774,340 774,382 Q774,428 800,470" marker-end="url(#hArrow)" />
+  <rect x="20" y="316" width="20" height="20" fill="#fefcbf" stroke="#b7791f" stroke-width="1.4" />
+  <text class="in" x="52" y="332">Outer reaction zone</text>
+  <text class="s" x="52" y="356">~1600 &#176;C</text>
+  <text class="eq" x="52" y="380">SiO&#8322; + 3C &#8594; SiC + 2CO</text>
+
+  <rect x="20" y="404" width="20" height="20" fill="#fed7d7" stroke="#c53030" stroke-width="1.4" />
+  <text class="in" x="52" y="420">Inner reaction zone (crater)</text>
+  <text class="s" x="52" y="444">~2000 &#176;C</text>
+  <text class="eq" x="52" y="468">SiO&#8322; + 2SiC &#8594; 3Si + 2CO</text>
+
+  <rect x="20" y="492" width="20" height="20" fill="#a0aec0" stroke="#718096" stroke-width="1.4" />
+  <text class="in" x="52" y="508">SiO gas, recovered in the charge</text>
+  <text class="s" x="52" y="532">above 1500 &#176;C, and by condensation</text>
+  <text class="eq" x="52" y="556">2SiO&#8322; + SiC &#8594; 3SiO + CO</text>
+
+  <!-- ==================== off-gas hood, duct, filter and heat recovery ==================== -->
+  <path class="duct" d="M680,247 L797,247 L797,306 L783,306 L783,261 L680,261 Z" />
+  <rect class="duct" x="790" y="300" width="160" height="96" rx="4" />
+  <path class="gas" d="M810,314 L810,382 M830,314 L830,382 M850,314 L850,382 M870,314 L870,382 M890,314 L890,382 M910,314 L910,382 M930,314 L930,382" />
+  <text class="in" x="870" y="420" text-anchor="middle">Bag filter</text>
+  <text class="s" x="870" y="442" text-anchor="middle">silica fume</text>
+  <rect class="duct" x="863" y="140" width="14" height="160" />
+  <path class="gas" d="M870,140 L870,110" marker-end="url(#fArrow)" />
+  <text class="s" x="884" y="130">clean gas</text>
+  <rect class="duct" x="790" y="490" width="160" height="56" rx="4" />
+  <path class="heat" d="M804,536 L804,500 L826,536 L826,500 L848,536 L848,500 L870,536 L870,500 L892,536 L892,500 L914,536 L914,500 L936,536 L936,500" />
+  <text class="in" x="870" y="566" text-anchor="middle">Heat recovery</text>
+  <text class="s" x="870" y="588" text-anchor="middle">hot water, steam</text>
+  <path class="hpipe" d="M770,254 L770,518 L790,518" marker-end="url(#hArrow)" />
 
   <!-- ==================== the vessel ==================== -->
-  <path class="shell" d="M360,306 L360,600 Q360,648 420,648 L640,648 Q700,648 700,600 L700,306 Z" />
-  <path class="lining" d="M376,318 L376,596 Q376,630 426,630 L634,630 Q684,630 684,596 L684,318" />
+  <path class="shell" d="M340,306 L340,600 Q340,650 400,650 L660,650 Q720,650 720,600 L720,306 Z" />
+  <path class="lining" d="M360,318 L360,588 Q360,626 410,626 L650,626 Q700,626 700,588 L700,318" />
+  <path class="duct" d="M352,306 L708,306 L686,254 L374,254 Z" />
 
-  <!-- charge, heaped over each cavity and bridged by the crust of condensate -->
-  <path class="charge" d="M380,420 L380,548 L680,548 L680,420 L648,420 L636,366 L554,366 L542,420 L458,420 L446,366 L364,366 L352,420 Z" />
-  <path class="crust" d="M356,402 Q420,370 484,402" />
-  <path class="crust" d="M556,402 Q620,370 684,402" />
+  <!-- the metal pool at the hearth -->
+  <path class="metal" d="M366,570 L694,570 L694,600 Q694,626 660,626 L400,626 Q366,626 366,600 Z" />
+
+  <!-- the charge, heaped over every electrode, sitting on the melt -->
+  <path class="charge" d="M366,436 C378,412 404,390 420,390 C436,390 459,420 475,420 C491,420 514,390 530,390 C546,390 569,420 585,420 C601,420 624,390 640,390 C656,390 682,412 694,436 L694,570 L366,570 Z" />
 
   <!-- the craters around the electrode tips -->
-  <ellipse class="crater" cx="420" cy="486" rx="68" ry="56" />
-  <ellipse class="crater" cx="640" cy="486" rx="68" ry="56" />
-  <ellipse cx="420" cy="486" rx="24" ry="40" fill="#f6ad55" />
-  <ellipse cx="640" cy="486" rx="24" ry="40" fill="#f6ad55" />
-  <ellipse cx="420" cy="508" rx="14" ry="9" fill="#fefcbf" />
-  <ellipse cx="640" cy="508" rx="14" ry="9" fill="#fefcbf" />
+  <ellipse class="crater" cx="420" cy="512" rx="42" ry="50" />
+  <ellipse class="crater" cx="530" cy="512" rx="42" ry="50" />
+  <ellipse class="crater" cx="640" cy="512" rx="42" ry="50" />
+  <ellipse cx="420" cy="508" rx="15" ry="21" fill="#f6ad55" />
+  <ellipse cx="530" cy="508" rx="15" ry="21" fill="#f6ad55" />
+  <ellipse cx="640" cy="508" rx="15" ry="21" fill="#f6ad55" />
+  <ellipse cx="420" cy="553" rx="16" ry="7" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
+  <ellipse cx="530" cy="553" rx="16" ry="7" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
+  <ellipse cx="640" cy="553" rx="16" ry="7" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
 
-  <!-- the metal pool at the bottom of the hearth -->
-  <path class="metal" d="M390,566 L670,566 L670,600 Q670,622 640,622 L420,622 Q390,622 390,600 Z" />
+  <!-- the crust of condensate bridging over each crater -->
+  <path class="crust" d="M390,477 Q420,457 450,477" />
+  <path class="crust" d="M500,477 Q530,457 560,477" />
+  <path class="crust" d="M610,477 Q640,457 670,477" />
+
+  <!-- ==================== feed chutes ==================== -->
+  <path class="duct" d="M150,110 L376,270 L400,258 L174,110 Z" />
+  <path class="duct" d="M846,110 L618,270 L592,258 L822,110 Z" />
+  <text class="in" x="196" y="92" text-anchor="middle">Quartz + carbon</text>
+  <text class="s" x="150" y="238" text-anchor="middle">from the silos</text>
 
   <!-- ==================== the electrodes, through the roof and into the craters ==================== -->
-  <rect class="clamp" x="400" y="228" width="42" height="16" rx="3" />
-  <rect class="clamp" x="510" y="228" width="42" height="16" rx="3" />
-  <rect class="clamp" x="620" y="228" width="42" height="16" rx="3" />
-  <rect class="rodBack" x="513" y="96" width="34" height="386" />
   <rect class="rod" x="403" y="96" width="34" height="404" />
+  <rect class="rod" x="513" y="96" width="34" height="404" />
   <rect class="rod" x="623" y="96" width="34" height="404" />
-  <path class="heat" d="M376,124 L376,172" marker-end="url(#hArrow)" />
-  <path class="heat" d="M686,124 L686,172" marker-end="url(#hArrow)" />
+  <rect class="clamp" x="397" y="228" width="46" height="16" rx="3" />
+  <rect class="clamp" x="507" y="228" width="46" height="16" rx="3" />
+  <rect class="clamp" x="617" y="228" width="46" height="16" rx="3" />
+  <path class="slip" d="M390,120 L390,168" marker-end="url(#dArrow)" />
+  <path class="slip" d="M670,120 L670,168" marker-end="url(#dArrow)" />
   <text class="t" x="530" y="48" text-anchor="middle">Pre-baked carbon electrodes, about 1 m across</text>
   <text class="s" x="530" y="72" text-anchor="middle">consumed and slipping down as the furnace runs</text>
 
-  <!-- ==================== feed chutes ==================== -->
-  <path class="duct" d="M170,112 L380,272 L410,262 L216,112 Z" />
-  <path class="duct" d="M830,112 L620,272 L590,262 L784,112 Z" />
-  <text class="in" x="196" y="94" text-anchor="middle">Quartz + carbon</text>
-  <text class="s" x="150" y="252" text-anchor="middle">from the silos</text>
-
   <!-- ==================== gas rising through the charge ==================== -->
-  <path class="gas" d="M420,432 Q406,394 426,360 L426,318" marker-end="url(#fArrow)" />
-  <path class="gas" d="M640,432 Q654,394 634,360 L634,318" marker-end="url(#fArrow)" />
-  <path class="gas" d="M530,432 L530,318" marker-end="url(#fArrow)" />
-  <text class="in" x="706" y="240">Off-gas: CO + SiO</text>
+  <path class="gas" d="M372,545 L372,290" marker-end="url(#fArrow)" />
+  <path class="gas" d="M468,545 L468,290" marker-end="url(#fArrow)" />
+  <path class="gas" d="M592,545 L592,290" marker-end="url(#fArrow)" />
+  <path class="gas" d="M686,545 L686,290" marker-end="url(#fArrow)" />
+  <text class="in" x="752" y="236" text-anchor="middle">Off-gas: CO + SiO</text>
 
   <!-- ==================== in-drawing labels ==================== -->
-  <text class="in" x="470" y="470" text-anchor="middle">Charge</text>
-  <text class="in" x="530" y="602" text-anchor="middle">Molten silicon</text>
-  <text class="s" x="484" y="334" text-anchor="middle">crust</text>
-  <path class="lead" d="M482,342 L472,394" />
-  <text class="s" x="346" y="600" text-anchor="end">shell and lining</text>
-  <path class="lead" d="M350,596 L368,588" />
+  <text class="in" x="530" y="600" text-anchor="middle">Molten silicon</text>
+  <text class="in" x="300" y="592" text-anchor="end">Charge</text>
+  <path class="lead" d="M304,590 L392,472" />
+  <text class="s" x="748" y="540" text-anchor="end">crust</text>
+  <path class="lead" d="M705,536 L676,470" />
+  <text class="s" x="300" y="624" text-anchor="end">shell and lining</text>
+  <path class="lead" d="M304,622 L348,610" />
 
   <!-- ==================== tapping ==================== -->
-  <rect x="694" y="590" width="22" height="12" fill="#c53030" />
-  <path class="pour" d="M704,606 Q718,634 748,646" />
-  <path class="duct" d="M722,642 L786,642 L786,694 L722,694 Z" />
-  <text class="in" x="754" y="676" text-anchor="middle">ladle</text>
-  <text class="s" x="712" y="586">tap hole</text>
+  <rect x="694" y="584" width="20" height="12" fill="#c53030" />
+  <path class="pour" d="M708,598 Q720,626 748,640" />
+  <path class="duct" d="M722,636 L786,636 L786,688 L722,688 Z" />
+  <text class="in" x="754" y="668" text-anchor="middle">ladle</text>
+  <text class="s" x="720" y="578">tap hole</text>
   <text class="s" x="800" y="640">Refining and casting</text>
   <text class="s" x="800" y="662">98.5 to 99.5 % Si</text>
 
   <!-- ==================== shell dimension ==================== -->
-  <path class="dim" d="M360,668 L360,684 M360,676 L700,676 M700,668 L700,684" marker-start="url(#dArrow)" marker-end="url(#dArrow)" />
+  <path class="dim" d="M340,668 L340,684 M340,676 L720,676 M720,668 L720,684" marker-start="url(#dArrow)" marker-end="url(#dArrow)" />
   <text class="s" x="530" y="702" text-anchor="middle">Shell about 10 m across</text>
 </svg>
