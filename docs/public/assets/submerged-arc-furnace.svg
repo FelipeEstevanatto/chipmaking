@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780" role="img">
   <title>Cross-section of a submerged-arc furnace for silicon: three pre-baked electrodes pierce the charge, each opening a carbide-walled crater roofed by a crust, with gas rising through the charge, the pool of molten silicon at the hearth and the off-gas led to a bag filter and a heat-recovery unit</title>
-  <desc>Cross-section of an industrial silicon furnace. Three pre-baked carbon electrodes, about 1 m across, pass through the roof and the charge. Around each electrode tip a crater opens, its wall lined with silicon carbide and roofed by a crust of condensate, where silica and carbide react at about 2000 &#176;C. SiO and CO rise through the cooler charge, where the SiO is recovered by condensation, and the liquid silicon collects at the hearth and is tapped through a hole in the side. The off-gas leaves through the hood to a bag filter that collects silica fume and to a heat-recovery unit. The plan inset shows the electrodes at 120&#176;. Not to scale.</desc>
+  <desc>Cross-section of an industrial silicon furnace. Three pre-baked carbon electrodes, about 1 m across, pass through the roof and the charge. Around each electrode tip a crater opens, its wall lined with silicon carbide and roofed by a crust of condensate, where silica and carbide react at about 2000 &#176;C. SiO and CO rise through the cooler charge, where the SiO is recovered by condensation, and the liquid silicon collects at the hearth and is tapped through a hole in the side into a ladle. The off-gas leaves through the hood to a bag filter that collects silica fume and to a heat-recovery unit. The plan inset shows the electrodes at 120&#176;. Not to scale.</desc>
   <rect width="1000" height="780" fill="#ffffff" />
   <style>
     .t { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
@@ -12,14 +12,14 @@
     .lining { fill: none; stroke: #4a5568; stroke-width: 9; }
     .charge { fill: #fefcbf; stroke: #b7791f; stroke-width: 1.6; }
     .crust { fill: none; stroke: #b7791f; stroke-width: 7; stroke-linecap: round; }
-    .crater { fill: url(#craterGlow); stroke: #2d3748; stroke-width: 5; }
+    .crater { fill: url(#craterGlow); stroke: #2d3748; stroke-width: 4; }
     .metal { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 2; }
     .rod { fill: #2d3748; stroke: #1a202c; stroke-width: 1.5; }
     .clamp { fill: #718096; stroke: #4a5568; stroke-width: 1.5; }
     .gas { fill: none; stroke: #a0aec0; stroke-width: 2; }
     .duct { fill: #edf2f7; stroke: #a0aec0; stroke-width: 1.8; }
     .heat { fill: none; stroke: #dd6b20; stroke-width: 2.4; }
-    .hpipe { fill: none; stroke: #dd6b20; stroke-width: 6; stroke-linejoin: round; stroke-linecap: round; }
+    .hpipe { fill: none; stroke: #dd6b20; stroke-width: 4; stroke-linejoin: round; stroke-linecap: round; }
     .pour { fill: none; stroke: #c53030; stroke-width: 4; stroke-linecap: round; }
     .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
     .slip { fill: none; stroke: #718096; stroke-width: 2; stroke-linecap: round; }
@@ -29,11 +29,14 @@
     <marker id="fArrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
       <path d="M0,0 L7,3.5 L0,7 z" fill="#a0aec0" />
     </marker>
-    <marker id="hArrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
-      <path d="M0,0 L7,3.5 L0,7 z" fill="#dd6b20" />
+    <marker id="hArrow" markerWidth="13" markerHeight="13" refX="10" refY="5.5" orient="auto">
+      <path d="M0,0 L12,5.5 L0,11 z" fill="#dd6b20" />
     </marker>
-    <marker id="dArrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto">
+    <marker id="dArrow" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto-start-reverse">
       <path d="M0,0 L7,3.5 L0,7 z" fill="#718096" />
+    </marker>
+    <marker id="pArrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#c53030" />
     </marker>
     <radialGradient id="craterGlow" cx="50%" cy="32%" r="72%">
       <stop offset="0%" stop-color="#f6ad55" />
@@ -80,7 +83,7 @@
   <path class="heat" d="M804,536 L804,500 L826,536 L826,500 L848,536 L848,500 L870,536 L870,500 L892,536 L892,500 L914,536 L914,500 L936,536 L936,500" />
   <text class="in" x="870" y="566" text-anchor="middle">Heat recovery</text>
   <text class="s" x="870" y="588" text-anchor="middle">hot water, steam</text>
-  <path class="hpipe" d="M770,254 L770,518 L790,518" marker-end="url(#hArrow)" />
+  <path class="hpipe" d="M770,258 L770,518 L788,518" marker-end="url(#hArrow)" />
 
   <!-- ==================== the vessel ==================== -->
   <path class="shell" d="M340,306 L340,600 Q340,650 400,650 L660,650 Q720,650 720,600 L720,306 Z" />
@@ -94,26 +97,26 @@
   <path class="charge" d="M366,436 C378,412 404,390 420,390 C436,390 459,420 475,420 C491,420 514,390 530,390 C546,390 569,420 585,420 C601,420 624,390 640,390 C656,390 682,412 694,436 L694,570 L366,570 Z" />
 
   <!-- the craters around the electrode tips -->
-  <ellipse class="crater" cx="420" cy="512" rx="42" ry="50" />
-  <ellipse class="crater" cx="530" cy="512" rx="42" ry="50" />
-  <ellipse class="crater" cx="640" cy="512" rx="42" ry="50" />
-  <ellipse cx="420" cy="508" rx="15" ry="21" fill="#f6ad55" />
-  <ellipse cx="530" cy="508" rx="15" ry="21" fill="#f6ad55" />
-  <ellipse cx="640" cy="508" rx="15" ry="21" fill="#f6ad55" />
-  <ellipse cx="420" cy="553" rx="16" ry="7" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
-  <ellipse cx="530" cy="553" rx="16" ry="7" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
-  <ellipse cx="640" cy="553" rx="16" ry="7" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
+  <ellipse class="crater" cx="420" cy="514" rx="38" ry="46" />
+  <ellipse class="crater" cx="530" cy="514" rx="38" ry="46" />
+  <ellipse class="crater" cx="640" cy="514" rx="38" ry="46" />
+  <ellipse cx="420" cy="510" rx="13" ry="18" fill="#f6ad55" />
+  <ellipse cx="530" cy="510" rx="13" ry="18" fill="#f6ad55" />
+  <ellipse cx="640" cy="510" rx="13" ry="18" fill="#f6ad55" />
+  <ellipse cx="420" cy="552" rx="15" ry="6" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
+  <ellipse cx="530" cy="552" rx="15" ry="6" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
+  <ellipse cx="640" cy="552" rx="15" ry="6" fill="#cfd8e3" stroke="#7d8b9c" stroke-width="1.2" />
 
   <!-- the crust of condensate bridging over each crater -->
-  <path class="crust" d="M390,477 Q420,457 450,477" />
-  <path class="crust" d="M500,477 Q530,457 560,477" />
-  <path class="crust" d="M610,477 Q640,457 670,477" />
+  <path class="crust" d="M380,490 Q420,428 460,490" />
+  <path class="crust" d="M490,490 Q530,428 570,490" />
+  <path class="crust" d="M600,490 Q640,428 680,490" />
 
   <!-- ==================== feed chutes ==================== -->
-  <path class="duct" d="M150,110 L376,270 L400,258 L174,110 Z" />
+  <path class="duct" d="M214,110 L442,270 L468,258 L238,110 Z" />
   <path class="duct" d="M846,110 L618,270 L592,258 L822,110 Z" />
   <text class="in" x="196" y="92" text-anchor="middle">Quartz + carbon</text>
-  <text class="s" x="150" y="238" text-anchor="middle">from the silos</text>
+  <text class="s" x="140" y="238" text-anchor="middle">from the silos</text>
 
   <!-- ==================== the electrodes, through the roof and into the craters ==================== -->
   <rect class="rod" x="403" y="96" width="34" height="404" />
@@ -130,7 +133,7 @@
   <!-- ==================== gas rising through the charge ==================== -->
   <path class="gas" d="M372,545 L372,290" marker-end="url(#fArrow)" />
   <path class="gas" d="M468,545 L468,290" marker-end="url(#fArrow)" />
-  <path class="gas" d="M592,545 L592,290" marker-end="url(#fArrow)" />
+  <path class="gas" d="M565,545 L565,290" marker-end="url(#fArrow)" />
   <path class="gas" d="M686,545 L686,290" marker-end="url(#fArrow)" />
   <text class="in" x="752" y="236" text-anchor="middle">Off-gas: CO + SiO</text>
 
@@ -138,21 +141,23 @@
   <text class="in" x="530" y="600" text-anchor="middle">Molten silicon</text>
   <text class="in" x="300" y="592" text-anchor="end">Charge</text>
   <path class="lead" d="M304,590 L392,472" />
-  <text class="s" x="748" y="540" text-anchor="end">crust</text>
-  <path class="lead" d="M705,536 L676,470" />
+  <text class="s" x="600" y="368" text-anchor="middle">crust</text>
+  <path class="lead" d="M600,378 L610,476" />
   <text class="s" x="300" y="624" text-anchor="end">shell and lining</text>
   <path class="lead" d="M304,622 L348,610" />
 
   <!-- ==================== tapping ==================== -->
-  <rect x="694" y="584" width="20" height="12" fill="#c53030" />
-  <path class="pour" d="M708,598 Q720,626 748,640" />
-  <path class="duct" d="M722,636 L786,636 L786,688 L722,688 Z" />
-  <text class="in" x="754" y="668" text-anchor="middle">ladle</text>
-  <text class="s" x="720" y="578">tap hole</text>
-  <text class="s" x="800" y="640">Refining and casting</text>
-  <text class="s" x="800" y="662">98.5 to 99.5 % Si</text>
+  <rect x="694" y="604" width="20" height="12" fill="#c53030" />
+  <text class="s" x="718" y="596">tap hole</text>
+  <path class="pour" d="M708,616 Q722,640 748,646" marker-end="url(#pArrow)" />
+  <rect class="duct" x="712" y="638" width="104" height="52" />
+  <text class="in" x="764" y="664" text-anchor="middle">Ladle</text>
+  <text class="s" x="764" y="684" text-anchor="middle">molten silicon</text>
+  <text class="s" x="826" y="646">Refining and casting</text>
+  <text class="s" x="826" y="668">98.5 to 99.5 % Si</text>
 
   <!-- ==================== shell dimension ==================== -->
-  <path class="dim" d="M340,668 L340,684 M340,676 L720,676 M720,668 L720,684" marker-start="url(#dArrow)" marker-end="url(#dArrow)" />
-  <text class="s" x="530" y="702" text-anchor="middle">Shell about 10 m across</text>
+  <path class="dim" d="M340,668 L340,684 M720,668 L720,684" />
+  <path class="dim" d="M340,676 L720,676" marker-start="url(#dArrow)" marker-end="url(#dArrow)" />
+  <text class="s" x="530" y="702" text-anchor="middle">Shell about <tspan font-weight="700">10 m</tspan> across</text>
 </svg>
