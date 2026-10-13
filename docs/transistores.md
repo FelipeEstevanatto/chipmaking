@@ -33,7 +33,7 @@ A [linha do tempo](/linha-do-tempo) reúne essas mesmas gerações numa lista in
 Canal, porta, fonte e dreno no plano do wafer: a estrutura que a litografia precisava desenhar de uma vez. O silício à frente da área ativa foi removido, e a face dianteira do bloco é um corte transversal por fonte, canal e dreno, que deixa a lateral do canal à vista; é um recurso do desenho, porque a superfície do wafer real é plana. Nos outros três lados, o silício de campo encontra a área ativa rente. O corte no canto dianteiro da porta mostra o óxido de porta em seção e a superfície do canal; a porta de alumínio sobrepõe as duas difusões, a folga de alinhamento que a porta autoalinhada eliminaria em 1968. Desenhado pelo autor, a partir da ASML.
 </DiagramFigure>
 
-Transistores planares (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. O primeiro dispositivo funcional, apresentado em **1960**, tinha porta de **20 µm** e óxido de porta de 100 nm — uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o “nó de 22 nm”, de 2011, tem portas da ordem de 25 nm <Cite id="wikipedia-22nm" />: em cinco décadas, essa dimensão encolheu cerca de 800 vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
+Transistores planares (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. Kahng e Atalla obtiveram o primeiro MOSFET funcional em **1959** e o demonstraram em **1960** <Cite id="chm-mosfet" />; o dispositivo tinha porta de **20 µm** e óxido de porta de 100 nm, e uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o “nó de 22 nm”, de 2011, tem portas da ordem de 25 nm <Cite id="wikipedia-22nm" />: em cinco décadas, essa dimensão encolheu cerca de 800 vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
 
 Na prática, essa geração equipou as calculadoras de bolso e os primeiros microcomputadores domésticos: a família NMOS **6502**, por exemplo, movia o Apple II, o Commodore 64 e o NES.
 
@@ -139,6 +139,8 @@ O primeiro processador de alto volume com silício esticado foi o **Pentium 4 �
 
 Com o óxido de porta já fino demais para conter o **tunelamento**, o vazamento virou o obstáculo do escalonamento; a resposta veio em **2007**, no nó de **45 nm**, com a troca de SiO₂ e polissilício por um dielétrico **High-K à base de háfnio** e por **eletrodos metálicos** <Cite id="intel-45nm" />.
 
+A troca não foi direta. Antes do high-k, o dielétrico já havia mudado uma vez: acrescentar **nitrogênio** ao SiO₂ forma o **oxinitreto de silício (SiON)**, de constante dielétrica efetiva maior, o que compra alguns décimos de nanômetro de filme físico para a mesma capacitância e adiou o limite do óxido por vários nós <Cite id="ecs-gate-dielectrics" />.
+
 O processo de 45 nm trabalha com **1,0 nm de EOT** (*equivalent oxide thickness*, a espessura de SiO₂ que daria a mesma capacitância), e o filme de high-k é fisicamente mais espesso que isso <Cite id="hkmg-paper" />. O comprimento de porta é de **35 nm**, o passo de contato é de **160 nm**, e os transistores NMOS e PMOS usam metais de **funções de trabalho diferentes**, num fluxo *high-k first, metal gate last* em que o metal entra por último, no lugar da porta sacrificial <Cite id="hkmg-paper" />.
 
 A estreia comercial foi o **Core 2 Extreme QX9650**, em novembro de 2007, seguido em janeiro de 2008 pela linha de volume — os Core 2 Duo e Quad de 45 nm que equiparam laptops e MacBooks da época <Cite id="intel-45nm" />.
@@ -213,6 +215,8 @@ NFET e PFET na mesma célula, empilhados em vez de lado a lado.
 
 Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha verticalmente NFET e PFET na mesma célula, reduzindo até **~50%** a área por porta lógica (inversores, SRAM), estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó **A7**, depois de 2030 <Cite id="imec-forksheet" />.
 
+O CFET é uma aposta dentro do silício. Fora dele, os canais candidatos a substituir o silício são os **nanotubos de carbono** e os **dicalcogenetos de metais de transição (TMDs)**, semicondutores bidimensionais que o IRDS mantém como candidatos a extensão do CMOS, ainda sem maturidade de manufatura <Cite id="irds-beyond-cmos" />. E há um segundo eixo, acima do transistor: em vez de empilhar dispositivos, a indústria empilha **dies inteiros** (chiplets) em 2.5D e 3D, ganhando densidade e desempenho no pacote em vez de no wafer ([Empacotamento](/empacotamento)) <Cite id="tsmc-cowos" />.
+
 ## Adendo: o que o número do nó significa
 
 A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração. A história tem três etapas.
@@ -221,7 +225,7 @@ A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos
 
 O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*), a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*), metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
 
-Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />.
+Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />. Esse encolhimento nunca dependeu só do transistor: cada geração também exigiu uma litografia mais fina, e é o **EUV** que sustenta os nós de 7 nm e abaixo ([Fotolitografia](/fotolitografia)) <Cite id="asianometry-euv" />.
 
 ### 2. Os dois números se separaram em meados dos anos 1990
 
@@ -241,10 +245,12 @@ Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "n�
 
 Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1**: 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração**, e é exatamente assim que eles devem ser lidos na tabela do início do capítulo.
 
-<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
+<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'cronologia e comparador interativo' },
   { text: 'Fotolitografia', href: '/fotolitografia', note: 'patterning dos níveis do chip' },
+  { text: 'Empacotamento', href: '/empacotamento', note: 'chiplets e integração 2.5D/3D' },
+  { text: 'Além do silício', href: '/alem-do-silicio', note: 'materiais que competem com o silício' },
   { text: 'Referências', href: '/referencias', note: 'fontes primárias e papers' },
 ]" />

@@ -2094,6 +2094,30 @@ const list: Citation[] = [
     url: 'https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf',
     short: 'NVIDIA (Blackwell)',
   },
+  {
+    key: 'chm-mosfet',
+    num: 261,
+    title: '1960: Metal Oxide Semiconductor (MOS) Transistor Demonstrated',
+    publisher: 'Computer History Museum — The Silicon Engine',
+    url: 'https://www.computerhistory.org/siliconengine/metal-oxide-semiconductor-mos-transistor-demonstrated/',
+    short: 'Computer History Museum (MOSFET)',
+  },
+  {
+    key: 'ecs-gate-dielectrics',
+    num: 262,
+    title: 'Gate Dielectric Process Technology for the Sub-1 nm Equivalent Oxide Thickness (EOT) Era',
+    publisher: 'L. Colombo et al. — Electrochemical Society Interface 16(3), 51–55 (2007)',
+    url: 'https://doi.org/10.1149/2.F07073IF',
+    short: 'ECS Interface (2007)',
+  },
+  {
+    key: 'irds-beyond-cmos',
+    num: 263,
+    title: 'International Roadmap for Devices and Systems — Beyond CMOS chapter (2022)',
+    publisher: 'IEEE',
+    url: 'https://irds.ieee.org/images/files/pdf/2022/2022IRDS_BC.pdf',
+    short: 'IRDS (Beyond CMOS)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

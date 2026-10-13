@@ -33,7 +33,7 @@ The [timeline](/en/linha-do-tempo) gathers these same generations into one inter
 Channel, gate, source and drain in the plane of the wafer: the structure lithography had to draw in one pass. The silicon in front of the active area is cut away, so the front face of the slab is a section through source, channel and drain that leaves the channel's side wall in view; it is a drawing device, because a real wafer surface is flat. On the other three sides the field silicon meets the active area flush. The cut at the gate's front corner shows the gate oxide in section and the channel surface; the aluminium gate overlaps both diffusions, the alignment margin that the self-aligned gate would remove in 1968. Drawn by the author, from ASML.
 </DiagramFigure>
 
-The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. The first working device, presented in **1960**, had a **20 µm** gate and a 100 nm gate oxide — a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has gates of the order of 25 nm <Cite id="wikipedia-22nm" />: in five decades that dimension shrank about eight hundredfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
+The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. Kahng and Atalla built the first working MOSFET in **1959** and demonstrated it in **1960** <Cite id="chm-mosfet" />; the device had a **20 µm** gate and a 100 nm gate oxide, and a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has gates of the order of 25 nm <Cite id="wikipedia-22nm" />: in five decades that dimension shrank about eight hundredfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
 
 In practice this generation powered pocket calculators and the first home microcomputers: the NMOS **6502** family, for instance, drove the Apple II, the Commodore 64 and the NES.
 
@@ -139,6 +139,8 @@ Left, the SiO₂ gate with polysilicon: the thin oxide lets carriers tunnel thro
 
 With the gate oxide already too thin to hold back **tunnelling**, leakage became the obstacle to scaling; the answer came in **2007**, at the **45 nm** node, by trading SiO₂ and polysilicon for a **hafnium-based high-k** dielectric and **metal electrodes** <Cite id="intel-45nm" />.
 
+The switch was not direct. Before high-k the dielectric had already changed once: adding **nitrogen** to SiO₂ forms **silicon oxynitride (SiON)**, with a higher effective dielectric constant, which buys a few tenths of a nanometre of physical film for the same capacitance and pushed the oxide's limit out by several nodes <Cite id="ecs-gate-dielectrics" />.
+
 The 45 nm process runs at **1.0 nm EOT** (*equivalent oxide thickness*, the thickness of SiO₂ that would give the same capacitance), and the high-k film is physically thicker than that <Cite id="hkmg-paper" />. The gate is **35 nm** long, the contacted gate pitch is **160 nm**, and the NMOS and PMOS transistors use metals with **different work functions**, in a *high-k first, metal gate last* flow where the metal goes in last, replacing the sacrificial gate <Cite id="hkmg-paper" />.
 
 The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line — the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
@@ -213,6 +215,8 @@ NFET and PFET in the same cell, stacked instead of side by side.
 
 Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) by up to **~50%** and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
 
+CFET is a bet inside silicon. Outside it, the candidate channel materials to replace silicon are **carbon nanotubes** and **transition metal dichalcogenides (TMDs)**, two-dimensional semiconductors that the IRDS keeps as CMOS-extension candidates, still short of manufacturing maturity <Cite id="irds-beyond-cmos" />. And there is a second axis, above the transistor: instead of stacking devices, the industry stacks **whole dies** (chiplets) in 2.5D and 3D, gaining density and performance in the package rather than on the wafer ([Packaging](/en/empacotamento)) <Cite id="tsmc-cowos" />.
+
 ## Addendum: what the node number means
 
 The “Node” column only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name. The story has three stages.
@@ -221,7 +225,7 @@ The “Node” column only corresponds to a real physical dimension up to the mi
 
 The “node” was not invented as a concept. It records the observation that **two different dimensions gave roughly the same number**. The first is the **gate length**, the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the **metal half-pitch**, half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
 
-For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%** — and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />.
+For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%** — and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />. That shrink never depended on the transistor alone: each generation also demanded finer lithography, and it is **EUV** that sustains the 7 nm node and below ([Photolithography](/en/fotolitografia)) <Cite id="asianometry-euv" />.
 
 ### 2. The two numbers came apart in the mid-1990s
 
@@ -241,10 +245,12 @@ Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node num
 
 Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the table at the top of the chapter.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },
   { text: 'Photolithography', href: '/en/fotolitografia', note: 'patterning the chip layers' },
+  { text: 'Packaging', href: '/en/empacotamento', note: 'chiplets and 2.5D/3D integration' },
+  { text: 'Beyond silicon', href: '/en/alem-do-silicio', note: 'materials that compete with silicon' },
   { text: 'References', href: '/en/referencias', note: 'primary sources and papers' },
 ]" />
