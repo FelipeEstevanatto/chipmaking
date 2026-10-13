@@ -12,7 +12,7 @@ No fim da [fabricação de wafers](/fabricacao-wafers) existe uma lâmina de sil
 
 O capítulo da [fotolitografia](/fotolitografia) mostra como um desenho é impresso nessa lâmina. Este mostra o que acontece **em volta** da impressão — porque a litografia sozinha não constrói nada. Ela só abre a porta; quem entra são os outros processos.
 
-## A fábricação é um laço
+## A fabricação é um laço
 
 <DiagramFigure src="/assets/fab-loop.svg" alt="O wafer circula repetidamente por sete módulos numerados (oxidação, deposição, litografia, corrosão, implantação, planarização e metrologia), acumulando de 600 a mais de mil etapas ao longo de cerca de três meses">
 O wafer dá dezenas de voltas pelos mesmos equipamentos. Os sete módulos estão numerados na ordem em que o wafer os visita; a litografia está destacada porque tem capítulo próprio, e a metrologia porque é ela que mede o resultado. Cada volta acrescenta uma camada, apaga parte dela e mede o que sobrou.

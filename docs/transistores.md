@@ -65,7 +65,7 @@ Acima, porta de alumínio com sobreposição de fonte e dreno; abaixo, porta de 
 
 O primeiro produto comercial foi o **Fairchild 3708** (1968), um multiplexador analógico de 8 canais criado como substituto do problemático 3705 de porta de alumínio. Comparado a ele, o 3708 era cerca de **5× mais rápido**, tinha aproximadamente **100× menos corrente de fuga** e a resistência de condução das chaves analógicas era **3× menor** <Cite id="faggin-sgt" />. Vale registrar a disputa: a Intel apresentava o 1101 como o primeiro CI de porta de silício, mas o 3708 chegou antes — e a própria Intel se beneficiou do processo ao contratar Les Vadasz e Federico Faggin, que o haviam desenvolvido <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
 
-Foi essa técnica que tornou viáveis os primeiros microprocessadores. Faggin entrou na Intel em **abril de 1970** e foi o arquiteto da família 4000: o **Intel 4004** (1971) saiu com 2 300 transistores numa pastilha de 12 mm², em pMOS de 10 µm, projetado para a calculadora Busicom 141-PF <Cite id="intel-4004" />. Sem a porta autoalinhada e o contato enterrado, o 4004 não caberia num die fabricável <Cite id="chm-sigate" />.
+Foi essa técnica que tornou viáveis os primeiros microprocessadores. Faggin entrou na Intel em **abril de 1970** e foi o arquiteto da família 4000: o **Intel 4004** (1971) saiu com 2.300 transistores numa pastilha de 12 mm², em pMOS de 10 µm, projetado para a calculadora Busicom 141-PF <Cite id="intel-4004" />. Sem a porta autoalinhada e o contato enterrado, o 4004 não caberia num die fabricável <Cite id="chm-sigate" />.
 
 ## 1985: LDD (dreno levemente dopado)
 
@@ -233,13 +233,13 @@ Para continuar ganhando velocidade, a indústria passou a encolher o **comprimen
 
 O roteiro setorial que definia os nós, o **ITRS**, registrou a ruptura nos próprios documentos. Já na edição de **1999** ele eliminou o "nó de 150 nm" e redefiniu a designação a partir do **meio-passo de DRAM**, escrevendo que "o nó de tecnologia agora não é muito mais do que um rótulo simples para marcas de escala ainda meio convenientes ao longo desse caminho" <Cite id="itrs-1999" />. Em **2001**, o texto ficou explícito: a designação do nó "é definida pelo meio-passo do DRAM, e não pelo comprimento de porta do transistor nem pela dimensão mínima característica daquele nó" <Cite id="itrs-2001" />.
 
-Em outras palavras: o número já não media o transistor. Media uma dimensão de memória — e servia, sobretudo, como marcador de geração.
+O número já não media o transistor: media uma dimensão de memória, e servia sobretudo como marcador de geração.
 
 ### 3. Com o FinFET, o número deixou de medir qualquer coisa
 
 A ruptura final veio com a mudança estrutural do transistor. No "**nó de 22 nm**" da Intel (2011), o primeiro com FinFET, os dispositivos tinham portas de **26 nm**, meio-passo de **40 nm** e aletas de **8 nm** <Cite id="ieee-node" />. Nenhuma dessas três medidas é 22.
 
-Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "não tinha mais absolutamente nenhum sentido, porque não dizia respeito a nenhuma dimensão que se pudesse encontrar no chip" <Cite id="ieee-node" />. O artigo em que a citação aparece saiu na IEEE Spectrum com um título direto ao ponto: *“The Node is Nonsense”*.
+Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "… não tinha mais absolutamente nenhum sentido, porque não dizia respeito a nenhuma dimensão que se pudesse encontrar no chip" <Cite id="ieee-node" />. O artigo em que a citação aparece saiu na IEEE Spectrum com um título direto ao ponto: *“The Node is Nonsense”*.
 
 ### O que veio no lugar
 

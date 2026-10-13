@@ -10,7 +10,7 @@ dataAsOf: 2025
 A sample of metallurgical silicon, the industrial product that later becomes wafers for solar cells and chips.
 </DiagramFigure>
 
-Producing silicon wafers in sufficient quantity and quality is the main factor determining the price of solar panels, and it is essential for manufacturing computer chips. The purity each sector requires, however, is completely different, and according to the 2026 edition of the *Mineral Commodity Summaries* from the United States Geological Survey (USGS) <Cite id="usgs-mcs-2026" />, China accounted for almost 80% of the estimated world output of silicon materials (silicon metal and ferrosilicon) in 2025.
+Producing silicon wafers in sufficient quantity and quality is one of the main factors determining the price of solar panels, and it is essential for manufacturing computer chips. The purity each sector requires, however, is completely different, and according to the 2026 edition of the *Mineral Commodity Summaries* from the United States Geological Survey (USGS) <Cite id="usgs-mcs-2026" />, China accounted for almost 80% of the estimated world output of silicon materials (silicon metal and ferrosilicon) in 2025.
 
 ## Production estimates {#producao-estimada}
 
@@ -30,7 +30,7 @@ The USGS has published silicon metal and ferrosilicon separately since the 2024 
 
 <SourceNote label="Chart data" :ids="['usgs-mcs-2024', 'usgs-mcs-2025', 'usgs-mcs-2026']" />
 
-Silicon is the second most abundant material in the Earth's crust (27%) and can be mined from many sources, appearing as oxide (silica) and silicates: sand, quartz, amethyst, agate and flint. The most efficient route begins with mining and burning quartz, which is silicon dioxide (SiO₂).
+Silicon is the second most abundant element in the Earth's crust and can be mined from many sources, as oxide (silica) in sand, quartz and flint, and as silicates in feldspar and mica. The industrial route is mining quartz (SiO₂) and reducing it with carbon in an arc furnace.
 
 <SeeAlso title="See also" :links="[
   { text: 'Mining & MG-Si', href: '/en/mineracao-mg-si', note: 'the first industrial step after quartz' },

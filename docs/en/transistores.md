@@ -233,13 +233,13 @@ To keep gaining speed, the industry began shrinking the **gate length faster** t
 
 The industry roadmap that defined the nodes, the **ITRS**, recorded the break in its own documents. As early as **1999** it eliminated the “150 nm node” and redefined the designation from the **DRAM half-pitch**, writing that “technology node is now not much more than a simple label for still somewhat convenient ‘tick marks’ along this path” <Cite id="itrs-1999" />. By **2001** the text was explicit: the node designation “is defined by DRAM half pitch, not by the transistor gate length or minimum feature size characteristic of that node” <Cite id="itrs-2001" />.
 
-In other words, the number no longer measured the transistor. It measured a memory dimension — and served mainly as a generation marker.
+The number no longer measured the transistor: it measured a memory dimension, and served mainly as a generation marker.
 
 ### 3. With FinFET, the number stopped measuring anything
 
 The final break came with the structural change of the transistor. At Intel's “**22 nm**” node (2011), the first with FinFETs, the devices had **26 nm** gates, a **40 nm** half-pitch and **8 nm** fins <Cite id="ieee-node" />. None of those three measurements is 22.
 
-Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node number “had by then absolutely no meaning, because it had nothing to do with any dimension that you can find on the die” <Cite id="ieee-node" />. The article carrying that quote ran in IEEE Spectrum under a blunt headline: *“The Node is Nonsense”*.
+Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node number "… had by then absolutely no meaning, because it had nothing to do with any dimension that you can find on the die" <Cite id="ieee-node" />. The article carrying that quote ran in IEEE Spectrum under a blunt headline: *“The Node is Nonsense”*.
 
 ### What replaced it
 

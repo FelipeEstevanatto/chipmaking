@@ -22,19 +22,12 @@ O texto segue essa ordem.
 O silício cristalino adota a **estrutura cúbica de diamante** (*diamond cubic crystal structure*).
 
 <DiagramFigure src="/pdf-images/p08-1.png" alt="Estrutura cúbica de diamante">
-The diamond cubic crystal structure.
+A estrutura cúbica de diamante.
 </DiagramFigure>
 
 <DiagramFigure src="/pdf-images/p08-2.png" alt="Célula unitária do silício">
 Orientações cristalográficas (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.
 </DiagramFigure>
-
-### Recursos adicionais
-
-- [Estrutura cristalina — YouTube](https://www.youtube.com/watch?v=lgYQE2aTNNc)
-- [Orientação e estrutura cristalina — WaferPro](https://waferpro.com/understanding-silicon-wafer-orientation-and-crystal-structure/)
-- [Miller indices — YouTube](https://www.youtube.com/watch?v=_A7oqoMFIiA)
-- [Miller Indices (SVG) — Wikimedia](https://upload.wikimedia.org/wikipedia/commons/d/d5/Miller_Indices_Felix_Kling.svg) · [página Commons](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (DeepKling, CC BY 3.0)
 
 Podemos inferir a estrutura do cristal com **DRX (difração de raios-X)** em condições controladas (amostra limpa e orientada). A **lei de Bragg** descreve a reflexão dos raios X pelos planos cristalinos e permite determinar geometria da rede — inclusive em alguns materiais parcialmente cristalinos ou filmes finos quando a resolução experimental é suficiente.
 
@@ -43,7 +36,7 @@ Podemos inferir a estrutura do cristal com **DRX (difração de raios-X)** em co
 Índices que descrevem direções e planos cristalográficos; planos podem ter propriedades **anisotrópicas** (dependentes da direção).
 
 <DiagramFigure src="/assets/miller-indices.svg" alt="Índices de Miller em estrutura cúbica">
-DeepKling — <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG da Wikimedia Commons.
+Felix Kling (DeepKling) — <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
 ## Por que silício, e não germânio

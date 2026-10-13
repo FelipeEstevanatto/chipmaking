@@ -10,7 +10,7 @@ dataAsOf: 2025
 Amostra de silício metalúrgico, o produto industrial que depois vira wafers para células solares e chips.
 </DiagramFigure>
 
-A fabricação de wafers de silício em quantidade e qualidade é o principal fator determinante para o preço de painéis solares, e essencial para a produção de chips de computadores. Porém a pureza necessária do material para esses dois setores é completamente diferente, e segundo a edição de 2026 do *Mineral Commodity Summaries* do Serviço Geológico dos Estados Unidos (USGS) <Cite id="usgs-mcs-2026" />, a China respondeu por quase 80% da produção mundial estimada de materiais de silício (silício metálico e ferrossilício) em 2025.
+A fabricação de wafers de silício em quantidade e qualidade é um dos principais fatores determinantes para o preço de painéis solares, e essencial para a produção de chips de computadores. Porém a pureza necessária do material para esses dois setores é completamente diferente, e segundo a edição de 2026 do *Mineral Commodity Summaries* do Serviço Geológico dos Estados Unidos (USGS) <Cite id="usgs-mcs-2026" />, a China respondeu por quase 80% da produção mundial estimada de materiais de silício (silício metálico e ferrossilício) em 2025.
 
 ## Produção estimada {#producao-estimada}
 
@@ -30,7 +30,7 @@ O USGS publica silício metálico e ferrossilício separadamente desde a ediçã
 
 <SourceNote label="Dados do gráfico" :ids="['usgs-mcs-2024', 'usgs-mcs-2025', 'usgs-mcs-2026']" />
 
-O silício é o segundo material mais abundante na crosta terrestre (27%) e pode ser minerado de diversas fontes, sendo encontrado como óxido (sílica) e silicatos: areia, quartzo, ametista, ágata e sílex. A maneira mais eficiente vem da mineração e incineração do quartzo, que é dióxido de silício (SiO₂).
+O silício é o segundo elemento mais abundante na crosta terrestre e pode ser minerado de diversas fontes, como óxido (sílica), na areia, no quartzo e no sílex, e como silicatos, nos feldspatos e nas micas. A rota industrial é a mineração do quartzo (SiO₂) e a sua redução carbotérmica num forno de arco.
 
 <SeeAlso :links="[
   { text: 'Mineração e MG-Si', href: '/mineracao-mg-si', note: 'primeiro passo industrial após o quartzo' },

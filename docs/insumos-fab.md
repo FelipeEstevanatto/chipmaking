@@ -43,7 +43,7 @@ Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma más
 
 A [planarização químico-mecânica](/fabricacao-wafers#polimento-quimico-mecanico-cmp) parece um polimento, e é — mas com química envolvida. O **slurry** é uma suspensão de partículas abrasivas em uma solução que ataca quimicamente a superfície, de modo que o material é primeiro enfraquecido por reação e depois removido mecanicamente <Cite id="runnels-1994" />.
 
-A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, com a troca de abrasivos e a passagem do alumínio ao cobre, está em [na fab](/na-fab) <Cite id="cmp-history" />.
+A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, com a troca de abrasivos e a passagem do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />.
 
 ## Gases e o neônio
 

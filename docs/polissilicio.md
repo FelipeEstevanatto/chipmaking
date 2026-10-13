@@ -6,7 +6,7 @@ dataAsOf: 2025
 
 # Purificação química e polissilício
 
-O Silício de Grau Metalúrgico ([MG-Si](/glossario)) contém impurezas metálicas e dopantes que afetam severamente o desempenho de semicondutores e painéis solares <Cite id="energy-central" />. Para atingir o grau de **polissilício** (silício policristalino de altíssima pureza), ele deve ser refinado quimicamente <Cite id="csiro" />.
+O silício de grau metalúrgico ([MG-Si](/glossario)) contém impurezas metálicas e dopantes que afetam severamente o desempenho de semicondutores e painéis solares <Cite id="energy-central" />. Para atingir o grau de **polissilício** (silício policristalino de altíssima pureza), ele deve ser refinado quimicamente <Cite id="csiro" />.
 
 A matéria-prima nunca foi o gargalo: o silício é o **segundo elemento mais abundante da crosta terrestre**, atrás apenas do oxigênio <Cite id="pv-mfg-polysilicon" />. Todo o valor desta etapa está em separar do silício os poucos átomos de boro, fósforo e metais que arruínam um transistor ou uma célula solar — e nenhuma filtragem física dá conta disso.
 
@@ -125,7 +125,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 Quando o processo termina, a **redoma de aço é erguida** e o conjunto (núcleo em “U” e silício depositado) é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
 
-O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou. Quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US\$ 10 por quilograma** <Cite id="bernreuter-production" />.
+O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou, mas quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US\$ 10 por quilograma** <Cite id="bernreuter-production" />.
 
 Classes de pureza <Cite id="bernreuter-production" />:
 
@@ -251,13 +251,13 @@ As classes de pureza citadas acima ficam mais concretas quando se olham os núme
 | Elemento | MG-Si (ppm) | Grau solar (ppm) | Grau solar policristalino | Grau eletrônico (ppm) |
 | --- | --- | --- | --- | --- |
 | **Si** (fração mássica) | 99 % | 99,9999 % | 99,99999 % | 99,999999999 % |
-| Fe | 2 000–3 000 | < 0,3 | — | < 0,01 |
-| Al | 1 500–4 000 | < 0,1 | — | < 0,0008 |
+| Fe | 2.000–3.000 | < 0,3 | — | < 0,01 |
+| Al | 1.500–4.000 | < 0,1 | — | < 0,0008 |
 | Ca | 500–600 | < 0,1 | — | < 0,003 |
 | B | 40–80 | < 0,3 | — | < 0,0002 |
 | P | 20–50 | < 0,1 | — | < 0,0008 |
 | C | 600 | < 3 | — | < 0,5 |
-| O | 3 000 | < 10 | — | — |
+| O | 3.000 | < 10 | — | — |
 | Ti | 160–200 | < 0,01 | — | < 0,003 |
 | Cr | 50–200 | < 0,1 | — | — |
 
@@ -303,7 +303,7 @@ Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) 
 
 ### A ascensão chinesa
 
-Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar. As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%**, pouco dissuasivas, enquanto os americanos apanharam com taxas de até **57%**, contornadas por algum tempo pelo regime de *processing trade* e fechadas em agosto de 2014 <Cite id="bernreuter-market" />.
+Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar. As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%**, pouco dissuasivas, enquanto os americanos apanharam com taxas de até **57%**, contornadas por um tempo pelo regime de *processing trade*, que isentou essas importações de direitos até agosto de 2015 e cuja brecha o Mofcom anunciou fechar em agosto de 2014 <Cite id="bernreuter-market" />.
 
 A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
 
@@ -313,7 +313,7 @@ A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
 
 A virada para o monocristalino não foi só técnica. Em **2015** a Administração Nacional de Energia da China lançou o programa **Top Runner**, cujos limites mínimos de eficiência **favoreciam o monocristalino em detrimento do multicristalino**, e isso deu o empurrão que faltava para a Longi e a Zhonghuan escalarem capacidade <Cite id="bernreuter-market" />. Como células monocristalinas, sobretudo tipo n, exigem insumo mais puro, o programa também favoreceu as plantas chinesas de polissilício de melhor qualidade, e manteve aberto um nicho para fornecedores estrangeiros como a Wacker e a OCI <Cite id="bernreuter-market" />.
 
-No fim, o mapa virou geopolítico. Fora da China, o último grande projeto foi a planta da **Wacker no Tennessee (EUA)**, aberta em 2016 mas decidida ainda em 2010, antes de existirem os direitos antidumping americanos <Cite id="bernreuter-market" />. E o **Uyghur Forced Labor Prevention Act** criou um **segmento separado, de preço mais alto**, para polissilício não chinês, reabrindo a conversa sobre capacidade fora do país <Cite id="bernreuter-market" />.
+No fim, o mapa virou geopolítico. Fora da China, o último grande projeto foi a planta da **Wacker no Tennessee (EUA)**, aberta em 2016 mas decidida ainda em 2010, antes de existirem os direitos antidumping chineses sobre o polissilício americano <Cite id="bernreuter-market" />. E o **Uyghur Forced Labor Prevention Act** criou um **segmento separado, de preço mais alto**, para polissilício não chinês, reabrindo a conversa sobre capacidade fora do país <Cite id="bernreuter-market" />.
 
 ### Uma nota sobre o presente
 

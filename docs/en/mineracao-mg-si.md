@@ -6,7 +6,7 @@ dataAsOf: 2025
 
 # Quartz mining and metallurgical silicon production
 
-The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **unlimited** — although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
+The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **plentiful** — although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
 
 Quartz enters the chain along **two distinct paths**, and it is worth separating them from the outset: it is the **raw material** for silicon (reduced to MG-Si, as we shall see next) and it is also the material of the **crucible** that holds the melt during crystal growth. The first use tolerates impurities that the chemistry downstream removes; the second does not.
 
@@ -74,7 +74,7 @@ Because the quartz becomes the **crucible** in which the silicon is melted, it s
 The axis spans seven orders of magnitude, and that distance is what separates the metal that leaves the furnace from the quartz that can become a crucible. The MG-Si band is the complement of its silicon content (98.5 to 99.5% ⇒ 5,000 to 15,000 ppm of other elements); the 1 ppm boron mark is a limit in the crystal, and the three rows in the key are limits in the quartz <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
 </DiagramFigure>
 
-The most demanding grade in the IOTA® line reaches **99.9992% SiO₂**, with K + Li + Na totalling **80 ppb** and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />. It is a niche material: what sustains the industry's volume sits a few digits below, and The Quartz Corp works at **99.999%** silica <Cite id="quartzcorp-hpq" />.
+The most demanding grade in the IOTA® line reaches **99.9992% SiO₂**, with K + Li + Na totalling **80 ppb** and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />. It is a niche material: what sustains the industry's volume sits one grade below, and The Quartz Corp works at **99.999%** silica <Cite id="quartzcorp-hpq" />.
 
 ## Carbothermal reduction (MG-Si)
 
@@ -164,7 +164,7 @@ That set of factors, not the ore, is what decides where a plant is built.
 Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer', 'usgs-mcs-2026']" />
+<SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'usgs-mcs-2026']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Introduction', href: '/en/introducao', note: 'world metallurgical silicon production', cite: 'usgs-mcs-2026' },

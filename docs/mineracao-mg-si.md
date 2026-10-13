@@ -6,7 +6,7 @@ dataAsOf: 2025
 
 # Mineração e produção de silício metalúrgico
 
-O primeiro passo na cadeia de produção do silício é a obtenção de **Quartzo de Alta Pureza (HPQ)**, extraído de depósitos de quartzito ou quartzo mineral, extremamente abundante na crosta terrestre <Cite id="pv-education" />. O silício é o **segundo elemento mais abundante** da crosta, atrás apenas do oxigênio, e ocorre como sílica praticamente pura ou como silicatos; os recursos são, na prática, **ilimitados** — embora a pureza varie consideravelmente de depósito para depósito <Cite id="saimm" />. Na década de 1970, essa mineração era altamente seletiva, focando em pegmatitos em regiões como o Brasil e Madagascar para garantir que as amostras fossem livres de impurezas críticas como ferro e boro <Cite id="sciencedirect-hpq" />. Hoje, a extração em larga escala concentra-se num punhado de depósitos excepcionais: o processo subsequente de purificação física e química só consegue partir de um material que já era bom <Cite id="sciencedirect-hpq" />.
+O primeiro passo na cadeia de produção do silício é a obtenção de **Quartzo de Alta Pureza (HPQ)**, extraído de depósitos de quartzito ou quartzo mineral, extremamente abundante na crosta terrestre <Cite id="pv-education" />. O silício é o **segundo elemento mais abundante** da crosta, atrás apenas do oxigênio, e ocorre como sílica praticamente pura ou como silicatos; os recursos são, na prática, **abundantes** — embora a pureza varie consideravelmente de depósito para depósito <Cite id="saimm" />. Na década de 1970, essa mineração era altamente seletiva, focando em pegmatitos em regiões como o Brasil e Madagascar para garantir que as amostras fossem livres de impurezas críticas como ferro e boro <Cite id="sciencedirect-hpq" />. Hoje, a extração em larga escala concentra-se num punhado de depósitos excepcionais: o processo subsequente de purificação física e química só consegue partir de um material que já era bom <Cite id="sciencedirect-hpq" />.
 
 O quartzo entra na cadeia por **dois caminhos distintos**, e vale separá-los desde já: ele é a **matéria-prima** do silício (reduzido a MG-Si, como veremos a seguir) e também o material do **cadinho** que contém o banho no crescimento do cristal. O primeiro uso tolera impurezas que a química a jusante remove; o segundo, não.
 
@@ -74,7 +74,7 @@ O **boro** é o caso crítico, porque é justamente o dopante que define a resis
 A escala cobre sete ordens de grandeza, e é essa distância que separa o metal que sai do forno do quartzo que pode virar cadinho. A faixa do MG-Si é o complemento do teor de silício (98,5 a 99,5% ⇒ 5.000 a 15.000 ppm de outros elementos); o boro de 1 ppm é o limite do cristal, e os três valores do quadro são os limites do quartzo <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
 </DiagramFigure>
 
-O grau mais exigente da linha IOTA® chega a **99,9992% de SiO₂**, com K + Li + Na somando **80 ppb** e metais de transição críticos abaixo de 50 ppb <Cite id="sibelco-hpq" />. É um material de nicho: o que sustenta o volume da indústria fica alguns dígitos abaixo, e a The Quartz Corp trabalha com **99,999%** de sílica <Cite id="quartzcorp-hpq" />.
+O grau mais exigente da linha IOTA® chega a **99,9992% de SiO₂**, com K + Li + Na somando **80 ppb** e metais de transição críticos abaixo de 50 ppb <Cite id="sibelco-hpq" />. É um material de nicho: o que sustenta o volume da indústria fica um grau logo abaixo, e a The Quartz Corp trabalha com **99,999%** de sílica <Cite id="quartzcorp-hpq" />.
 
 ## Redução carbotérmica (MG-Si)
 
@@ -164,7 +164,7 @@ Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chi
 A planta da Elkem em Salten, em Straumen, no norte da Noruega, produz ferrossilício desde 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'asianometry-wafer', 'usgs-mcs-2026']" />
+<SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'usgs-mcs-2026']" />
 
 <SeeAlso :links="[
   { text: 'Introdução', href: '/introducao', note: 'produção mundial de silício metálico', cite: 'usgs-mcs-2026' },

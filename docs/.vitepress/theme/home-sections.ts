@@ -50,8 +50,8 @@ export const HOME_SECTIONS: HomeSection[] = [
     id: 'wafer',
     title: { pt: 'Wafer', en: 'Wafer' },
     details: {
-      pt: 'Czochralski, corte, CMP, limpeza RCA e estrutura cristalina do silício.',
-      en: 'Czochralski growth, slicing, CMP, RCA cleaning and the crystal structure of silicon.',
+      pt: 'Czochralski, corte, CMP e limpeza RCA.',
+      en: 'Czochralski growth, slicing, CMP and RCA cleaning.',
     },
     path: '/fabricacao-wafers',
     icon: 'wafer',
@@ -109,8 +109,8 @@ export const HOME_SECTIONS: HomeSection[] = [
     id: 'panorama',
     title: { pt: 'Panorama', en: 'Panorama' },
     details: {
-      pt: 'Preços e valor, os vizinhos SiC e GaN, o mapa dos gargalos e as séries de dados.',
-      en: 'Prices and value, the SiC and GaN neighbours, the chokepoint map and the data series.',
+      pt: 'O mapa dos gargalos: a geografia da cadeia e onde ela é mais frágil.',
+      en: 'The chokepoint map: the geography of the chain and where it is most fragile.',
     },
     path: '/gargalos',
     icon: 'chart',

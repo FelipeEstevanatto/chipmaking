@@ -125,7 +125,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 When the process ends, the **steel bell jar is lifted off** and the assembly (U-shaped core plus deposited silicon) is removed whole and fractured into smaller chunks <Cite id="bernreuter-production" />. The rods reach **15 to 20 cm in diameter** <Cite id="bernreuter-production" /> and the material comes out at **9N** purity or better, ready to be graded <Cite id="pv-mfg-polysilicon" />.
 
-The process uses **more than 100 kWh per kilogram** of deposited silicon, at low yield. That energy use is its main drawback <Cite id="saimm" />. Alternatives have been tried for decades. A 1985 survey listed **17 routes** besides Siemens, and few of them reached production <Cite id="bernreuter-production" />. Since 2004 the process's share of the global market **has fallen below 90% only once**, in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. The chemistry stayed. The operators changed. Chinese plants, with cheap electricity and domestic equipment, brought the **production cost** below **US\$ 10 per kilogram** <Cite id="bernreuter-production" />.
+The process uses **more than 100 kWh per kilogram** of deposited silicon, at low yield. That energy use is its main drawback <Cite id="saimm" />. Alternatives have been tried for decades. A 1985 survey listed **17 routes** besides Siemens, and few of them reached production <Cite id="bernreuter-production" />. Since 2004 the process's share of the global market **has fallen below 90% only once**, in 2008, at the peak of the shortage <Cite id="bernreuter-production" />. The chemistry stayed, but the operators changed. Chinese plants, with cheap electricity and domestic equipment, brought the **production cost** below **US\$ 10 per kilogram** <Cite id="bernreuter-production" />.
 
 Purity classes <Cite id="bernreuter-production" />:
 
@@ -303,7 +303,7 @@ That growth during the 2000s made the number of plants jump from **11** (2004) t
 
 ### The Chinese ascent
 
-In 2004 China produced practically no polysilicon. By **2018** it held **55%** of global volume; by **2023**, **more than 90%** <Cite id="bernreuter-market" />. The path ran through tariffs. In **July 2013** the Chinese Ministry of Commerce (Mofcom) imposed duties on imports from the **United States and South Korea**, and several idle plants resumed production. The rates for the two main South Korean suppliers came in **below 3%**, hardly dissuasive, while US producers were hit with rates of up to **57%**, circumvented for a time through the *processing trade* loophole and closed in August 2014 <Cite id="bernreuter-market" />.
+In 2004 China produced practically no polysilicon. By **2018** it held **55%** of global volume; by **2023**, **more than 90%** <Cite id="bernreuter-market" />. The path ran through tariffs. In **July 2013** the Chinese Ministry of Commerce (Mofcom) imposed duties on imports from the **United States and South Korea**, and several idle plants resumed production. The rates for the two main South Korean suppliers came in **below 3%**, hardly dissuasive, while US producers were hit with rates of up to **57%**, circumvented for a time through the *processing trade* loophole, which exempted those imports from duties until August 2015 and which Mofcom announced it would close in August 2014 <Cite id="bernreuter-market" />.
 
 The expansion changed the nature of the market through three simultaneous forces:
 
@@ -313,7 +313,7 @@ The expansion changed the nature of the market through three simultaneous forces
 
 The shift to monocrystalline was not purely technical. In **2015** China's National Energy Administration launched the **Top Runner** programme, whose minimum efficiency thresholds **favoured monocrystalline over multicrystalline**, and that provided the push Longi and Zhonghuan needed to scale up <Cite id="bernreuter-market" />. Because monocrystalline cells, especially n-type, require purer feedstock, the programme also favoured China's higher-quality polysilicon plants, and kept a niche open for foreign suppliers such as Wacker and OCI <Cite id="bernreuter-market" />.
 
-In the end the map turned geopolitical. Outside China, the last major project was **Wacker's plant in Tennessee (USA)**, opened in 2016 but decided back in 2010, before US anti-dumping duties existed <Cite id="bernreuter-market" />. And the **Uyghur Forced Labor Prevention Act** created a **separate, higher-priced segment** for non-Chinese polysilicon, reopening the conversation about capacity outside the country <Cite id="bernreuter-market" />.
+In the end the map turned geopolitical. Outside China, the last major project was **Wacker's plant in Tennessee (USA)**, opened in 2016 but decided back in 2010, before the Chinese anti-dumping duties on US polysilicon existed <Cite id="bernreuter-market" />. And the **Uyghur Forced Labor Prevention Act** created a **separate, higher-priced segment** for non-Chinese polysilicon, reopening the conversation about capacity outside the country <Cite id="bernreuter-market" />.
 
 ### A note on the present
 

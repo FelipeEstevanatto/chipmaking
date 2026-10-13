@@ -39,23 +39,12 @@ Fix the class, not the instance; grep for the rest after each fix.
 - **HPQ "70 a 90 %" with no published source**: `mineracao-mg-si-03`, `gargalos-02`, and the
   `chokepoint-share` row that rides on the same `sibelco-hpq` marker. Replace the marker or hedge
   the claim, in all three places.
-- **Uncited claims**: `introducao-03`, `o-elemento-silicio-03`, `mineracao-mg-si-02/08`,
-  `fotolitografia-02` — a claim with no `<Cite>` is a blocker per the repo's own rule, even when
-  the number is plausible.
+- **Uncited claims**: `o-elemento-silicio-03`, `fotolitografia-02` — a claim with no `<Cite>` is a
+  blocker per the repo's own rule, even when the number is plausible.
 
 ## Report — docs/index.md, docs/introducao.md, docs/o-elemento-silicio.md, docs/mineracao-mg-si.md (+ en/ mirrors)
 
 ### index
-
-### index-02 — Panorama card sells four destinations and opens one
-- where: docs/index.md:L44-L47 (and docs/en/index.md:L44-L47; the Wafer card at docs/index.md:L28-L31 has the same shape)
-- category: link
-- severity: minor
-- quote: "title: Panorama / details: Preços e valor, os vizinhos SiC e GaN, o mapa dos gargalos e as séries de dados. / link: /gargalos"
-- problem: The card names `/precos-e-valor`, `/alem-do-silicio`, `/gargalos` and `/dados` but links only to `/gargalos`; the Wafer card advertises "estrutura cristalina do silício", which is the subject of `/estrutura-wafers`, while linking `/fabricacao-wafers`. A reader clicking the card lands on one of the pages it describes and may not find the others.
-- fix: Point the Panorama card at `/gargalos` but cut the details to the chokepoint map, or keep the four subjects and add a short second line of links (the sidebar already carries the four); move "estrutura cristalina" out of the Wafer card or retarget it.
-- verification: verified (all four targets exist in `docs/` and the sidebar in `docs/.vitepress/config.ts`).
-- confidence: high
 
 ### index-03 — idea: show the purity fork on the home diagram
 - where: docs/index.md:L52-L61 (and docs/en/index.md:L52-L61)
@@ -68,36 +57,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: high
 
 ### introducao
-
-### introducao-03 — the opening claim is uncited
-- where: docs/introducao.md:L13 (and docs/en/introducao.md:L13)
-- category: source
-- severity: major
-- quote: "A fabricação de wafers de silício em quantidade e qualidade é o principal fator determinante para o preço de painéis solares, e essencial para a produção de chips de computadores." / "Producing silicon wafers in sufficient quantity and quality is the main factor determining the price of solar panels, and it is essential for manufacturing computer chips."
-- problem: The sentence has no `<Cite>`, and it is the strongest claim on the page ("the main factor determining the price"). Wafers are one cost block among glass, encapsulant, framing and processing, so the superlative needs a source or a qualifier.
-- fix: Cite the measure (a PV cost breakdown giving the wafer/polysilicon share of module cost) or soften to "um dos principais" / "one of the main factors"; do not attach this claim to `usgs-mcs`, which does not publish cost shares.
-- verification: needs external verification (source for wafer/polysilicon share of module cost — e.g. a PV market report; the site's own `docs/celulas-solares.md` carries no such number).
-- confidence: high (that the claim is uncited); medium (on the exact share to cite)
-
-### introducao-04 — "incineração do quartzo" names a process that does not exist
-- where: docs/introducao.md:L41 (and docs/en/introducao.md:L41)
-- category: fact
-- severity: major
-- quote: "A maneira mais eficiente vem da mineração e incineração do quartzo, que é dióxido de silício (SiO₂)." / "The most efficient route begins with mining and burning quartz, which is silicon dioxide (SiO₂)."
-- problem: Quartz is not incinerated (that would yield silica fume, not silicon); it is reduced with carbon in a submerged-arc furnace, as the site's own chapter states. The sentence is the introduction's one-line explanation of the industrial route, and it is wrong.
-- fix: "A rota industrial é a mineração e a redução carbotérmica do quartzo (SiO₂) em forno de arco" / "The industrial route is mining quartz (SiO₂) and reducing it with carbon in an arc furnace", with the pointer to `/mineracao-mg-si` kept in the SeeAlso.
-- verification: verified (against `docs/mineracao-mg-si.md:L51-L53`, "redução carbotérmica … fornos elétricos de arco submerso").
-- confidence: high
-
-### introducao-05 — abundance figure uncited and the example list mixes categories
-- where: docs/introducao.md:L41 (and docs/en/introducao.md:L41)
-- category: source
-- severity: major
-- quote: "O silício é o segundo material mais abundante na crosta terrestre (27%) e pode ser minerado de diversas fontes, sendo encontrado como óxido (sílica) e silicatos: areia, quartzo, ametista, ágata e sílex."
-- problem: The 27 % figure has no `<Cite>` and is the only place on the site that prints the number; the sites elsewhere say "segundo elemento mais abundante" (element, not "material"), and the five examples are all silica (SiO₂) varieties, none of them a silicate such as feldspar or mica. As written, the colon promises a mixed list and delivers only oxides.
-- fix: Cite the abundance (CIAAW/USGS; the same figure appears in standard crustal-composition tables) or drop the parenthetical; write "elemento"; either move "areia, quartzo, ametista, ágata e sílex" to the silica clause and give a real silicate example, or cut the list.
-- verification: needs external verification (crustal abundance ~27–28 % Si — pick a primary table and cite it); site-internal wording verified against `docs/o-elemento-silicio.md:L71`.
-- confidence: high
 
 ### introducao-06 — the page's only photograph has no provenance
 - where: docs/introducao.md:L9-L11 (and docs/en/introducao.md:L9-L11; the same file is the home hero, docs/index.md:L9-L11)
@@ -131,26 +90,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: verified (sentence read with no `<Cite>`); the right source needs the lookup (a photonics review, or reuse `elem-sze` if the fixing agent confirms it states the claim).
 - confidence: high
 
-### o-elemento-silicio-04 — the GaAs/Si absorption ratio is cited to a pyrometallurgy paper
-- where: docs/o-elemento-silicio.md:L47 (and docs/en/o-elemento-silicio.md:L47)
-- category: source
-- severity: major
-- quote: "A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem** — o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="saimm" />."
-- problem: `saimm` is Xakalashe & Tangstad (2011), a paper about reducing quartz in a furnace; the site's own `band-gap` chart uses `elem-ioffe` and `elem-sze` for the same 100× fact (see the spec comment at `docs/.vitepress/theme/charts/specs.ts:L15-L18`). As cited, a reader cannot find the number, and AGENTS.md asks for the source that measured it.
-- fix: Re-cite to `elem-ioffe` + `elem-sze` (or `moller-2012`, the Si-for-solar-cells review already in `citations.ts`) unless the SAIMM paper is confirmed to carry the GaAs figure.
-- verification: needs external verification (check `https://pyrometallurgy.co.za/Pyro2011/Papers/083-Xakalashe.pdf` for the absorption comparison; the fetch returned the raw PDF stream, no extractable text).
-- confidence: medium
-
-### o-elemento-silicio-05 — the scatter chart is called "mapa"
-- where: docs/o-elemento-silicio.md:L53 (and docs/en/o-elemento-silicio.md:L53)
-- category: pacing
-- severity: minor
-- quote: "O mapa acima mostra onde o silício cai entre os semicondutores: gap estreito e rede grande, vizinho do germânio." / "The map above shows where silicon falls among semiconductors…"
-- problem: The figure is a scatter plot on band gap × lattice constant (its own caption calls it "plano"); the site also has a page titled "O mapa dos gargalos", so "o mapa" reads as a section reference rather than a chart.
-- fix: "O gráfico acima mostra…" / "The chart above shows…".
-- verification: verified (chart type in `docs/.vitepress/theme/charts/specs.ts`, `type: 'scatter'`).
-- confidence: high
-
 ### o-elemento-silicio-06 — idea: a figure for the density anomaly
 - where: docs/o-elemento-silicio.md:L35 (and docs/en/o-elemento-silicio.md:L35)
 - category: idea
@@ -173,16 +112,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 
 ### mineracao-mg-si
 
-### mineracao-mg-si-02 — `asianometry-wafer` is listed as a source but never cited
-- where: docs/mineracao-mg-si.md:L109 (and docs/en/mineracao-mg-si.md:L109)
-- category: source
-- severity: major
-- quote: "<SourceNote :ids=\"['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'elkem', 'csiro', 'saimm', 'asianometry-wafer']\" />"
-- problem: `grep` finds `asianometry-wafer` only in this line; no sentence on either locale carries `<Cite id="asianometry-wafer" />`. A source list is a claim about where the text comes from; an unused entry makes the list inaccurate, and the AGENTS.md rule is one marker, one claim.
-- fix: Either delete the key from both SourceNotes, or add the sentence it actually backs (the video is about wafer manufacturing, so it would have to justify a claim about the wafer path, not the furnace).
-- verification: verified (grep for `asianometry` across both locales: single hit, the SourceNote).
-- confidence: high
-
 ### mineracao-mg-si-03 — the Sibelco-sourced numbers are not on the cited page
 - where: docs/mineracao-mg-si.md:L17, L45, L47 (and docs/en/mineracao-mg-si.md:L17, L45, L47)
 - category: source
@@ -202,26 +131,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: Find the source that states the 1996 founding (TQC press material, Norwegian business registry) and cite it, or reword to "as operações norueguesas, cujo escritório em Drag data de…" following the cited history page; keep the 2011 JV sentence as it is.
 - verification: needs external verification (the 1996 founding of Norwegian Crystallites AS — Brønnøysund Register Centre / TQC company history).
 - confidence: medium
-
-### mineracao-mg-si-07 — "alguns dígitos abaixo" misstates a 0,0002 pp gap
-- where: docs/mineracao-mg-si.md:L47 (and docs/en/mineracao-mg-si.md:L47)
-- category: fact
-- severity: minor
-- quote: "É um material de nicho: o que sustenta o volume da indústria fica alguns dígitos abaixo, e a The Quartz Corp trabalha com **99,999%** de sílica." / "…what sustains the industry's volume sits a few digits below…"
-- problem: The two grades compared are 99,9992 % and 99,999 % — a difference in impurity content of 0,0002 percentage points, not "a few digits". In the trade's own shorthand the correct unit is "nines" (5N-plus vs 5N), not digits.
-- fix: "um grau logo abaixo" / "a grade just below it", or express it in nines: "o grau que sustenta o volume fica abaixo de 5N".
-- verification: verified (arithmetic on the two values given in the same sentence).
-- confidence: high
-
-### mineracao-mg-si-08 — "ilimitados" is an absolute the source cannot carry
-- where: docs/mineracao-mg-si.md:L11 (and docs/en/mineracao-mg-si.md:L11)
-- category: fact
-- severity: minor
-- quote: "os recursos são, na prática, **ilimitados** — embora a pureza varie consideravelmente de depósito para depósito <Cite id="saimm" />"
-- problem: The cited paper argues quartz is abundant, not infinite, and the sentence itself concedes that usable purity is rare — which is the chapter's whole point. "Ilimitados" reads as a stronger claim than the source and undercuts the next paragraph.
-- fix: "os recursos são abundantes" / "the resources are plentiful", letting the second clause carry the restriction.
-- verification: verified (the claim is an absolute; the qualifier already in the same sentence contradicts it).
-- confidence: high
 
 ### mineracao-mg-si-09 — two citations resolve to organisation homepages
 - where: docs/mineracao-mg-si.md:L51 (and docs/en/mineracao-mg-si.md:L51; entries at docs/.vitepress/theme/citations.ts:L90-L97 and L106-L113)
@@ -267,56 +176,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: needs external verification — the cited PDF returned 403 on fetch; exact lookup: the pv-tech URL in `citations.ts` num 60.
 - confidence: medium
 
-### polissilicio-04 — Processing-trade loophole: closure announced in 2014, exemptions lasted to August 2015
-- where: docs/polissilicio.md:L294 (and docs/en/polissilicio.md:L294)
-- category: fact
-- severity: major
-- quote: "contornadas por algum tempo pelo regime de *processing trade* e fechadas em agosto de 2014 <Cite id="bernreuter-market" />" / "circumvented for a time through the *processing trade* loophole and closed in August 2014 <Cite id="bernreuter-market" />"
-- problem: the cited Bernreuter market history says the processing-trade exemption from Chinese duties remained in force **until August 2015**, and that what happened in August 2014 was Mofcom's **announcement** that the loophole would be closed. As written, the sentence says the loophole was closed in August 2014, a year early.
-- fix: PT "contornadas por algum tempo pelo regime de *processing trade*, isento de direitos até agosto de 2015 — o Mofcom anunciou o fim da brecha em agosto de 2014"; EN "circumvented for a time through the *processing trade* loophole, which stayed duty-exempt until August 2015; Mofcom announced its closure in August 2014". Keep the July 2013 duty date as is.
-- verification: verified — `bernreuter-market` states the exemption lasted until August 2015 and dates the announcement to August 2014.
-- confidence: high
-
-### polissilicio-05 — Anti-dumping detail reverses the actor
-- where: docs/polissilicio.md:L304 (and docs/en/polissilicio.md:L304)
-- category: fact
-- severity: major
-- quote: "aberta em 2016 mas decidida ainda em 2010, antes de existirem os direitos antidumping americanos <Cite id="bernreuter-market" />" / "opened in 2016 but decided back in 2010, before US anti-dumping duties existed <Cite id="bernreuter-market" />"
-- problem: the source's point is that in 2010 **no Chinese duties on polysilicon imports from the United States** existed — that is why Wacker could still decide to build for the export market. "Direitos antidumping americanos" / "US anti-dumping duties" inverts who imposed them, and conflicts with the page's own L294, which dates the Mofcom duties to July 2013.
-- fix: PT "antes de a China impor direitos antidumping sobre o polissilício americano"; EN "before China imposed anti-dumping duties on US polysilicon".
-- verification: verified — `bernreuter-market` says no Chinese duties on US polysilicon existed at the time of the 2010 decision; the chapter's own L294 dates the duties to July 2013.
-- confidence: high
-
-### polissilicio-06 — No declared spine; the chapter opens without the ordered list
-- where: docs/polissilicio.md:L7–L13 (and docs/en/polissilicio.md:L7–L13)
-- category: structure
-- severity: minor
-- quote: "O Silício de Grau Metalúrgico ([MG-Si](/glossario)) contém impurezas metálicas e dopantes que afetam severamente o desempenho de semicondutores e painéis solares <Cite id="energy-central" />. [...] ## Visão geral da rota" / "Metallurgical-grade silicon ([MG-Si](/en/glossario)) contains metallic and dopant impurities [...] ## Overview of the route"
-- problem: `AGENTS.md` asks a chapter to open with "a sentence introducing it, the list, and a sentence saying the rest follows that order", the list pointing at the sections. `polissilicio` opens with two paragraphs and jumps into `## Visão geral da rota`; the route is shown as a Mermaid flowchart (L25–40) that does not link the sections. `transistores.md:9–26` is the model (sentence + linked list + closing sentence); `fabricacao-wafers.md:9` shows the minimal acceptable form ("As oito etapas a seguir cobrem essa sequência").
-- fix: after L11, add one sentence plus an ordered list of the chapter's stages pointing at the sections (MG-Si → TCS → destilação/deposição → ciclo do cloro → UMG → pureza → mercado), then a sentence saying the sections follow that order. Do not duplicate the Mermaid steps; the list links, it does not summarise.
-- verification: verified — comparison with `transistores.md:9–26` and `fabricacao-wafers.md:9`; no list exists at the start of either locale.
-- confidence: high
-
-### polissilicio-07 — PT capitalises the glossary term, EN does not
-- where: docs/polissilicio.md:L9 (and docs/en/polissilicio.md:L9)
-- category: parity
-- severity: minor
-- quote: "O Silício de Grau Metalúrgico ([MG-Si](/glossario))" / "Metallurgical-grade silicon ([MG-Si](/en/glossario))"
-- problem: the PT sentence capitalises the term mid-sentence while the EN does not, and the same site writes it lowercase elsewhere (`fabricacao-wafers.md:9`: "polissilício de grau eletrônico ([EG-Si](/glossario))"). It reads as a title-case artefact.
-- fix: PT "O silício de grau metalúrgico ([MG-Si](/glossario))"; leave the EN as is.
-- verification: verified — internal comparison across locales and with `fabricacao-wafers.md:9`.
-- confidence: high
-
-### polissilicio-08 — Two stacked fragments for one idea
-- where: docs/polissilicio.md:L116 (and docs/en/polissilicio.md:L116)
-- category: pacing
-- severity: minor
-- quote: "A química ficou. Quem opera o reator mudou." / "The chemistry stayed. The operators changed."
-- problem: two clipped sentences in a row restating one point; this is the "dramatic fragmentation" pattern `AGENTS.md` asks to cut.
-- fix: "A química ficou, mas quem opera o reator mudou." / "The chemistry stayed, but who operates the reactor changed."
-- verification: verified — pattern matches AGENTS.md § How it reads.
-- confidence: high
-
 ### polissilicio-09 — 2006/2008 production figures could not be read in the cited review
 - where: docs/polissilicio.md:L176 (and docs/en/polissilicio.md:L176)
 - category: fact
@@ -348,26 +207,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: n/a (idea)
 
 ### estrutura-wafers
-
-### estrutura-wafers-01 — The chapter has no declared spine; the four axes sit mid-chapter
-- where: docs/estrutura-wafers.md:L7–L18 and L52–L57 (and docs/en/estrutura-wafers.md:L7–L18 and L52–L57)
-- category: structure
-- severity: major
-- quote: "# Estrutura cristalina e tipos de wafer [...] O silício cristalino adota a **estrutura cúbica de diamante**." / "# Crystal structure and wafer types [...] Crystalline silicon adopts the **diamond cubic crystal structure**." And at L52: "Um wafer se descreve por **quatro eixos**, e cada um tem onde ser conferido neste capítulo:" / "A wafer is described by **four axes**, and each one has somewhere to be checked in this chapter:"
-- problem: the chapter opens straight into `## Estrutura do silício puro` with no sentence, list and closing sentence declaring what it explains. The four-axis list that could serve as the spine appears under `## Como ler um wafer`, after the germanium section. `transistores.md:9–26` is the model; this page is otherwise the clearest candidate for it in the repo, because the list already exists and each item already links its section.
-- fix: move the four-axis list (L52–57) to directly under the H1 as the chapter's spine: a sentence introducing it, the list with its existing section links, and a closing sentence saying the rest follows that order. Remove or repoint any wording in `## Como ler um wafer` that becomes redundant.
-- verification: verified — the opening of both locales was read in full; no spine exists.
-- confidence: high
-
-### estrutura-wafers-02 — `### Recursos adicionais` is leftover scaffolding and strands the DRX paragraph
-- where: docs/estrutura-wafers.md:L21–L28 (and docs/en/estrutura-wafers.md:L21–L28)
-- category: structure
-- severity: major
-- quote: "### Recursos adicionais" [...] "- [Estrutura cristalina — YouTube](https://www.youtube.com/watch?v=lgYQE2aTNNc)" / "### Further reading" [...] "- [Crystal structure — YouTube](https://www.youtube.com/watch?v=lgYQE2aTNNc)"
-- problem: a bare link list — two YouTube videos, a WaferPro page and a direct `upload.wikimedia.org` SVG download — sits between the p08 figures and the DRX paragraph that belongs to the same section, the first `###` of the chapter. It interrupts the narrative, mixes a file-download link with prose links, and delivers nothing the chapter needs; it reads as scaffolding left over from drafting. The DRX paragraph (L28) is orphaned after it.
-- fix: delete the section and move the DRX paragraph up to follow the two figure captions (after L19). If the links are wanted, put them in a "Para saber mais" after the narrative, never mid-section, and prefer the Commons page over a direct upload URL.
-- verification: verified — full read of both locales; no other page keeps such a list in this position.
-- confidence: high
 
 ### estrutura-wafers-03 — PT caption left in English; both p08 figures carry no source line
 - where: docs/estrutura-wafers.md:L13–L19 (and docs/en/estrutura-wafers.md:L13–L19)
@@ -409,16 +248,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: needs external verification — SEMI M1, thickness tolerance (paywalled, `citations.ts` num 46); secondary sources suggest ±25 µm but were not treated as authoritative.
 - confidence: low
 
-### estrutura-wafers-07 — Miller credit names the Commons username, not the author
-- where: docs/estrutura-wafers.md:L35 (and docs/en/estrutura-wafers.md:L35)
-- category: figure
-- severity: minor
-- quote: "DeepKling — <a href=\"https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg\" target=\"_blank\" rel=\"noopener noreferrer\">Miller Indices</a> (CC BY 3.0), SVG da Wikimedia Commons."
-- problem: the Commons file page names **Felix Kling** as the author and asks for the author's name near the image; "DeepKling" is the account name. The current caption satisfies the licence via the link to the file page, so this is a polish item — do not remove any part of the credit.
-- fix: prefer "Felix Kling (DeepKling)" while keeping the file-page link and the licence string exactly as they are; repeat in both locales.
-- verification: verified — the Commons page author field; the licence string and link in the caption are correct as shipped.
-- confidence: medium
-
 ### estrutura-wafers-08 — Idea: a figure for the oxide comparison that decided the silicon/germanium contest
 - where: docs/estrutura-wafers.md:L38–L48 (and docs/en/estrutura-wafers.md:L38–L48)
 - category: idea
@@ -452,16 +281,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 ## Report — docs/fabricacao-wafers.md, docs/fotolitografia.md, docs/historia-fotolitografia.md (both locales)
 
 ### fabricacao-wafers
-
-### fabricacao-wafers-01 — No spine list at the top: the "eight steps" are never enumerated
-- where: docs/fabricacao-wafers.md:L9 (and docs/en/fabricacao-wafers.md:L9)
-- category: structure
-- severity: major
-- quote: "As oito etapas a seguir cobrem essa sequência, do crescimento do cristal à inspeção final." / "The eight steps below cover that sequence, from growing the crystal to final inspection."
-- problem: AGENTS.md requires the chapter to open with the ordered list of what it explains (sentence, list, closing sentence). Here the sentence exists but the list does not; the reader gets no navigation and cannot check the eight items against the sections. `celulas-solares` does it right ("A célula pronta sai de **sete etapas**, nesta ordem:" followed by a linked 1–7 list).
-- fix: after the intro sentence, add the ordered 1–8 list linking the eight H2 anchors (crescimento do monocristal, preparação do lingote, corte em fatias, arredondamento/lapidação, ataque químico, tratamento térmico e RTP, CMP, limpeza RCA e inspeção), then the closing sentence that the rest of the chapter follows that order.
-- verification: verified by reading the chapter and `docs/celulas-solares.md` L21–29.
-- confidence: high
 
 ### fabricacao-wafers-02 — "Corte em fatias" is the only spine section with no figure
 - where: docs/fabricacao-wafers.md:L85-101 (and docs/en/fabricacao-wafers.md:L85-101)
@@ -522,16 +341,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: delete both and start with the fact: "De onde vem essa pureza: o material que entra no cadinho…" and "Nos wafers de fab, o objetivo do corte não é a espessura mínima: é a planura."
 - verification: verified against AGENTS.md list; both lines quoted.
 - confidence: high
-
-### fabricacao-wafers-10 — RCA-1 described as "oxidação orgânica" / "organic oxidation"
-- where: docs/fabricacao-wafers.md:L155 (and docs/en/fabricacao-wafers.md:L155)
-- category: fact
-- severity: minor
-- quote: "**RCA-1 (SC-1):** NH₄OH / H₂O₂ / H₂O a 70–80 °C — oxidação orgânica e partículas." / "organic oxidation and particle removal"
-- problem: SC-1 removes organic contamination and particles (and some metals); the H₂O₂ oxidises the silicon surface. "Oxidação orgânica" / "organic oxidation" describes neither.
-- fix: "remoção de orgânicos e partículas" / "removes organics and particles".
-- verification: verified against the standard RCA description implied by the cited Kern (1990); wording-level fix.
-- confidence: medium
 
 ### fabricacao-wafers-11 — EN adds "epitaxial" where PT says "excess material at the edge"
 - where: docs/fabricacao-wafers.md:L103 (and docs/en/fabricacao-wafers.md:L103)
@@ -595,26 +404,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: verified against the fetched ASML page `asml-highna` (5 things…, 25 Jan 2024: "wafer stage … accelerates at 8g, twice as fast as the NXE's"); the 15 kg/20 G values have no located source.
 - confidence: high
 
-### fotolitografia-03 — 135 nm in the prose, 134 nm in the table (and history), for the same quantity
-- where: docs/fotolitografia.md:L80 and L102 (and docs/en/fotolitografia.md:L80 and L102; docs/historia-fotolitografia.md:L108)
-- category: fact
-- severity: major
-- quote: "o comprimento de onda **efetivo** cai de 193 nm para cerca de **135 nm**" vs "| **ArF com imersão** | 193 nm, cerca de 134 nm efetivos na água |" / "drops from 193 nm to about **135 nm**" vs "about 134 nm effective in water"
-- problem: The same effective wavelength is given as 135 nm in two prose passages and 134 nm in the comparison table; 193/1.44 ≈ 134.3 nm, so the table's number is the conventional one. Neither locale is internally consistent.
-- fix: choose one value (134 nm is standard) and apply it in both chapters and both locales. The cited ASML immersion story does not publish either number (fetched), so the fixing agent should check a source that does (ASML DUV product literature or the immersion optics papers) and cite it.
-- verification: verified by grep across docs (135 nm: fotolitografia L80, historia L108; 134 nm: fotolitografia table only); the ASML page fetched does not state the figure.
-- confidence: high (inconsistency), medium (which number the source supports)
-
-### fotolitografia-04 — No spine list at the top
-- where: docs/fotolitografia.md:L9-13 (and docs/en/fotolitografia.md:L9-13)
-- category: structure
-- severity: major
-- quote: "A fotolitografia é a etapa que **desenha o circuito** no wafer. Máquinas da **ASML** (origem na Philips)…" / "Photolithography is the step that **draws the circuit** on the wafer. **ASML** machines…"
-- problem: The chapter opens with three intro paragraphs (ASML, stage numbers, TSMC/Philips) and never states, as a list, what it explains; the sections start at "Como a luz chega ao wafer". Compare `celulas-solares`, which opens with a numbered, linked list.
-- fix: write a proper intro paragraph then the ordered list of the chapter's path (como a luz chega ao wafer → fotoresistor → passo a passo → realce de resolução → imersão → DUV → fonte EUV → espelhos → DUV/EUV lado a lado → High-NA), each item pointing at its section, followed by the closing sentence.
-- verification: verified by reading the opening and comparing with the repo convention.
-- confidence: high
-
 ### fotolitografia-05 — Two embedded videos have no credit anywhere
 - where: docs/fotolitografia.md:L209 and L211 (and docs/en/fotolitografia.md:L209 and L211)
 - category: source
@@ -654,16 +443,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: verify the figure against the cited episode (`asml-euv-podcast`, EWVJ1Iwa00E) or an ASML/imec pellicle publication; quote the same number in both locales.
 - verification: needs external verification (cited source is a video; no transcript available through the fetch tool).
 - confidence: low
-
-### fotolitografia-09 — PT: "1,7 vez menores" should be "vezes"
-- where: docs/fotolitografia.md:L180 (and docs/en/fotolitografia.md:L180)
-- category: grammar
-- severity: minor
-- quote: "traços **1,7 vez menores** e, portanto, densidades de transistores **2,9 vezes maiores**"
-- problem: In PT-BR the multiplier takes the plural: "1,7 vezes menores". The EN is fine ("1.7 times smaller").
-- fix: "1,7 vezes menores".
-- verification: verified against PT usage elsewhere on the site ("2,9 vezes maiores" in the same sentence).
-- confidence: high
 
 ### fotolitografia-10 — Two empty-register patterns: "robust"/"robustas" and the "2000s never ended" line
 - where: docs/fotolitografia.md:L13 and L104 (and docs/en/fotolitografia.md:L13 and L104)
@@ -756,26 +535,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: move the Intel sentence before the October/December events ("Já em maio de 2003, a Intel abandonara o 157 nm") or add an explicit flashback marker.
 - verification: verified by reading both locales (same order).
 - confidence: high
-
-### historia-fotolitografia-06 — EPL throughput "20 to 30 300 mm wafers per hour": the 300 mm qualifier needs checking
-- where: docs/historia-fotolitografia.md:L84 (and docs/en/historia-fotolitografia.md:L84)
-- category: fact
-- severity: minor
-- quote: "As ferramentas de produção iniciais ficaram em **20 a 30 wafers de 300 mm por hora**, quando a indústria queria **50 a 80** <Cite id=\"spectrum-epl\" />."
-- problem: The cited IEEE Spectrum piece could not be fetched; the EE Times account of the same period (1 May 2001, fetched) discusses EPL throughput only qualitatively. Whether the Spectrum figures were stated for 300 mm wafers (the introduction of which was still in progress at the time) is unverified.
-- fix: check the Spectrum article for the wafer size; if it is silent, drop "de 300 mm" and write "wafers por hora", or find the source that states the size.
-- verification: needs external verification — IEEE Spectrum, "Loser: A promising lithography gets stuck" (spectrum.ieee.org); EE Times (fetched via web.archive.org) supports the rest of the sentence's context.
-- confidence: medium
-
-### historia-fotolitografia-07 — No spine list; only the intro sentence
-- where: docs/historia-fotolitografia.md:L8 (and docs/en/historia-fotolitografia.md:L8)
-- category: structure
-- severity: minor
-- quote: "A litografia óptica passou por quatro arranjos de máquina antes de chegar ao scanner atual <Cite id=\"kato-litho\" />. Esta página conta essa trajetória: como a indústria escolheu uma litografia de próxima geração, por que quase todas as candidatas perderam e por que o **193 nm de 2002 ainda sustenta os nós avançados**."
-- problem: The introduction names the questions but does not open with the ordered list of what the chapter explains, as AGENTS.md requires; the first thing a reader meets afterwards is a Mermaid timeline. For a narrative history chapter the timeline does part of the job, which is why this is only minor.
-- fix: after the intro sentence, add the short ordered list of the chapter's path (as quatro gerações → a lista de candidatos → a decisão do século → por que os concorrentes perderam → o EUV e o consórcio → o desvio de 157 nm e a imersão), pointing at the headings.
-- verification: verified by reading the opening; `celulas-solares` shows the convention.
-- confidence: medium
 
 ### historia-fotolitografia-08 — The closing of "O EUV: de raio X mole a consórcio" asserts the reason without stating it
 - where: docs/historia-fotolitografia.md:L100 (and docs/en/historia-fotolitografia.md:L100)
@@ -941,26 +700,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: verified internally, and TSMC's N2 page (fetched) confirms N3 is FinFET.
 - confidence: high
 
-### transistores-14 — The eras module puts the Exynos 2600 "on TSMC N2"
-- where: docs/.vitepress/theme/transistor-eras.ts:L181-184 (rendered by `TransistorTimeline` on both locales of `linha-do-tempo`)
-- category: fact
-- severity: minor
-- quote: "depois vieram o Exynos 2600 e o Apple A20 Pro, no N2 da TSMC." / "later came the Exynos 2600 and Apple's A20 Pro, on TSMC N2."
-- problem: the Exynos 2600 is Samsung's own flagship SoC, built by Samsung Foundry on its 2 nm-class process, not on TSMC N2; only the A20 Pro is a TSMC N2 product. The chapter prose does not mention the Exynos, so the error is module-only and appears on `/linha-do-tempo`.
-- fix: drop the Exynos 2600 from the N2 sentence or give it its own process node, after checking Samsung's launch material or a TechInsights teardown.
-- verification: needs external verification — Samsung's Exynos 2600 announcement; no English Wikipedia article existed for the part at the time of this audit.
-- confidence: medium
-
-### transistores-15 — Gargini's quote is truncated without an ellipsis
-- where: docs/transistores.md:L238 (and docs/en/transistores.md:L238)
-- category: fact
-- severity: minor
-- quote: "não tinha mais absolutamente nenhum sentido, porque não dizia respeito a nenhuma dimensão que se pudesse encontrar no chip" / "had by then absolutely no meaning, because it had nothing to do with any dimension that you can find on the die"
-- problem: the source sentence continues "…on the die that related to what you're really doing" (IEEE Spectrum, fetched). Quoting it as if it ended at "die" is a misquote of a named person; the PT truncates the same clause.
-- fix: add an ellipsis before the closing quotation mark ("…that you can find on the die …") or quote the full clause, in both locales.
-- verification: verified — the IEEE Spectrum article was fetched and the full sentence is there.
-- confidence: high
-
 ### transistores-16 — The two ITRS quotations could not be checked in this pass
 - where: docs/transistores.md:L230 (and docs/en/transistores.md:L230)
 - category: source
@@ -971,16 +710,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: needs external verification (the two cited PDFs).
 - confidence: medium
 
-### transistores-17 — "Em outras palavras" / "In other words" is on the banned list
-- where: docs/transistores.md:L232 (and docs/en/transistores.md:L232)
-- category: pacing
-- severity: minor
-- quote: "Em outras palavras: o número já não media o transistor." / "In other words, the number no longer measured the transistor."
-- problem: AGENTS.md §Patterns to cut lists "In other words" as interpretive metadiscourse; the point is already clear from the preceding paragraph.
-- fix: delete the phrase and let the sentence stand: "O número já não media o transistor. Media uma dimensão de memória…".
-- verification: verified against the AGENTS.md list.
-- confidence: high
-
 ### transistores-18 — The GAAFET paragraph drops into a verbless spec list, with an anglicism
 - where: docs/transistores.md:L178 (and docs/en/transistores.md:L178)
 - category: pacing
@@ -989,16 +718,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - problem: after five sections of explanatory prose this paragraph (and the BSPDN one after it) switches to a verbless spec list, which changes the register the reader has been in; "performance" is an anglicism where the chapter itself uses "desempenho" at L162.
 - fix: write the sentence with a verb and the native PT term — "…e a largura das nanofolhas pode ser ajustada para privilegiar desempenho ou consumo." — and mirror the EN.
 - verification: verified by reading the paragraph and grepping "performance"/"desempenho" in the PT chapters.
-- confidence: high
-
-### transistores-19 — PT groups thousands with a space where the site's own rule says a dot
-- where: docs/transistores.md:L68 (and transistor-eras.ts:L68)
-- category: parity
-- severity: minor
-- quote: "o **Intel 4004** (1971) saiu com 2 300 transistores numa pastilha de 12 mm²" against docs/dados.md:L23 "| 1971 | Intel 4004 | **2.300** | <Cite id="intel-4004" />"
-- problem: AGENTS.md §The two locales says PT writes `1.700`; the chapter and the module (rendered on `/linha-do-tempo`) write "2 300" while `dados.md` writes "2.300" for the same quantity. `polissilicio.md` tables use the space form as well, so the rule and the site disagree — but two chapters printing the same number differently is the reader-visible part.
-- fix: pick one (AGENTS.md says the dot), change `transistores.md` and `transistor-eras.ts`, and align the `polissilicio` tables in the same sweep if the rule is to hold.
-- verification: verified by grep across `docs/**/*.md`.
 - confidence: high
 
 ### transistores-20 — The polysilicon mermaid timeline on the linked page is out of order
@@ -1042,16 +761,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: high
 
 ### na-fab
-
-### na-fab-02 — Heading typo: "A fábricação é um laço"
-- where: docs/na-fab.md:L15 (EN is fine: docs/en/na-fab.md:L15)
-- category: grammar
-- severity: major
-- quote: "## A fábricação é um laço"
-- problem: "fábricação" is not a Portuguese word. It sits in an H2, so it appears in the table of contents, in the page outline and in search previews; it is the only occurrence in the chapter (grep for "fábricação" returns this line only).
-- fix: "## A fabricação é um laço". The generated slug is unchanged for the current spelling, and no other page links to this fragment.
-- verification: verified by reading the file and grepping the fragment across `docs/`.
-- confidence: high
 
 ### na-fab-03 — Four of the nine spine items have no figure
 - where: docs/na-fab.md:L23-31 (spine) and figures at L17, L100, L121, L151, L222 (and docs/en/na-fab.md: same)
@@ -1135,26 +844,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 
 ### insumos-fab
 
-### insumos-fab-02 — No spine: the six sections are never listed
-- where: docs/insumos-fab.md:L9-11 (and docs/en/insumos-fab.md:L9-11)
-- category: structure
-- severity: major
-- quote: "Esta página trata dos insumos que não são silício, mas que decidem se o silício vira produto." / "This page is about the inputs that are not silicon but decide whether silicon becomes a product."
-- problem: every other chapter audited here opens with the ordered list of what it explains (sentence, list, closing sentence); here two intro paragraphs are followed straight by "## O fotorresiste", so the reader gets no map of the six inputs and cannot check the chapter's coverage against a declared promise.
-- fix: after L11 add the numbered list of the six H2s (o fotorresiste, a máscara, o slurry do CMP, gases e neônio, água ultrapura, por que essa lista é um gargalo) and the closing sentence saying the rest follows that order; the sections themselves are already in a sensible order.
-- verification: verified by reading the chapter and comparing with `na-fab` and `transistores`.
-- confidence: high
-
-### insumos-fab-03 — No figure anywhere in the chapter
-- where: docs/insumos-fab.md:L13-51 (and docs/en/insumos-fab.md:L13-51)
-- category: figure
-- severity: major
-- quote: "## O fotorresiste: amplificação química … ## A máscara, que também é óptica … ## Água ultrapura"
-- problem: six sections, no `<DiagramFigure>`, `<ZoomableImage>`, chart or mermaid fence anywhere in the file (confirmed against the built page: zero content images). AGENTS.md requires a figure per spine item, and the concepts that most need one — the acid-catalysed cascade and the multilayer EUV mirror with a buried defect — are exactly the ones described only in words.
-- fix: add at least two drawings (ideas insumos-fab-08/09) as own SVGs in `docs/public/assets/`, with `<title>`/`<desc>`, an opaque background rect and English labels, then run `python scripts/audit-svgs.py`.
-- verification: verified — file read in full and the built page checked for `<img>`.
-- confidence: high
-
 ### insumos-fab-04 — `dataAsOf: 2026` is ahead of the newest datum
 - where: docs/insumos-fab.md:L4 (and docs/en/insumos-fab.md:L4)
 - category: fact
@@ -1163,16 +852,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - problem: the newest datum cited is the 2022 neon episode (`fabm-neon-2022`); everything else is 1983–2017 plus an undated SEMI standard. The stamp is meant to be the year of the most recent datum, not the edit year, and 2026 tells the reader the neon figures are current.
 - fix: set 2022, or add a newer source and keep 2026.
 - verification: verified against the `citations.ts` entries for the page's seven ids.
-- confidence: high
-
-### insumos-fab-05 — EN reads "is in [in the fab]"
-- where: docs/en/insumos-fab.md:L31
-- category: grammar
-- severity: minor
-- quote: "The history of the process, including the change of abrasives and the move from aluminium to copper, is in [in the fab](/en/na-fab) <Cite id="cmp-history" />."
-- problem: the link label is the chapter title ("In the fab"), so the sentence renders as "is in in the fab"; the PT does not have the problem ("está em [na fab](/na-fab)").
-- fix: "…is covered in [In the fab](/en/na-fab)".
-- verification: verified by reading the rendered link text.
 - confidence: high
 
 ### insumos-fab-06 — The pointer promises content na-fab does not carry
@@ -1249,16 +928,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: verified (count of rendered figures in the file: 5 `DiagramFigure` + 1 `DataChart`).
 - confidence: high
 
-### empacotamento-04 — "memorias empilhadas"
-- where: docs/empacotamento.md:L79 (PT only)
-- category: grammar
-- severity: minor
-- quote: "Em um wafer de **25 µm** de espessura (número que hoje é comum em memorias empilhadas)"
-- problem: missing accent on "memorias"; the EN line ("stacked memory") is correct.
-- fix: "memórias".
-- verification: verified (spelling).
-- confidence: high
-
 ### empacotamento-05 — PT "reduziu a prática um transistor" (missing crase)
 - where: docs/empacotamento.md:L127 (and docs/en/empacotamento.md:L127)
 - category: grammar
@@ -1308,16 +977,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: pick one term per locale and use it in L93, L107, L109, L111 and L115 — PT "ligação por fio", EN "wire bonding".
 - verification: verified (internal consistency).
 - confidence: medium
-
-### empacotamento-11 — the spine list has no closing sentence
-- where: docs/empacotamento.md:L19-L31 (and docs/en/empacotamento.md:L19-L31)
-- category: structure
-- severity: minor
-- quote: "A ordem do capítulo é a ordem da linha de produção:" / "The chapter's order is the production line's order:" (followed by the nine-item list, then straight into the first heading)
-- problem: the contract asks for an intro sentence, the list, and a sentence saying the rest follows that order; the third element is missing in both locales.
-- fix: add one short line after the list, e.g. "O capítulo segue essa ordem." / "The chapter follows that order."
-- verification: verified (AGENTS.md §Chapters).
-- confidence: high
 
 ### empacotamento-12 — the GF100 paragraph carries five citations and about fifteen numbers
 - where: docs/empacotamento.md:L265 (and docs/en/empacotamento.md:L265)
@@ -1400,16 +1059,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: high
 
 ### confiabilidade
-
-### confiabilidade-01 — the chapter has no spine
-- where: docs/confiabilidade.md:L9-L11 (and docs/en/confiabilidade.md:L9-L11)
-- category: structure
-- severity: major
-- quote: "Os capítulos anteriores contam como um chip é feito. A [fábrica](/na-fab) constrói o transistor camada por camada … Confiabilidade não é uma medida isolada. É a **distribuição das falhas ao longo do tempo**"
-- problem: the chapter opens with two prose paragraphs and never declares the ordered list of what it explains; the six H2 sections (curva da banheira, mecanismos de desgaste, quantificar a falha, erros suaves, qualificação, história de materiais) exist but are not announced, against the chapter contract ("one spine, declared at the start").
-- fix: after L11, insert a one-sentence intro, an ordered list pointing at the existing sections (`#a-curva-da-banheira`, `#mecanismos-de-desgaste`, `#quantificar-a-falha`, `#erros-suaves`, `#qualificação`) and the closing sentence saying the chapter follows that order; EN mirrors it with the English anchors.
-- verification: verified (AGENTS.md §Chapters; no ordered list anywhere above the first H2 heading).
-- confidence: high
 
 ### confiabilidade-02 — `dataAsOf: 2026` has no 2026 datum behind it
 - where: docs/confiabilidade.md:L4 (and docs/en/confiabilidade.md:L4)
@@ -1675,26 +1324,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - problem: as written, "não resolve por física, e não por engenharia" attaches two negative clauses to the verb "resolve" without saying what the contrast is about, and the English "cannot solve by physics rather than by engineering" is worse — it can be read as "solves it by physics, not engineering", the opposite of the intended meaning (silicon is blocked by a physical property, not by a lack of engineering).
 - fix: rewrite both as one clause: PT "resolveu um problema que o silício não resolve por razões de física, não por falta de engenharia"; EN "solved a problem silicon cannot solve for reasons of physics, not for lack of engineering".
 - verification: verified (the sentence is ambiguous in both files as read; no source issue at stake).
-- confidence: high
-
-### alem-do-silicio-02 — The chapter has no figures at all
-- where: docs/alem-do-silicio.md:L13-L47 (and docs/en/alem-do-silicio.md:L13-L47)
-- category: figure
-- severity: major
-- quote: "### Os vizinhos de banda larga" … "### As outras vidas do silício" … "### O que fica"
-- problem: three sections and not one `DiagramFigure`, `ZoomableImage`, mermaid block or chart; AGENTS.md says every item of the spine needs a figure and calls a missing one "a visible hole, not an economy". The chapter's central comparison — the same device geometry at a wider band gap — is exactly the kind of thing a section already insists the reader imagine ("A consequência do gap maior é uma tensão de ruptura muito mais alta").
-- fix: draw one own schematic comparing drift regions at equal breakdown voltage (silicon thick and lightly doped, 4H-SiC thin and heavily doped, the same blocking voltage), reusing the site's annotation grammar; add the existing `band-gap` chart reference in §Os vizinhos (`o-elemento-silicio` already hosts it) if a second figure is wanted without new art.
-- verification: verified (grep: no figure component in either file).
-- confidence: high
-
-### alem-do-silicio-03 — A hyphenated coinage in the PT text
-- where: docs/alem-do-silicio.md:L33
-- category: grammar
-- severity: minor
-- quote: "moldável com precisão submicro-métrica"
-- problem: the standard Portuguese form is `submicrométrico` (one prefix, no hyphen; Novo Acordo Ortográfico keeps hyphen only before `h`, vowels that would collide, or proper nouns). The current spelling also appears nowhere else in the repo.
-- fix: write "precisão submicrométrica" (the EN "sub-micrometre precision" is fine as is, or "submicrometre").
-- verification: verified (grep of docs/ finds "submicro-métrica" only here).
 - confidence: high
 
 ### alem-do-silicio-04 — Three citation markers stacked on one sentence

@@ -30,7 +30,7 @@ Esses materiais **não** substituem o silício na lógica por causa do **substra
 
 ## As outras vidas do silício
 
-Antes de ser um processador, o silício é um material estrutural excelente: duro, elástico em uma faixa previsível e moldável com precisão submicro-métrica. Três dessas funções merecem registro.
+Antes de ser um processador, o silício é um material estrutural excelente: duro, elástico em uma faixa previsível e moldável com precisão submicrométrica. Três dessas funções merecem registro.
 
 **MEMS.** Sensores de sistema microeletromecânico (acelerômetros, giroscópios, microfones, sensores de pressão) são silício usinado, não silício dopado. A fabricação usa as mesmas ferramentas da fab: corrosão úmida **anisotrópica**, que ataca planos cristalinos diferentes em velocidades diferentes, e corrosão profunda por plasma (**DRIE**), que escava trincheiras verticais <Cite id="bosch-drie" />. Todo telefone carrega dezenas deles.
 

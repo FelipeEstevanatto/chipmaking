@@ -65,7 +65,7 @@ export const ERAS: Era[] = [
     descPt: 'A porta de polissilício passa a definir a própria fonte e o dreno, eliminando a sobreposição da porta de alumínio.',
     descEn: 'A polysilicon gate now defines source and drain itself, removing the overlap of the aluminium gate.',
     productsPt:
-      'Intel 4004 (1971): o primeiro microprocessador - 2 300 transistores em pMOS de 10 µm, feito para a calculadora Busicom 141-PF.',
+      'Intel 4004 (1971): o primeiro microprocessador - 2.300 transistores em pMOS de 10 µm, feito para a calculadora Busicom 141-PF.',
     productsEn:
       'Intel 4004 (1971): the first microprocessor - 2,300 transistors on a 10 µm pMOS process, built for the Busicom 141-PF calculator.',
     src: '/assets/silicon-gate.svg',
@@ -179,9 +179,9 @@ export const ERAS: Era[] = [
     descPt: 'Nanofolhas empilhadas envolvidas pela porta nos quatro lados; até ~40% menos vazamento.',
     descEn: 'Stacked nanosheets wrapped by the gate on all four sides; up to ~40% less leakage.',
     productsPt:
-      'Estreia comercial no ASIC minerador MicroBT WhatsMiner M56S++ (Samsung SF3E); depois vieram o Exynos 2600 e o Apple A20 Pro, no N2 da TSMC.',
+      'Estreia comercial no ASIC minerador MicroBT WhatsMiner M56S++ (Samsung SF3E); depois vieram o Exynos 2600, no 2 nm da Samsung, e o Apple A20 Pro, no N2 da TSMC.',
     productsEn:
-      'Commercial debut in MicroBT’s WhatsMiner M56S++ mining ASIC (Samsung SF3E); later came the Exynos 2600 and Apple’s A20 Pro, on TSMC N2.',
+      'Commercial debut in MicroBT’s WhatsMiner M56S++ mining ASIC (Samsung SF3E); later came the Exynos 2600, on Samsung’s 2 nm, and Apple’s A20 Pro, on TSMC N2.',
     src: '/pdf-images/p18-1.png',
     altPt: 'Transistor GAAFET de nanofolhas',
     altEn: 'GAAFET nanosheet transistor',

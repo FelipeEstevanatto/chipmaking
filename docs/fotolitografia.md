@@ -92,7 +92,7 @@ Duplicação de linhas: o padrão final sai da soma de duas exposições — <a 
 
 ## Imersão: a água que esticou o 193 nm
 
-O truque que segurou a litografia óptica por mais de uma década foi trocar o **ar** entre a última lente e o wafer por **água purificada**. Como o índice de refração da água é maior que o do ar, o comprimento de onda **efetivo** cai de 193 nm para cerca de **135 nm** — sem trocar óptica, máscara ou fotoresistor <Cite id="asml-immersion" />.
+O truque que segurou a litografia óptica por mais de uma década foi trocar o **ar** entre a última lente e o wafer por **água purificada**. Como o índice de refração da água é maior que o do ar, o comprimento de onda **efetivo** cai de 193 nm para cerca de **134 nm** — sem trocar óptica, máscara ou fotoresistor <Cite id="asml-immersion" />.
 
 <DiagramFigure src="/assets/immersion-lithography.svg" alt="Comparação entre exposição a seco e exposição com água entre a última lente e o wafer">
 A última lente, a água e o wafer na litografia por imersão — <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (domínio público), Wikimedia Commons.
@@ -192,7 +192,7 @@ A abertura numérica maior capta um cone mais largo — e por isso enxerga traç
 
 <YouTubeEmbed id="h_zgURwr6nA" title="Unveiling High NA EUV (ASML)" />
 
-O ganho é grande: traços **1,7 vez menores** e, portanto, densidades de transistores **2,9 vezes maiores** <Cite id="asml-highna" />. O preço é a óptica. Para chegar a 0,55 de NA os espelhos ficam muito maiores, e a luz deixa de conseguir passar sem obstrução na direção de varredura. A solução foi a óptica **anamórfica**: redução de **8× na direção da varredura** e 4× na outra, o que **corta o campo de exposição pela metade** (26 × 16,5 mm em vez de 26 × 33 mm) e obriga os estágios de wafer e de retículo a serem bem mais rápidos <Cite id="asml-exe5200b" /> <Cite id="asml-highna" />.
+O ganho é grande: traços **1,7 vezes menores** e, portanto, densidades de transistores **2,9 vezes maiores** <Cite id="asml-highna" />. O preço é a óptica. Para chegar a 0,55 de NA os espelhos ficam muito maiores, e a luz deixa de conseguir passar sem obstrução na direção de varredura. A solução foi a óptica **anamórfica**: redução de **8× na direção da varredura** e 4× na outra, o que **corta o campo de exposição pela metade** (26 × 16,5 mm em vez de 26 × 33 mm) e obriga os estágios de wafer e de retículo a serem bem mais rápidos <Cite id="asml-exe5200b" /> <Cite id="asml-highna" />.
 
 A plataforma tem três marcos até agora:
 

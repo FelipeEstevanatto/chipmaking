@@ -163,7 +163,7 @@ O resultado: um wafer de 300 mm com superfície espelhada. Peellden — <a href=
 
 Limpeza padronizada **RCA** <Cite id="kern-1990" />:
 
-1. **RCA-1 (SC-1):** NH₄OH / H₂O₂ / H₂O a 70–80 °C — oxidação orgânica e partículas.
+1. **RCA-1 (SC-1):** NH₄OH / H₂O₂ / H₂O a 70–80 °C — remoção de orgânicos e partículas.
 2. **RCA-2 (SC-2):** HCl / H₂O₂ / H₂O a 70–80 °C — metais alcalinos e pesados.
 
 <DiagramFigure src="/assets/wet-bench.jpg" alt="Bancada úmida (wet bench) de laboratório limpo com tanques para ataques químicos">

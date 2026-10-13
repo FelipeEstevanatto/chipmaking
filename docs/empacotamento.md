@@ -78,7 +78,7 @@ Três situações empurraram a indústria para alternativas.
 
 A primeira é a **fragilidade dos dielétricos de baixa constante dielétrica**. Os filmes *low-k* do [BEOL](/na-fab#interconexao-a-parte-do-chip-que-ninguem-ve) são mecanicamente frágeis e **se danificam facilmente** no corte com lâmina, o que motivou a busca por outros métodos <Cite id="ectc-2016-dicing" />.
 
-A segunda é o **lascamento em wafers finos**. Em um wafer de **25 µm** de espessura (número que hoje é comum em memorias empilhadas), uma lâmina padrão causa lascamento substancial na face de trás; é preciso recorrer a grãos muito mais finos <Cite id="disco-thin-wafer" />.
+A segunda é o **lascamento em wafers finos**. Em um wafer de **25 µm** de espessura (número que hoje é comum em memórias empilhadas), uma lâmina padrão causa lascamento substancial na face de trás; é preciso recorrer a grãos muito mais finos <Cite id="disco-thin-wafer" />.
 
 A terceira é o **HBM**, onde as camadas são finas e a resistência da peça é crítica. Um estudo comparando lâmina, laser e *stealth* em wafers para integração 2.5D/3D encontrou a **maior resistência à fratura no fatiamento por *stealth***, e observou que wafers de **60 µm** resistem mais que os de 90 ou 120 µm <Cite id="mdpi-singulation-hbm" />.
 

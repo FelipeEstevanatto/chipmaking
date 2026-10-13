@@ -29,13 +29,6 @@ The diamond cubic crystal structure.
 Crystallographic orientations (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) and the lattice constant a<sub>Si</sub>.
 </DiagramFigure>
 
-### Further reading
-
-- [Crystal structure — YouTube](https://www.youtube.com/watch?v=lgYQE2aTNNc)
-- [Wafer orientation and crystal structure — WaferPro](https://waferpro.com/understanding-silicon-wafer-orientation-and-crystal-structure/)
-- [Miller indices — YouTube](https://www.youtube.com/watch?v=_A7oqoMFIiA)
-- [Miller Indices (SVG) — Wikimedia](https://upload.wikimedia.org/wikipedia/commons/d/d5/Miller_Indices_Felix_Kling.svg) · [Commons page](https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg) (DeepKling, CC BY 3.0)
-
 We can infer the crystal structure with **XRD (X-ray diffraction)** under controlled conditions (a clean, oriented sample). **Bragg's law** describes the reflection of X-rays by crystal planes and allows the lattice geometry to be determined — including in some partially crystalline materials or thin films when experimental resolution is sufficient.
 
 ### Miller indices
@@ -43,7 +36,7 @@ We can infer the crystal structure with **XRD (X-ray diffraction)** under contro
 Indices that describe crystallographic directions and planes; planes can have **anisotropic** properties (dependent on direction).
 
 <DiagramFigure src="/assets/miller-indices.svg" alt="Miller indices in a cubic structure">
-DeepKling — <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG from Wikimedia Commons.
+Felix Kling (DeepKling) — <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG from Wikimedia Commons.
 </DiagramFigure>
 
 ## Why silicon, and not germanium

@@ -163,7 +163,7 @@ The result: a 300 mm wafer with a mirror-like surface. Peellden — <a href="htt
 
 Standardised **RCA** cleaning <Cite id="kern-1990" />:
 
-1. **RCA-1 (SC-1):** NH₄OH / H₂O₂ / H₂O at 70–80 °C — organic oxidation and particle removal.
+1. **RCA-1 (SC-1):** NH₄OH / H₂O₂ / H₂O at 70–80 °C — removal of organics and particles.
 2. **RCA-2 (SC-2):** HCl / H₂O₂ / H₂O at 70–80 °C — alkaline and heavy metals.
 
 <DiagramFigure src="/assets/wet-bench.jpg" alt="A cleanroom wet bench with tanks for chemical etching">

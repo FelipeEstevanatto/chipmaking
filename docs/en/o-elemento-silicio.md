@@ -64,13 +64,13 @@ Silicon's gap is **1.12 eV**, narrow enough to conduct when you want it to and w
 
 The decisive detail, though, is that this gap is **indirect**: the conduction-band minimum and the valence-band maximum do not sit at the same point in momentum space. Absorbing or emitting a photon therefore needs a lattice vibration to help, which makes both processes far less likely <Cite id="elem-sze" />.
 
-Two consequences follow. The first is that **1 µm of gallium arsenide absorbs what 100 µm of silicon absorbs** — which explains the thickness of the solar wafer and the choice of thin-film materials in [solar cells and modules](/en/celulas-solares) <Cite id="saimm" />. The second is that silicon **does not emit light efficiently**, which forces silicon photonics to look for its laser in another material, as discussed in [Beyond silicon](/en/alem-do-silicio).
+Two consequences follow. The first is that **1 µm of gallium arsenide absorbs what 100 µm of silicon absorbs** — which explains the thickness of the solar wafer and the choice of thin-film materials in [solar cells and modules](/en/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. The second is that silicon **does not emit light efficiently**, which forces silicon photonics to look for its laser in another material, as discussed in [Beyond silicon](/en/alem-do-silicio).
 
 <ClientOnly>
   <DataChart chart="band-gap" />
 </ClientOnly>
 
-The map above shows where silicon falls among semiconductors: narrow gap, large lattice, next to germanium.
+The chart above shows where silicon falls among semiconductors: narrow gap, large lattice, next to germanium.
 
 ## The three isotopes
 

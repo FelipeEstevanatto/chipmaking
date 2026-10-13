@@ -92,7 +92,7 @@ Line doubling: the final pattern comes from adding two exposures — <a href="ht
 
 ## Immersion: the water that stretched 193 nm
 
-The trick that kept optical lithography alive for more than a decade was replacing the **air** between the last lens and the wafer with **purified water**. Because the refractive index of water is higher than that of air, the **effective** wavelength drops from 193 nm to about **135 nm** — with no change to optics, mask or photoresist <Cite id="asml-immersion" />.
+The trick that kept optical lithography alive for more than a decade was replacing the **air** between the last lens and the wafer with **purified water**. Because the refractive index of water is higher than that of air, the **effective** wavelength drops from 193 nm to about **134 nm** — with no change to optics, mask or photoresist <Cite id="asml-immersion" />.
 
 <DiagramFigure src="/assets/immersion-lithography.svg" alt="Comparison of dry exposure with immersion exposure with water between the last lens and the wafer">
 The last lens, the water and the wafer in immersion lithography — <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (public domain), Wikimedia Commons.
