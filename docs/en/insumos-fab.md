@@ -10,9 +10,24 @@ The wafer is this site's protagonist: it travels through the [fab](/en/na-fab), 
 
 This page is about the inputs that are not silicon but decide whether silicon becomes a product.
 
+The chapter follows the fab consumables in six items:
+
+1. [Photoresist: chemical amplification](#photoresist-chemical-amplification): the chemical that light modifies, and the amplification that makes it sensitive.
+2. [The mask, which is also optics](#the-mask-which-is-also-optics): why it stops being transparent.
+3. [The CMP slurry](#the-cmp-slurry): the suspension that combines chemical attack and mechanical removal.
+4. [Gases and neon](#gases-and-neon): the gas lithography needs and the dependency it creates.
+5. [Ultrapure water](#ultrapure-water): the highest-volume input and the limits it demands.
+6. [Why this list is a chokepoint](#why-this-list-is-a-chokepoint): why switching any of them to another supplier is costly.
+
+The text follows that order.
+
 ## Photoresist: chemical amplification
 
 The most characteristic lithography input is **photoresist**, and the invention that transformed it came from Hiroshi Ito and C. Grant Willson in the early 1980s: instead of each photon triggering a single reaction in a resist molecule, they designed a system in which the photon generates an **acid catalyst**, which in turn unleashes hundreds of cascading reactions during development <Cite id="fabm-ito-1983" />.
+
+<DiagramFigure src="/assets/resist-chemical-amplification.svg" alt="Schematic of two resists side by side: on the left, the conventional resist, where one photon changes a single molecule; on the right, the chemically amplified resist, where one photon generates an acid that deprotects many protecting groups along the polymer chain">
+Side by side, the same photon in both resists: in the conventional one it changes a single molecule, while in the amplified one it generates an acid that deprotects many protecting groups along the chain. Author's drawing <Cite id="fabm-ito-1983" />.
+</DiagramFigure>
 
 That principle, **chemical amplification**, is what allows doses low enough to expose quickly and features fine enough for the following nodes. Without it, every reduction in wavelength would have demanded a larger dose — and lithography would have hit a productivity wall far earlier than it did.
 

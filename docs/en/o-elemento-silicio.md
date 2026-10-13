@@ -12,11 +12,11 @@ They come back at every step of the chain. The [submerged arc furnace](/en/miner
 
 This page works through, in order:
 
-1. [The element's data card](#the-element-s-data-card) — the constants the industry does not choose.
-2. [The lattice silicon forms](#the-lattice-silicon-forms) — how those numbers arrange themselves in space, and what silicon does with carbon, germanium, oxygen and nitrogen.
-3. [The indirect gap](#the-indirect-gap-explains-more-than-solar) — why it limits the absorption of light.
-4. [The three isotopes](#the-three-isotopes) — the mixture nature delivers.
-5. [Why the industry uses this element](#why-the-industry-uses-this-element) — what silicon has, and what it does not.
+1. [The element's data card](#the-element-s-data-card): the constants the industry does not choose.
+2. [The lattice silicon forms](#the-lattice-silicon-forms): how those numbers arrange themselves in space, and what silicon does with carbon, germanium, oxygen and nitrogen.
+3. [The indirect gap](#the-indirect-gap-explains-more-than-solar): why it limits the absorption of light.
+4. [The three isotopes](#the-three-isotopes): the mixture nature delivers.
+5. [Why the industry uses this element](#why-the-industry-uses-this-element): what silicon has, and what it does not.
 
 The rest of the page follows that order.
 

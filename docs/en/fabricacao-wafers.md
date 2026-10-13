@@ -6,9 +6,20 @@ dataAsOf: 2025
 
 # Silicon wafer fabrication
 
-Turning electronic-grade polysilicon ([EG-Si](/en/glossario)) into monocrystalline wafers requires a rigorous sequence of precision physical, chemical and mechanical processes. The primary goal is to produce ingots free of crystal defects and convert them into extremely flat wafers with atomic-level surface roughness. The eight steps below cover that sequence, from growing the crystal to final inspection.
+Turning electronic-grade polysilicon ([EG-Si](/en/glossario)) into monocrystalline wafers requires a rigorous sequence of precision physical, chemical and mechanical processes. The primary goal is to produce ingots free of crystal defects and convert them into extremely flat wafers with atomic-level surface roughness. The eight steps below cover that sequence, from growing the crystal to final inspection:
 
-## Crystal growth (Czochralski — CZ)
+1. [Crystal growth (Czochralski, CZ)](#crystal-growth-czochralski-cz): the furnace, the seed and the pull that form the ingot.
+2. [Ingot preparation and pre-machining](#ingot-preparation-and-pre-machining): trimming the ends and setting the diameter.
+3. [Wafer slicing](#wafer-slicing): the wire saw that separates the wafers.
+4. [Edge profiling and lapping](#edge-profiling-and-lapping): the edge profile and the first flatness.
+5. [Chemical etching](#chemical-etching): the etch that removes the saw damage.
+6. [Thermal treatment and RTP](#thermal-treatment-and-rtp): the heat that fixes defects and activates dopants.
+7. [Chemical-mechanical polishing (CMP)](#chemical-mechanical-polishing-cmp): a surface flat to the atomic level.
+8. [RCA cleaning and inspection](#rca-cleaning-and-inspection): the final clean and the inspection that close the sequence.
+
+The text follows that order.
+
+## Crystal growth (Czochralski, CZ)
 
 The **Czochralski** method is the dominant industrial standard <Cite id="zulehner-2000" />. Pieces of ultra-high-purity polysilicon are placed in a highly purified quartz crucible, inside a vacuum furnace under inert argon. The material is melted at about **1414 °C**. A crystallographically oriented seed crystal (usually &lt;100&gt; or &lt;111&gt;) is dipped into the surface of the molten silicon and slowly pulled upwards while rotating in the opposite direction to the crucible. By controlling the pull rate and temperature precisely, a cylindrical monocrystalline ingot (**boule**) is formed with diameters of **200 mm** or **300 mm** and a length greater than **1 m**.
 

@@ -10,6 +10,18 @@ Metallurgical-grade silicon ([MG-Si](/en/glossario)) contains metallic and dopan
 
 The raw material was never the bottleneck: silicon is the **second most abundant element in the Earth's crust**, behind oxygen only <Cite id="pv-mfg-polysilicon" />. All of the value in this step lies in separating from the silicon the few atoms of boron, phosphorus and metals that ruin a transistor or a solar cell — and no physical filtration can do that job.
 
+The chapter follows the chemical route in seven steps:
+
+1. [Overview of the route](#overview-of-the-route): the map of the process and the split between the two routes.
+2. [From the arc furnace to MG-Si](#from-the-arc-furnace-to-mg-si): the reactions that produce the starting silicon.
+3. [Conversion to trichlorosilane (TCS)](#conversion-to-trichlorosilane-tcs): how silicon becomes a gas so it can be distilled.
+4. [Processes for obtaining solid polysilicon](#processes-for-obtaining-solid-polysilicon): the two reactors that turn the gas back into a solid.
+5. [The metallurgical route (UMG)](#the-metallurgical-route-umg): the chlorine-free alternative and the Elkem case.
+6. [How much purity is actually needed?](#how-much-purity-is-actually-needed): the numbers that separate the purity grades.
+7. [Market dynamics and history](#market-dynamics-and-history): the price cycles and the Chinese ascent.
+
+The text follows that order.
+
 ## Overview of the route
 
 <DiagramFigure src="/assets/polysilicon-process.svg" alt="Flow chart of the polysilicon route: quartz and carbon in the arc furnace, ground MG-Si, fluidized bed chlorination forming trichlorosilane, fractional distillation, and deposition in either the Siemens reactor or the fluidized bed reactor">

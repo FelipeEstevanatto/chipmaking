@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660" role="img">
+  <title>Four wear-out mechanisms of a MOSFET, each in cross-section: threshold-voltage shift from interface traps, hot carriers injected near the drain, a conductive filament through the gate oxide, and electromigration in a copper line leaving a void and a hillock</title>
+  <desc>Four panels, each a cross-section along a MOSFET channel. Top left: bias temperature instability, with trapped charge along the gate-oxide interface that shifts the threshold voltage. Top right: hot carriers accelerated near the drain and injected into the gate oxide. Bottom left: gate-oxide breakdown, a conductive filament shorting the gate to the channel. Bottom right: electromigration in a copper line, with a void upstream and a hillock downstream of the electron flow. The drawings are schematics and the layer thicknesses are exaggerated. Not to scale.</desc>
+  <rect width="960" height="660" fill="#ffffff" />
+  <defs>
+    <marker id="ah-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c53030" />
+    </marker>
+    <marker id="ah-dark" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3748" />
+    </marker>
+    <g id="mosfet">
+      <rect class="si" x="100" y="130" width="250" height="120" />
+      <rect class="n" x="104" y="130" width="58" height="30" />
+      <rect class="n" x="288" y="130" width="58" height="30" />
+      <rect class="ch" x="162" y="130" width="126" height="14" />
+      <rect class="ox" x="162" y="123" width="126" height="7" />
+      <rect class="gt" x="162" y="96" width="126" height="27" />
+      <rect class="ct" x="112" y="115" width="18" height="15" />
+      <rect class="ct" x="334" y="115" width="18" height="15" />
+      <text class="inv" x="210" y="113" text-anchor="middle">gate</text>
+    </g>
+  </defs>
+  <style>
+    .ttl { font: 600 20px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .lbl { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .note { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .inv { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .panel { fill: #f7fafc; stroke: #cbd5e0; stroke-width: 1.4; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
+    .n { fill: #90cdf4; stroke: #2b6cb0; stroke-width: 1.4; }
+    .ch { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.2; }
+    .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1.2; }
+    .gt { fill: #718096; stroke: #2d3748; stroke-width: 1.4; }
+    .ct { fill: #2d3748; stroke: #1a202c; stroke-width: 1.2; }
+    .trap { fill: #c53030; }
+    .cu { fill: #ed8936; stroke: #c05621; stroke-width: 1.4; }
+    .hot { stroke: #c53030; stroke-width: 2.2; fill: none; }
+    .fil { stroke: #c53030; stroke-width: 2.6; fill: none; stroke-linejoin: round; }
+    .flow { stroke: #2d3748; stroke-width: 2; fill: none; }
+    .void { fill: #ffffff; stroke: #c53030; stroke-width: 1.8; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  </style>
+
+  <!-- (a) NBTI / PBTI -->
+  <g transform="translate(30,30)">
+    <rect class="panel" x="0" y="0" width="435" height="290" rx="10" />
+    <text class="ttl" x="18" y="34">NBTI / PBTI</text>
+    <use href="#mosfet" />
+    <circle class="trap" cx="180" cy="129" r="3.6" />
+    <circle class="trap" cx="198" cy="129" r="3.6" />
+    <circle class="trap" cx="216" cy="129" r="3.6" />
+    <circle class="trap" cx="234" cy="129" r="3.6" />
+    <circle class="trap" cx="252" cy="129" r="3.6" />
+    <circle class="trap" cx="270" cy="129" r="3.6" />
+    <path class="lead" d="M 150 264 L 192 134" />
+    <text class="lbl" x="12" y="272">interface traps</text>
+    <path class="hot" d="M 225 88 L 225 70" marker-end="url(#ah-red)" />
+    <text class="lbl" x="225" y="58" text-anchor="middle">Vth shift</text>
+  </g>
+
+  <!-- (b) hot carriers -->
+  <g transform="translate(495,30)">
+    <rect class="panel" x="0" y="0" width="435" height="290" rx="10" />
+    <text class="ttl" x="18" y="34">Hot carriers</text>
+    <use href="#mosfet" />
+    <path class="hot" d="M 172 137 L 190 137" marker-end="url(#ah-red)" />
+    <path class="hot" d="M 205 137 L 223 137" marker-end="url(#ah-red)" />
+    <path class="hot" d="M 238 137 L 256 137" marker-end="url(#ah-red)" />
+    <path class="hot" d="M 290 146 L 278 126" marker-end="url(#ah-red)" />
+    <circle class="trap" cx="266" cy="126" r="3" />
+    <circle class="trap" cx="274" cy="126" r="3" />
+    <circle class="trap" cx="282" cy="126" r="3" />
+    <path class="lead" d="M 152 264 L 262 146" />
+    <text class="lbl" x="12" y="272">hot carriers</text>
+    <path class="lead" d="M 368 264 L 344 152" />
+    <text class="lbl" x="420" y="272" text-anchor="end">drain</text>
+  </g>
+
+  <!-- (c) gate-oxide breakdown -->
+  <g transform="translate(30,340)">
+    <rect class="panel" x="0" y="0" width="435" height="290" rx="10" />
+    <text class="ttl" x="18" y="34">Gate-oxide breakdown</text>
+    <use href="#mosfet" />
+    <path class="fil" d="M 255 96 L 249 106 L 261 114 L 251 122 L 259 130 L 253 137" />
+    <path class="lead" d="M 178 264 L 246 140" />
+    <text class="lbl" x="12" y="272">conductive filament</text>
+  </g>
+
+  <!-- (d) electromigration -->
+  <g transform="translate(495,340)">
+    <rect class="panel" x="0" y="0" width="435" height="290" rx="10" />
+    <text class="ttl" x="18" y="34">Electromigration</text>
+    <rect class="cu" x="60" y="170" width="315" height="44" />
+    <text class="inv" x="230" y="200" text-anchor="middle">Cu</text>
+    <polygon class="void" points="150,170 176,170 163,206" />
+    <path class="cu" d="M 298 170 Q 314 140 330 170 Z" />
+    <path class="lead" d="M 100 88 L 160 168" />
+    <text class="lbl" x="12" y="80">void (open)</text>
+    <path class="lead" d="M 300 88 L 314 150" />
+    <text class="lbl" x="250" y="80">hillock (short)</text>
+    <path class="flow" d="M 70 245 L 365 245" marker-end="url(#ah-dark)" />
+    <text class="note" x="150" y="268" text-anchor="middle">electron flow</text>
+  </g>
+</svg>

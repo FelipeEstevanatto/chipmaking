@@ -20,13 +20,13 @@ The wafer goes round the same equipment dozens of times. The seven modules are n
 
 The loop has **seven modules**. Six of them have a section in this chapter, in the order the wafer visits them; the seventh, lithography, has [its own chapter](/en/fotolitografia), because that is where the whole difficulty of scaling sits:
 
-1. [Thermal oxidation](#thermal-oxidation-silicon-growing-its-own-insulator) — silicon growing its own insulator.
-2. [Deposition](#deposition-putting-material-where-there-was-none) — putting material where there was none.
+1. [Thermal oxidation](#thermal-oxidation-silicon-growing-its-own-insulator): silicon growing its own insulator.
+2. [Deposition](#deposition-putting-material-where-there-was-none): putting material where there was none.
 3. [Lithography](/en/fotolitografia) — drawing the pattern, in a separate chapter.
-4. [Etching](#etching-removing-material-on-purpose) — removing material on purpose.
-5. [Ion implantation](#ion-implantation-doping-by-force) — doping by force.
-6. [Planarisation](#planarisation-erasing-the-relief) — erasing the relief so layers can stack.
-7. [Metrology](#metrology-measuring-so-you-can-continue) — measuring so you can continue.
+4. [Etching](#etching-removing-material-on-purpose): removing material on purpose.
+5. [Ion implantation](#ion-implantation-doping-by-force): doping by force.
+6. [Planarisation](#planarisation-erasing-the-relief): erasing the relief so layers can stack.
+7. [Metrology](#metrology-measuring-so-you-can-continue): measuring so you can continue.
 
 Outside the loop, two sections close the chapter: [interconnection](#interconnection-the-part-of-the-chip-nobody-sees), which builds what the loop patterned, and [yield](#yield-the-number-that-decides-whether-a-product-exists), which measures whether it worked.
 

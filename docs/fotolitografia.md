@@ -20,6 +20,21 @@ Exposição EUV em wafer — <a href="https://www.asml.com/" target="_blank" rel
 *Laser controlled positioning and a solid, vibration-suppressing granite base ensure precise alignment of the exposure chuck.*
 </DiagramFigure>
 
+O capítulo percorre o caminho da luz, da fonte ao wafer, em dez partes:
+
+1. [Como a luz chega ao wafer](#como-a-luz-chega-ao-wafer): o caminho óptico da fonte ao wafer.
+2. [O fotoresistor](#o-fotoresistor): a resina que muda de solubilidade onde a luz bate.
+3. [Passo a passo do processo](#passo-a-passo-do-processo): as oito etapas do ciclo, do revestimento à remoção.
+4. [Realce de resolução e multi-padrão](#realce-de-resolucao-e-multi-padrao): os truques ópticos e as exposições repetidas.
+5. [Imersão: a água que esticou o 193 nm](#imersao-a-agua-que-esticou-o-193-nm): o filme de água que aumentou a abertura numérica.
+6. [DUV: o que a luz de 193 nm ainda faz](#duv-o-que-a-luz-de-193-nm-ainda-faz): o que resta do ultravioleta profundo.
+7. [A fonte de luz EUV: o estanho virando plasma](#a-fonte-de-luz-euv-o-estanho-virando-plasma): como gotas de estanho viram luz de 13,5 nm.
+8. [Espelhos em vez de lentes](#espelhos-em-vez-de-lentes): a óptica refletiva que o EUV exige.
+9. [DUV e EUV lado a lado](#duv-e-euv-lado-a-lado): o que cada tecnologia faz e onde cada uma é usada.
+10. [High-NA: o sistema EXE](#high-na-o-sistema-exe): a próxima geração de scanners.
+
+O texto segue essa ordem.
+
 ## Como a luz chega ao wafer
 
 O scanner é, no fundo, um **caminho óptico** muito bem controlado. A luz nasce numa fonte (o laser de excímero de **193 nm** no DUV, ou o plasma de estanho de **13,5 nm** no EUV), passa pelo **iluminador**, que dá forma ao feixe e define o modo de iluminação e a dose, atravessa o **retículo** e é reduzida pela **óptica de projeção** até o wafer <Cite id="kato-litho" />.

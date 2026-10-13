@@ -20,6 +20,21 @@ EUV exposure on a wafer — <a href="https://www.asml.com/" target="_blank" rel=
 *Laser controlled positioning and a solid, vibration-suppressing granite base ensure precise alignment of the exposure chuck.*
 </DiagramFigure>
 
+The chapter follows the path of the light, from the source to the wafer, in ten parts:
+
+1. [How the light reaches the wafer](#how-the-light-reaches-the-wafer): the optical path from the source to the wafer.
+2. [The photoresist](#the-photoresist): the resin whose solubility changes where the light lands.
+3. [Step-by-step process](#step-by-step-process): the eight steps of the cycle, from coating to removal.
+4. [Resolution enhancement and multi-patterning](#resolution-enhancement-and-multi-patterning): the optical tricks and the repeated exposures.
+5. [Immersion: the water that stretched 193 nm](#immersion-the-water-that-stretched-193-nm): the water film that raised the numerical aperture.
+6. [DUV: what 193 nm light still does](#duv-what-193-nm-light-still-does): what is left of deep ultraviolet.
+7. [The EUV light source: turning tin into plasma](#the-euv-light-source-turning-tin-into-plasma): how tin droplets become 13.5 nm light.
+8. [Mirrors instead of lenses](#mirrors-instead-of-lenses): the reflective optics EUV requires.
+9. [DUV and EUV side by side](#duv-and-euv-side-by-side): what each technology does and where each one is used.
+10. [High-NA: the EXE system](#high-na-the-exe-system): the next generation of scanners.
+
+The text follows that order.
+
 ## How the light reaches the wafer
 
 A scanner is, at heart, a very carefully controlled **optical path**. Light is born in a source (the **193 nm** excimer laser for DUV, or the **13.5 nm** tin plasma for EUV), passes through the **illuminator**, which shapes the beam and sets the illumination mode and the dose, crosses the **reticle**, and is reduced by the **projection optics** down to the wafer <Cite id="kato-litho" />.

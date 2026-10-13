@@ -20,13 +20,13 @@ The finished cell in cross-section. The ray one pyramid reflects is caught by th
 
 A finished cell comes out of **seven steps**, in this order:
 
-1. [Saw damage removal](#saw-damage-removal) — the etch that takes off the damage left by the saw.
-2. [Texturing](#texturing) — the roughness that lets light in instead of back out.
-3. [Emitter diffusion](#emitter-diffusion-the-p-n-junction) — the p-n junction that turns the wafer into a device.
-4. [Edge isolation](#edge-isolation) — cutting the short between the two faces.
-5. [Anti-reflection coating](#anti-reflection-coating) — less reflection, and surface passivation with it.
-6. [Metallisation](#metallisation) — the contacts, where every millimetre of silver is a millimetre without light.
-7. [Contact firing](#contact-firing) — the heat step that drives the metal through the anti-reflection layer.
+1. [Saw damage removal](#saw-damage-removal): the etch that takes off the damage left by the saw.
+2. [Texturing](#texturing): the roughness that lets light in instead of back out.
+3. [Emitter diffusion](#emitter-diffusion-the-p-n-junction): the p-n junction that turns the wafer into a device.
+4. [Edge isolation](#edge-isolation): cutting the short between the two faces.
+5. [Anti-reflection coating](#anti-reflection-coating): less reflection, and surface passivation with it.
+6. [Metallisation](#metallisation): the contacts, where every millimetre of silver is a millimetre without light.
+7. [Contact firing](#contact-firing): the heat step that drives the metal through the anti-reflection layer.
 
 The choice of p-type dopant (boron or gallium) runs through the third step and became a subsection inside it: it changed the product, not the process sequence.
 

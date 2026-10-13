@@ -18,15 +18,17 @@ The wafer enters on the left as a single piece and leaves on the right as indivi
 
 The chapter's order is the production line's order:
 
-1. [Wafer test](#wafer-test-separating-the-wheat-before-paying-for-the-mould) — separating the good die before paying for the mould.
-2. [Dicing](#dicing-separating-the-dies) — separating the dies, and why the blade stops working.
-3. [Wire bonding](#wire-bonding-the-technology-that-assembles-80-of-the-world) — the technology that still assembles most of the world.
-4. [Flip-chip](#flip-chip-turning-the-die-face-down) — turning the die over, when the perimeter stops being enough.
-5. [Stacking](#_2-5d-3d-and-the-package-hierarchy) — 2.5D, 3D and hybrid bonding.
-6. [HBM](#hbm-the-memory-that-had-to-move-next-door) — the memory that had to move next door to the processor.
-7. [Chiplets](#chiplets-dividing-in-order-to-yield) — dividing the chip to get yield.
-8. [Final test](#final-test-burn-in-and-binning) — burn-in, binning and what gets sold.
-9. [What it is worth](#what-packaging-is-worth) — the economic size of this part of the chain.
+1. [Wafer test](#wafer-test-separating-the-wheat-before-paying-for-the-mould): separating the good die before paying for the mould.
+2. [Dicing](#dicing-separating-the-dies): separating the dies, and why the blade stops working.
+3. [Wire bonding](#wire-bonding-the-technology-that-assembles-80-of-the-world): the technology that still assembles most of the world.
+4. [Flip-chip](#flip-chip-turning-the-die-face-down): turning the die over, when the perimeter stops being enough.
+5. [Stacking](#_2-5d-3d-and-the-package-hierarchy): 2.5D, 3D and hybrid bonding.
+6. [HBM](#hbm-the-memory-that-had-to-move-next-door): the memory that had to move next door to the processor.
+7. [Chiplets](#chiplets-dividing-in-order-to-yield): dividing the chip to get yield.
+8. [Final test](#final-test-burn-in-and-binning): burn-in, binning and what gets sold.
+9. [What it is worth](#what-packaging-is-worth): the economic size of this part of the chain.
+
+The chapter follows that order.
 
 ## Wafer test: separating the wheat before paying for the mould
 

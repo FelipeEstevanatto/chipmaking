@@ -20,13 +20,13 @@ O wafer dá dezenas de voltas pelos mesmos equipamentos. Os sete módulos estão
 
 O laço tem **sete módulos**. Seis têm seção neste capítulo, na ordem em que o wafer os visita. O sétimo, a litografia, tem [capítulo próprio](/fotolitografia): é ali que está a dificuldade de escala.
 
-1. [Oxidação](#oxidacao-termica-o-silicio-fabricando-o-proprio-isolante) — o silício fabricando o próprio isolante.
-2. [Deposição](#deposicao-colocar-material-onde-nao-havia) — colocar material onde não havia.
+1. [Oxidação](#oxidacao-termica-o-silicio-fabricando-o-proprio-isolante): o silício fabricando o próprio isolante.
+2. [Deposição](#deposicao-colocar-material-onde-nao-havia): colocar material onde não havia.
 3. [Litografia](/fotolitografia) — desenhar o padrão, em capítulo separado.
-4. [Corrosão](#corrosao-tirar-material-de-proposito) — tirar material de propósito.
-5. [Implantação iônica](#implantacao-ionica-dopar-a-forca) — dopar à força.
-6. [Planarização](#planarizacao-apagar-o-relevo) — apagar o relevo para poder empilhar.
-7. [Metrologia](#metrologia-medir-para-poder-continuar) — medir para poder continuar.
+4. [Corrosão](#corrosao-tirar-material-de-proposito): tirar material de propósito.
+5. [Implantação iônica](#implantacao-ionica-dopar-a-forca): dopar à força.
+6. [Planarização](#planarizacao-apagar-o-relevo): apagar o relevo para poder empilhar.
+7. [Metrologia](#metrologia-medir-para-poder-continuar): medir para poder continuar.
 
 Fora do laço, duas seções fecham o capítulo: [interconexão](#interconexao-a-parte-do-chip-que-ninguem-ve), que constrói o que o laço desenhou, e [rendimento](#rendimento-o-numero-que-decide-se-o-produto-existe), que mede se deu certo.
 

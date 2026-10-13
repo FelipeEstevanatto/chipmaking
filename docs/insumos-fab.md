@@ -10,9 +10,24 @@ O wafer é o protagonista deste site: ele percorre a [fábrica](/na-fab), recebe
 
 Esta página trata dos insumos que não são silício, mas que decidem se o silício vira produto.
 
+O capítulo percorre os insumos da fab em seis itens:
+
+1. [O fotorresiste: amplificação química](#o-fotorresiste-amplificacao-quimica): o químico que a luz modifica, e a amplificação que o torna sensível.
+2. [A máscara, que também é óptica](#a-mascara-que-tambem-e-optica): por que ela deixa de ser transparente.
+3. [O slurry do CMP](#o-slurry-do-cmp): a suspensão que junta ataque químico e remoção mecânica.
+4. [Gases e o neônio](#gases-e-o-neonio): o gás que a litografia precisa e a dependência que ele cria.
+5. [Água ultrapura](#agua-ultrapura): o insumo de maior volume e os limites que ele exige.
+6. [Por que essa lista é um gargalo](#por-que-essa-lista-e-um-gargalo): por que trocar qualquer um deles de fornecedor é caro.
+
+O texto segue essa ordem.
+
 ## O fotorresiste: amplificação química
 
 O insumo mais característico da litografia é o **fotorresiste**, e a invenção que o transformou veio de Hiroshi Ito e C. Grant Willson, no início dos anos 1980: em vez de cada fóton provocar uma única reação na molécula de resiste, eles desenharam um sistema em que o fóton gera um **catalisador ácido**, que por sua vez desencadeia centenas de reações em cascata na etapa de revelação <Cite id="fabm-ito-1983" />.
+
+<DiagramFigure src="/assets/resist-chemical-amplification.svg" alt="Esquema de dois resistes lado a lado: à esquerda, o resiste convencional, em que um fóton muda uma só molécula; à direita, o resiste quimicamente amplificado, em que um fóton gera um ácido que desprotege muitos grupos de proteção ao longo da cadeia do polímero">
+Ao lado, o mesmo fóton nos dois resistes: no convencional ele muda uma única molécula, enquanto no amplificado ele gera um ácido que desprotege muitos grupos de proteção ao longo da cadeia. Desenho do autor <Cite id="fabm-ito-1983" />.
+</DiagramFigure>
 
 É esse princípio, a **amplificação química**, que permite usar doses de luz baixas o bastante para expor rápido e traços finos o bastante para os nós seguintes. Sem ele, cada redução de comprimento de onda exigiria uma dose maior — e a litografia teria esbarrado em produtividade muito antes do que esbarrou.
 

@@ -10,6 +10,17 @@ The earlier chapters tell you how a chip is made. The [fab](/en/na-fab) builds t
 
 Reliability is not a single measurement. It is the **distribution of failures over time** — and that distribution is almost never uniform. Understanding it is what separates "the chip works" from "the chip can be sold".
 
+The chapter follows the aging of a chip in six steps:
+
+1. [The bathtub curve](#the-bathtub-curve): the three phases of the failure rate.
+2. [Wear-out mechanisms](#wear-out-mechanisms): the mechanisms that age the device, one by one.
+3. [Quantifying failure](#quantifying-failure): how failure is measured and accelerated.
+4. [Soft errors](#soft-errors): the class of failure that leaves no scar.
+5. [Qualification](#qualification): the tests a supplier must pass before selling.
+6. [Why this is a materials story](#why-this-is-a-materials-story): why reliability starts with the material.
+
+The text follows that order.
+
 ## The bathtub curve
 
 Plot the failure rate of a population against time and the same shape reappears, across mechanical and electronic components of every kind: a bathtub <Cite id="rel-nist-bathtub" />.
@@ -74,6 +85,10 @@ $$
 where $J$ is the current density and $T$ is the temperature <Cite id="rel-black-1969" />. The exponent $n$ sits typically near **2** for aluminium, and the activation energy $E_a$ depends on the metal and on the diffusion path, on the order of **0.5 to 0.7 eV** for aluminium and **0.8 to 1.0 eV** for copper <Cite id="rel-jep122" />.
 
 Be wary of any $n$ or $E_a$ presented as a universal constant: qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />. What is robust is the **direction**: doubling $J$ shortens life far more than doubling room temperature — which is why swapping aluminium for copper in **1997** mattered so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
+
+<DiagramFigure src="/assets/wearout-mechanisms.svg" alt="Four schematic MOSFET cross-sections, one per wear-out mechanism: traps at the oxide-silicon interface that shift the threshold voltage, hot carriers injected into the oxide near the drain, a conductive filament through the gate oxide, and electromigration in a copper wire, with a void upstream and a hillock downstream">
+The four wear-out mechanisms in cross-section: interface traps that shift the threshold voltage <Cite id="rel-schroder-2003" />, hot carriers that jump into the oxide near the drain <Cite id="rel-hu-1985" />, the conductive filament that breaks down the gate oxide <Cite id="rel-mcpherson-2012" />, and electromigration that opens a void and raises a hillock in the copper wire <Cite id="rel-black-1969" />. Author's drawing.
+</DiagramFigure>
 
 ## Quantifying failure
 

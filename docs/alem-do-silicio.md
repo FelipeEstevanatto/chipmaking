@@ -34,6 +34,10 @@ Antes de ser um processador, o silício é um material estrutural excelente: dur
 
 **MEMS.** Sensores de sistema microeletromecânico (acelerômetros, giroscópios, microfones, sensores de pressão) são silício usinado, não silício dopado. A fabricação usa as mesmas ferramentas da fab: corrosão úmida **anisotrópica**, que ataca planos cristalinos diferentes em velocidades diferentes, e corrosão profunda por plasma (**DRIE**), que escava trincheiras verticais <Cite id="bosch-drie" />. Todo telefone carrega dezenas deles.
 
+<DiagramFigure src="/assets/mems-structure.svg" alt="Corte transversal de uma estrutura MEMS de silício: uma viga fina suspensa sobre uma cavidade aberta no próprio substrato, presa ao substrato numa das pontas e solta na outra, com as paredes da cavidade inclinadas para dentro">
+A viga suspensa em corte: uma das pontas está ancorada no substrato e a outra fica livre sobre a cavidade, aberta por corrosão no próprio silício <Cite id="bosch-drie" />. Desenho do autor.
+</DiagramFigure>
+
 **Sensores de imagem.** O sensor CMOS é, hoje, provavelmente o produto de silício mais numeroso do mundo. A geração atual empilha duas lâminas (a de pixels e a de circuitos) e as liga por **vias passantes** (TSV), a mesma tecnologia que o capítulo de [empacotamento](/empacotamento) descreve para os pacotes 3D <Cite id="semieng-tsv" />.
 
 **Fotônica de silício.** Aqui o silício é, de novo, vítima do próprio gap. Um material de gap indireto **não emite luz com eficiência** <Cite id="elem-sze" />, e por isso um circuito fotônico integrado em silício não consegue fazer seu próprio laser: ele guia, modula e detecta luz muito bem, mas precisa buscar a fonte em outro material, integrado ao chip. É a mesma propriedade física que explica, no capítulo solar, por que são necessários **100 µm de silício** para absorver o que **1 µm de arseneto de gálio** absorve <Cite id="saimm" />.

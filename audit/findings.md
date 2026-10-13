@@ -1,118 +1,51 @@
-# Findings — full-site audit
+# Findings — open items
 
-Audit of every chapter pair (PT + EN) produced by six agents running `audit/prompt.md`. Raw reports
-live in `audit/reports/`; this file is the merged, fixable list. Site-level proposals (navigation,
-new checks, content architecture) are in `audit/structure.md`.
+The 2026-09 full-site audit of every chapter pair (PT + EN), re-checked against the working tree on
+2026-09-29. This file keeps only the findings that are still real and not yet fixed. The findings
+fixed in the working tree on 2026-09-28/29 and the cross-cutting classes that are now resolved
+(generation count, EN anchors carrying PT slugs, chart labels not localised, USGS editions, the yield
+model ×10 offset) have been removed. Site-level proposals live in `audit/structure.md`.
 
-**211 findings — 15 blocker · 67 major · 93 minor · 36 idea.** Every finding carries `file:line`, an
-exact quote, a proposed fix or the exact verification that settles it, and a confidence. The reports
-below are verbatim, with headings demoted one level.
+## Corrections to the audit's own proposed fixes
 
-> **Status — fixed in the working tree (2026-09-28), both locales.** `o-elemento-silicio-01`
-> (²⁹Si ~4,7 %), `na-fab-01` (copper resistance), `empacotamento-01` (HBM4 configurations),
-> `fotolitografia-01` (the sentence now sources ASML's origin and drops the false TSMC/Philips
-> claim), and `introducao-01`: the USGS table and chart were rebuilt with 2022–2025 columns from the
-> 2024–2026 editions (latest estimate per year, each column's edition named in the note), because
-> the 2020–2025 series they carried matches no MCS edition (checked against the 2020–2026 PDFs);
-> `gargalos`' MG-Si row updated to match. New citations appended: `usgs-mcs-2026` (252),
-> `asml-history` (253), `usgs-mcs-2024` (254), `usgs-mcs-2025` (255); `USGS_MCS_YEARS` now ends at
-> 2026. `bun run build` and the three audits pass. Everything else in this file is still open.
+Read these before applying anything; they are cases where blindly following the original findings
+would ship a new error.
 
-| Report | Pages | Blocker | Major | Minor | Idea |
-| --- | --- | --- | --- | --- | --- |
-| g1-foundations | index, introducao, o-elemento-silicio, mineracao-mg-si | 4 | 13 | 5 | 6 |
-| g2-refining-wafer | polissilicio, estrutura-wafers | 1 | 7 | 8 | 5 |
-| g3-fab-litho | fabricacao-wafers, fotolitografia, historia-fotolitografia | 2 | 11 | 20 | 6 |
-| g4-devices-fabops | transistores, na-fab, insumos-fab | 2 | 13 | 21 | 8 |
-| g5-packaging-reliability | empacotamento, confiabilidade | 1 | 8 | 19 | 5 |
-| g6-panorama | celulas-solares, alem-do-silicio, precos-e-valor, gargalos, dados, linha-do-tempo | 5 | 15 | 20 | 6 |
-
-## How to work through this
-
-- Blockers first (queue below), one chapter pair per commit. Then majors chapter by chapter; leave
-  minors for a final copy-edit pass.
-- Fix PT and EN in the same edit. A number only ships with its `<Cite>` and a `citations.ts` entry;
-  append entries, never renumber (`AGENTS.md` § Sources).
-- Where a number cannot be confirmed, do the lookup named in the finding. Do not substitute a guess.
-- After each chapter: `bun run build`, `python scripts/audit-glossary.py`,
-  `python scripts/audit-svgs.py`, `python scripts/audit-math.py` — all four pass.
-- `severity: idea` findings are proposals, not defects. Verify the source and the licence before
-  using any suggested image.
-- Some defects appear in two reports (different chapter pairs). Fix them once, across all copies —
-  see "Cross-cutting defects".
-- `verification: needs external verification` means the fixing agent must open the named document
-  before changing the text.
-
-## Blockers (work queue)
-
-1. `index-01` — home trail promises "as quinze gerações"; `transistor-eras.ts` holds 14. Same fix in
-   `linha-do-tempo` (both locales) and the comment at `transistor-eras.ts:2`.
-2. `introducao-01` — the 2024/2025 USGS columns cannot come from the `mcs2023` URL the citation
-   carries; the prose, the reference row and `USGS_MCS_YEARS` disagree. Reconcile editions.
-3. `o-elemento-silicio-01` — ²⁹Si printed as "0,47 %" against the page's own table (4,65–4,70 %).
-   Off by 10×; propagates to `alem-do-silicio`.
-4. `mineracao-mg-si-01` — world MG-Si "passa de 1 milhão t/ano" against 3,3 Mt the same site prints
-   in `introducao` and `gargalos`; state year and scope, or use one series.
-5. `polissilicio-01` — demand jump pairs the 1995 PV slice (1.500 t) with the 2018 total (420.000 t)
-   while the sentence names 2014; the page's own caption has the right series.
-6. `fabricacao-wafers-03` — as-cut "700–800 µm" vs "sai com 775 µm e perde material"; 775 µm is the
-   finished 300 mm spec (SEMI M1). Fix the bookkeeping.
-7. `fotolitografia-01` — "Quando a TSMC ainda fazia parte da Philips" is false (TSMC was a joint
-   venture, never a Philips division) and the paragraph is uncited; likely ASML's story.
-8. `na-fab-01` — copper "conduz duas vezes melhor" contradicts "40 a 45 % menos resistência" in the
-   same sentence and the cited IBM page (~40 %).
-9. `insumos-fab-01` — EN link targets the PT anchor of CMP; the fragment never resolves.
-10. `empacotamento-01` — HBM4 "4 a 64 GB" is not in the cited JEDEC release (24/32 Gb dies in 4–16-high
-    stacks give ~12–64 GB).
-11. `precos-e-valor-01` — EN link carries the PT anchor `#quem-fabrica-os-wafers`.
-12. `gargalos-01` — three EN links carry PT anchors (`spruce-pine-…`, `#a-ascensao-chinesa`,
-    `#quem-fabrica-os-wafers`).
-13. `dados-01` — the yield chart plots `e^(−10·D₀·A)`, not the `e^(−D₀·A)` on its own axis; every
-    series is ten times harsher than its label (same offset in `chiplet-yield.svg`, see
-    `empacotamento-02`).
-14. `dados-02` — EN link to chiplets uses the PT anchor.
-15. `linha-do-tempo-01` — "As quinze gerações" against the 14 entries the component renders.
+1. **`polissilicio-01`** — the report pairs the 1995 *PV* slice with a "2018 total". Bernreuter's
+   420,000 t (2018) is the **PV sector's** demand, not the total. Correct fix: "o setor fotovoltaico
+   saiu de 1.500 t (1995) para ~250.000 t (2014) e ~420.000 t (2018)" (totals: 15.100 → 278.000 t).
+2. **Em dashes** — the proposed fixes for `polissilicio-04` and `confiabilidade-03` contain em
+   dashes, which `AGENTS.md` bans in prose. Use the reworded versions in the findings below.
+3. **Home page moved into components** — `index-02` and `index-03` no longer live in `docs/index.md`
+   text: edit `docs/.vitepress/theme/home-sections.ts` (cards) and `chain.ts` / `ChainFlow.vue`
+   (production strip), not the Markdown.
+4. **`empacotamento-02` / `dados-01`** — `chiplet-yield.svg` is **correct** (it plots e^(−0.1·A):
+   82% at 200 mm², 45% at 800 mm²). The ×10 offset is only in `specs.ts` `yield-vs-area` and its CSV.
+   Fix the chart and leave the drawing.
+5. **`confiabilidade-01`** — the spine must cover six H2s, including the closing
+   `#por-que-isso-é-uma-história-de-materiais` (`#why-this-is-a-materials-story`); the report lists five.
+6. **`fotolitografia-06`** — the report's premise ("list does not match the embedded videos") is
+   only half true: three of the four ids are embedded in the page. Fix the label and `asml-gaa`
+   (an article), not the whole list.
+7. **`fotolitografia-10`** — "robust"/"robustas" was removed by the `-01` rewrite; only the
+   "2000s never ended" clause remains to fix.
+8. **`transistores-19`** — the thousand-separator sweep also covers `transistor-eras.ts` (PT strings)
+   and the PT tables in `polissilicio.md`.
 
 ## Cross-cutting defects
 
 Fix the class, not the instance; grep for the rest after each fix.
 
-- **Generation count (14 vs 15)**: `index-01`, `linha-do-tempo-01`, `transistores-08`, comment at
-  `transistor-eras.ts:2`. One decision, four edits.
-- **EN anchors pointing at PT slugs**: `insumos-fab-01`, `gargalos-01`, `precos-e-valor-01`,
-  `dados-02`, plus the dropped BEOL anchor in `empacotamento-09`. Sweep every `](/en/… #…)` link in
-  `docs/en/` against the EN headings; the recommended replacements are in the reports.
-- **Chart labels not localised**: `confiabilidade-06` + `gargalos-03` — `ChartSpec.labels` is passed
-  through untouched by `DataChart.vue`, so `bathtub`, `chokepoint-share` and `pv-efficiency` show
-  Portuguese axis labels on `/en/…`, and the CSVs keep Portuguese headers. One fix in
-  `DataChart.vue` / `types.ts`, then regenerate the CSVs with `scripts/export-chart-data.ts`.
-- **Yield model ten-times offset**: `dados-01` (chart, CSV, spec) and `empacotamento-02`
-  (`chiplet-yield.svg`). Decide which model the site uses once, fix `na-fab`'s D₀ values and the
-  drawing together.
 - **HPQ "70 a 90 %" with no published source**: `mineracao-mg-si-03`, `gargalos-02`, and the
   `chokepoint-share` row that rides on the same `sibelco-hpq` marker. Replace the marker or hedge
   the claim, in all three places.
-- **USGS editions**: `introducao-01` + `referencias.md:22` + `USGS_MCS_YEARS` in `citations.ts` all
-  name different year sets for the same series.
 - **Uncited claims**: `introducao-03`, `o-elemento-silicio-03`, `mineracao-mg-si-02/08`,
-  `fotolitografia-01/02` — a claim with no `<Cite>` is a blocker per the repo's own rule, even when
+  `fotolitografia-02` — a claim with no `<Cite>` is a blocker per the repo's own rule, even when
   the number is plausible.
 
----
-
-# Raw reports (verbatim)
 ## Report — docs/index.md, docs/introducao.md, docs/o-elemento-silicio.md, docs/mineracao-mg-si.md (+ en/ mirrors)
 
 ### index
-### index-01 — "quinze gerações" but the site's own list has fourteen
-- where: docs/index.md:L81 (and docs/en/index.md:L81)
-- category: fact
-- severity: blocker
-- quote: "9. [Evolução dos transistores](/transistores) — as quinze gerações, do planar ao CFET." / "9. [Transistor evolution](/en/transistores) — the fifteen generations, from planar to CFET."
-- problem: The single source for the enumeration, `docs/.vitepress/theme/transistor-eras.ts`, contains 14 era objects (1960, 1963, 1968, 1985, 1995, 1998, 2003, 2007, 2011, 2012, 2022, 2025/2026, ~2029, Futuro), and the chapter's own spine list has 14 numbered items; only the file's header comment claims fifteen. The home page therefore repeats a count the site cannot show.
-- fix: Change the reading-path line to "as catorze gerações"/"the fourteen generations" in `docs/index.md:81`, `docs/en/index.md:81`, `docs/linha-do-tempo.md:27`, `docs/en/linha-do-tempo.md:27` and the comment at `docs/.vitepress/theme/transistor-eras.ts:2`; alternatively find and restore the missing generation if one was dropped, before shipping the count fix.
-- verification: verified (counted `^\s{4}year:` matches in `transistor-eras.ts` = 14 and `^## ` sections in `docs/transistores.md` = 14 eras + addendum).
-- confidence: high
 
 ### index-02 — Panorama card sells four destinations and opens one
 - where: docs/index.md:L44-L47 (and docs/en/index.md:L44-L47; the Wafer card at docs/index.md:L28-L31 has the same shape)
@@ -135,25 +68,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: high
 
 ### introducao
-### introducao-01 — USGS citation is the 2023 edition, the table carries 2024 and 2025 estimates
-- where: docs/introducao.md:L13 and L19-L29 (and docs/en/introducao.md:L13 and L19-L31; entry at docs/.vitepress/theme/citations.ts:L14-L21)
-- category: source
-- severity: blocker
-- quote: "de acordo com o relatório *Mineral Commodity Summaries* de 2023 do Serviço Geológico dos Estados Unidos (USGS) <Cite id="usgs-mcs" />" and "As colunas de 2024 e 2025 são estimativas do USGS, não produção reportada." with the header "| País/Região | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 |"
-- problem: `usgs-mcs` (num 1) points at `https://pubs.usgs.gov/periodicals/mcs2023/mcs2023-silicon.pdf`; the fetched PDF is the MCS 2023 chapter (PDF metadata dated 2022-12-06, i.e. data through 2022), so neither the 2024 nor the 2025 column can come from it. The page already knows this: `USGS_MCS_YEARS = [2020 … 2025]` at `citations.ts:L1972` builds per-year links for the SourceNote, but the prose and the reference row still name only 2023, and a 2025 estimate belongs to the MCS 2026 edition, which the list does not include. The three representations of the same series (prose year, RefList/tooltip URL, SourceNote year links) disagree.
-- fix: Decide which edition backs which column, extend `USGS_MCS_YEARS` if the 2025 estimate is kept, and either append citation entries for the later editions (never renumber — the rule in AGENTS.md) or drop the unsupported columns; update the sentence "relatório *Mineral Commodity Summaries* de 2023" and the 2023-only line in `docs/referencias.md:L22` in the same edit. Numbers in the 2020–2023 columns must be compared with the matching edition's table as part of the fix.
-- verification: verified for the URL/edition mismatch (fetched mcs2023-silicon.pdf; PDF info shows 2022-12-06; `USGS_MCS_YEARS` read in `citations.ts`); needs external verification for the per-year figures (open mcs2023/2024/2025(/2026)-silicon.pdf and compare the country rows).
-- confidence: high
-
-### introducao-02 — "ordens de grandeza" overstates a ratio of 11×–46×
-- where: docs/introducao.md:L13 (and docs/en/introducao.md:L13)
-- category: fact
-- severity: major
-- quote: "a China se tornou líder mundial na produção de silício puro por ordens de grandeza a mais que outros países produtores" / "China has become the world's leading producer of pure silicon, several orders of magnitude ahead of other producing countries"
-- problem: Against the table on the same page, China's 2 300 kt is ~11× Brazil (210 kt) and ~46× Russia (50 kt) — one order of magnitude, not "ordens" (which reads as 100×+). "Silício puro" also names the wrong commodity: the table's quantity and the topic sentence are silício metálico/MG-Si (~98,5–99,5 % Si), which the same page takes care to distinguish from electronic-grade polysilicon. The PT phrasing "ordens de grandeza a mais" is ungrammatical.
-- fix: "a China se tornou líder mundial na produção de silício metálico, cerca de 10 a 50 vezes acima dos demais países produtores" / "…the world's leading producer of metallurgical silicon, roughly 10 to 50 times the next producers".
-- verification: verified (arithmetic against `docs/introducao.md:L19-L27`; commodity naming against the page's own note at L17 and the USGS table title).
-- confidence: high
 
 ### introducao-03 — the opening claim is uncited
 - where: docs/introducao.md:L13 (and docs/en/introducao.md:L13)
@@ -206,25 +120,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: high
 
 ### o-elemento-silicio
-### o-elemento-silicio-01 — ²⁹Si abundance printed as 0,47 % against the page's own 4,65–4,70 %
-- where: docs/o-elemento-silicio.md:L67 (and docs/en/o-elemento-silicio.md:L67; table at L59-L63)
-- category: fact
-- severity: blocker
-- quote: "Os **0,47% de ²⁹Si** não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit." / "That **0.47% of ²⁹Si** is not a chemical detail…"
-- problem: The table directly above gives ²⁹Si as 4,65 % to 4,70 %, and the cited authority (`elem-ciaaw`, num 210) gives the amount-fraction range [0.046 45, 0.046 99], i.e. ≈4,7 %. The prose is off by a factor of ten, and the sentence is the reason the page exists for the qubit discussion, so the error propagates to `/alem-do-silicio`.
-- fix: "Os ~4,7 % de ²⁹Si…" / "That ~4.7 % of ²⁹Si…"; keep the `<Cite id="wbg-si28-qubit" />` where it is.
-- verification: verified (fetched https://ciaaw.org/silicon.htm: 29Si [0.046 45, 0.046 99]; cross-checked with the page's own L59-L63).
-- confidence: high
-
-### o-elemento-silicio-02 — no spine: the page opens with a thesis, not an order
-- where: docs/o-elemento-silicio.md:L9-L11 (and docs/en/o-elemento-silicio.md:L9-L11)
-- category: structure
-- severity: major
-- quote: "Todos os capítulos deste site tratam do silício como matéria-prima: minério, forno, lingote, wafer, transistor. Esta página faz o caminho inverso e olha para o **átomo** — as constantes que a indústria não escolhe, apenas obedece."
-- problem: AGENTS.md asks a chapter to open with the ordered list of what it explains — a sentence introducing it, the list, a sentence saying the rest follows that order. This page has a strong opening sentence but no declared order, while it in fact has a clear one (the data card → the three consequences → the gap → the isotopes → why this element). The reader has no map, and the "Três desses números têm consequência industrial" paragraph at L33 arrives without having been announced.
-- fix: Insert the list after L11, e.g. "A página segue esta ordem: a ficha do elemento; as três consequências industriais dos números; o gap indireto e o que ele explica; os isótopos; e por que a indústria ficou com este material." followed by "O resto segue essa ordem." (EN mirror).
-- verification: verified (read the file and the rule in AGENTS.md §Chapters).
-- confidence: high
 
 ### o-elemento-silicio-03 — the photonics claim has no citation
 - where: docs/o-elemento-silicio.md:L47 (and docs/en/o-elemento-silicio.md:L47)
@@ -277,15 +172,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: medium
 
 ### mineracao-mg-si
-### mineracao-mg-si-01 — world MG-Si output: 1 Mt here, 3,3 Mt in the same site's data
-- where: docs/mineracao-mg-si.md:L105 (and docs/en/mineracao-mg-si.md:L105)
-- category: fact
-- severity: blocker
-- quote: "A produção mundial de MG-Si passa de **1 milhão de toneladas métricas por ano**, a um custo de poucos dólares por quilograma… <Cite id="saimm" />" / "World MG-Si production exceeds **1 million metric tonnes per year**…"
-- problem: The same quantity appears as "Mundo (Total) **3.300**" thousand tonnes for 2023 in `docs/introducao.md:L27` (and as "2.300 de 3.300 mil t em 2023" in `docs/gargalos.md:L24`). One of the two is wrong, or they measure different scopes/years; as printed, a reader comparing chapters sees world production differ by more than 3×. Both sentences are present-tense, so the 2011 SAIMM figure (if that is what it is) cannot stay uncoupled from its year.
-- fix: State the year and scope of the SAIMM number (e.g. "em 2010, cerca de 1,6 Mt") or replace it with the USGS series and cite `usgs-mcs`; whichever way, the text must agree with the introduction's table. Confirm both figures refer to silicon metal only (the same page's ferrosilicon paragraph shows how the product boundaries are drawn).
-- verification: verified that the two pages conflict (cross-read `docs/introducao.md:L19-L27`, `docs/gargalos.md:L24`); needs external verification of the SAIMM figure's year and value (read the production table in `https://pyrometallurgy.co.za/Pyro2011/Papers/083-Xakalashe.pdf` — fetch returned raw PDF, no text).
-- confidence: high
 
 ### mineracao-mg-si-02 — `asianometry-wafer` is listed as a source but never cited
 - where: docs/mineracao-mg-si.md:L109 (and docs/en/mineracao-mg-si.md:L109)
@@ -305,26 +191,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - problem: `sibelco-hpq` (num 48) resolves to `https://www.sibelco.com/en/materials/high-purity-quartz`; the fetched page confirms IOTA is mined at Spruce Pine for CZ crucibles but prints none of these figures — not the 70–90 % share, not the 0,04 ppm boron limit, not the 99,9992 %/80 ppb/<50 ppb spec. The 70–90 % number is also used on `/gargalos`, so the same unsupported figure appears twice in the site. Company landing pages are fine for company facts; they cannot carry a market share.
 - fix: Point the share at the analysis that measures it (press/deposit studies — verify before citing) or reword to what Sibelco does state ("the world's highest-quality quartz", mined at Spruce Pine); point the material spec at the IOTA grade datasheet or technical data sheet, and add it as its own citation entry rather than hanging it on the landing page.
 - verification: verified that the cited page does not carry the numbers (fetched 2026-09-28; page has no ppm/ppb text); the replacement source needs the lookup (Sibelco IOTA datasheet, or the study behind the 70–90 % claim).
-- confidence: high
-
-### mineracao-mg-si-04 — no spine: the chapter starts mid-topic
-- where: docs/mineracao-mg-si.md:L9 (and docs/en/mineracao-mg-si.md:L9)
-- category: structure
-- severity: major
-- quote: "## Mineração de quartzo (HPQ)" / "## Quartz mining (HPQ)"
-- problem: The chapter opens directly on the first H2; there is no sentence framing what it explains, no ordered list of the two halves (quartz → HPQ; carbothermal reduction → MG-Si) and no closing sentence saying the rest follows that order. Its six sections (Spruce Pine, Drag, boron, the furnace, silica fume, scale) currently hang off that first heading with no announced order.
-- fix: Add the three-part opening before L9: "Este capítulo segue a matéria-prima em duas etapas: primeiro o quartzo de alta pureza — de onde ele sai e por que o boro decide —, depois a redução carbotérmica que o transforma em silício metalúrgico e o que o forno devolve como subproduto." with the list pointing at the sections and a closing line.
-- verification: verified (read the file; the rule is in AGENTS.md §Chapters).
-- confidence: high
-
-### mineracao-mg-si-05 — one figure for a two-part chapter; the mining half has none
-- where: docs/mineracao-mg-si.md:L83-L85 against the sections at L15, L28, L95, L103 (and docs/en/mineracao-mg-si.md:L83-L85)
-- category: figure
-- severity: major
-- quote: "Corte de um forno de arco submerso: as duas zonas de reação, os três eletrodos trifásicos, a saída de gás e o vazamento pelo fundo."
-- problem: The page carries exactly one figure, the furnace cross-section, which illustrates one section of the second half. The quartz half — the Spruce Pine/Drag concentration, the purification sequence and the crucible that the whole chokepoint argument rests on — has no figure at all, and neither do the silica-fume/off-gas or the scale sections; AGENTS.md says every item of the spine needs one.
-- fix: Add at least one figure to the mining half: a two-hub route diagram (Spruce Pine → Drag, with the four purification steps and the final purity), own schematic in `docs/public/assets/` per the drawing grammar; the purification steps are already an ordered list in the prose to draw from.
-- verification: verified (figure inventory: one `DiagramFigure` on the page).
 - confidence: high
 
 ### mineracao-mg-si-06 — the 1996 founding date is not on the cited page and conflicts with the company's own history
@@ -377,38 +243,9 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: needs external verification (the 2024 Helene shutdown dates and effects — company notices; deliberately written without a URL here).
 - confidence: medium
 
-### mineracao-mg-si-11 — idea: an energy/mass balance for the furnace
-- where: docs/mineracao-mg-si.md:L95-L101 (and docs/en/mineracao-mg-si.md:L95-L101)
-- category: idea
-- severity: idea
-- quote: "Cada tonelada de silício metálico produz de **0,2 a 0,4 tonelada de fume de sílica condensada**… O consumo elétrico do forno fica entre **11 e 13 MWh por tonelada**"
-- problem: The chapter's most surprising numbers — the furnace is a giant electric load whose off-gas carries energy of the same order, plus a quarter-tonne of saleable dust per tonne of metal — are three separate sentences of prose. A balance diagram would show why the energy bill, not the quartz, decides where MG-Si is made.
-- fix: Draw a Sankey-style balance for one tonne of Si: inputs (quartz + carbon, 11–13 MWh) and outputs (1 t Si, 0,2–0,4 t silica fume, off-gas energy, CO), as an own SVG in `docs/public/assets/`, values from `saimm` (already cited on the page), caption in both locales.
-- verification: verified (all the numbers already exist on the page, cited to `saimm`; the drawing is schematic and should set `schematic: true` only if it were a chart spec — as a `DiagramFigure` the caption must say it is a diagram).
-- confidence: high
-
-### Coverage summary
-- index: spine n/a (home layout — no `vp-doc`, so the glossary audit skips it); figures 1 (the supply-chain mermaid) plus the hero photograph reused from introducao; dataAsOf absent (home); fix next: the "quinze gerações" count on both locales.
-- introducao: spine no (single overture section; consider declaring the two-step agenda or treating the page as navigation); figures 2 (sample photograph + interactive USGS chart); dataAsOf 2025; fix next: the USGS 2023 URL versus the 2024/2025 estimate columns.
-- o-elemento-silicio: spine no; figures 1 (band-gap scatter); dataAsOf 2026; fix next: 0,47 % → ~4,7 % for ²⁹Si on both locales.
-- mineracao-mg-si: spine no; figures 1 (submerged-arc furnace SVG); dataAsOf 2025; fix next: reconcile "1 milhão de toneladas" with the introduction's 3,3 Mt world total.
 ## Report — polissilicio + estrutura-wafers
 
-Pages: `docs/polissilicio.md` · `docs/en/polissilicio.md` · `docs/estrutura-wafers.md` · `docs/en/estrutura-wafers.md`.
-
-Method: full read of all four files; every numeral checked against its `citations.ts` entry and against the rest of `docs/`; the `wafer-identification.svg` drawing checked against `scripts/gen-wafer-identification-svg.py`, the SVG text and the caption; `fetch` used only where a specific number was at stake. No content file was modified and no build or audit script was run. Two fetches failed and are recorded below as lookups: the Elkem Solar PDF on pv-tech.org (HTTP 403, Cloudflare) and `en.wikipedia.org/wiki/450_mm` (no article). A Wikipedia wafer fetch returned thicknesses but no tolerances, so the SEMI M1 check below stays open.
-
 ### polissilicio
-
-### polissilicio-01 — Demand figure pairs the PV slice of 1995 with the total of 2018
-- where: docs/polissilicio.md:L274 (and docs/en/polissilicio.md:L274)
-- category: fact
-- severity: blocker
-- quote: "elevando a demanda de **1.500 toneladas** (1995) para **420.000 toneladas** (2018)" / "raising demand from **1,500 tonnes** (1995) to **420,000 tonnes** (2018)"
-- problem: the sentence says the proportions reversed "em **2014**", then gives a jump whose endpoints are both mislabelled. The 1.500 t is the photovoltaic sector's 1995 demand (10 % of a total of 15,100 t); the 420,000 t is the **total** demand of 2018. So the sentence compares a component to a whole, and its own dates (1995 vs 2018) do not match the 2014 it just named. The page's p05-1 caption twelve lines below (L277) carries the correct total series: "crescimento de **18,4×** entre 1995 e 2014 (15,1 kt → 278 kt)".
-- fix: rewrite with a single series, e.g. PT "a demanda total passou de 15.100 toneladas (1995) para 278.000 toneladas (2014), chegando a cerca de 420.000 toneladas em 2018"; EN with 15,100 / 278,000 / 420,000. If the PV series is preferred, say explicitly it is the photovoltaic sector and give its 2014 value from the same table instead of the 2018 total.
-- verification: verified — the cited Bernreuter demand table gives total demand 15,100 t (1995) and ~278,000 t (2014), with PV at 1,500 t in 1995 and ~420,000 t the total for 2018; the page's own caption agrees.
-- confidence: high
 
 ### polissilicio-02 — 2023 endpoint of the Kristiansand plant cited only to a 2012 article
 - where: docs/polissilicio.md:L195 (and docs/en/polissilicio.md:L195)
@@ -612,9 +449,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - verification: proposed addition — geometry argument only; no source needed, but the caption must say it is a diagram.
 - confidence: n/a (idea)
 
-### Coverage summary
-- polissilicio (`docs/polissilicio.md` + `docs/en/polissilicio.md`): spine partial — the route is introduced by a Mermaid diagram in "Visão geral da rota" but there is no ordered list pointing at the sections; 9 `DiagramFigure`s + 1 Mermaid + 1 embedded video, no data charts; `dataAsOf: 2025`; fix next: the demand-series conflation at L274.
-- estrutura-wafers (`docs/estrutura-wafers.md` + `docs/en/estrutura-wafers.md`): spine no — the chapter opens directly into "Estrutura do silício puro" and the four-axis list sits mid-chapter at L52–57; 5 `DiagramFigure`s, no Mermaid, no data charts; `dataAsOf: 2025`; fix next: delete the `### Recursos adicionais` scaffolding and promote the four axes into a spine.
 ## Report — docs/fabricacao-wafers.md, docs/fotolitografia.md, docs/historia-fotolitografia.md (both locales)
 
 ### fabricacao-wafers
@@ -638,16 +472,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - fix: add one drawing to `docs/public/assets/` (see idea fabricacao-wafers-14) and a `DiagramFigure` in this section; the caption should name the source (own drawing).
 - verification: verified by counting the section (no DiagramFigure between L85 and L101).
 - confidence: high
-
-### fabricacao-wafers-03 — Sliced-wafer thickness contradicts the 775 µm spec it cites
-- where: docs/fabricacao-wafers.md:L87 and L99 (and docs/en/fabricacao-wafers.md:L87 and L99)
-- category: fact
-- severity: blocker
-- quote: "com espessuras típicas de **700–800 µm**" … "Uma lâmina de 300 mm sai com 775 µm e vai *perder* material na lapidação e no polimento" / "at typical thicknesses of **700–800 µm**" … "A 300 mm slice comes out at 775 µm and will *lose* material in lapping and polishing"
-- problem: 775 µm is the finished 300 mm wafer thickness (SEMI M1; the repo's own `docs/estrutura-wafers.md:L100` table says "| 300 mm | 775 µm | notch |"). Text that has the slice leaving the saw at 775 µm and then losing material in lapping/polishing describes a wafer that ends thinner than the standard it just cited; the as-cut thickness must be larger than 775 µm. The two sentences also disagree with each other in bookkeeping (700–800 as-cut, then 775 and shrinking).
-- fix: state the order explicitly — as-cut thickness > final spec — and give the as-cut value from a wafering source (e.g., Möller 2012, already cited, or Pei 2005); then say the finishing steps bring it down to the SEMI M1 775 µm. Either drop "700–800 µm" or present it as the as-cut range only if a source supports it.
-- verification: verified internally (page's own numbers + `estrutura-wafers` table + SEMI M1 cite); exact as-cut value needs a source (Möller 2012 / Pei et al. 2005).
-- confidence: high (contradiction), medium (which of the two numbers is right)
 
 ### fabricacao-wafers-04 — Precise date "1.º de outubro de 1948" is not in either cited source
 - where: docs/fabricacao-wafers.md:L41 (and docs/en/fabricacao-wafers.md:L41)
@@ -678,16 +502,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - fix: extend the sentence with the current formats and attach `<Cite id="itrpv-2024" />` (or the full ITRPV report), or drop "mais recentemente" and attribute the whole series to the 2011 source.
 - verification: needs external verification — ITRPV 15th ed. (2024), wafer-size chart / shipments by area, for the formats in use in 2023 (182/210 mm dominate). `docs/celulas-solares.md` also carries no format data, so there is no internal cross-check.
 - confidence: medium (direction certain, exact numbers to confirm)
-
-### fabricacao-wafers-07 — "three times thinner" does not match the numbers around it
-- where: docs/fabricacao-wafers.md:L99 (and docs/en/fabricacao-wafers.md:L99)
-- category: fact
-- severity: minor
-- quote: "É no ramo fotovoltaico, que aceita lâminas três vezes mais finas" / "It is in photovoltaics, which accepts slices three times thinner"
-- problem: 775 µm against the 150–200 µm quoted in the same page is a factor of 3.9–5.2, not 3. The claim flatters the PV side (or understates the fab side) without a source.
-- fix: write "cerca de quatro a cinco vezes mais finas" or compare with the same basis (PV 150–200 µm vs final 775 µm).
-- verification: verified by arithmetic on the page's own figures (775/200 = 3.9; 775/150 = 5.2).
-- confidence: high
 
 ### fabricacao-wafers-08 — ITRPV thickness claim points at a press release, where the split is unlikely to exist
 - where: docs/fabricacao-wafers.md:L184 (and docs/en/fabricacao-wafers.md:L184)
@@ -771,16 +585,6 @@ Method: full read of all four files; every numeral checked against its `citation
 
 ### fotolitografia
 
-### fotolitografia-01 — "When TSMC was still part of Philips": false and uncited
-- where: docs/fotolitografia.md:L13 (and docs/en/fotolitografia.md:L13)
-- category: fact
-- severity: blocker
-- quote: "Quando a TSMC ainda fazia parte da Philips, motores lineares **hidráulicos** eram usados: muito precisos, porém com alta manutenção — custo e tempo significativos até soluções mais robustas." / "When TSMC was still part of Philips, **hydraulic** linear motors were used…"
-- problem: TSMC was founded in 1987 as a joint venture in which Philips was a minority shareholder; it was never part of Philips. The paragraph follows text about ASML (Philips' own lithography spin-off), so the likely intended subject is ASML's early years. No `<Cite>` supports any of the claims (TSMC/Philips, hydraulic linear motors, maintenance cost); "linear motors" are also electromagnetic, not hydraulic (cf. the p13-1 figure on the same page, which labels "LINEAR MOTOR" with no hydraulics).
-- fix: if the story is about ASML under Philips, name ASML and cite an ASML history page; if the sentence cannot be sourced, delete it. Both locales in one edit.
-- verification: needs external verification for the hydraulic claim (ASML history / early TWINSCAN documentation); TSMC's founding and Philips' stake are public record.
-- confidence: high (the sentence as written is wrong), medium (what it meant)
-
 ### fotolitografia-02 — Intro stage numbers (15 kg, 20 G, “3× a F1”) are uncited and out of scale with a source cited on the same page
 - where: docs/fotolitografia.md:L9-11 (and docs/en/fotolitografia.md:L9-11)
 - category: source
@@ -821,16 +625,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - verification: verified by grep of the IDs across `docs/` (only the two chapter files match) and by reading `docs/referencias.md`.
 - confidence: high
 
-### fotolitografia-06 — "Related videos" list does not match the embedded videos, and one listed source is an article
-- where: docs/fotolitografia.md:L205 (and docs/en/fotolitografia.md:L205)
-- category: source
-- severity: minor
-- quote: "<SourceNote label=\"Vídeos relacionados\" :ids=\"['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv']\" />"
-- problem: The list is labelled "related videos" but (a) includes `asml-gaa`, which is "What is a gate-all-around transistor?", an ASML article, not a video; (b) none of its ids is one of the three embedded videos in that section — it repeats sources already cited in the body; (c) `asml-investor-euv` in the main `<SourceNote>` (L201) is never cited inline, although it is evidently the source for the NXE:4000F roadmap row in the family table.
-- fix: make the two `<SourceNote>`s agree with what is actually on the page: either point the video list at the embedded videos (and add the missing credits) or relabel it (e.g., "Fontes em vídeo"), drop `asml-gaa` from it, and attach `asml-investor-euv` to the NXE:4000F line or remove it.
-- verification: verified against `citations.ts` (`asml-gaa` num 4 is an article; `asml-investor-euv` num 98 appears only in this SourceNote).
-- confidence: high
-
 ### fotolitografia-07 — The two `pdf-images` figures are under-credited; the second has no credit at all
 - where: docs/fotolitografia.md:L15-21 (and docs/en/fotolitografia.md:L15-21)
 - category: figure
@@ -839,6 +633,16 @@ Method: full read of all four files; every numeral checked against its `citation
 - problem: Both images are extracted from `Resumo Chipmaking.pdf` (`scripts/extract-pdf-images.py`). The p12-1 caption links the ASML **homepage** (not the source page), gives no file name/licence, and pins the image to `asml-gaa`, an article about gate-all-around transistors. The p13-1 diagram (an old “LINEAR MOTOR / GRANITE BLOCK” cutaway) carries no attribution at all. AGENTS.md requires author, original file and licence with a link for third-party media. On top of that, the PT page's p13-1 caption is the English sentence printed inside the image, while every other caption is PT.
 - fix: give each figure the real provenance (ASML, original file/page and permission note; for p13-1 the actual source of the diagram), and either translate the p13-1 caption or mark it as the figure's original legend; re-point the p12-1 `<Cite>` to whatever page the image came from.
 - verification: verified by reading both PNGs (p12-1 carries "Source: ASML"; p13-1's English caption is inside the image) and `scripts/extract-pdf-images.py`.
+- confidence: high
+
+### fotolitografia-06 — "Related videos" list does not match the embedded videos, and one listed source is an article
+- where: docs/fotolitografia.md:L205 (and docs/en/fotolitografia.md:L205)
+- category: source
+- severity: minor
+- quote: "<SourceNote label=\"Vídeos relacionados\" :ids=\"['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv']\" />"
+- problem: The list is labelled "related videos" but (a) includes `asml-gaa`, which is "What is a gate-all-around transistor?", an ASML article, not a video; (b) none of its ids is one of the three embedded videos in that section — it repeats sources already cited in the body; (c) `asml-investor-euv` in the main `<SourceNote>` (L201) is never cited inline, although it is evidently the source for the NXE:4000F roadmap row in the family table.
+- fix: make the two `<SourceNote>`s agree with what is actually on the page: either point the video list at the embedded videos (and add the missing credits) or relabel it (e.g., "Fontes em vídeo"), drop `asml-gaa` from it, and attach `asml-investor-euv` to the NXE:4000F line or remove it.
+- verification: verified against `citations.ts` (`asml-gaa` num 4 is an article; `asml-investor-euv` num 98 appears only in this SourceNote).
 - confidence: high
 
 ### fotolitografia-08 — EUV pellicle "30 to 40 nm" needs the cited episode's timestamp
@@ -1013,11 +817,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - verification: verified source — Construction Physics, "How ASML Got EUV" (fetched; https://www.construction-physics.com/p/how-asml-got-euv), which is already cited as `construction-physics-euv`. If a second source is wanted, the CSET report (`cset-euv`) is the next check.
 - confidence: high
 
-### Coverage summary
-
-- docs/fabricacao-wafers.md (+ en): spine present: no (intro sentence only, no ordered list; finding -01); 12 DiagramFigures + 4 embeds (no figure in "Corte em fatias"); `dataAsOf: 2025`; most worth fixing next: the 775 µm/as-cut thickness contradiction (-03), which also unblocks the slicing figure.
-- docs/fotolitografia.md (+ en): spine present: no (three intro paragraphs, no list; finding -04); 12 DiagramFigures + 3 embeds; `dataAsOf: 2025` (consistent with the Dec 2025 Intel cite); most worth fixing next: the "TSMC was part of Philips" sentence (-01) — it is the only blocker and it sits in the first paragraph a reader sees.
-- docs/historia-fotolitografia.md (+ en): spine present: no (intro sentence only; timeline carries part of the navigation); 3 DiagramFigures + 1 Mermaid timeline + 1 embed; no `dataAsOf` frontmatter (correct for this historical chapter); most worth fixing next: the IBM X-ray cost figure (-01), the one number on the page that another cited source contradicts.
 ## Report — docs/transistores.md, docs/na-fab.md, docs/insumos-fab.md (both locales)
 
 ### transistores
@@ -1090,16 +889,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - problem: the cited TSMC page (fetched 2026-09-28) supports the nanosheet description and "volume production in 4Q25", but it is a foundry technology page that names no customer and no Apple product; a foundry page cannot source an unannounced customer chip.
 - fix: keep `tsmc-n2` for the N2/nanosheet/4Q25 facts and cite a report that identifies the A20 Pro on N2, or drop the product name.
 - verification: verified that the cited page does not name the product; the product attribution needs a separate source.
-- confidence: high
-
-### transistores-08 — "Fifteen generations" in the module and the timeline, fourteen in the list
-- where: docs/.vitepress/theme/transistor-eras.ts:L2, docs/linha-do-tempo.md:L27 (and docs/en/linha-do-tempo.md:L27)
-- category: structure
-- severity: major
-- quote: "The fifteen transistor generations, with the figure that illustrates each one." / "As quinze gerações, cada uma com a estrutura do transistor e exemplos de produtos que a usaram." / "All fifteen generations, each with the transistor's structure and examples of the products that used it."
-- problem: `ERAS` has 14 entries (1960 … Futuro) and both chapter spines list 14 eras, so the module docstring and the timeline page advertise a fifteenth generation that no consumer renders. This is the one place where the "one enumeration, one home" rule is restated outside `ERAS` and has drifted.
-- fix: write fourteen in the module comment and in both locales of `linha-do-tempo`; if a generation is genuinely missing from `ERAS`, add the entry instead.
-- verification: verified — counted the array entries and the spine items.
 - confidence: high
 
 ### transistores-09 — Intel's strained-silicon 10–20% is attached to a page that prints no such figure
@@ -1254,16 +1043,6 @@ Method: full read of all four files; every numeral checked against its `citation
 
 ### na-fab
 
-### na-fab-01 — Copper "conducts about twice as well" contradicts the 40–45% in the same sentence
-- where: docs/na-fab.md:L212 (and docs/en/na-fab.md:L212)
-- category: fact
-- severity: blocker
-- quote: "O ganho não era cosmético: o cobre conduz cerca de **duas vezes** melhor que o alumínio, com resistência do fio cerca de **40 a 45% menor**, e a vida útil contra **eletromigração** mais de **duas ordens de grandeza** maior <Cite id="ibm-cu-electroplating" />." / "The gain was not cosmetic: copper conducts about **twice** as well as aluminium, with wire resistance about **40 to 45% lower**, and **electromigration** lifetime more than **two orders of magnitude** longer <Cite id="ibm-cu-electroplating" />."
-- problem: 40–45% lower resistance is about 1.7–1.8× the conductance, not 2×; the cited IBM heritage page (fetched 2026-09-28) says "Copper wires conduct electricity with about 40% less resistance than aluminum" and gives no factor of two. Copper's resistivity (1.68 µΩ·cm) against aluminium (2.65 µΩ·cm) is ~1.6×, so the two clauses of the sentence cannot both be the same claim.
-- fix: drop "duas vezes" and keep the resistance figure ("o cobre tem cerca de 40% menos resistência que o alumínio"), or state the conductance ratio as 1.6–1.8× with a source; mirror the EN.
-- verification: verified — the IBM page was fetched and the arithmetic checked.
-- confidence: high
-
 ### na-fab-02 — Heading typo: "A fábricação é um laço"
 - where: docs/na-fab.md:L15 (EN is fine: docs/en/na-fab.md:L15)
 - category: grammar
@@ -1355,16 +1134,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - confidence: high
 
 ### insumos-fab
-
-### insumos-fab-01 — The EN link points at the Portuguese anchor
-- where: docs/en/insumos-fab.md:L29 (PT is correct: docs/insumos-fab.md:L29)
-- category: link
-- severity: blocker
-- quote: "[Chemical-mechanical planarisation](/en/fabricacao-wafers#polimento-quimico-mecanico-cmp)" against the target heading "## Chemical-mechanical polishing (CMP)" (docs/en/fabricacao-wafers.md:L137)
-- problem: VitePress slugs the EN heading to `chemical-mechanical-polishing-cmp`; the file carries no explicit `{#id}`, so the fragment never resolves and the reader lands at the top of the page.
-- fix: use `/en/fabricacao-wafers#chemical-mechanical-polishing-cmp`.
-- verification: verified — the slugify rule (accents stripped, punctuation to hyphens) and a grep for an explicit anchor in the EN page (none).
-- confidence: high
 
 ### insumos-fab-02 — No spine: the six sections are never listed
 - where: docs/insumos-fab.md:L9-11 (and docs/en/insumos-fab.md:L9-11)
@@ -1466,34 +1235,9 @@ Method: full read of all four files; every numeral checked against its `citation
 - verification: needs external verification of the wording in the standard before shipping the claim.
 - confidence: medium
 
-### Coverage summary
-
-- transistores: spine present (14 linked eras, addendum last) | 16 figures in the chapter (11 own SVGs + 5 PDF-extracted images), plus the component-rendered timeline | dataAsOf: 2026 (fits the 2026 Intel launch and the H2 2026 TSMC plan) | most worth fixing next: the three numbers the cited sources do not carry (~40% GAA leakage, BSPDN 11%/10×, CFET ~50%) and the three ids missing from the SourceNote.
-- na-fab: spine present (seven modules + two closing sections, L23-31) | 5 figures, with four spine items bare (oxidação, planarização, metrologia, rendimento) | dataAsOf: 2025 (verify; newest datum I could date is 2024) | most worth fixing next: the copper "twice as good" claim, which contradicts the 40% figure in the same sentence and the cited IBM page.
-- insumos-fab: spine absent | 0 figures | dataAsOf: 2026 (should be 2022) | most worth fixing next: the EN link to `#polimento-quimico-mecanico-cmp`, which never resolves on the EN page, then the missing spine and the first two figures.
 ## Report — empacotamento, confiabilidade
 
 ### empacotamento
-
-### empacotamento-01 — HBM4 density floor "4 GB" is not in the cited standard
-- where: docs/empacotamento.md:L193 (and docs/en/empacotamento.md:L193)
-- category: fact
-- severity: blocker
-- quote: PT "O padrão dobra a interface de **1.024 para 2.048 bits** e os canais de **16 para 32 por pilha**, com velocidade de até **8 Gb/s** e densidades de **4 a 64 GB** <Cite id=\"jedec-hbm4\" />."; EN "The standard doubles the interface from **1,024 to 2,048 bits** and the channels from **16 to 32 per stack**, with speeds up to **8 Gb/s** and densities from **4 to 64 GB** <Cite id=\"jedec-hbm4\" />."
-- problem: the JEDEC HBM4 announcement, fetched in this audit, describes 24 Gb and 32 Gb dies in 4-, 8-, 12- and 16-high stacks with a 64 GB maximum per cube; the smallest stack derivable from those dies is 4-high × 24 Gb = 12 GB, so the "4 GB" floor has no basis in the cited marker, and the 64 GB ceiling comes from 16-high × 32 Gb. The sentence therefore ships a number the citation cannot support.
-- fix: replace "4 a 64 GB" with the configurations the release lists (24 Gb / 32 Gb dies in 4/8/12/16-high stacks, i.e. roughly 12 to 64 GB per cube), or, if JESD270-4 itself defines a 4 GB configuration, state it inline (die density × stack height) so the number can be checked; do not invent the minimum.
-- verification: needs external verification (JESD270-4; the April 2025 JEDEC press release fetched in this audit supports 24/32 Gb dies, 4/8/12/16-high stacks and a 64 GB maximum, but not 4 GB).
-- confidence: medium
-
-### empacotamento-02 — the chiplet-yield drawing contradicts the site's own yield chart by a factor of ten
-- where: docs/empacotamento.md:L211 (and docs/en/empacotamento.md:L211); cross-file docs/.vitepress/theme/charts/specs.ts:L191-L203
-- category: fact
-- severity: major
-- quote: figure alt text "um die único de 800 milímetros quadrados rende cerca de 45%, enquanto um chiplet de 200 milímetros quadrados rende cerca de 82%" (EN "a single 800 square millimetre die yields about 45%, while a 200 square millimetre chiplet yields about 82%")
-- problem: 45% at 8 cm² and 82% at 2 cm² are exactly Poisson at D₀ = 0.1 cm⁻² (e^(−0.8) = 45%, e^(−0.2) = 82%). The site's `yield-vs-area` chart plots the series labelled `D₀ = 0,1` as 14% at A = 2 cm² (specs.ts:L198-201), which is e^(−2) — i.e. D₀ = 1.0 — even though its own axis reads Y = e^(−D₀A). The two pages therefore disagree tenfold about the same quantity; the `dados` audit (g6-panorama) already reports the same chart as a factor-of-ten error from the other side (dados-01).
-- fix: correct `yield-vs-area` (its series labels or its plotted data) so the series labelled D₀ = 0.1 passes through 82% at 2 cm²; this chapter's drawing and prose (82% at 200 mm², 45% at 800 mm²) are the consistent pair and should not be bent to match the chart.
-- verification: verified (internal arithmetic: −ln(Y)/A = 1.0 for the plotted 14%-series; the drawing matches e^(−0.1A) exactly; the chapter's 4 × 213 = 852 mm² ≈ +10% and 0.59× / 41% figures also check out).
-- confidence: high
 
 ### empacotamento-03 — two spine items have no figure; two others only borrow one
 - where: docs/empacotamento.md:L65-L89 and L271-L281 (and docs/en/empacotamento.md:L65-L89, L271-L281)
@@ -1553,16 +1297,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - problem: the EN file puts the number in Cadence's mouth, the PT file asserts it in the narrator's voice; PT also keeps "literalmente", an often-empty adverb, whereas EN's "literally" is inside the quotation and is the source's wording.
 - fix: PT "um cartão pode ter alguns milhares de sondas" (or quote it as EN does, dropping "literalmente" from the site's own voice).
 - verification: verified (side-by-side).
-- confidence: high
-
-### empacotamento-09 — EN BEOL link lost its anchor
-- where: docs/empacotamento.md:L77 (and docs/en/empacotamento.md:L77)
-- category: link
-- severity: minor
-- quote: PT "Os filmes *low-k* do [BEOL](/na-fab#interconexao-a-parte-do-chip-que-ninguem-ve) são mecanicamente frágeis"; EN "The *low-k* films of the [BEOL](/en/na-fab) are mechanically weak"
-- problem: the PT link opens the "Interconexão" section of `/na-fab`; the EN link drops the anchor and lands at the top of a long page, even though the target heading exists ("## Interconnection: the part of the chip nobody sees", docs/en/na-fab.md:L208).
-- fix: EN href `/en/na-fab#interconnection-the-part-of-the-chip-nobody-sees`.
-- verification: verified (heading exists at docs/en/na-fab.md:L208).
 - confidence: high
 
 ### empacotamento-10 — "fiação"/"wiring" drift against "ligação por fio"/"wire bonding"
@@ -1717,16 +1451,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - verification: verified (component count in the file: one `DataChart`, no `DiagramFigure`/`ZoomableImage`/Mermaid).
 - confidence: high
 
-### confiabilidade-06 — the EN bathtub chart renders a Portuguese axis label
-- where: docs/.vitepress/theme/charts/specs.ts:L66, rendered at docs/en/confiabilidade.md:L24 (PT page unaffected in its wording)
-- category: figure
-- severity: major
-- quote: specs.ts "labels: ['0', '', '', '', '', '', '', '', '', '10 anos']"; EN caption in specs.ts:L78 "The three regions of the bathtub curve — infant mortality, useful life and wear-out."
-- problem: `ChartSpec.labels` is `Array<string | number>` (charts/types.ts:L39) and `DataChart.vue` passes it through untouched (DataChart.vue:L63), unlike `xLabel`/`yLabel`, which go through the `text()` helper; the English page therefore shows "10 anos" under an English caption. The same defect affects `chokepoint-share` and `pv-efficiency` (reported by the g6 audit), and the exported CSV keeps the Portuguese label too (docs/public/data/bathtub.csv:L11).
-- fix: widen `labels` to accept `{ pt: string; en: string }` and resolve it in `DataChart.vue` the way the axis labels already are, then wrap this chart's labels; decide and document the CSV language in `scripts/export-chart-data.ts` and re-run it. Infrastructure fix, not a chapter edit.
-- verification: verified (specs.ts:L66, types.ts:L39, DataChart.vue:L63, bathtub.csv:L11).
-- confidence: high
-
 ### confiabilidade-07 — the bathtub time axis contradicts the prose's infant-mortality window
 - where: docs/confiabilidade.md:L17 and specs.ts:L64-L66 (and docs/en/confiabilidade.md:L17)
 - category: figure
@@ -1807,9 +1531,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - verification: verified (all terms used in the section).
 - confidence: high
 
-### Coverage summary
-- empacotamento — spine present: yes (nine anchored items; the closing sentence is missing, empacotamento-11); figures: 5 `DiagramFigure` + 1 `DataChart`, with §Fatiamento and §Quanto vale unillustrated (empacotamento-03); `dataAsOf: 2026`, supported by the April 2026 Macworld binning article and the iPhone 17e datum; charts verified against their CSVs and prose (`binning-bins`: 13 + 4 = 17% at ≥5.2 GHz on the 8700K, 29 + 50 = 79% at 5.1-5.2 GHz and none below 5.0 GHz on the 8086K; the HBM table matches hbm-bandwidth.svg for HBM2/3/4); the single thing most worth fixing next: the HBM4 "4 a 64 GB" floor (empacotamento-01).
-- confiabilidade — spine present: no (confiabilidade-01); figures: 1 schematic chart (`bathtub`) + 1 mechanism table; `dataAsOf: 2026` with no 2026 datum cited (confiabilidade-02); chart and CSV agree with each other and with the prose except for the time-scale reading (confiabilidade-07), and the EN axis label leaks Portuguese (confiabilidade-06); the single thing most worth fixing next: write the spine, then set the stamp from the newest cited source.
 ## Report — celulas-solares, alem-do-silicio, precos-e-valor, gargalos, dados, linha-do-tempo
 
 ### celulas-solares
@@ -1832,16 +1553,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - problem: the closing source list claims Möller (2012), *Silicon materials for solar cells* (citations.ts:61-67) as a source of the chapter, but nothing in the prose carries that marker; the only in-text uses of the key are in `fabricacao-wafers` (L87, both locales). Either a marker was lost in a rewrite or the id is stray, and both break "one marker, one claim" and misstate where the chapter's claims come from.
 - fix: find the sentence Möller supports (likely in §Da célula ao módulo or §Texturização) and restore the `<Cite id="moller-2012" />` there, or remove the id from both SourceNote calls.
 - verification: verified (grep for "moller-2012" across docs/: only `fabricacao-wafers` bodies and these two SourceNote lines).
-- confidence: high
-
-### celulas-solares-03 — The figure labels the wafer's p-type base as boron-doped, the opposite of what the chapter says
-- where: docs/celulas-solares.md:L17-L18 and docs/en/celulas-solares.md:L17-L18 (drawing: docs/public/assets/solar-cell.svg:L2, L3, L72)
-- category: figure
-- severity: major
-- quote: PT alt: "base p dopada com boro"; SVG label: `<text class="s" x="644" y="315">boron-doped wafer</text>`; chapter L57: "a fatia de lâminas dopadas com gálio saltou de cerca de **10% em 2019 para mais de 95% em 2021**, e a ITRPV já registrava o **desaparecimento do boro** como dopante tipo p em **2023**"
-- problem: the cross-section opens the chapter as "a célula pronta" (the finished cell) and labels the base as boron-doped, while the page's own subsection says boron had disappeared as a p-type dopant by 2023 and gallium is what the industry uses. A reader who studies the figure first learns the opposite of the text that follows, and the drawing is stale relative to its own caption in both locales.
-- fix: relabel the layer to "p-type base (gallium-doped)" / "base p (dopada com gálio)" — or the neutral "p-type wafer (boron or gallium)" — and update the `<title>`, `<desc>`, and both `alt` strings in the same edit; if the historical Al-BSF stack is the point, say so in the caption instead of the label.
-- verification: verified (SVG text nodes and both alt attributes read; the switch is asserted at L57-L59 of both locales).
 - confidence: high
 
 ### celulas-solares-04 — The freshness stamp says 2026 while the chapter's own scale/cost block is 2011 and the recent source has no edition year
@@ -2028,16 +1739,6 @@ Method: full read of all four files; every numeral checked against its `citation
 
 ### precos-e-valor
 
-### precos-e-valor-01 — EN link points at a Portuguese anchor that does not exist
-- where: docs/en/precos-e-valor.md:L42 (and docs/precos-e-valor.md:L42)
-- category: link
-- severity: blocker
-- quote: EN: "in [crystal structure](/en/estrutura-wafers#quem-fabrica-os-wafers), where the round "60%" figure did not survive the data"; PT: "em [estrutura e tipos](/estrutura-wafers#quem-fabrica-os-wafers), onde a cifra redonda de "60%" não sobreviveu aos dados"
-- problem: the EN heading is "## Who makes the wafers" (docs/en/estrutura-wafers.md:L118), so the anchor is `#who-makes-the-wafers`; the PT anchor copied into the EN file resolves to nothing and the reader is dropped at the top of the page. The same defect exists in docs/en/gargalos.md (L9 and L54) and docs/en/dados.md (L43), reported separately under those chapters.
-- fix: replace the EN anchors: `#who-makes-the-wafers` here; in gargalos `#spruce-pine-where-the-quartz-is-pure-enough`, `#the-chinese-ascent`, `#who-makes-the-wafers`; in dados `#chiplets-dividing-in-order-to-yield`.
-- verification: verified (headings extracted from both locales of estrutura-wafers, mineracao-mg-si, polissilicio and empacotamento and compared with every anchor used in the six chapter pairs).
-- confidence: high
-
 ### precos-e-valor-02 — A price chapter with no price chart
 - where: docs/precos-e-valor.md:L13-L52 (and docs/en/precos-e-valor.md:L13-L52)
 - category: figure
@@ -2090,16 +1791,6 @@ Method: full read of all four files; every numeral checked against its `citation
 
 ### gargalos
 
-### gargalos-01 — EN links carry three Portuguese anchors, all broken
-- where: docs/en/gargalos.md:L9 and L54 (and docs/gargalos.md:L9, L54)
-- category: link
-- severity: blocker
-- quote: EN L9: "the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine-onde-o-quartzo-e-puro-o-suficiente), [Chinese](/en/polissilicio#a-ascensao-chinesa) polysilicon, [Japanese](/en/estrutura-wafers#quem-fabrica-os-wafers), [single-source](/en/historia-fotolitografia) lithography"; EN L54: "[wafer fabrication](/en/estrutura-wafers#quem-fabrica-os-wafers)"
-- problem: the EN headings are "Spruce Pine: where the quartz is pure enough", "The Chinese ascent" and "Who makes the wafers" (docs/en/mineracao-mg-si.md:L15, docs/en/polissilicio.md:L292, docs/en/estrutura-wafers.md:L118), so all three anchors resolve to nothing; the PT anchors in docs/gargalos.md are correct, which is how the copy survived review. An English reader clicking the page's opening inventory lands at the top of three chapters instead of the passage named.
-- fix: use `#spruce-pine-where-the-quartz-is-pure-enough`, `#the-chinese-ascent` and `#who-makes-the-wafers` in the EN file; the same three-way defect exists in docs/en/precos-e-valor.md:L42 and docs/en/dados.md:L43.
-- verification: verified (headings of the target pages extracted in both locales and compared with every anchor used in this chapter pair).
-- confidence: high
-
 ### gargalos-02 — The 70–90 % quartz share is not on the page cited for it
 - where: docs/gargalos.md:L21 (and docs/en/gargalos.md:L21)
 - category: source
@@ -2108,16 +1799,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - problem: the marker resolves to Sibelco's high-purity quartz product page (citations.ts:386-393, https://www.sibelco.com/en/materials/high-purity-quartz). I fetched and read that page: it describes the IOTA grades, Spruce Pine, and the CZ crucible and photovoltaic uses, but it publishes no market share — the phrase "the world's highest quality quartz" is as close as it gets. The same claim with the same marker sits in docs/mineracao-mg-si.md:L17, and the chart's `chokepoint-share` row (specs.ts:96-113, "Quartzo HPQ — Spruce Pine", 70–90) rides on the same key, so the page's headline concentration figure has no primary source behind it.
 - fix: replace the marker with a source that prints the share (a market study, USGS, or the SAIMM 2011 paper already cited as `saimm`, which discusses HPQ supply), or hedge the entry to what Sibelco supports ("praticamente todo o quartzo de alta pureza de grau eletrônico sai da região de Spruce Pine, segundo a própria fornecedora") and note in the caption that the range is an industry estimate without a single published tabulation. Fix `mineracao-mg-si` and the chart's `sourceIds` in the same pass.
 - verification: verified (https://www.sibelco.com/en/materials/high-purity-quartz fetched and read in this run: no percentage appears).
-- confidence: high
-
-### gargalos-03 — The `chokepoint-share` chart renders Portuguese labels on the English page
-- where: docs/en/gargalos.md:L15-L17 (and docs/celulas-solares EN for `pv-efficiency`; spec: docs/.vitepress/theme/charts/specs.ts:L95-L101)
-- category: parity
-- severity: major
-- quote: spec labels: `'Quartzo HPQ — Spruce Pine', 'Polissilício — China', 'Wafers 300 mm — cinco maiores', 'Neônio grau semicondutor — Ucrânia', 'Litografia EUV — ASML'`; EN page renders them under the caption "What the leader of each stage holds, according to each row's own source…"
-- problem: `ChartSpec.labels` is a plain `Array<string | number>` (charts/types.ts:38-39) and `DataChart.vue` passes it through untouched (L63), unlike `xLabel`/`yLabel`, which go through a `text({pt,en})` helper. Every chart whose category labels are words therefore shows Portuguese on `/en/…`: this one, plus `pv-efficiency` (celulas-solares EN, "Módulo de silício comercial…") and `bathtub` (confiabilidade EN, "10 anos"). The English reader gets an axis they cannot read while the caption around it is English.
-- fix: widen `labels` to accept `Array<string | number | {pt: string; en: string}>` and resolve it in `DataChart.vue` the way the axis labels already are, then wrap the three affected charts' labels; keep the CSVs (`docs/public/data/*.csv`) in one language and say which in the export script, or export both.
-- verification: verified (types.ts, DataChart.vue and specs.ts read; the three affected specs listed).
 - confidence: high
 
 ### gargalos-04 — The page is called a map and has no map; two of its four sections have no figure
@@ -2172,36 +1853,6 @@ Method: full read of all four files; every numeral checked against its `citation
 
 ### dados
 
-### dados-01 — The yield chart's numbers contradict the formula printed next to it, by a factor of ten
-- where: docs/dados.md:L37-L41 (and docs/en/dados.md:L37-L41); data: docs/public/data/yield-vs-area.csv and specs.ts:L191-211
-- category: fact
-- severity: blocker
-- quote: "é o **modelo de Poisson** do rendimento, calculado a partir da equação que o capítulo de [na fab](/na-fab) apresenta, para cinco densidades de defeitos"; the chart's y-axis: "Rendimento Y = e^(−D₀A)" (specs.ts:196); `na-fab` prints the same equation ($Y = e^{-D_0 A}$) with "$D_0$ é a densidade de defeitos e $A$ a área do die"
-- problem: the plotted values are consistent with Y = e^(−10·D₀·A), not e^(−D₀·A). Fitting each column: the series labelled "D₀ = 0,05 defeito/cm²" decays with an exponent of ≈0,5 per cm² (98 % at 0,05 cm², 78 % at 0,5, 61 % at 1, 37 % at 2 — all matching e^(−0,5A)); the column labelled "D₀ = 1" matches e^(−10A) (61 % at 0,05 where the formula gives 95 %, 1 % at 0,5 where the formula gives 61 %). So every series is the true curve for a defect density ten times its label, and the chart as published shows a much harsher yield than the equation it claims to evaluate.
-- fix: rederive the CSV from e^(−D₀A) for the five densities as labelled (99,8 / 99,5 / 98,8 / 97,5 / 96,3 / 95,1 / 92,8 / 90,5 for D₀ = 0,05), or keep the curve and relabel the series "D₀ = 0,5; 1; 2,5; 5; 10 defeitos/cm²"; regenerate `docs/public/data/yield-vs-area.csv` with `scripts/export-chart-data.ts` in the same pass, and check `na-fab`'s D₀ values against whichever side is corrected.
-- verification: verified (arithmetic on the repo's own CSV and spec: implied exponent per column computed point by point, constant within each column and equal to 10× the label).
-- confidence: high
-
-### dados-02 — EN link to the chiplets section uses the PT anchor
-- where: docs/en/dados.md:L43 (and docs/dados.md:L43)
-- category: link
-- severity: blocker
-- quote: EN: "[chiplets](/en/empacotamento#chiplets-dividir-para-render) instead of continuing to enlarge the monolithic die"
-- problem: the EN heading is "## Chiplets: dividing in order to yield" (docs/en/empacotamento.md:L205), so the anchor copied from the PT file resolves to nothing; the reader lands at the top of the packaging chapter instead of the chiplets section the sentence is about.
-- fix: use `#chiplets-dividing-in-order-to-yield`; fix the other three EN anchor defects in the same pass (docs/en/gargalos.md:L9, L54; docs/en/precos-e-valor.md:L42).
-- verification: verified (heading extracted from docs/en/empacotamento.md and compared with the anchor).
-- confidence: high
-
-### dados-03 — "Doubling a die's area cuts yield by more than half" is false for the curves on the page
-- where: docs/dados.md:L43 (and docs/en/dados.md:L43); same claim in the chart caption, specs.ts:L206-207
-- category: fact
-- severity: major
-- quote: "Dobrar a área de um die derruba o rendimento **mais que pela metade**" / "Doubling a die's area cuts yield by **more than half**"; caption: "dobrar a área custa mais que o dobro em rendimento"
-- problem: for the low defect densities the chart plots, doubling the area costs a few points, not half the yield: D₀ = 0,05 goes from 98 % to 95 % between 0,05 and 0,1 cm² and from 78 % to 61 % between 0,5 and 1 cm²; D₀ = 0,1 goes from 95 % to 90 %. Under the Poisson model the invariant statement is about cost, not yield: doubling the area multiplies the cost per *working* die by 2·e^(D₀A) > 2, and the yield loss exceeds half only when the starting yield is already below 50 % (which happens only in the chart's high-D₀ series). As written the sentence overstates the plotted evidence and will not survive a reader who checks the two leftmost curves.
-- fix: rewrite to the statement the model supports — "Dobrar a área mais que dobra o custo por die bom, e a perda cresce com a densidade de defeitos" — in the prose, and align the caption in `specs.ts` ("o custo por die bom mais que dobra") in the same edit; if the yield-loss phrasing is wanted, qualify it ("quando o rendimento já está abaixo de 50 %").
-- verification: verified (values read from docs/public/data/yield-vs-area.csv; the inequality 1−Y(2A) < 2(1−Y(A)) holds for every Y, since 1−Y² < 2−2Y).
-- confidence: high
-
 ### dados-04 — The freshness rule is illustrated with examples the stamps contradict
 - where: docs/dados.md:L71-L73 (and docs/en/dados.md:L71-L73)
 - category: fact
@@ -2233,16 +1884,6 @@ Method: full read of all four files; every numeral checked against its `citation
 - confidence: high
 
 ### linha-do-tempo
-
-### linha-do-tempo-01 — "As quinze gerações" against a list of fourteen
-- where: docs/linha-do-tempo.md:L27 (and docs/en/linha-do-tempo.md:L27)
-- category: fact
-- severity: blocker
-- quote: "As quinze gerações, cada uma com a estrutura do transistor e exemplos de produtos que a usaram. O componente abaixo é gerado a partir da mesma lista que o capítulo de [evolução dos transistores](/transistores) usa, então a cronologia e o capítulo não podem divergir" / "All fifteen generations…"
-- problem: the component is `<TransistorTimeline />`, which iterates `ERAS` from `theme/transistor-eras.ts` — fourteen entries (1960, 1963, 1968, 1985, 1995, 1998, 2003, 2007, 2011, 2012, 2022, 2025/2026, ~2029, Futuro). The chapter it points to numbers its list 1-14. So the page claims fifteen generations and then, in the same breath, promises that its count cannot diverge from the source list, which has fourteen.
-- fix: change to "As quatorze gerações" / "All fourteen generations" in both locales. If the intent was to count a fifteenth (e.g. CFET as a separate era from the "Futuro" entry), fix `transistor-eras.ts` and the numbering in `transistores` instead — one enumeration, one home.
-- verification: verified (`grep -c "year: '" docs/.vitepress/theme/transistor-eras.ts` = 14; `TransistorTimeline.vue` renders exactly `ERAS`; docs/transistores.md numbers its list 1-14).
-- confidence: high
 
 ### linha-do-tempo-02 — The mermaid timeline runs out of chronological order
 - where: docs/linha-do-tempo.md:L14-L20 (and docs/en/linha-do-tempo.md:L14-L20)
@@ -2283,14 +1924,3 @@ Method: full read of all four files; every numeral checked against its `citation
 - fix: "Mais contexto e os gráficos da Bernreuter Research em [Polissilício](/polissilicio)."
 - verification: verified (both locales read).
 - confidence: high
-
-### Coverage summary
-
-- celulas-solares — spine present: yes (seven-step list with anchors to the sections); figures: 1 DiagramFigure (`solar-cell.svg`) + 1 chart (`pv-efficiency`) + 1 table; `dataAsOf: 2026`; most worth fixing: the EN chart-reading error (celulas-solares-01) and the boron label in the drawing (celulas-solares-03), then tie the 2026 stamp to a named Fraunhofer edition (celulas-solares-04).
-- alem-do-silicio — spine present: no (three thematic sections, no ordered list; the site's other narrative chapters follow the same pattern, so this is a contract-level gap rather than a local one); figures: 0; `dataAsOf: 2026` (no 2026 datum on the page); most worth fixing: the unparsable blue-LED sentence (alem-do-silicio-01) and the total absence of figures (alem-do-silicio-02).
-- precos-e-valor — spine present: no; figures: 0 (one table); `dataAsOf: 2026`; most worth fixing: the broken EN anchor (precos-e-valor-01, blocker), then the missing chart for the price cycle the chapter is about (precos-e-valor-02).
-- gargalos — spine present: no; figures: 1 chart (`chokepoint-share`) + 1 table, no map despite the title; `dataAsOf: 2026` (supported: the EU Chips Act 2.0 proposal of June 2026 and the 18 state-aid decisions for over EUR 32 bn were both verified against the Commission page, https://digital-strategy.ec.europa.eu/en/policies/european-chips-act, in this run); most worth fixing: the three broken EN anchors (gargalos-01, blocker) and the uncited 70-90 % quartz share (gargalos-02).
-- dados — spine present: no; figures: 3 charts (`transistor-count`, `yield-vs-area`, `binning-bins`) + 1 table; `dataAsOf: 2026`; chart/CSV inventory verified: all seven ids in `specs.ts` resolve, all seven CSVs exist in `docs/public/data/`, and every number in the tables matches its CSV (transistor counts, binning shares — 1 + 16 = 17 % below 5,0 GHz on the 8700K, 0 % below 5,0 GHz on the 8086K, 79 % at 5,1-5,2 GHz in the spec caption); most worth fixing: the factor-of-ten error in `yield-vs-area` (dados-01, blocker), then the broken EN anchor (dados-02, blocker) and the false "cuts yield by more than half" (dados-03).
-- linha-do-tempo — spine present: n/a (navigation/chronology page, correctly without `dataAsOf`); figures: 1 mermaid timeline + the `TransistorTimeline` component (14 eras, each with an image); most worth fixing: the fourteen-versus-fifteen count (linha-do-tempo-01, blocker), then the mermaid order (linha-do-tempo-02) and the missing citation line (linha-do-tempo-03).
-- Not-auditable-in-this-run list, for the fixing agent to open: ITRPV 2024 press release (69 % n-type and the 97 %/3 % split), Fraunhofer Photovoltaics Report (26,7 % learning rate, 35 % tandem, ~4 €ct/kWh, 20-year lifetime, the edition year behind `dataAsOf: 2026`), Sibelco HPQ page (settled: no share figure on the page — gargalos-02), CSET packaging shares (the base of the 10 %/45 %/6 % before any chart is drawn).
-- Mechanical checks run over all twelve files, for the record: no line carries two or more em dashes and no `— ,` sequence exists; PT and EN use their own number formats throughout (1.700 / 1,700; 0,47 % / 0.47 %) except the shared chart labels and CSVs noted in gargalos-03; the shared CSV headers are Portuguese (`rotulo`, `Faixa publicada`, `Eficiência`), which the EN pages link to from `/data/…`.

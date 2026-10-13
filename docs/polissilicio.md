@@ -10,6 +10,18 @@ O Silício de Grau Metalúrgico ([MG-Si](/glossario)) contém impurezas metálic
 
 A matéria-prima nunca foi o gargalo: o silício é o **segundo elemento mais abundante da crosta terrestre**, atrás apenas do oxigênio <Cite id="pv-mfg-polysilicon" />. Todo o valor desta etapa está em separar do silício os poucos átomos de boro, fósforo e metais que arruínam um transistor ou uma célula solar — e nenhuma filtragem física dá conta disso.
 
+O capítulo percorre a rota química em sete etapas:
+
+1. [Visão geral da rota](#visao-geral-da-rota): o mapa do processo e a divisão entre as duas rotas.
+2. [Do forno de arco ao MG-Si](#do-forno-de-arco-ao-mg-si): as reações que produzem o silício de partida.
+3. [Conversão em triclorossilano (TCS)](#conversao-em-triclorossilano-tcs): como o silício vira gás para poder ser destilado.
+4. [Processos de obtenção do polissilício sólido](#processos-de-obtencao-do-polissilicio-solido): os dois reatores que devolvem o silício sólido.
+5. [A rota metalúrgica (UMG)](#a-rota-metalurgica-umg): a alternativa sem cloro e o caso Elkem.
+6. [Quanta pureza é necessária?](#quanta-pureza-e-necessaria): os números que separam os graus de pureza.
+7. [Dinâmica e histórico de mercado](#dinamica-e-historico-de-mercado): os ciclos de preço e a ascensão chinesa.
+
+O texto segue essa ordem.
+
 ## Visão geral da rota
 
 <DiagramFigure src="/assets/polysilicon-process.svg" alt="Fluxograma da rota do polissilício: quartzo e carbono no forno de arco, MG-Si moído, cloração em leito fluidizado formando triclorossilano, destilação fracionada e deposição no reator Siemens ou no reator de leito fluidizado">

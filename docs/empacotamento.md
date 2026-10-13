@@ -18,15 +18,17 @@ O wafer entra à esquerda como uma peça única e sai à direita como componente
 
 A ordem do capítulo é a ordem da linha de produção:
 
-1. [Teste de wafer](#teste-de-wafer-separar-o-joio-antes-de-pagar-o-molde) — separar o die bom antes de pagar o molde.
-2. [Fatiamento](#fatiamento-separar-os-dies) — separar os dies, e por que a lâmina deixa de servir.
-3. [Ligação por fio](#wire-bonding-a-tecnologia-que-monta-80-do-mundo) — a tecnologia que ainda monta a maior parte do mundo.
-4. [Flip-chip](#flip-chip-virar-o-die-de-cabeca-para-baixo) — virar o die, quando o perímetro deixa de bastar.
-5. [Empilhamento](#_2-5d-3d-e-a-hierarquia-dos-pacotes) — 2.5D, 3D e a ligação híbrida.
-6. [HBM](#hbm-a-memoria-que-precisou-morar-ao-lado) — a memória que precisou morar ao lado do processador.
-7. [Chiplets](#chiplets-dividir-para-render) — dividir o chip para conseguir rendimento.
-8. [Teste final](#teste-final-queima-e-classificacao) — queima, classificação e o que se vende.
-9. [Quanto vale](#quanto-vale-o-empacotamento) — o tamanho econômico dessa parte da cadeia.
+1. [Teste de wafer](#teste-de-wafer-separar-o-joio-antes-de-pagar-o-molde): separar o die bom antes de pagar o molde.
+2. [Fatiamento](#fatiamento-separar-os-dies): separar os dies, e por que a lâmina deixa de servir.
+3. [Ligação por fio](#wire-bonding-a-tecnologia-que-monta-80-do-mundo): a tecnologia que ainda monta a maior parte do mundo.
+4. [Flip-chip](#flip-chip-virar-o-die-de-cabeca-para-baixo): virar o die, quando o perímetro deixa de bastar.
+5. [Empilhamento](#_2-5d-3d-e-a-hierarquia-dos-pacotes): 2.5D, 3D e a ligação híbrida.
+6. [HBM](#hbm-a-memoria-que-precisou-morar-ao-lado): a memória que precisou morar ao lado do processador.
+7. [Chiplets](#chiplets-dividir-para-render): dividir o chip para conseguir rendimento.
+8. [Teste final](#teste-final-queima-e-classificacao): queima, classificação e o que se vende.
+9. [Quanto vale](#quanto-vale-o-empacotamento): o tamanho econômico dessa parte da cadeia.
+
+O capítulo segue essa ordem.
 
 ## Teste de wafer: separar o joio antes de pagar o molde
 

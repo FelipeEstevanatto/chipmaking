@@ -49,13 +49,16 @@ could state:
 Touches `docs/metodo.md` + `docs/en/metodo.md`, the "Fontes" sidebar group, and `BuildFooter.vue`.
 Effort M. This also gives other sites something to cite.
 
-### 1.3 Chapter index with status columns
+### 1.3 Chapter index with status columns (partly done)
 
 The README carries the chapter table; the site does not. A generated "Mapa do site" (reading time,
 `dataAsOf`, figure count, number of sources) would let a reader choose what to read, and would
 surface the freshness stamp that currently only appears inside each chapter. The data is already
 present (frontmatter + files); a `scripts/gen-site-map.ts` run at build time keeps it from going
 stale. Placement: link under "Panorama"/"Fontes", not in the numbered chain. Effort M.
+
+Partly done: the README chapter table exists, but only `dataAsOf` is build-time data; reading time
+and figure count are runtime-only today, so a build-time generator still needs a source for them.
 
 ### 1.4 A 404 page in both locales
 
@@ -107,15 +110,6 @@ spine items have none. Decide first what counts as a figure — today `DocMeta` 
 
 Effort M. Either way, the two need to agree: right now the rule is stricter than both the content
 and the counter.
-
-### 2.3 Localised chart labels and CSV headers
-
-`ChartSpec.labels` is `string[]`, passed through by `DataChart.vue`, so three charts show Portuguese
-category labels on `/en/…` (`confiabilidade-06`, `gargalos-03`), and `export-chart-data.ts` writes
-Portuguese CSV headers that the EN pages link to. Change the type to `LocalizedText[]`
-(`{ pt, en }`, as `xLabel`/`yLabel` already do), resolve it in `DataChart.vue`, and localise or
-duplicate the CSV headers. A type change makes the next unlocalised label a compile error; a script
-cannot. Effort S.
 
 ### 2.4 The `dataAsOf` rule needs one clarifying sentence
 
@@ -174,11 +168,11 @@ honest. Effort S.
 
 ## 4. Suggested order
 
-1. Fix the blockers in `audit/findings.md` (wrong numbers first: they are cheap to fix and
-   expensive to leave).
-2. Add `audit-links` (§2.1) before fixing the anchor findings, so the fixes are verified and cannot
-   regress.
-3. Localise chart labels (§2.3) in the same pass as the yield-model fix, since both touch
-   `specs.ts`/`DataChart.vue`.
-4. Spine template (§3.1) and the chapters it touches; figure policy (§2.2) alongside.
-5. Language switcher (§1.1), "Método e fontes" (§1.2), then the remainder.
+The 2026-09 blockers, the chart-label localisation (§2.3) and the spine for most chapters are now
+applied; what remains:
+
+1. Add `audit-links` (§2.1): the anchor fixes are in, but nothing keeps them from regressing.
+2. Decide the figure policy (§2.2), then close the figure gaps the audit lists.
+3. Language switcher (§1.1), "Método e fontes" (§1.2), 404 page (§1.4), sidebar labels (§1.5),
+   reading-trail scope (§1.6).
+4. The remaining findings in `audit/findings.md`, majors first, then minors, then the ideas.

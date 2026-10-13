@@ -12,13 +12,13 @@ O quartzo entra na cadeia por **dois caminhos distintos**, e vale separá-los de
 
 O capítulo percorre a rota do material em sete passos:
 
-1. [Spruce Pine](#spruce-pine-onde-o-quartzo-e-puro-o-suficiente) — o depósito que sustenta o mercado, e as duas empresas que mineram ali.
-2. [Drag, na Noruega](#drag-noruega-onde-o-quartzo-e-purificado) — onde o minério bruto vira quartzo de 99,999% de SiO₂.
-3. [Por que o boro decide](#por-que-o-boro-decide) — os limites de impureza que um cadinho impõe ao quartzo.
-4. [Redução carbotérmica](#reducao-carbontermica-mg-si) — as três reações que transformam SiO₂ em silício.
-5. [O forno de arco submerso](#o-forno-de-arco-submerso) — o reator onde elas acontecem.
-6. [Fume de sílica e energia do gás](#fume-de-silica-e-energia-do-gas) — o que sai do forno além do metal.
-7. [Escala e uso do MG-Si](#escala-e-uso-do-mg-si) — quanto silício o mundo produz e para onde ele vai.
+1. [Spruce Pine](#spruce-pine-onde-o-quartzo-e-puro-o-suficiente): o depósito que sustenta o mercado, e as duas empresas que mineram ali.
+2. [Drag, na Noruega](#drag-noruega-onde-o-quartzo-e-purificado): onde o minério bruto vira quartzo de 99,999% de SiO₂.
+3. [Por que o boro decide](#por-que-o-boro-decide): os limites de impureza que um cadinho impõe ao quartzo.
+4. [Redução carbotérmica](#reducao-carbotermica-mg-si): as três reações que transformam SiO₂ em silício.
+5. [O forno de arco submerso](#o-forno-de-arco-submerso): o reator onde elas acontecem.
+6. [Fume de sílica e energia do gás](#fume-de-silica-e-energia-do-gas): o que sai do forno além do metal.
+7. [Escala e uso do MG-Si](#escala-e-uso-do-mg-si): quanto silício o mundo produz e para onde ele vai.
 
 O texto segue essa ordem.
 

@@ -6,9 +6,20 @@ dataAsOf: 2025
 
 # Fabricação do wafer de silício
 
-A transformação do polissilício de grau eletrônico ([EG-Si](/glossario)) em wafers monocristalinos requer uma sequência rigorosa de processos físico-químicos e mecânicos de precisão. O objetivo primário é produzir lingotes livres de defeitos cristalinos e convertê-los em lâminas extremamente planas, com rugosidade superficial em nível atômico. As oito etapas a seguir cobrem essa sequência, do crescimento do cristal à inspeção final.
+A transformação do polissilício de grau eletrônico ([EG-Si](/glossario)) em wafers monocristalinos requer uma sequência rigorosa de processos físico-químicos e mecânicos de precisão. O objetivo primário é produzir lingotes livres de defeitos cristalinos e convertê-los em lâminas extremamente planas, com rugosidade superficial em nível atômico. As oito etapas a seguir cobrem essa sequência, do crescimento do cristal à inspeção final:
 
-## Crescimento do monocristal (Czochralski — CZ)
+1. [Crescimento do monocristal (Czochralski, CZ)](#crescimento-do-monocristal-czochralski-cz): o forno, a semente e o puxamento que formam o lingote.
+2. [Preparação do lingote e pré-usinagem](#preparacao-do-lingote-e-pre-usinagem): o corte das pontas e o ajuste do diâmetro.
+3. [Corte em fatias (wafer slicing)](#corte-em-fatias-wafer-slicing): a serra de fio que separa as lâminas.
+4. [Arredondamento de bordas e lapidação](#arredondamento-de-bordas-e-lapidacao): o perfil da borda e a planura inicial.
+5. [Ataque químico (etching)](#ataque-quimico-etching): o ataque que remove o dano deixado pela serra.
+6. [Tratamento térmico e RTP](#tratamento-termico-e-rtp): o calor que corrige defeitos e ativa dopantes.
+7. [Polimento químico-mecânico (CMP)](#polimento-quimico-mecanico-cmp): a superfície plana ao nível atômico.
+8. [Limpeza RCA e inspeção](#limpeza-rca-e-inspecao): a limpeza final e a inspeção que fecham a sequência.
+
+O texto segue essa ordem.
+
+## Crescimento do monocristal (Czochralski, CZ)
 
 O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são depositados em cadinho de quartzo altamente purificado, em forno a vácuo sob argônio inerte. O material é fundido a cerca de **1414 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
 

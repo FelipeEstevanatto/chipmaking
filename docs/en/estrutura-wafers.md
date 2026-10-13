@@ -6,6 +6,17 @@ dataAsOf: 2025
 
 # Crystal structure and wafer types
 
+The chapter follows the structure and the reading of a wafer in six steps:
+
+1. [Structure of pure silicon](#structure-of-pure-silicon): the diamond cubic lattice and the indices that describe it.
+2. [Why silicon, and not germanium](#why-silicon-and-not-germanium): the three properties that settled the contest.
+3. [Reading a wafer](#reading-a-wafer): the four axes that describe a slice.
+4. [Reading a wafer by its edge](#reading-a-wafer-by-its-edge): what the flat and the notch encode.
+5. [Who makes the wafers](#who-makes-the-wafers): the suppliers and how concentrated the market is.
+6. [Doping](#doping): how intentional impurities set the P or N type.
+
+The text follows that order.
+
 ## Structure of pure silicon
 
 Crystalline silicon adopts the **diamond cubic crystal structure**.

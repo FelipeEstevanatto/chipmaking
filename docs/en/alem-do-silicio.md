@@ -34,6 +34,10 @@ Before being a processor, silicon is an excellent structural material: hard, ela
 
 **MEMS.** Micro-electromechanical sensors (accelerometers, gyroscopes, microphones, pressure sensors) are machined silicon, not doped silicon. Manufacturing uses the same tools as the fab: **anisotropic** wet etching, which attacks different crystal planes at different rates, and deep plasma etching (**DRIE**), which digs vertical trenches <Cite id="bosch-drie" />. Every phone carries dozens of them.
 
+<DiagramFigure src="/assets/mems-structure.svg" alt="Cross-section of a silicon MEMS structure: a thin beam suspended over a cavity etched into the substrate, anchored to the substrate at one end and free at the other, with the cavity walls sloping inwards">
+The suspended beam in cross-section: one end is anchored to the substrate and the other hangs free over the cavity, opened by etching into the silicon itself <Cite id="bosch-drie" />. Drawn by the author.
+</DiagramFigure>
+
 **Image sensors.** The CMOS sensor is probably the most numerous silicon product in the world today. The current generation stacks two wafers (the pixel one and the circuit one) and joins them with **through-silicon vias** (TSV), the same technology the [packaging](/en/empacotamento) chapter describes for 3D packages <Cite id="semieng-tsv" />.
 
 **Silicon photonics.** Here silicon is, once again, a victim of its own gap. An indirect-gap material **does not emit light efficiently** <Cite id="elem-sze" />, which is why a photonic circuit integrated in silicon cannot make its own laser: it guides, modulates and detects light very well, but has to look for the source in another material, bonded to the chip. It is the same physical property that explains, in the solar chapter, why **100 µm of silicon** are needed to absorb what **1 µm of gallium arsenide** absorbs <Cite id="saimm" />.

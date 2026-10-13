@@ -8,24 +8,24 @@ dataAsOf: 2026
 
 From the planar structure to the CFET, the chapter walks the generations of the transistor in chronological order. Each section opens with that generation's process node and the payoff it brought; what the "node" label means is in the [addendum at the end of the chapter](#addendum-what-the-node-number-means).
 
-1. [1960 — Planar MOSFET](#_1960-—-planar-mosfet)
-2. [1963 — CMOS complementary pair](#_1963-—-cmos-complementary-pair)
-3. [1968 — Self-aligned silicon gate](#_1968-—-self-aligned-silicon-gate)
-4. [1985 — LDD](#_1985-—-ldd-lightly-doped-drain)
-5. [1995 — STI](#_1995-—-sti-shallow-trench)
-6. [1998 — SOI](#_1998-—-soi-silicon-on-insulator)
-7. [2003 — Strained silicon](#_2003-—-strained-silicon-intel)
-8. [2007 — High-K metal gate](#_2007-—-high-k-metal-gate-hkmg)
-9. [2011 — FinFET](#_2011-—-finfet-tri-gate)
-10. [2012 — FD-SOI](#_2012-—-fd-soi-ultra-thin-body)
-11. [2022 — GAAFET](#_2022-—-gaafet-gate-all-around-nanosheets)
-12. [2025/2026 — BSPDN](#_2025-2026-—-bspdn-backside-power)
-13. [~2029 — Forksheet](#_2029-—-forksheet)
-14. [Future — CFET](#future-—-cfet)
+1. [1960: Planar MOSFET](#_1960-planar-mosfet)
+2. [1963: CMOS complementary pair](#_1963-cmos-complementary-pair)
+3. [1968: Self-aligned silicon gate](#_1968-self-aligned-silicon-gate)
+4. [1985: LDD](#_1985-ldd-lightly-doped-drain)
+5. [1995: STI](#_1995-sti-shallow-trench)
+6. [1998: SOI](#_1998-soi-silicon-on-insulator)
+7. [2003: Strained silicon](#_2003-strained-silicon-intel)
+8. [2007: High-K metal gate](#_2007-high-k-metal-gate-hkmg)
+9. [2011: FinFET](#_2011-finfet-tri-gate)
+10. [2012: FD-SOI](#_2012-fd-soi-ultra-thin-body)
+11. [2022: GAAFET](#_2022-gaafet-gate-all-around-nanosheets)
+12. [2025/2026: BSPDN](#_2025-2026-bspdn-backside-power)
+13. [~2029: Forksheet](#_2029-forksheet)
+14. [Future: CFET](#future-cfet)
 
 The [timeline](/en/linha-do-tempo) gathers these same generations into one interactive list, with each one's products. The sections below follow the order above.
 
-## 1960 — Planar MOSFET
+## 1960: Planar MOSFET
 
 <TransistorFacts year="1960" />
 
@@ -37,7 +37,7 @@ The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Ef
 
 In practice this generation powered pocket calculators and the first home microcomputers: the NMOS **6502** family, for instance, drove the Apple II, the Commodore 64 and the NES.
 
-## 1963 — CMOS (complementary pair)
+## 1963: CMOS (complementary pair)
 
 <TransistorFacts year="1963" />
 
@@ -49,7 +49,7 @@ Complementary pair: an NMOS in a p-well and a PMOS in an n-well, with a single p
 
 Its first large-scale use was the **RCA CD4000 logic family** (1968), which made CMOS the standard for digital watches, calculators and battery-powered instruments. Decades later the same principle became the **real-time clock** of every PC — still kept alive by what the industry nicknamed the “CMOS battery”.
 
-## 1968 — Self-aligned silicon gate
+## 1968: Self-aligned silicon gate
 
 <TransistorFacts year="1968" />
 
@@ -67,7 +67,7 @@ The first commercial product was the **Fairchild 3708** (1968), an 8-channel ana
 
 This is the technique that made the first microprocessors viable. Faggin joined Intel in **April 1970** and was the architect of the 4000 family: the **Intel 4004** (1971) shipped with 2,300 transistors on a 12 mm² die, built on a 10 µm pMOS process for the Busicom 141-PF calculator <Cite id="intel-4004" />. Without the self-aligned gate and the buried contact, the 4004 would not have fit on a manufacturable die <Cite id="chm-sigate" />.
 
-## 1985 — LDD (lightly doped drain)
+## 1985: LDD (lightly doped drain)
 
 <TransistorFacts year="1985" />
 
@@ -81,7 +81,7 @@ Left, the conventional junction: the n⁺ contact sits against the gate, and tha
 
 The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" /> — the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
 
-## 1995 — STI (shallow trench)
+## 1995: STI (shallow trench)
 
 <TransistorFacts year="1995" />
 
@@ -95,7 +95,7 @@ The trench cut comes from **reactive ion etching** (**RIE**), **0.1 µm to 1 µm
 
 Production arrived **before the 0.25 µm node**, not at it. IBM led the application in **0.35 µm DRAM**, and Toshiba was already in mass production by 1996 <Cite id="shmj-sti" />. On the logic side, Intel started from STI **a generation earlier** too: the P856 flow is described as identical to that of **P854 (0.35 µm)**, which already began with a shallow trench <Cite id="intel-p856" />. It was **P856 (0.25 µm)**, certified in **Q3 1997**, that carried STI into the **Pentium II** at volume <Cite id="intel-p856" /><Cite id="voldman-esd" />.
 
-## 1998 — SOI (silicon on insulator)
+## 1998: SOI (silicon on insulator)
 
 <TransistorFacts year="1998" />
 
@@ -109,7 +109,7 @@ The buried oxide is not grown in the transistor, it comes inside the wafer. **SI
 
 The architecture became famous in the 2005–2006 console generation: the **Cell** in the PlayStation 3 and the **Xenon** in the Xbox 360 both shipped on 90 nm SOI, while AMD's **Athlon 64** brought the same technology to PCs <Cite id="ibm-cell" />.
 
-## 2003 — Strained silicon (Intel)
+## 2003: Strained silicon (Intel)
 
 <TransistorFacts year="2003" />
 
@@ -129,7 +129,7 @@ Normal vs. strained lattice and the faster electron flow in the channel.
 
 The first high-volume processor with strained silicon was the **Pentium 4 “Prescott”**, launched in February 2004 at the 90 nm node, which also introduced copper interconnects and a low-k dielectric <Cite id="intel-90nm" />.
 
-## 2007 — High-K metal gate (HKMG)
+## 2007: High-K metal gate (HKMG)
 
 <TransistorFacts year="2007" />
 
@@ -145,7 +145,7 @@ The 45 nm process runs at **1.0 nm EOT** (*equivalent oxide thickness*, the thic
 
 The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line — the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
 
-## 2011 — FinFET (Tri-Gate)
+## 2011: FinFET (Tri-Gate)
 
 <TransistorFacts year="2011" />
 
@@ -157,7 +157,7 @@ Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at
 
 **Ivy Bridge** (22 nm, April 2012) was the first high-volume product <Cite id="intel-trigate" />; on mobile, the **Exynos 7420** (Galaxy S6) and Apple's **A9** (iPhone 6s) brought FinFET to smartphones in 2015. The architecture dominated every node from 22 nm down to 5 nm.
 
-## 2012 — FD-SOI (ultra-thin body)
+## 2012: FD-SOI (ultra-thin body)
 
 <TransistorFacts year="2012" />
 
@@ -169,7 +169,7 @@ Above, partially depleted SOI with a floating body; below, FD-SOI with an ultra-
 
 The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundries (**22FDX**). The best-known case is the **Google Nest Mini**, whose Synaptics AS-370 SoC was identified in a teardown as built on 22FDX <Cite id="techinsights-22fdx" />. The technology also underpins BLE MCUs, Wi-Fi cameras and GNSS SoCs, with dozens of designs already in mass production <Cite id="verisilicon-fdsoi" />.
 
-## 2022 — GAAFET (gate-all-around / nanosheets)
+## 2022: GAAFET (gate-all-around / nanosheets)
 
 <TransistorFacts year="2022" />
 
@@ -181,7 +181,7 @@ At **3 nm** and below, FinFETs hit limits of variability and quantum effects. **
 
 The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: **TSMC's N3 was still FinFET** — Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with **N2**, in volume production since late 2025, with the **Apple A20 Pro** among the first major products <Cite id="tsmc-n2" />.
 
-## 2025/2026 — BSPDN (backside power)
+## 2025/2026: BSPDN (backside power)
 
 <TransistorFacts year="2025/2026" />
 
@@ -193,7 +193,7 @@ Power delivery moves to the wafer backside, leaving the front free for signal.
 
 It reached the market in **Intel Panther Lake** (Core Ultra series 3), the first chip to combine *PowerVia* and *RibbonFET* <Cite id="intel-18a" />; TSMC introduces *Super Power Rail* on **A16**, with volume production scheduled for the second half of 2026 <Cite id="tsmc-n2" />.
 
-## ~2029 — Forksheet
+## ~2029: Forksheet
 
 <TransistorFacts year="~2029" />
 
@@ -205,7 +205,7 @@ Left, gate-all-around nanosheets with a wide gap between the n and p gates; righ
 
 Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented an *outer wall* variant with better manufacturability and performance. It is the declared bridge between GAAFET and CFET <Cite id="imec-forksheet" />.
 
-## Future — CFET
+## Future: CFET
 
 <TransistorFacts year="Futuro" />
 

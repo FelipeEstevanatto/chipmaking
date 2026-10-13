@@ -6,6 +6,17 @@ dataAsOf: 2025
 
 # Estrutura cristalina e tipos de wafer
 
+O capítulo percorre a estrutura e a leitura de um wafer em seis etapas:
+
+1. [Estrutura do silício puro](#estrutura-do-silicio-puro): a rede cúbica de diamante e os índices que a descrevem.
+2. [Por que silício, e não germânio](#por-que-silicio-e-nao-germanio): as três propriedades que decidiram a disputa.
+3. [Como ler um wafer](#como-ler-um-wafer): os quatro eixos que descrevem uma lâmina.
+4. [Como identificar um wafer pela borda](#como-identificar-um-wafer-pela-borda): o que o chanfro e o entalhe codificam.
+5. [Quem fabrica os wafers](#quem-fabrica-os-wafers): os fornecedores e a concentração do mercado.
+6. [Dopagem](#dopagem): como as impurezas intencionais definem o tipo P ou N.
+
+O texto segue essa ordem.
+
 ## Estrutura do silício puro
 
 O silício cristalino adota a **estrutura cúbica de diamante** (*diamond cubic crystal structure*).

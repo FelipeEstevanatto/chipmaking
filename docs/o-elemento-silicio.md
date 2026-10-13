@@ -12,11 +12,11 @@ Elas reaparecem em cada etapa da cadeia. O [forno de arco](/mineracao-mg-si) pre
 
 Esta página percorre, nesta ordem:
 
-1. [A ficha do elemento](#a-ficha-do-elemento) — as constantes que a indústria não escolhe.
-2. [A rede que o silício forma](#a-rede-que-o-silicio-forma) — como esses números se arranjam no espaço, e o que o silício faz com carbono, germânio, oxigênio e nitrogênio.
-3. [O gap indireto](#o-gap-indireto-explica-mais-do-que-o-solar) — por que ele limita a absorção de luz.
-4. [Os três isótopos](#os-tres-isotopos) — a mistura que a natureza entrega.
-5. [Por que a indústria usa este elemento](#por-que-a-industria-usa-este-elemento) — o que o silício tem, e o que ele não tem.
+1. [A ficha do elemento](#a-ficha-do-elemento): as constantes que a indústria não escolhe.
+2. [A rede que o silício forma](#a-rede-que-o-silicio-forma): como esses números se arranjam no espaço, e o que o silício faz com carbono, germânio, oxigênio e nitrogênio.
+3. [O gap indireto](#o-gap-indireto-explica-mais-do-que-o-solar): por que ele limita a absorção de luz.
+4. [Os três isótopos](#os-tres-isotopos): a mistura que a natureza entrega.
+5. [Por que a indústria usa este elemento](#por-que-a-industria-usa-este-elemento): o que o silício tem, e o que ele não tem.
 
 O resto da página segue essa ordem.
 

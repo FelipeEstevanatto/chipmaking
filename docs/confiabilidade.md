@@ -10,6 +10,17 @@ Os capítulos anteriores contam como um chip é feito. A [fábrica](/na-fab) con
 
 Confiabilidade não é uma medida isolada. É a **distribuição das falhas ao longo do tempo** — e essa distribuição quase nunca é uniforme. Entendê-la é o que separa "o chip funciona" de "o chip pode ser vendido".
 
+O capítulo percorre o envelhecimento do chip em seis etapas:
+
+1. [A curva da banheira](#a-curva-da-banheira): as três fases da taxa de falha.
+2. [Mecanismos de desgaste](#mecanismos-de-desgaste): os mecanismos que envelhecem o dispositivo, um a um.
+3. [Quantificar a falha](#quantificar-a-falha): como a falha se mede e se acelera.
+4. [Erros suaves](#erros-suaves): a classe de falha que não deixa cicatriz.
+5. [Qualificação](#qualificacao): os ensaios que o fornecedor precisa passar antes de vender.
+6. [Por que isso é uma história de materiais](#por-que-isso-e-uma-historia-de-materiais): por que a confiabilidade começa no material.
+
+O texto segue essa ordem.
+
 ## A curva da banheira
 
 Plote a taxa de falhas de uma população contra o tempo e o desenho que reaparece, em componentes mecânicos e eletrônicos dos mais variados, é sempre o mesmo: uma **curva em forma de banheira** <Cite id="rel-nist-bathtub" />.
@@ -74,6 +85,10 @@ $$
 onde $J$ é a densidade de corrente e $T$ é a temperatura <Cite id="rel-black-1969" />. O expoente $n$ fica tipicamente perto de **2** para o alumínio, e a energia de ativação $E_a$ depende do metal e do caminho de difusão, na casa de **0,5 a 0,7 eV** para o alumínio e **0,8 a 1,0 eV** para o cobre <Cite id="rel-jep122" />.
 
 Vale desconfiar de qualquer $n$ ou $E_a$ apresentado como constante universal: o próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até **1,4 eV**, com **0,7 eV** como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />. O que é robusto é a **direção**: dobrar $J$ encolhe a vida muito mais que dobrar a temperatura ambiente — e é por isso que a troca do alumínio pelo cobre, em **1997**, foi tão importante <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
+
+<DiagramFigure src="/assets/wearout-mechanisms.svg" alt="Quatro cortes esquemáticos de um MOSFET, um por mecanismo de desgaste: armadilhas na interface óxido-silício que deslocam a tensão de limiar, portadores quentes injetados no óxido perto do dreno, um filamento condutor que atravessa o óxido de porta e a eletromigração num fio de cobre, com um vazio a montante e um montículo a jusante">
+Os quatro mecanismos de desgaste em corte: armadilhas na interface que deslocam a tensão de limiar <Cite id="rel-schroder-2003" />, portadores quentes que saltam para o óxido perto do dreno <Cite id="rel-hu-1985" />, o filamento condutor que rompe o óxido de porta <Cite id="rel-mcpherson-2012" /> e a eletromigração que abre um vazio e ergue um montículo no fio de cobre <Cite id="rel-black-1969" />. Desenho do autor.
+</DiagramFigure>
 
 ## Quantificar a falha
 

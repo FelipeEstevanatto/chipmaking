@@ -20,13 +20,13 @@ A célula pronta em corte. O raio que uma pirâmide reflete é aproveitado pela 
 
 A célula pronta sai de **sete etapas**, nesta ordem:
 
-1. [Remoção da camada danificada](#remocao-da-camada-danificada) — o ataque que tira o dano deixado pela serra.
-2. [Texturização](#texturizacao) — a rugosidade que faz a luz entrar em vez de voltar.
-3. [Difusão do emissor](#difusao-do-emissor-juncao-p-n) — a junção p-n que transforma a lâmina em dispositivo.
-4. [Isolamento de borda](#isolamento-de-borda) — cortar o curto entre as duas faces.
-5. [Camada antirrefletora](#camada-antirrefletora) — menos reflexão, e de quebra passivação da superfície.
-6. [Metalização](#metalizacao) — os contatos, onde cada milímetro de prata é um milímetro sem luz.
-7. [Queima dos contatos](#queima-dos-contatos) — o tratamento térmico que faz o metal atravessar o antirrefletor.
+1. [Remoção da camada danificada](#remocao-da-camada-danificada): o ataque que tira o dano deixado pela serra.
+2. [Texturização](#texturizacao): a rugosidade que faz a luz entrar em vez de voltar.
+3. [Difusão do emissor](#difusao-do-emissor-juncao-p-n): a junção p-n que transforma a lâmina em dispositivo.
+4. [Isolamento de borda](#isolamento-de-borda): cortar o curto entre as duas faces.
+5. [Camada antirrefletora](#camada-antirrefletora): menos reflexão, e de quebra passivação da superfície.
+6. [Metalização](#metalizacao): os contatos, onde cada milímetro de prata é um milímetro sem luz.
+7. [Queima dos contatos](#queima-dos-contatos): o tratamento térmico que faz o metal atravessar o antirrefletor.
 
 A escolha do dopante tipo p (boro ou gálio) atravessa a terceira etapa e virou subseção dentro dela: mudou o produto, não a sequência do processo.
 

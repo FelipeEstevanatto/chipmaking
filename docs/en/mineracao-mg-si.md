@@ -12,13 +12,13 @@ Quartz enters the chain along **two distinct paths**, and it is worth separating
 
 The chapter follows the material in seven steps:
 
-1. [Spruce Pine](#spruce-pine-where-the-quartz-is-pure-enough) — the deposit that keeps the market supplied, and the two companies that mine there.
-2. [Drag, Norway](#drag-norway-where-the-quartz-is-purified) — where the raw ore becomes quartz at 99.999% SiO₂.
-3. [Why boron decides](#why-boron-decides) — the impurity limits a crucible imposes on the quartz.
-4. [Carbothermal reduction](#carbothermal-reduction-mg-si) — the three reactions that turn SiO₂ into silicon.
-5. [The submerged-arc furnace](#the-submerged-arc-furnace) — the reactor where they happen.
-6. [Silica fume and off-gas energy](#silica-fume-and-off-gas-energy) — what leaves the furnace besides the metal.
-7. [Scale and uses of MG-Si](#scale-and-uses-of-mg-si) — how much silicon the world makes and where it goes.
+1. [Spruce Pine](#spruce-pine-where-the-quartz-is-pure-enough): the deposit that keeps the market supplied, and the two companies that mine there.
+2. [Drag, Norway](#drag-norway-where-the-quartz-is-purified): where the raw ore becomes quartz at 99.999% SiO₂.
+3. [Why boron decides](#why-boron-decides): the impurity limits a crucible imposes on the quartz.
+4. [Carbothermal reduction](#carbothermal-reduction-mg-si): the three reactions that turn SiO₂ into silicon.
+5. [The submerged-arc furnace](#the-submerged-arc-furnace): the reactor where they happen.
+6. [Silica fume and off-gas energy](#silica-fume-and-off-gas-energy): what leaves the furnace besides the metal.
+7. [Scale and uses of MG-Si](#scale-and-uses-of-mg-si): how much silicon the world makes and where it goes.
 
 The text follows that order.
 
