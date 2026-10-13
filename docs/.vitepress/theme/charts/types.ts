@@ -32,15 +32,22 @@ export interface ChartDataset {
   pt: string
   en: string
   /**
-   * Plain numbers for a categorical axis, `[start, end]` pairs for a floating bar, or
-   * `{ x, y, label }` points for a scatter. `label` survives in `ctx.raw`, which is how a scatter
-   * point gets a name in its tooltip.
+   * Plain numbers for a categorical axis, `[start, end]` pairs for a floating bar, `null` for a
+   * category this series does not cover, or `{ x, y, label }` points for a scatter. `label`
+   * survives in `ctx.raw`, which is how a scatter point gets a name in its tooltip.
    */
-  data: number[] | Array<[number, number]> | Array<{ x: number; y: number; label?: ChartName }>
+  data:
+    | Array<number | [number, number] | null>
+    | Array<{ x: number; y: number; label?: ChartName }>
   color: string
   /** Paired with `logY`, so toggling the axis cannot hide which series was the reference fit. */
   dashed?: boolean
   fill?: boolean
+  /**
+   * Bar-only. `false` draws this series over the others instead of beside them, which is how a
+   * range is shown on top of a bar (e.g. the upper part of a published interval).
+   */
+  grouped?: boolean
 }
 
 export interface ChartSpec {

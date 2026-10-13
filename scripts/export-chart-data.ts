@@ -73,7 +73,7 @@ function rowsFor(spec: (typeof CHARTS)[string]): string[][] {
   for (let i = 0; i < length; i += 1) {
     const row = [labelCell(labels[i], i)]
     for (const dataset of spec.datasets) {
-      const value = dataset.data[i] as number | [number, number] | undefined
+      const value = dataset.data[i] as number | [number, number] | null | undefined
       row.push(Array.isArray(value) ? cell(`${value[0]}-${value[1]}`) : cell(value ?? ''))
     }
     rows.push(row)

@@ -1,10 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="380" viewBox="0 0 960 380" role="img">
   <title>Two ways to connect a die to its package: wire bonding keeps the die face up and arcs thin wires from pads along its edges, while flip-chip turns the die face down so solder bumps can be placed anywhere on the active area</title>
-  <desc>Two packages side by side: wire bonding with the die face up and wires from the edge pads, and flip-chip with the die face down and bumps across the whole area. Not to scale.</desc>
+  <desc>Side by side: wire bonding with the die face up and wires fanning out from edge pads to the substrate, and flip-chip with the die face down and a row of solder bumps spread across the whole active area. Not to scale.</desc>
   <rect width="960" height="380" fill="#ffffff" />
   <style>
     .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
     .pt { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .tag { font: 600 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
     .lb { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
@@ -14,7 +13,6 @@
     .wire { stroke: #b7791f; stroke-width: 2.2; fill: none; }
     .bump { fill: #ed8936; stroke: #c05621; stroke-width: 1.2; }
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
-    .big { font: 600 40px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
   </style>
 
   <text class="h" x="40" y="36">Wire bonding versus flip-chip</text>
@@ -23,44 +21,53 @@
   <text class="tag" x="230" y="104" fill="#b7791f">edge pads only</text>
 
   <rect class="sub" x="70" y="308" width="360" height="38" rx="4" />
-  <rect class="die" x="150" y="244" width="200" height="64" rx="3" />
-  <rect class="pad" x="158" y="236" width="18" height="10" />
-  <rect class="pad" x="324" y="236" width="18" height="10" />
-  <path class="wire" d="M 167,236 C 128,186 110,238 108,306" />
-  <path class="wire" d="M 333,236 C 372,186 390,238 392,306" />
+  <rect class="die" x="160" y="246" width="180" height="62" rx="3" />
+  <rect class="pad" x="164" y="237" width="12" height="9" />
+  <rect class="pad" x="186" y="237" width="12" height="9" />
+  <rect class="pad" x="208" y="237" width="12" height="9" />
+  <rect class="pad" x="280" y="237" width="12" height="9" />
+  <rect class="pad" x="302" y="237" width="12" height="9" />
+  <rect class="pad" x="324" y="237" width="12" height="9" />
+  <path class="wire" d="M 170,237 C 124,172 94,192 96,307" />
+  <path class="wire" d="M 192,237 C 154,180 120,200 120,307" />
+  <path class="wire" d="M 214,237 C 186,188 146,208 144,307" />
+  <path class="wire" d="M 330,237 C 376,172 406,192 404,307" />
+  <path class="wire" d="M 308,237 C 346,180 380,200 380,307" />
+  <path class="wire" d="M 286,237 C 314,188 354,208 356,307" />
 
   <text class="lb" x="250" y="284" text-anchor="middle">die</text>
   <text class="lb" x="440" y="332">substrate</text>
   <path class="lead" d="M 436,328 L 420,326" />
-  <text class="lb" x="118" y="196">wire</text>
-  <path class="lead" d="M 130,200 L 140,222" />
+  <text class="lb" x="96" y="176">wire</text>
+  <path class="lead" d="M 118,180 L 130,196" />
 
-
-  <line x1="480" y1="90" x2="480" y2="440" stroke="#e2e8f0" stroke-width="1.5" />
+  <line x1="480" y1="90" x2="480" y2="352" stroke="#e2e8f0" stroke-width="1.5" />
 
   <text class="pt" x="510" y="104">Flip-chip</text>
   <text class="tag" x="660" y="104" fill="#c05621">pads across the whole area</text>
 
-  <rect class="sub" x="540" y="328" width="360" height="38" rx="4" />
-  <rect class="die" x="620" y="240" width="200" height="62" rx="3" />
-  <rect class="bump" x="640" y="302" width="22" height="26" />
-  <rect class="bump" x="694" y="302" width="22" height="26" />
-  <rect class="bump" x="748" y="302" width="22" height="26" />
-  <rect class="bump" x="802" y="302" width="22" height="26" />
-  <rect class="pad" x="644" y="292" width="14" height="10" />
-  <rect class="pad" x="698" y="292" width="14" height="10" />
-  <rect class="pad" x="752" y="292" width="14" height="10" />
-  <rect class="pad" x="806" y="292" width="14" height="10" />
-  <circle class="die" cx="650" cy="258" r="3" />
-  <circle class="die" cx="680" cy="258" r="3" />
-  <circle class="die" cx="710" cy="258" r="3" />
-  <circle class="die" cx="740" cy="258" r="3" />
-  <circle class="die" cx="770" cy="258" r="3" />
-  <circle class="die" cx="800" cy="258" r="3" />
+  <rect class="sub" x="540" y="308" width="360" height="38" rx="4" />
+  <rect class="die" x="600" y="222" width="220" height="66" rx="3" />
+  <rect class="pad" x="613" y="283" width="10" height="6" />
+  <rect class="pad" x="639" y="283" width="10" height="6" />
+  <rect class="pad" x="665" y="283" width="10" height="6" />
+  <rect class="pad" x="691" y="283" width="10" height="6" />
+  <rect class="pad" x="717" y="283" width="10" height="6" />
+  <rect class="pad" x="743" y="283" width="10" height="6" />
+  <rect class="pad" x="769" y="283" width="10" height="6" />
+  <rect class="pad" x="795" y="283" width="10" height="6" />
+  <ellipse class="bump" cx="618" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="644" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="670" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="696" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="722" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="748" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="774" cy="299" rx="7" ry="10" />
+  <ellipse class="bump" cx="800" cy="299" rx="7" ry="10" />
 
-  <text class="lb" x="720" y="228" text-anchor="middle">die (face down)</text>
-  <text class="lb" x="910" y="352" text-anchor="end">substrate</text>
-  <text class="lb" x="546" y="290">bump</text>
-  <path class="lead" d="M 578,294 L 636,310" />
+  <text class="lb" x="710" y="212" text-anchor="middle">die (face down)</text>
+  <text class="lb" x="890" y="352" text-anchor="end">substrate</text>
+  <text class="lb" x="560" y="290">bump</text>
+  <path class="lead" d="M 592,294 L 606,299" />
 
 </svg>

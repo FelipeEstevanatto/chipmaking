@@ -54,6 +54,10 @@ function datasetFor(dataset: (typeof spec.datasets)[number]) {
     tension: 0.25,
     fill: !!dataset.fill,
     borderWidth: 2,
+    // A range series draws over the bar it belongs to; the default groups bars side by side.
+    ...(dataset.grouped === false
+      ? { grouped: false, barPercentage: 1, categoryPercentage: 0.85 }
+      : {}),
   }
 }
 

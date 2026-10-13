@@ -87,7 +87,8 @@ export const CHARTS: Record<string, ChartSpec> = {
   /**
    * Concentration by stage. Each bar is the share held by the leading supplier or group *as that
    * source defines it*, so the bars are not strictly the same statistic — the caption says so.
-   * Floating ranges are used where the source publishes a range instead of a point.
+   * The bar reaches the lower bound of the published figure; a lighter overlaid series adds the
+   * upper part where the source gives an interval instead of a point.
    */
   'chokepoint-share': {
     id: 'chokepoint-share',
@@ -104,21 +105,29 @@ export const CHARTS: Record<string, ChartSpec> = {
     ],
     datasets: [
       {
+        pt: 'Piso citado',
+        en: 'Lower bound',
+        color: '#2b6cb0',
+        grouped: false,
+        data: [70, 90, 75, 90, 100],
+      },
+      {
         pt: 'Faixa publicada',
         en: 'Published range',
-        color: '#2b6cb0',
+        color: '#90cdf4',
+        grouped: false,
         data: [
           [70, 90],
           [90, 100],
-          [75, 75],
-          [90, 90],
-          [100, 100],
+          null,
+          null,
+          null,
         ],
       },
     ],
     caption: {
-      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha — as definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata.',
-      en: 'What the leader of each stage holds, according to each row\'s own source — the definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison.',
+      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha — as definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
+      en: 'What the leader of each stage holds, according to each row\'s own source — the definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the lower bound; the light segment adds the published range where the source gives an interval.',
     },
     sourceIds: ['sibelco-hpq', 'bernreuter-market', 'nikkei-wafer-share', 'fabm-neon-2022', 'asml-euv-products'],
     slug: 'chokepoint-share',
