@@ -204,7 +204,7 @@ O custo disso é o **kerf**: aproximadamente **30% do silício é perdido como s
 
 ### O wafer está crescendo
 
-A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²** e, mais recentemente, **15,6 × 15,6 cm²** <Cite id="saimm" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
+A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²**, **15,6 × 15,6 cm²** e os formatos atuais de **182 mm e 210 mm** de lado <Cite id="saimm" /> <Cite id="itrpv-2024" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
 
 <SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
 

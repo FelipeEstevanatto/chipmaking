@@ -64,7 +64,7 @@ O silício tem gap de **1,12 eV**, estreito o suficiente para conduzir quando se
 
 O detalhe decisivo, porém, é que esse gap é **indireto**: o mínimo da banda de condução e o máximo da banda de valência não estão no mesmo ponto do espaço de momentos. Absorver ou emitir um fóton exige, então, a ajuda de uma vibração da rede, o que torna os dois processos muito menos prováveis <Cite id="elem-sze" />.
 
-Daí saem duas consequências. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem** — o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio).
+Daí saem duas consequências. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem** — o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio) <Cite id="si-photonics-laser" />.
 
 <ClientOnly>
   <DataChart chart="band-gap" />

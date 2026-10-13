@@ -92,7 +92,7 @@ const list: Citation[] = [
     num: 11,
     title: 'Silicon and ferrosilicon production',
     publisher: 'CSIRO',
-    url: 'https://www.csiro.au/',
+    url: 'https://www.csiro.au/en/news/All/Articles/2024/August/Silicon-critical-mineral',
     short: 'CSIRO',
   },
   {
@@ -108,7 +108,7 @@ const list: Citation[] = [
     num: 13,
     title: 'Silicon production and materials',
     publisher: 'Elkem',
-    url: 'https://www.elkem.com/',
+    url: 'https://magazine.elkem.com/material-science-insights/from-quartz-to-silicon-to-silicones/',
     short: 'Elkem',
   },
   {
@@ -2117,6 +2117,29 @@ const list: Citation[] = [
     publisher: 'IEEE',
     url: 'https://irds.ieee.org/images/files/pdf/2022/2022IRDS_BC.pdf',
     short: 'IRDS (Beyond CMOS)',
+  },
+  {
+    key: 'tqc-history',
+    num: 264,
+    title: 'History — The Quartz Corp',
+    publisher: 'The Quartz Corp',
+    url: 'https://www.thequartzcorp.com/articles/history',
+    short: 'The Quartz Corp (história)',
+  },
+  {
+    key: 'semi-t7',
+    num: 265,
+    title: 'Specification for back surface marking of polished monocrystalline silicon wafers',
+    publisher: 'SEMI T7',
+    short: 'SEMI T7',
+  },
+  {
+    key: 'si-photonics-laser',
+    num: 266,
+    title: 'On-Chip Lasers for Silicon Photonics',
+    publisher: 'Photonics (MDPI) 11(3), 212 — 2024',
+    url: 'https://www.mdpi.com/2304-6732/11/3/212',
+    short: 'Photonics (lasers)',
   },
 ]
 

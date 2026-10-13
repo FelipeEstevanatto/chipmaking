@@ -89,7 +89,7 @@ From 200 mm upwards the straight flat gives way to a single **V-shaped notch** w
 - included angle of **90°** (+5 / −1);
 - axis aligned to **&lt;110&gt;**, within **±1°**.
 
-That is the notch's entire informational payload: **orientation**. The standard also defines 200 mm wafers *with* a flat, and those come explicitly **without** a secondary fiducial <Cite id="semi-m1" />. In other words, from 200 mm upwards the edge stops telling you whether the wafer is **P** or **N**. That information moves to the lot certificate or to the **laser mark on the back** (SEMI **T7** format, with an optional **A/N** field) <Cite id="semi-m1" />.
+That is the notch's entire informational payload: **orientation**. The standard also defines 200 mm wafers *with* a flat, and those come explicitly **without** a secondary fiducial <Cite id="semi-m1" />. In other words, from 200 mm upwards the edge stops telling you whether the wafer is **P** or **N**. That information moves to the lot certificate or to the **laser mark on the back** (SEMI **T7** format, with an optional **A/N** field) <Cite id="semi-t7" />.
 
 ### What the diameter tells you
 

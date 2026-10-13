@@ -89,7 +89,7 @@ A partir de 200 mm o chanfro reto é substituído por um único **entalhe em V**
 - ângulo incluído de **90°** (+5 / −1);
 - eixo alinhado a **&lt;110&gt;**, com tolerância de **±1°**.
 
-Esse é todo o conteúdo informacional do notch: **orientação**. A norma também define wafers de 200 mm *com* flat, e nesse caso eles vêm explicitamente **sem** fiducial secundário <Cite id="semi-m1" />. Ou seja: a partir de 200 mm a borda deixa de dizer se o wafer é **P** ou **N**. Essa informação passa a vir do certificado do lote ou da **marcação a laser no verso** (formato **SEMI T7**, com campo opcional **A/N**) <Cite id="semi-m1" />.
+Esse é todo o conteúdo informacional do notch: **orientação**. A norma também define wafers de 200 mm *com* flat, e nesse caso eles vêm explicitamente **sem** fiducial secundário <Cite id="semi-m1" />. Ou seja: a partir de 200 mm a borda deixa de dizer se o wafer é **P** ou **N**. Essa informação passa a vir do certificado do lote ou da **marcação a laser no verso** (formato **SEMI T7**, com campo opcional **A/N**) <Cite id="semi-t7" />.
 
 ### O que o diâmetro informa
 

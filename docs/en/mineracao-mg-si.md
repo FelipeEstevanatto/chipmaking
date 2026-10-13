@@ -49,7 +49,7 @@ Sibelco, one of the two miners at Spruce Pine, has published a video about the s
 
 ### Drag, Norway: where the quartz is purified
 
-The other hub sits above the Arctic Circle. In **Drag**, in the municipality of Hamarøy (Nordland), **Norwegian Crystallites AS** was founded in 1996 by Norsk Mineral to produce ultra-high-purity quartz <Cite id="quartzcorp-hpq" />. In 2011 it and the quartz assets of France's Imerys merged to form **The Quartz Corp**, and the Drag plant became the final purification point on the route <Cite id="quartzcorp-hpq" />.
+The other hub sits above the Arctic Circle. In **Drag**, in the municipality of Hamarøy (Nordland), **Norwegian Crystallites AS** was founded in 1996 by Norsk Mineral to produce ultra-high-purity quartz <Cite id="tqc-history" />. In 2011 it and the quartz assets of France's Imerys merged to form **The Quartz Corp**, and the Drag plant became the final purification point on the route <Cite id="tqc-history" />.
 
 Part of the ore comes from the region's own dozens of pegmatite bodies; most of it, however, crosses the Atlantic from Spruce Pine. Purification is a sequence of four steps, each one removing a class of contaminant <Cite id="quartzcorp-hpq" />:
 

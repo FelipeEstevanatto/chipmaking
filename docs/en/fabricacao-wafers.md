@@ -204,7 +204,7 @@ The cost of that is **kerf**: roughly **30% of the silicon is lost as saw dust**
 
 ### Wafers keep growing
 
-The photovoltaic industry has migrated to larger areas over time: from the **10 × 10 cm²** standard to **12.5 × 12.5 cm²** and, more recently, **15.6 × 15.6 cm²** <Cite id="saimm" />. The driving force is simple: a larger cell means a **lower cost per watt-peak** <Cite id="saimm" />.
+The photovoltaic industry has migrated to larger areas over time: from the **10 × 10 cm²** standard to **12.5 × 12.5 cm²**, **15.6 × 15.6 cm²** and today's **182 mm and 210 mm** formats <Cite id="saimm" /> <Cite id="itrpv-2024" />. The driving force is simple: a larger cell means a **lower cost per watt-peak** <Cite id="saimm" />.
 
 <SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
 

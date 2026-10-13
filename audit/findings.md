@@ -39,7 +39,7 @@ Fix the class, not the instance; grep for the rest after each fix.
 - **HPQ "70 a 90 %" with no published source**: `mineracao-mg-si-03`, `gargalos-02`, and the
   `chokepoint-share` row that rides on the same `sibelco-hpq` marker. Replace the marker or hedge
   the claim, in all three places.
-- **Uncited claims**: `o-elemento-silicio-03`, `fotolitografia-02` — a claim with no `<Cite>` is a
+- **Uncited claims**: `fotolitografia-02` — a claim with no `<Cite>` is a
   blocker per the repo's own rule, even when the number is plausible.
 
 ## Report — docs/index.md, docs/introducao.md, docs/o-elemento-silicio.md, docs/mineracao-mg-si.md (+ en/ mirrors)
@@ -80,16 +80,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 
 ### o-elemento-silicio
 
-### o-elemento-silicio-03 — the photonics claim has no citation
-- where: docs/o-elemento-silicio.md:L47 (and docs/en/o-elemento-silicio.md:L47)
-- category: source
-- severity: major
-- quote: "A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio)."
-- problem: The sentence carries no `<Cite>` and is a factual claim about silicon photonics, not a summary of the paragraph's cited source (the `<Cite id="saimm" />` closes the previous sentence about solar absorption). Every factual claim needs a marker.
-- fix: Add a source for the indirect-gap/no-efficient-emission consequence — `elem-sze` (already in the page's SourceNote) or a silicon-photonics reference appended to `citations.ts` — and put the marker on this sentence, not on its neighbour.
-- verification: verified (sentence read with no `<Cite>`); the right source needs the lookup (a photonics review, or reuse `elem-sze` if the fixing agent confirms it states the claim).
-- confidence: high
-
 ### o-elemento-silicio-06 — idea: a figure for the density anomaly
 - where: docs/o-elemento-silicio.md:L35 (and docs/en/o-elemento-silicio.md:L35)
 - category: idea
@@ -122,26 +112,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - verification: verified that the cited page does not carry the numbers (fetched 2026-09-28; page has no ppm/ppb text); the replacement source needs the lookup (Sibelco IOTA datasheet, or the study behind the 70–90 % claim).
 - confidence: high
 
-### mineracao-mg-si-06 — the 1996 founding date is not on the cited page and conflicts with the company's own history
-- where: docs/mineracao-mg-si.md:L30 (and docs/en/mineracao-mg-si.md:L30)
-- category: fact
-- severity: major
-- quote: "Em **Drag**, no município de Hamarøy (Nordland), a **Norwegian Crystallites AS** foi fundada em 1996 pela Norsk Mineral para produzir quartzo de altíssima pureza <Cite id="quartzcorp-hpq" />"
-- problem: The cited page (`https://www.thequartzcorp.com/high-purity-quartz`) gives no founding date, and the company's own history page lists "1914 Norway operations founded / 1957 U.S. operations founded / 2011 The Quartz Corp established" — no 1996 and no Norwegian Crystallites. The 1996 date may be right from another source, but the marker currently points where it cannot be checked, and the next sentence ("Em 2011, ela e os ativos de quartzo da francesa Imerys se uniram…") mixes the two company histories.
-- fix: Find the source that states the 1996 founding (TQC press material, Norwegian business registry) and cite it, or reword to "as operações norueguesas, cujo escritório em Drag data de…" following the cited history page; keep the 2011 JV sentence as it is.
-- verification: needs external verification (the 1996 founding of Norwegian Crystallites AS — Brønnøysund Register Centre / TQC company history).
-- confidence: medium
-
-### mineracao-mg-si-09 — two citations resolve to organisation homepages
-- where: docs/mineracao-mg-si.md:L51 (and docs/en/mineracao-mg-si.md:L51; entries at docs/.vitepress/theme/citations.ts:L90-L97 and L106-L113)
-- category: source
-- severity: minor
-- quote: "<Cite id=\"elkem\" />" and "<Cite id=\"csiro\" />" — "Esse processo ocorre em fornos elétricos de arco submerso a temperaturas de aproximadamente 2000 °C, consumindo altos níveis de energia"
-- problem: `elkem` (num 13) points at `https://www.elkem.com/` and `csiro` (num 11) at `https://www.csiro.au/`; neither is a document, so the ~2000 °C and energy-intensity claims — the numbers the sentence turns on — cannot be found from the citation.
-- fix: Replace the URLs with the specific Elkem/CSIRO pages or reports that state the temperature and energy figures (both companies publish process explainers); the keys stay, only `url` changes.
-- verification: needs external verification (locate the Elkem and CSIRO pages carrying the claims).
-- confidence: high
-
 ### mineracao-mg-si-10 — idea: the 2024 Spruce Pine disruption
 - where: docs/mineracao-mg-si.md:L15-L27 (and docs/en/mineracao-mg-si.md:L15-L27), the Spruce Pine section
 - category: idea
@@ -155,16 +125,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 ## Report — polissilicio + estrutura-wafers
 
 ### polissilicio
-
-### polissilicio-02 — 2023 endpoint of the Kristiansand plant cited only to a 2012 article
-- where: docs/polissilicio.md:L195 (and docs/en/polissilicio.md:L195)
-- category: source
-- severity: major
-- quote: "Entre **2009 e 2023**, uma planta em Kristiansand, no sul da Noruega, operou em escala industrial uma das poucas rotas sem cloro que de fato entregou silício de grau solar <Cite id="elkem-solar-route" />." / "Between **2009 and 2023**, a plant in Kristiansand, in southern Norway, ran at industrial scale one of the few chlorine-free routes that actually shipped solar-grade silicon <Cite id="elkem-solar-route" />."
-- problem: `elkem-solar-route` is Odden et al., Photovoltaics International ed. 16, **May 2012** — it can support 2009 and the process, not the 2023 end of operation. The closure is separately and correctly sourced further down the page (`rec-closure-2023`, cited at L229), but the sentence's own marker claims a span the cited document cannot cover.
-- fix: add the closure citation to this sentence — `<Cite id="elkem-solar-route" /> <Cite id="rec-closure-2023" />` (both entries already exist) — or reword the span to the period the article supports and let the later section carry the shutdown.
-- verification: verified — `citations.ts` dates the entry to May 2012; `rec-closure-2023` (pv magazine) documents the November 2023 closure cited at L229.
-- confidence: high
 
 ### polissilicio-03 — "Five stages, three of them purification" could not be verified
 - where: docs/polissilicio.md:L197 (and docs/en/polissilicio.md:L197)
@@ -217,16 +177,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: translate the PT caption to "A estrutura cristalina cúbica de diamante." and add a derivation line to both locales naming the source: the images are page 8 of `Resumo Chipmaking.pdf` (`scripts/extract-pdf-images.py:7,20` produces `p08-N`). If the embedded figure is third-party, name author and licence as the rules require.
 - verification: verified — the PT/EN captions were compared directly; the script mapping to page 8 was read.
 - confidence: high (untranslated caption); medium (whether a credit or only a derivation note is required)
-
-### estrutura-wafers-04 — SEMI T7 detail cited to the SEMI M1 entry
-- where: docs/estrutura-wafers.md:L88 (and docs/en/estrutura-wafers.md:L88)
-- category: source
-- severity: minor
-- quote: "Essa informação passa a vir do certificado do lote ou da **marcação a laser no verso** (formato **SEMI T7**, com campo opcional **A/N**) <Cite id="semi-m1" />." / "That information moves to the lot certificate or to the **laser mark on the back** (SEMI **T7** format, with an optional **A/N** field) <Cite id="semi-m1" />."
-- problem: `semi-m1` resolves to "SEMI M1 — Specification for Polished Single Crystal Silicon Wafers"; T7 is a separate standard and there is no entry for it in `citations.ts`. The marker's source does not publish the T7 claim.
-- fix: append a `semi-t7` entry to `citations.ts` (SEMI back-surface laser-marking spec; check the exact title and number on the SEMI store) and cite it for this sentence, keeping `semi-m1` for the notch dimensions; append at the end of the list, never renumber.
-- verification: verified — `citations.ts` num 46 is M1 only; a project-wide grep found no T7 source.
-- confidence: high
 
 ### estrutura-wafers-05 — One sentence, two sources: split the attribution of the share numbers
 - where: docs/estrutura-wafers.md:L122 (and docs/en/estrutura-wafers.md:L122)
@@ -311,16 +261,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - fix: add a short credit sentence before the embeds and either add the three videos to the page `<SourceNote>` (with `citations.ts` entries if they are to be numbered) or list them in the video section of `/referencias`; the same edit in the EN file.
 - verification: verified by grep: the three embed IDs occur only in the two chapter files; `docs/referencias.md` lists only `CPmMfasVxbY`.
 - confidence: high
-
-### fabricacao-wafers-06 — "Wafers keep growing" stops at 2011 formats
-- where: docs/fabricacao-wafers.md:L196 (and docs/en/fabricacao-wafers.md:L196)
-- category: fact
-- severity: major
-- quote: "do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²** e, mais recentemente, **15,6 × 15,6 cm²** <Cite id="saimm" />" / "from the **10 × 10 cm²** standard to **12.5 × 12.5 cm²** and, more recently, **15.6 × 15.6 cm²**"
-- problem: The sentence is written from a 2011 source (Xakalashe & Tangstad) on a page stamped `dataAsOf: 2025`. Since ~2019 the industry formats have moved to M6/M10 (166/182 mm) and G12 (210 mm); "more recently, 15.6 cm" tells a 2025 reader the opposite of the truth. The chapter's own ITRPV cite is already on the page (L184) but not used here.
-- fix: extend the sentence with the current formats and attach `<Cite id="itrpv-2024" />` (or the full ITRPV report), or drop "mais recentemente" and attribute the whole series to the 2011 source.
-- verification: needs external verification — ITRPV 15th ed. (2024), wafer-size chart / shipments by area, for the formats in use in 2023 (182/210 mm dominate). `docs/celulas-solares.md` also carries no format data, so there is no internal cross-check.
-- confidence: medium (direction certain, exact numbers to confirm)
 
 ### fabricacao-wafers-08 — ITRPV thickness claim points at a press release, where the split is unlikely to exist
 - where: docs/fabricacao-wafers.md:L184 (and docs/en/fabricacao-wafers.md:L184)
@@ -618,16 +558,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - problem: the chapter has no table and no "Node" column. The recap table was replaced by the numbered spine list plus the `<TransistorFacts>` chip that opens each section — `theme/TransistorFacts.vue` says in its own comment "The table itself is gone". A reader sent to look for the column and the table finds neither.
 - fix: rewrite both sentences around what is actually rendered (the node pill in the `<TransistorFacts>` line at the top of each section) or restore the table; change PT and EN in the same edit.
 - verification: verified — no markdown table exists in either locale; the component comment documents the removal.
-- confidence: high
-
-### transistores-05 — SourceNote omits three sources the prose cites
-- where: docs/transistores.md:L244 (and docs/en/transistores.md:L244)
-- category: source
-- severity: major
-- quote: "<SourceNote :ids="['intel-4004', 'intel-chmos3', … 'itrs-1999', 'itrs-2001']" />" against prose citations "<Cite id="wikipedia-22nm" />" (L36), "<Cite id="intel-strain" />" (L116) and "<Cite id="asml-gaa" />" (L178)
-- problem: an id-set diff of the two locales gives 32 ids cited and 29 listed; `wikipedia-22nm`, `intel-strain` and `asml-gaa` are dropped, while `na-fab` and `insumos-fab` list every id they cite. The chapter's own source list is incomplete even though `/referencias` still renders the entries.
-- fix: append the three ids to both SourceNote lists (order is irrelevant); no `citations.ts` renumbering is needed.
-- verification: verified by grep and set difference on both locales.
 - confidence: high
 
 ### transistores-06 — Five PDF-extracted figures carry no author, file or licence

@@ -49,7 +49,7 @@ A Sibelco, uma das duas mineradoras de Spruce Pine, publicou um vídeo sobre o s
 
 ### Drag, Noruega: onde o quartzo é purificado
 
-O outro polo fica acima do Círculo Polar Ártico. Em **Drag**, no município de Hamarøy (Nordland), a **Norwegian Crystallites AS** foi fundada em 1996 pela Norsk Mineral para produzir quartzo de altíssima pureza <Cite id="quartzcorp-hpq" />. Em 2011, ela e os ativos de quartzo da francesa Imerys se uniram para formar a **The Quartz Corp**, e a planta de Drag passou a ser o ponto de purificação final da rota <Cite id="quartzcorp-hpq" />.
+O outro polo fica acima do Círculo Polar Ártico. Em **Drag**, no município de Hamarøy (Nordland), a **Norwegian Crystallites AS** foi fundada em 1996 pela Norsk Mineral para produzir quartzo de altíssima pureza <Cite id="tqc-history" />. Em 2011, ela e os ativos de quartzo da francesa Imerys se uniram para formar a **The Quartz Corp**, e a planta de Drag passou a ser o ponto de purificação final da rota <Cite id="tqc-history" />.
 
 Parte do minério sai dali mesmo, das dezenas de corpos pegmatíticos da região; a maior parte, porém, cruza o Atlântico vindo de Spruce Pine. A purificação é uma sequência de quatro etapas, cada uma delas removendo uma classe de contaminante <Cite id="quartzcorp-hpq" />:
 

@@ -204,7 +204,7 @@ The route has the potential to become dominant, but in 2008 it accounted for **l
 
 ### An industrial case: Elkem's silicon blocks in Kristiansand
 
-Between **2009 and 2023**, a plant in Kristiansand, in southern Norway, ran at industrial scale one of the few chlorine-free routes that actually shipped solar-grade silicon <Cite id="elkem-solar-route" />.
+Between **2009 and 2023**, a plant in Kristiansand, in southern Norway, ran at industrial scale one of the few chlorine-free routes that actually shipped solar-grade silicon <Cite id="elkem-solar-route" /> <Cite id="rec-closure-2023" />.
 
 Elkem had been studying metallurgical routes since the late 1970s and reached the industrialised concept in **2009**. It chains **five stages**, of which **three are purification** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
 
