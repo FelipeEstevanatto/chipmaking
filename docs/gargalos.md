@@ -25,7 +25,7 @@ A resposta tem um padrão, e o padrão se repete etapa por etapa.
 | Litografia EUV | ASML (Holanda) | **fornecedora única** | As camadas críticas dos nós de ponta |
 | Neônio grau semicondutor | Ucrânia | **cerca de metade** do neônio mundial e **90%** do grau semicondutor | Os lasers de excímero da [litografia DUV](/fotolitografia) |
 
-<Cite id="sibelco-hpq" /> <Cite id="usgs-mcs-2026" /> <Cite id="bernreuter-market" /> <Cite id="nikkei-wafer-share" /> <Cite id="asml-euv-products" /> <Cite id="fabm-neon-2022" />
+<Cite id="construction-physics-spruce-pine" /> <Cite id="usgs-mcs-2026" /> <Cite id="bernreuter-market" /> <Cite id="nikkei-wafer-share" /> <Cite id="asml-euv-products" /> <Cite id="fabm-neon-2022" />
 
 O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava — e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo formato do gargalo de Spruce Pine: **um insumo barato, pouco visível e insubstituível a curto prazo**.
 
@@ -55,7 +55,7 @@ Mercados grandes deveriam ter muitos fornecedores. Três forças empurram na dir
 
 A conclusão não é que a cadeia seja frágil por descuido. É que ela foi **otimizada para custo** durante décadas, e a concentração é o resultado dessa otimização. O preço da eficiência é a ausência de plano B.
 
-<SourceNote :ids="['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'fabm-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
+<SourceNote :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'fabm-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
 
 <SeeAlso :links="[
   { text: 'Preços e valor', href: '/precos-e-valor', note: 'onde o dinheiro está na cadeia' },

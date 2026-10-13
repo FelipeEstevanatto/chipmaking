@@ -36,9 +36,7 @@ would ship a new error.
 
 Fix the class, not the instance; grep for the rest after each fix.
 
-- **HPQ "70 a 90 %" with no published source**: `mineracao-mg-si-03`, `gargalos-02`, and the
-  `chokepoint-share` row that rides on the same `sibelco-hpq` marker. Replace the marker or hedge
-  the claim, in all three places.
+- **IOTA grade figures without a published source**: `mineracao-mg-si-03` — the 0.04 ppm boron limit and the 99.9992 % / 80 ppb / < 50 ppb IOTA spec hang on `sibelco-hpq`, which does not carry them. (The 70–90 % share is now sourced to `construction-physics-spruce-pine`.)
 - **Uncited claims**: `fotolitografia-02` — a claim with no `<Cite>` is a
   blocker per the repo's own rule, even when the number is plausible.
 
@@ -102,14 +100,14 @@ Fix the class, not the instance; grep for the rest after each fix.
 
 ### mineracao-mg-si
 
-### mineracao-mg-si-03 — the Sibelco-sourced numbers are not on the cited page
-- where: docs/mineracao-mg-si.md:L17, L45, L47 (and docs/en/mineracao-mg-si.md:L17, L45, L47)
+### mineracao-mg-si-03 — the IOTA grade figures are not on the cited page
+- where: docs/mineracao-mg-si.md:L71-L72, L77-L78 (and docs/en/mineracao-mg-si.md:L71-L72, L77-L78)
 - category: source
 - severity: major
-- quote: "cerca de **70% a 90% do quartzo de alta pureza do mundo** sai de uma única região … <Cite id="sibelco-hpq" />" and "O grau mais exigente da linha IOTA® chega a **99,9992% de SiO₂**, com K + Li + Na somando **80 ppb** e metais de transição críticos abaixo de 50 ppb <Cite id="sibelco-hpq" />" and "boro abaixo de 0,04 ppm"
-- problem: `sibelco-hpq` (num 48) resolves to `https://www.sibelco.com/en/materials/high-purity-quartz`; the fetched page confirms IOTA is mined at Spruce Pine for CZ crucibles but prints none of these figures — not the 70–90 % share, not the 0,04 ppm boron limit, not the 99,9992 %/80 ppb/<50 ppb spec. The 70–90 % number is also used on `/gargalos`, so the same unsupported figure appears twice in the site. Company landing pages are fine for company facts; they cannot carry a market share.
-- fix: Point the share at the analysis that measures it (press/deposit studies — verify before citing) or reword to what Sibelco does state ("the world's highest-quality quartz", mined at Spruce Pine); point the material spec at the IOTA grade datasheet or technical data sheet, and add it as its own citation entry rather than hanging it on the landing page.
-- verification: verified that the cited page does not carry the numbers (fetched 2026-09-28; page has no ppm/ppb text); the replacement source needs the lookup (Sibelco IOTA datasheet, or the study behind the 70–90 % claim).
+- quote: "CZ crucibles therefore require **boron below 0.04 ppm**, or 40 parts per billion <Cite id="sibelco-hpq" />" and "The most demanding grade in the IOTA® line reaches **99.9992% SiO₂**, with K + Li + Na totalling **80 ppb** and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />"
+- problem: The `sibelco-hpq` page is the Sibelco high-purity-quartz landing page; it prints none of these figures — not the 0.04 ppm boron limit, not the 99.9992 % / 80 ppb / < 50 ppb IOTA spec. The 70–90 % share has since been re-sourced to `construction-physics-spruce-pine`; these material-spec numbers are still hung on a page that does not carry them.
+- fix: Point the material spec at the IOTA grade datasheet or technical data sheet, added as its own citation entry, rather than the landing page.
+- verification: needs external verification (the datasheet is not public; the numbers may come from the `sciencedirect-hpq` study — check before re-citing).
 - confidence: high
 
 ### mineracao-mg-si-10 — idea: the 2024 Spruce Pine disruption
@@ -1349,16 +1347,6 @@ Fix the class, not the instance; grep for the rest after each fix.
 - confidence: medium
 
 ### gargalos
-
-### gargalos-02 — The 70–90 % quartz share is not on the page cited for it
-- where: docs/gargalos.md:L21 (and docs/en/gargalos.md:L21)
-- category: source
-- severity: major
-- quote: "| Quartzo de alta pureza (HPQ) | Spruce Pine, EUA (Sibelco e The Quartz Corp) | **70 a 90%** do quartzo de alta pureza do mundo |" with `<Cite id="sibelco-hpq" />` on L28
-- problem: the marker resolves to Sibelco's high-purity quartz product page (citations.ts:386-393, https://www.sibelco.com/en/materials/high-purity-quartz). I fetched and read that page: it describes the IOTA grades, Spruce Pine, and the CZ crucible and photovoltaic uses, but it publishes no market share — the phrase "the world's highest quality quartz" is as close as it gets. The same claim with the same marker sits in docs/mineracao-mg-si.md:L17, and the chart's `chokepoint-share` row (specs.ts:96-113, "Quartzo HPQ — Spruce Pine", 70–90) rides on the same key, so the page's headline concentration figure has no primary source behind it.
-- fix: replace the marker with a source that prints the share (a market study, USGS, or the SAIMM 2011 paper already cited as `saimm`, which discusses HPQ supply), or hedge the entry to what Sibelco supports ("praticamente todo o quartzo de alta pureza de grau eletrônico sai da região de Spruce Pine, segundo a própria fornecedora") and note in the caption that the range is an industry estimate without a single published tabulation. Fix `mineracao-mg-si` and the chart's `sourceIds` in the same pass.
-- verification: verified (https://www.sibelco.com/en/materials/high-purity-quartz fetched and read in this run: no percentage appears).
-- confidence: high
 
 ### gargalos-04 — The page is called a map and has no map; two of its four sections have no figure
 - where: docs/gargalos.md:L1-L56 (and docs/en/gargalos.md:L1-L56)

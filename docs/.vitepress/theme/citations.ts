@@ -2141,6 +2141,14 @@ const list: Citation[] = [
     url: 'https://www.mdpi.com/2304-6732/11/3/212',
     short: 'Photonics (lasers)',
   },
+  {
+    key: 'construction-physics-spruce-pine',
+    num: 267,
+    title: 'Does All Semiconductor Manufacturing Depend on Spruce Pine Quartz?',
+    publisher: 'Brian Potter — Construction Physics (2024)',
+    url: 'https://www.construction-physics.com/p/does-all-semiconductor-manufacturing',
+    short: 'Construction Physics (Spruce Pine)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

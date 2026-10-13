@@ -24,7 +24,7 @@ The text follows that order.
 
 ## Quartz mining (HPQ)
 
-Not every silica will do for a crucible. The quartz must be free of **boron** and of alkali metals down to the **parts-per-billion** level, and deposits like that are exceedingly rare: roughly **70% to 90% of the world's high-purity quartz** comes from a single region — the pegmatites of **Spruce Pine**, in the Appalachian mountains of North Carolina <Cite id="sibelco-hpq" />.
+Not every silica will do for a crucible. The quartz must be free of **boron** and of alkali metals down to the **parts-per-billion** level, and deposits like that are exceedingly rare: roughly **70% to 90% of the world's high-purity quartz** comes from a single region — the pegmatites of **Spruce Pine**, in the Appalachian mountains of North Carolina <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine: where the quartz is pure enough
 

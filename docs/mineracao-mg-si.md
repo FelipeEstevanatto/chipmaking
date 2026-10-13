@@ -24,7 +24,7 @@ O texto segue essa ordem.
 
 ## Mineração de quartzo (HPQ)
 
-Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de **boro** e de metais alcalinos na casa das **partes por bilhão**, e depósitos assim são raríssimos: cerca de **70% a 90% do quartzo de alta pureza do mundo** sai de uma única região — os pegmatitos de **Spruce Pine**, nos montes Apalaches da Carolina do Norte <Cite id="sibelco-hpq" />.
+Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de **boro** e de metais alcalinos na casa das **partes por bilhão**, e depósitos assim são raríssimos: cerca de **70% a 90% do quartzo de alta pureza do mundo** sai de uma única região — os pegmatitos de **Spruce Pine**, nos montes Apalaches da Carolina do Norte <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine: onde o quartzo é puro o suficiente
 
