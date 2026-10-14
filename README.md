@@ -2,7 +2,10 @@
   <img src="docs/public/favicon.svg" alt="Wafer de silício com o entalhe de orientação" width="88" height="88">
 </p>
 
-<h1 align="center">chipmaking</h1>
+<h1 align="center">Chipmaking</h1>
+
+<img width="1753" height="707" alt="image" src="https://github.com/user-attachments/assets/55ab5a82-8b2b-454a-942d-c018d1561f52" />
+
 
 <p align="center">A cadeia de produção do silício, do quartzo ao chip e à célula solar.</p>
 
