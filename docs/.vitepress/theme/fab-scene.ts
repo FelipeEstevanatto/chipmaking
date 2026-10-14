@@ -1030,42 +1030,87 @@ export class FabScene {
     const depth = depthNm * 0.9
     const maskH = 26
     const maskTop = SUF - maskH
-
-    // Plasma and the ions it accelerates at the wafer.
     const on = span(s, 0.2, 1.0)
-    ctx.save()
-    ctx.globalAlpha = on
-    const g = ctx.createLinearGradient(0, 60, 0, maskTop)
-    g.addColorStop(0, 'rgba(79, 209, 197, 0.05)')
-    g.addColorStop(1, 'rgba(79, 209, 197, 0.38)')
-    ctx.fillStyle = g
-    ctx.fillRect(X0 - 20, 60, VW + 40, maskTop - 60)
-    ctx.restore()
 
-    if (this.motion) {
-      for (let i = 0; i < 30; i += 1) {
-        const phase = (((s * 1.1 + i / 30) % 1) + 1) % 1
-        const x = X0 + 20 + ((i * 71) % (VW - 40))
-        const y = maskTop - phase * (maskTop - 70)
-        this.dot(ctx, x, y, 2.4, p.filmLine, on * 0.85)
-      }
-    }
-
-    // The trenches, cut only where the mask opened.
+    // The wafer, with the trenches cut only where the mask opened.
     this.silicon(ctx, p, SUF)
     if (depth > 1) {
       for (const w of WIN) {
+        const cxm = (w.a + w.b) / 2
         ctx.clearRect(w.a, SUF, w.b - w.a, depth)
-        this.line(ctx, w.a, SUF, w.a, SUF + depth, p.siLine, 1.4)
-        this.line(ctx, w.b, SUF, w.b, SUF + depth, p.siLine, 1.4)
-        this.line(ctx, w.a, SUF + depth, w.b, SUF + depth, p.siLine, 1.4)
+        const shade = ctx.createLinearGradient(0, SUF, 0, SUF + depth)
+        shade.addColorStop(0, 'rgba(0, 0, 0, 0.03)')
+        shade.addColorStop(1, 'rgba(0, 0, 0, 0.24)')
+        ctx.fillStyle = shade
+        ctx.fillRect(w.a, SUF, w.b - w.a, depth)
+        this.line(ctx, w.a, SUF, w.a, SUF + depth, p.siLine, 1.6)
+        this.line(ctx, w.b, SUF, w.b, SUF + depth, p.siLine, 1.6)
+        this.line(ctx, w.a, SUF + depth, w.b, SUF + depth, p.siLine, 1.6)
+
+        // The by-products of the etch are pumped away, so they leave the trench.
+        if (this.motion && depth > 14) {
+          for (let k = 0; k < 3; k += 1) {
+            const t = (((s * 0.7 + k / 3) % 1) + 1) % 1
+            this.dot(ctx, cxm + Math.sin(k * 2.1 + s) * 9, SUF + depth - t * (depth + 46), 2, p.good, (1 - t) * 0.5)
+          }
+        }
+
+        // Where the ions strike the floor.
+        if (this.motion && depth > 14) {
+          const flash = (((s * 1.4) % 1) + 1) % 1
+          ctx.save()
+          ctx.globalAlpha = (1 - flash) * 0.6 * on
+          ctx.strokeStyle = p.filmLine
+          ctx.lineWidth = 1.4
+          ctx.beginPath()
+          ctx.ellipse(cxm, SUF + depth, 6 + flash * 16, 2 + flash * 5, 0, 0, Math.PI * 2)
+          ctx.stroke()
+          ctx.restore()
+        }
+      }
+    }
+
+    // The plasma: a dim body with a bright sheath right above the wafer. The sheath is where the
+    // ions are accelerated, and it is why they arrive perpendicular to the surface.
+    const breath = 0.84 + 0.16 * Math.sin(s * 3.2)
+    const body = ctx.createLinearGradient(0, 44, 0, maskTop)
+    body.addColorStop(0, 'rgba(79, 209, 197, 0.04)')
+    body.addColorStop(0.7, 'rgba(79, 209, 197, 0.13)')
+    body.addColorStop(1, 'rgba(79, 209, 197, 0.32)')
+    ctx.save()
+    ctx.globalAlpha = on * breath
+    ctx.fillStyle = body
+    ctx.fillRect(X0 - 40, 44, VW + 80, maskTop - 44)
+    const sheath = ctx.createLinearGradient(0, maskTop - 38, 0, maskTop)
+    sheath.addColorStop(0, 'rgba(79, 209, 197, 0)')
+    sheath.addColorStop(1, 'rgba(196, 255, 247, 0.48)')
+    ctx.fillStyle = sheath
+    ctx.fillRect(X0 - 40, maskTop - 38, VW + 80, 38)
+    ctx.restore()
+
+    // Ion trajectories: dead vertical, the dots crowding as the field accelerates them.
+    if (this.motion && on > 0.05) {
+      const cols = 15
+      for (let i = 0; i < cols; i += 1) {
+        const x = X0 + 18 + (i / (cols - 1)) * (VW - 36)
+        const inWindow = WIN.some((w) => x > w.a && x < w.b)
+        const endY = inWindow ? SUF + depth : maskTop + 4
+        ctx.save()
+        ctx.globalAlpha = 0.15 * on
+        this.line(ctx, x, 58, x, endY, p.filmLine, 1)
+        ctx.restore()
+        for (let k = 0; k < 3; k += 1) {
+          const t = (((s * 0.5 + i * 0.31 + k / 3) % 1) + 1) % 1
+          this.dot(ctx, x, 58 + Math.pow(t, 1.7) * (endY - 58), 2.3, p.filmLine, on * (0.3 + 0.7 * t))
+        }
       }
     }
 
     // The mask, worn down by the ions that miss it: at 20:1 selectivity it loses a twentieth of the
-    // depth the silicon does, which is why a thin mask can cut a deep trench.
+    // depth the silicon does. The line it started at stays dashed, so the loss is visible.
     const worn = Math.min(5, depth / 20)
     const mTop = maskTop + worn
+    if (worn > 0.4) this.line(ctx, X0, maskTop, X1, maskTop, p.metalLine, 1, [4, 3])
     let cursor = X0
     for (const w of WIN) {
       this.rect(ctx, cursor, mTop, w.a - cursor, maskH - worn, p.metal, p.metalLine)
@@ -1073,28 +1118,61 @@ export class FabScene {
     }
     this.rect(ctx, cursor, mTop, X1 - cursor, maskH - worn, p.metal, p.metalLine)
 
-    // The ghost of an isotropic wet etch: it would have undercut the mask.
-    const ghost = span(s, 3.4, 5.2)
-    if (ghost > 0.02) {
-      const w = WIN[2]
-      const cxm = (w.a + w.b) / 2
-      const rad = (w.b - w.a) / 2
-      ctx.save()
-      ctx.globalAlpha = ghost * 0.6
-      ctx.strokeStyle = p.alert
-      ctx.lineWidth = 1.6
-      ctx.setLineDash([5, 4])
-      ctx.beginPath()
-      ctx.arc(cxm, SUF, rad + 16, 0, Math.PI)
-      ctx.stroke()
-      ctx.restore()
-      this.text(ctx, 'wet etch undercuts', cxm - rad - 6, SUF + 12, p.alert, 13, 'right')
-    }
-
     this.text(ctx, 'mask', X0 - 6, mTop + (maskH - worn) / 2, p.muted, 14, 'right')
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
+    this.etchProfileInset(ctx, p, s)
     if (depth > 20) this.dimV(ctx, X1 + 12, SUF, SUF + depth, `${Math.round(depthNm)} nm`, p.muted)
     this.scaleBar(ctx, p, 45, '50 nm')
+  }
+
+  /** The chapter's comparison: what the same mask opening gives under a wet etch and under RIE. */
+  private etchProfileInset(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
+    const x = 604
+    const y = 44
+    const w = 268
+    const h = 150
+    this.rect(ctx, x, y, w, h, p.panel, p.panelLine, 1.4)
+    this.text(ctx, 'same mask, two chemistries', x + w / 2, y + 16, p.muted, 12)
+
+    const grow = span(s, 0.8, 3.0)
+    const draw = (cx: number, wet: boolean, caption: string) => {
+      const top = y + 36
+      const die = 46
+      this.rect(ctx, cx - 52, top, 104, die, p.si, p.siLine, 1.2)
+      this.rect(ctx, cx - 28, top - 10, 18, 10, p.metal, p.metalLine, 1)
+      this.rect(ctx, cx + 10, top - 10, 18, 10, p.metal, p.metalLine, 1)
+
+      ctx.save()
+      ctx.beginPath()
+      if (wet) {
+        ctx.arc(cx, top, 20 * grow, 0, Math.PI)
+      } else {
+        ctx.moveTo(cx - 10, top)
+        ctx.lineTo(cx - 10, top + 34 * grow)
+        ctx.lineTo(cx + 10, top + 34 * grow)
+        ctx.lineTo(cx + 10, top)
+      }
+      ctx.closePath()
+      ctx.fillStyle = p.panel
+      ctx.fill()
+      ctx.strokeStyle = wet ? p.alert : p.filmLine
+      ctx.lineWidth = 1.6
+      if (wet) ctx.setLineDash([4, 3])
+      ctx.stroke()
+      ctx.restore()
+
+      // The wet profile reaches sideways, under the mask; the RIE one does not.
+      if (wet && grow > 0.4) {
+        const rad = 20 * grow
+        this.line(ctx, cx - rad, top + 6, cx - 10, top + 6, p.alert, 1.2)
+        this.dot(ctx, cx - rad, top + 6, 2, p.alert, 1)
+        this.dot(ctx, cx - 10, top + 6, 2, p.alert, 1)
+      }
+      this.text(ctx, caption, cx, top + die + 16, p.muted, 12)
+    }
+
+    draw(x + 72, true, 'wet · undercuts')
+    draw(x + 196, false, 'RIE · vertical')
   }
 
   /* --------------------------------------------------------------- 5. implant */
@@ -1242,73 +1320,106 @@ export class FabScene {
   /* ------------------------------------------------------------------- 6. CMP */
 
   private drawCmp(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
-    const flat = span(s, 0.6, 6.0)
-    // 180 nm of relief, drawn at the same 0.19 px/nm the scale bar uses.
-    const relief = (1 - flat) * 180 * 0.19
+    const D = SUF // the flat surface the polish is aiming for
+    const DIE = 26 // the dielectric the copper is inlaid in
+    const polished = span(s, 0.4, 5.6)
+    const over = span(s, 6.0, 7.2)
+    const bump = (1 - polished) * 28 // the over-plated copper standing above the dielectric
+    const dish = over * 9 // the wide copper sinking into its own line
+    const erosion = over * 7 // the dielectric between dense lines wearing away
 
-    // A patterned surface: a wide raised feature and a dense pair of ridges.
-    const raised: Array<[number, number]> = [
-      [286, 404],
-      [440, 472],
-      [492, 524],
+    const WIDE: [number, number] = [258, 392]
+    const DENSE: Array<[number, number]> = [
+      [424, 444],
+      [460, 480],
+      [496, 516],
     ]
-    const surfaceOf = (x: number) => (raised.some(([a, b]) => x >= a && x <= b) ? SUF - relief : SUF)
+    const SPAN: [number, number] = [414, 526]
+    const denseDie = (x: number) => x >= SPAN[0] && x <= SPAN[1] && !DENSE.some(([a, b]) => x >= a && x <= b)
 
-    this.silicon(ctx, p, SUF)
-    ctx.save()
+    // The silicon under the inlaid dielectric.
+    this.rect(ctx, X0, D + DIE, VW, BASE - (D + DIE), p.si, p.siLine)
+
+    // The dielectric, its top lower between the dense lines once the overpolish has run.
     ctx.beginPath()
-    ctx.moveTo(X0, SUF)
-    for (let x = X0; x <= X1; x += 4) ctx.lineTo(x, surfaceOf(x))
-    ctx.lineTo(X1, SUF)
+    ctx.moveTo(X0, D + DIE)
+    for (let x = X0; x <= X1; x += 4) ctx.lineTo(x, denseDie(x) ? D + erosion : D)
+    ctx.lineTo(X1, D + DIE)
     ctx.closePath()
-    ctx.fillStyle = p.si
+    ctx.fillStyle = p.oxide
     ctx.fill()
-    ctx.strokeStyle = p.siLine
-    ctx.lineWidth = 1.6
+    ctx.strokeStyle = p.oxideLine
+    ctx.lineWidth = 1.4
     ctx.stroke()
-    ctx.restore()
 
-    // The pad, turning, pressing on the relief, with the slurry between it and the wafer.
-    const padY = SUF - relief - 46
-    this.rect(ctx, 250, padY, 400, 34, p.mask, p.panelLine)
-    for (let i = 0; i < 9; i += 1) {
-      const off = (s * 60 + i * 44) % 400
-      this.line(ctx, 250 + off, padY + 27, 250 + off + 10, padY + 7, p.faint, 1.4)
+    // The copper: over-plated above the dielectric first, dished by the overpolish later.
+    const cuTop = (wide: boolean) => D - bump + (wide ? dish : dish * 0.3)
+    const copper = (a: number, b: number, wide: boolean) => {
+      const top = cuTop(wide)
+      this.rect(ctx, a, top, b - a, D + DIE - top, p.cu, p.beam, 1.3)
     }
-    this.text(ctx, 'pad', 450, padY - 12, p.muted, 14)
-    this.arrowDown(ctx, 450, padY - 40, padY - 8, p.good, 2.4)
-    this.text(ctx, 'down force', 470, padY - 24, p.good, 13, 'left')
+    copper(WIDE[0], WIDE[1], true)
+    for (const [a, b] of DENSE) copper(a, b, false)
 
-    for (let i = 0; i < 26; i += 1) {
-      if (!this.motion) break
-      const phase = (i / 26 + s * 0.12) % 1
-      const x = X0 + 20 + ((i * 93) % (VW - 40))
-      this.dot(ctx, x, SUF - relief - 6 - phase * 42, 2.2, p.cu, 0.5 * (1 - phase))
-    }
+    // The plane the polish aims for, so dishing and erosion read against something.
+    this.line(ctx, X0 - 28, D, X1 + 28, D, p.faint, 1.2, [5, 4])
 
-    // Once the relief is gone, dishing and erosion show up where the pattern is wide or dense.
-    const late = span(s, 6.0, 7.6)
-    if (late > 0.02) {
+    // The pad, sliding sideways (which is how a turning pad looks in a cross-section) and lifting
+    // off at the end so the surface it leaves behind can be read.
+    const lift = span(s, 6.4, 7.3)
+    const padOn = Math.min(span(s, 0.2, 0.9), 1 - span(s, 6.6, 7.3))
+    const padBottom = D - bump - 8 - lift * 132
+    if (padOn > 0.02) {
       ctx.save()
-      ctx.globalAlpha = late
+      ctx.globalAlpha = padOn
+      this.rect(ctx, 150, padBottom - 40, 600, 40, p.faint, p.muted)
+      ctx.strokeStyle = p.mask
+      ctx.lineWidth = 2
       ctx.beginPath()
-      ctx.ellipse(345, SUF - 3, 62, 9, 0, 0, Math.PI * 2)
-      ctx.fillStyle = p.panel
-      ctx.fill()
+      for (let i = 0; i < 18; i += 1) {
+        const hx = 150 + ((i * 40 + s * 70) % 588)
+        ctx.moveTo(hx, padBottom)
+        ctx.lineTo(hx + 12, padBottom - 40)
+      }
+      ctx.stroke()
       ctx.restore()
-      this.lead(ctx, 345, SUF - 12, 286, 214, p.faint)
-      this.text(ctx, 'dishing', 280, 210, p.muted, 13, 'right')
 
-      ctx.save()
-      ctx.globalAlpha = late
-      ctx.fillStyle = p.panel
-      ctx.fillRect(440, SUF - 4, 84, 9)
-      ctx.restore()
-      this.lead(ctx, 482, SUF - 12, 520, 214, p.faint)
-      this.text(ctx, 'erosion', 526, 210, p.muted, 13, 'left')
+      this.text(ctx, 'pad', 160, padBottom - 52, p.muted, 14, 'left')
+      this.arrowDown(ctx, 470, padBottom - 66, padBottom - 44, p.good, 2.4)
+      this.text(ctx, 'down force', 492, padBottom - 58, p.good, 13, 'left')
+
+      // Slurry flowing between the pad and the wafer, and the debris leaving the high spots.
+      if (this.motion) {
+        for (let i = 0; i < 26; i += 1) {
+          const x = X0 + 20 + ((i * 97 + s * 90) % (VW - 40))
+          this.dot(ctx, x, padBottom + 4 + (i % 2) * 3, 1.8, p.cu, 0.5 * padOn)
+        }
+        if (bump > 3) {
+          for (let i = 0; i < 8; i += 1) {
+            const t = ((((i / 8) + s * 0.6) % 1) + 1) % 1
+            const x = WIDE[0] + ((i * 53) % (WIDE[1] - WIDE[0]))
+            this.dot(ctx, x, D - bump - 2 - t * 26, 2, p.cu, (1 - t) * 0.55)
+          }
+        }
+      }
     }
 
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
+    this.lead(ctx, 325, D + 16, 250, D + 64, p.faint)
+    this.text(ctx, 'copper', 244, D + 68, p.muted, 13, 'right')
+    this.lead(ctx, 210, D + 12, 176, D + 64, p.faint)
+    this.text(ctx, 'dielectric', 170, D + 68, p.muted, 13, 'right')
+
+    // The two defects that name the end of the process. They wait until the pad has lifted clear,
+    // or the leaders would be drawn straight through it.
+    if (lift > 0.55) {
+      this.lead(ctx, 325, D + dish - 2, 296, D - 56, p.faint)
+      this.text(ctx, 'dishing', 290, D - 60, p.muted, 13, 'right')
+      const gap = (DENSE[0][1] + DENSE[1][0]) / 2
+      this.lead(ctx, gap, D + erosion - 4, 540, D - 56, p.faint)
+      this.text(ctx, 'erosion', 546, D - 60, p.muted, 13, 'left')
+    }
+
     this.scaleBar(ctx, p, 38, '200 nm')
   }
 
