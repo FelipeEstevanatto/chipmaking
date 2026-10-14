@@ -9,6 +9,7 @@ import HomeSections from './HomeSections.vue'
 import ChainFlow from './ChainFlow.vue'
 import DataChart from './DataChart.vue'
 import FurnaceChemistry from './FurnaceChemistry.vue'
+import FabProcess from './FabProcess.vue'
 import TransistorFacts from './TransistorFacts.vue'
 import TransistorTimeline from './TransistorTimeline.vue'
 import MilestoneRail from './MilestoneRail.vue'
@@ -38,6 +39,7 @@ export default {
     app.component('ChainFlow', ChainFlow)
     app.component('DataChart', DataChart)
     app.component('FurnaceChemistry', FurnaceChemistry)
+    app.component('FabProcess', FabProcess)
     app.component('TransistorFacts', TransistorFacts)
     app.component('TransistorTimeline', TransistorTimeline)
     app.component('MilestoneRail', MilestoneRail)

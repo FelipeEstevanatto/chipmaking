@@ -28,6 +28,10 @@ O laço tem **sete módulos**. Seis têm seção neste capítulo, na ordem em qu
 6. [Planarização](#planarizacao-apagar-o-relevo): apagar o relevo para poder empilhar.
 7. [Metrologia](#metrologia-medir-para-poder-continuar): medir para poder continuar.
 
+<ClientOnly>
+  <FabProcess />
+</ClientOnly>
+
 Fora do laço, duas seções fecham o capítulo: [interconexão](#interconexao-a-parte-do-chip-que-ninguem-ve), que constrói o que o laço desenhou, e [rendimento](#rendimento-o-numero-que-decide-se-o-produto-existe), que mede se deu certo.
 
 A imagem mental de uma linha de montagem (entra matéria-prima de um lado, sai produto do outro) não descreve uma fábrica de semicondutores. O wafer é **processado em ciclo**: ele passa por litografia, volta para um forno, volta para a litografia, desce para um reator de plasma, sobe de novo. Essa repetição é o motivo pelo qual os números do setor são tão grandes.

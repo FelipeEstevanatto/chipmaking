@@ -28,6 +28,10 @@ The loop has **seven modules**. Six of them have a section in this chapter, in t
 6. [Planarisation](#planarisation-erasing-the-relief): erasing the relief so layers can stack.
 7. [Metrology](#metrology-measuring-so-you-can-continue): measuring so you can continue.
 
+<ClientOnly>
+  <FabProcess />
+</ClientOnly>
+
 Outside the loop, two sections close the chapter: [interconnection](#interconnection-the-part-of-the-chip-nobody-sees), which builds what the loop patterned, and [yield](#yield-the-number-that-decides-whether-a-product-exists), which measures whether it worked.
 
 The mental image of an assembly line (raw material in at one end, finished product out at the other) does not describe a semiconductor fab. The wafer is **processed in a loop**: it goes to lithography, back to a furnace, back to lithography, down to a plasma reactor, up again. That repetition is why the industry's numbers are so large.
