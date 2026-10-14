@@ -740,10 +740,17 @@ export class FabScene {
       ctx.restore()
     }
 
-    this.text(ctx, 'ALD film', X1 - 8, SUF - f - 16, p.muted, 15, 'right')
-    this.lead(ctx, X1 - 26, SUF - f - 10, X1 - 60, SUF - f / 2, p.faint)
+    if (f > 0.4) {
+      this.text(ctx, 'barrier', X1 - 8, SUF - f - 20, p.muted, 15, 'right')
+      this.lead(ctx, X1 - 96, SUF - f - 12, X1 - 132, SUF - f / 2, p.faint)
+    }
     this.text(ctx, 'Si', a - 34, BASE - 24, p.muted, 16, 'right')
     this.text(ctx, 'SiO₂', X0 + 22, SUF - 7, p.muted, 13, 'left')
+
+    // The trench is not made here: an earlier lap opened it. Saying so is what keeps the module from
+    // looking like the wafer arrived with a hole in it.
+    this.text(ctx, 'trench from an earlier lap', 256, 210, p.muted, 12, 'right')
+    this.lead(ctx, 262, 216, a + 4, SUF + 18, p.faint)
 
     this.dimV(ctx, b + 26, floor - f, floor, `${(cycles * 0.11).toFixed(2)} nm`, p.muted)
     this.scaleBar(ctx, p, 36, '5 nm')

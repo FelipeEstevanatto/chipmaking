@@ -106,12 +106,12 @@ export const FAB_STAGES: FabStage[] = [
       en: 'Material arrives atom by atom',
     },
     caption: {
-      pt: 'A ALD manda um precursor por ciclo e para sozinha: quando os sítios da superfície se esgotam, precursor a mais não deposita nada. A espessura passa a depender só do número de ciclos.',
-      en: 'ALD sends in one precursor per cycle and stops by itself: once the surface sites are used up, more precursor deposits nothing. Thickness then depends only on the number of cycles.',
+      pt: 'A ALD manda um precursor por ciclo e para sozinha: quando os sítios da superfície se esgotam, precursor a mais não deposita nada. A espessura passa a depender só do número de ciclos, e sai igual em tudo o que está exposto.',
+      en: 'ALD sends in one precursor per cycle and stops by itself: once the surface sites are used up, more precursor deposits nothing. Thickness then depends only on the number of cycles, and comes out the same on everything exposed.',
     },
     note: {
-      pt: 'Como cada ciclo cobre tudo o que está exposto, a espessura sai igual no topo, na parede e no fundo da trincheira. Um processo direcional como o PVD faria o contrário: cobriria o topo e deixaria o fundo quase nu.',
-      en: 'Because each cycle coats whatever is exposed, the thickness comes out the same on the top, the wall and the floor of the trench. A directional process such as PVD would do the opposite: coat the top and leave the floor almost bare.',
+      pt: 'O filme é uma barreira de difusão, a camada fina que separa o silício do metal que ainda vem. A trincheira não nasceu aqui: quem a abriu foi a litografia e a corrosão de uma volta anterior do laço. Como cada ciclo cobre tudo o que está exposto, a espessura sai igual no topo, na parede e no fundo; um processo direcional como o PVD cobriria o topo e deixaria o fundo quase nu.',
+      en: 'The film is a diffusion barrier, the thin layer that separates the silicon from the metal still to come. The trench was not made here: lithography and etching opened it in an earlier lap of the loop. Because each cycle coats whatever is exposed, the thickness comes out the same on the top, the wall and the floor; a directional process such as PVD would coat the top and leave the floor almost bare.',
     },
   },
   {
@@ -130,12 +130,12 @@ export const FAB_STAGES: FabStage[] = [
       en: 'The drawing becomes a mask',
     },
     caption: {
-      pt: 'Uma gota de fotoresistor cai no centro e o wafer gira para espalhá-la numa película fina. Depois a máscara desce, a luz ultravioleta imprime o padrão e a revelação dissolve o que foi exposto.',
-      en: 'A drop of photoresist lands at the centre and the wafer spins to spread it into a thin film. Then the mask comes down, ultraviolet light prints the pattern and development dissolves what was exposed.',
+      pt: 'Uma gota de fotoresistor cai no centro e o wafer gira para espalhá-la numa película fina. Depois a máscara desce, a luz ultravioleta imprime o padrão e a revelação dissolve o que foi exposto. A luz desenhada aqui é o DUV de 193 nm.',
+      en: 'A drop of photoresist lands at the centre and the wafer spins to spread it into a thin film. Then the mask comes down, ultraviolet light prints the pattern and development dissolves what was exposed. The light drawn here is the 193 nm DUV line.',
     },
     note: {
-      pt: 'A espessura da película cai com a raiz da rotação: quanto mais rápido o wafer gira, mais fino o filme. É a relação clássica do spin coating, e é o que permite ajustar a espessura só mudando a velocidade.',
-      en: 'The film thickness falls with the square root of the spin speed: the faster the wafer spins, the thinner the film. That is the classic spin-coating relation, and it is what lets the thickness be set by the speed alone.',
+      pt: 'A espessura da película cai com a raiz da rotação: quanto mais rápido o wafer gira, mais fino o filme, e é a relação clássica do spin coating. O comprimento de onda depende da camada: as poucas mais críticas vão para o EUV de 13,5 nm, e todo o resto continua no DUV de 193 nm.',
+      en: 'The film thickness falls with the square root of the spin speed: the faster the wafer spins, the thinner the film, which is the classic spin-coating relation. The wavelength depends on the layer: the few most critical ones go to EUV at 13.5 nm, and everything else stays on 193 nm DUV.',
     },
   },
   {
