@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import BuildFooter from './BuildFooter.vue'
 import SupplyChainMap from './SupplyChainMap.vue'
@@ -17,8 +18,14 @@ import HeroWafer from './HeroWafer.vue'
  * `layout-top` rather than the document flow. `HeroWafer` replaces the landing page's hero photo
  * with a drawing that holds up on the dark theme.
  *
+ * `layout-bottom` content stays mounted across a client-side navigation, unlike everything inside
+ * `VPContent`, which is re-created per page. The footer is localised, so it is keyed on the locale:
+ * that way the language of the bar is decided when the locale changes instead of relying on the
+ * component it was first rendered for.
+ *
  * @see https://vitepress.dev/guide/extending-default-theme#layout-slots
  */
+const { localeIndex } = useData()
 const { Layout } = DefaultTheme
 </script>
 
@@ -35,7 +42,7 @@ const { Layout } = DefaultTheme
       <DocMeta />
     </template>
     <template #layout-bottom>
-      <BuildFooter />
+      <BuildFooter :key="localeIndex" />
     </template>
   </Layout>
 </template>
