@@ -60,6 +60,7 @@ const labels = computed(() => ({
     : `Módulo ${stage.value + 1} de ${stages.length}: ${text(current.value.tab)}`,
   modules: isEnglish.value ? 'Modules of the loop' : 'Módulos do laço',
   timeline: isEnglish.value ? 'Process timeline' : 'Linha do processo',
+  phases: isEnglish.value ? 'Phases of the module' : 'Fases do módulo',
   canvas: isEnglish.value
     ? `Animated cross-section of the wafer during ${text(current.value.tab).toLowerCase()}.`
     : `Corte animado do wafer durante a etapa de ${text(current.value.tab).toLowerCase()}.`,
@@ -71,6 +72,43 @@ const labels = computed(() => ({
 const readoutLabel = (id: string) => {
   const entry = READOUT_LABELS[id]
   return entry ? (isEnglish.value ? entry.en : entry.pt) : id
+}
+
+// The phase script is written in seconds; `STAGE_DURATION` is in milliseconds.
+const duration = computed(() => STAGE_DURATION[current.value.mode] / 1000)
+
+/** Where each phase begins, as a 0…1 fraction of the module, for the checkpoints on the timeline. */
+const marks = computed(() => current.value.phases.map((phase) => phase.at / duration.value))
+
+/** Which phase is running now, from the scrub position. */
+const phaseNow = computed(() => {
+  const list = current.value.phases
+  const t = progress.value * duration.value
+  let index = 0
+  for (let i = 0; i < list.length; i += 1) if (t >= list[i].at - 1e-6) index = i
+  return index
+})
+
+/** How long a phase lasts, so the badges are as wide as the step they stand for. */
+const phaseSpan = (index: number) => {
+  const list = current.value.phases
+  const end = index + 1 < list.length ? list[index + 1].at : duration.value
+  return Math.max(end - list[index].at, 0.2)
+}
+
+/** A tick at fraction `f`, placed on the thumb's own travel (the thumb is a fixed 14 px). */
+const tickLeft = (fraction: number) => `calc(${7 - fraction * 14}px + ${fraction * 100}%)`
+
+/** Jumping to a phase stops the clock and sits at the second it begins. */
+function goToPhase(index: number) {
+  const list = current.value.phases
+  if (!list[index]) return
+  playing.value = false
+  paused.value = true
+  const fraction = list[index].at / duration.value
+  scene.seek(fraction)
+  progress.value = fraction
+  readout.value = scene.readout()
 }
 
 /** Sizes the backing store to the space the page gave the canvas, so nothing is blurry. */
@@ -228,16 +266,34 @@ onBeforeUnmount(() => {
       :aria-label="labels.canvas"
     />
 
-    <input
-      class="fab-process__scrub"
-      type="range"
-      min="0"
-      max="1000"
-      step="1"
-      :value="Math.round(progress * 1000)"
-      :aria-label="labels.timeline"
-      @input="onScrub"
-    />
+    <div class="fab-process__timeline">
+      <input
+        class="fab-process__scrub"
+        type="range"
+        min="0"
+        max="1000"
+        step="1"
+        :value="Math.round(progress * 1000)"
+        :aria-label="labels.timeline"
+        @input="onScrub"
+      />
+      <span class="fab-process__ticks" aria-hidden="true">
+        <i v-for="(mark, i) in marks" :key="i" :style="{ left: tickLeft(mark) }" />
+      </span>
+    </div>
+
+    <ol v-if="current.phases.length > 1" class="fab-process__phases" :aria-label="labels.phases">
+      <li v-for="(phase, i) in current.phases" :key="i" :style="{ flexGrow: phaseSpan(i) }">
+        <button
+          type="button"
+          :class="['fab-process__phase', { 'is-current': i === phaseNow }]"
+          :aria-current="i === phaseNow ? 'step' : undefined"
+          @click="goToPhase(i)"
+        >
+          {{ text(phase.label) }}
+        </button>
+      </li>
+    </ol>
 
     <ul v-if="readout.length" class="fab-process__readout">
       <li v-for="line in readout" :key="line.id">
@@ -361,12 +417,120 @@ onBeforeUnmount(() => {
   background: var(--vp-c-bg);
 }
 
+.fab-process__timeline {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0.7rem 0 0;
+}
+
 .fab-process__scrub {
-  display: block;
+  position: relative;
+  z-index: 1;
   width: 100%;
-  margin: 0.6rem 0 0;
-  accent-color: var(--vp-c-brand-1);
+  height: 18px;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
+}
+
+.fab-process__scrub::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--vp-c-divider);
+}
+
+.fab-process__scrub::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--vp-c-divider);
+}
+
+.fab-process__scrub::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+  margin-top: -5px;
+  box-sizing: border-box;
+  border: 2px solid var(--vp-c-bg);
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.fab-process__scrub::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 2px solid var(--vp-c-bg);
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+}
+
+.fab-process__scrub:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.fab-process__ticks {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.fab-process__ticks i {
+  position: absolute;
+  top: 50%;
+  width: 1px;
+  height: 12px;
+  background: var(--vp-c-text-3);
+  transform: translate(-50%, -50%);
+}
+
+.fab-process__phases {
+  display: flex;
+  gap: 1px;
+  margin: 0.25rem 7px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fab-process__phases li {
+  display: flex;
+  flex-basis: 0;
+  min-width: 0;
+}
+
+.fab-process__phase {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.25rem 0.45rem;
+  overflow: hidden;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-3);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.fab-process__phase:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+.fab-process__phase.is-current {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
 }
 
 .fab-process__readout {

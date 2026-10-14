@@ -51,6 +51,12 @@ export const READOUT_LABELS: Record<string, { pt: string; en: string }> = {
   precision: { pt: 'Precisão', en: 'Precision' },
 }
 
+export interface FabPhase {
+  /** Seconds into the module at which this phase begins. */
+  at: number
+  label: { pt: string; en: string }
+}
+
 export interface FabStage {
   id: string
   mode: FabMode
@@ -62,12 +68,20 @@ export interface FabStage {
   caption: { pt: string; en: string }
   /** The physical detail or constraint that makes the process work. */
   note: { pt: string; en: string }
+  /** The sub-steps of the module, in order, each with the second it begins. */
+  phases: FabPhase[]
 }
 
 export const FAB_STAGES: FabStage[] = [
   {
     id: 'oxidation',
     mode: 'furnace',
+    phases: [
+      { at: 0, label: { pt: 'Aquecimento', en: 'Heat up' } },
+      { at: 0.5, label: { pt: 'Regime linear', en: 'Linear regime' } },
+      // x reaches A here, so the growth stops being reaction-limited.
+      { at: 2.9, label: { pt: 'Regime parabólico', en: 'Parabolic regime' } },
+    ],
     tab: { pt: 'Oxidação', en: 'Oxidation' },
     title: {
       pt: 'O silício cresce o próprio isolante',
@@ -85,6 +99,7 @@ export const FAB_STAGES: FabStage[] = [
   {
     id: 'deposition',
     mode: 'deposit',
+    phases: [{ at: 0, label: { pt: 'Crescimento conforme', en: 'Conformal growth' } }],
     tab: { pt: 'Deposição', en: 'Deposition' },
     title: {
       pt: 'Material chega átomo a átomo',
@@ -102,6 +117,13 @@ export const FAB_STAGES: FabStage[] = [
   {
     id: 'lithography',
     mode: 'coat',
+    phases: [
+      { at: 0, label: { pt: 'Dispensa', en: 'Dispense' } },
+      { at: 1.6, label: { pt: 'Spin coating', en: 'Spin coat' } },
+      { at: 4.6, label: { pt: 'Soft bake', en: 'Soft bake' } },
+      { at: 6.2, label: { pt: 'Exposição', en: 'Expose' } },
+      { at: 8.8, label: { pt: 'Revelação', en: 'Develop' } },
+    ],
     tab: { pt: 'Litografia', en: 'Lithography' },
     title: {
       pt: 'O desenho vira máscara',
@@ -119,6 +141,10 @@ export const FAB_STAGES: FabStage[] = [
   {
     id: 'etch',
     mode: 'etch',
+    phases: [
+      { at: 0, label: { pt: 'Ataque', en: 'Etch' } },
+      { at: 5.6, label: { pt: 'Sobreataque', en: 'Overetch' } },
+    ],
     tab: { pt: 'Corrosão', en: 'Etching' },
     title: {
       pt: 'A química decide a forma',
@@ -136,6 +162,10 @@ export const FAB_STAGES: FabStage[] = [
   {
     id: 'implant',
     mode: 'implant',
+    phases: [
+      { at: 0, label: { pt: 'Implante', en: 'Implant' } },
+      { at: 5.9, label: { pt: 'Recozimento', en: 'Anneal' } },
+    ],
     tab: { pt: 'Implantação', en: 'Ion implantation' },
     title: {
       pt: 'Íons entram à força',
@@ -153,6 +183,10 @@ export const FAB_STAGES: FabStage[] = [
   {
     id: 'cmp',
     mode: 'cmp',
+    phases: [
+      { at: 0, label: { pt: 'Polimento', en: 'Polish' } },
+      { at: 6.0, label: { pt: 'Sobrepolimento', en: 'Overpolish' } },
+    ],
     tab: { pt: 'Planarização', en: 'Planarisation' },
     title: {
       pt: 'O relevo vai embora',
@@ -170,6 +204,10 @@ export const FAB_STAGES: FabStage[] = [
   {
     id: 'metrology',
     mode: 'measure',
+    phases: [
+      { at: 0, label: { pt: 'Varredura', en: 'Sweep' } },
+      { at: 3.5, label: { pt: 'Controle run-to-run', en: 'Run-to-run control' } },
+    ],
     tab: { pt: 'Metrologia', en: 'Metrology' },
     title: {
       pt: 'Medir para poder continuar',
@@ -195,4 +233,11 @@ export const STAGE_DURATION: Record<FabMode, number> = {
   implant: 10000,
   cmp: 8000,
   measure: 8000,
+}
+
+const BY_MODE = new Map<FabMode, FabStage>(FAB_STAGES.map((stage) => [stage.mode, stage]))
+
+/** The phase script of a module: where each sub-step begins and what it is called. */
+export function stagePhases(mode: FabMode): FabPhase[] {
+  return BY_MODE.get(mode)?.phases ?? []
 }

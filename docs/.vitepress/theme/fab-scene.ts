@@ -27,7 +27,7 @@
  * a scale bar, because a 2 nm film and a 300 mm wafer cannot share one ruler.
  */
 
-import { STAGE_DURATION, type FabMode, type FabReadout } from './fab-stages'
+import { STAGE_DURATION, stagePhases, type FabMode, type FabReadout } from './fab-stages'
 
 export const SCENE_W = 900
 export const SCENE_H = 560
@@ -47,6 +47,7 @@ export interface Palette {
   resistLine: string
   exposed: string
   mask: string
+  quartz: string
   metal: string
   metalLine: string
   cu: string
@@ -73,6 +74,7 @@ export const LIGHT: Palette = {
   resistLine: '#2f855a',
   exposed: '#68d391',
   mask: '#2d3748',
+  quartz: '#e2e8f0',
   metal: '#805ad5',
   metalLine: '#553c9a',
   cu: '#ed8936',
@@ -99,6 +101,7 @@ export const DARK: Palette = {
   resistLine: '#7fd6a2',
   exposed: '#4ea06e',
   mask: '#0b1017',
+  quartz: '#39424f',
   metal: '#7c5cc4',
   metalLine: '#c3aaf0',
   cu: '#e08a30',
@@ -132,6 +135,12 @@ const TRENCH = { a: 398, b: 502, depth: 112 }
 
 /** Share of an oxide's thickness that lies below the original surface (Si density 2.33, SiO₂ 2.27). */
 const CONSUMED = 0.456
+
+/**
+ * How far the lithography mask floats above the resist. Projection lithography never touches the
+ * wafer, and the gap is what makes the cones of light readable.
+ */
+const MASK_GAP = 130
 
 /* -------------------------------------------------------------- small helpers */
 
@@ -212,6 +221,11 @@ export class FabScene {
   /** Jumps to a point in the current module's process, for the scrubber. */
   seek(fraction: number) {
     this.t = clamp01(fraction) * STAGE_DURATION[this.mode]
+  }
+
+  /** The second at which each phase of the current module begins, for the timeline's checkpoints. */
+  phaseStarts(): number[] {
+    return stagePhases(this.mode).map((phase) => phase.at)
   }
 
   draw(ctx: CanvasRenderingContext2D, p: Palette) {
@@ -338,7 +352,7 @@ export class FabScene {
 
   /* --------------------------------------------------------------- primitives */
 
-  private rect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, fill: string, stroke?: string, lw = 1.6) {
+  private rect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, fill: string | CanvasGradient, stroke?: string, lw = 1.6) {
     ctx.beginPath()
     ctx.rect(x, y, w, h)
     ctx.fillStyle = fill
@@ -350,7 +364,7 @@ export class FabScene {
     }
   }
 
-  private poly(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, fill: string, stroke?: string, lw = 1.6) {
+  private poly(ctx: CanvasRenderingContext2D, pts: Array<[number, number]>, fill: string | CanvasGradient, stroke?: string, lw = 1.6) {
     ctx.beginPath()
     pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)))
     ctx.closePath()
@@ -494,39 +508,59 @@ export class FabScene {
     this.text(ctx, value, X0, BASE + 26, p.muted, 15, 'left')
   }
 
-  /** A rounded rectangle, used for the phase strip's pills. */
-  private roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
-    const rad = Math.min(r, h / 2, w / 2)
+  /** A dollop of resist: a rounded slab that reads as a bead of liquid and flattens into the film. */
+  private puddle(ctx: CanvasRenderingContext2D, cx: number, baseY: number, r: number, h: number, fill: string, line: string) {
+    const rad = Math.min(r, h) * 0.3
+    const x = cx - r
+    const y = baseY - h
     ctx.beginPath()
     ctx.moveTo(x + rad, y)
-    ctx.lineTo(x + w - rad, y)
-    ctx.quadraticCurveTo(x + w, y, x + w, y + rad)
-    ctx.lineTo(x + w, y + h - rad)
-    ctx.quadraticCurveTo(x + w, y + h, x + w - rad, y + h)
-    ctx.lineTo(x + rad, y + h)
-    ctx.quadraticCurveTo(x, y + h, x, y + h - rad)
+    ctx.lineTo(x + 2 * r - rad, y)
+    ctx.quadraticCurveTo(x + 2 * r, y, x + 2 * r, y + rad)
+    ctx.lineTo(x + 2 * r, baseY)
+    ctx.lineTo(x, baseY)
     ctx.lineTo(x, y + rad)
     ctx.quadraticCurveTo(x, y, x + rad, y)
     ctx.closePath()
+    ctx.fillStyle = fill
+    ctx.fill()
+    ctx.strokeStyle = line
+    ctx.lineWidth = 1.5
+    ctx.stroke()
+    ctx.beginPath()
+    ctx.ellipse(cx - r * 0.42, y + h * 0.34, r * 0.22, h * 0.16, -0.35, 0, Math.PI * 2)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'
+    ctx.fill()
   }
 
-  /** The strip of sub-steps along the bottom, with the one running now lit. */
-  private phaseStrip(ctx: CanvasRenderingContext2D, p: Palette, steps: string[], active: number) {
-    let x = X0
-    const y = BASE + 26
-    for (let i = 0; i < steps.length; i += 1) {
-      ctx.font = `600 13px ${FONT}`
-      const w = ctx.measureText(steps[i]).width + 22
-      const on = i === active
-      this.roundRect(ctx, x, y - 12, w, 24, 12)
-      ctx.fillStyle = on ? p.good : p.panel
-      ctx.fill()
-      ctx.strokeStyle = on ? p.good : p.panelLine
-      ctx.lineWidth = 1.2
+  /** An ellipse, for droplets, beads and pendant drops. */
+  private blob(ctx: CanvasRenderingContext2D, x: number, y: number, rx: number, ry: number, fill: string, line?: string) {
+    ctx.beginPath()
+    ctx.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2)
+    ctx.fillStyle = fill
+    ctx.fill()
+    if (line) {
+      ctx.strokeStyle = line
+      ctx.lineWidth = 1.4
       ctx.stroke()
-      this.text(ctx, steps[i], x + w / 2, y, on ? p.panel : p.muted, 13)
-      x += w + 6
     }
+  }
+
+  /** A trapezoid of light, used for the exposure cones. */
+  private cone(ctx: CanvasRenderingContext2D, cx: number, yTop: number, wTop: number, yBot: number, wBot: number, colour: string, alpha: number) {
+    ctx.save()
+    ctx.globalAlpha = alpha
+    this.poly(
+      ctx,
+      [
+        [cx - wBot, yBot],
+        [cx + wBot, yBot],
+        [cx + wTop, yTop],
+        [cx - wTop, yTop],
+      ],
+      colour,
+    )
+    ctx.restore()
   }
 
   /** The frame of a small inset plot; returns the rectangle its axes occupy. */
@@ -589,7 +623,6 @@ export class FabScene {
     this.dimV(ctx, X1 + 12, siTop - h, siTop, `${nm.toFixed(0)} nm`, p.muted)
     this.growthInset(ctx, p, s)
     this.scaleBar(ctx, p, 40, '400 nm')
-    this.phaseStrip(ctx, p, ['heat', 'linear', 'parabolic'], s < 0.5 ? 0 : nm < DG.wet.A * 1000 ? 1 : 2)
   }
 
   /** Thickness against time, with the knee where diffusion takes over from the surface reaction. */
@@ -720,9 +753,16 @@ export class FabScene {
   /* ------------------------------------------------------------ 3. lithography */
 
   private drawCoat(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
+    const ph = stagePhases('coat')
+    const at = (i: number, fallback: number) => ph[i]?.at ?? fallback
+    const tSpin = at(1, 1.6)
+    const tBake = at(2, 4.6)
+    const tExpose = at(3, 6.2)
+    const tDevelop = at(4, 8.8)
+
     const stackTop = SUF - 22 // oxide (14) + deposited film (8) already on the wafer
     const nm = this.resistNm(s)
-    const shrink = s > 4.6 ? lerp(1, 0.9, span(s, 4.6, 6.0)) : 1
+    const shrink = s > tBake ? lerp(1, 0.88, span(s, tBake, tBake + 1.4)) : 1
     const rPx = clamp(nm * 0.03 * shrink, 8, 62)
 
     // The stack the resist sits on.
@@ -730,76 +770,19 @@ export class FabScene {
     this.rect(ctx, X0, SUF - 14, VW, 14, p.oxide, p.oxideLine)
     this.rect(ctx, X0, stackTop, VW, 8, p.film, p.filmLine)
 
-    // 1. Dispense: a drop falls from the nozzle and pools at the centre.
-    if (s < 1.6) {
-      this.rect(ctx, 400, 82, 100, 12, p.mask, p.panelLine)
-      this.rect(ctx, 448, 94, 5, 60, p.mask)
-      const dy = lerp(104, stackTop - 10, span(s, 0.1, 1.0))
-      ctx.save()
-      ctx.fillStyle = p.resist
-      ctx.strokeStyle = p.resistLine
-      ctx.lineWidth = 1.4
-      ctx.beginPath()
-      ctx.arc(450, dy, 9, 0, Math.PI * 2)
-      ctx.fill()
-      ctx.stroke()
-      ctx.restore()
-      const pool = span(s, 0.9, 1.6)
-      if (pool > 0) {
-        ctx.save()
-        ctx.globalAlpha = pool
-        ctx.beginPath()
-        ctx.ellipse(450, stackTop - 4, 62 * pool, 22 * pool, 0, 0, Math.PI * 2)
-        ctx.fillStyle = p.resist
-        ctx.fill()
-        ctx.restore()
-      }
+    if (s < tSpin) {
+      this.coatDispense(ctx, p, s, stackTop, rPx)
+    } else {
+      this.coatFilm(ctx, p, s, stackTop, rPx, tSpin)
+      if (s < tBake) this.coatSpin(ctx, p, s, stackTop, rPx)
+      else if (s < tExpose) this.coatBake(ctx, p, s, stackTop, rPx, tBake, tExpose)
+      else if (s < tDevelop) this.coatExpose(ctx, p, s, stackTop, rPx, tExpose, tDevelop)
+      else this.coatDevelop(ctx, p, s, stackTop, rPx, tDevelop)
+      this.text(ctx, 'photoresist', X0 + 4, stackTop - rPx - 12, p.muted, 14, 'left')
     }
 
-    // 2–3. The spun film, spreading and thinning, then baked dry.
-    if (s >= 1.6) {
-      const spread = span(s, 1.6, 4.2)
-      const w = lerp(130, VW, spread)
-      this.rect(ctx, 450 - w / 2, stackTop - rPx, w, rPx, p.resist, p.resistLine)
-      if (s < 4.6 && this.motion) {
-        for (let i = 0; i < 5; i += 1) {
-          const sx = X0 + 40 + i * 140
-          this.lead(ctx, sx, stackTop - 6, sx + 40, stackTop + 6, p.resistLine)
-        }
-        this.text(ctx, `${this.spinRpm(s)} rpm`, 450, stackTop - rPx - 22, p.good, 15)
-      }
-      this.text(ctx, 'photoresist', X0 + 4, stackTop - rPx - 16, p.muted, 14, 'left')
-    }
-
-    // 4. Soft bake.
-    if (s > 4.6 && s < 6.4) {
-      const heat = span(s, 4.6, 5.0) * (1 - span(s, 6.0, 6.4))
-      this.glowBand(ctx, X0, BASE - 30, VW, 62, p, heat)
-      this.rect(ctx, X0 - 34, BASE - 4, VW + 68, 8, p.heat)
-      this.text(ctx, '95 °C', 450, BASE + 26, p.heat, 15)
-    }
-
-    // 5. Mask descends, and the beams print the openings.
-    const maskY = lerp(96, stackTop - rPx - 34, span(s, 6.2, 7.4))
-    if (s > 6.2) {
-      this.rect(ctx, 232, maskY, 436, 16, p.mask)
-      for (const w of WIN) ctx.clearRect(w.a, maskY, w.b - w.a, 16)
-      const lit = span(s, 7.4, 7.8) * (1 - span(s, 8.8, 9.4))
-      for (const w of WIN) {
-        ctx.save()
-        ctx.globalAlpha = lit
-        const g = ctx.createLinearGradient(0, maskY + 16, 0, stackTop - rPx)
-        g.addColorStop(0, 'rgba(128, 90, 213, 0.55)')
-        g.addColorStop(1, 'rgba(128, 90, 213, 0.10)')
-        ctx.fillStyle = g
-        ctx.fillRect(w.a, maskY + 16, w.b - w.a, stackTop - rPx - (maskY + 16))
-        ctx.restore()
-      }
-      this.text(ctx, 'mask', 232, maskY - 12, p.muted, 14, 'left')
-    }
-
-    // The exposed resist of a positive tone is the part that will dissolve.
-    const expo = span(s, 7.4, 8.0) * (1 - span(s, 8.8, 9.8))
+    // The exposed areas of a positive tone are the ones the development will take away.
+    const expo = span(s, tExpose + 1.0, tExpose + 1.8)
     if (expo > 0.02) {
       for (const w of WIN) {
         ctx.save()
@@ -809,24 +792,235 @@ export class FabScene {
       }
     }
 
-    // 6. Develop: the exposed resist dissolves from the top down, leaving the openings.
-    if (s >= 8.8) {
-      const gone = span(s, 8.8, 9.8)
-      // Clearing the band is what makes a real opening: it takes the resist away and leaves vacuum
-      // over the film, so the mask the next module etches through is the complement of the windows.
+    // Development dissolves the exposed resist from the top down. Clearing the band is what makes a
+    // real opening: it takes the resist away and leaves vacuum over the film, so the mask the next
+    // module etches through is the complement of the windows.
+    if (s >= tDevelop) {
+      const gone = span(s, tDevelop, tDevelop + 1.1)
       for (const w of WIN) ctx.clearRect(w.a, stackTop - rPx, w.b - w.a, rPx * gone)
-      if (gone > 0.3 && this.motion) {
-        for (const w of WIN) {
-          for (let k = 0; k < 3; k += 1) {
-            this.dot(ctx, (w.a + w.b) / 2 + (k - 1) * 14, stackTop + 8, 2.6, p.good, gone)
-          }
-        }
-      }
     }
 
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
     this.scaleBar(ctx, p, 60, '2 µm')
-    this.phaseStrip(ctx, p, ['dispense', 'spin coat', 'soft bake', 'expose', 'develop'], s < 1.6 ? 0 : s < 4.6 ? 1 : s < 6.2 ? 2 : s < 8.8 ? 3 : 4)
+  }
+
+  /** The resist as a wet film, spreading to the whole wafer and carrying a sheen and a front bead. */
+  private coatFilm(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tSpin: number) {
+    const spread = span(s, tSpin, tSpin + 2.6)
+    const w = lerp(120, VW, spread)
+    const x = 450 - w / 2
+    const g = ctx.createLinearGradient(0, stackTop - rPx, 0, stackTop)
+    g.addColorStop(0, p.resist)
+    g.addColorStop(1, mix(p.resist, p.resistLine, 0.45))
+    this.rect(ctx, x, stackTop - rPx, w, rPx, g, p.resistLine)
+    this.line(ctx, x + 10, stackTop - rPx + 3, x + w - 10, stackTop - rPx + 3, mix(p.resist, '#ffffff', 0.55), 1.4)
+    if (spread < 1) {
+      this.blob(ctx, x, stackTop - rPx * 0.45, 7, rPx * 0.55, p.resist, p.resistLine)
+      this.blob(ctx, x + w, stackTop - rPx * 0.45, 7, rPx * 0.55, p.resist, p.resistLine)
+    }
+  }
+
+  /** Dispense: the head, a pendant drop that swells, falls, and spreads into a puddle. */
+  private coatDispense(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number) {
+    const cx = 450
+    const tipY = 90
+
+    this.text(ctx, 'photoresist', cx, 18, p.muted, 14)
+    this.rect(ctx, cx - 30, 30, 60, 34, p.mask, p.panelLine)
+    this.poly(
+      ctx,
+      [
+        [cx - 13, 64],
+        [cx + 13, 64],
+        [cx + 5, tipY],
+        [cx - 5, tipY],
+      ],
+      p.mask,
+      p.panelLine,
+    )
+    this.line(ctx, cx - 22, 36, cx - 22, 60, mix(p.mask, '#ffffff', 0.3), 2)
+
+    const thread = span(s, 0.1, 0.7)
+    const swell = span(s, 0.3, 0.72)
+    const fall = span(s, 0.74, 1.0)
+    const radius = lerp(3, 11, swell)
+
+    if (thread > 0 && fall < 0.02) this.line(ctx, cx, tipY, cx, tipY + thread * 24, p.resistLine, Math.max(2, radius * 0.7))
+    if (fall < 1) {
+      const dropY = lerp(tipY + 26 + radius, stackTop - radius * 0.4, fall)
+      this.blob(ctx, cx, dropY, radius * 0.85, radius * 1.15, p.resist, p.resistLine)
+    }
+
+    // The puddle grows into exactly the slab the spin will start from, so nothing jumps at the seam.
+    const settle = span(s, 0.96, 1.6)
+    if (settle > 0) {
+      const pr = lerp(14, 60, settle)
+      this.puddle(ctx, cx, stackTop, pr, lerp(12, rPx, settle), p.resist, p.resistLine)
+      const ripple = span(s, 0.96, 1.25)
+      if (ripple < 1 && this.motion) {
+        ctx.save()
+        ctx.globalAlpha = (1 - ripple) * 0.5
+        ctx.strokeStyle = p.resistLine
+        ctx.lineWidth = 1.4
+        ctx.beginPath()
+        ctx.ellipse(cx, stackTop, pr * (1 + ripple * 0.5), pr * 0.16 * (1 + ripple * 0.5), 0, 0, Math.PI * 2)
+        ctx.stroke()
+        ctx.restore()
+      }
+    }
+  }
+
+  /** The spin: material flung outward along the film, and the excess thrown off the rim. */
+  private coatSpin(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number) {
+    this.text(ctx, `${this.spinRpm(s)} rpm`, 450, stackTop - rPx - 26, p.good, 15)
+    if (!this.motion) return
+
+    const surface = stackTop - rPx * 0.45
+    for (let i = 0; i < 12; i += 1) {
+      const phase = (i / 12 + s * 0.55) % 1
+      const dir = i % 2 ? 1 : -1
+      const x = 450 + dir * (24 + phase * 320)
+      if (x < X0 + 8 || x > X1 - 8) continue
+      ctx.save()
+      ctx.globalAlpha = (1 - phase) * 0.5
+      this.line(ctx, x, surface, x + dir * 20, surface, p.resistLine, 1.8)
+      ctx.restore()
+    }
+
+    for (let i = 0; i < 6; i += 1) {
+      const phase = (i / 6 + s * 0.8) % 1
+      const dir = i % 2 ? 1 : -1
+      const x = dir > 0 ? X1 + 6 + phase * 30 : X0 - 6 - phase * 30
+      this.dot(ctx, x, stackTop - 8 + phase * 36, 2.4, p.resistLine, (1 - phase) * 0.85)
+    }
+  }
+
+  /** Soft bake: a hotplate under the wafer, heat climbing through it, and the solvent leaving. */
+  private coatBake(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tBake: number, tExpose: number) {
+    const on = Math.min(span(s, tBake, tBake + 0.4), 1 - span(s, tExpose - 0.5, tExpose))
+    if (on <= 0.01) return
+
+    const hpY = BASE - 2
+    const g = ctx.createLinearGradient(0, hpY - 12, 0, hpY + 14)
+    g.addColorStop(0, 'rgba(0,0,0,0)')
+    g.addColorStop(0.5, p.heat)
+    g.addColorStop(1, 'rgba(0,0,0,0)')
+    ctx.save()
+    ctx.globalAlpha = 0.6 * on
+    ctx.fillStyle = g
+    ctx.fillRect(X0 - 40, hpY - 12, VW + 80, 26)
+    ctx.restore()
+
+    ctx.save()
+    ctx.globalAlpha = 0.4 * on
+    ctx.strokeStyle = p.heat
+    ctx.lineWidth = 1.6
+    for (let i = 0; i < 5; i += 1) {
+      const hx = X0 + 74 + i * 144
+      ctx.beginPath()
+      for (let y = BASE; y > stackTop - 34; y -= 6) {
+        const x = hx + Math.sin(y * 0.07 + s * 7 + i * 1.3) * 6
+        if (y === BASE) ctx.moveTo(x, y)
+        else ctx.lineTo(x, y)
+      }
+      ctx.stroke()
+    }
+    ctx.restore()
+
+    if (this.motion) {
+      for (let i = 0; i < 9; i += 1) {
+        const phase = (i / 9 + s * 0.55) % 1
+        const vx = X0 + 96 + i * 60 + Math.sin((s + i) * 1.7) * 8
+        this.dot(ctx, vx, stackTop - rPx - 8 - phase * 82, 1.8 + phase * 2.4, p.muted, (1 - phase) * 0.45 * on)
+      }
+    }
+
+    ctx.save()
+    ctx.globalAlpha = 0.13 * on * (0.75 + 0.25 * Math.sin(s * 5))
+    ctx.fillStyle = p.heat
+    ctx.fillRect(X0, stackTop - rPx, VW, BASE - (stackTop - rPx))
+    ctx.restore()
+
+    this.text(ctx, '95 °C', 450, BASE + 26, p.heat, 15)
+  }
+
+  /** Exposure: a chrome-on-quartz mask coming down, and the cones of light it lets through. */
+  private coatExpose(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tExpose: number, tDevelop: number) {
+    const park = stackTop - rPx - MASK_GAP
+    const maskY = lerp(54, park, span(s, tExpose, tExpose + 1.0))
+    const maskH = 14
+    const lit = span(s, tExpose + 1.0, tExpose + 1.4) * (1 - span(s, tDevelop - 0.5, tDevelop))
+    const shimmer = 0.86 + 0.14 * Math.sin(s * 22)
+
+    // The lamp, and the wash of light it throws down on the mask.
+    this.rect(ctx, 330, 16, 240, 12, p.mask, p.panelLine)
+    if (lit > 0.01) {
+      this.line(ctx, 332, 28, 568, 28, p.metal, 2.5)
+      const g = ctx.createLinearGradient(0, 16, 0, maskY)
+      g.addColorStop(0, `rgba(128, 90, 213, ${0.24 * lit})`)
+      g.addColorStop(1, 'rgba(128, 90, 213, 0)')
+      ctx.fillStyle = g
+      ctx.fillRect(210, 16, 480, maskY - 16)
+      this.text(ctx, '193 nm', 322, 22, p.metal, 13, 'right')
+    }
+
+    this.coatMask(ctx, p, maskY, maskH, 1)
+    this.text(ctx, 'mask', 200, maskY - 10, p.muted, 14, 'left')
+
+    // One cone of light per opening, with a glow, a core and photons falling through it.
+    if (lit <= 0.01) return
+    const yTop = maskY + maskH
+    const yBot = stackTop - rPx
+    for (const w of WIN) {
+      const cxm = (w.a + w.b) / 2
+      const half = (w.b - w.a) / 2
+      this.cone(ctx, cxm, yTop, half + 5, yBot, half + 9, p.metal, 0.16 * lit * shimmer)
+      this.cone(ctx, cxm, yTop, half, yBot, half + 4, p.metal, 0.5 * lit * shimmer)
+    }
+    if (this.motion) {
+      for (let i = 0; i < 12; i += 1) {
+        const phase = (i / 12 + s * 1.6) % 1
+        const w = WIN[i % WIN.length]
+        const x = (w.a + w.b) / 2 + Math.sin(i * 3.1) * 7
+        this.dot(ctx, x, yTop + phase * (yBot - yTop), 1.8, p.metal, lit * (1 - phase * 0.5))
+      }
+    }
+  }
+
+  /** The chrome-on-quartz mask: an opaque bar everywhere except the openings. */
+  private coatMask(ctx: CanvasRenderingContext2D, p: Palette, maskY: number, maskH: number, alpha: number) {
+    if (alpha <= 0.02) return
+    ctx.save()
+    ctx.globalAlpha = alpha
+    this.rect(ctx, 200, maskY, 500, maskH, p.quartz, p.panelLine)
+    let cursor = 200
+    for (const w of WIN) {
+      this.rect(ctx, cursor, maskY, w.a - cursor, maskH, p.mask)
+      cursor = w.b
+    }
+    this.rect(ctx, cursor, maskY, 700 - cursor, maskH, p.mask)
+    ctx.restore()
+  }
+
+  /** Develop: the mask lifts away, developer floods the surface, and the exposed resist goes. */
+  private coatDevelop(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tDevelop: number) {
+    const lift = span(s, tDevelop, tDevelop + 0.9)
+    if (lift < 1) this.coatMask(ctx, p, lerp(stackTop - rPx - MASK_GAP, 18, lift), 14, 1 - lift)
+
+    if (this.motion) {
+      for (let i = 0; i < 12; i += 1) {
+        const phase = (i / 12 + s * 0.85) % 1
+        const x = X0 + 44 + ((i * 97) % (VW - 88))
+        this.dot(ctx, x, 74 + phase * (stackTop - rPx - 96), 2.4, p.good, (1 - phase * 0.7) * 0.8)
+      }
+    }
+
+    // A film of developer standing on the resist while it works.
+    ctx.save()
+    ctx.globalAlpha = 0.28 * (1 - span(s, tDevelop + 1.4, tDevelop + 2.6))
+    ctx.fillStyle = p.good
+    ctx.fillRect(X0, stackTop - rPx - 3, VW, 3)
+    ctx.restore()
   }
 
   /* ------------------------------------------------------------------ 4. etch */
@@ -901,7 +1095,6 @@ export class FabScene {
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
     if (depth > 20) this.dimV(ctx, X1 + 12, SUF, SUF + depth, `${Math.round(depthNm)} nm`, p.muted)
     this.scaleBar(ctx, p, 45, '50 nm')
-    this.phaseStrip(ctx, p, ['etch', 'overetch'], s < 5.6 ? 0 : 1)
   }
 
   /* --------------------------------------------------------------- 5. implant */
@@ -995,7 +1188,6 @@ export class FabScene {
 
     this.profileInset(ctx, p, s)
     this.scaleBar(ctx, p, 45, '50 nm')
-    this.phaseStrip(ctx, p, ['implant', 'anneal'], s < 5.9 ? 0 : 1)
   }
 
   /** The concentration-versus-depth profile, drawn as a small chart in the top-right corner. */
@@ -1118,7 +1310,6 @@ export class FabScene {
 
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
     this.scaleBar(ctx, p, 38, '200 nm')
-    this.phaseStrip(ctx, p, ['polish', 'overpolish'], s < 6.0 ? 0 : 1)
   }
 
   /* -------------------------------------------------------------- 7. metrology */
@@ -1169,7 +1360,6 @@ export class FabScene {
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
     this.dimV(ctx, X1 + 12, top, SUF, '3.1 nm', p.muted)
     this.scaleBar(ctx, p, 36, '5 nm')
-    this.phaseStrip(ctx, p, ['sweep', 'run-to-run'], s < 3.5 ? 0 : 1)
   }
 
   /** What the ellipsometer is really producing: a thickness map of the wafer, built point by point. */
