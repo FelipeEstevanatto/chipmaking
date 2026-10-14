@@ -152,9 +152,9 @@ export const ERAS: Era[] = [
     descEn: 'Vertical fin channel; the gate wraps three sides and sharply cuts leakage.',
     productsPt: 'Ivy Bridge (2012) nos PCs; Exynos 7420 (Galaxy S6) e Apple A9 (iPhone 6s) nos celulares.',
     productsEn: 'Ivy Bridge (2012) in PCs; Exynos 7420 (Galaxy S6) and Apple A9 (iPhone 6s) in phones.',
-    src: '/pdf-images/p17-2.png',
-    altPt: 'Transistor FinFET Tri-Gate',
-    altEn: 'FinFET Tri-Gate transistor',
+    src: '/assets/finfet-trigate.svg',
+    altPt: 'Duas vistas do FinFET: a aleta de silício com o portão cruzando-a e o corte pelo portão, que envolve os três lados da aleta',
+    altEn: 'Two views of the FinFET: the silicon fin with the gate crossing it, and a section through the gate wrapping the three sides of the fin',
   },
   {
     year: '2012',
@@ -182,9 +182,9 @@ export const ERAS: Era[] = [
       'Estreia comercial no ASIC minerador MicroBT WhatsMiner M56S++ (Samsung SF3E); depois vieram o Exynos 2600, no 2 nm da Samsung, e o Apple A20 Pro, no N2 da TSMC.',
     productsEn:
       'Commercial debut in MicroBT’s WhatsMiner M56S++ mining ASIC (Samsung SF3E); later came the Exynos 2600, on Samsung’s 2 nm, and Apple’s A20 Pro, on TSMC N2.',
-    src: '/pdf-images/p18-1.png',
-    altPt: 'Transistor GAAFET de nanofolhas',
-    altEn: 'GAAFET nanosheet transistor',
+    src: '/assets/gaafet-nanosheet.svg',
+    altPt: 'Duas vistas do GAAFET: as nanofolhas empilhadas com o portão cruzando-as e o corte pelo portão, que envolve cada nanofolha nos quatro lados',
+    altEn: 'Two views of the GAAFET: the stacked nanosheets with the gate crossing them, and a section through the gate wrapping each sheet on all four sides',
   },
   {
     year: '2025/2026',

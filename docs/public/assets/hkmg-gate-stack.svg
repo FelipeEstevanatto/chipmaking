@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
-  <title>Gate stack comparison: a thin silicon dioxide under a polysilicon gate against a physically thicker high-k film under a metal gate</title>
-  <desc>Two gate stacks side by side on the same silicon surface line. Left: a thin silicon dioxide layer under a thick polysilicon gate, with red arrows showing carriers tunnelling through the oxide into the channel. Right: a physically thicker high-k film under a metal electrode, with no tunnelling arrows. The 45 nm process is specified at 1.0 nm equivalent oxide thickness. Not to scale.</desc>
+  <title>Gate stack comparison: a thin silicon dioxide under a polysilicon gate against a hafnium oxide film on a thin interfacial oxide under a metal gate</title>
+  <desc>Two gate stacks side by side on the same silicon surface line. Left: a thin silicon dioxide under a thick polysilicon gate, with red arrows showing carriers tunnelling through the oxide into the channel. Right: a thin interfacial silicon dioxide and a physically thicker hafnium oxide high-k film under a metal gate, with no tunnelling arrows. The 45 nm process is specified at 1.0 nm equivalent oxide thickness. Not to scale.</desc>
   <rect width="800" height="400" fill="#ffffff" />
   <defs>
     <marker id="hkmgArrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
@@ -28,8 +28,8 @@
   <text class="head" x="210" y="44" text-anchor="middle">SiO<tspan dy="4" font-size="10">2</tspan><tspan dy="-4"> + poly-Si</tspan></text>
   <text class="bad" x="210" y="68" text-anchor="middle">carriers tunnel through the oxide</text>
 
-  <text class="head" x="590" y="44" text-anchor="middle">HfO<tspan dy="4" font-size="10">2</tspan><tspan dy="-4"> + metal gate</tspan></text>
-  <text class="good" x="590" y="68" text-anchor="middle">1.0 nm EOT, thicker film</text>
+  <text class="head" x="590" y="44" text-anchor="middle">SiO<tspan dy="4" font-size="10">2</tspan><tspan dy="-4"> + HfO</tspan><tspan dy="4" font-size="10">2</tspan><tspan dy="-4"> + metal</tspan></text>
+  <text class="good" x="590" y="68" text-anchor="middle">1.0 nm EOT, physically thicker</text>
 
   <line class="divider" x1="400" y1="88" x2="400" y2="340" />
 
@@ -38,8 +38,8 @@
   <rect class="ox" x="110" y="242" width="200" height="8" />
   <rect class="poly" x="110" y="160" width="200" height="82" />
   <text class="inv" x="210" y="192" text-anchor="middle">poly-Si</text>
-  <text class="sm" x="96" y="250" text-anchor="end">SiO<tspan dy="4" font-size="10">2</tspan></text>
-  <path class="lead" d="M 98,246 L 108,246" />
+  <text class="sm" x="96" y="246" text-anchor="end">SiO<tspan dy="4" font-size="10">2</tspan></text>
+  <path class="lead" d="M 98,242 L 108,242" />
   <text class="sm" x="120" y="322">Si</text>
   <text class="bad" x="210" y="322" text-anchor="middle">tunnelling</text>
 
@@ -48,11 +48,15 @@
   <path class="leak" d="M 210,212 L 210,300" />
   <path class="leak" d="M 270,212 L 270,300" />
 
-  <!-- ================= RIGHT: high-k film under a metal gate ================= -->
+  <!-- ================= RIGHT: interfacial oxide and high-k under a metal gate ================= -->
   <rect class="si" x="490" y="250" width="200" height="90" />
-  <rect class="hkf" x="490" y="222" width="200" height="28" />
-  <rect class="metal" x="490" y="160" width="200" height="62" />
-  <text class="inv" x="590" y="190" text-anchor="middle">metal</text>
-  <text class="hk" x="590" y="242" text-anchor="middle">HfO<tspan dy="4" font-size="10">2</tspan></text>
+  <rect class="ox" x="490" y="242" width="200" height="8" />
+  <rect class="hkf" x="490" y="220" width="200" height="22" />
+  <rect class="metal" x="490" y="160" width="200" height="60" />
+  <text class="inv" x="590" y="190" text-anchor="middle">metal gate</text>
+  <text class="hk" x="590" y="235" text-anchor="middle">HfO<tspan dy="4" font-size="10">2</tspan><tspan dy="-4"> (high-k)</tspan></text>
+  <text class="sm" x="700" y="247" text-anchor="start">SiO<tspan dy="4" font-size="10">2</tspan><tspan dy="-4"> interface</tspan></text>
+  <path class="lead" d="M 696,247 L 692,247" />
   <text class="sm" x="500" y="322">Si</text>
+  <text class="good" x="590" y="322" text-anchor="middle">no direct tunnelling</text>
 </svg>

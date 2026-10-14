@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
+<title>Nanosheet gate-all-around transistor: an isometric view of stacked sheets with the gate crossing them, and a section cut through the gate</title>
+<desc>Two views. Left, an isometric drawing: three thin silicon sheets are stacked with gaps between them, and a gate block crosses the stack, surrounding every sheet on all four faces. Right, a section cut through the gate, perpendicular to the sheets: each sheet is enclosed by the gate oxide and the gate, so the channel of every sheet is controlled on four sides. Not to scale.</desc>
+<rect width="960" height="540" fill="#ffffff" />
+<style>
+.head { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+.lbl { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+.inv { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+.note { font: 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+.acc { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2f855a; }
+.si-t { fill: #dbe3ec; stroke: #7d8b9c; stroke-width: 1.3; }
+.si-f { fill: #cbd5e0; stroke: #7d8b9c; stroke-width: 1.3; }
+.si-r { fill: #a0aec0; stroke: #7d8b9c; stroke-width: 1.3; }
+.sh-t { fill: #90cdf4; stroke: #2b6cb0; stroke-width: 1.3; }
+.sh-f { fill: #63b3ed; stroke: #2b6cb0; stroke-width: 1.3; }
+.sh-r { fill: #4299e1; stroke: #2b6cb0; stroke-width: 1.3; }
+.g-t { fill: #718096; stroke: #2d3748; stroke-width: 1.3; }
+.g-f { fill: #4a5568; stroke: #2d3748; stroke-width: 1.3; }
+.g-r { fill: #3d4756; stroke: #2d3748; stroke-width: 1.3; }
+.ox { fill: none; stroke: #b7791f; stroke-width: 6; }
+.dim { fill: none; stroke: #718096; stroke-width: 1.2; }
+.lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+</style>
+
+<text class="head" x="330" y="34" text-anchor="middle">isometric view</text>
+<text class="head" x="808" y="34" text-anchor="middle">section through the gate</text>
+<line class="divider" x1="655" y1="56" x2="655" y2="500" />
+
+<!-- ============ left: isometric ============ -->
+<polygon class="si-f" points="164.0,327.8 452.0,494.1 452.0,467.1 164.0,300.8" />
+<polygon class="si-r" points="636.0,387.9 452.0,494.1 452.0,467.1 636.0,360.9" />
+<polygon class="si-t" points="348.0,194.6 636.0,360.9 452.0,467.1 164.0,300.8" />
+<polygon class="sh-f" points="276.0,235.5 516.0,374.1 516.0,364.5 276.0,225.9" />
+<polygon class="sh-r" points="552.0,353.3 516.0,374.1 516.0,364.5 552.0,343.8" />
+<polygon class="sh-t" points="312.0,205.2 552.0,343.8 516.0,364.5 276.0,225.9" />
+<polygon class="sh-f" points="276.0,217.5 516.0,356.1 516.0,346.5 276.0,207.9" />
+<polygon class="sh-r" points="552.0,335.3 516.0,356.1 516.0,346.5 552.0,325.8" />
+<polygon class="sh-t" points="312.0,187.2 552.0,325.8 516.0,346.5 276.0,207.9" />
+<polygon class="sh-f" points="276.0,199.5 516.0,338.1 516.0,328.5 276.0,189.9" />
+<polygon class="sh-r" points="552.0,317.3 516.0,338.1 516.0,328.5 552.0,307.8" />
+<polygon class="sh-t" points="312.0,169.2 552.0,307.8 516.0,328.5 276.0,189.9" />
+<polygon class="g-f" points="348.0,342.4 412.0,379.4 412.0,276.2 348.0,239.2" />
+<polygon class="g-r" points="480.0,340.1 412.0,379.4 412.0,276.2 480.0,236.9" />
+<polygon class="g-t" points="416.0,199.9 480.0,236.9 412.0,276.2 348.0,239.2" />
+<polygon class="sh-f" points="428.0,323.3 516.0,374.1 516.0,364.5 428.0,313.7" />
+<polygon class="sh-r" points="552.0,353.3 516.0,374.1 516.0,364.5 552.0,343.8" />
+<polygon class="sh-t" points="464.0,292.9 552.0,343.8 516.0,364.5 428.0,313.7" />
+<polygon class="sh-f" points="428.0,305.3 516.0,356.1 516.0,346.5 428.0,295.7" />
+<polygon class="sh-r" points="552.0,335.3 516.0,356.1 516.0,346.5 552.0,325.8" />
+<polygon class="sh-t" points="464.0,274.9 552.0,325.8 516.0,346.5 428.0,295.7" />
+<polygon class="sh-f" points="428.0,287.3 516.0,338.1 516.0,328.5 428.0,277.7" />
+<polygon class="sh-r" points="552.0,317.3 516.0,338.1 516.0,328.5 552.0,307.8" />
+<polygon class="sh-t" points="464.0,256.9 552.0,307.8 516.0,328.5 428.0,277.7" />
+<!-- left labels -->
+<text class="lbl" x="196" y="150" text-anchor="middle">gate</text>
+<path class="lead" d="M216,156 L414.4,237.8" />
+<text class="lbl" x="90" y="252" text-anchor="middle">source</text>
+<path class="lead" d="M122,260 L324.0,258.5" />
+<text class="lbl" x="620" y="404" text-anchor="middle">drain</text>
+<path class="lead" d="M592,398 L482.4,349.9" />
+<text class="lbl" x="470" y="512" text-anchor="middle">Si</text>
+<path class="lead" d="M462,504 L388.0,443.4" />
+
+<!-- ============ right: section ============ -->
+<rect class="si-t" x="700" y="392" width="240" height="42" />
+<rect class="g-f" x="762" y="228" width="116" height="164" />
+<rect class="ox" x="776" y="245" width="88" height="16" />
+<rect class="sh-f" x="781" y="248" width="78" height="16" />
+<rect class="ox" x="776" y="275" width="88" height="16" />
+<rect class="sh-f" x="781" y="278" width="78" height="16" />
+<rect class="ox" x="776" y="305" width="88" height="16" />
+<rect class="sh-f" x="781" y="308" width="78" height="16" />
+<!-- labels -->
+<text class="lbl" x="748" y="240" text-anchor="end">gate</text>
+<path class="lead" d="M752,240 L776,244" />
+<text class="lbl" x="748" y="290" text-anchor="end">gate oxide</text>
+<path class="lead" d="M752,288 L774,284" />
+<text class="inv" x="820" y="264" text-anchor="middle">sheet</text>
+<text class="lbl" x="706" y="472" text-anchor="start">Si</text>
+<text class="acc" x="808" y="214" text-anchor="middle">gate on four sides</text>
+</svg>

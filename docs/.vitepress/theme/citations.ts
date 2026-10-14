@@ -2149,6 +2149,14 @@ const list: Citation[] = [
     url: 'https://www.construction-physics.com/p/does-all-semiconductor-manufacturing',
     short: 'Construction Physics (Spruce Pine)',
   },
+  {
+    key: 'st-fdsoi-utbb',
+    num: 268,
+    title: 'UTBB FD-SOI: A process/design symbiosis for breakthrough energy-efficiency',
+    publisher: 'Magarshack, Flatresse & Cesana — Design, Automation & Test in Europe (DATE), 2013',
+    url: 'https://past.date-conference.com/proceedings-archive/2013/PDFFILES/08.1_1.PDF',
+    short: 'Magarshack et al. (2013)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

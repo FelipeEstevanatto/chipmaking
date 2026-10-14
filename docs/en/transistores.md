@@ -133,8 +133,8 @@ The first high-volume processor with strained silicon was the **Pentium 4 “Pre
 
 <TransistorFacts year="2007" />
 
-<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Cross-sections of two gate stacks on the same surface: left, a thin SiO₂ under polysilicon with tunnelling arrows crossing the oxide; right, a thicker high-k film under a metal electrode">
-Left, the SiO₂ gate with polysilicon: the thin oxide lets carriers tunnel through, the red arrows. Right, the <strong>high-k</strong> stack under a metal electrode: physically thicker, with the same equivalent oxide thickness (<strong>EOT</strong> of <strong>1.0 nm</strong> at the 45 nm node), and it is the physical thickness that pushes direct tunnelling down.
+<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Cross-sections of two gate stacks on the same surface: left, a thin SiO₂ under polysilicon with tunnelling arrows crossing the oxide; right, a thin interfacial oxide under a thicker high-k film under a metal electrode">
+Left, the SiO₂ gate with polysilicon: the thin oxide lets carriers tunnel through, the red arrows. Right, a thin <strong>interfacial oxide</strong> under the <strong>high-k</strong> film, under a metal electrode: the stack is physically thicker, with the same equivalent oxide thickness (<strong>EOT</strong> of <strong>1.0 nm</strong> at the 45 nm node), and it is the physical thickness that pushes direct tunnelling down.
 </DiagramFigure>
 
 With the gate oxide already too thin to hold back **tunnelling**, leakage became the obstacle to scaling; the answer came in **2007**, at the **45 nm** node, by trading SiO₂ and polysilicon for a **hafnium-based high-k** dielectric and **metal electrodes** <Cite id="intel-45nm" />.
@@ -149,7 +149,7 @@ The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followe
 
 <TransistorFacts year="2011" />
 
-<DiagramFigure src="/pdf-images/p17-2.png" alt="FinFET Tri-Gate transistor">
+<DiagramFigure src="/assets/finfet-trigate.svg" alt="Two views of the FinFET: left, the silicon fin with the gate crossing it; right, a section through the gate, with the gate wrapping the three sides of the fin">
 The channel leaves the plane: the vertical fin is wrapped by the gate on three sides.
 </DiagramFigure>
 
@@ -161,10 +161,10 @@ Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at
 
 <TransistorFacts year="2012" />
 
-While the rest of the industry moved to FinFET, **FD-SOI** took a different route, reviving the SOI idea with an **ultra-thin silicon film** (~6 nm) on top of the buried oxide. With the film that thin the channel becomes **fully depleted** (no “floating body” effects as in partially depleted SOI) and a **back plane** under the BOX allows **body bias** to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
+While the rest of the industry moved to FinFET, **FD-SOI** took a different route, reviving the SOI idea with an **ultra-thin silicon film** (~7 nm) on an **ultra-thin BOX** (~25 nm) <Cite id="st-fdsoi-utbb" />. With the film that thin the channel becomes **fully depleted** (no “floating body” effects as in partially depleted SOI) and a **back plane** under the BOX allows **body bias** to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
 
-<DiagramFigure src="/assets/fdsoi.svg" alt="Comparison of partially depleted SOI with a floating body against FD-SOI with an ultra-thin film and a back plane">
-Above, partially depleted SOI with a floating body; below, FD-SOI with an ultra-thin film and a back plane for body bias.
+<DiagramFigure src="/assets/fdsoi.svg" alt="Comparison of partially depleted SOI with a floating body against FD-SOI with an ultra-thin body and BOX, raised source and drain, and a back plane">
+Left, partially depleted SOI with a floating body; right, FD-SOI (ultra-thin body and BOX), with raised source and drain and the back plane that takes the body bias.
 </DiagramFigure>
 
 The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundries (**22FDX**). The best-known case is the **Google Nest Mini**, whose Synaptics AS-370 SoC was identified in a teardown as built on 22FDX <Cite id="techinsights-22fdx" />. The technology also underpins BLE MCUs, Wi-Fi cameras and GNSS SoCs, with dozens of designs already in mass production <Cite id="verisilicon-fdsoi" />.
@@ -173,7 +173,7 @@ The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundrie
 
 <TransistorFacts year="2022" />
 
-<DiagramFigure src="/pdf-images/p18-1.png" alt="GAAFET nanosheet transistor">
+<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Two views of the GAAFET: left, the stacked nanosheets with the gate crossing them; right, a section through the gate, with the oxide and the gate wrapping each sheet on all four sides">
 Stacked nanosheets, with the gate wrapping all four faces of each one.
 </DiagramFigure>
 
@@ -245,7 +245,7 @@ Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node num
 
 Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the table at the top of the chapter.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa', 'st-fdsoi-utbb']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },

@@ -133,8 +133,8 @@ O primeiro processador de alto volume com silício esticado foi o **Pentium 4 �
 
 <TransistorFacts year="2007" />
 
-<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Corte de duas pilhas de porta na mesma superfície: à esquerda, SiO₂ fino sob polissilício, com setas de tunelamento atravessando o óxido; à direita, filme de high-k mais espesso sob eletrodo metálico">
-À esquerda, a porta de SiO₂ com polissilício: o óxido fino deixa os portadores atravessarem por <strong>tunelamento</strong>, as setas vermelhas. À direita, a pilha de <strong>High-K</strong> sob eletrodo metálico: fisicamente mais espessa, com a mesma espessura elétrica equivalente (<strong>EOT</strong> de <strong>1,0 nm</strong> no nó de 45 nm), e é a espessura física que derruba o tunelamento direto.
+<DiagramFigure src="/assets/hkmg-gate-stack.svg" alt="Corte de duas pilhas de porta na mesma superfície: à esquerda, SiO₂ fino sob polissilício, com setas de tunelamento atravessando o óxido; à direita, um óxido de interface fino sob o filme de high-k mais espesso, sob eletrodo metálico">
+À esquerda, a porta de SiO₂ com polissilício: o óxido fino deixa os portadores atravessarem por <strong>tunelamento</strong>, as setas vermelhas. À direita, o <strong>óxido de interface</strong> fino sob o filme de <strong>High-K</strong>, sob eletrodo metálico: a pilha é fisicamente mais espessa, com a mesma espessura elétrica equivalente (<strong>EOT</strong> de <strong>1,0 nm</strong> no nó de 45 nm), e é a espessura física que derruba o tunelamento direto.
 </DiagramFigure>
 
 Com o óxido de porta já fino demais para conter o **tunelamento**, o vazamento virou o obstáculo do escalonamento; a resposta veio em **2007**, no nó de **45 nm**, com a troca de SiO₂ e polissilício por um dielétrico **High-K à base de háfnio** e por **eletrodos metálicos** <Cite id="intel-45nm" />.
@@ -149,7 +149,7 @@ A estreia comercial foi o **Core 2 Extreme QX9650**, em novembro de 2007, seguid
 
 <TransistorFacts year="2011" />
 
-<DiagramFigure src="/pdf-images/p17-2.png" alt="Transistor FinFET Tri-Gate">
+<DiagramFigure src="/assets/finfet-trigate.svg" alt="Duas vistas do FinFET: à esquerda, a aleta de silício com o portão cruzando-a; à direita, o corte pelo portão, com a porta envolvendo os três lados da aleta">
 O canal sai do plano: a aleta vertical é envolvida pelo portão em três lados.
 </DiagramFigure>
 
@@ -161,10 +161,10 @@ O **Ivy Bridge** (22 nm, abril de 2012) foi o primeiro produto de alto volume <C
 
 <TransistorFacts year="2012" />
 
-Enquanto o restante da indústria migrava para o FinFET, a **FD-SOI** seguiu outro caminho, retomando a ideia do SOI com um **filme de silício ultrafino** (~6 nm) sobre o óxido enterrado. Com o filme tão fino, o canal fica **totalmente depletado** (sem o “corpo flutuante” que causava efeitos indesejados no SOI parcialmente depletado) e um **plano traseiro** sob o BOX permite aplicar **polarização de corpo** (*back bias*) para subir ou baixar a tensão de limiar em tempo real. Na prática, isso permite gastar energia só quando o circuito precisa de desempenho, o que é valioso em IoT, RF e automotivo.
+Enquanto o restante da indústria migrava para o FinFET, a **FD-SOI** seguiu outro caminho, retomando a ideia do SOI com um **filme de silício ultrafino** (~7 nm) sobre um **BOX ultrafino** (~25 nm) <Cite id="st-fdsoi-utbb" />. Com o filme tão fino, o canal fica **totalmente depletado** (sem o “corpo flutuante” que causava efeitos indesejados no SOI parcialmente depletado) e um **plano traseiro** sob o BOX permite aplicar **polarização de corpo** (*back bias*) para subir ou baixar a tensão de limiar em tempo real. Na prática, isso permite gastar energia só quando o circuito precisa de desempenho, o que é valioso em IoT, RF e automotivo.
 
-<DiagramFigure src="/assets/fdsoi.svg" alt="Comparação entre SOI parcialmente depletado com corpo flutuante e FD-SOI com filme ultrafino e plano traseiro">
-Acima, SOI parcialmente depletado com corpo flutuante; abaixo, FD-SOI com filme ultrafino e plano traseiro para back bias.
+<DiagramFigure src="/assets/fdsoi.svg" alt="Comparação entre SOI parcialmente depletado com corpo flutuante e FD-SOI com corpo e BOX ultrafinos, fonte e dreno elevados e plano traseiro">
+À esquerda, SOI parcialmente depletado, com corpo flutuante; à direita, FD-SOI (corpo e BOX ultrafinos), com fonte e dreno elevados e o plano traseiro que recebe o back bias.
 </DiagramFigure>
 
 As plataformas comerciais vieram da STMicroelectronics (28 nm) e da GlobalFoundries (**22FDX**). O caso mais conhecido é o **Google Nest Mini**, cujo SoC Synaptics AS-370 foi identificado em teardown como fabricado em 22FDX <Cite id="techinsights-22fdx" />. A tecnologia também sustenta MCUs BLE, câmeras Wi-Fi e SoCs de GNSS, com dezenas de projetos já em produção em massa <Cite id="verisilicon-fdsoi" />.
@@ -173,7 +173,7 @@ As plataformas comerciais vieram da STMicroelectronics (28 nm) e da GlobalFoundr
 
 <TransistorFacts year="2022" />
 
-<DiagramFigure src="/pdf-images/p18-1.png" alt="Transistor GAAFET de nanofolhas">
+<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Duas vistas do GAAFET: à esquerda, as nanofolhas empilhadas com o portão cruzando-as; à direita, o corte pelo portão, com o óxido e a porta envolvendo cada nanofolha nos quatro lados">
 Nanofolhas empilhadas, com o portão envolvendo as quatro faces de cada uma.
 </DiagramFigure>
 
@@ -245,7 +245,7 @@ Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "�
 
 Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1**: 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração**, e é exatamente assim que eles devem ser lidos na tabela do início do capítulo.
 
-<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa']" />
+<SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa', 'st-fdsoi-utbb']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'cronologia e comparador interativo' },

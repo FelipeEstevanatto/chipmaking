@@ -4,14 +4,14 @@
   <rect width="800" height="380" fill="#ffffff" />
   <style>
     .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .inv { font: 12px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
-    .sm { font: 11px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .inv { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .sm { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
     .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
     .pwell { fill: #fbd9b5; stroke: #c05621; stroke-width: 1; }
     .nwell { fill: #b9d9f5; stroke: #2b6cb0; stroke-width: 1; }
     .nplus { fill: #2b6cb0; stroke: #2c5282; stroke-width: 1; }
-    .pplus { fill: #c05621; stroke: #9c4221; stroke-width: 1; }
+    .pplus { fill: #c05621; stroke: #9b2c2c; stroke-width: 1; }
     .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
     .ox { fill: #f6e05e; stroke: #b7791f; stroke-width: 1; }
     .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }

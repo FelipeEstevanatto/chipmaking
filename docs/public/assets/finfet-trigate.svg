@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
+<title>FinFET (tri-gate): an isometric view of the fin with the gate crossing it, and a section cut through the gate</title>
+<desc>Two views of the same transistor. Left, an isometric drawing: a thin silicon fin runs from source to drain along the substrate, and a gate bar crosses it, resting on the top and both side walls of the fin. Right, a section cut through the gate, perpendicular to the fin: a thin gate oxide and the gate electrode wrap the fin on its top and two sides, so the channel forms on three faces. Not to scale.</desc>
+<rect width="960" height="540" fill="#ffffff" />
+<style>
+.head { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+.lbl { font: 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+.inv { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+.note { font: 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+.acc { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2f855a; }
+.si-t { fill: #dbe3ec; stroke: #7d8b9c; stroke-width: 1.3; }
+.si-f { fill: #cbd5e0; stroke: #7d8b9c; stroke-width: 1.3; }
+.si-r { fill: #a0aec0; stroke: #7d8b9c; stroke-width: 1.3; }
+.fin-t { fill: #90cdf4; stroke: #2b6cb0; stroke-width: 1.3; }
+.fin-f { fill: #63b3ed; stroke: #2b6cb0; stroke-width: 1.3; }
+.fin-r { fill: #4299e1; stroke: #2b6cb0; stroke-width: 1.3; }
+.g-t { fill: #718096; stroke: #2d3748; stroke-width: 1.3; }
+.g-f { fill: #4a5568; stroke: #2d3748; stroke-width: 1.3; }
+.g-r { fill: #3d4756; stroke: #2d3748; stroke-width: 1.3; }
+.ox { fill: none; stroke: #b7791f; stroke-width: 7; }
+.dim { fill: none; stroke: #718096; stroke-width: 1.2; }
+.lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
+</style>
+
+<text class="head" x="330" y="34" text-anchor="middle">isometric view</text>
+<text class="head" x="808" y="34" text-anchor="middle">section through the gate</text>
+<line class="divider" x1="655" y1="56" x2="655" y2="500" />
+
+<!-- ============ left: isometric ============ -->
+<polygon class="si-f" points="164.0,327.8 452.0,494.1 452.0,467.1 164.0,300.8" />
+<polygon class="si-r" points="636.0,387.9 452.0,494.1 452.0,467.1 636.0,360.9" />
+<polygon class="si-t" points="348.0,194.6 636.0,360.9 452.0,467.1 164.0,300.8" />
+<polygon class="fin-f" points="276.0,282.3 516.0,420.9 516.0,330.9 276.0,192.3" />
+<polygon class="fin-r" points="552.0,400.1 516.0,420.9 516.0,330.9 552.0,310.1" />
+<polygon class="fin-t" points="312.0,171.6 552.0,310.1 516.0,330.9 276.0,192.3" />
+<polygon class="g-f" points="348.0,342.4 412.0,379.4 412.0,274.4 348.0,237.4" />
+<polygon class="g-r" points="480.0,340.1 412.0,379.4 412.0,274.4 480.0,235.1" />
+<polygon class="g-t" points="416.0,198.1 480.0,235.1 412.0,274.4 348.0,237.4" />
+<polygon class="fin-f" points="428.0,370.1 516.0,420.9 516.0,330.9 428.0,280.1" />
+<polygon class="fin-r" points="552.0,400.1 516.0,420.9 516.0,330.9 552.0,310.1" />
+<polygon class="fin-t" points="464.0,259.3 552.0,310.1 516.0,330.9 428.0,280.1" />
+<!-- left labels -->
+<text class="lbl" x="196" y="150" text-anchor="middle">gate</text>
+<path class="lead" d="M212,158 L414.4,236.0" />
+<text class="lbl" x="104" y="306" text-anchor="middle">source</text>
+<path class="lead" d="M136,300 L324.0,277.1" />
+<text class="lbl" x="612" y="460" text-anchor="middle">drain</text>
+<path class="lead" d="M584,454 L476.0,361.8" />
+<text class="lbl" x="470" y="512" text-anchor="middle">Si</text>
+<path class="lead" d="M462,504 L388.0,443.4" />
+
+<!-- ============ right: section through the gate ============ -->
+<rect class="si-t" x="700" y="390" width="240" height="42" />
+<rect class="g-f" x="745" y="250" width="150" height="140" />
+<rect class="fin-f" x="797" y="280" width="36" height="110" />
+<polyline class="ox" points="794,390 794,280 836,280 836,390" />
+<!-- dimensions -->
+<path class="dim" d="M797,448 L833,448 M797,442 L797,454 M833,442 L833,454" />
+<text class="note" x="815" y="472" text-anchor="middle">W</text>
+<path class="dim" d="M914,280 L914,390 M908,280 L920,280 M908,390 L920,390" />
+<text class="note" x="924" y="340" text-anchor="start">H</text>
+<!-- labels -->
+<text class="lbl" x="740" y="262" text-anchor="end">gate</text>
+<path class="lead" d="M744,262 L766,266" />
+<text class="lbl" x="740" y="300" text-anchor="end">gate oxide</text>
+<path class="lead" d="M744,298 L790,294" />
+<text class="inv" x="815" y="272" text-anchor="middle">fin</text>
+<text class="lbl" x="706" y="470" text-anchor="start">Si</text>
+<text class="acc" x="808" y="234" text-anchor="middle">channel on three faces</text>
+</svg>
