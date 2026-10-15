@@ -153,7 +153,7 @@ export const ERAS: Era[] = [
     productsPt: 'Ivy Bridge (2012) nos PCs; Exynos 7420 (Galaxy S6) e Apple A9 (iPhone 6s) nos celulares.',
     productsEn: 'Ivy Bridge (2012) in PCs; Exynos 7420 (Galaxy S6) and Apple A9 (iPhone 6s) in phones.',
     src: '/assets/finfet-trigate.svg',
-    altPt: 'Duas vistas do FinFET: a aleta de silício com o portão cruzando-a e o corte pelo portão, que envolve os três lados da aleta',
+    altPt: 'Duas vistas do FinFET: a aleta de silício com a porta cruzando-a e o corte pela porta, que envolve os três lados da aleta',
     altEn: 'Two views of the FinFET: the silicon fin with the gate crossing it, and a section through the gate wrapping the three sides of the fin',
   },
   {
@@ -183,7 +183,7 @@ export const ERAS: Era[] = [
     productsEn:
       'Commercial debut in MicroBT’s WhatsMiner M56S++ mining ASIC (Samsung SF3E); later came the Exynos 2600, on Samsung’s 2 nm.',
     src: '/assets/gaafet-nanosheet.svg',
-    altPt: 'Duas vistas do GAAFET: as nanofolhas empilhadas com o portão cruzando-as e o corte pelo portão, que envolve cada nanofolha nos quatro lados',
+    altPt: 'Duas vistas do GAAFET: as nanofolhas empilhadas com a porta cruzando-as e o corte pela porta, que envolve cada nanofolha nos quatro lados',
     altEn: 'Two views of the GAAFET: the stacked nanosheets with the gate crossing them, and a section through the gate wrapping each sheet on all four sides',
   },
   {
@@ -239,8 +239,8 @@ export const ERAS: Era[] = [
 export const ERA_GAINS: Record<string, { pt: string; en: string }> = {
   '1960': { pt: 'Base da Lei de Moore por décadas', en: "Basis of Moore's Law for decades" },
   '1963': {
-    pt: 'Consumo quase nulo em repouso — base de toda a lógica digital',
-    en: 'Near-zero standby power — the basis of all digital logic',
+    pt: 'Consumo quase nulo em repouso, base de toda a lógica digital',
+    en: 'Near-zero standby power, the basis of all digital logic',
   },
   '1968': {
     pt: 'Menos capacitância de sobreposição; dispositivos menores e mais rápidos',

@@ -6,9 +6,9 @@ dataAsOf: 2026
 
 # Prices and value
 
-The earlier chapters count silicon in kilograms, purity grades and nanometres. This page counts the same chain in **money**, because price is what decides where each step is done, who survives a downturn, and why the geography described in the [chokepoint map](/en/gargalos) exists at all.
+The earlier chapters count silicon in kilograms, purity grades and nanometres. This page counts the same chain in **money**, because price is what decides where each step is done, who survives a downturn, and why the geographic concentration the [chokepoint map](/en/gargalos) covers exists.
 
-The exercise has one virtue and one limit. The virtue is that price is the most honest summary of an industrial chain: it already contains energy, yield, capital and risk. The limit is that not every rung is public, and it is worth saying which ones are not rather than filling the gap with a round number.
+The exercise has one virtue and one limit. The virtue is that price is the most honest summary of an industrial chain: it already contains energy, yield, capital and risk. The limit is that not every rung is public, and the page says which ones are not rather than filling the gap with a round number.
 
 ## The ladder
 
@@ -25,11 +25,11 @@ The exercise has one virtue and one limit. The virtue is that price is the most 
 
 Mass shrinks at every rung. A kilogram of metallurgical silicon becomes less than a kilogram of polysilicon, which becomes a wafer of a few hundred grams, which becomes a chip of a few grams. The price **per unit of mass** rises by orders of magnitude.
 
-Most of the value, however, is not in the material. Design and front-end together account for about 45% of a finished chip's value, while the assembly and test step (the one this site covers in [packaging](/en/empacotamento)) sits near 10%, and the semiconductor material itself is a smaller fraction still <Cite id="cset-packaging" />.
+Most of the value, however, is not in the material. Design and front-end together account for about 45% of a finished chip's value. The assembly and test step, which this site covers in [packaging](/en/empacotamento), sits near 10%. The semiconductor material itself is a smaller fraction still <Cite id="cset-packaging" />.
 
 ## The commodity rung
 
-Polysilicon is the rung where price behaves like a commodity, and it is therefore the only one where the whole cycle is visible in public numbers: **US\$ 6.75/kg** at the all-time low of June 2020 and **US\$ 39/kg** in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
+Polysilicon is the rung where price behaves like a commodity, and the only one where the whole cycle is visible in public numbers. It went from **US\$ 6.75/kg** at the all-time low of June 2020 to **US\$ 39/kg** in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
 
 That range (nearly **6×** between trough and peak) is what decided who built new plants and who closed. The *pork cycle* dynamics and the list of companies that left the market are in the [polysilicon](/en/polissilicio) chapter.
 
@@ -56,6 +56,7 @@ That is why the chain's value migrated to its two extremes: **design**, which de
 <SeeAlso title="See also" :links="[
   { text: 'Polysilicon', href: '/en/polissilicio', note: 'the price cycle and the Chinese ascent' },
   { text: 'The chokepoint map', href: '/en/gargalos', note: 'where the value is concentrated' },
+  { text: 'Solar cells and modules', href: '/en/celulas-solares', note: 'cell and module prices' },
   { text: 'Data and numbers', href: '/en/dados', note: 'the series as charts and CSV' },
   { text: 'References', href: '/en/referencias', note: 'numbered list' },
 ]" />

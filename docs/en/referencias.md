@@ -7,7 +7,7 @@ description: USGS, Bernreuter and ASML sources, wafer papers and further reading
 
 ## Numbered references
 
-In footnote style: each **\[n\]** in the text points to the entry below. Where a URL exists, the title links directly to the source.
+In footnote style: each **\[n\]** in the text points to the entry below, and the numbering is fixed, in order of entry into the list. A new source goes at the end, with the next number. Where a URL exists, the title links directly to the source.
 
 <RefList />
 

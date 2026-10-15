@@ -65,7 +65,7 @@ export const HOME_SECTIONS: HomeSection[] = [
       pt: 'Fotolitografia DUV/EUV, ASML e etapas do fluxo de padrões no wafer.',
       en: 'DUV/EUV photolithography, ASML, and the patterning flow on the wafer.',
     },
-    path: '/fotolitografia',
+    path: '/na-fab',
     icon: 'mask',
     accent: 'fab',
     stage: 4,
@@ -107,7 +107,7 @@ export const HOME_SECTIONS: HomeSection[] = [
   },
   {
     id: 'panorama',
-    title: { pt: 'Panorama', en: 'Panorama' },
+    title: { pt: 'O mapa dos gargalos', en: 'The chokepoint map' },
     details: {
       pt: 'O mapa dos gargalos: a geografia da cadeia e onde ela é mais frágil.',
       en: 'The chokepoint map: the geography of the chain and where it is most fragile.',

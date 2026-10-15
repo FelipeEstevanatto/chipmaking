@@ -18,22 +18,28 @@ The answer has a pattern, and it repeats step by step.
 
 | Step | Who dominates | Concentration | What would break |
 | --- | --- | --- | --- |
-| High-purity quartz (HPQ) | Spruce Pine, USA (Sibelco and The Quartz Corp) | **70 to 90%** of the world's high-purity quartz <Cite id="construction-physics-spruce-pine" /> | The [Czochralski growth](/en/fabricacao-wafers) crucibles of the whole industry — and without a crucible there is no ingot |
+| High-purity quartz (HPQ) | Spruce Pine, USA (Sibelco and The Quartz Corp) | **70 to 90%** of the world's high-purity quartz <Cite id="construction-physics-spruce-pine" /> | The [Czochralski growth](/en/fabricacao-wafers) crucibles of the whole industry, and without a crucible there is no ingot |
 | Metallurgical silicon (MG-Si) | China | **about 87%** of world output (4,800 of 5,500 kt in 2024) <Cite id="usgs-mcs-2026" /> | The charge of the upstream refining furnaces |
 | Polysilicon | China | **more than 90%** of global volume in 2023 <Cite id="bernreuter-market" /> | The feedstock of both the wafer and the solar cell |
 | Silicon wafers | Japan (Shin-Etsu and SUMCO) | **44.1%** for the top two; the top five hold about **three quarters** <Cite id="nikkei-wafer-share" /> | The starting wafer of every fab on the planet |
 | EUV lithography | ASML (Netherlands) | **sole supplier** <Cite id="asml-euv-products" /> | The critical layers of leading-edge nodes |
 | Semiconductor-grade neon | Ukraine | **about half** of world neon and **90%** of the semiconductor grade <Cite id="fabm-neon-2022" /> | The excimer lasers of [DUV lithography](/en/fotolitografia) |
 
-Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same shape as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
+Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same pattern as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
 
 ## The money of policy
 
 Visible chokepoints generate industrial policy, and the amounts involved are the measure of how seriously each government took the risk.
 
-- **United States.** The *CHIPS and Science Act* of 2022 gave the Department of Commerce **US\$ 50 billion**, split into **US\$ 39 billion** of manufacturing incentives and **US\$ 11 billion** for R&D <Cite id="choke-nist-chips" />. The headline figure of **US\$ 52.7 billion** includes items outside that envelope. It is worth knowing which of the two is being quoted.
-- **European Union.** The *European Chips Act* entered into force on **21 September 2023** and, through its state-aid track, the Commission has already approved **18 decisions** totalling **more than EUR 32 billion** of public and private investment. A second round, **Chips Act 2.0**, was proposed in **June 2026** <Cite id="choke-eu-chips-act" />.
-- **China.** The state fund known as the *Big Fund* has had three phases, and the third was launched in **2024** at a scale comparable to a national programme <Cite id="choke-big-fund" />.
+| Programme | Instrument | Value | Date | Source |
+| --- | --- | --- | --- | --- |
+| United States | *CHIPS and Science Act* | **US\$ 50 billion** to the Department of Commerce, split into **US\$ 39 billion** of manufacturing incentives and **US\$ 11 billion** for research and development (R&D) <Cite id="choke-nist-chips" /> | 2022 | NIST (CHIPS) |
+| European Union | *European Chips Act* | **more than EUR 32 billion** across **18 state-aid decisions**, of public and private investment <Cite id="choke-eu-chips-act" /> | in force on **21 September 2023**; *Chips Act 2.0* was proposed in **June 2026** | Comissão Europeia |
+| China | *Big Fund* | three phases <Cite id="choke-big-fund" /> | third phase launched in **2024** | Wikipedia (Big Fund) |
+
+::: warning
+The figure that made headlines, **US\$ 52.7 billion**, includes items outside that envelope. The difference between the two matters.
+:::
 
 What these programmes buy is **capacity**, not self-sufficiency. A new wafer plant takes years to qualify, and qualifying a supplier inside a fab is, as this site has already recorded, a multi-year process <Cite id="nikkei-wafer-share" />.
 
@@ -41,7 +47,7 @@ What these programmes buy is **capacity**, not self-sufficiency. A new wafer pla
 
 There is a second category of chokepoint, more recent: the one created by **rule**. The United States, the Netherlands and Japan aligned restrictions on the export of advanced lithography equipment, precisely the step where a single supplier exists <Cite id="choke-cset-controls" />.
 
-The technical point is that this chokepoint **cannot be worked around by buying elsewhere**. A fab cannot replace one EUV scanner with two DUV scanners without redoing the process: every machine is qualified inside a specific recipe. The trade restriction therefore acts with the same force as a mineral monopoly, except that it is reversible by political decision, which is an important difference.
+The technical point is that this chokepoint **cannot be solved by buying from another supplier**. A fab cannot replace one EUV scanner with two DUV scanners without redoing the process: every machine is qualified inside a specific recipe. The trade restriction therefore acts with the same force as a mineral monopoly, but it is reversible by political decision, and that difference matters.
 
 ## Why concentration is not an accident
 
@@ -59,5 +65,6 @@ The chain was **optimised for cost** for decades, and concentration is the resul
   { text: 'Prices and value', href: '/en/precos-e-valor', note: 'where the money sits in the chain' },
   { text: 'Fab consumables', href: '/en/insumos-fab', note: 'the materials behind the steps' },
   { text: 'Mining & MG-Si', href: '/en/mineracao-mg-si', note: 'Spruce Pine in detail' },
+  { text: 'Data and numbers', href: '/en/dados', note: 'the series as charts and CSV' },
   { text: 'References', href: '/en/referencias', note: 'numbered list' },
 ]" />

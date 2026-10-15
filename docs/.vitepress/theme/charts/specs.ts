@@ -50,15 +50,15 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'Materiais semicondutores no plano gap de banda × constante de rede. O silício fica no canto de gap estreito e rede grande — é vizinho do germânio, que perdeu a disputa por causa do óxido nativo.',
-      en: 'Semiconductor materials on the band gap × lattice constant plane. Silicon sits in the narrow-gap, large-lattice corner — next to germanium, which lost the race over its native oxide.',
+      pt: 'Materiais semicondutores no plano gap de banda × constante de rede. O silício fica no canto de gap estreito e rede grande, vizinho do germânio, que perdeu a disputa por causa do óxido nativo.',
+      en: 'Semiconductor materials on the band gap × lattice constant plane. Silicon sits in the narrow-gap, large-lattice corner, next to germanium, which lost the race over its native oxide.',
     },
     sourceIds: ['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze'],
     slug: 'band-gap',
   },
 
   /**
-   * Failure rate against time. Textbook shape, drawn rather than measured — see `schematic`.
+   * Failure rate against time. Textbook shape, drawn rather than measured. See `schematic`.
    */
   bathtub: {
     id: 'bathtub',
@@ -77,8 +77,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'As três regiões da curva da banheira — mortalidade infantil, vida útil e desgaste. É um esquema qualitativo, não uma medição: os eixos mostram o formato, não valores.',
-      en: 'The three regions of the bathtub curve — infant mortality, useful life and wear-out. This is a qualitative sketch, not a measurement: the axes show shape, not values.',
+      pt: 'As três regiões da curva da banheira: mortalidade infantil, vida útil e desgaste. É um esquema qualitativo, não uma medição: os eixos mostram o formato, não valores.',
+      en: 'The three regions of the bathtub curve: infant mortality, useful life and wear-out. This is a qualitative sketch, not a measurement: the axes show shape, not values.',
     },
     sourceIds: ['rel-nist-bathtub'],
     slug: 'bathtub',
@@ -86,7 +86,7 @@ export const CHARTS: Record<string, ChartSpec> = {
 
   /**
    * Concentration by stage. Each bar is the share held by the leading supplier or group *as that
-   * source defines it*, so the bars are not strictly the same statistic — the caption says so.
+   * source defines it*, so the bars are not strictly the same statistic, and the caption says so.
    * The bar reaches the lower bound of the published figure; a lighter overlaid series adds the
    * upper part where the source gives an interval instead of a point.
    */
@@ -128,8 +128,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha — as definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
-      en: 'What the leader of each stage holds, according to each row\'s own source — the definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the lower bound; the light segment adds the published range where the source gives an interval.',
+      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
+      en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the lower bound; the light segment adds the published range where the source gives an interval.',
     },
     sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'fabm-neon-2022', 'asml-euv-products'],
     slug: 'chokepoint-share',
@@ -190,8 +190,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'Contagem de transistores em produtos que marcaram cada época — do Intel 4004 ao silício atual. Como as três primeiras décadas não estão tabuladas em nenhuma fonte primária única, a série é uma compilação, e a tabela do capítulo nomeia cada chip e sua fonte.',
-      en: 'Transistor counts of landmark products — from the Intel 4004 to current silicon. Because the first three decades are not tabulated in any single primary source, the series is a compilation, and the chapter\'s table names each chip and its source.',
+      pt: 'Contagem de transistores em produtos que marcaram cada época, do Intel 4004 ao silício atual. Como as três primeiras décadas não estão tabuladas em nenhuma fonte primária única, a série é uma compilação, e a tabela do capítulo nomeia cada chip e sua fonte.',
+      en: 'Transistor counts of landmark products, from the Intel 4004 to current silicon. Because the first three decades are not tabulated in any single primary source, the series is a compilation, and the chapter\'s table names each chip and its source.',
     },
     sourceIds: ['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper'],
     slug: 'transistor-count',
@@ -199,8 +199,8 @@ export const CHARTS: Record<string, ChartSpec> = {
 
   /**
    * Poisson yield model. The curve is arithmetic, not data: it is `Y = e^(-D0·A)` evaluated over
-   * the defect densities the yield literature uses, and the point of the chart is the *slope* —
-   * why a die twice as large is worse than twice as costly. The x range runs to 8 cm², which is
+   * the defect densities the yield literature uses, and the point of the chart is the *slope*,
+   * the reason a die twice as large is worse than twice as costly. The x range runs to 8 cm², which is
    * where real flagship dies sit, just below the reticle limit; at D₀ = 1 the last two points round
    * to zero, which is the honest end of that curve.
    */
