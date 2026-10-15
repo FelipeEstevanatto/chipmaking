@@ -14,6 +14,13 @@ const base = '/chipmaking/'
 
 const repoUrl = 'https://github.com/FelipeEstevanatto/chipmaking'
 
+/**
+ * Where the site is published, without the subpath (`base` carries that). The social tags are the one
+ * place VitePress does not rewrite `base`, so they are the only place the absolute URL is spelled
+ * out: this is the line to change if the site ever moves to a custom domain.
+ */
+const siteUrl = 'https://felipeestevanatto.github.io'
+
 /** Runs a git command from the project root; returns '' when git (or the repo) is unavailable. */
 function git(command: string): string {
   try {
@@ -295,6 +302,38 @@ export default withMermaid(
         // Read by theme/BuildFooter.vue; see buildInfoForClient above.
         __BUILD_INFO__: JSON.stringify(buildInfoForClient),
       },
+    },
+    /**
+     * The social tags, which VitePress does not derive from the frontmatter. Without them a shared
+     * link arrives as a bare URL: no title, no summary and no picture, on the one page shape people
+     * actually pass around.
+     */
+    transformHead({ title, description, pageData }) {
+      const relative = pageData.relativePath
+      const isEnglish = relative.startsWith('en/')
+      const slug = relative
+        .replace(/^en\//, '')
+        .replace(/(^|\/)index\.md$/, '$1')
+        .replace(/\.md$/, '')
+      const url = `${siteUrl}${base}${isEnglish ? 'en/' : ''}${slug ? slug + '.html' : ''}`
+      const image = `${siteUrl}${base}og.jpg`
+      const locale = isEnglish ? 'en_US' : 'pt_BR'
+      return [
+        ['meta', { property: 'og:type', content: 'article' }],
+        ['meta', { property: 'og:site_name', content: isEnglish ? 'Silicon — Chip Making' : 'Silício — Chip Making' }],
+        ['meta', { property: 'og:title', content: title }],
+        ['meta', { property: 'og:description', content: description }],
+        ['meta', { property: 'og:url', content: url }],
+        ['meta', { property: 'og:image', content: image }],
+        ['meta', { property: 'og:image:width', content: '1200' }],
+        ['meta', { property: 'og:image:height', content: '630' }],
+        ['meta', { property: 'og:locale', content: locale }],
+        ['meta', { property: 'og:locale:alternate', content: isEnglish ? 'pt_BR' : 'en_US' }],
+        ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+        ['meta', { name: 'twitter:title', content: title }],
+        ['meta', { name: 'twitter:description', content: description }],
+        ['meta', { name: 'twitter:image', content: image }],
+      ]
     },
     themeConfig: {
       search: localSearch,

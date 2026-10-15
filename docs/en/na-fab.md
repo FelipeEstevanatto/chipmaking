@@ -10,7 +10,7 @@ dataAsOf: 2025
 
 At the end of [wafer fabrication](/en/fabricacao-wafers) there is a flawless, **empty** disc of silicon. It has the right purity, the right crystal orientation and a surface flat to within a nanometre. There is nothing inside it.
 
-The [photolithography](/en/fotolitografia) chapter shows how a pattern is printed onto that disc. This one shows what happens **around** the printing — because lithography on its own builds nothing. It only opens the door; the other processes are what walk through it.
+The [photolithography](/en/fotolitografia) chapter shows how a pattern is printed onto that disc. This one shows what happens **around** the printing, because lithography on its own builds nothing. It only opens the door; the other processes are what walk through it.
 
 ## A fab line is a loop
 
@@ -22,7 +22,7 @@ The loop has **seven modules**. Six of them have a section in this chapter, in t
 
 1. [Thermal oxidation](#thermal-oxidation-silicon-growing-its-own-insulator): silicon growing its own insulator.
 2. [Deposition](#deposition-putting-material-where-there-was-none): putting material where there was none.
-3. [Lithography](/en/fotolitografia) — drawing the pattern, in a separate chapter.
+3. [Lithography](/en/fotolitografia): drawing the pattern, in a separate chapter.
 4. [Etching](#etching-removing-material-on-purpose): removing material on purpose.
 5. [Ion implantation](#ion-implantation-doping-by-force): doping by force.
 6. [Planarisation](#planarisation-erasing-the-relief): erasing the relief so layers can stack.
@@ -81,7 +81,7 @@ $$
 
 where $x_0$ is the oxide thickness. The model has two regimes, and the reason is intuitive: while the oxide is thin, the oxidant reaches the surface quickly and the **reaction** dominates: growth is **linear** in time. As the oxide thickens, the oxidant has to **diffuse** through it, and diffusion dominates: growth becomes **parabolic**, meaning it slows down <Cite id="deal-grove-1965" />.
 
-The fit of the original model is excellent over a range stated explicitly in the paper: **700 to 1,300 °C**, **0.1 to 1.0 atm**, and thicknesses from **300 to 20,000 Å**, for both oxidants <Cite id="deal-grove-1965" />. Note that this is the range over which the model was **validated** — not a process recipe. Quoting "800 to 1,200 °C" as an oxidation temperature is common, but the verifiable figure is the one in the paper.
+The fit of the original model is excellent over a range stated explicitly in the paper: **700 to 1,300 °C**, **0.1 to 1.0 atm**, and thicknesses from **300 to 20,000 Å**, for both oxidants <Cite id="deal-grove-1965" />. Note that this is the range over which the model was **validated**, not a process recipe. Quoting "800 to 1,200 °C" as an oxidation temperature is common, but the verifiable figure is the one in the paper.
 
 ### Dry versus wet
 
@@ -91,9 +91,9 @@ The **dry** oxidant is slow but produces a better-quality oxide with a cleaner i
 
 ### Gate oxide and the 1.2 nm wall
 
-Here is one of the best-documented transitions in transistor history. Thirty years before 2005, the gate oxide was **120 nm**. By 2005 it was **1.2 nm** — a reduction of two orders of magnitude <Cite id="ecs-sio2-limits" />.
+Here is one of the best-documented transitions in transistor history. Thirty years before 2005, the gate oxide was **120 nm**. By 2005 it was **1.2 nm**, a reduction of two orders of magnitude <Cite id="ecs-sio2-limits" />.
 
-The reason is direct: the gate oxide separates the gate from the channel, and the thinner it is, the stronger the electrostatic control. But there comes a point where it stops being an insulator. **Direct tunnelling current** grows exponentially as thickness falls, and the practical limit appears around **3 nm**. At **1.2 nm**, the leakage current reaches **~100 A/cm² at 1 V** <Cite id="ecs-sio2-limits" /> — absurd for a device built to draw almost nothing at rest.
+The reason is direct: the gate oxide separates the gate from the channel, and the thinner it is, the stronger the electrostatic control. But there comes a point where it stops being an insulator. **Direct tunnelling current** grows exponentially as thickness falls, and the practical limit appears around **3 nm**. At **1.2 nm**, the leakage current reaches **~100 A/cm² at 1 V** <Cite id="ecs-sio2-limits" />, absurd for a device built to draw almost nothing at rest.
 
 The ultimate limit of SiO₂ is near **0.7 nm**, or **two atomic layers** <Cite id="ecs-sio2-limits" />. That wall is what forced the replacement of silicon dioxide with **high-k dielectrics**, which achieve the same capacitance in a physically thicker layer, starting at the 45 nm node. It is the same logic that later took the transistor from planar to FinFET and then to [gate-all-around](/en/transistores).
 
@@ -106,7 +106,7 @@ The difference between the methods is not the thickness they can achieve: it is 
 </DiagramFigure>
 
 - **CVD** (*chemical vapour deposition*): gaseous precursors react at the wafer surface and form the film. This is the general-purpose method.
-- **PECVD** (*plasma-enhanced*): the same idea, but with a plasma to **lower the temperature**. The plasma ionises the species and reduces the reaction barrier, allowing deposition with good film quality at much lower temperatures — essential in the BEOL, where the wafer can no longer be heated <Cite id="lam-ald" />.
+- **PECVD** (*plasma-enhanced*): the same idea, but with a plasma to **lower the temperature**. The plasma ionises the species and reduces the reaction barrier, allowing deposition with good film quality at much lower temperatures, essential in the BEOL, where the wafer can no longer be heated <Cite id="lam-ald" />.
 - **LPCVD** (*low pressure*): low pressure for better uniformity and conformality; the typical method for polysilicon and nitride.
 - **PVD** (*physical vapour deposition*) or **sputtering**: not a chemical reaction but **bombardment**. Accelerated argon ions knock atoms off a target, and those atoms land on the wafer. The process is directional, and that is exactly why it covers sidewalls poorly.
 
@@ -114,9 +114,9 @@ The difference between the methods is not the thickness they can achieve: it is 
 
 **ALD** (*atomic layer deposition*) solves the problem elegantly: instead of controlling how much material arrives, it lays down **one atomic layer at a time** and then **stops by itself**. Each cycle has two chemical reaction steps in which the precursor reacts until it **exhausts the available surface sites**; after that, no matter how much extra precursor you feed, nothing more deposits <Cite id="amat-ald" />.
 
-The result is that thickness depends **only on the number of cycles**, not on time, flow rate or temperature <Cite id="amat-ald" />. And because each cycle covers everything exposed, the thickness is the same on top, on the wall and at the bottom — including in very deep structures. ASM reports gap-filling structures with **aspect ratios greater than 100:1**, a technology selected for several 3D NAND applications <Cite id="asm-ald-gapfill" />.
+The result is that thickness depends **only on the number of cycles**, not on time, flow rate or temperature <Cite id="amat-ald" />. And because each cycle covers everything exposed, the thickness is the same on top, on the wall and at the bottom, including in very deep structures. ASM reports gap-filling structures with **aspect ratios greater than 100:1**, a technology selected for several 3D NAND applications <Cite id="asm-ald-gapfill" />.
 
-The price is slowness: growth per cycle is on the order of **0.1 nm**, and a full cycle including purges takes seconds <Cite id="yim-ald-gpc" />. Thick deposits are not made by ALD. What is made by ALD is whatever must be thin, exact and conformal — high-k gate oxides, diffusion barriers and the spacers of leading-edge transistors <Cite id="amat-trillium" />.
+The price is slowness: growth per cycle is on the order of **0.1 nm**, and a full cycle including purges takes seconds <Cite id="yim-ald-gpc" />. Thick deposits are not made by ALD. What is made by ALD is whatever must be thin, exact and conformal, high-k gate oxides, diffusion barriers and the spacers of leading-edge transistors <Cite id="amat-trillium" />.
 
 ## Etching: removing material on purpose
 
@@ -132,23 +132,23 @@ The central difference is **direction**. A **wet** etch, in solution, removes ma
 
 ### Selectivity: etching the target without etching the rest
 
-No etch process is perfectly selective. **Selectivity** measures the ratio between the etch rate of the intended material and that of the material that must **not** be removed — usually the mask or the layer underneath.
+No etch process is perfectly selective. **Selectivity** measures the ratio between the etch rate of the intended material and that of the material that must **not** be removed, usually the mask or the layer underneath.
 
-In **DRIE** (*deep reactive ion etching*), which uses the so-called **Bosch process** of alternating an etch step and a passivation step, the numbers are striking: a **photoresist** mask withstands a selectivity of **150:1** and an **oxide** mask, **450:1** <Cite id="bosch-drie" />. That is what allows cutting more than 400 µm of silicon with a mask a few micrometres thick. The same process reaches **80:1 aspect ratio in capability**, **60:1 in development** and **40:1 in mass production** <Cite id="bosch-drie" /> — and it is what fabricates 3D NAND trenches and MEMS structures.
+In **DRIE** (*deep reactive ion etching*), which uses the so-called **Bosch process** of alternating an etch step and a passivation step, the numbers are striking: a **photoresist** mask withstands a selectivity of **150:1** and an **oxide** mask, **450:1** <Cite id="bosch-drie" />. That is what allows cutting more than 400 µm of silicon with a mask a few micrometres thick. The same process reaches **80:1 aspect ratio in capability**, **60:1 in development** and **40:1 in mass production** <Cite id="bosch-drie" />, and it is what fabricates 3D NAND trenches and MEMS structures.
 
 ### The final refinement: ALE
 
 There is a limit to what can be controlled by lowering pressure and raising directionality. Once critical dimensions are measured in a few nanometres and films are **2 or 3 nm** thick, a continuous process becomes too coarse: there is no way to stop halfway through an atomic layer.
 
-**ALE** (*atomic layer etching*) applies to etching the same idea as ALD: a **self-limiting** cycle with two steps — one that **modifies** the surface and one that **removes only the modified layer** <Cite id="ale-overview" />. There is even an "ion energy window": enough energy to remove the modified layer, but **below** the sputtering threshold of the bulk material. Outside that window the process stops being self-limiting <Cite id="ale-overview" />.
+**ALE** (*atomic layer etching*) applies to etching the same idea as ALD: a **self-limiting** cycle with two steps, one that **modifies** the surface and one that **removes only the modified layer** <Cite id="ale-overview" />. There is even an "ion energy window": enough energy to remove the modified layer, but **below** the sputtering threshold of the bulk material. Outside that window the process stops being self-limiting <Cite id="ale-overview" />.
 
-It is the technology that lets equipment makers promise removal of "a few atomic layers per cycle" <Cite id="lam-etch" /> — and it is what makes possible the etching of leading-edge transistors, where missing by a nanometre is missing the device.
+It is the technology that lets equipment makers promise removal of "a few atomic layers per cycle" <Cite id="lam-etch" />, and it is what makes possible the etching of leading-edge transistors, where missing by a nanometre is missing the device.
 
 ## Ion implantation: doping by force
 
-Doping silicon means introducing atoms of another element into the crystal lattice to change its conductivity. For decades this was done by **diffusion** — exposing the wafer to a dopant gas at high temperature and letting the atoms spread. Diffusion works, but it is hard to control: the resulting profile depends on temperature and time in a coupled way, with no way to be precise.
+Doping silicon means introducing atoms of another element into the crystal lattice to change its conductivity. For decades this was done by **diffusion**: exposing the wafer to a dopant gas at high temperature and letting the atoms spread. Diffusion works, but it is hard to control: the resulting profile depends on temperature and time in a coupled way, with no way to be precise.
 
-**Ion implantation** solves this by **shooting** the atoms in. Ions are accelerated to high energies and literally penetrate the silicon, stopping at a depth that depends on the **beam energy**; the amount that enters is the **dose**, measured directly as electrical current <Cite id="cityu-implant" />. The two variables become **independent** — which is why the method became dominant.
+**Ion implantation** solves this by **shooting** the atoms in. Ions are accelerated to high energies and literally penetrate the silicon, stopping at a depth that depends on the **beam energy**; the amount that enters is the **dose**, measured directly as electrical current <Cite id="cityu-implant" />. The two variables become **independent**, which is why the method became dominant.
 
 The ranges are wide. Energies run from **a few hundred eV to several MeV**, placing ions from **under 10 nm** to about **10 µm** deep. Doses run from **10¹¹ cm⁻²**, to adjust the transistor threshold voltage, up to **10¹⁸ cm⁻²**, to form buried dielectric layers <Cite id="cityu-implant" />.
 
@@ -164,7 +164,7 @@ The industrial fix is almost banal in its simplicity: **tilt the wafer about 7°
 
 ### How many implants a chip has
 
-The number grew with complexity. A simple MOS transistor in the 1970s needed **6 to 8 implants**. A modern CMOS with embedded memory can reach **35** <Cite id="axcelis-implant" />. And they are not rare: a large fab processes up to **50,000 wafers per month**, with **20 to 30 implants per wafer** — which requires about **20 implanters** running in parallel <Cite id="axcelis-implant" />.
+The number grew with complexity. A simple MOS transistor in the 1970s needed **6 to 8 implants**. A modern CMOS with embedded memory can reach **35** <Cite id="axcelis-implant" />. And they are not rare: a large fab processes up to **50,000 wafers per month**, with **20 to 30 implants per wafer**, which requires about **20 implanters** running in parallel <Cite id="axcelis-implant" />.
 
 It is worth noticing what that means at scale. Each implant is a complete round trip: lithography, implantation, photoresist strip, and usually a metrology check. This kind of counting is what pushes the total step count into the thousands.
 
@@ -194,12 +194,12 @@ None of the steps above finishes without a measurement. KLA, which builds inspec
 
 Two distinct functions:
 
-- **Metrology** measures what **is there** — thickness, width, alignment.
-- **Inspection** looks for what **should not be there** — particles, scratches, defects <Cite id="kla-msa" />.
+- **Metrology** measures what **is there**: thickness, width, alignment.
+- **Inspection** looks for what **should not be there**: particles, scratches, defects <Cite id="kla-msa" />.
 
 Measuring everything would be impractical, so sampling is done per lot. Metrology typically runs on **100% of lots, but only 2 to 5 wafers of each lot**; defect inspection runs on **10 to 33% of lots**, with **1 to 5 wafers** <Cite id="kla-msa" />. The four main measurement types are **overlay**, **film thickness**, **critical dimension** and **wafer shape** <Cite id="kla-msa" />.
 
-Two techniques deserve a name. **CD-SEM** uses an electron beam to measure a line's width at nanometre resolution — it is what answers "did the gate come out the width the drawing asked for?" And **spectroscopic ellipsometry** measures thickness **without touching** the wafer, and **indirectly**: rather than measuring thickness, it measures how light changes polarisation on reflection, and solves for thickness by model <Cite id="horiba-ellipsometry" />. It is the standard method for ultrathin films, from a few ångströms to tens of micrometres, and for multilayer stacks <Cite id="horiba-ellipsometry" />.
+Two techniques deserve a name. **CD-SEM** uses an electron beam to measure a line's width at nanometre resolution. It is what answers "did the gate come out the width the drawing asked for?" And **spectroscopic ellipsometry** measures thickness **without touching** the wafer, and **indirectly**: rather than measuring thickness, it measures how light changes polarisation on reflection, and solves for thickness by model <Cite id="horiba-ellipsometry" />. It is the standard method for ultrathin films, from a few ångströms to tens of micrometres, and for multilayer stacks <Cite id="horiba-ellipsometry" />.
 
 ### The control loop
 
@@ -227,7 +227,7 @@ Instead of carving the metal, you carve the **mould** and pour the metal into it
 The name comes from *damascene* metalwork, in which metal is inlaid into grooves cut into the material. The principle is the same.
 </DiagramFigure>
 
-The electrolyte is formulated so that copper grows **bottom-up**, closing the via before the mouth of the trench closes — otherwise a void would be left in the middle of the contact <Cite id="ibm-cu-electroplating" />. Then **CMP** removes the copper deposited above the trench, and the surface is flat again. That is why CMP and copper arrived together: neither closes the cycle without the other.
+The electrolyte is formulated so that copper grows **bottom-up**, closing the via before the mouth of the trench closes. Otherwise a void would be left in the middle of the contact <Cite id="ibm-cu-electroplating" />. Then **CMP** removes the copper deposited above the trench, and the surface is flat again. That is why CMP and copper arrived together: neither closes the cycle without the other.
 
 ### Low-k and the price of proximity
 
@@ -235,7 +235,7 @@ Changing the metal solves half the problem. The other half is on the far side of
 
 SiO₂ has a dielectric constant around **4.0**. Lowering it reduces capacitance and, with it, delay. The alternatives used in industry range from **SiOF** (k ≈ 3.5 to 3.8) and **SiCOH** (k ≈ 2.2 to 3.2) to the extreme: **air**, with k = **1.0** <Cite id="cu-interconnect-review" />. Hence the name **air gap** for architectures that leave deliberate voids between wires.
 
-Measurements on air-gap structures find effective k around **2.2** <Cite id="air-gap-keff" />, and technologies reaching **more than 75% void fraction** achieve effective k **below 2.1** <Cite id="hollow-airgap" />. That is a considerable gain — and a considerable mechanical problem, because a structure that is 75% air has very little material to support the stack.
+Measurements on air-gap structures find effective k around **2.2** <Cite id="air-gap-keff" />, and technologies reaching **more than 75% void fraction** achieve effective k **below 2.1** <Cite id="hollow-airgap" />. That is a considerable gain, and a considerable mechanical problem, because a structure that is 75% air has very little material to support the stack.
 
 ### How many metal levels
 

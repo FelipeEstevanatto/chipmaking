@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 # Empacotamento e teste
 
-A [fábrica](/na-fab) entrega um wafer com milhares de chips prontos — e inúteis. Eles estão grudados uns nos outros, sem ligação com o mundo exterior, expostos ao ar e à umidade, e ninguém sabe ainda **quais** deles funcionam.
+A [fábrica](/na-fab) entrega um wafer com milhares de chips prontos, e inúteis. Eles estão grudados uns nos outros, sem ligação com o mundo exterior, expostos ao ar e à umidade, e ninguém sabe ainda **quais** deles funcionam.
 
 Esta é a parte da cadeia que costuma ficar de fora das explicações, e é um erro. Em valor, ela é pequena; em **capacidade**, ela virou o gargalo da indústria de IA. E é aqui que estão algumas das apostas tecnológicas mais interessantes do setor: a memória que precisou morar do lado do processador, os chips que passaram a ser montados como um quebra-cabeça e a ligação que dispensa solda.
 
@@ -40,13 +40,13 @@ A sequência de fabricação fica assim: **fab → teste de wafer → empacotame
 
 ### O cartão de sondas é uma peça sob medida
 
-Cada produto precisa do seu próprio cartão. Ele é um conjunto de agulhas ou molas posicionadas exatamente sobre os pads do die, e um cartão pode ter **literalmente alguns milhares de sondas** — o que o torna complexo e caro de fazer <Cite id="cadence-kgd" />.
+Cada produto precisa do seu próprio cartão. Ele é um conjunto de agulhas ou molas posicionadas exatamente sobre os pads do die, e um cartão pode ter **literalmente alguns milhares de sondas**, o que o torna complexo e caro de fazer <Cite id="cadence-kgd" />.
 
 Isso impõe uma limitação prática que costuma surpreender: o teste de wafer **não é igual** ao teste final. O cartão tem características elétricas diferentes das do invólucro e, muitas vezes, **não consegue rodar na velocidade de operação** do produto <Cite id="cadence-kgd" />. O teste de wafer é uma peneira grossa, não a medida definitiva.
 
 ### O problema do die bom
 
-Existe um conceito que se tornou central com o empacotamento avançado: o **die sabidamente bom** (*known good die*, KGD). Em um pacote onde vários dies são montados juntos, um die ruim que escapa pode levar os outros junto — o artigo da Cadence chama isso de **dano colateral** <Cite id="cadence-kgd" />.
+Existe um conceito que se tornou central com o empacotamento avançado: o **die sabidamente bom** (*known good die*, KGD). Em um pacote onde vários dies são montados juntos, um die ruim que escapa pode levar os outros junto. O artigo da Cadence chama isso de **dano colateral** <Cite id="cadence-kgd" />.
 
 Em um pacote monolítico, um die ruim custa um die. Em um pacote 2.5D com oito pilhas de HBM e dois chips lógicos, um die ruim custa o pacote inteiro. Por isso o teste de wafer, que começou como economia, virou **requisito de viabilidade** nos pacotes modernos.
 
@@ -54,13 +54,13 @@ Em um pacote monolítico, um die ruim custa um die. Em um pacote 2.5D com oito p
 
 O mercado de testadores elétricos (**ATE**, *automated test equipment*) é um dos mais concentrados do setor. A Advantest estima ter **58% do mercado global em 2024**, e declara que **Advantest e Teradyne juntas somam cerca de 80%** do mercado de testadores <Cite id="advantest-ir" />.
 
-O custo do teste é frequentemente descrito como uma fração pequena do valor do chip, e isso é verdade — mas com nuances. O ITRS registra que melhorias contínuas levaram o custo típico de teste para **menos de 2 a 3% da receita** de um circuito integrado <Cite id="itrs-2015-test" />. O mesmo documento faz uma conta útil: em um dispositivo que custa **US\$ 1,00** para fabricar, com teste a **5%**, cortar 10% do custo de teste economiza **US\$ 0,005** por peça, enquanto ganhar 1% de rendimento economiza **US\$ 0,01** <Cite id="itrs-2015-test" />.
+O custo do teste é frequentemente descrito como uma fração pequena do valor do chip, e isso é verdade, mas com nuances. O ITRS registra que melhorias contínuas levaram o custo típico de teste para **menos de 2 a 3% da receita** de um circuito integrado <Cite id="itrs-2015-test" />. O mesmo documento faz uma conta útil: em um dispositivo que custa **US\$ 1,00** para fabricar, com teste a **5%**, cortar 10% do custo de teste economiza **US\$ 0,005** por peça, enquanto ganhar 1% de rendimento economiza **US\$ 0,01** <Cite id="itrs-2015-test" />.
 
-A conclusão prática dessa aritmética é que o teste **não se paga por si**: ele se justifica pelo que evita. E o que ele evita tem nome próprio — em um piso de teste de memória analisado pelo ITRS, **o cartão de sondas representava 60% de todo o custo do teste de wafer** <Cite id="itrs-2013-test" />.
+A conclusão prática dessa aritmética é que o teste **não se paga por si**: ele se justifica pelo que evita. E o que ele evita tem nome próprio: em um piso de teste de memória analisado pelo ITRS, **o cartão de sondas representava 60% de todo o custo do teste de wafer** <Cite id="itrs-2013-test" />.
 
 ### Uma terceira peneira
 
-Além do teste de wafer e do teste final, existe um terceiro ponto, cada vez mais comum: o **teste em nível de sistema** (*system-level test*, SLT). Em vez de medir parâmetros elétricos, ele **liga o dispositivo** — o componente já montado roda *firmware* real e executa cargas de trabalho num ambiente parecido com o de uso <Cite id="teradyne-slt" />.
+Além do teste de wafer e do teste final, existe um terceiro ponto, cada vez mais comum: o **teste em nível de sistema** (*system-level test*, SLT). Em vez de medir parâmetros elétricos, ele **liga o dispositivo**: o componente já montado roda *firmware* real e executa cargas de trabalho num ambiente parecido com o de uso <Cite id="teradyne-slt" />.
 
 É a resposta para um problema crescente: alguns defeitos só aparecem quando o chip faz aquilo para que foi feito, e nenhuma medida isolada de parâmetro os captura.
 
@@ -92,9 +92,9 @@ Vale registrar o quanto esse cuidado paga. Um estudo clássico mostrou que o **d
 
 ## Wire bonding: a tecnologia que monta 80% do mundo
 
-Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: **mais de 80% dos invólucros de semicondutores** ainda são montados por fiação <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o mesmo patamar, acrescentando um dado incômodo — cerca de **um quarto a um terço das falhas de pacote** vem justamente da ligação por fio <Cite id="pmc-bonding-wire" />.
+Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: **mais de 80% dos invólucros de semicondutores** ainda são montados por fiação <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o mesmo patamar, acrescentando um dado incômodo: cerca de **um quarto a um terço das falhas de pacote** vem justamente da ligação por fio <Cite id="pmc-bonding-wire" />.
 
-O princípio é o que se vê na figura: o die fica **de face para cima**, e fios finíssimos saem dos pads na sua **periferia** e descem até o substrato. Cada fio é uma conexão elétrica, e há dois tipos de ponta: a **ball bond**, em que uma esfera de fio é fundida e prensada sobre o pad, e a **wedge bond**, em que o fio é esmagado lateralmente — esta produz laços mais baixos, o que importa em radiofrequência <Cite id="inseto-wire-guide" />.
+O princípio é o que se vê na figura: o die fica **de face para cima**, e fios finíssimos saem dos pads na sua **periferia** e descem até o substrato. Cada fio é uma conexão elétrica, e há dois tipos de ponta: a **ball bond**, em que uma esfera de fio é fundida e prensada sobre o pad, e a **wedge bond**, em que o fio é esmagado lateralmente. Esta produz laços mais baixos, o que importa em radiofrequência <Cite id="inseto-wire-guide" />.
 
 O diâmetro do fio é a dimensão crítica. A fiação de cobre de ponta usa **15 µm de fio com passo de 40 µm**; a de ouro usa **18 µm** no mesmo passo <Cite id="imaps-cu-wire" />.
 
@@ -102,7 +102,7 @@ O diâmetro do fio é a dimensão crítica. A fiação de cobre de ponta usa **1
 
 Por décadas o fio foi de **ouro**. Por volta de **2010**, o preço do ouro subiu, e a indústria migrou para o **cobre** <Cite id="semieng-wirebond2" />. Hoje cerca de **70% dos pacotes com fiação usam cobre** <Cite id="semieng-wirebond2" />, e a SEMI registrou em 2019 o cobre passando de **54% dos embarques de fio de ligação**, com o ouro **abaixo de 32%** <Cite id="semi-gspmo-2020" />.
 
-Não foi só preço. O cobre é **melhor condutor** e tem **maior condutividade térmica** que o ouro, além de crescer compostos intermetálicos mais lentamente com o alumínio — o que melhora a confiabilidade <Cite id="pmc-bonding-wire" />. A comparação entre os dois é eloquente: a resistividade do cobre é **1,72×10⁻⁸ Ω·m** contra **2,2×10⁻⁸** do ouro; a dureza Vickers é **369** contra **216**; e o módulo de elasticidade é **130 GPa** contra **78** <Cite id="gold-bulletin-ball-bonds" />.
+Não foi só preço. O cobre é **melhor condutor** e tem **maior condutividade térmica** que o ouro, além de crescer compostos intermetálicos mais lentamente com o alumínio, o que melhora a confiabilidade <Cite id="pmc-bonding-wire" />. A comparação entre os dois é eloquente: a resistividade do cobre é **1,72×10⁻⁸ Ω·m** contra **2,2×10⁻⁸** do ouro; a dureza Vickers é **369** contra **216**; e o módulo de elasticidade é **130 GPa** contra **78** <Cite id="gold-bulletin-ball-bonds" />.
 
 Os dois "contra" são o preço dessa escolha. O cobre é mais **duro**, o que aumenta a tensão sobre o silício, e **oxida** com facilidade, exigindo atmosfera inerte de nitrogênio durante a ligação <Cite id="pmc-bonding-wire" />.
 
@@ -110,11 +110,11 @@ Os dois "contra" são o preço dessa escolha. O cobre é mais **duro**, o que au
 
 A economia explica bem. Um fio de cobre de 25 µm custa **menos de um décimo** de um fio de ouro equivalente; e enquanto a fiação de **ouro** se torna mais cara que o flip-chip acima de **1.024 contatos**, a de **cobre** continua competitiva **até cerca de 2.000 contatos** <Cite id="imaps-cu-wire" />.
 
-Ou seja: a fiação não sobreviveu por inércia. Ela ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo — microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é processador de alta performance.
+Ou seja: a fiação não sobreviveu por inércia. Ela ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo: microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é processador de alta performance.
 
 ## Flip-chip: virar o die de cabeça para baixo
 
-A limitação da fiação é geométrica: os pads precisam ficar na **borda** do die, porque é de lá que o fio sai. Isso limita o número de conexões ao perímetro — e o perímetro cresce com a raiz da área.
+A limitação da fiação é geométrica: os pads precisam ficar na **borda** do die, porque é de lá que o fio sai. Isso limita o número de conexões ao perímetro, e o perímetro cresce com a raiz da área.
 
 O **flip-chip** resolve invertendo o die. Ele é montado **de face para baixo**, e a conexão é feita por esferas de solda ou pilares de cobre distribuídos por **toda a superfície ativa** <Cite id="wiley-packaging-ch3" />.
 
@@ -126,13 +126,13 @@ O ganho é triplo: o caminho elétrico fica **curto**, a **indutância** cai mui
 
 ### C4: uma invenção com 60 anos
 
-A conexão por esferas de solda nasceu na IBM. No **verão de 1962**, a empresa reduziu a prática um transistor flip-chip com conexões de solda — eram apenas **3 esferas por chip**, cada uma com uma esfera de cobre de *5 mil* embutida para servir de espaçador <Cite id="totta-flipchip" />. Depois vieram as **barreiras de vidro**, que impediam a solda de espalhar e de fazer o chip colapsar: daí o nome **C4**, *controlled collapse chip connection* <Cite id="totta-flipchip" />.
+A conexão por esferas de solda nasceu na IBM. No **verão de 1962**, a empresa reduziu a prática um transistor flip-chip com conexões de solda: eram apenas **3 esferas por chip**, cada uma com uma esfera de cobre de *5 mil* embutida para servir de espaçador <Cite id="totta-flipchip" />. Depois vieram as **barreiras de vidro**, que impediam a solda de espalhar e de fazer o chip colapsar: daí o nome **C4**, *controlled collapse chip connection* <Cite id="totta-flipchip" />.
 
-A descrição formal do processo C4 é de **L. F. Miller**, em 1969, e a patente americana **3.429.040** foi concedida em fevereiro daquele ano <Cite id="springer-flipchip-history" />. Em **quarenta anos**, o número de esferas por chip saiu de **3 para 7.018** <Cite id="totta-flipchip" /> — provavelmente a melhor medida de quanto essa ideia rendeu.
+A descrição formal do processo C4 é de **L. F. Miller**, em 1969, e a patente americana **3.429.040** foi concedida em fevereiro daquele ano <Cite id="springer-flipchip-history" />. Em **quarenta anos**, o número de esferas por chip saiu de **3 para 7.018** <Cite id="totta-flipchip" />, provavelmente a melhor medida de quanto essa ideia rendeu.
 
 ### Do C4 ao pilar de cobre
 
-As esferas de solda têm um limite de escala. O C4 padrão opera em passos de **130 a 250 µm**, e abaixo de cerca de **130 µm** simplesmente não sobra espaço lateral — com altura de esfera de ~70 µm, as soldas vizinhas se tocam e curto-circuitam <Cite id="semieng-flipchip-bumps" />.
+As esferas de solda têm um limite de escala. O C4 padrão opera em passos de **130 a 250 µm**, e abaixo de cerca de **130 µm** simplesmente não sobra espaço lateral: com altura de esfera de ~70 µm, as soldas vizinhas se tocam e curto-circuitam <Cite id="semieng-flipchip-bumps" />.
 
 A resposta foi o **pilar de cobre**: em vez de uma esfera achatada, um cilindro de cobre com uma camada de solda no topo. A IBM patenteou a tecnologia em **2001**; a Intel a usou em processadores de 65 nm em **2006**, citando melhor resistência à eletromigração, melhor condução térmica e maior densidade de contatos <Cite id="synopsys-cu-pillar" />. O pilar é usado **abaixo de 130 µm de passo**, tipicamente com **~40 µm de cobre e ~25 µm de solda**, e os microbumps ficam **abaixo de 10 µm de altura** <Cite id="semieng-flipchip-bumps" />.
 
@@ -146,21 +146,21 @@ A estrada do empacotamento avançado é uma só métrica descendo: a distância 
 
 ### 2.5D: os chips lado a lado
 
-Na integração **2.5D**, os dies ficam **lado a lado** sobre uma peça intermediária chamada **interposer**, tipicamente de silício. Detalhe importante: são apenas **os interposers que precisam de vias atravessando o silício**, não os chips — o que permite reaproveitar projetos de die existentes <Cite id="fue-packaging-roadmap" />.
+Na integração **2.5D**, os dies ficam **lado a lado** sobre uma peça intermediária chamada **interposer**, tipicamente de silício. Detalhe importante: são apenas **os interposers que precisam de vias atravessando o silício**, não os chips, o que permite reaproveitar projetos de die existentes <Cite id="fue-packaging-roadmap" />.
 
 A TSMC chama sua plataforma 2.5D de **CoWoS** (*chip on wafer on substrate*), e ela está em produção **desde 2012** <Cite id="tsmc-cowos" />. Hoje são três variantes que vale distinguir:
 
 - **CoWoS-S**: interposer de **silício**, suportando até **3,3× o retículo** (cerca de **2.700 mm²**), com capacitores de trincheira profunda embutidos <Cite id="tsmc-cowos" />.
-- **CoWoS-R**: em vez de silício, um **interposer de redistribuição** — polímero com trilhas de cobre. Está em produção em volume **desde 2023** e escala além das 3,3× <Cite id="tsmc-cowos" />.
+- **CoWoS-R**: em vez de silício, um **interposer de redistribuição**, polímero com trilhas de cobre. Está em produção em volume **desde 2023** e escala além das 3,3× <Cite id="tsmc-cowos" />.
 - **CoWoS-L**: combina um interposer de redistribuição com **pontes de silício localizadas** (*LSI*), posicionadas apenas onde a densidade de conexão exigir <Cite id="tsmc-cowos" />.
 
 A primeira quebra da barreira do retículo veio em **março de 2020**, com a TSMC e a Broadcom anunciando um interposer de **2× o retículo** (~1.700 mm²). Ele suportava até **6 cubos de HBM**, **96 GB** de memória e **2,7 TB/s** de banda, **2,7 vezes** a solução CoWoS de 2016, usando **costura de máscaras** para ultrapassar o tamanho de um campo de exposição <Cite id="tsmc-2x-cowos" />.
 
 ### 3D: os chips empilhados
 
-Na integração **3D**, os dies são **empilhados** e ligados por **vias que atravessam o silício** (TSV). As dimensões contam a história do processo: em HBM, as TSVs têm tipicamente **2 a 5 µm de diâmetro** e **30 a 60 µm de profundidade**, no esquema *via-middle* — formadas **depois** do front-end e **antes** do BEOL, equilíbrio entre densidade, custo e térmica <Cite id="semieng-tsv" />. Em interposers, as TSVs são maiores, **10 µm ou mais**, com razão de aspecto em torno de **10:1** <Cite id="semieng-tsv" />.
+Na integração **3D**, os dies são **empilhados** e ligados por **vias que atravessam o silício** (TSV). As dimensões contam a história do processo: em HBM, as TSVs têm tipicamente **2 a 5 µm de diâmetro** e **30 a 60 µm de profundidade**, no esquema *via-middle*, formadas **depois** do front-end e **antes** do BEOL, equilíbrio entre densidade, custo e térmica <Cite id="semieng-tsv" />. Em interposers, as TSVs são maiores, **10 µm ou mais**, com razão de aspecto em torno de **10:1** <Cite id="semieng-tsv" />.
 
-Estamos falando de furos de poucos micrômetros de diâmetro, com dezenas de micrômetros de profundidade, **preenchidos com cobre** e polidos — em cada uma das centenas de milhares de vias de uma pilha de memória.
+Estamos falando de furos de poucos micrômetros de diâmetro, com dezenas de micrômetros de profundidade, **preenchidos com cobre** e polidos, em cada uma das centenas de milhares de vias de uma pilha de memória.
 
 ### A ligação híbrida
 
@@ -172,7 +172,7 @@ Os números que isso destrava são de outra ordem: **mais de um milhão de inter
 
 A Intel descreve sua implementação, **Foveros Direct 3D**, como capaz de passo **abaixo de 10 µm** e **até 10 vezes** a densidade de interconexão dos microbumps convencionais <Cite id="intel-foveros-direct" />.
 
-Há uma razão de rendimento por trás disso, e ela é elegante: ligar **die a wafer** permite empilhar apenas **dies sabidamente bons**, elevando o rendimento composto, e permite unir **dies de tamanhos diferentes** — o que a ligação wafer-a-wafer não permite <Cite id="imec-d2w-hb" />.
+Há uma razão de rendimento por trás disso, e ela é elegante: ligar **die a wafer** permite empilhar apenas **dies sabidamente bons**, elevando o rendimento composto, e permite unir **dies de tamanhos diferentes**, o que a ligação wafer-a-wafer não permite <Cite id="imec-d2w-hb" />.
 
 ## HBM: a memória que precisou morar ao lado
 
@@ -200,13 +200,13 @@ Aí entra a integração **2.5D**, descrita acima. O interposer de silício exis
 
 ### O que o HBM custa
 
-Nada disso é de graça, e o custo aparece na densidade. As TSVs, que precisam atravessar cada die da pilha, ocupam **área que não armazena nada**. A comparação feita pela SemiAnalysis com números da SK hynix é direta: uma pastilha DDR4 D1z entrega **0,296 Gb/mm²**, enquanto uma HBM3 entrega **0,16 Gb/mm²** — **85% mais densa** no caso do DDR4 <Cite id="semianalysis-hbm" />.
+Nada disso é de graça, e o custo aparece na densidade. As TSVs, que precisam atravessar cada die da pilha, ocupam **área que não armazena nada**. A comparação feita pela SemiAnalysis com números da SK hynix é direta: uma pastilha DDR4 D1z entrega **0,296 Gb/mm²**, enquanto uma HBM3 entrega **0,16 Gb/mm²**, **85% mais densa** no caso do DDR4 <Cite id="semianalysis-hbm" />.
 
-Ou seja: a memória mais rápida do mundo é também a **menos densa**. A indústria aceita esse trade-off porque, em sistemas de IA, a largura de banda limita o desempenho mais do que a capacidade — e um acelerador sem banda suficiente deixa unidades de computação **paradas** <Cite id="semianalysis-hbm" />.
+Ou seja: a memória mais rápida do mundo é também a **menos densa**. A indústria aceita esse trade-off porque, em sistemas de IA, a largura de banda limita o desempenho mais do que a capacidade, e um acelerador sem banda suficiente deixa unidades de computação **paradas** <Cite id="semianalysis-hbm" />.
 
 ## Chiplets: dividir para render
 
-Um chip é limitado por um número físico: o **retículo**. Uma exposição de litografia cobre no máximo cerca de **830 mm²** <Cite id="ectc-cowos-s5" />. Nenhum desenho maior que isso é possível — não por dificuldade de projeto, mas porque não cabe no equipamento.
+Um chip é limitado por um número físico: o **retículo**. Uma exposição de litografia cobre no máximo cerca de **830 mm²** <Cite id="ectc-cowos-s5" />. Nenhum desenho maior que isso é possível, não por dificuldade de projeto, mas porque não cabe no equipamento.
 
 O problema é que o retículo não é o único limite. Rendimento também é, e piora com a área.
 
@@ -222,7 +222,7 @@ O motivo é exatamente o da figura: os quatro dies pequenos rendem muito melhor 
 
 ### UCIe e a padronização da interface
 
-O chiplet criou um problema novo: cada fabricante definia sua própria forma de os dies conversarem. Isso amarra o cliente ao fornecedor — o oposto do ecossistema que fez o resto da indústria crescer.
+O chiplet criou um problema novo: cada fabricante definia sua própria forma de os dies conversarem. Isso amarra o cliente ao fornecedor, o oposto do ecossistema que fez o resto da indústria crescer.
 
 A resposta veio em **março de 2022**, quando **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung e TSMC** se juntaram para ratificar a especificação **UCIe** (*Universal Chiplet Interconnect Express*), uma interface die-a-die aberta. A UCIe 1.0 previa taxas de até **32 GT/s** com **16 a 64 pistas** <Cite id="ucie-formation" />. Em agosto de **2025**, a versão **3.0** dobrou as taxas para **48 e 64 GT/s** <Cite id="ucie-3" />.
 
@@ -230,11 +230,11 @@ A aposta é a mesma que fez o PCIe e o USB funcionarem: um barramento comum tran
 
 ## Teste final, queima e classificação
 
-Depois de montado, o componente volta para o testador. O **teste final** repete boa parte do que o teste de wafer já fez, e isso não é redundância: ele existe para pegar **defeitos que a própria montagem criou** — uma esfera de solda faltando, um fio não ligado <Cite id="anysilicon-wafer-sort" />.
+Depois de montado, o componente volta para o testador. O **teste final** repete boa parte do que o teste de wafer já fez, e isso não é redundância: ele existe para pegar **defeitos que a própria montagem criou**: uma esfera de solda faltando, um fio não ligado <Cite id="anysilicon-wafer-sort" />.
 
 ### A queima
 
-Existe uma classe de falhas que nenhum teste elétrico simples captura: os defeitos **latentes**, que só se manifestam depois de algum tempo de uso. Eles produzem a chamada **mortalidade infantil** — a concentração de falhas nos primeiros meses de vida do produto.
+Existe uma classe de falhas que nenhum teste elétrico simples captura: os defeitos **latentes**, que só se manifestam depois de algum tempo de uso. Eles produzem a chamada **mortalidade infantil**: a concentração de falhas nos primeiros meses de vida do produto.
 
 O ***burn-in*** existe para antecipar isso: os componentes são submetidos a condições **no nível ou acima do máximo especificado**, com o objetivo de **estressar os defeitos para fora** antes do embarque <Cite id="mil-std-883" />. Na produção, ele é feito no componente **já montado**, em soquetes e fornos, tipicamente por **24 a 48 horas** <Cite id="semieng-burnin" />.
 
@@ -264,7 +264,7 @@ Na memória o eixo vira **grau de velocidade** e a mecânica é a mesma. Um chip
 
 O segundo eixo é a **colheita** (*harvesting*). Um chip com um bloco defeituoso passa a ser vendido com esse bloco desligado, e a AMD já vendeu modelos de três núcleos a partir de um die de quatro <Cite id="gamersnexus-binning" />. A Apple transformou a prática em linha de produto: o **A12X** saiu com 7 dos 8 núcleos de GPU porque o rendimento não entregava 8; dois anos depois, o **A12Z** era o mesmo chip com o oitavo ligado, porque o processo tinha melhorado. No **iPhone 17e**, o A19 tem 4 núcleos de GPU contra 5 do iPhone 17, e o desempenho gráfico cai na mesma proporção, cerca de 20 % <Cite id="macworld-binning" />.
 
-O caso levado ao extremo foi o **GF100** da Nvidia, em 2010: 3 bilhões de transistores em cerca de 530 mm², no 40 nm recém-estreado da TSMC. Nenhuma placa saiu com o chip completo — a **GTX 480** recebeu apenas 480 dos 512 núcleos, com um dos 16 *clusters* de shaders desligado, o GTX 470 ficou com 448 e o GTX 465 com 352 <Cite id="wikipedia-gf100" />. A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20 % e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. Pelo lado do relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20 % sobre a meta original, contra 10 % do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />. Esse chip só apareceu no **GF110**, um GF100 redesenhado, no fim do mesmo ano <Cite id="wikipedia-gf100" />.
+O caso levado ao extremo foi o **GF100** da Nvidia, em 2010: 3 bilhões de transistores em cerca de 530 mm², no 40 nm recém-estreado da TSMC. Nenhuma placa saiu com o chip completo: a **GTX 480** recebeu apenas 480 dos 512 núcleos, com um dos 16 *clusters* de shaders desligado, o GTX 470 ficou com 448 e o GTX 465 com 352 <Cite id="wikipedia-gf100" />. A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20 % e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. Pelo lado do relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20 % sobre a meta original, contra 10 % do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />. Esse chip só apareceu no **GF110**, um GF100 redesenhado, no fim do mesmo ano <Cite id="wikipedia-gf100" />.
 
 Nem todo bloco desligado é defeito. Num lote de **Radeon RX 460**, 128 núcleos presentes no die estavam desativados e voltaram a funcionar com uma troca de BIOS, cerca de 14 % mais núcleos; o risco é o chip ter sido desativado por defeito, e aí a imagem sai com artefatos <Cite id="extremetech-rx460" />.
 
@@ -274,9 +274,9 @@ Sem classificação, o que sobra é descarte. A Macworld ilustra a conta com o A
 
 O tamanho econômico desta etapa engana em duas direções.
 
-A primeira: é **pequeno**. A CSET cita um relatório anterior que estimava a montagem, teste e empacotamento (*ATP*) em cerca de **10% do valor de um chip pronto**, contra aproximadamente **45%** agregados pelas etapas de projeto e fabricação de front-end. Um relatório da SIA com a BCG chega a um número ainda menor, de **6%** — com o segmento respondendo por **3% do P&D** e **13% do capital** da indústria <Cite id="cset-packaging" />.
+A primeira: é **pequeno**. A CSET cita um relatório anterior que estimava a montagem, teste e empacotamento (*ATP*) em cerca de **10% do valor de um chip pronto**, contra aproximadamente **45%** agregados pelas etapas de projeto e fabricação de front-end. Um relatório da SIA com a BCG chega a um número ainda menor, de **6%**, com o segmento respondendo por **3% do P&D** e **13% do capital** da indústria <Cite id="cset-packaging" />.
 
-A segunda: apesar disso, o **ITRS registra que o custo de empacotamento frequentemente excede o custo de fabricação do próprio circuito integrado** <Cite id="itrs-assembly" />. As duas afirmações convivem porque medem coisas diferentes — participação no valor final do produto, de um lado, e custo industrial da etapa, do outro.
+A segunda: apesar disso, o **ITRS registra que o custo de empacotamento frequentemente excede o custo de fabricação do próprio circuito integrado** <Cite id="itrs-assembly" />. As duas afirmações convivem porque medem coisas diferentes: participação no valor final do produto, de um lado, e custo industrial da etapa, do outro.
 
 E há um terceiro dado, mais recente, que explica por que o assunto deixou de ser periférico. O mercado de **empacotamento avançado** (a parte que faz CoWoS, HBM e chiplets) movimentou cerca de **US\$ 46 bilhões em 2024** e caminha para **mais de US\$ 79 bilhões em 2030** <Cite id="yole-advanced-packaging" />. É uma fração menor do total, mas é a fração que **limita** o resto: a TSMC declarou em 2024 que a capacidade de CoWoS **mais que dobrou** em relação ao ano anterior e que pretendia dobrar de novo, e ainda assim a demanda dos clientes **excedia em muito** a capacidade de fornecimento <Cite id="tsmc-q3-2024" />.
 

@@ -1,6 +1,6 @@
 ---
 title: Transistor evolution
-description: From planar MOSFET to CFET — strained silicon, HKMG, FinFET, FD-SOI, GAAFET, backside power and forksheet.
+description: "From planar MOSFET to CFET: strained silicon, HKMG, FinFET, FD-SOI, GAAFET, backside power and forksheet."
 dataAsOf: 2026
 ---
 
@@ -41,13 +41,13 @@ In practice this generation powered pocket calculators and the first home microc
 
 <TransistorFacts year="1963" />
 
-In **1963** Frank Wanlass (Fairchild) patented **CMOS** (*Complementary MOS*): an NMOS and a PMOS wired in series so that **one conducts while the other is cut off**. Because there is never a direct path between supply and ground in the steady state, standby current reduces to leakage alone — essentially zero static power. RCA brought the 4000 family to market in 1968 and, ever since, CMOS has been the basis of virtually all digital logic: it is what allows billions of gates on one chip without melting it.
+In **1963** Frank Wanlass (Fairchild) patented **CMOS** (*Complementary MOS*): an NMOS and a PMOS wired in series so that **one conducts while the other is cut off**. Because there is never a direct path between supply and ground in the steady state, standby current reduces to leakage alone, essentially zero static power. RCA brought the 4000 family to market in 1968 and, ever since, CMOS has been the basis of virtually all digital logic: it is what allows billions of gates on one chip without melting it.
 
 <DiagramFigure src="/assets/cmos.svg" alt="CMOS cross-section with an NMOS in a p-well and a PMOS in an n-well">
 Complementary pair: an NMOS in a p-well and a PMOS in an n-well, with a single path between V<sub>DD</sub> and GND.
 </DiagramFigure>
 
-Its first large-scale use was the **RCA CD4000 logic family** (1968), which made CMOS the standard for digital watches, calculators and battery-powered instruments. Decades later the same principle became the **real-time clock** of every PC — still kept alive by what the industry nicknamed the “CMOS battery”.
+Its first large-scale use was the **RCA CD4000 logic family** (1968), which made CMOS the standard for digital watches, calculators and battery-powered instruments. Decades later the same principle became the **real-time clock** of every PC, still kept alive by what the industry nicknamed the “CMOS battery”.
 
 ## 1968: Self-aligned silicon gate
 
@@ -55,15 +55,15 @@ Its first large-scale use was the **RCA CD4000 logic family** (1968), which made
 
 Until the late 1960s the gate was **aluminium**, deposited **after** the source and drain diffusion. To guarantee that the channel was fully covered, the gate had to **overlap** source and drain, adding parasitic capacitance and forcing alignment tolerances that wasted area.
 
-The **self-aligned silicon gate** solved this by reversing the order of the steps: the polysilicon is deposited and patterned **first**, and then serves itself as the mask for the source/drain implant. The junctions end up automatically aligned to the gate, with minimal overlap — and polysilicon also survives the high-temperature anneals that aluminium could not.
+The **self-aligned silicon gate** solved this by reversing the order of the steps: the polysilicon is deposited and patterned **first**, and then serves itself as the mask for the source/drain implant. The junctions end up automatically aligned to the gate, with minimal overlap, and polysilicon also survives the high-temperature anneals that aluminium could not.
 
-The chronology has three names. In **1965** Boyd Watkins described a self-aligned silicon-gate structure at General Microelectronics, but the patent filing only came in 1969. In **1967** Robert Kerwin, Donald Klein and John Sarace at Bell Labs published the replacement of aluminium with polycrystalline silicon and demonstrated self-aligned transistors, still as discrete devices <Cite id="chm-sigate" />. The move to integrated circuits came at Fairchild, where Tom Klein and Federico Faggin solved what was still missing — precision silicon etching and the process architecture <Cite id="chm-sigate" />.
+The chronology has three names. In **1965** Boyd Watkins described a self-aligned silicon-gate structure at General Microelectronics, but the patent filing only came in 1969. In **1967** Robert Kerwin, Donald Klein and John Sarace at Bell Labs published the replacement of aluminium with polycrystalline silicon and demonstrated self-aligned transistors, still as discrete devices <Cite id="chm-sigate" />. The move to integrated circuits came at Fairchild, where Tom Klein and Federico Faggin solved what was still missing: precision silicon etching and the process architecture <Cite id="chm-sigate" />.
 
 <DiagramFigure src="/assets/silicon-gate.svg" alt="Comparison of an overlapping aluminium gate with a self-aligned silicon gate">
 Above, an aluminium gate overlapping source and drain; below, a self-aligned silicon gate.
 </DiagramFigure>
 
-The first commercial product was the **Fairchild 3708** (1968), an 8-channel analog multiplexer created as a replacement for the troublesome aluminium-gate 3705. Compared with it, the 3708 was about **5× faster**, had roughly **100× less leakage current**, and the on-resistance of its analog switches was **3× lower** <Cite id="faggin-sgt" />. The credit is disputed: Intel presented the 1101 as the first silicon-gate IC, but the 3708 got there first — and Intel itself benefited from the process by hiring Les Vadasz and Federico Faggin, who had developed it <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
+The first commercial product was the **Fairchild 3708** (1968), an 8-channel analog multiplexer created as a replacement for the troublesome aluminium-gate 3705. Compared with it, the 3708 was about **5× faster**, had roughly **100× less leakage current**, and the on-resistance of its analog switches was **3× lower** <Cite id="faggin-sgt" />. The credit is disputed: Intel presented the 1101 as the first silicon-gate IC, but the 3708 got there first, and Intel itself benefited from the process by hiring Les Vadasz and Federico Faggin, who had developed it <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
 
 This is the technique that made the first microprocessors viable. Faggin joined Intel in **April 1970** and was the architect of the 4000 family: the **Intel 4004** (1971) shipped with 2,300 transistors on a 12 mm² die, built on a 10 µm pMOS process for the Busicom 141-PF calculator <Cite id="intel-4004" />. Without the self-aligned gate and the buried contact, the 4004 would not have fit on a manufacturable die <Cite id="chm-sigate" />.
 
@@ -79,13 +79,13 @@ The extension is not necessarily shallower than the contact. With phosphorus in 
 Left, the conventional junction: the n⁺ contact sits against the gate, and that is where the peak field concentrates. Right, the LDD: the n⁻ extension reaches slightly under the gate, is deeper and much more lightly doped than the n⁺ contact, and the spacer (purple, on the oxide) holds that contact away from the gate edge.
 </DiagramFigure>
 
-The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" /> — the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
+The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" />, the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
 
 ## 1995: STI (shallow trench)
 
 <TransistorFacts year="1995" />
 
-Isolation between neighbouring transistors used to be done with **LOCOS** (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the **“bird’s beak”**, which eats into the active area and limits density. The shallow trench was **proposed in the early 1980s**, but spent years without practical use: both the planarisation and an oxide deposition able to fill narrow trenches were missing. It was **CMP** that unlocked the process <Cite id="shmj-sti" />. A shallow trench is then etched into the silicon, filled with deposited oxide and planarised by CMP: vertical walls, no bird’s beak, and a flat surface — a requirement for the lithographic depth of focus.
+Isolation between neighbouring transistors used to be done with **LOCOS** (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the **“bird’s beak”**, which eats into the active area and limits density. The shallow trench was **proposed in the early 1980s**, but spent years without practical use: both the planarisation and an oxide deposition able to fill narrow trenches were missing. It was **CMP** that unlocked the process <Cite id="shmj-sti" />. A shallow trench is then etched into the silicon, filled with deposited oxide and planarised by CMP: vertical walls, no bird’s beak, and a flat surface, a requirement for the lithographic depth of focus.
 
 <DiagramFigure src="/assets/sti.svg" alt="Cross-section of two isolation schemes on the same silicon surface: left, LOCOS, with the field oxide above the surface and the bird's beak tapering into the active area; right, a shallow trench with an oxide liner on its walls and deposited oxide level with the surface">
 Left, LOCOS: the field oxide grows above the surface and the bird's beak runs below it, tapering to a point inside the active area. Right, the shallow trench: near-vertical walls, a grown oxide liner on the walls and floor, and deposited oxide level with the original surface, the dashed line that runs across both panels.
@@ -120,7 +120,7 @@ Lattice comparison: pure silicon vs. SiGe as a stress-inducing substrate.
 </DiagramFigure>
 
 <DiagramFigure src="/pdf-images/p15-2.png" alt="Strained silicon on SiGe">
-A layer of “stretched” silicon on silicon-germanium — arrows indicate horizontal strain.
+A layer of “stretched” silicon on silicon-germanium. Arrows indicate horizontal strain.
 </DiagramFigure>
 
 <DiagramFigure src="/pdf-images/p16-1.png" alt="Electron flow in normal vs strained silicon">
@@ -143,7 +143,7 @@ The switch was not direct. Before high-k the dielectric had already changed once
 
 The 45 nm process runs at **1.0 nm EOT** (*equivalent oxide thickness*, the thickness of SiO₂ that would give the same capacitance), and the high-k film is physically thicker than that <Cite id="hkmg-paper" />. The gate is **35 nm** long, the contacted gate pitch is **160 nm**, and the NMOS and PMOS transistors use metals with **different work functions**, in a *high-k first, metal gate last* flow where the metal goes in last, replacing the sacrificial gate <Cite id="hkmg-paper" />.
 
-The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line — the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
+The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line, the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
 
 ## 2011: FinFET (Tri-Gate)
 
@@ -179,7 +179,7 @@ Stacked nanosheets, with the gate wrapping all four faces of each one.
 
 At **3 nm** and below, FinFETs hit limits of variability and quantum effects. **GAAFET** stacks **nanosheets** wrapped by the gate on **all four sides**. Samsung went to mass production at 3 nm (**MBCFET**, 2022); TSMC and Intel followed at the N2 and **18A (RibbonFET)** nodes <Cite id="asml-gaa" />. Superior electrostatic control, up to **~40%** less leakage, and nanosheet width tunable for performance vs. power.
 
-The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: **TSMC's N3 was still FinFET** — Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with **N2**, in volume production since late 2025, with the **Apple A20 Pro** among the first major products <Cite id="tsmc-n2" />.
+The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: **TSMC's N3 was still FinFET**. Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with **N2**, in volume production since late 2025, with the **Apple A20 Pro** among the first major products <Cite id="tsmc-n2" />.
 
 ## 2025/2026: BSPDN (backside power)
 
@@ -189,7 +189,7 @@ The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC
 Power delivery moves to the wafer backside, leaving the front free for signal.
 </DiagramFigure>
 
-**Backside Power Delivery Network (BSPDN)** — *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): power rails move to the **back side** of the wafer through **TSVs**, freeing the front layers for signal, with ~**11%** more density and dynamic voltage drop (**IR drop**) up to **10×** lower.
+**Backside Power Delivery Network (BSPDN)**, *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): power rails move to the **back side** of the wafer through **TSVs**, freeing the front layers for signal, with ~**11%** more density and dynamic voltage drop (**IR drop**) up to **10×** lower.
 
 It reached the market in **Intel Panther Lake** (Core Ultra series 3), the first chip to combine *PowerVia* and *RibbonFET* <Cite id="intel-18a" />; TSMC introduces *Super Power Rail* on **A16**, with volume production scheduled for the second half of 2026 <Cite id="tsmc-n2" />.
 
@@ -225,11 +225,11 @@ The “Node” column only corresponds to a real physical dimension up to the mi
 
 The “node” was not invented as a concept. It records the observation that **two different dimensions gave roughly the same number**. The first is the **gate length**, the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the **metal half-pitch**, half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
 
-For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%** — and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />. That shrink never depended on the transistor alone: each generation also demanded finer lithography, and it is **EUV** that sustains the 7 nm node and below ([Photolithography](/en/fotolitografia)) <Cite id="asianometry-euv" />.
+For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%**, and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />. That shrink never depended on the transistor alone: each generation also demanded finer lithography, and it is **EUV** that sustains the 7 nm node and below ([Photolithography](/en/fotolitografia)) <Cite id="asianometry-euv" />.
 
 ### 2. The two numbers came apart in the mid-1990s
 
-To keep gaining speed, the industry began shrinking the **gate length faster** than the other dimensions. At the so-called “**130 nm**” node, the real transistors had **70 nm** gates — barely more than half the number printed on the label <Cite id="ieee-node" />.
+To keep gaining speed, the industry began shrinking the **gate length faster** than the other dimensions. At the so-called “**130 nm**” node, the real transistors had **70 nm** gates, barely more than half the number printed on the label <Cite id="ieee-node" />.
 
 The industry roadmap that defined the nodes, the **ITRS**, recorded the break in its own documents. As early as **1999** it eliminated the “150 nm node” and redefined the designation from the **DRAM half-pitch**, writing that “technology node is now not much more than a simple label for still somewhat convenient ‘tick marks’ along this path” <Cite id="itrs-1999" />. By **2001** the text was explicit: the node designation “is defined by DRAM half pitch, not by the transistor gate length or minimum feature size characteristic of that node” <Cite id="itrs-2001" />.
 

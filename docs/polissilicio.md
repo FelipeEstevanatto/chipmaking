@@ -8,7 +8,7 @@ dataAsOf: 2025
 
 O silício de grau metalúrgico ([MG-Si](/glossario)) contém impurezas metálicas e dopantes que afetam severamente o desempenho de semicondutores e painéis solares <Cite id="energy-central" />. Para atingir o grau de **polissilício** (silício policristalino de altíssima pureza), ele deve ser refinado quimicamente <Cite id="csiro" />.
 
-A matéria-prima nunca foi o gargalo: o silício é o **segundo elemento mais abundante da crosta terrestre**, atrás apenas do oxigênio <Cite id="pv-mfg-polysilicon" />. Todo o valor desta etapa está em separar do silício os poucos átomos de boro, fósforo e metais que arruínam um transistor ou uma célula solar — e nenhuma filtragem física dá conta disso.
+A matéria-prima nunca foi o gargalo: o silício é o **segundo elemento mais abundante da crosta terrestre**, atrás apenas do oxigênio <Cite id="pv-mfg-polysilicon" />. Todo o valor desta etapa está em separar do silício os poucos átomos de boro, fósforo e metais que arruínam um transistor ou uma célula solar, e nenhuma filtragem física dá conta disso.
 
 O capítulo percorre a rota química em sete etapas:
 
@@ -68,7 +68,7 @@ O detalhe que explica a economia do forno é uma terceira reação, que fecha o 
 2SiO₂ + SiC → 3SiO (g) + CO (g)
 ```
 
-O **monóxido de silício** gasoso sobe junto com o CO, recombina-se nas zonas frias da carga e regenera SiO₂ e carbono — que voltam a alimentar a primeira reação. Por isso o forno é praticamente **autossuficiente em reagentes**: consome energia elétrica em grande quantidade, mas desperdiça pouca matéria-prima <Cite id="pv-mfg-polysilicon" />.
+O **monóxido de silício** gasoso sobe junto com o CO, recombina-se nas zonas frias da carga e regenera SiO₂ e carbono, que voltam a alimentar a primeira reação. Por isso o forno é praticamente **autossuficiente em reagentes**: consome energia elétrica em grande quantidade, mas desperdiça pouca matéria-prima <Cite id="pv-mfg-polysilicon" />.
 
 O produto é o **MG-Si**, drenado pelo fundo do forno com pureza de 98% a 99,5% <Cite id="saimm" />. O passo seguinte, a cloração, é justamente onde a impureza deixa de ser um problema de minério e passa a ser um problema de química. Os detalhes da redução carbotérmica estão em [Mineração e MG-Si](/mineracao-mg-si).
 
@@ -82,9 +82,9 @@ Esse pó é injetado em um **reator de leito fluidizado** operando com **alta pr
 Si + 3HCl → SiHCl₃ + H₂
 ```
 
-A reação roda na faixa de **300 a 600 °C**, sob pressão de **0,18 a 0,5 MPa** — comprimir o leito aumenta a fração de TCS no gás de saída, e o ótimo experimental fica em torno de **0,4 MPa** <Cite id="jarkin-2021" />. O número que o setor persegue é a **conversão do HCl**: nas gerações mais recentes de reator da Wacker ela se aproxima de **100%**, e a seletividade para TCS passa de **95%** com o carregamento extra de leito (*turbo loading*) <Cite id="jarkin-2021" />.
+A reação roda na faixa de **300 a 600 °C**, sob pressão de **0,18 a 0,5 MPa**. Comprimir o leito aumenta a fração de TCS no gás de saída, e o ótimo experimental fica em torno de **0,4 MPa** <Cite id="jarkin-2021" />. O número que o setor persegue é a **conversão do HCl**: nas gerações mais recentes de reator da Wacker ela se aproxima de **100%**, e a seletividade para TCS passa de **95%** com o carregamento extra de leito (*turbo loading*) <Cite id="jarkin-2021" />.
 
-O que sai do reator, porém, não é TCS puro. Junto com ele vêm **tetracloreto de silício** (SiCl₄, ou STC), **diclorossilano** (H₂SiCl₂) e compostos de ponto de ebulição alto com ligações Si–Si, entre eles o **hexaclorodissilano** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="wikipedia-tcs" />. Cada um tem seu próprio ponto de ebulição — e é justamente isso que a destilação logo adiante vai explorar para separá-los.
+O que sai do reator, porém, não é TCS puro. Junto com ele vêm **tetracloreto de silício** (SiCl₄, ou STC), **diclorossilano** (H₂SiCl₂) e compostos de ponto de ebulição alto com ligações Si–Si, entre eles o **hexaclorodissilano** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="wikipedia-tcs" />. Cada um tem seu próprio ponto de ebulição, e é justamente isso que a destilação logo adiante vai explorar para separá-los.
 
 Existe um segundo caminho até o TCS, que dispensa o HCl e reaproveita o próprio STC <Cite id="wikipedia-tcs" />:
 
@@ -111,7 +111,7 @@ O gás TCS purificado é convertido de volta a silício metálico sólido e ultr
 
 ### Processo Siemens (CVD)
 
-Criado na década de 1950 pelas empresas Siemens e Wacker, é o método dominante no mercado mundial <Cite id="bernreuter-production" />. O gás TCS é injetado com hidrogênio (H₂) em um reator de redoma de aço onde **eletrodos de grafita** fazem passar corrente por um **núcleo de silício em forma de “U”** — a semente <Cite id="pv-mfg-polysilicon" />. Esse núcleo é aquecido eletricamente a cerca de **1100–1150 °C** <Cite id="bernreuter-production" />, e o TCS sofre **redução por hidrogênio**, num mecanismo equivalente ao de um **CVD** (*chemical vapour deposition*): o silício sólido se deposita sobre a semente e cresce ao redor dela, liberando HCl gasoso <Cite id="pv-mfg-polysilicon" />.
+Criado na década de 1950 pelas empresas Siemens e Wacker, é o método dominante no mercado mundial <Cite id="bernreuter-production" />. O gás TCS é injetado com hidrogênio (H₂) em um reator de redoma de aço onde **eletrodos de grafita** fazem passar corrente por um **núcleo de silício em forma de “U”**, a semente <Cite id="pv-mfg-polysilicon" />. Esse núcleo é aquecido eletricamente a cerca de **1100–1150 °C** <Cite id="bernreuter-production" />, e o TCS sofre **redução por hidrogênio**, num mecanismo equivalente ao de um **CVD** (*chemical vapour deposition*): o silício sólido se deposita sobre a semente e cresce ao redor dela, liberando HCl gasoso <Cite id="pv-mfg-polysilicon" />.
 
 <DiagramFigure src="/assets/siemens-reactor.svg" alt="Corte do reator Siemens de redoma: à esquerda, a redoma de aço com duas hastes de silício em U incandescentes sobre eletrodos de grafita, gás TCS e hidrogênio entrando pela base e gás gasto saindo pelo topo; à direita, ampliação da superfície da haste mostrando o silício se depositando sobre ela">
 O reator Siemens em corte. À esquerda, a redoma de aço fechada: os eletrodos de grafita atravessam a base e aquecem por efeito Joule os filamentos de silício em “U”, que incandescem a 1100–1150 °C enquanto o TCS e o hidrogênio sobem entre eles. À direita, a ampliação da superfície da haste: a redução do TCS deposita silício sobre o filamento, que engorda até virar bastão. Desenho do autor, a partir de Bernreuter Research e PV-Manufacturing.org <Cite id="bernreuter-production" /> <Cite id="pv-mfg-polysilicon" />.
@@ -129,9 +129,9 @@ O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com 
 
 Classes de pureza <Cite id="bernreuter-production" />:
 
-- **Grau solar para multicristalino** (*multi grade*): 7N (99,99999%) a 8N — células multicristalinas;
-- **Grau solar para monocristalino** (*mono grade*): 9N a 10N — células monocristalinas;
-- **Grau eletrônico (EG-Si)**: 10N a 11N — semicondutores.
+- **Grau solar para multicristalino** (*multi grade*): 7N (99,99999%) a 8N, células multicristalinas;
+- **Grau solar para monocristalino** (*mono grade*): 9N a 10N, células monocristalinas;
+- **Grau eletrônico (EG-Si)**: 10N a 11N, semicondutores.
 
 ### Reator de leito fluidizado (FBR)
 
@@ -141,7 +141,7 @@ O reator de leito fluidizado em corte. As sementes entram por cima e caem; o sil
 
 Método de fluxo contínuo em que partículas semente de silício são mantidas suspensas por gás portador contendo monossilano (SiH₄) ou TCS <Cite id="bernreuter-production" />. O gás se decompõe a temperaturas bem menores, **650–700 °C** no caso do monossilano, acumulando silício nas sementes até formarem grânulos colhidos continuamente, sem a etapa de fratura dos bastões. Consome cerca de **90% menos energia elétrica** que o Siemens, produz mais silício por volume de reator e entrega o produto já numa forma utilizável, embora gere uma fração indesejada de poeira de silício <Cite id="bernreuter-production" /> <Cite id="saimm" />.
 
-Há uma diferença de química dentro da própria família FBR. A REC Silicon alimenta seus reatores com **monossilano (SiH₄)**, que se decompõe a **650–700 °C**; a unidade menor da Wacker trabalha com **TCS**, que só reage por volta de **1000 °C** <Cite id="bernreuter-production" />. Temperatura menor significa menos energia — é daí que sai o argumento de consumir **um décimo** da eletricidade de um forno de hastes convencional <Cite id="bernreuter-production" />.
+Há uma diferença de química dentro da própria família FBR. A REC Silicon alimenta seus reatores com **monossilano (SiH₄)**, que se decompõe a **650–700 °C**; a unidade menor da Wacker trabalha com **TCS**, que só reage por volta de **1000 °C** <Cite id="bernreuter-production" />. Temperatura menor significa menos energia, e é daí que sai o argumento de consumir **um décimo** da eletricidade de um forno de hastes convencional <Cite id="bernreuter-production" />.
 
 Os grânulos também preenchem o cadinho melhor do que pedaços irregulares. Misturar grânulos de FBR a pedaços de Siemens numa proporção de **50:50** pode **encurtar em 40%** o tempo de carga e **aumentar em 30%** o peso da carga <Cite id="bernreuter-production" />.
 
@@ -149,7 +149,7 @@ A tecnologia existe desde antes da escassez: a MEMC Electronic Materials já pro
 
 - a tecnologia é protegida por **muitas patentes**;
 - a **fluidodinâmica** é complexa e exige tempo, experiência e capital para escalar do laboratório ao piloto e ao industrial;
-- é preciso um **revestimento interno** para que o material da parede não contamine os grânulos — o que encarece o reator;
+- é preciso um **revestimento interno** para que o material da parede não contamine os grânulos, o que encarece o reator;
 - e a vantagem elétrica pode ser **consumida pela fração de poeira de silício** que não vira produto.
 
 Ainda assim, a escala dos dois processos é muito diferente: em 2008, o Siemens respondia por cerca de **78%** do polissilício produzido no mundo e o leito fluidizado por apenas **16%** <Cite id="saimm" />.
@@ -163,10 +163,10 @@ Si + 3HCl → SiHCl₃ + H₂        (cloração)
 SiHCl₃ + H₂ → Si + 3HCl        (deposição)
 ```
 
-O HCl que sai do reator de deposição **não é resíduo**: é o próprio reagente que alimenta o reator de cloração. Somando as duas equações, o HCl desaparece dos dois lados e sobra apenas a transformação que interessa — **silício bruto entra, silício puro sai** <Cite id="wikipedia-tcs" />.
+O HCl que sai do reator de deposição **não é resíduo**: é o próprio reagente que alimenta o reator de cloração. Somando as duas equações, o HCl desaparece dos dois lados e sobra apenas a transformação que interessa: **silício bruto entra, silício puro sai** <Cite id="wikipedia-tcs" />.
 
 <DiagramFigure src="/assets/chlorine-loop.svg" alt="Diagrama do ciclo do cloro em quatro etapas: cloração do silício bruto com HCl, destilação do TCS, deposição que devolve silício sólido e HCl, e reciclagem do tetracloreto de silício de volta a TCS; setas mostram o HCl e o SiCl4 retornando ao início">
-O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na etapa 3 — são as duas únicas pontas abertas do sistema. Todo o resto circula: o HCl liberado na deposição volta para a cloração, e o tetracloreto de silício separado na destilação é reconvertido em TCS em vez de descartado. Desenho do autor, a partir de Wikipedia (trichlorosilane) e Jarkin et al. <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na etapa 3. São as duas únicas pontas abertas do sistema. Todo o resto circula: o HCl liberado na deposição volta para a cloração, e o tetracloreto de silício separado na destilação é reconvertido em TCS em vez de descartado. Desenho do autor, a partir de Wikipedia (trichlorosilane) e Jarkin et al. <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
 </DiagramFigure>
 
 O mesmo vale para o subproduto mais incômodo da cloração, o **tetracloreto de silício** (SiCl₄). Em vez de sair como efluente clorado, ele volta ao processo por **hidrocloração**, junto com hidrogênio e mais silício bruto <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
@@ -177,7 +177,7 @@ E os volumes não são pequenos. Para cada quilo de polissilício produzido, o e
 
 <SourceNote :ids="['pv-mfg-polysilicon', 'bernreuter-production', 'ratedpower', 'csiro', 'saimm']" />
 
-*Animação e esquema da rota: [PV-Manufacturing.org](https://pv-manufacturing.org/silicon-production/polysilicon-production/) — o fluxograma acima foi redesenhado a partir do diagrama dessa página e da descrição das reações* <Cite id="pv-mfg-polysilicon" />.
+*Animação e esquema da rota: [PV-Manufacturing.org](https://pv-manufacturing.org/silicon-production/polysilicon-production/). O fluxograma acima foi redesenhado a partir do diagrama dessa página e da descrição das reações* <Cite id="pv-mfg-polysilicon" />.
 
 ### Os limites da rota química
 
@@ -189,14 +189,14 @@ Em **2006** a indústria solar **ultrapassou a de semicondutores** como maior co
 
 ## A rota metalúrgica (UMG)
 
-Nem todo silício solar precisa passar por cloro. A **rota metalúrgica** parte do próprio MG-Si e o refina com uma sequência de etapas metalúrgicas, produzindo o **silício de grau solar por via metalúrgica** — o *upgraded metallurgical-grade silicon* (UMG). O consumo de energia é sensivelmente menor que o do processo Siemens <Cite id="saimm" />.
+Nem todo silício solar precisa passar por cloro. A **rota metalúrgica** parte do próprio MG-Si e o refina com uma sequência de etapas metalúrgicas, produzindo o **silício de grau solar por via metalúrgica**, o *upgraded metallurgical-grade silicon* (UMG). O consumo de energia é sensivelmente menor que o do processo Siemens <Cite id="saimm" />.
 
-O princípio por trás dela é a **segregação**: a maioria dos elementos metálicos tem coeficiente de segregação baixo no silício, ou seja, o sólido **rejeita a impureza para o líquido** conforme cristaliza. Disso saem duas técnicas centrais — a **solidificação direcional** e a **lixiviação ácida** <Cite id="saimm" />. A solidificação direcional tem um bônus: serve também como a etapa de **fundição do lingote**, mono ou multicristalino, que depois vira wafer <Cite id="saimm" />.
+O princípio por trás dela é a **segregação**: a maioria dos elementos metálicos tem coeficiente de segregação baixo no silício, ou seja, o sólido **rejeita a impureza para o líquido** conforme cristaliza. Disso saem duas técnicas centrais: a **solidificação direcional** e a **lixiviação ácida** <Cite id="saimm" />. A solidificação direcional tem um bônus: serve também como a etapa de **fundição do lingote**, mono ou multicristalino, que depois vira wafer <Cite id="saimm" />.
 
 O problema é que esse princípio não vale para todo mundo. **Boro, carbono, oxigênio e fósforo têm coeficiente de segregação alto** e não são empurrados para fora pelo crescimento do cristal <Cite id="saimm" />. Cada um exige um ataque próprio:
 
 - **Fósforo:** é volátil, e sai por **refino a vácuo** <Cite id="saimm" />.
-- **Boro:** só sai por **refino com escória** ou **refino por plasma** — que de quebra também removem carbono e oxigênio <Cite id="saimm" />.
+- **Boro:** só sai por **refino com escória** ou **refino por plasma**, que de quebra também removem carbono e oxigênio <Cite id="saimm" />.
 
 Como cada técnica é boa em um alvo e fraca nos outros, a indústria encadeia **combinações** de etapas <Cite id="saimm" />. Outro cuidado é partir de matéria-prima já limpa (quartzo purificado, negro de fumo e eletrodos de alta pureza) para não introduzir impureza nova no produto <Cite id="saimm" />.
 
@@ -208,19 +208,19 @@ Entre **2009 e 2023**, uma planta em Kristiansand, no sul da Noruega, operou em 
 
 A Elkem vinha estudando rotas metalúrgicas desde o fim dos anos 1970 e chegou ao conceito industrializado em **2009**. Ele encadeia **cinco etapas**, das quais **três são de purificação** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
 
-1. **Redução carbotérmica** do quartzo em forno de arco elétrico — a mesma etapa que produz o MG-Si descrito no capítulo de mineração;
+1. **Redução carbotérmica** do quartzo em forno de arco elétrico, a mesma etapa que produz o MG-Si descrito no capítulo de mineração;
 2. **Tratamento com escória** a alta temperatura;
 3. **Lixiviação química a úmido**, a baixa temperatura;
 4. **Solidificação direcional**, que segrega os contaminantes residuais;
 5. **Pós-tratamento**, com limpeza e corte em blocos.
 
-A diferença essencial em relação ao processo Siemens é que **o silício nunca passa por uma fase vaporizada** — não há destilação de um gás, apenas metalurgia sucessiva <Cite id="elkem-solar-route" />.
+A diferença essencial em relação ao processo Siemens é que **o silício nunca passa por uma fase vaporizada**: não há destilação de um gás, apenas metalurgia sucessiva <Cite id="elkem-solar-route" />.
 
 <DiagramFigure src="/assets/elkem-solar-kristiansand.jpg" alt="Vista externa da planta de silício grau solar da Elkem Solar em Kristiansand, Noruega">
-A planta de Kristiansand (Fiskå), onde a Elkem industrializou sua rota metalúrgica em 2009. A produção começou com **5.000 t/ano**, subiu para **6.000 t/ano** em 2011 e tinha capacidade projetada de **~7.500 t/ano** <Cite id="elkem-solar-route" />. Bjoertvedt — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Solar_01.JPG" target="_blank" rel="noopener noreferrer">Elkem Solar</a> (CC BY-SA 3.0), Wikimedia Commons.
+A planta de Kristiansand (Fiskå), onde a Elkem industrializou sua rota metalúrgica em 2009. A produção começou com **5.000 t/ano**, subiu para **6.000 t/ano** em 2011 e tinha capacidade projetada de **~7.500 t/ano** <Cite id="elkem-solar-route" />. Bjoertvedt, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Solar_01.JPG" target="_blank" rel="noopener noreferrer">Elkem Solar</a> (CC BY-SA 3.0), Wikimedia Commons.
 </DiagramFigure>
 
-O ganho energético é o ponto central do argumento. A planta produzia silício com cerca de **70% menos energia** que a rota Siemens de referência, e as emissões de CO₂ equivalente ficavam entre **10 e 30%** das do processo Siemens — **11 g contra 40–150 g de CO₂-eq por kg**, conforme a rota e a localização da planta <Cite id="elkem-solar-route" />. O tempo de retorno energético de um módulo solar feito com esse material ficava **abaixo de um ano** <Cite id="elkem-solar-route" />.
+O ganho energético é o ponto central do argumento. A planta produzia silício com cerca de **70% menos energia** que a rota Siemens de referência, e as emissões de CO₂ equivalente ficavam entre **10 e 30%** das do processo Siemens: **11 g contra 40–150 g de CO₂-eq por kg**, conforme a rota e a localização da planta <Cite id="elkem-solar-route" />. O tempo de retorno energético de um módulo solar feito com esse material ficava **abaixo de um ano** <Cite id="elkem-solar-route" />.
 
 A purificação também evoluiu. Nos anos 1980 o produto carregava quase **4 ppmw de boro e fósforo**; os valores típicos chegaram a **0,22 ppmw de boro e 0,62 ppmw de fósforo** <Cite id="elkem-solar-route" />. Com isso o material, vendido sob a marca **ESS™**, passou a atender ao **grupo IV** da norma **SEMI PV17-0611**, que classifica justamente as qualidades de silício grau solar <Cite id="elkem-solar-route" />.
 
@@ -228,19 +228,19 @@ Na célula, o resultado prático foi paridade com o polissilício convencional: 
 
 #### A forma do produto: blocos, não hastes
 
-Quem visita uma planta Siemens vê **hastes** de silício saindo do reator. A rota metalúrgica entrega outra coisa: **blocos**. O produto saía da Noruega em **pallets de 24 blocos**, cada um pesando **10–18 kg** e medindo tipicamente **14–15 cm de largura por 15–17 cm de altura e 27–28 cm de comprimento** — pallets de **300–350 kg** <Cite id="rec-solar-epd" />. Esses blocos seguiam para fusão e re-cristalização em lingotes mono ou multicristalinos.
+Quem visita uma planta Siemens vê **hastes** de silício saindo do reator. A rota metalúrgica entrega outra coisa: **blocos**. O produto saía da Noruega em **pallets de 24 blocos**, cada um pesando **10–18 kg** e medindo tipicamente **14–15 cm de largura por 15–17 cm de altura e 27–28 cm de comprimento**, pallets de **300–350 kg** <Cite id="rec-solar-epd" />. Esses blocos seguiam para fusão e re-cristalização em lingotes mono ou multicristalinos.
 
 A operação tinha dois sítios: **Fiskå, em Kristiansand**, produzia o silício grau solar (cerca de **7.300 toneladas por ano** em 2018) e **Herøya, em Porsgrunn**, transformava o material em lingotes e blocos para exportação, principalmente para a fábrica da REC em Singapura <Cite id="rec-solar-epd" /> <Cite id="snl-rec" />.
 
 <DiagramFigure src="/assets/heroyha-industripark.jpg" alt="Parque industrial de Herøya, em Porsgrunn, Noruega">
-O parque industrial de **Herøya**, em Porsgrunn, onde o silício de Kristiansand era fundido em lingotes e cortado em blocos antes de seguir para Singapura <Cite id="rec-solar-epd" />. Bitjungle — <a href="https://commons.wikimedia.org/wiki/File:Her%C3%B8ya_Industripark.JPG" target="_blank" rel="noopener noreferrer">Herøya Industripark</a> (CC BY-SA 4.0), Wikimedia Commons.
+O parque industrial de **Herøya**, em Porsgrunn, onde o silício de Kristiansand era fundido em lingotes e cortado em blocos antes de seguir para Singapura <Cite id="rec-solar-epd" />. Bitjungle, <a href="https://commons.wikimedia.org/wiki/File:Her%C3%B8ya_Industripark.JPG" target="_blank" rel="noopener noreferrer">Herøya Industripark</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
 #### O fim da linha norueguesa
 
 O arco termina de forma amarga. Em **novembro de 2023** a REC fechou a produção de polissilício em Kristiansand e Porsgrunn, citando **preços de eletricidade altos** e prejuízos acumulados de **335 milhões de coroas norueguesas** (cerca de **US\$ 31 milhões**); o fechamento atingiu cerca de **250 trabalhadores** <Cite id="rec-closure-2023" />. Em **janeiro de 2024** a Elkem comprou as instalações por **US\$ 22 milhões**, sem planos de retomar o modelo de negócio anterior <Cite id="elkem-buys-rec" />.
 
-Vale ser preciso sobre o motivo. A rota metalúrgica **não perdeu por qualidade** — as células provaram paridade elétrica com o polissilício Siemens. Perdeu por economia: o custo da rota é dominado pela **eletricidade**, que na Noruega disparou com a crise energética europeia, enquanto o preço global do polissilício despencava diante da sobreoferta. Insumo em alta contra preço de venda em queda é o pior cenário possível.
+Vale ser preciso sobre o motivo. A rota metalúrgica **não perdeu por qualidade**: as células provaram paridade elétrica com o polissilício Siemens. Perdeu por economia: o custo da rota é dominado pela **eletricidade**, que na Noruega disparou com a crise energética europeia, enquanto o preço global do polissilício despencava diante da sobreoferta. Insumo em alta contra preço de venda em queda é o pior cenário possível.
 
 <SourceNote :ids="['elkem-solar-route', 'elkem-lca', 'rec-solar-epd', 'snl-rec', 'rec-closure-2023', 'elkem-buys-rec']" />
 
@@ -261,7 +261,7 @@ As classes de pureza citadas acima ficam mais concretas quando se olham os núme
 | Ti | 160–200 | < 0,01 | — | < 0,003 |
 | Cr | 50–200 | < 0,1 | — | — |
 
-A leitura da tabela explica por que a purificação química existe. O ferro, impureza dominante no MG-Si, cai de milhares de ppm para **menos de 0,01 ppm** no grau eletrônico; o boro, que o MG-Si carrega em dezenas de ppm, precisa chegar a **menos de 0,0002 ppm** — uma queda de mais de cinco ordens de grandeza. Nenhuma metalurgia faz isso; só a destilação de um gás <Cite id="saimm" />.
+A leitura da tabela explica por que a purificação química existe. O ferro, impureza dominante no MG-Si, cai de milhares de ppm para **menos de 0,01 ppm** no grau eletrônico; o boro, que o MG-Si carrega em dezenas de ppm, precisa chegar a **menos de 0,0002 ppm**, uma queda de mais de cinco ordens de grandeza. Nenhuma metalurgia faz isso; só a destilação de um gás <Cite id="saimm" />.
 
 Repare também que a coluna do grau solar policristalino lista **apenas o teor de silício**. Não é omissão: o grau solar **não tem especificação formal**, e o que se publica são concentrações aceitáveis de impureza, usadas como referência e não como norma <Cite id="saimm" />.
 
@@ -275,11 +275,11 @@ O preço do polissilício não oscila por acaso. Entre **1981 e 2004**, o preço
 Por que o preço cicla. O sinal de preço é verdadeiro, mas a resposta chega tarde: uma planta de polissilício leva de dois a três anos entre engenharia, obra e ramp-up. Quando a capacidade finalmente entra em operação, o mercado que a justificava já não existe. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-market" /> <Cite id="bernreuter-pork-cycle" />.
 </DiagramFigure>
 
-A indústria é, nas palavras da própria Bernreuter Research, **um superpetroleiro com longa distância de frenagem**: quando a queda do preço sinaliza que se deve parar de investir, a obra já está em andamento e não se interrompe sem prejuízo considerável. O resultado é sobrecapacidade, que acelera a queda. E como ninguém investe enquanto o preço cai, a oferta só reage quando o preço volta a subir — tarde demais <Cite id="bernreuter-market" />.
+A indústria é, nas palavras da própria Bernreuter Research, **um superpetroleiro com longa distância de frenagem**: quando a queda do preço sinaliza que se deve parar de investir, a obra já está em andamento e não se interrompe sem prejuízo considerável. O resultado é sobrecapacidade, que acelera a queda. E como ninguém investe enquanto o preço cai, a oferta só reage quando o preço volta a subir, tarde demais <Cite id="bernreuter-market" />.
 
 Antes de 2004, a demanda era dominada pelos semicondutores, com seus próprios ciclos. A explosão da fotovoltaica **encurtou o ciclo pela metade**: o intervalo entre vale e pico caiu de oito para **quatro anos** <Cite id="bernreuter-market" />. Depois, a expansão chinesa de baixo custo praticamente **invalidou o ciclo**, produzindo uma tendência sustentada de sobreoferta interrompida apenas por fases curtas de escassez <Cite id="bernreuter-market" />. O ciclo só voltou quando a retração das instalações na China e o fechamento de mais de uma dúzia de fabricantes em 2018–2019 foram seguidos pela recuperação rápida da demanda no segundo semestre de 2020 <Cite id="bernreuter-pork-cycle" />.
 
-Os extremos recentes mostram o tamanho do movimento: em **junho de 2020** o preço à vista tocou o fundo histórico de **US\$ 6,75/kg**; em **agosto de 2022** estava em **US\$ 39/kg** — a subida inteira em cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
+Os extremos recentes mostram o tamanho do movimento: em **junho de 2020** o preço à vista tocou o fundo histórico de **US\$ 6,75/kg**; em **agosto de 2022** estava em **US\$ 39/kg**: a subida inteira em cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
 
 ### A inversão da demanda
 
@@ -291,7 +291,7 @@ Inversão das fatias de mercado e crescimento de **18,4×** entre 1995 e 2014 (1
 
 <SourceNote :ids="['bernreuter']" />
 
-*Between 1995 and 2014, the annual polysilicon demand increased by a factor of 18.4; the ratio between the shares of semiconductors and photovoltaics reversed completely* — fontes do gráfico no PDF: PV News, Sage Concepts e Bernreuter Research <Cite id="bernreuter" />.
+*Between 1995 and 2014, the annual polysilicon demand increased by a factor of 18.4; the ratio between the shares of semiconductors and photovoltaics reversed completely*, fontes do gráfico no PDF: PV News, Sage Concepts e Bernreuter Research <Cite id="bernreuter" />.
 
 <DiagramFigure src="/pdf-images/p05-2.png" alt="Preço histórico do polissilício 1977–2017">
 Ciclos de escassez (*shortage*) e sobreoferta (*oversupply*).
@@ -307,7 +307,7 @@ Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinh
 
 A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
 
-- **Custo de energia.** As novas plantas se concentraram nas regiões autônomas de **Xinjiang e Mongólia Interior**, onde a eletricidade é muito barata — o insumo decisivo de um processo tão intensivo quanto o Siemens. A contrapartida é ambiental: essa eletricidade vem majoritariamente de **usinas a carvão**, e o polissilício produzido carrega uma pegada de carbono alta <Cite id="bernreuter-market" />.
+- **Custo de energia.** As novas plantas se concentraram nas regiões autônomas de **Xinjiang e Mongólia Interior**, onde a eletricidade é muito barata, o insumo decisivo de um processo tão intensivo quanto o Siemens. A contrapartida é ambiental: essa eletricidade vem majoritariamente de **usinas a carvão**, e o polissilício produzido carrega uma pegada de carbono alta <Cite id="bernreuter-market" />.
 - **Guerra de preços deliberada.** Em 2018, o então presidente da Daqo New Energy, Longgen Zhang, foi explícito sobre a estratégia: das **300.000 toneladas** de capacidade chinesa de 2017, cerca de **100.000** tinham custo baixo, e as outras **200.000** "seriam eliminadas" para dar lugar à capacidade nova <Cite id="bernreuter-market" />.
 - **Consumo específico em queda.** A quantidade de silício por watt instalado caiu a tal ponto que o polissilício consumido para cada gigawatt novo em **2023 era um quarto** do que se gastava em 2006. Contribuíram a redução da **espessura do wafer**, a troca da serra de lama pela **serra de fio diamantado** (menos perda de *kerf*), o ganho de eficiência das células, a virada para **células monocristalinas tipo n**, além de cortes de célula e outras melhorias de montagem <Cite id="bernreuter-market" />.
 

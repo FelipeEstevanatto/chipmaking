@@ -1,6 +1,6 @@
 ---
 title: História da fotolitografia
-description: Da impressão por contato ao EUV — as quatro gerações ópticas, a eleição da litografia de próxima geração e o resgate do 193 nm pela imersão.
+description: "Da impressão por contato ao EUV: as quatro gerações ópticas, a eleição da litografia de próxima geração e o resgate do 193 nm pela imersão."
 ---
 
 # História da fotolitografia
@@ -26,7 +26,7 @@ Comparação dos quatro arranjos, fora de escala. Desenho do autor, a partir de 
 
 Nas primeiras décadas, os circuitos integrados eram expostos por **impressão por contato**: a máscara era pressionada **fisicamente** contra o wafer. O arranjo é simples e barato (não usa lente alguma), mas o contato repetido **danifica a máscara e contamina o wafer** <Cite id="kato-litho" />.
 
-Em **1973** veio a **impressão por proximidade**, que introduz uma folga de ar entre máscara e wafer. O desgaste acaba, mas a difração piora a **resolução** — e ainda sem lente alguma no caminho <Cite id="kato-litho" />. Em seguida, a **impressão por projeção** adicionou **lentes** ao sistema, e foi essa a base do que veio depois <Cite id="kato-litho" />.
+Em **1973** veio a **impressão por proximidade**, que introduz uma folga de ar entre máscara e wafer. O desgaste acaba, mas a difração piora a **resolução**, e ainda sem lente alguma no caminho <Cite id="kato-litho" />. Em seguida, a **impressão por projeção** adicionou **lentes** ao sistema, e foi essa a base do que veio depois <Cite id="kato-litho" />.
 
 Em **1978**, a GCA lançou o **DSW 4800**, o primeiro *stepper* de wafer bem-sucedido: óptica de redução **10×**, lente Zeiss de 0,28 de abertura numérica, campo de 10 × 10 mm e luz de **g-line (436 nm)** <Cite id="kato-litho" />. Em vez de expor o wafer inteiro num disparo, a máquina **anda de campo em campo**. A Nikon lançou seu primeiro stepper comercial em 1980.
 
@@ -35,16 +35,16 @@ O stepper não venceu por ser melhor em tudo. Um stepper 10× fazia cerca de **1
 ### Os comprimentos de onda
 
 <DiagramFigure src="/assets/spectrum-of-lithography-lights.png" alt="Espectro das luzes usadas em litografia: g-line 436 nm, i-line 365 nm, KrF 248 nm, ArF 193 nm e F2 157 nm">
-Comparação dos picos de emissão usados em litografia — <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_lithography_lights.PNG" target="_blank" rel="noopener noreferrer">Spectrum of lithography lights</a>, Shigeru23 (CC BY-SA 4.0), Wikimedia Commons.
+Comparação dos picos de emissão usados em litografia, <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_lithography_lights.PNG" target="_blank" rel="noopener noreferrer">Spectrum of lithography lights</a>, Shigeru23 (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-Sozinho, o stepper não sustentaria nada — foi a redução do comprimento de onda que manteve a indústria andando: **g-line (436 nm)** → **i-line (365 nm)**, difundida por volta de 1990 → **248 nm** (KrF) → **193 nm** (ArF), os dois últimos a laser de excímero <Cite id="kato-litho" />.
+Sozinho, o stepper não sustentaria nada. Foi a redução do comprimento de onda que manteve a indústria andando: **g-line (436 nm)** → **i-line (365 nm)**, difundida por volta de 1990 → **248 nm** (KrF) → **193 nm** (ArF), os dois últimos a laser de excímero <Cite id="kato-litho" />.
 
 Por décadas, o comprimento de onda foi **menor** que o tamanho do traço a imprimir. Isso mudou no **nó de 250 nm**, feito com luz de **248 nm**: a partir dali os traços passaram a ser **menores que a própria luz**, e a indústria sobreviveu com **técnicas de realce de resolução** em vez de uma nova fonte <Cite id="asianometry-euv" />. Essa inversão é a origem da pergunta que define o resto desta página: quando a luz não consegue mais desenhar o traço, qual tecnologia consegue?
 
 ## A lista de candidatos
 
-Em **1995** a indústria montou um comitê para escolher a **litografia de próxima geração** (*Next Generation Lithography*, NGL) <Cite id="asianometry-euv" />. A mesa reunia cinco ou seis apostas, dependendo de como se contam — e a favorita não era o EUV.
+Em **1995** a indústria montou um comitê para escolher a **litografia de próxima geração** (*Next Generation Lithography*, NGL) <Cite id="asianometry-euv" />. A mesa reunia cinco ou seis apostas, dependendo de como se contam, e a favorita não era o EUV.
 
 | Candidato | Princípio | Destino |
 |---|---|---|
@@ -63,7 +63,7 @@ O calendário escorregou desde o início. Em **novembro de 1997**, a recomendaç
 
 Em **dezembro de 1999** e **setembro de 2000**, a recomendação foi manter **EUV e EPL** para o nó de **70 nm**, reconhecendo a possibilidade crescente de que a indústria precisasse de **mais de uma** tecnologia de ponta <Cite id="sematech-ngl" />. Em **agosto de 2001**, no quinto e último workshop, a recomendação oficial seguiu sendo **financiar a comercialização das duas** <Cite id="sematech-ngl" />.
 
-O EUV **não foi ungido sozinho em 2001**. O que houve foi o **EPL morrer de produtividade**, reduzindo o campo a um candidato por **eliminação** — enquanto a recomendação formal de sustentar as duas frentes ainda constava do relatório daquele ano <Cite id="sematech-ngl" />. O efeito prático foi o alvo do EUV escorregar do nó de **130/100 nm** para o de **70 nm**, uma a duas gerações depois do plano original <Cite id="sematech-ngl" />.
+O EUV **não foi ungido sozinho em 2001**. O que houve foi o **EPL morrer de produtividade**, reduzindo o campo a um candidato por **eliminação**, enquanto a recomendação formal de sustentar as duas frentes ainda constava do relatório daquele ano <Cite id="sematech-ngl" />. O efeito prático foi o alvo do EUV escorregar do nó de **130/100 nm** para o de **70 nm**, uma a duas gerações depois do plano original <Cite id="sematech-ngl" />.
 
 ## Por que os concorrentes perderam
 
@@ -80,16 +80,16 @@ A razão está registrada pelos próprios pesquisadores da IBM: gestores de fáb
 O EUV nasceu com outro nome. A técnica se chamava **litografia por projeção de raio X mole** até **1993**, quando a comunidade de pesquisa decidiu adotar o termo **extreme ultraviolet**. A troca tinha três motivos: **diferenciar** a técnica da litografia por proximidade de raio X, que não funcionou; **evocar o DUV**, que funcionava; e enterrar a associação negativa com o raio X <Cite id="cset-euv" />. No fundo, EUV são raios X moles com nome de ultravioleta.
 
 <DiagramFigure src="/assets/euvl-tool-llnl.jpg" alt="Ferramenta de litografia EUV do Laboratório Nacional Lawrence Livermore">
-Ferramenta de litografia EUV na segunda metade dos anos 1990 — <a href="https://commons.wikimedia.org/wiki/File:Extreme_ultraviolet_lithography_tool.jpg" target="_blank" rel="noopener noreferrer">Extreme ultraviolet lithography tool</a>, Lawrence Livermore National Laboratory (domínio público), Wikimedia Commons.
+Ferramenta de litografia EUV na segunda metade dos anos 1990, <a href="https://commons.wikimedia.org/wiki/File:Extreme_ultraviolet_lithography_tool.jpg" target="_blank" rel="noopener noreferrer">Extreme ultraviolet lithography tool</a>, Lawrence Livermore National Laboratory (domínio público), Wikimedia Commons.
 </DiagramFigure>
 
 As dificuldades técnicas decorrem de uma única propriedade: **tudo absorve EUV**. Não há lente, apenas **espelhos multicamada**; a máscara precisa ser **livre de defeitos**; a fonte precisa de **potência**; e o fotoresistor precisa ser **mais fino**, porque o EUV penetra pouco <Cite id="asianometry-euv" />.
 
-Em **1996**, o Congresso americano cortou o financiamento do Departamento de Energia para o EUV <Cite id="construction-physics-euv" />. A essa altura, uma força-tarefa da SEMATECH havia classificado o EUV como o **último colocado entre quatro** tecnologias, atrás de raio X, feixe de elétrons e projeção por íons <Cite id="construction-physics-euv" />. Em vez de deixar o time dos laboratórios se dispersar, a **Intel assumiu o risco** e, em **setembro de 1997**, montou com AMD e Motorola o consórcio **EUV LLC**, ao lado do *Virtual National Laboratory* — os laboratórios de Berkeley, Livermore e Sandia <Cite id="intel-euvllc" />.
+Em **1996**, o Congresso americano cortou o financiamento do Departamento de Energia para o EUV <Cite id="construction-physics-euv" />. A essa altura, uma força-tarefa da SEMATECH havia classificado o EUV como o **último colocado entre quatro** tecnologias, atrás de raio X, feixe de elétrons e projeção por íons <Cite id="construction-physics-euv" />. Em vez de deixar o time dos laboratórios se dispersar, a **Intel assumiu o risco** e, em **setembro de 1997**, montou com AMD e Motorola o consórcio **EUV LLC**, ao lado do *Virtual National Laboratory*, os laboratórios de Berkeley, Livermore e Sandia <Cite id="intel-euvllc" />.
 
 O valor anunciado foi de **US\$ 250 milhões em três anos** (US\$ 130 milhões em dinheiro e US\$ 120 milhões em equipamento, material e pessoal), o maior investimento privado já feito num projeto do Departamento de Energia dos EUA até então <Cite id="intel-euvllc" />. IBM, Micron, Infineon e a própria ASML entraram depois <Cite id="eet-euvlith" />. A Europa e o Japão responderam com consórcios próprios, o **EUCLIDES** e o **ASET** <Cite id="construction-physics-euv" />.
 
-O candidato que **menos** parecia capaz de durar várias gerações foi o que venceu — e é justamente a continuidade ao longo de várias gerações que explica por que ele venceu.
+O candidato que **menos** parecia capaz de durar várias gerações foi o que venceu, e é justamente a continuidade ao longo de várias gerações que explica por que ele venceu.
 
 ## O desvio de 157 nm e o resgate pela imersão
 
@@ -101,7 +101,7 @@ A saída veio de outro lugar. Em **2002**, **Burn Lin**, então na TSMC, apresen
 
 A execução foi rápida. Em **maio de 2003** a Intel abandonou o 157 nm <Cite id="asianometry-euv" />; em **outubro** a ASML já tinha imagens de um protótipo, o **TWINSCAN AT:1150i** <Cite id="asml-immersion" />; e em **3 de dezembro** do mesmo ano veio o primeiro pedido do scanner de produção **XT:1250i**, feito pela **TSMC** <Cite id="lin-immersion" />.
 
-O efeito foi duplo: a imersão salvou o 193 nm e levou a indústria pelos nós de 65, 45, 32 e 22 nm sem precisar do EUV — o que empurrou o EUV ainda mais para frente. Ele só entrou em produção de alto volume nos nós de 7 nm e abaixo, cerca de **duas décadas** depois de ter sido escolhido.
+O efeito foi duplo: a imersão salvou o 193 nm e levou a indústria pelos nós de 65, 45, 32 e 22 nm sem precisar do EUV, o que empurrou o EUV ainda mais para frente. Ele só entrou em produção de alto volume nos nós de 7 nm e abaixo, cerca de **duas décadas** depois de ter sido escolhido.
 
 ## Linha do tempo
 

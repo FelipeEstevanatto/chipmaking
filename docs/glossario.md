@@ -5,7 +5,7 @@ description: Siglas e termos da cadeia do silício, com links para os capítulos
 
 # Glossário
 
-As siglas abaixo aparecem **expandidas na primeira vez** que surgem em cada capítulo — passe o cursor (ou toque) sobre o termo sublinhado para ver o significado. A lista completa, com o capítulo que aprofunda cada um, está aqui.
+As siglas abaixo aparecem **expandidas na primeira vez** que surgem em cada capítulo. Passe o cursor (ou toque) sobre o termo sublinhado para ver o significado. A lista completa, com o capítulo que aprofunda cada um, está aqui.
 
 <GlossaryTable />
 

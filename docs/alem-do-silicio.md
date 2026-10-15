@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 Todo este site trata o silício como **o** material dos semicondutores. Isso é verdade para a lógica e para a fotovoltaica, e falso em duas direções que valem um capítulo.
 
-Na primeira, existem semicondutores que **não** são silício e ganham dele em aplicações específicas — não por serem melhores em tudo, mas por terem uma propriedade que o silício não tem. Na segunda, o silício faz muito mais coisas do que processar dados e gerar energia: ele também é estrutura mecânica, sensor e, mais recentemente, hospedeiro de qubits.
+Na primeira, existem semicondutores que **não** são silício e ganham dele em aplicações específicas, não por serem melhores em tudo, mas por terem uma propriedade que o silício não tem. Na segunda, o silício faz muito mais coisas do que processar dados e gerar energia: ele também é estrutura mecânica, sensor e, mais recentemente, hospedeiro de qubits.
 
 ## Os vizinhos de banda larga
 
@@ -24,7 +24,7 @@ A consequência do gap maior é uma **tensão de ruptura muito mais alta**: um m
 
 No chaveamento de alta tensão (inversores de tração de veículos elétricos, conversores de rede e fontes industriais), o SiC compete com o **IGBT**, um dispositivo bipolar que acumula portadores minoritários e por isso tem uma cauda de corrente no desligamento. O MOSFET de SiC elimina essa cauda, e a diferença de perda aparece justamente na frequência de chaveamento <Cite id="elem-sze" />.
 
-No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um **gás de elétrons bidimensional**, uma camada de portadores de alta mobilidade sem dopagem intencional — o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por física, e não por engenharia: **emitir luz azul**. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
+No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um **gás de elétrons bidimensional**, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por física, e não por engenharia: **emitir luz azul**. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
 
 Esses materiais **não** substituem o silício na lógica por causa do **substrato**, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem; é o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
 

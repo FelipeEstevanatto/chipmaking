@@ -1,6 +1,6 @@
 ---
 title: Reliability and aging
-description: Why a chip stops working — the bathtub curve, wear-out mechanisms, FIT, soft errors and automotive qualification.
+description: "Why a chip stops working: the bathtub curve, wear-out mechanisms, FIT, soft errors and automotive qualification."
 dataAsOf: 2026
 ---
 
@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 The earlier chapters tell you how a chip is made. The [fab](/en/na-fab) builds the transistor layer by layer, [transistor evolution](/en/transistores) shows what ended up inside the die, and [packaging](/en/empacotamento) seals it into a case. What is missing is the question that decides whether the product really exists: **how long does it keep working?**
 
-Reliability is not a single measurement. It is the **distribution of failures over time** — and that distribution is almost never uniform. Understanding it is what separates "the chip works" from "the chip can be sold".
+Reliability is not a single measurement. It is the **distribution of failures over time**, and that distribution is almost never uniform. Understanding it is what separates "the chip works" from "the chip can be sold".
 
 The chapter follows the aging of a chip in six steps:
 
@@ -26,7 +26,7 @@ The text follows that order.
 Plot the failure rate of a population against time and the same shape reappears, across mechanical and electronic components of every kind: a bathtub <Cite id="rel-nist-bathtub" />.
 
 - **Infant mortality.** At the start the rate is high and falls quickly. It lasts from a few weeks to a few months, and it corresponds to defects that were already present in the lot <Cite id="rel-nist-bathtub" />.
-- **Useful life.** The rate levels off at a roughly constant value — this is where most systems spend most of their lives <Cite id="rel-nist-bathtub" />.
+- **Useful life.** The rate levels off at a roughly constant value: this is where most systems spend most of their lives <Cite id="rel-nist-bathtub" />.
 - **Wear-out.** If the product lives long enough, the rate rises again, because the materials degrade <Cite id="rel-nist-bathtub" />.
 
 The chart below is a **schematic**, not a data set: it exists to fix the three regions in your head, not to be measured.
@@ -68,7 +68,7 @@ Near the drain, the electric field accelerates channel carriers to energies high
 
 ### Gate oxide breakdown
 
-The gate dielectric does not fail all at once. It **accumulates defects** under the electric field until a **conductive path** crosses the oxide layer and the gate shorts to the channel — time-dependent dielectric breakdown (TDDB) <Cite id="rel-mcpherson-2012" />. Because the field accelerates the rate of defect generation, lifetime depends on **voltage**, and voltage extrapolation is as central as temperature extrapolation <Cite id="rel-mcpherson-2012" />.
+The gate dielectric does not fail all at once. It **accumulates defects** under the electric field until a **conductive path** crosses the oxide layer and the gate shorts to the channel, time-dependent dielectric breakdown (TDDB) <Cite id="rel-mcpherson-2012" />. Because the field accelerates the rate of defect generation, lifetime depends on **voltage**, and voltage extrapolation is as central as temperature extrapolation <Cite id="rel-mcpherson-2012" />.
 
 That same wall, decades ago, ended pure SiO₂ as the gate insulator: once the oxide reached the **1.2 nm** range, tunnelling leakage became unacceptable and the high-k dielectric took its place <Cite id="ecs-sio2-limits" />. It is the same frontier the [fab](/en/na-fab) describes from the process side.
 
@@ -84,7 +84,7 @@ $$
 
 where $J$ is the current density and $T$ is the temperature <Cite id="rel-black-1969" />. The exponent $n$ sits typically near **2** for aluminium, and the activation energy $E_a$ depends on the metal and on the diffusion path, on the order of **0.5 to 0.7 eV** for aluminium and **0.8 to 1.0 eV** for copper <Cite id="rel-jep122" />.
 
-Be wary of any $n$ or $E_a$ presented as a universal constant: qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />. What is robust is the **direction**: doubling $J$ shortens life far more than doubling room temperature — which is why swapping aluminium for copper in **1997** mattered so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
+Be wary of any $n$ or $E_a$ presented as a universal constant: qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />. What holds up is the **direction**: doubling $J$ shortens life far more than doubling room temperature, which is why swapping aluminium for copper in **1997** mattered so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
 
 <DiagramFigure src="/assets/wearout-mechanisms.svg" alt="Four schematic MOSFET cross-sections, one per wear-out mechanism: traps at the oxide-silicon interface that shift the threshold voltage, hot carriers injected into the oxide near the drain, a conductive filament through the gate oxide, and electromigration in a copper wire, with a void upstream and a hillock downstream">
 The four wear-out mechanisms in cross-section: interface traps that shift the threshold voltage <Cite id="rel-schroder-2003" />, hot carriers that jump into the oxide near the drain <Cite id="rel-hu-1985" />, the conductive filament that breaks down the gate oxide <Cite id="rel-mcpherson-2012" />, and electromigration that opens a void and raises a hillock in the copper wire <Cite id="rel-black-1969" />. Author's drawing.
@@ -96,7 +96,7 @@ To compare components, the industry needed a common unit. That is the **FIT** (*
 
 The arithmetic is what makes the number usable. Since 10⁹ divided by the rate in FIT gives the **MTTF** in hours, a component at 10 FIT has an MTTF of 10⁸ h <Cite id="rel-jesd85a" />. Converting: **100,000 h** is about **11 years** of continuous operation, and ten calendar years add up to **87,600 h** (10 × 8,760 h). Writing the goal in hours and the failure in FIT is what lets you compare a single chip with a customer's entire installed base.
 
-Those goals differ by market. AEC-Q100 demonstrates the method with an automotive profile of **15 years** — **12,000 h** of operation within **131,400 h** of calendar time <Cite id="rel-aec-q100" />. The useful-life horizon assumed for a component is usually counted in **a decade** <Cite id="rel-jep122" />; the two numbers coexist because they measure different things, powered time on one side and calendar time on the other.
+Those goals differ by market. AEC-Q100 demonstrates the method with an automotive profile of **15 years** (**12,000 h** of operation within **131,400 h** of calendar time) <Cite id="rel-aec-q100" />. The useful-life horizon assumed for a component is usually counted in **a decade** <Cite id="rel-jep122" />; the two numbers coexist because they measure different things, powered time on one side and calendar time on the other.
 
 ### Accelerated testing
 
@@ -108,13 +108,13 @@ AEC-Q100 fixes the constants for the example: $E_a = 0.7$ eV and $k_B = 8.61733 
 
 There is a class of failure that leaves no scar. In the late 1970s it became clear that **alpha particles** (from radioactive traces in the packaging materials themselves) deposited enough charge to **flip a bit** in a DRAM. The bit worked again on the next write: hence the name **soft error** <Cite id="rel-may-woods-1979" />.
 
-Then came the uncomfortable generalisation: it was not just the package. **Cosmic-ray neutrons** do the same at sea level, and the error rate **increases with altitude** — which turned a materials problem into an environment problem <Cite id="rel-ziegler-1979" />. The relevant radiation sources came to be known as a set of three <Cite id="rel-baumann-2001" />.
+Then came the uncomfortable generalisation: it was not just the package. **Cosmic-ray neutrons** do the same at sea level, and the error rate **increases with altitude**, which turned a materials problem into an environment problem <Cite id="rel-ziegler-1979" />. The relevant radiation sources came to be known as a set of three <Cite id="rel-baumann-2001" />.
 
 Because the probability grows with the number of bits exposed, the natural metric is **FIT per megabit**, not FIT per component <Cite id="rel-baumann-2001" />. It was the existence of that irreducible error floor that pushed error-correcting codes (**ECC**) into memories and controllers: you cannot stop the particle, but you can detect and correct the bit it flipped <Cite id="rel-baumann-2001" />.
 
 ## Qualification
 
-"Reliable" is not an opinion; it is a set of tests a supplier must pass before selling. JEDEC publishes the methods — including how to calculate and declare a failure rate in FIT, in JESD85A <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
+"Reliable" is not an opinion; it is a set of tests a supplier must pass before selling. JEDEC publishes the methods, including how to calculate and declare a failure rate in FIT, in JESD85A <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
 
 The **automotive** regime is harsher than consumer, and AEC-Q100 is the document that defines it: components meeting its specifications are held suitable for the harsh automotive environment **without additional component-level qualification testing** <Cite id="rel-aec-q100" />. The axis of that harshness is **operating temperature**, divided into grades:
 
@@ -127,17 +127,17 @@ The **automotive** regime is harsher than consumer, and AEC-Q100 is the document
 
 <Cite id="rel-aec-q100" />
 
-A high-temperature operating life (**HTOL**) test at grade 0 stresses the device at **+150 °C** for **1,000 h** <Cite id="rel-aec-q100" />. That is why automotive is a different regime: it demands that the silicon survive a thermal window and a mission time the consumer never sees, and the qualification explicitly lists the mechanisms that must be covered — **electromigration, TDDB, hot carrier injection, bias temperature instability and stress migration** <Cite id="rel-aec-q100" />.
+A high-temperature operating life (**HTOL**) test at grade 0 stresses the device at **+150 °C** for **1,000 h** <Cite id="rel-aec-q100" />. That is why automotive is a different regime: it demands that the silicon survive a thermal window and a mission time the consumer never sees, and the qualification explicitly lists the mechanisms that must be covered: **electromigration, TDDB, hot carrier injection, bias temperature instability and stress migration** <Cite id="rel-aec-q100" />.
 
 ## Why this is a materials story
 
 A device's reliability starts with the material.
 
 - Oxide breakdown is governed by the **defect density** in the dielectric, not by the circuit geometry <Cite id="rel-mcpherson-2012" />.
-- The quality of the **oxide–silicon interface** is what let silicon work as a semiconductor — and what germanium could not deliver <Cite id="ecs-sio2-limits" />.
+- The quality of the **oxide–silicon interface** is what let silicon work as a semiconductor, and what germanium could not deliver <Cite id="ecs-sio2-limits" />.
 - Electromigration life depends on the metal's **purity and structure** and on the barrier that confines it; that is why copper only replaced aluminium once it came with a barrier <Cite id="ibm-cu-electroplating" />.
 
-A good design **manages** these mechanisms — chooses margins, adds ECC, sizes wires. But it does not eliminate them: the materials decide which mechanisms exist and how fast they run. Just as [yield](/en/na-fab) is a measure of process defects, reliability is the measure of how those same defects age.
+A good design **manages** these mechanisms: chooses margins, adds ECC, sizes wires. But it does not eliminate them: the materials decide which mechanisms exist and how fast they run. Just as [yield](/en/na-fab) is a measure of process defects, reliability is the measure of how those same defects age.
 
 <SourceNote label="Sources" :ids="['rel-nist-bathtub', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'rel-schroder-2003', 'rel-hu-1985', 'rel-mcpherson-2012', 'rel-black-1969', 'rel-jep122', 'rel-aec-q100', 'rel-jesd85a', 'rel-may-woods-1979', 'rel-ziegler-1979', 'rel-baumann-2001', 'voldman-esd', 'ecs-sio2-limits', 'ibm-cu-electroplating', 'ibm-copper']" />
 

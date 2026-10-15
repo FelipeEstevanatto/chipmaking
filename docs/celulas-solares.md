@@ -10,7 +10,7 @@ dataAsOf: 2026
 
 O wafer de silício tem dois destinos industriais. Um é a **fab** de semicondutores, que percorre a [fotolitografia](/fotolitografia) até chegar aos [transistores](/transistores). O outro é a **linha de células fotovoltaicas**, onde o mesmo material (só que multicristalino e com pureza menor) vira a célula que converte luz em eletricidade.
 
-A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023** respondia por cerca de **97%** do mercado fotovoltaico, contra **3%** das tecnologias de filme fino <Cite id="itrpv-2024" />. Dentro do silício, o **monocristalino Czochralski** domina de forma praticamente absoluta — o wafer multicristalino deixou de ser produzido em massa <Cite id="itrpv-2024" />. O número mais antigo que aparece ao longo deste capítulo, de **pelo menos 80%**, vem do levantamento de 2011 de Xakalashe e Tangstad <Cite id="saimm" />.
+A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023** respondia por cerca de **97%** do mercado fotovoltaico, contra **3%** das tecnologias de filme fino <Cite id="itrpv-2024" />. Dentro do silício, o **monocristalino Czochralski** domina de forma praticamente absoluta. O wafer multicristalino deixou de ser produzido em massa <Cite id="itrpv-2024" />. O número mais antigo que aparece ao longo deste capítulo, de **pelo menos 80%**, vem do levantamento de 2011 de Xakalashe e Tangstad <Cite id="saimm" />.
 
 ## As sete etapas da célula
 
@@ -42,9 +42,9 @@ Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e pot
 
 ### Difusão do emissor (junção p-n)
 
-É a etapa que transforma uma lâmina de silício num dispositivo. O wafer de partida é **tipo p**; introduz-se **fósforo** (tipo n) para formar a **junção p-n** <Cite id="saimm" />. Qual elemento faz a dopagem tipo p, porém, mudou — e é o assunto da subseção seguinte.
+É a etapa que transforma uma lâmina de silício num dispositivo. O wafer de partida é **tipo p**; introduz-se **fósforo** (tipo n) para formar a **junção p-n** <Cite id="saimm" />. Qual elemento faz a dopagem tipo p, porém, mudou. É o assunto da subseção seguinte.
 
-O processo roda num forno a aproximadamente **900 °C por cerca de 30 minutos**, produzindo uma profundidade de penetração de **0,5 µm** — é essa camada rasa que a figura mostra como emissor. A fonte de dopante mais comum é o **POCl₃**, embora também se usem serigrafia ou deposição química de vapor <Cite id="saimm" />.
+O processo roda num forno a aproximadamente **900 °C por cerca de 30 minutos**, produzindo uma profundidade de penetração de **0,5 µm**. É essa camada rasa que a figura mostra como emissor. A fonte de dopante mais comum é o **POCl₃**, embora também se usem serigrafia ou deposição química de vapor <Cite id="saimm" />.
 
 #### A troca do boro pelo gálio
 
@@ -64,7 +64,7 @@ A indústria também está indo para o **tipo n**. Em **2024** a ITRPV projetava
 
 A difusão a partir da fase gasosa forma emissor na **superfície inteira** do wafer, inclusive nas bordas. O resultado é um **curto-circuito (shunt)** entre as regiões n e p <Cite id="saimm" />.
 
-Para isolar o emissor frontal do traseiro usam-se técnicas **mecânicas, de corte a laser ou de ataque por plasma** — esta última a mais associada às células serigrafadas. Os wafers são empilhados numa câmara de vácuo e atacados em plasma de fluoreto ou óxido, removendo **2 a 5 µm** das bordas <Cite id="saimm" />.
+Para isolar o emissor frontal do traseiro usam-se técnicas **mecânicas, de corte a laser ou de ataque por plasma**, esta última a mais associada às células serigrafadas. Os wafers são empilhados numa câmara de vácuo e atacados em plasma de fluoreto ou óxido, removendo **2 a 5 µm** das bordas <Cite id="saimm" />.
 
 ### Camada antirrefletora
 
@@ -74,7 +74,7 @@ O **dióxido de titânio** foi a escolha industrial por muito tempo. Hoje domina
 
 ### Metalização
 
-A formação dos contatos afeta praticamente todo o desempenho da célula: corrente de curto-circuito, tensão de circuito aberto, resistência série, resistência shunt e fator de preenchimento <Cite id="saimm" />. E há um compromisso embutido — o metal frontal precisa ter **baixa resistência e ocupar pouca área**, porque cada milímetro de prata é um milímetro que não recebe luz <Cite id="saimm" />.
+A formação dos contatos afeta praticamente todo o desempenho da célula: corrente de curto-circuito, tensão de circuito aberto, resistência série, resistência shunt e fator de preenchimento <Cite id="saimm" />. E há um compromisso embutido. O metal frontal precisa ter **baixa resistência e ocupar pouca área**, porque cada milímetro de prata é um milímetro que não recebe luz <Cite id="saimm" />.
 
 A técnica dominante é a **serigrafia** (screen printing), em uso desde o início da década de 1970: pasta de **prata** na face frontal, pasta de **alumínio** na traseira, que se liga ao silício formando o contato e o campo retroativo. As pastas são secas em estufa a cerca de **300 °C** <Cite id="saimm" />. É um processo simples, rápido, barato e com pouco resíduo químico <Cite id="saimm" />.
 
@@ -82,17 +82,17 @@ A técnica dominante é a **serigrafia** (screen printing), em uso desde o iníc
 
 Os contatos serigrafados nascem **em cima** da camada antirrefletora, que é isolante. A célula passa então por um tratamento térmico curto, de até **900 °C**, num forno de esteira <Cite id="saimm" />.
 
-Durante a queima, o antirrefletor sofre **dissolução seletiva** e os contatos atravessam a camada até alcançar o emissor, sem penetrar fundo demais no silício — uma janela de processo estreita. É nessa etapa que também se forma o **campo retroativo** com o alumínio <Cite id="saimm" />.
+Durante a queima, o antirrefletor sofre **dissolução seletiva** e os contatos atravessam a camada até alcançar o emissor, sem penetrar fundo demais no silício, uma janela de processo estreita. É nessa etapa que também se forma o **campo retroativo** com o alumínio <Cite id="saimm" />.
 
 ## Da célula ao módulo
 
-Uma célula de silício cristalino produz cerca de **0,5 V** — pouco demais para qualquer uso prático. Por isso as células são **interligadas em série** até atingirem uma tensão útil e depois **encapsuladas** para proteção contra umidade e impacto mecânico. O conjunto é o **módulo** (painel), que pode ser usado isolado ou integrado a um sistema fotovoltaico <Cite id="saimm" />.
+Uma célula de silício cristalino produz cerca de **0,5 V**, pouco demais para qualquer uso prático. Por isso as células são **interligadas em série** até atingirem uma tensão útil e depois **encapsuladas** para proteção contra umidade e impacto mecânico. O conjunto é o **módulo** (painel), que pode ser usado isolado ou integrado a um sistema fotovoltaico <Cite id="saimm" />.
 
 O **tempo de retorno de energia** fica entre **1 e 2 anos**. A vida útil do módulo é de **25 a 30 anos** <Cite id="saimm" />. Depois de devolver a energia usada na fabricação, o painel ainda tem a maior parte da vida útil pela frente.
 
 ## Uma história que começa antes dos semicondutores
 
-A fotovoltaica é mais antiga que a eletrônica de estado sólido. Em **1839**, Alexandre-Edmond Becquerel observou que uma corrente elétrica surgia num eletrodo de platina coberto de prata imerso em eletrólito quando exposto à luz — o **efeito fotovoltaico** <Cite id="saimm" />. Em **1876**, o mesmo efeito foi demonstrado num sistema inteiramente sólido, com selênio e contatos de platina <Cite id="saimm" />.
+A fotovoltaica é mais antiga que a eletrônica de estado sólido. Em **1839**, Alexandre-Edmond Becquerel observou que uma corrente elétrica surgia num eletrodo de platina coberto de prata imerso em eletrólito quando exposto à luz, o **efeito fotovoltaico** <Cite id="saimm" />. Em **1876**, o mesmo efeito foi demonstrado num sistema inteiramente sólido, com selênio e contatos de platina <Cite id="saimm" />.
 
 A célula moderna nasce em **1954**, nos Bell Laboratories, com Chapin, Fuller e Pearson: silício com **6% de eficiência** <Cite id="saimm" />. Os números anteriores eram modestos (entre **0,1% e 0,5%**), o que dá a medida do salto. Naquele mesmo ano surgiu uma célula de filme fino de sulfeto de cádmio com eficiência equivalente; em **1956** vieram as células de arseneto de gálio da RCA, também com 6%, e o silício já alcançava **10%** <Cite id="saimm" />.
 
@@ -102,7 +102,7 @@ A primeira aplicação em escala foi espacial: em **1958** os Estados Unidos lan
 
 O silício é um semicondutor de **gap indireto**: o mínimo da banda de condução e o máximo da banda de valência ficam em momentos cristalinos diferentes. Absorver um fóton é menos provável do que num material de gap direto, e a luz percorre mais caminho no wafer antes de ser absorvida <Cite id="saimm" />.
 
-A consequência é material: **1 µm de arseneto de gálio** (gap direto) absorve o que **100 µm de silício** absorvem — duas ordens de grandeza de diferença <Cite id="saimm" />.
+A consequência é material: **1 µm de arseneto de gálio** (gap direto) absorve o que **100 µm de silício** absorvem, duas ordens de grandeza de diferença <Cite id="saimm" />.
 
 Além disso, a eficiência máxima teórica ocorre para gaps entre **1,4 e 1,6 eV**, e o silício fica **abaixo** dessa faixa <Cite id="saimm" />. O telureto de cádmio, que é de gap direto e está dentro do ótimo, é o segundo colocado em participação de mercado <Cite id="saimm" />.
 
@@ -117,7 +117,7 @@ Os números do setor, na época do levantamento de Xakalashe e Tangstad, dão a 
 - Eficiências de até **22%** foram reportadas na indústria.
 - O preço das células se aproximava de **1 dólar por watt-pico (US\$/Wp)**; o módulo de silício cristalino mais barato ficava em torno de **2 US\$/Wp**, enquanto módulos de CdTe já ficavam **abaixo de 1 US\$/Wp**.
 
-São números de 2011 e envelheceram rápido — a produção anual hoje se mede em centenas de gigawatts, não em dezenas. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva, não em física.
+São números de 2011 e envelheceram rápido. A produção anual hoje se mede em centenas de gigawatts, não em dezenas. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva, não em física.
 
 ## Os números de hoje
 

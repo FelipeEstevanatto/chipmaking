@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vitepress dev docs --port=5000",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "data:export": "bun run scripts/export-chart-data.ts",
+    "audit": "python scripts/audit-prose.py && python scripts/audit-svgs.py && python scripts/audit-glossary.py && python scripts/audit-math.py && python scripts/audit-links.py && python scripts/audit-numbers.py"
   },
   "dependencies": {
     "chart.js": "^4.5.0",

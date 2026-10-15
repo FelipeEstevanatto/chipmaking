@@ -8,12 +8,12 @@ dataAsOf: 2025
 
 A fotolitografia é a etapa que **desenha o circuito** no wafer. Máquinas da **ASML** (origem na Philips), com precisão nanométrica, alinham o wafer em equipamentos que projetam luz ultravioleta através de uma **máscara (retículo)** com o circuito gravado; o fotoresistor reage apenas nos pontos selecionados.
 
-A mesa de posicionamento do wafer pesa cerca de **15 kg** e pode acelerar com força de até **20 G** (cerca de três vezes a aceleração típica de um carro de Fórmula 1), movendo-se com precisão de **nanômetros** para **multi-padrões** — vários retículos em sequência para linhas menores que o permitido por uma única exposição. Qualquer vibração indesejada pode destruir o padrão.
+A mesa de posicionamento do wafer pesa cerca de **15 kg** e pode acelerar com força de até **20 G** (cerca de três vezes a aceleração típica de um carro de Fórmula 1), movendo-se com precisão de **nanômetros** para **multi-padrões**: vários retículos em sequência para linhas menores que o permitido por uma única exposição. Qualquer vibração indesejada pode destruir o padrão.
 
 A própria ASML nasceu de uma *joint venture* entre a Philips e a ASM International (ASMI), em 1984, num galpão ao lado de um prédio da Philips em Eindhoven; o primeiro stepper, o PAS 2000, saiu no mesmo ano <Cite id="asml-history" />.
 
 <DiagramFigure src="/pdf-images/p12-1.png" alt="Exposição EUV em wafer ASML">
-Exposição EUV em wafer — <a href="https://www.asml.com/" target="_blank" rel="noopener noreferrer">ASML</a> <Cite id="asml-gaa" />.
+Exposição EUV em wafer, <a href="https://www.asml.com/" target="_blank" rel="noopener noreferrer">ASML</a> <Cite id="asml-gaa" />.
 </DiagramFigure>
 
 <DiagramFigure src="/pdf-images/p13-1.png" alt="Diagrama de posicionamento a laser sobre granito">
@@ -43,7 +43,7 @@ O scanner é, no fundo, um **caminho óptico** muito bem controlado. A luz nasce
 O caminho óptico de um scanner de imersão DUV, da fonte ao wafer. Desenho do autor.
 </DiagramFigure>
 
-O retículo não tem o padrão em tamanho final: ele é **maior**, e a óptica o **reduz** por um fator fixo (4× nos scanners atuais). Isso existe porque uma máscara com traços de poucos nanômetros não seria fabricável — é mais fácil desenhar grande e reduzir do que desenhar no tamanho do alvo.
+O retículo não tem o padrão em tamanho final: ele é **maior**, e a óptica o **reduz** por um fator fixo (4× nos scanners atuais). Isso existe porque uma máscara com traços de poucos nanômetros não seria fabricável. É mais fácil desenhar grande e reduzir do que desenhar no tamanho do alvo.
 
 Duas peças fora do eixo óptico tornam o desenho possível. A primeira é a **mesa do wafer**, que se move de campo em campo com precisão de nanômetros e por isso é medida continuamente por **interferometria a laser**; a segunda é o **bloco de granito**, sólido e pesado, que absorve a vibração antes que ela chegue ao padrão.
 
@@ -51,10 +51,10 @@ Duas peças fora do eixo óptico tornam o desenho possível. A primeira é a **m
 
 O fotoresistor é um polímero **sensível à luz**: a exposição muda a sua solubilidade, e a revelação transforma essa mudança química em uma máscara física. Em resists **positivos** a região exposta é a que se dissolve; em **negativos**, o oposto.
 
-Os resists modernos são **quimicamente amplificados** (*chemically amplified resist*, CAR): um único fóton gera um catalisador que dispara muitas reações, o que permite expor com doses baixas — e é isso que torna viável a vazão atual. Em troca, o filme fica mais sensível a contaminação e a efeitos de borda.
+Os resists modernos são **quimicamente amplificados** (*chemically amplified resist*, CAR): um único fóton gera um catalisador que dispara muitas reações, o que permite expor com doses baixas, e é isso que torna viável a vazão atual. Em troca, o filme fica mais sensível a contaminação e a efeitos de borda.
 
 <DiagramFigure src="/assets/photoresist-spin-coating.jpg" alt="Fotoresistor sendo espalhado por rotação sobre um wafer de silício">
-Fotoresistor sendo espalhado por rotação sobre um wafer — <a href="https://commons.wikimedia.org/wiki/File:Photoresist_spin_coating.jpg" target="_blank" rel="noopener noreferrer">Photoresist spin coating</a>, Sei (CC BY-SA 4.0), Wikimedia Commons.
+Fotoresistor sendo espalhado por rotação sobre um wafer, <a href="https://commons.wikimedia.org/wiki/File:Photoresist_spin_coating.jpg" target="_blank" rel="noopener noreferrer">Photoresist spin coating</a>, Sei (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
 ## Passo a passo do processo
@@ -77,25 +77,25 @@ Executado em sequência, com controle rigoroso de temperatura e contaminantes <C
 Os oito passos se dividem em duas máquinas. O **track** de coater/developer faz os cozimentos, o revestimento, a revelação e o enxágue; o scanner faz a exposição. Os dois ficam instalados lado a lado e ligados um ao outro, e o wafer passa de um para o outro sem sair do controle do sistema <Cite id="wikipedia-photolithography" />. A revelação é feita wafer a wafer, e não em lote, para que cada um receba a mesma dose.
 
 <DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Máquina automatizada de revestimento e revelação de fotoresistor dentro de uma sala iluminada por luz amarela">
-Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amarela. Essa luz não tem componente ultravioleta, então o resiste não é exposto enquanto é manuseado — <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
+Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amarela. Essa luz não tem componente ultravioleta, então o resiste não é exposto enquanto é manuseado, <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
 </DiagramFigure>
 
 ## Realce de resolução e multi-padrão
 
 Existe um limite físico para o que uma exposição consegue desenhar, e a indústria passou **décadas** contornando-o por software e por processo em vez de trocar a fonte de luz: máscaras de **deslocamento de fase**, iluminação **fora de eixo**, correção óptica de proximidade (**OPC**) e, quando nada disso bastou, **expor mais de uma vez** <Cite id="asianometry-euv" />.
 
-A ideia de **duplicação de linhas** (*line doubling*) é a versão mais direta do multi-padrão: o primeiro padrão é gravado na camada dura, o segundo é exposto no fotoresistor **entre** os traços que já existem e, na gravação seguinte, as duas máscaras se somam — o número de traços dobra sem que nenhuma exposição tenha ficado mais fina.
+A ideia de **duplicação de linhas** (*line doubling*) é a versão mais direta do multi-padrão: o primeiro padrão é gravado na camada dura, o segundo é exposto no fotoresistor **entre** os traços que já existem e, na gravação seguinte, as duas máscaras se somam: o número de traços dobra sem que nenhuma exposição tenha ficado mais fina.
 
 <DiagramFigure src="/assets/line-doubling.svg" alt="Sequência de duplicação de linhas: segunda exposição entre traços já gravados e gravação da camada com as duas máscaras somadas">
-Duplicação de linhas: o padrão final sai da soma de duas exposições — <a href="https://commons.wikimedia.org/wiki/File:Line_doubling.svg" target="_blank" rel="noopener noreferrer">Line doubling</a>, Wdwd (CC BY 3.0), Wikimedia Commons (baseado em Guiding light, en.Wikipedia).
+Duplicação de linhas: o padrão final sai da soma de duas exposições, <a href="https://commons.wikimedia.org/wiki/File:Line_doubling.svg" target="_blank" rel="noopener noreferrer">Line doubling</a>, Wdwd (CC BY 3.0), Wikimedia Commons (baseado em Guiding light, en.Wikipedia).
 </DiagramFigure>
 
 ## Imersão: a água que esticou o 193 nm
 
-O truque que segurou a litografia óptica por mais de uma década foi trocar o **ar** entre a última lente e o wafer por **água purificada**. Como o índice de refração da água é maior que o do ar, o comprimento de onda **efetivo** cai de 193 nm para cerca de **134 nm** — sem trocar óptica, máscara ou fotoresistor <Cite id="asml-immersion" />.
+O truque que segurou a litografia óptica por mais de uma década foi trocar o **ar** entre a última lente e o wafer por **água purificada**. Como o índice de refração da água é maior que o do ar, o comprimento de onda **efetivo** cai de 193 nm para cerca de **134 nm**, sem trocar óptica, máscara ou fotoresistor <Cite id="asml-immersion" />.
 
 <DiagramFigure src="/assets/immersion-lithography.svg" alt="Comparação entre exposição a seco e exposição com água entre a última lente e o wafer">
-A última lente, a água e o wafer na litografia por imersão — <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (domínio público), Wikimedia Commons.
+A última lente, a água e o wafer na litografia por imersão, <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (domínio público), Wikimedia Commons.
 </DiagramFigure>
 
 O **EUV** segue o caminho oposto. Como **tudo absorve EUV**, ele não usa lentes nem imersão: a luz viaja **refletida por espelhos multicamada**, dentro de vácuo, e a própria máscara é **refletiva** <Cite id="asianometry-euv" />. Por isso o EUV entrou como uma tecnologia paralela, para os nós de **7 nm e abaixo**, e não como substituto do parque de 193 nm por imersão.
@@ -120,11 +120,11 @@ O DUV **não foi aposentado** pelo EUV. Uma fábrica de ponta usa as duas tecnol
 
 ## A fonte de luz EUV: o estanho virando plasma
 
-O EUV não sai de um laser: ele sai de uma **explosão de estanho**. A luz de **13,5 nm** é mais de **14 vezes** mais curta que a do DUV <Cite id="asml-light" />, e não existe na Terra — precisa ser fabricada.
+O EUV não sai de um laser: ele sai de uma **explosão de estanho**. A luz de **13,5 nm** é mais de **14 vezes** mais curta que a do DUV <Cite id="asml-light" />, e não existe na Terra: precisa ser fabricada.
 
 Dentro da câmara de vácuo, um gerador libera gotas de estanho fundido de cerca de **25 µm** a **70 m/s** <Cite id="asml-light" />. Duas coisas acontecem com cada gota, **50.000 vezes por segundo** <Cite id="asml-light" />:
 
-1. Um **pré-pulso** de laser, de baixa intensidade, achata a gota num disco — o formato achatado rende mais luz EUV do que a esfera original <Cite id="asml-highna-video" />.
+1. Um **pré-pulso** de laser, de baixa intensidade, achata a gota num disco: o formato achatado rende mais luz EUV do que a esfera original <Cite id="asml-highna-video" />.
 2. O **pulso principal**, cerca de dez vezes mais potente que os lasers usados para cortar aço, vaporiza o disco e o transforma em **plasma**, que emite um espectro largo com um pico nítido em 13,5 nm <Cite id="trumpf-euv" />.
 
 Esse plasma fica a cerca de **40 vezes a temperatura da superfície do Sol** <Cite id="asml-highna-video" />. Um **espelho coletor** parabólico recolhe a luz emitida em todas as direções e a concentra no **foco intermediário**, a abertura por onde ela entra no iluminador <Cite id="asml-euv-products" />.
@@ -137,7 +137,7 @@ A fonte de plasma de estanho, da gota ao foco intermediário. Desenho do autor, 
 
 ### A potência que faltava
 
-O laser de CO₂ que faz a explosão é uma das máquinas mais potentes já produzidas em série: cerca de **40 kW** de potência pulsada a 50 kHz, alimentados por uma fonte de **1 MW**, e ainda assim só cerca de **200 W** chegam ao wafer <Cite id="laserfocus-euv" />. O motivo está na seção seguinte — as perdas do caminho óptico.
+O laser de CO₂ que faz a explosão é uma das máquinas mais potentes já produzidas em série: cerca de **40 kW** de potência pulsada a 50 kHz, alimentados por uma fonte de **1 MW**, e ainda assim só cerca de **200 W** chegam ao wafer <Cite id="laserfocus-euv" />. O motivo está na seção seguinte: as perdas do caminho óptico.
 
 Chegar a essa potência levou muito mais tempo do que o prometido. Quando o desenvolvimento industrial começou, a fonte entregava **poucos watts**; a meta para viabilizar 125 wafers por hora era de **250 W**, ou seja, faltavam **duas ordens de grandeza** <Cite id="asml-euv-podcast" />. A potência subiu em degraus (40 W, 80 W, 125 W e, por fim, 250 W), e a primeira demonstração de 250 W contínuos num cliente só veio no **início de 2018**, cerca de **seis anos depois** da data originalmente prometida <Cite id="asml-euv-podcast" />.
 
@@ -155,7 +155,7 @@ Um espelho de EUV não se parece com um espelho comum. Ele é um **refletor de B
 O refletor de Bragg e o orçamento de luz ao longo do scanner. Desenho do autor, a partir de ASML/Branch Education.
 </DiagramFigure>
 
-Isso explica o laser gigantesco da seção anterior. Um scanner EUV tem **mais de dez** espelhos no caminho entre a fonte e o wafer; com 70% em cada um, menos de **10%** da luz do plasma chega ao wafer <Cite id="branch-euv" />. Por isso a fonte precisa nascer absurdamente brilhante — e por isso cada peça do caminho, inclusive a máscara, tem de ser um espelho.
+Isso explica o laser gigantesco da seção anterior. Um scanner EUV tem **mais de dez** espelhos no caminho entre a fonte e o wafer; com 70% em cada um, menos de **10%** da luz do plasma chega ao wafer <Cite id="branch-euv" />. Por isso a fonte precisa nascer absurdamente brilhante, e por isso cada peça do caminho, inclusive a máscara, tem de ser um espelho.
 
 Os espelhos são feitos pela **ZEISS**, parceira de longa data da ASML, e são polidos com erro de forma inferior a **um átomo** <Cite id="branch-euv" />. Mas eles absorvem os 30% que não refletem, aquecem e se deformam: parte do trabalho de controle é **mitigar esse aquecimento** para manter a imagem estável <Cite id="asml-nxe3800e" />.
 
@@ -165,9 +165,9 @@ Os dois caminhos ópticos lado a lado. Desenho do autor, a partir de ASML.
 
 ### A máscara também é um espelho
 
-No DUV, o retículo é uma placa de **quartzo com cromo**, transparente: a luz atravessa e o padrão é impresso pelas partes cobertas de cromo. No EUV não existe material transparente a 13,5 nm, então o retículo é **refletivo** — um refletor de Bragg com uma camada absorvedora desenhada por cima <Cite id="asml-euv-products" />.
+No DUV, o retículo é uma placa de **quartzo com cromo**, transparente: a luz atravessa e o padrão é impresso pelas partes cobertas de cromo. No EUV não existe material transparente a 13,5 nm, então o retículo é **refletivo**: um refletor de Bragg com uma camada absorvedora desenhada por cima <Cite id="asml-euv-products" />.
 
-Isso cria um problema que o DUV não tinha. No DUV, uma película protetora (*pellicle*) cobre a máscara e mantém partículas fora do plano focal. Para o EUV essa película **não existia**: quase nenhum material é transparente àquela luz, e a que se mostrou viável tem apenas **30 a 40 nm** de espessura — tão fina que era difícil até manuseá-la sem quebrar <Cite id="asml-euv-podcast" />. A película de EUV teve de ser inventada junto com o resto do ecossistema, porque ninguém queria investir nela antes de acreditar que o EUV daria certo <Cite id="asml-euv-podcast" />.
+Isso cria um problema que o DUV não tinha. No DUV, uma película protetora (*pellicle*) cobre a máscara e mantém partículas fora do plano focal. Para o EUV essa película **não existia**: quase nenhum material é transparente àquela luz, e a que se mostrou viável tem apenas **30 a 40 nm** de espessura, tão fina que era difícil até manuseá-la sem quebrar <Cite id="asml-euv-podcast" />. A película de EUV teve de ser inventada junto com o resto do ecossistema, porque ninguém queria investir nela antes de acreditar que o EUV daria certo <Cite id="asml-euv-podcast" />.
 
 ## DUV e EUV lado a lado
 
@@ -187,7 +187,7 @@ Isso cria um problema que o DUV não tinha. No DUV, uma película protetora (*pe
 A **abertura numérica** (NA) mede o cone de luz que a óptica consegue captar e focar. A equação de Rayleigh, `CD = k1 × λ ÷ NA`, mostra o que acontece quando se aumenta o NA: mantendo a luz de 13,5 nm e um k1 próximo de 0,3, o **NXE** (NA 0,33) resolve **13 nm** e o **EXE** (NA 0,55) resolve **8 nm** <Cite id="asml-nxe3600d" /> <Cite id="asml-highna" />.
 
 <DiagramFigure src="/assets/high-na-anamorphic.svg" alt="Comparação entre duas aberturas numéricas: o sistema de 0,33 NA com um cone estreito e 13 nm de resolução, e o de 0,55 NA com um cone visivelmente mais largo e 8 nm de resolução; abaixo, os campos de exposição de 26 por 33 mm e 26 por 16,5 mm">
-A abertura numérica maior capta um cone mais largo — e por isso enxerga traços menores. Desenho do autor, a partir de ASML.
+A abertura numérica maior capta um cone mais largo, e por isso enxerga traços menores. Desenho do autor, a partir de ASML.
 </DiagramFigure>
 
 <YouTubeEmbed id="h_zgURwr6nA" title="Unveiling High NA EUV (ASML)" />
@@ -196,9 +196,9 @@ O ganho é grande: traços **1,7 vezes menores** e, portanto, densidades de tran
 
 A plataforma tem três marcos até agora:
 
-- **EXE:5000** — o primeiro sistema High-NA. Os primeiros módulos foram enviados à **Intel em dezembro de 2023**, e ele imprime **mais de 185 wafers por hora** <Cite id="asml-highna" /> <Cite id="asml-unveiling-highna" />.
-- **EXE:5200B** — o sucessor voltado à produção em volume. Mantém os 8 nm de resolução, melhora o contraste de imagem em **40%** e o *overlay* para **0,7 nm**, e a **Intel concluiu o aceite em dezembro de 2025** para o nó 14A <Cite id="asml-exe5200b" /> <Cite id="intel-exe5200b" />.
-- **Parque instalado** — cinco EXE:5000 de pesquisa foram instalados na Intel (dois), na TSMC, na Samsung e no laboratório conjunto ASML-imec, e o primeiro **EXE:5200B** de produção foi enviado em **julho de 2025** <Cite id="bits-chips-exe5200b" />.
+- **EXE:5000**: o primeiro sistema High-NA. Os primeiros módulos foram enviados à **Intel em dezembro de 2023**, e ele imprime **mais de 185 wafers por hora** <Cite id="asml-highna" /> <Cite id="asml-unveiling-highna" />.
+- **EXE:5200B**: o sucessor voltado à produção em volume. Mantém os 8 nm de resolução, melhora o contraste de imagem em **40%** e o *overlay* para **0,7 nm**, e a **Intel concluiu o aceite em dezembro de 2025** para o nó 14A <Cite id="asml-exe5200b" /> <Cite id="intel-exe5200b" />.
+- **Parque instalado**: cinco EXE:5000 de pesquisa foram instalados na Intel (dois), na TSMC, na Samsung e no laboratório conjunto ASML-imec, e o primeiro **EXE:5200B** de produção foi enviado em **julho de 2025** <Cite id="bits-chips-exe5200b" />.
 
 ### A família de máquinas
 

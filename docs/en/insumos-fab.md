@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # Fab consumables
 
-The wafer is this site's protagonist: it travels through the [fab](/en/na-fab), receives layers, is exposed in [photolithography](/en/fotolitografia) and leaves as a chip. But none of those steps happens in a materials vacuum — the fab consumes, for every wafer, a set of chemicals and gases whose supply chain has exactly the same shape as the Spruce Pine chokepoint described in [mining and MG-Si](/en/mineracao-mg-si).
+The wafer is this site's protagonist: it travels through the [fab](/en/na-fab), receives layers, is exposed in [photolithography](/en/fotolitografia) and leaves as a chip. But none of those steps happens in a materials vacuum: the fab consumes, for every wafer, a set of chemicals and gases whose supply chain has exactly the same shape as the Spruce Pine chokepoint described in [mining and MG-Si](/en/mineracao-mg-si).
 
 This page is about the inputs that are not silicon but decide whether silicon becomes a product.
 
@@ -29,9 +29,9 @@ The most characteristic lithography input is **photoresist**, and the invention 
 Side by side, the same photon in both resists: in the conventional one it changes a single molecule, while in the amplified one it generates an acid that deprotects many protecting groups along the chain. Author's drawing <Cite id="fabm-ito-1983" />.
 </DiagramFigure>
 
-That principle, **chemical amplification**, is what allows doses low enough to expose quickly and features fine enough for the following nodes. Without it, every reduction in wavelength would have demanded a larger dose — and lithography would have hit a productivity wall far earlier than it did.
+That principle, **chemical amplification**, is what allows doses low enough to expose quickly and features fine enough for the following nodes. Without it, every reduction in wavelength would have demanded a larger dose, and lithography would have hit a productivity wall far earlier than it did.
 
-In **EUV** the trade-off returns through thickness. Because extreme ultraviolet is absorbed by almost everything, the resist has to be **thinner** than in previous generations so the light passes through it and reaches the film to be patterned <Cite id="asianometry-euv" />. A thin resist protects the substrate less during etching — which pushes the problem to the next step of the flow.
+In **EUV** the trade-off returns through thickness. Because extreme ultraviolet is absorbed by almost everything, the resist has to be **thinner** than in previous generations so the light passes through it and reaches the film to be patterned <Cite id="asianometry-euv" />. A thin resist protects the substrate less during etching, which pushes the problem to the next step of the flow.
 
 ## The mask, which is also optics
 
@@ -41,7 +41,7 @@ That changes the nature of a defect. A defect buried in a mask's multilayer cann
 
 ## The CMP slurry
 
-[Chemical-mechanical planarisation](/en/fabricacao-wafers#chemical-mechanical-polishing-cmp) looks like polishing, and it is — with chemistry in the mix. The **slurry** is a suspension of abrasive particles in a solution that chemically attacks the surface, so the material is first weakened by reaction and then removed mechanically <Cite id="runnels-1994" />.
+[Chemical-mechanical planarisation](/en/fabricacao-wafers#chemical-mechanical-polishing-cmp) looks like polishing, and it is, with chemistry in the mix. The **slurry** is a suspension of abrasive particles in a solution that chemically attacks the surface, so the material is first weakened by reaction and then removed mechanically <Cite id="runnels-1994" />.
 
 The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, including the change of abrasives and the move from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />.
 
@@ -49,13 +49,13 @@ The design consequence is that slurry is **material-specific**: removing oxide w
 
 DUV lithography excimer lasers need **neon** in the gas mixture, and recovering that gas became an engineering project inside the fab as its cost rose <Cite id="fabm-neon-2017" />.
 
-The episode that exposed the dependency was the 2022 invasion of Ukraine. The country accounted for **about half** of world neon and **90%** of semiconductor-grade neon, produced as a by-product of steelmaking — and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="fabm-neon-2022" />.
+The episode that exposed the dependency was the 2022 invasion of Ukraine. The country accounted for **about half** of world neon and **90%** of semiconductor-grade neon, produced as a by-product of steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="fabm-neon-2022" />.
 
 The shape repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
 
 ## Ultrapure water
 
-Water is, by volume, the most intimate input of a fab — and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around **18.2 MΩ·cm** at 25 °C and total organic carbon in the **parts per trillion** range <Cite id="fabm-upw" />.
+Water is, by volume, the most intimate input of a fab, and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around **18.2 MΩ·cm** at 25 °C and total organic carbon in the **parts per trillion** range <Cite id="fabm-upw" />.
 
 The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, **dopants** (sodium and potassium at the ppb level already shift a transistor's threshold voltage), and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified **on site**, with resistivity measured in line, because a specification like that does not survive transport.
 
@@ -63,7 +63,7 @@ The reason for those limits is the scale at which the fab works. Dissolved ions 
 
 None of the inputs on this page is expensive per unit. All of them are hard to replace.
 
-The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch — and the supplier, to remain the only one who knows how to formulate that product.
+The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
 <SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'fabm-neon-2022', 'fabm-upw']" />
 

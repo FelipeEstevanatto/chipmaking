@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 Every chapter of this site treats silicon as **the** semiconductor material. That is true for logic and for photovoltaics, and false in two directions that deserve a chapter.
 
-In the first, there are semiconductors that are **not** silicon and beat it in specific applications — not by being better at everything, but by having one property silicon lacks. In the second, silicon does far more than process data and generate power: it is also mechanical structure, sensor, and more recently a qubit host.
+In the first, there are semiconductors that are **not** silicon and beat it in specific applications, not by being better at everything, but by having one property silicon lacks. In the second, silicon does far more than process data and generate power: it is also mechanical structure, sensor, and more recently a qubit host.
 
 ## The wide-bandgap neighbours
 
@@ -24,7 +24,7 @@ A wider gap means a **much higher breakdown voltage**: a material with a wide fo
 
 In high-voltage switching (electric-vehicle traction inverters, grid converters and industrial supplies), SiC competes with the **IGBT**, a bipolar device that stores minority carriers and therefore has a current tail when it turns off. A SiC MOSFET eliminates that tail, and the loss difference shows up precisely at switching frequency <Cite id="elem-sze" />.
 
-In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping — the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve by physics rather than by engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
+In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve by physics rather than by engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
 
 These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage; it is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
 

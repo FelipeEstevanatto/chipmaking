@@ -39,7 +39,7 @@ At the other end of the chain, the module price fell for a different reason: sca
 
 Missing from the table is the rung most interesting to anyone trying to understand the real cost of a chip: the **wafer price**, and above all the price of a wafer **processed** at a leading-edge node.
 
-It is absent because it is not published in a comparable way. Wafer supply contracts are negotiated case by case and covered by confidentiality, so the numbers that circulate in presentations rarely have a primary source behind them — the same problem this site already recorded when handling wafer makers' market share in [crystal structure](/en/estrutura-wafers#who-makes-the-wafers), where the round "60%" figure did not survive the data.
+It is absent because it is not published in a comparable way. Wafer supply contracts are negotiated case by case and covered by confidentiality, so the numbers that circulate in presentations rarely have a primary source behind them: the same problem this site already recorded when handling wafer makers' market share in [crystal structure](/en/estrutura-wafers#who-makes-the-wafers), where the round "60%" figure did not survive the data.
 
 The practical consequence is a reading rule: **when a rung is presented as a closed number, ask where it came from**. Where a public index exists (as with polysilicon contract prices) the series is auditable; where it does not, what exists is a consultancy estimate.
 
@@ -47,9 +47,9 @@ The practical consequence is a reading rule: **when a rung is presented as a clo
 
 The chain's final unit is neither mass nor area: it is the **cost per logic gate**, or per transistor. That is what decides whether shrinking pays.
 
-The [transistor evolution](/en/transistores) chapter shows that the "node number" stopped measuring a physical dimension — today it is a generation name, not a measurement <Cite id="ieee-node" />. Price followed the same path: since density no longer doubles every generation, cost per transistor now depends on how many functions fit into the same metal pitch, not on the process label.
+The [transistor evolution](/en/transistores) chapter shows that the "node number" stopped measuring a physical dimension: today it is a generation name, not a measurement <Cite id="ieee-node" />. Price followed the same path: since density no longer doubles every generation, cost per transistor now depends on how many functions fit into the same metal pitch, not on the process label.
 
-That is why the chain's value migrated to its two extremes — **design**, which decides the architecture, and the **tool**, which decides what can be built. Both are the subject of the [chokepoint map](/en/gargalos).
+That is why the chain's value migrated to its two extremes: **design**, which decides the architecture, and the **tool**, which decides what can be built. Both are the subject of the [chokepoint map](/en/gargalos).
 
 <SourceNote label="Sources" :ids="['saimm', 'bernreuter-pork-cycle', 'trendforce-2025', 'itrs-2015-test', 'cset-packaging', 'fraunhofer-pv-report', 'ieee-node']" />
 

@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 Os capítulos anteriores contam o silício em quilos, graus de pureza e nanômetros. Esta página conta a mesma cadeia em **dinheiro**, porque é o preço que decide onde cada etapa é feita, quem sobrevive a uma queda e por que a concentração geográfica de que trata o [mapa dos gargalos](/gargalos) existe.
 
-O exercício tem uma virtude e um limite. A virtude é que o preço é o resumo mais honesto de uma cadeia industrial: ele já embutiu energia, rendimento, capital e risco. O limite é que nem todos os degraus são públicos — e vale dizer **quais** não são, em vez de preencher a lacuna com um número redondo.
+O exercício tem uma virtude e um limite. A virtude é que o preço é o resumo mais honesto de uma cadeia industrial: ele já embutiu energia, rendimento, capital e risco. O limite é que nem todos os degraus são públicos, e vale dizer **quais** não são, em vez de preencher a lacuna com um número redondo.
 
 ## A escada
 
@@ -39,7 +39,7 @@ Do outro lado da cadeia, o preço do módulo desceu por um motivo diferente: esc
 
 Falta na tabela o degrau mais interessante para quem quer entender o custo real de um chip: o **preço do wafer** e, sobretudo, o preço do wafer **processado** num nó de ponta.
 
-Ele não aparece aqui porque não é publicado de forma comparável. Contratos de fornecimento de wafer são negociados caso a caso e cobertos por confidencialidade, de modo que os números que circulam em apresentações raramente têm uma fonte primária que os sustente — o mesmo problema que este site já registrou ao tratar da participação de mercado dos fabricantes de wafer em [estrutura e tipos](/estrutura-wafers#quem-fabrica-os-wafers), onde a cifra redonda de "60%" não sobreviveu aos dados.
+Ele não aparece aqui porque não é publicado de forma comparável. Contratos de fornecimento de wafer são negociados caso a caso e cobertos por confidencialidade, de modo que os números que circulam em apresentações raramente têm uma fonte primária que os sustente: o mesmo problema que este site já registrou ao tratar da participação de mercado dos fabricantes de wafer em [estrutura e tipos](/estrutura-wafers#quem-fabrica-os-wafers), onde a cifra redonda de "60%" não sobreviveu aos dados.
 
 A consequência prática é uma regra de leitura: **quando um degrau é apresentado como um número fechado, vale perguntar de onde ele veio**. Onde há índice público (como o preço de contrato de polissilício) a série é auditável; onde não há, o que existe é estimativa de consultoria.
 
@@ -47,9 +47,9 @@ A consequência prática é uma regra de leitura: **quando um degrau é apresent
 
 A unidade final da cadeia não é massa nem área: é o **custo por porta lógica**, ou por transistor. É ela que decide se vale encolher.
 
-O capítulo de [evolução dos transistores](/transistores) mostra que o "número do nó" deixou de medir uma dimensão física — hoje é nome de geração, não medida <Cite id="ieee-node" />. O preço seguiu o mesmo caminho: como a densidade já não dobra a cada geração, o custo por transistor passou a depender de quantas funções cabem no mesmo passo de metal, e não do rótulo do processo.
+O capítulo de [evolução dos transistores](/transistores) mostra que o "número do nó" deixou de medir uma dimensão física: hoje é nome de geração, não medida <Cite id="ieee-node" />. O preço seguiu o mesmo caminho: como a densidade já não dobra a cada geração, o custo por transistor passou a depender de quantas funções cabem no mesmo passo de metal, e não do rótulo do processo.
 
-É por isso que o valor da cadeia migrou para os extremos — o **projeto**, que decide a arquitetura, e a **ferramenta**, que decide o que é possível fabricar. Os dois são o assunto do [mapa dos gargalos](/gargalos).
+É por isso que o valor da cadeia migrou para os extremos: o **projeto**, que decide a arquitetura, e a **ferramenta**, que decide o que é possível fabricar. Os dois são o assunto do [mapa dos gargalos](/gargalos).
 
 <SourceNote :ids="['saimm', 'bernreuter-pork-cycle', 'trendforce-2025', 'itrs-2015-test', 'cset-packaging', 'fraunhofer-pv-report', 'ieee-node']" />
 

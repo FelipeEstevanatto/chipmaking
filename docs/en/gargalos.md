@@ -1,6 +1,6 @@
 ---
 title: The chokepoint map
-description: The geography of the silicon chain on one page — who dominates each step, how concentrated each one is, and what would break if it stopped.
+description: "The geography of the silicon chain on one page: who dominates each step, how concentrated each one is, and what would break if it stopped."
 dataAsOf: 2026
 ---
 
@@ -27,13 +27,13 @@ The answer has a pattern, and it repeats step by step.
 
 <Cite id="construction-physics-spruce-pine" /> <Cite id="usgs-mcs-2026" /> <Cite id="bernreuter-market" /> <Cite id="nikkei-wafer-share" /> <Cite id="asml-euv-products" /> <Cite id="fabm-neon-2022" />
 
-Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored — and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same shape as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
+Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same shape as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
 
 ## The money of policy
 
 Visible chokepoints generate industrial policy, and the amounts involved are the measure of how seriously each government took the risk.
 
-- **United States.** The *CHIPS and Science Act* of 2022 gave the Department of Commerce **US\$ 50 billion**, split into **US\$ 39 billion** of manufacturing incentives and **US\$ 11 billion** for R&D <Cite id="choke-nist-chips" />. The headline figure of **US\$ 52.7 billion** includes items outside that envelope — it is worth knowing which of the two is being quoted.
+- **United States.** The *CHIPS and Science Act* of 2022 gave the Department of Commerce **US\$ 50 billion**, split into **US\$ 39 billion** of manufacturing incentives and **US\$ 11 billion** for R&D <Cite id="choke-nist-chips" />. The headline figure of **US\$ 52.7 billion** includes items outside that envelope. It is worth knowing which of the two is being quoted.
 - **European Union.** The *European Chips Act* entered into force on **21 September 2023** and, through its state-aid track, the Commission has already approved **18 decisions** totalling **more than EUR 32 billion** of public and private investment. A second round, **Chips Act 2.0**, was proposed in **June 2026** <Cite id="choke-eu-chips-act" />.
 - **China.** The state fund known as the *Big Fund* has had three phases, and the third was launched in **2024** at a scale comparable to a national programme <Cite id="choke-big-fund" />.
 
@@ -41,15 +41,15 @@ What these programmes buy is **capacity**, not self-sufficiency. A new wafer pla
 
 ## Export control is an engineered chokepoint
 
-There is a second category of chokepoint, more recent: the one created by **rule**. The United States, the Netherlands and Japan aligned restrictions on the export of advanced lithography equipment — precisely the step where a single supplier exists <Cite id="choke-cset-controls" />.
+There is a second category of chokepoint, more recent: the one created by **rule**. The United States, the Netherlands and Japan aligned restrictions on the export of advanced lithography equipment, precisely the step where a single supplier exists <Cite id="choke-cset-controls" />.
 
-The technical point is that this chokepoint **cannot be worked around by buying elsewhere**. A fab cannot replace one EUV scanner with two DUV scanners without redoing the process: every machine is qualified inside a specific recipe. The trade restriction therefore acts with the same force as a mineral monopoly — except that it is reversible by political decision, which is an important difference.
+The technical point is that this chokepoint **cannot be worked around by buying elsewhere**. A fab cannot replace one EUV scanner with two DUV scanners without redoing the process: every machine is qualified inside a specific recipe. The trade restriction therefore acts with the same force as a mineral monopoly, except that it is reversible by political decision, which is an important difference.
 
 ## Why concentration is not an accident
 
 Large markets should have many suppliers. Three forces push the other way.
 
-- **Idle capacity is punishingly expensive.** A polysilicon or wafer plant costs billions and has to run full. Two suppliers splitting a market of the same size both sit below break-even — it is more stable for there to be one.
+- **Idle capacity is punishingly expensive.** A polysilicon or wafer plant costs billions and has to run full. Two suppliers splitting a market of the same size both sit below break-even: it is more stable for there to be one.
 - **Qualification is an asset.** Changing a materials supplier means requalifying the process. That locks in the customer and deters the entrant, as discussed in [fab consumables](/en/insumos-fab).
 - **The risk is correlated.** When each step has one supplier, the risk of each step does not diversify: it adds up. That is the argument [wafer fabrication](/en/estrutura-wafers#who-makes-the-wafers) already makes about Japan, and the one the [history of lithography](/en/historia-fotolitografia) makes about the consortium that bet on EUV when the candidate list still had six names.
 

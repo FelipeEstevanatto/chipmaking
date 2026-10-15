@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # Os insumos da fab
 
-O wafer é o protagonista deste site: ele percorre a [fábrica](/na-fab), recebe camadas, é exposto na [litografia](/fotolitografia) e sai como chip. Mas nenhuma dessas etapas acontece no vácuo de material — a fab consome, a cada wafer, um conjunto de químicos e gases cuja cadeia de fornecimento tem exatamente o mesmo formato do gargalo de Spruce Pine descrito em [mineração e MG-Si](/mineracao-mg-si).
+O wafer é o protagonista deste site: ele percorre a [fábrica](/na-fab), recebe camadas, é exposto na [litografia](/fotolitografia) e sai como chip. Mas nenhuma dessas etapas acontece no vácuo de material: a fab consome, a cada wafer, um conjunto de químicos e gases cuja cadeia de fornecimento tem exatamente o mesmo formato do gargalo de Spruce Pine descrito em [mineração e MG-Si](/mineracao-mg-si).
 
 Esta página trata dos insumos que não são silício, mas que decidem se o silício vira produto.
 
@@ -29,9 +29,9 @@ O insumo mais característico da litografia é o **fotorresiste**, e a invençã
 Ao lado, o mesmo fóton nos dois resistes: no convencional ele muda uma única molécula, enquanto no amplificado ele gera um ácido que desprotege muitos grupos de proteção ao longo da cadeia. Desenho do autor <Cite id="fabm-ito-1983" />.
 </DiagramFigure>
 
-É esse princípio, a **amplificação química**, que permite usar doses de luz baixas o bastante para expor rápido e traços finos o bastante para os nós seguintes. Sem ele, cada redução de comprimento de onda exigiria uma dose maior — e a litografia teria esbarrado em produtividade muito antes do que esbarrou.
+É esse princípio, a **amplificação química**, que permite usar doses de luz baixas o bastante para expor rápido e traços finos o bastante para os nós seguintes. Sem ele, cada redução de comprimento de onda exigiria uma dose maior, e a litografia teria esbarrado em produtividade muito antes do que esbarrou.
 
-No **EUV** o compromisso volta pela espessura. Como o ultravioleta extremo é absorvido por quase tudo, o resiste precisa ser **mais fino** que nas gerações anteriores para que a luz o atravesse e chegue ao filme a ser gravado <Cite id="asianometry-euv" />. Um resiste fino protege menos o substrato durante a corrosão — o que empurra o problema para o próximo passo do fluxo.
+No **EUV** o compromisso volta pela espessura. Como o ultravioleta extremo é absorvido por quase tudo, o resiste precisa ser **mais fino** que nas gerações anteriores para que a luz o atravesse e chegue ao filme a ser gravado <Cite id="asianometry-euv" />. Um resiste fino protege menos o substrato durante a corrosão, o que empurra o problema para o próximo passo do fluxo.
 
 ## A máscara, que também é óptica
 
@@ -41,7 +41,7 @@ Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma más
 
 ## O slurry do CMP
 
-A [planarização químico-mecânica](/fabricacao-wafers#polimento-quimico-mecanico-cmp) parece um polimento, e é — mas com química envolvida. O **slurry** é uma suspensão de partículas abrasivas em uma solução que ataca quimicamente a superfície, de modo que o material é primeiro enfraquecido por reação e depois removido mecanicamente <Cite id="runnels-1994" />.
+A [planarização químico-mecânica](/fabricacao-wafers#polimento-quimico-mecanico-cmp) parece um polimento, e é, mas com química envolvida. O **slurry** é uma suspensão de partículas abrasivas em uma solução que ataca quimicamente a superfície, de modo que o material é primeiro enfraquecido por reação e depois removido mecanicamente <Cite id="runnels-1994" />.
 
 A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, com a troca de abrasivos e a passagem do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />.
 
@@ -49,13 +49,13 @@ A consequência de projeto é que o slurry é **específico de cada material**: 
 
 Excimer lasers da litografia DUV precisam de **neônio** na mistura gasosa, e a recuperação desse gás virou projeto de engenharia dentro da fábrica à medida que o custo dele subiu <Cite id="fabm-neon-2017" />.
 
-O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país respondia por **cerca de metade** do neônio mundial e por **90%** do neônio de grau semicondutor, produzido como subproduto da siderurgia — e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="fabm-neon-2022" />.
+O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país respondia por **cerca de metade** do neônio mundial e por **90%** do neônio de grau semicondutor, produzido como subproduto da siderurgia, e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="fabm-neon-2022" />.
 
 O formato se repete: **insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria**. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
 
 ## Água ultrapura
 
-A água é, em volume, o insumo mais íntimo de uma fab — e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de **18,2 MΩ·cm** a 25 °C e carbono orgânico total na casa das **partes por trilhão** <Cite id="fabm-upw" />.
+A água é, em volume, o insumo mais íntimo de uma fab, e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de **18,2 MΩ·cm** a 25 °C e carbono orgânico total na casa das **partes por trilhão** <Cite id="fabm-upw" />.
 
 A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, **dopantes** (sódio e potássio no nível de ppb já alteram a tensão de limiar de um transistor), e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada **no próprio site**, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
 
@@ -63,7 +63,7 @@ A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, 
 
 Nenhum dos insumos desta página é caro por unidade. Todos são difíceis de substituir.
 
-O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige **requalificar o processo inteiro**, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar — e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
+O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige **requalificar o processo inteiro**, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
 
 <SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'fabm-neon-2022', 'fabm-upw']" />
 

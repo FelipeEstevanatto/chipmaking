@@ -344,9 +344,20 @@ Never touch an em dash that is data:
 ## Before you finish
 
 - `bun run build` — VitePress must build clean.
-- `python scripts/audit-glossary.py` — after the build; must print `OK` (annotations, first use, PT/EN
-  parity).
+- `bun run audit` — runs every check below in one pass. All of them must print `OK`, except
+  `audit-numbers`, which is a report to read rather than a gate. CI runs the same list on every push.
+- `python scripts/audit-prose.py` — the writing rules of this file, mechanically: no em dash in prose,
+  no banned word, no often-empty phrase. It skips the data dashes listed above, and a page's
+  frontmatter `description` counts as prose because a reader sees it in search results, while a
+  frontmatter `title` does not.
 - `python scripts/audit-svgs.py` — must print `OK` (structure, title/desc, background, long text,
   Portuguese labels, named entities).
+- `python scripts/audit-glossary.py` — after the build; must print `OK` (annotations, first use, PT/EN
+  parity).
 - `python scripts/audit-math.py` — after the build; must print `OK` (maths renders only on the pages
   that declare it).
+- `python scripts/audit-links.py` — after the build; must print `OK` (every internal `href#fragment`
+  resolves, which is how a renamed heading is caught in the locale it was not renamed in).
+- `python scripts/audit-numbers.py` — the numbers a chapter and its translation do not share. Read it;
+  it is not a gate, because the two languages legitimately write a quantity differently (PT `50 mil`
+  against EN `50,000`). Add `--strict` to make it fail.

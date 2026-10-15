@@ -1,6 +1,6 @@
 ---
 title: Data and numbers
-description: The site's series as charts and as files — transistor counts, the yield model, binning by frequency, and each chapter's data-freshness stamp.
+description: "The site's series as charts and as files: transistor counts, the yield model, binning by frequency, and each chapter's data-freshness stamp."
 dataAsOf: 2026
 ---
 
@@ -31,7 +31,7 @@ The industry's most quoted curve is also the hardest to attribute, because no si
 | 2024 | Apple M4 | **28 billion** | 3 nm | <Cite id="apple-m4" /> |
 
 <DiagramFigure src="/assets/die-80386.jpg" alt="Die photograph of an Intel 80386 DX, showing bands of repeated cells framed by irregular logic blocks and a rim of bond pads">
-The die of the Intel 80386, the 1985 chip in the table: 275,000 transistors <Cite id="dados-transistor-count" />. The bands of dense, repetitive blocks are the PLA and ROM arrays, where the same cell repeats in a grid; between them sit the irregular blocks of logic and datapath, and along the rim the frame of bond pads. Pauli Rautakorpi — <a href="https://commons.wikimedia.org/wiki/File:Intel_80386_DX_die.JPG" target="_blank" rel="noopener noreferrer">Intel 80386 DX die</a> (CC BY 3.0, downscaled), Wikimedia Commons.
+The die of the Intel 80386, the 1985 chip in the table: 275,000 transistors <Cite id="dados-transistor-count" />. The bands of dense, repetitive blocks are the PLA and ROM arrays, where the same cell repeats in a grid; between them sit the irregular blocks of logic and datapath, and along the rim the frame of bond pads. Pauli Rautakorpi, <a href="https://commons.wikimedia.org/wiki/File:Intel_80386_DX_die.JPG" target="_blank" rel="noopener noreferrer">Intel 80386 DX die</a> (CC BY 3.0, downscaled), Wikimedia Commons.
 </DiagramFigure>
 
 The reading changes with the button above. On a linear scale the last two rows flatten everything before them and the impression of Moore's law continuity disappears. On a **logarithmic** scale what you see is a straight line: **exponential** growth with a doubling time of a few years, and it is that regularity the industry chased for decades.
@@ -66,7 +66,7 @@ The shares are the difference between consecutive published percentiles, rounded
 
 ## The series as files
 
-Every chart on the site also exists as a data file, generated from the **same definition** that draws it — not from a parallel spreadsheet that would age on its own:
+Every chart on the site also exists as a data file, generated from the **same definition** that draws it, not from a parallel spreadsheet that would age on its own:
 
 - [Transistor count](/data/transistor-count.csv)
 - [Yield against area](/data/yield-vs-area.csv)

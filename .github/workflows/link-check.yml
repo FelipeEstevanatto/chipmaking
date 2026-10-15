@@ -1,0 +1,41 @@
+name: Citation link check
+
+# The pages cite primary sources by URL, and a citation that rots is worse than no citation. This
+# cannot live in the build: it needs the network, and one slow publisher should not fail a deploy. It
+# runs on a schedule instead, over the citation URLs only (an internal link is already covered by
+# scripts/audit-links.py at build time), and files an issue when something stops resolving.
+
+on:
+  schedule:
+    # 06:00 UTC on the first of the month.
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  citations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - name: List the cited URLs
+        run: bun run scripts/export-citation-urls.ts > citation-urls.txt
+      - name: Check them
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # 403 and 429 are how a publisher answers a robot; they are not evidence the page is gone.
+          args: --no-progress --max-retries 2 --accept 200,206,301,302,403,429 --exclude-mail citation-urls.txt
+          fail: false
+      - name: File an issue when a citation has rotted
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Citation link check found broken links
+          content-filepath: ./lychee/out.md
