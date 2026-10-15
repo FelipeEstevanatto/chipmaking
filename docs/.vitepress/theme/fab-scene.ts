@@ -133,6 +133,12 @@ const WIN = [
   { a: 542, b: 598 },
 ]
 
+/**
+ * The patterned film the CD-SEM reads. A schematic grating rather than a scale drawing: the point is
+ * that the layer now has lines with widths, which is what a critical dimension is.
+ */
+const CD_GRATING = { x0: 158, period: 64, width: 46, count: 10 }
+
 /** The same opening seen from close up: the trench the ALD film is laid into. */
 const TRENCH = { a: WIN[1].a, b: WIN[1].b, depth: 112 }
 
@@ -367,6 +373,91 @@ export class FabScene {
     const rpm = Math.max(this.spinRpm(s), wMin)
     const ny = (hAt(rpm) - hMin) / (hMax - hMin)
     this.dot(ctx, f.ax + ((rpm - wMin) / (wMax - wMin)) * f.aw, f.ay - ny * f.ah, 4.5, p.heat, 0.95)
+  }
+
+  /**
+   * The wafer seen from above while it spins: the resist running outward from the centre and the
+   * rotation arrow. A cross-section shows what the spin does to the film but not that the wafer is
+   * turning, so this panel carries the turn itself.
+   */
+  private spinDisc(ctx: CanvasRenderingContext2D, p: Palette, s: number, tSpin: number, tBake: number) {
+    const on = Math.min(span(s, tSpin - 0.1, tSpin + 0.4), 1 - span(s, tBake - 0.5, tBake))
+    if (on <= 0.02) return
+
+    const x = 604
+    const y = 44
+    const w = 268
+    const h = 150
+    ctx.save()
+    ctx.globalAlpha = on
+    this.rect(ctx, x, y, w, h, p.panel, p.panelLine, 1.4)
+    this.text(ctx, 'top view', x + w / 2, y + 15, p.muted, 12)
+
+    const cx = x + w / 2
+    const cy = y + h / 2 + 6
+    const R = 43
+    const turned = this.motion ? (s - tSpin) * 5 : 0
+
+    // The wafer edge.
+    ctx.beginPath()
+    ctx.arc(cx, cy, R, 0, Math.PI * 2)
+    ctx.fillStyle = p.si
+    ctx.fill()
+    ctx.strokeStyle = p.siLine
+    ctx.lineWidth = 1.4
+    ctx.stroke()
+
+    // The resist, running outward from where the drop landed.
+    const rr = Math.max(6, R * clamp01(span(s, tSpin, tSpin + 2.2)))
+    ctx.beginPath()
+    ctx.arc(cx, cy, rr, 0, Math.PI * 2)
+    const g = ctx.createRadialGradient(cx, cy, 2, cx, cy, rr)
+    g.addColorStop(0, p.resist)
+    g.addColorStop(1, mix(p.resist, p.resistLine, 0.5))
+    ctx.fillStyle = g
+    ctx.fill()
+    ctx.strokeStyle = p.resistLine
+    ctx.lineWidth = 1.2
+    ctx.stroke()
+
+    // One spiral rather than radial spokes: spokes look still whatever the angle, a spiral turns.
+    if (this.motion) {
+      ctx.save()
+      ctx.globalAlpha = on * 0.8
+      ctx.strokeStyle = mix(p.resist, '#ffffff', 0.55)
+      ctx.lineWidth = 2
+      ctx.beginPath()
+      for (let i = 0; i <= 60; i += 1) {
+        const t = i / 60
+        const a = turned + t * 10
+        const px = cx + Math.cos(a) * rr * t
+        const py = cy + Math.sin(a) * rr * t
+        if (i) ctx.lineTo(px, py)
+        else ctx.moveTo(px, py)
+      }
+      ctx.stroke()
+      ctx.restore()
+    }
+
+    // The arrow around the rim, head at the end so the sense of the turn is on the arrow.
+    const ar = R + 9
+    const a1 = Math.PI * 1.55
+    ctx.strokeStyle = p.good
+    ctx.lineWidth = 2.4
+    ctx.beginPath()
+    ctx.arc(cx, cy, ar, -0.5, a1)
+    ctx.stroke()
+    const tipA = a1 + 0.25
+    this.poly(
+      ctx,
+      [
+        [cx + Math.cos(tipA) * ar, cy + Math.sin(tipA) * ar],
+        [cx + Math.cos(a1) * (ar - 6), cy + Math.sin(a1) * (ar - 6)],
+        [cx + Math.cos(a1) * (ar + 6), cy + Math.sin(a1) * (ar + 6)],
+      ],
+      p.good,
+    )
+    ctx.restore()
   }
 
   /** A lithography phase boundary in seconds, read from the module's own phase script. */
@@ -885,6 +976,7 @@ export class FabScene {
 
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
     this.spinInset(ctx, p, s)
+    this.spinDisc(ctx, p, s, tSpin, tBake)
     this.scaleBar(ctx, p, 60, '2 µm')
   }
 
@@ -1546,7 +1638,28 @@ export class FabScene {
     const top = SUF - oxide - film
     this.silicon(ctx, p, SUF)
     this.rect(ctx, X0, SUF - oxide, VW, oxide, p.oxide, p.oxideLine)
-    this.rect(ctx, X0, top, VW, film, p.film, p.filmLine)
+
+    // The film is one continuous layer while the ellipsometer reads its thickness, then it breaks
+    // into lines for the second measurement: a width has nothing to measure until the layer is
+    // patterned. The grating is schematic, the way every scale in this module is.
+    const lines: Array<[number, number]> = []
+    for (let i = 0; i < CD_GRATING.count; i += 1) {
+      const a = CD_GRATING.x0 + i * CD_GRATING.period
+      lines.push([a, a + CD_GRATING.width])
+    }
+    const pattern = span(s, tCd - 0.5, tCd + 0.4)
+    if (pattern < 0.99) {
+      ctx.save()
+      ctx.globalAlpha = 1 - pattern
+      this.rect(ctx, X0, top, VW, film, p.film, p.filmLine)
+      ctx.restore()
+    }
+    if (pattern > 0.01) {
+      ctx.save()
+      ctx.globalAlpha = pattern
+      for (const [a, b] of lines) this.rect(ctx, a, top, b - a, film, p.film, p.filmLine, 1.3)
+      ctx.restore()
+    }
 
     // 1. Film thickness, read off the surface by an ellipsometer.
     const sweep = clamp01(s / tCd)
@@ -1574,20 +1687,27 @@ export class FabScene {
     // 3 nm film, so it gets its own inset rather than a zoom that would lose the film.
     if (s > tCd - 0.3) this.cdInset(ctx, p, s, tCd)
 
-    // 3. The run-to-run loop: the measurement goes back into the process.
-    const loop = span(s, tLoop - 0.5, tLoop + 1.5)
-    if (loop > 0.02) {
+    // The line it read, boxed and led back to the inset so the reader knows what is magnified.
+    const zoom = Math.min(span(s, tCd + 0.1, tCd + 0.8), 1 - span(s, tLoop - 1.4, tLoop - 0.8))
+    if (zoom > 0.02) {
+      const [a, b] = lines[4]
       ctx.save()
-      ctx.globalAlpha = loop * 0.85
+      ctx.globalAlpha = zoom
       ctx.strokeStyle = p.good
-      ctx.lineWidth = 2
-      ctx.setLineDash([6, 5])
+      ctx.lineWidth = 1.2
+      ctx.setLineDash([4, 3])
+      ctx.strokeRect(a - 5, top - 5, b - a + 10, film + 10)
       ctx.beginPath()
-      ctx.arc(450, 152, 122, Math.PI * 1.05, Math.PI * 1.95)
+      ctx.moveTo(a - 5, top - 5)
+      ctx.lineTo(124, 172)
+      ctx.moveTo(b + 5, top - 5)
+      ctx.lineTo(292, 172)
       ctx.stroke()
       ctx.restore()
-      this.text(ctx, 'run-to-run', 450, 20, p.good, 14)
     }
+
+    // 3. Run-to-run control: what the measurement is for.
+    this.controlLoop(ctx, p, s, tLoop)
 
     if (s < tCd + 0.4) this.mapInset(ctx, p, s, tCd)
 
@@ -1598,43 +1718,112 @@ export class FabScene {
     this.scaleBar(ctx, p, 36, '5 nm')
   }
 
-  /** The other measurement the chapter names: a linewidth, read back by an electron beam. */
+  /** The second measurement the chapter names: a linewidth, read back by an electron beam. */
   private cdInset(ctx: CanvasRenderingContext2D, p: Palette, s: number, tCd: number) {
     const x = 124
     const y = 40
     const w = 168
     const h = 132
     this.rect(ctx, x, y, w, h, p.panel, p.panelLine, 1.4)
-    this.text(ctx, 'CD-SEM', x + w / 2, y + 15, p.muted, 12)
-
     const cx = x + w / 2
-    const baseY = y + h - 30
-    this.rect(ctx, x + 16, baseY, w - 32, 14, p.si, p.siLine, 1.1)
-    this.line(ctx, cx - 20, baseY - 22, cx + 20, baseY - 22, p.resistLine, 1.2)
+    this.text(ctx, 'CD-SEM', cx, y + 13, p.muted, 12)
+    this.text(ctx, 'line width', cx, y + 27, p.muted, 11)
 
-    // The line whose width is being read, and the column that reads it.
+    // The wafer, and one line of the pattern standing on it.
+    const baseY = y + h - 22
+    const lw = 50
+    const lh = 32
+    const lineTop = baseY - lh
+    this.rect(ctx, x + 14, baseY, w - 28, 12, p.si, p.siLine, 1.1)
+    this.rect(ctx, cx - lw / 2, lineTop, lw, lh, p.film, p.filmLine, 1.3)
+
+    // The column, and the beam it walks across the top of the line: the SEM builds the width by
+    // scanning an edge, it does not see the whole line at once.
     const hit = span(s, tCd + 0.2, tCd + 0.9)
-    this.rect(ctx, cx - 34, y + 26, 68, 16, p.mask, p.panelLine, 1)
+    this.rect(ctx, cx - 28, y + 36, 56, 13, p.mask, p.panelLine, 1)
     if (hit > 0.02) {
+      const sx = cx + lerp(-lw / 2 - 6, lw / 2 + 6, clamp01(span(s, tCd + 0.2, tCd + 1.4)))
       ctx.save()
-      ctx.globalAlpha = 0.5 * hit
-      this.poly(ctx, [[cx - 5, y + 42], [cx + 5, y + 42], [cx + 2, baseY - 22], [cx - 2, baseY - 22]], p.good)
+      ctx.globalAlpha = 0.35 * hit
+      this.poly(ctx, [[sx - 3, y + 49], [sx + 3, y + 49], [sx + 1.5, lineTop], [sx - 1.5, lineTop]], p.good)
       ctx.restore()
-      this.dot(ctx, cx, baseY - 22, 3, p.good, hit)
+      this.dot(ctx, sx, lineTop, 3, p.good, hit)
     }
 
-    // The width it reports, marked across the line it landed on.
-    const read = span(s, tCd + 0.6, tCd + 1.6)
+    // The width it reports, measured across the line it landed on.
+    const read = span(s, tCd + 1.1, tCd + 1.9)
     if (read > 0.02) {
       ctx.save()
       ctx.globalAlpha = read
-      this.rect(ctx, cx - 20, baseY - 22, 40, 22, p.resist, p.resistLine, 1.2)
-      this.line(ctx, cx - 20, baseY - 30, cx + 20, baseY - 30, p.good, 1.2)
-      this.line(ctx, cx - 20, baseY - 34, cx - 20, baseY - 26, p.good, 1.2)
-      this.line(ctx, cx + 20, baseY - 34, cx + 20, baseY - 26, p.good, 1.2)
+      this.line(ctx, cx - lw / 2, lineTop - 7, cx + lw / 2, lineTop - 7, p.good, 1.2)
+      this.line(ctx, cx - lw / 2, lineTop - 11, cx - lw / 2, lineTop - 3, p.good, 1.2)
+      this.line(ctx, cx + lw / 2, lineTop - 11, cx + lw / 2, lineTop - 3, p.good, 1.2)
       ctx.restore()
-      this.text(ctx, '45 nm', cx, baseY - 42, p.good, 12)
+      this.text(ctx, '45 nm', cx + lw / 2 + 5, lineTop - 8, p.good, 12, 'left')
     }
+  }
+
+  /**
+   * Run-to-run control: what the measurement is for. A report stops at the number; control feeds it
+   * back, so the panel names the three things that happen to it and the return arrow is the part
+   * that makes it a loop rather than a readout.
+   */
+  private controlLoop(ctx: CanvasRenderingContext2D, p: Palette, s: number, tLoop: number) {
+    const on = span(s, tLoop - 0.6, tLoop + 0.2)
+    if (on <= 0.02) return
+    ctx.save()
+    ctx.globalAlpha = on
+
+    const bw = 128
+    const bh = 38
+    const gap = 46
+    const x1 = 212
+    const x2 = x1 + bw + gap
+    const x3 = x2 + bw + gap
+    const y = 208
+    const cy = y + bh / 2
+    for (const [nx, label] of [
+      [x1, 'measure'],
+      [x2, 'model'],
+      [x3, 'recipe'],
+    ] as Array<[number, string]>) {
+      this.rect(ctx, nx, y, bw, bh, p.panel, p.panelLine, 1.4)
+      this.text(ctx, label, nx + bw / 2, cy, p.muted, 13)
+    }
+    this.arrowRight(ctx, x1 + bw + 5, x2 - 5, cy, p.good)
+    this.arrowRight(ctx, x2 + bw + 5, x3 - 5, cy, p.good)
+    this.text(ctx, 'compare', (x1 + bw + x2) / 2, y - 11, p.muted, 11)
+    this.text(ctx, 'adjust', (x2 + bw + x3) / 2, y - 11, p.muted, 11)
+
+    // The return path: the adjustment belongs to the next wafers, which is the whole point.
+    const ry = y + bh + 20
+    ctx.strokeStyle = p.good
+    ctx.lineWidth = 2
+    ctx.beginPath()
+    ctx.moveTo(x3 + bw / 2, y + bh)
+    ctx.lineTo(x3 + bw / 2, ry)
+    ctx.lineTo(x1 + bw / 2, ry)
+    ctx.lineTo(x1 + bw / 2, y + bh + 6)
+    ctx.stroke()
+    this.poly(
+      ctx,
+      [
+        [x1 + bw / 2 - 6, y + bh + 7],
+        [x1 + bw / 2 + 6, y + bh + 7],
+        [x1 + bw / 2, y + bh - 2],
+      ],
+      p.good,
+    )
+    this.text(ctx, 'next wafers', (x1 + x3 + bw) / 2, ry + 13, p.muted, 11)
+
+    ctx.restore()
+  }
+
+  /** A short rightward arrow, for the control loop. */
+  private arrowRight(ctx: CanvasRenderingContext2D, x1: number, x2: number, y: number, colour: string) {
+    const head = 7
+    this.line(ctx, x1, y, x2 - head, y, colour, 2)
+    this.poly(ctx, [[x2, y], [x2 - head * 1.7, y - head], [x2 - head * 1.7, y + head]], colour)
   }
 
   /** What the ellipsometer is really producing: a thickness map of the wafer, built point by point. */
