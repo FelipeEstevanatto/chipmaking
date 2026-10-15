@@ -99,10 +99,10 @@ The ultimate limit of SiO₂ is near **0.7 nm**, or **two atomic layers** <Cite 
 
 ## Deposition: putting material where there was none
 
-If oxidation **consumes** silicon, deposition **adds** material. It is the baker's problem with the cake: the difficulty is not only laying down the layer, it is laying it down with the right thickness **on every surface**, including the sidewalls and the bottom of trenches that keep getting narrower.
+If oxidation **consumes** silicon, deposition **adds** material. It is the baker's problem with the cake: the difficulty is laying down the layer with the right thickness **on every surface**, including the sidewalls and the bottom of trenches that keep getting narrower.
 
 <DiagramFigure src="/assets/deposition-step-coverage.svg" alt="Three cross-sections of the same trench filled by PVD, CVD and ALD: sputtering leaves the bottom almost bare, CVD covers everything but thickens at the mouth, and ALD deposits the same thickness on the bottom and the walls">
-The difference between the methods is not the thickness they can achieve: it is the thickness they can achieve **at the bottom** of the trench.
+What separates the methods is the thickness they can achieve **at the bottom** of the trench.
 </DiagramFigure>
 
 - **CVD** (*chemical vapour deposition*): gaseous precursors react at the wafer surface and form the film. This is the general-purpose method.
@@ -166,7 +166,7 @@ The industrial fix is almost banal in its simplicity: **tilt the wafer about 7°
 
 The number grew with complexity. A simple MOS transistor in the 1970s needed **6 to 8 implants**. A modern CMOS with embedded memory can reach **35** <Cite id="axcelis-implant" />. And they are not rare: a large fab processes up to **50,000 wafers per month**, with **20 to 30 implants per wafer**, which requires about **20 implanters** running in parallel <Cite id="axcelis-implant" />.
 
-It is worth noticing what that means at scale. Each implant is a complete round trip: lithography, implantation, photoresist strip, and usually a metrology check. This kind of counting is what pushes the total step count into the thousands.
+Each implant is a complete round trip: lithography, implantation, photoresist strip, and usually a metrology check. This kind of counting is what pushes the total step count into the thousands.
 
 ### Damage and cure
 
@@ -182,7 +182,7 @@ After a few layers, the wafer surface stops being flat. Every deposition and eve
 
 That would be a cosmetic problem if lithography were not **photographic**. A projection system has a finite **depth of focus**: outside it, the image is blurred. With a bumpy wafer, parts of the field fall outside it and critical dimensions come out wrong <Cite id="cmp-depth-of-focus" />.
 
-The solution is **CMP** (*chemical mechanical planarization*), which does exactly what the name says: it combines **chemical** attack from a slurry with **mechanical** wear from a rotating pad. The wafer is pressed against a spinning pad with a **slurry** of abrasive particles and reagents, and the relief is worn away <Cite id="amat-cmp" />.
+The solution is **CMP** (*chemical mechanical planarization*), which does exactly what the name says: it combines **chemical** attack from a slurry with **mechanical** wear from a rotating pad. The wafer is pressed against a spinning pad, and the relief is worn away <Cite id="amat-cmp" />. The chemistry of the slurry is described in [fab consumables](/en/insumos-fab).
 
 CMP entered production in the **1980s**, at IBM, to planarise the dielectric between metal levels. It was widely adopted when the critical dimension reached **0.35 µm**, the point at which the alternatives (reflowed glass, reverse etch, spin-on glass) could no longer meet the requirement <Cite id="cmp-history" />. A CMP step can take **little more than 60 seconds**, including the post-polish clean <Cite id="amat-cmp" />.
 
@@ -213,7 +213,7 @@ In the paper that consolidated the technique, the authors distinguish two modes:
 
 The transistor is the famous part, but it occupies a small fraction of the volume of a modern chip. Above it sits a **city of wires**, the BEOL, distributing signal, power and clock to billions of devices across dozens of stacked levels.
 
-For a long time those wires were **aluminium**. In **September 1997**, IBM announced the first manufacturable integrated **copper** interconnect technology, and began shipping product in 1998 <Cite id="ibm-copper" />. The gain was not cosmetic: copper wiring showed **40 to 45% lower resistance** than aluminium and a substantial improvement in **electromigration** resistance <Cite id="ibm-cu-electroplating" />.
+For a long time those wires were **aluminium**. In **September 1997**, IBM announced the first manufacturable integrated **copper** interconnect technology, and began shipping product in 1998 <Cite id="ibm-copper" />. Copper wiring showed **40 to 45% lower resistance** than aluminium and a substantial improvement in **electromigration** resistance <Cite id="ibm-cu-electroplating" />.
 
 The reason for the switch became clear in the same period. As wires grew thinner and closer together, the **RC time constant** of the wire grew while the intrinsic delay of the transistor fell. Around **0.25 µm** the two curves crossed: the **wire became slower than the gate** <Cite id="mpr-rc-limits" />. The ITRS itself recorded the problem, noting that RC delay had come to be dominated by **global interconnect** and that changing materials alone was not enough <Cite id="itrs-interconnect" />.
 

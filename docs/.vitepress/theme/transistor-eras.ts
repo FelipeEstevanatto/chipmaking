@@ -122,8 +122,8 @@ export const ERAS: Era[] = [
     node: '90 nm',
     namePt: 'Silício esticado',
     nameEn: 'Strained silicon',
-    descPt: 'Estresse mecânico na rede cristalina eleva a mobilidade dos portadores em 10–20%.',
-    descEn: 'Mechanical stress in the crystal lattice raises carrier mobility by 10–20%.',
+    descPt: 'Estresse mecânico na rede cristalina eleva a mobilidade dos portadores.',
+    descEn: 'Mechanical stress in the crystal lattice raises carrier mobility.',
     productsPt: 'Pentium 4 “Prescott” (2004), o primeiro processador de alto volume com silício esticado.',
     productsEn: 'The Pentium 4 “Prescott” (2004), the first high-volume processor with strained silicon.',
     src: '/pdf-images/p16-1.png',
@@ -176,12 +176,12 @@ export const ERAS: Era[] = [
     node: '3 nm',
     namePt: 'GAAFET / nanofolhas',
     nameEn: 'GAAFET / nanosheets',
-    descPt: 'Nanofolhas empilhadas envolvidas pela porta nos quatro lados; até ~40% menos vazamento.',
-    descEn: 'Stacked nanosheets wrapped by the gate on all four sides; up to ~40% less leakage.',
+    descPt: 'Nanofolhas empilhadas envolvidas pela porta nos quatro lados.',
+    descEn: 'Stacked nanosheets wrapped by the gate on all four sides.',
     productsPt:
-      'Estreia comercial no ASIC minerador MicroBT WhatsMiner M56S++ (Samsung SF3E); depois vieram o Exynos 2600, no 2 nm da Samsung, e o Apple A20 Pro, no N2 da TSMC.',
+      'Estreia comercial no ASIC minerador MicroBT WhatsMiner M56S++ (Samsung SF3E); depois veio o Exynos 2600, no 2 nm da Samsung.',
     productsEn:
-      'Commercial debut in MicroBT’s WhatsMiner M56S++ mining ASIC (Samsung SF3E); later came the Exynos 2600, on Samsung’s 2 nm, and Apple’s A20 Pro, on TSMC N2.',
+      'Commercial debut in MicroBT’s WhatsMiner M56S++ mining ASIC (Samsung SF3E); later came the Exynos 2600, on Samsung’s 2 nm.',
     src: '/assets/gaafet-nanosheet.svg',
     altPt: 'Duas vistas do GAAFET: as nanofolhas empilhadas com o portão cruzando-as e o corte pelo portão, que envolve cada nanofolha nos quatro lados',
     altEn: 'Two views of the GAAFET: the stacked nanosheets with the gate crossing them, and a section through the gate wrapping each sheet on all four sides',
@@ -194,9 +194,9 @@ export const ERAS: Era[] = [
     descPt: 'A alimentação migra para o verso do wafer via TSVs, liberando as camadas frontais para sinal.',
     descEn: 'Power delivery moves to the wafer backside through TSVs, freeing the front layers for signal.',
     productsPt:
-      'Intel Panther Lake (Core Ultra série 3), primeiro chip com PowerVia + RibbonFET; o A16 da TSMC estreia a Super Power Rail em 2026.',
+      'Intel Panther Lake (Core Ultra série 3); o A16 da TSMC estreia a Super Power Rail em 2026.',
     productsEn:
-      'Intel Panther Lake (Core Ultra series 3), the first chip with PowerVia + RibbonFET; TSMC’s A16 brings Super Power Rail in 2026.',
+      'Intel Panther Lake (Core Ultra series 3); TSMC’s A16 brings Super Power Rail in 2026.',
     src: '/assets/bspdn.svg',
     altPt: 'Comparação entre alimentação frontal e rede de alimentação no verso do wafer',
     altEn: 'Comparison of front-side power delivery with a backside power delivery network',
@@ -221,8 +221,8 @@ export const ERAS: Era[] = [
     node: '<1 nm',
     namePt: 'CFET',
     nameEn: 'CFET',
-    descPt: 'NFET e PFET empilhados verticalmente na mesma célula, com até ~50% menos área por porta lógica.',
-    descEn: 'NFET and PFET stacked vertically in the same cell, with up to ~50% less area per logic gate.',
+    descPt: 'NFET e PFET empilhados verticalmente na mesma célula, com menos área por porta lógica.',
+    descEn: 'NFET and PFET stacked vertically in the same cell, with less area per logic gate.',
     productsPt: 'Arquitetura de pesquisa: a imec só prevê produção em massa a partir do nó A7, depois de 2030.',
     productsEn: 'Research architecture: imec expects mass production only from the A7 node, after 2030.',
     src: '/assets/cfet.svg',
@@ -259,8 +259,8 @@ export const ERA_GAINS: Record<string, { pt: string; en: string }> = {
     en: 'Less junction capacitance and latch-up immunity',
   },
   '2003': {
-    pt: '+10–20% de mobilidade com custo marginal',
-    en: '+10–20% mobility at marginal cost',
+    pt: 'Aumenta a mobilidade com custo marginal',
+    en: 'Raises mobility at marginal cost',
   },
   '2007': {
     pt: 'Corta a fuga mantendo o acoplamento eletrostático',
@@ -275,19 +275,19 @@ export const ERA_GAINS: Record<string, { pt: string; en: string }> = {
     en: 'Back bias tunes threshold voltage; low power and less variability',
   },
   '2022': {
-    pt: 'Até ~40% menos vazamento',
-    en: 'Up to ~40% less leakage',
+    pt: 'Controle eletrostático nos quatro lados',
+    en: 'Electrostatic control on all four sides',
   },
   '2025/2026': {
-    pt: '~11% mais densidade; IR drop até 10× menor',
-    en: '~11% more density; IR drop up to 10× lower',
+    pt: 'Libera as camadas frontais para sinal',
+    en: 'Frees the front layers for signal',
   },
   '~2029': {
     pt: 'Aproxima n e p sem empilhar; células padrão menores',
     en: 'Brings n and p closer without stacking; smaller standard cells',
   },
   'Futuro': {
-    pt: 'Até ~50% menos área por porta lógica',
-    en: 'Up to ~50% less area per logic gate',
+    pt: 'Menos área por porta lógica',
+    en: 'Less area per logic gate',
   },
 }

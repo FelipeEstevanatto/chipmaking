@@ -80,7 +80,7 @@ The script `scripts/export-chart-data.ts` rewrites all of them from `docs/.vitep
 
 ## The freshness stamp
 
-Not every chapter is equally recent, and until now a reader had no way to know. The [solar cells and modules](/en/celulas-solares) chapter used **2011** figures for the industry's scale and cost (which its own text admits are outdated) while [crystal structure](/en/estrutura-wafers) cites data from the current year.
+Not every chapter is equally recent, and until now a reader had no way to know. The [solar cells and modules](/en/celulas-solares) chapter uses **2011** figures for the industry's scale and cost, which its own text admits are outdated, and its stamp points at the most recent datum the chapter cites, not at those 2011 figures. [Crystal structure](/en/estrutura-wafers), by contrast, cites a 2024 survey published in 2025.
 
 That is why each chapter declares, below its title, the **year of the most recent data it cites**. It is a reading aid, not a validity stamp: a 2011 number may still be the best reference for what it describes, but the reader is entitled to know they are reading 2011.
 

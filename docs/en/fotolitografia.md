@@ -116,7 +116,7 @@ Each change of source shrank the smallest printable feature:
 | **ArF** (excimer laser) | 193 nm | 38 nm |
 | **ArF with immersion** | 193 nm, about 134 nm effective in water | the 7 nm node, with multi-patterning |
 
-DUV was **not retired** by EUV. A leading-edge fab uses both technologies in the same recipe: EUV exposes the few most critical layers and DUV, which is cheaper, prints all the rest <Cite id="asml-duv" /> <Cite id="branch-euv" />. That is why the 2000s never really ended for 193 nm lithography: the **NXT** platform, entirely water-immersed, runs **more than 6,000 300 mm wafers per day** and can still be upgraded in the field with node-enhancement packages <Cite id="asml-duv" />.
+DUV was **not retired** by EUV. A leading-edge fab uses both technologies in the same recipe: EUV exposes the few most critical layers and DUV, which is cheaper, prints all the rest <Cite id="asml-duv" /> <Cite id="branch-euv" />. The **NXT** platform, entirely water-immersed, runs **more than 6,000 300 mm wafers per day** and can still be upgraded in the field with node-enhancement packages <Cite id="asml-duv" />.
 
 ## The EUV light source: turning tin into plasma
 

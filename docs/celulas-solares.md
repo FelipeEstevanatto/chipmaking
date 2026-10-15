@@ -38,7 +38,7 @@ O wafer sai do corte com uma superfície **danificada e contaminada** pela serra
 
 Depois do ataque, a superfície fica espelhada e **reflete mais de 35% da luz incidente**. A texturização resolve isso criando rugosidade em escala micrométrica <Cite id="saimm" />.
 
-Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e potássio com isopropanol a **80 °C** ataca o silício de forma **anisotrópica** (planos cristalinos diferentes reagem a velocidades diferentes) e produz **pirâmides distribuídas aleatoriamente**, que fazem a luz entrar e ricochetear em vez de voltar <Cite id="saimm" />. Em wafers **multicristalinos** esse truque não funciona, porque a orientação muda de grão para grão; ali a textura é **mecânica** <Cite id="saimm" />. O resultado, nos dois casos, é a reflexão cair **abaixo de 10%** <Cite id="saimm" />.
+Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e potássio com isopropanol a **80 °C** ataca o silício de forma **anisotrópica** (planos cristalinos diferentes reagem a velocidades diferentes) e produz **pirâmides distribuídas aleatoriamente**, que fazem a luz entrar e ricochetear em vez de voltar <Cite id="saimm" />. Em wafers **multicristalinos** (hoje quase inexistentes, ver a introdução) esse truque não funciona, porque a orientação muda de grão para grão; ali a textura era **mecânica** <Cite id="saimm" />. O resultado, nos dois casos, é a reflexão cair **abaixo de 10%** <Cite id="saimm" />.
 
 ### Difusão do emissor (junção p-n)
 
@@ -106,7 +106,7 @@ A consequência é material: **1 µm de arseneto de gálio** (gap direto) absorv
 
 Além disso, a eficiência máxima teórica ocorre para gaps entre **1,4 e 1,6 eV**, e o silício fica **abaixo** dessa faixa <Cite id="saimm" />. O telureto de cádmio, que é de gap direto e está dentro do ótimo, é o segundo colocado em participação de mercado <Cite id="saimm" />.
 
-Então por que o silício domina? Por razões **históricas e de oferta**: a indústria de semicondutores já havia construído a capacidade de produzir silício de altíssima pureza em grandes volumes <Cite id="saimm" />. A vantagem do silício não está no átomo, e sim na cadeia industrial que existe em volta dele.
+Então por que o silício domina? Por razões **históricas e de oferta**: a indústria de semicondutores já havia construído a capacidade de produzir silício de altíssima pureza em grandes volumes <Cite id="saimm" />. O que o silício tem é a cadeia industrial construída em volta dele.
 
 ## Escala, eficiência e custo
 
@@ -117,7 +117,7 @@ Os números do setor, na época do levantamento de Xakalashe e Tangstad, dão a 
 - Eficiências de até **22%** foram reportadas na indústria.
 - O preço das células se aproximava de **1 dólar por watt-pico (US\$/Wp)**; o módulo de silício cristalino mais barato ficava em torno de **2 US\$/Wp**, enquanto módulos de CdTe já ficavam **abaixo de 1 US\$/Wp**.
 
-São números de 2011 e envelheceram rápido. A produção anual hoje se mede em centenas de gigawatts, não em dezenas. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva, não em física.
+São números de 2011 e envelheceram rápido. A produção anual hoje se mede em centenas de gigawatts <Cite id="fraunhofer-pv-report" />. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva.
 
 ## Os números de hoje
 
@@ -127,18 +127,18 @@ Alguns números do relatório mais recente dão a medida do que mudou:
 
 - O **preço do módulo** continua caindo a uma taxa de aprendizado publicada: cerca de **26,7%** de redução para cada **duplicação da produção acumulada** <Cite id="fraunhofer-pv-report" />.
 - A eficiência dos módulos de silício comerciais subiu de cerca de **17% para pouco menos de 25%** em dez anos <Cite id="fraunhofer-pv-report" />.
-- O **tempo de retorno de energia** caiu para cerca de **1 ano**, e a vida útil assumida do sistema é de cerca de **20 anos** <Cite id="fraunhofer-pv-report" />.
+- O **tempo de retorno de energia** caiu para cerca de **1 ano**, e a vida útil assumida nos cálculos do relatório é de cerca de **20 anos**, contra os **25 a 30 anos** típicos de um módulo <Cite id="fraunhofer-pv-report" />.
 - O custo nivelado da eletricidade de grandes usinas solares está em torno de **4 centavos de euro por kWh** <Cite id="fraunhofer-pv-report" />.
 
 <ClientOnly>
   <DataChart chart="pv-efficiency" />
 </ClientOnly>
 
-A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o **tandem** de perovskita sobre silício, que já chegou a **35%** em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](/referencias) <Cite id="nrel-efficiency" />.
+A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o **tandem** de perovskita sobre silício, que já chegou a **35%** em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
 
 Se o tandem se impuser, ele usa a lâmina de silício como substrato e acrescenta uma camada por cima. O caminho de quartzo a wafer descrito neste site continua o mesmo, e o valor por lâmina aumenta.
 
-<SourceNote :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
+<SourceNote :ids="['saimm', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
 
 <SeeAlso :links="[
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'de onde vem a lâmina' },

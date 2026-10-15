@@ -1,7 +1,7 @@
 ---
 title: Fab consumables
 description: What a semiconductor fab consumes besides silicon (photoresist, mask, slurry, gases and ultrapure water) and why that list is as silent a chokepoint as quartz.
-dataAsOf: 2026
+dataAsOf: 2022
 ---
 
 # Fab consumables
@@ -43,7 +43,7 @@ That changes the nature of a defect. A defect buried in a mask's multilayer cann
 
 [Chemical-mechanical planarisation](/en/fabricacao-wafers#chemical-mechanical-polishing-cmp) looks like polishing, and it is, with chemistry in the mix. The **slurry** is a suspension of abrasive particles in a solution that chemically attacks the surface, so the material is first weakened by reaction and then removed mechanically <Cite id="runnels-1994" />.
 
-The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, including the change of abrasives and the move from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />.
+The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection-the-part-of-the-chip-nobody-sees) section tells the material change.
 
 ## Gases and neon
 
@@ -55,7 +55,7 @@ The shape repeats: **a cheap input, barely visible, irreplaceable in the short t
 
 ## Ultrapure water
 
-Water is, by volume, the most intimate input of a fab, and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around **18.2 MΩ·cm** at 25 °C and total organic carbon in the **parts per trillion** range <Cite id="fabm-upw" />.
+Water is, by volume, the largest input of a fab, and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around **18.2 MΩ·cm** at 25 °C, the theoretical maximum for pure water, and total organic carbon in the **parts per trillion** range <Cite id="fabm-upw" />.
 
 The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, **dopants** (sodium and potassium at the ppb level already shift a transistor's threshold voltage), and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified **on site**, with resistivity measured in line, because a specification like that does not survive transport.
 

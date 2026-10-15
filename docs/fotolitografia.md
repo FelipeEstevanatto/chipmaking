@@ -116,7 +116,7 @@ Cada troca de fonte encolheu o menor traço imprimível:
 | **ArF** (laser de excímero) | 193 nm | 38 nm |
 | **ArF com imersão** | 193 nm, cerca de 134 nm efetivos na água | nós de 7 nm, com multi-padrão |
 
-O DUV **não foi aposentado** pelo EUV. Uma fábrica de ponta usa as duas tecnologias na mesma receita: o EUV expõe as poucas camadas mais críticas e o DUV, mais barato, imprime todo o resto <Cite id="asml-duv" /> <Cite id="branch-euv" />. É por isso que os anos 2000 nunca "acabaram" para a litografia de 193 nm: a plataforma **NXT**, toda de imersão em água, roda **mais de 6.000 wafers de 300 mm por dia** e continua sendo atualizável em campo por pacotes de melhoria de nó <Cite id="asml-duv" />.
+O DUV **não foi aposentado** pelo EUV. Uma fábrica de ponta usa as duas tecnologias na mesma receita: o EUV expõe as poucas camadas mais críticas e o DUV, mais barato, imprime todo o resto <Cite id="asml-duv" /> <Cite id="branch-euv" />. A plataforma **NXT**, toda de imersão em água, roda **mais de 6.000 wafers de 300 mm por dia** e continua sendo atualizável em campo por pacotes de melhoria de nó <Cite id="asml-duv" />.
 
 ## A fonte de luz EUV: o estanho virando plasma
 

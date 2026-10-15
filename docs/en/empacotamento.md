@@ -88,15 +88,15 @@ The alternatives fall into three families:
 - ***Laser grooving* + plasma**: the laser opens a narrow groove and the plasma deepens and separates it, with widths **below 10 µm** and clean edges <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separates by plasma **before** thinning, which reduces contamination and cracking <Cite id="pdbg-dicing" />.
 
-It is worth recording how much this care pays. A classic study showed that **mechanical grinding** creates weak regions where chip strength falls **30 to 35%** below the wafer average. Two interventions improved this dramatically: **halving the grinding speed raised average chip strength by 56%**, and **deliberately blunting a new saw blade raised strength five-fold** <Cite id="ieee-die-strength" />. Dicing is not the end of a process; it is the beginning of the product's mechanical reliability.
+A classic study showed that **mechanical grinding** creates weak regions where chip strength falls **30 to 35%** below the wafer average. Two interventions improved this dramatically: **halving the grinding speed raised average chip strength by 56%**, and **deliberately blunting a new saw blade raised strength five-fold** <Cite id="ieee-die-strength" />. Dicing is not the end of a process; it is the beginning of the product's mechanical reliability.
 
 ## Wire bonding: the technology that assembles 80% of the world
 
-There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: **more than 80% of semiconductor packages** are still assembled by wiring <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the same level, adding an uncomfortable detail: about **one quarter to one third of package failures** come precisely from the wire bond <Cite id="pmc-bonding-wire" />.
+There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: **more than 80% of semiconductor packages** are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the same level, adding an uncomfortable detail: about **one quarter to one third of package failures** come precisely from the wire bond <Cite id="pmc-bonding-wire" />.
 
 The principle is what the figure shows: the die sits **face up**, and extremely fine wires run from the pads on its **periphery** down to the substrate. Each wire is an electrical connection, and there are two kinds of tip: the **ball bond**, in which a ball of wire is melted and pressed onto the pad, and the **wedge bond**, in which the wire is crushed sideways. The latter produces lower loops, which matters at radio frequencies <Cite id="inseto-wire-guide" />.
 
-Wire diameter is the critical dimension. Leading-edge copper wiring uses **15 µm wire at 40 µm pitch**; gold uses **18 µm** at the same pitch <Cite id="imaps-cu-wire" />.
+Wire diameter is the critical dimension. Leading-edge copper wire bonding uses **15 µm wire at 40 µm pitch**; gold uses **18 µm** at the same pitch <Cite id="imaps-cu-wire" />.
 
 ### Gold giving way to copper
 
@@ -106,15 +106,15 @@ It was not only price. Copper is a **better conductor** and has **higher thermal
 
 Those last two are the price of the choice. Copper is **harder**, which increases stress on the silicon, and it **oxidises** readily, requiring an inert nitrogen atmosphere during bonding <Cite id="pmc-bonding-wire" />.
 
-### Why wiring still wins
+### Why wire bonding still wins
 
-Economics explains it well. A 25 µm copper wire costs **less than one tenth** of an equivalent gold wire; and while **gold** wire bonding becomes more expensive than flip-chip above **1,024 connections**, **copper** wiring stays competitive **up to about 2,000 connections** <Cite id="imaps-cu-wire" />.
+Economics explains it well. A 25 µm copper wire costs **less than one tenth** of an equivalent gold wire; and while **gold** wire bonding becomes more expensive than flip-chip above **1,024 connections**, **copper** wire bonding stays competitive **up to about 2,000 connections** <Cite id="imaps-cu-wire" />.
 
-In other words: wiring did not survive out of inertia. It won itself a much wider application band, and that is where most of the world's chips live: microcontrollers, regulators, sensors, memories, practically everything that is not a high-performance processor.
+Wire bonding won itself a much wider application band, and that is where most of the world's chips live: microcontrollers, regulators, sensors, memories, practically everything that is not a high-performance processor.
 
 ## Flip-chip: turning the die face down
 
-The limitation of wiring is geometric: the pads have to sit on the **edge** of the die, because that is where the wire leaves from. That limits the number of connections to the perimeter, and the perimeter grows with the square root of the area.
+The limitation of wire bonding is geometric: the pads have to sit on the **edge** of the die, because that is where the wire leaves from. That limits the number of connections to the perimeter, and the perimeter grows with the square root of the area.
 
 **Flip-chip** solves it by inverting the die. It is mounted **face down**, and the connection is made by solder bumps or copper pillars distributed across **the entire active surface** <Cite id="wiley-packaging-ch3" />.
 
@@ -140,7 +140,7 @@ The answer was the **copper pillar**: instead of a flattened ball, a copper cyli
 
 Up to here, each package held **one** die. From here on the question changes: how do you put several chips in the same package, connected fast enough to behave as one?
 
-<DiagramFigure src="/assets/package-generations.svg" alt="Four connection generations side by side: edge wiring with 15 to 25 micrometre wire, flip-chip with bumps above 130 micrometres, 2.5D with about 40 micrometre microbumps on an interposer, and 3D stacking with direct bonding below 10 micrometres">
+<DiagramFigure src="/assets/package-generations.svg" alt="Four connection generations side by side: edge wire bonding with 15 to 25 micrometre wire, flip-chip with bumps above 130 micrometres, 2.5D with about 40 micrometre microbumps on an interposer, and 3D stacking with direct bonding below 10 micrometres">
 The road of advanced packaging is a single metric going down: the distance between two neighbouring connections.
 </DiagramFigure>
 
@@ -224,7 +224,7 @@ The reason is exactly the one in the figure: the four small dies each yield much
 
 Chiplets created a new problem: each manufacturer defined its own way for dies to talk to each other. That locks the customer to the supplier, the opposite of the ecosystem that made the rest of the industry grow.
 
-The answer came in **March 2022**, when **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung and TSMC** came together to ratify the **UCIe** (*Universal Chiplet Interconnect Express*) specification, an open die-to-die interface. UCIe 1.0 provided for rates up to **32 GT/s** with **16 to 64 lanes** <Cite id="ucie-formation" />. In August **2025**, version **3.0** doubled the rates to **48 and 64 GT/s** <Cite id="ucie-3" />.
+The answer came in **March 2022**, when **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung and TSMC** came together to ratify the **UCIe** (*Universal Chiplet Interconnect Express*) specification, an open die-to-die interface. UCIe 1.0 provided for rates up to **32 GT/s** with **16 to 64 lanes** <Cite id="ucie-formation" />. In August **2025**, version **3.0** raised the maximum rate from **32 to 64 GT/s** <Cite id="ucie-3" />.
 
 The bet is the same one that made PCIe and USB work: a common bus turns a proprietary product into a market.
 
@@ -264,7 +264,9 @@ In memory the axis becomes the **speed grade** and the mechanics are the same. A
 
 The second axis is **harvesting**. A chip with one defective block is sold with that block disabled, and AMD has sold tri-core parts out of a quad-core die <Cite id="gamersnexus-binning" />. Apple turned the practice into a product line: the **A12X** shipped with 7 of its 8 GPU cores because yields could not deliver 8; two years later the **A12Z** was the same chip with the eighth core enabled, because the process had improved. In the **iPhone 17e**, the A19 has 4 GPU cores against 5 in the iPhone 17, and graphics performance drops in proportion, about 20% <Cite id="macworld-binning" />.
 
-The case that went furthest is Nvidia's **GF100** in 2010: 3 billion transistors on about 530 mm², on TSMC's then-new 40 nm node. No board ever shipped with the full chip: the **GTX 480** carried only 480 of the 512 cores, with one of the 16 shader clusters fused off, the GTX 470 came with 448 and the GTX 465 with 352 <Cite id="wikipedia-gf100" />. SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock side, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />. That chip only arrived with the **GF110**, a redesigned GF100, at the end of that year <Cite id="wikipedia-gf100" />.
+The case that went furthest is Nvidia's **GF100** in 2010: 3 billion transistors on about 530 mm², on TSMC's then-new 40 nm node. No board ever shipped with the full chip: the **GTX 480** carried only 480 of the 512 cores, with one of the 16 shader clusters fused off, the GTX 470 came with 448 and the GTX 465 with 352 <Cite id="wikipedia-gf100" />.
+
+SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock side, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />. That chip only arrived with the **GF110**, a redesigned GF100, at the end of that year <Cite id="wikipedia-gf100" />.
 
 Not every disabled block is a defect. In one batch of **Radeon RX 460**, 128 cores present on the die were disabled and came back with a BIOS swap, about 14% more cores; the risk is that the chip was disabled for a defect, in which case the picture comes out with artifacts <Cite id="extremetech-rx460" />.
 

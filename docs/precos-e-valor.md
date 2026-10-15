@@ -18,7 +18,7 @@ O exercício tem uma virtude e um limite. A virtude é que o preço é o resumo 
 | Polissilício — fundo do ciclo | US\$/kg | **6,75** (junho de 2020, preço à vista) | <Cite id="bernreuter-pork-cycle" /> |
 | Polissilício — pico do ciclo | US\$/kg | **39** (agosto de 2022) | <Cite id="bernreuter-pork-cycle" /> |
 | Célula solar | US\$/Wp | **≈ 1** (2011) | <Cite id="saimm" /> |
-| Módulo solar | US\$/Wp | **≈ 2** de silício cristalino (2011); **¥ 0,70/W** em 2025 | <Cite id="saimm" /> <Cite id="trendforce-2025" /> |
+| Módulo solar | US\$/Wp; CNY/W | **≈ 2** de silício cristalino (2011); **CNY 0,70/W** em 2025 | <Cite id="saimm" /> <Cite id="trendforce-2025" /> |
 | Teste do circuito integrado | % da receita | **menos de 2 a 3%** | <Cite id="itrs-2015-test" /> |
 | Montagem, teste e empacotamento | % do valor do chip pronto | **cerca de 10%** (SIA/BCG estima **6%**) | <Cite id="cset-packaging" /> |
 | Projeto + fabricação de front-end | % do valor do chip pronto | **cerca de 45%** | <Cite id="cset-packaging" /> |
@@ -33,7 +33,7 @@ O polissilício é o degrau da cadeia em que o preço se comporta como commodity
 
 Esse intervalo (quase **6×** entre vale e pico) é o que decidiu quem construiu planta nova e quem fechou. A dinâmica do *pork cycle* e a lista de empresas que saíram do mercado estão no capítulo de [polissilício](/polissilicio).
 
-Do outro lado da cadeia, o preço do módulo desceu por um motivo diferente: escala e eficiência, com o custo caindo uma fração fixa a cada duplicação da produção acumulada <Cite id="fraunhofer-pv-report" />. É a mesma física que fez a célula sair de cerca de **1 US\$/Wp** em 2011 para um módulo em torno de **¥ 0,70/W** em 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
+Do outro lado da cadeia, o preço do módulo desceu por um motivo diferente: escala e eficiência, com o custo caindo uma fração fixa a cada duplicação da produção acumulada <Cite id="fraunhofer-pv-report" />. É a mesma curva de aprendizado: a célula, que se aproximava de **1 US\$/Wp** em 2011, é hoje uma fração disso, e o módulo inteiro ficou em torno de **CNY 0,70/W** em 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
 
 ## O degrau que não se publica
 

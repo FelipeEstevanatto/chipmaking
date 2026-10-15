@@ -1,7 +1,7 @@
 ---
 title: Beyond silicon
 description: The wide-bandgap semiconductors that compete with silicon where it loses (SiC and GaN) and the other jobs silicon itself does beyond computing and generating power.
-dataAsOf: 2026
+dataAsOf: 2014
 ---
 
 # Beyond silicon
@@ -12,7 +12,7 @@ In the first, there are semiconductors that are **not** silicon and beat it in s
 
 ## The wide-bandgap neighbours
 
-The parameter that separates this family is the **band gap**, and the difference is large: silicon is **1.12 eV**, silicon carbide (4H-SiC) is **3.26 eV** and gallium nitride (GaN) is **3.40 eV** <Cite id="elem-ioffe" /> <Cite id="wbg-ioffe-sic" /> <Cite id="wbg-ioffe-gan" />.
+The parameter that separates this family is the **band gap**, and the difference is large: silicon is **1.12 eV** <Cite id="elem-ioffe" />, silicon carbide (4H-SiC) is **3.26 eV** <Cite id="wbg-ioffe-sic" /> and gallium nitride (GaN) is **3.40 eV** <Cite id="wbg-ioffe-gan" />.
 
 | Material | Gap (300 K) | Where it wins |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ A wider gap means a **much higher breakdown voltage**: a material with a wide fo
 
 In high-voltage switching (electric-vehicle traction inverters, grid converters and industrial supplies), SiC competes with the **IGBT**, a bipolar device that stores minority carriers and therefore has a current tail when it turns off. A SiC MOSFET eliminates that tail, and the loss difference shows up precisely at switching frequency <Cite id="elem-sze" />.
 
-In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve by physics rather than by engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
+In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve for reasons of physics, not for lack of engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
 
 These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage; it is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
 
@@ -49,6 +49,8 @@ The suspended beam in cross-section: one end is anchored to the substrate and th
 Silicon won by being **good enough** across an extremely wide range of jobs, with a native oxide that serves as an insulator, a substrate that can be grown to large diameters, and an industrial chain built around it for seven decades <Cite id="saimm" />.
 
 The materials in this chapter step in where that combination is not enough, and complement silicon rather than replace it. A SiC power chip is still mounted on silicon, packaged with silicon and driven by silicon.
+
+The constants in this chapter come from reference tables, not from measurements of a year. Its most recent dated sources are from 2014, and that is the year the freshness stamp records.
 
 <SourceNote label="Sources" :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw']" />
 

@@ -40,7 +40,7 @@ A sequência de fabricação fica assim: **fab → teste de wafer → empacotame
 
 ### O cartão de sondas é uma peça sob medida
 
-Cada produto precisa do seu próprio cartão. Ele é um conjunto de agulhas ou molas posicionadas exatamente sobre os pads do die, e um cartão pode ter **literalmente alguns milhares de sondas**, o que o torna complexo e caro de fazer <Cite id="cadence-kgd" />.
+Cada produto precisa do seu próprio cartão. Ele é um conjunto de agulhas ou molas posicionadas exatamente sobre os pads do die, e um cartão pode ter **alguns milhares de sondas**, o que o torna complexo e caro de fazer <Cite id="cadence-kgd" />.
 
 Isso impõe uma limitação prática que costuma surpreender: o teste de wafer **não é igual** ao teste final. O cartão tem características elétricas diferentes das do invólucro e, muitas vezes, **não consegue rodar na velocidade de operação** do produto <Cite id="cadence-kgd" />. O teste de wafer é uma peneira grossa, não a medida definitiva.
 
@@ -88,33 +88,33 @@ As alternativas se dividem em três famílias:
 - ***Laser grooving* + plasma**: o laser abre um sulco estreito e o plasma aprofunda e separa, com larguras **abaixo de 10 µm** e bordas limpas <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separa por plasma **antes** do afinamento, o que reduz contaminação e trincas <Cite id="pdbg-dicing" />.
 
-Vale registrar o quanto esse cuidado paga. Um estudo clássico mostrou que o **desbaste mecânico** cria regiões fracas onde a resistência da pastilha cai **30 a 35%** em relação à média do wafer. Duas intervenções melhoraram isso de forma dramática: **reduzir a velocidade de desbaste pela metade aumentou a resistência média em 56%**, e **desgastar de propósito o fio de uma lâmina nova aumentou a resistência em cinco vezes** <Cite id="ieee-die-strength" />. O corte não é o fim de um processo; é o começo da confiabilidade mecânica do produto.
+Um estudo clássico mostrou que o **desbaste mecânico** cria regiões fracas onde a resistência da pastilha cai **30 a 35%** em relação à média do wafer. Duas intervenções melhoraram isso de forma dramática: **reduzir a velocidade de desbaste pela metade aumentou a resistência média em 56%**, e **desgastar de propósito o fio de uma lâmina nova aumentou a resistência em cinco vezes** <Cite id="ieee-die-strength" />. O corte não é o fim de um processo; é o começo da confiabilidade mecânica do produto.
 
 ## Wire bonding: a tecnologia que monta 80% do mundo
 
-Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: **mais de 80% dos invólucros de semicondutores** ainda são montados por fiação <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o mesmo patamar, acrescentando um dado incômodo: cerca de **um quarto a um terço das falhas de pacote** vem justamente da ligação por fio <Cite id="pmc-bonding-wire" />.
+Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: **mais de 80% dos invólucros de semicondutores** ainda são montados por ligação por fio <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o mesmo patamar, acrescentando um dado incômodo: cerca de **um quarto a um terço das falhas de pacote** vem justamente da ligação por fio <Cite id="pmc-bonding-wire" />.
 
 O princípio é o que se vê na figura: o die fica **de face para cima**, e fios finíssimos saem dos pads na sua **periferia** e descem até o substrato. Cada fio é uma conexão elétrica, e há dois tipos de ponta: a **ball bond**, em que uma esfera de fio é fundida e prensada sobre o pad, e a **wedge bond**, em que o fio é esmagado lateralmente. Esta produz laços mais baixos, o que importa em radiofrequência <Cite id="inseto-wire-guide" />.
 
-O diâmetro do fio é a dimensão crítica. A fiação de cobre de ponta usa **15 µm de fio com passo de 40 µm**; a de ouro usa **18 µm** no mesmo passo <Cite id="imaps-cu-wire" />.
+O diâmetro do fio é a dimensão crítica. A ligação por fio de cobre de ponta usa **15 µm de fio com passo de 40 µm**; a de ouro usa **18 µm** no mesmo passo <Cite id="imaps-cu-wire" />.
 
 ### A troca do ouro pelo cobre
 
-Por décadas o fio foi de **ouro**. Por volta de **2010**, o preço do ouro subiu, e a indústria migrou para o **cobre** <Cite id="semieng-wirebond2" />. Hoje cerca de **70% dos pacotes com fiação usam cobre** <Cite id="semieng-wirebond2" />, e a SEMI registrou em 2019 o cobre passando de **54% dos embarques de fio de ligação**, com o ouro **abaixo de 32%** <Cite id="semi-gspmo-2020" />.
+Por décadas o fio foi de **ouro**. Por volta de **2010**, o preço do ouro subiu, e a indústria migrou para o **cobre** <Cite id="semieng-wirebond2" />. Hoje cerca de **70% dos pacotes com ligação por fio usam cobre** <Cite id="semieng-wirebond2" />, e a SEMI registrou em 2019 o cobre passando de **54% dos embarques de fio de ligação**, com o ouro **abaixo de 32%** <Cite id="semi-gspmo-2020" />.
 
 Não foi só preço. O cobre é **melhor condutor** e tem **maior condutividade térmica** que o ouro, além de crescer compostos intermetálicos mais lentamente com o alumínio, o que melhora a confiabilidade <Cite id="pmc-bonding-wire" />. A comparação entre os dois é eloquente: a resistividade do cobre é **1,72×10⁻⁸ Ω·m** contra **2,2×10⁻⁸** do ouro; a dureza Vickers é **369** contra **216**; e o módulo de elasticidade é **130 GPa** contra **78** <Cite id="gold-bulletin-ball-bonds" />.
 
 Os dois "contra" são o preço dessa escolha. O cobre é mais **duro**, o que aumenta a tensão sobre o silício, e **oxida** com facilidade, exigindo atmosfera inerte de nitrogênio durante a ligação <Cite id="pmc-bonding-wire" />.
 
-### Por que a fiação ainda ganha
+### Por que a ligação por fio ainda ganha
 
-A economia explica bem. Um fio de cobre de 25 µm custa **menos de um décimo** de um fio de ouro equivalente; e enquanto a fiação de **ouro** se torna mais cara que o flip-chip acima de **1.024 contatos**, a de **cobre** continua competitiva **até cerca de 2.000 contatos** <Cite id="imaps-cu-wire" />.
+A economia explica bem. Um fio de cobre de 25 µm custa **menos de um décimo** de um fio de ouro equivalente; e enquanto a ligação por fio de **ouro** se torna mais cara que o flip-chip acima de **1.024 contatos**, a de **cobre** continua competitiva **até cerca de 2.000 contatos** <Cite id="imaps-cu-wire" />.
 
-Ou seja: a fiação não sobreviveu por inércia. Ela ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo: microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é processador de alta performance.
+A ligação por fio ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo: microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é processador de alta performance.
 
 ## Flip-chip: virar o die de cabeça para baixo
 
-A limitação da fiação é geométrica: os pads precisam ficar na **borda** do die, porque é de lá que o fio sai. Isso limita o número de conexões ao perímetro, e o perímetro cresce com a raiz da área.
+A limitação da ligação por fio é geométrica: os pads precisam ficar na **borda** do die, porque é de lá que o fio sai. Isso limita o número de conexões ao perímetro, e o perímetro cresce com a raiz da área.
 
 O **flip-chip** resolve invertendo o die. Ele é montado **de face para baixo**, e a conexão é feita por esferas de solda ou pilares de cobre distribuídos por **toda a superfície ativa** <Cite id="wiley-packaging-ch3" />.
 
@@ -126,7 +126,7 @@ O ganho é triplo: o caminho elétrico fica **curto**, a **indutância** cai mui
 
 ### C4: uma invenção com 60 anos
 
-A conexão por esferas de solda nasceu na IBM. No **verão de 1962**, a empresa reduziu a prática um transistor flip-chip com conexões de solda: eram apenas **3 esferas por chip**, cada uma com uma esfera de cobre de *5 mil* embutida para servir de espaçador <Cite id="totta-flipchip" />. Depois vieram as **barreiras de vidro**, que impediam a solda de espalhar e de fazer o chip colapsar: daí o nome **C4**, *controlled collapse chip connection* <Cite id="totta-flipchip" />.
+A conexão por esferas de solda nasceu na IBM. No **verão de 1962**, a empresa levou à prática um transistor flip-chip com conexões de solda: eram apenas **3 esferas por chip**, cada uma com uma esfera de cobre de *5 mil* embutida para servir de espaçador <Cite id="totta-flipchip" />. Depois vieram as **barreiras de vidro**, que impediam a solda de espalhar e de fazer o chip colapsar: daí o nome **C4**, *controlled collapse chip connection* <Cite id="totta-flipchip" />.
 
 A descrição formal do processo C4 é de **L. F. Miller**, em 1969, e a patente americana **3.429.040** foi concedida em fevereiro daquele ano <Cite id="springer-flipchip-history" />. Em **quarenta anos**, o número de esferas por chip saiu de **3 para 7.018** <Cite id="totta-flipchip" />, provavelmente a melhor medida de quanto essa ideia rendeu.
 
@@ -140,7 +140,7 @@ A resposta foi o **pilar de cobre**: em vez de uma esfera achatada, um cilindro 
 
 Até aqui, cada invólucro continha **um** die. A partir daqui, a pergunta muda: como colocar vários chips no mesmo pacote, ligados de forma rápida o bastante para se comportarem como um só?
 
-<DiagramFigure src="/assets/package-generations.svg" alt="Quatro gerações de conexão lado a lado: fiação na borda com fio de 15 a 25 micrômetros, flip-chip com bumps acima de 130 micrômetros, 2.5D com microbumps de cerca de 40 micrômetros sobre um interposer, e 3D empilhado com ligação direta abaixo de 10 micrômetros">
+<DiagramFigure src="/assets/package-generations.svg" alt="Quatro gerações de conexão lado a lado: ligação por fio na borda com fio de 15 a 25 micrômetros, flip-chip com bumps acima de 130 micrômetros, 2.5D com microbumps de cerca de 40 micrômetros sobre um interposer, e 3D empilhado com ligação direta abaixo de 10 micrômetros">
 A estrada do empacotamento avançado é uma só métrica descendo: a distância entre duas conexões vizinhas.
 </DiagramFigure>
 
@@ -224,7 +224,7 @@ O motivo é exatamente o da figura: os quatro dies pequenos rendem muito melhor 
 
 O chiplet criou um problema novo: cada fabricante definia sua própria forma de os dies conversarem. Isso amarra o cliente ao fornecedor, o oposto do ecossistema que fez o resto da indústria crescer.
 
-A resposta veio em **março de 2022**, quando **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung e TSMC** se juntaram para ratificar a especificação **UCIe** (*Universal Chiplet Interconnect Express*), uma interface die-a-die aberta. A UCIe 1.0 previa taxas de até **32 GT/s** com **16 a 64 pistas** <Cite id="ucie-formation" />. Em agosto de **2025**, a versão **3.0** dobrou as taxas para **48 e 64 GT/s** <Cite id="ucie-3" />.
+A resposta veio em **março de 2022**, quando **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung e TSMC** se juntaram para ratificar a especificação **UCIe** (*Universal Chiplet Interconnect Express*), uma interface die-a-die aberta. A UCIe 1.0 previa taxas de até **32 GT/s** com **16 a 64 pistas** <Cite id="ucie-formation" />. Em agosto de **2025**, a versão **3.0** elevou a taxa máxima de **32 para 64 GT/s** <Cite id="ucie-3" />.
 
 A aposta é a mesma que fez o PCIe e o USB funcionarem: um barramento comum transforma um produto proprietário num mercado.
 
@@ -264,7 +264,9 @@ Na memória o eixo vira **grau de velocidade** e a mecânica é a mesma. Um chip
 
 O segundo eixo é a **colheita** (*harvesting*). Um chip com um bloco defeituoso passa a ser vendido com esse bloco desligado, e a AMD já vendeu modelos de três núcleos a partir de um die de quatro <Cite id="gamersnexus-binning" />. A Apple transformou a prática em linha de produto: o **A12X** saiu com 7 dos 8 núcleos de GPU porque o rendimento não entregava 8; dois anos depois, o **A12Z** era o mesmo chip com o oitavo ligado, porque o processo tinha melhorado. No **iPhone 17e**, o A19 tem 4 núcleos de GPU contra 5 do iPhone 17, e o desempenho gráfico cai na mesma proporção, cerca de 20 % <Cite id="macworld-binning" />.
 
-O caso levado ao extremo foi o **GF100** da Nvidia, em 2010: 3 bilhões de transistores em cerca de 530 mm², no 40 nm recém-estreado da TSMC. Nenhuma placa saiu com o chip completo: a **GTX 480** recebeu apenas 480 dos 512 núcleos, com um dos 16 *clusters* de shaders desligado, o GTX 470 ficou com 448 e o GTX 465 com 352 <Cite id="wikipedia-gf100" />. A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20 % e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. Pelo lado do relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20 % sobre a meta original, contra 10 % do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />. Esse chip só apareceu no **GF110**, um GF100 redesenhado, no fim do mesmo ano <Cite id="wikipedia-gf100" />.
+O caso levado ao extremo foi o **GF100** da Nvidia, em 2010: 3 bilhões de transistores em cerca de 530 mm², no 40 nm recém-estreado da TSMC. Nenhuma placa saiu com o chip completo: a **GTX 480** recebeu apenas 480 dos 512 núcleos, com um dos 16 *clusters* de shaders desligado, o GTX 470 ficou com 448 e o GTX 465 com 352 <Cite id="wikipedia-gf100" />.
+
+A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20 % e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. Pelo lado do relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20 % sobre a meta original, contra 10 % do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />. Esse chip só apareceu no **GF110**, um GF100 redesenhado, no fim do mesmo ano <Cite id="wikipedia-gf100" />.
 
 Nem todo bloco desligado é defeito. Num lote de **Radeon RX 460**, 128 núcleos presentes no die estavam desativados e voltaram a funcionar com uma troca de BIOS, cerca de 14 % mais núcleos; o risco é o chip ter sido desativado por defeito, e aí a imagem sai com artefatos <Cite id="extremetech-rx460" />.
 

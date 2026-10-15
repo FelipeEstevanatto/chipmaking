@@ -1,7 +1,7 @@
 ---
 title: Wafer fabrication
 description: "From EG-Si polysilicon to a fab-ready wafer: Czochralski growth, slicing, CMP and RCA cleaning."
-dataAsOf: 2025
+dataAsOf: 2024
 ---
 
 # Silicon wafer fabrication
@@ -111,7 +111,7 @@ For fab wafers, the goal of slicing is not minimum thickness: it is **flatness**
 
 ## Edge profiling and lapping
 
-The edge a saw leaves behind is sharp and brittle. **Edge profiling** grinds a curved contour (a crown at the apex with a bevel on either side) so that stress spreads out instead of concentrating in a corner. Without it the edge chips during handling and transport and, worse, every crack becomes a source of particles that later return to the active surface; contouring the edge reduces exactly that chipping and also limits epitaxial edge crown and photoresist edge bead <Cite id="semi-mf928" />. On 300 mm wafers the standard asks for more: a **polished edge**, because the valleys left by grinding trap particles and even phosphorus that comes back to the surface during doping <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
+The edge a saw leaves behind is sharp and brittle. **Edge profiling** grinds a curved contour (a crown at the apex with a bevel on either side) so that stress spreads out instead of concentrating in a corner. Without it the edge chips during handling and transport and, worse, every crack becomes a source of particles that later return to the active surface; contouring the edge reduces exactly that chipping and also limits edge crown (excess material at the edge) and photoresist build-up at the edge during spin coating <Cite id="semi-mf928" />. On 300 mm wafers the standard asks for more: a **polished edge**, because the valleys left by grinding trap particles and even phosphorus that comes back to the surface during doping <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
 
 Then comes **lapping**: a batch of wafers is pressed between two metal plates rotating in opposite directions, with an alumina slurry injected between them. Because both faces are attacked at once, the operation corrects thickness, parallelism and the waviness left by the cut <Cite id="pei-2005" />.
 

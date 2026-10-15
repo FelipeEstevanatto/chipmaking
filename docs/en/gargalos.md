@@ -18,14 +18,12 @@ The answer has a pattern, and it repeats step by step.
 
 | Step | Who dominates | Concentration | What would break |
 | --- | --- | --- | --- |
-| High-purity quartz (HPQ) | Spruce Pine, USA (Sibelco and The Quartz Corp) | **70 to 90%** of the world's high-purity quartz | The [Czochralski growth](/en/fabricacao-wafers) crucibles of the whole industry — and without a crucible there is no ingot |
-| Metallurgical silicon (MG-Si) | China | **about 87%** of world output (4,800 of 5,500 kt in 2024) | The charge of the upstream refining furnaces |
-| Polysilicon | China | **more than 90%** of global volume in 2023 | The feedstock of both the wafer and the solar cell |
-| Silicon wafers | Japan (Shin-Etsu and SUMCO) | **44.1%** for the top two; the top five hold about **three quarters** | The starting wafer of every fab on the planet |
-| EUV lithography | ASML (Netherlands) | **sole supplier** | The critical layers of leading-edge nodes |
-| Semiconductor-grade neon | Ukraine | **about half** of world neon and **90%** of the semiconductor grade | The excimer lasers of [DUV lithography](/en/fotolitografia) |
-
-<Cite id="construction-physics-spruce-pine" /> <Cite id="usgs-mcs-2026" /> <Cite id="bernreuter-market" /> <Cite id="nikkei-wafer-share" /> <Cite id="asml-euv-products" /> <Cite id="fabm-neon-2022" />
+| High-purity quartz (HPQ) | Spruce Pine, USA (Sibelco and The Quartz Corp) | **70 to 90%** of the world's high-purity quartz <Cite id="construction-physics-spruce-pine" /> | The [Czochralski growth](/en/fabricacao-wafers) crucibles of the whole industry — and without a crucible there is no ingot |
+| Metallurgical silicon (MG-Si) | China | **about 87%** of world output (4,800 of 5,500 kt in 2024) <Cite id="usgs-mcs-2026" /> | The charge of the upstream refining furnaces |
+| Polysilicon | China | **more than 90%** of global volume in 2023 <Cite id="bernreuter-market" /> | The feedstock of both the wafer and the solar cell |
+| Silicon wafers | Japan (Shin-Etsu and SUMCO) | **44.1%** for the top two; the top five hold about **three quarters** <Cite id="nikkei-wafer-share" /> | The starting wafer of every fab on the planet |
+| EUV lithography | ASML (Netherlands) | **sole supplier** <Cite id="asml-euv-products" /> | The critical layers of leading-edge nodes |
+| Semiconductor-grade neon | Ukraine | **about half** of world neon and **90%** of the semiconductor grade <Cite id="fabm-neon-2022" /> | The excimer lasers of [DUV lithography](/en/fotolitografia) |
 
 Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same shape as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
 
@@ -53,7 +51,7 @@ Large markets should have many suppliers. Three forces push the other way.
 - **Qualification is an asset.** Changing a materials supplier means requalifying the process. That locks in the customer and deters the entrant, as discussed in [fab consumables](/en/insumos-fab).
 - **The risk is correlated.** When each step has one supplier, the risk of each step does not diversify: it adds up. That is the argument [wafer fabrication](/en/estrutura-wafers#who-makes-the-wafers) already makes about Japan, and the one the [history of lithography](/en/historia-fotolitografia) makes about the consortium that bet on EUV when the candidate list still had six names.
 
-The conclusion is not that the chain is fragile through carelessness. It is that it was **optimised for cost** for decades, and concentration is the result of that optimisation. The price of efficiency is the absence of a plan B.
+The chain was **optimised for cost** for decades, and concentration is the result of that optimisation. The price of efficiency is the absence of a plan B.
 
 <SourceNote label="Sources" :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'fabm-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
 

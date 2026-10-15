@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 The earlier chapters tell you how a chip is made. The [fab](/en/na-fab) builds the transistor layer by layer, [transistor evolution](/en/transistores) shows what ended up inside the die, and [packaging](/en/empacotamento) seals it into a case. What is missing is the question that decides whether the product really exists: **how long does it keep working?**
 
-Reliability is not a single measurement. It is the **distribution of failures over time**, and that distribution is almost never uniform. Understanding it is what separates "the chip works" from "the chip can be sold".
+Reliability is the **distribution of failures over time**, and that distribution is almost never uniform. Understanding it is what separates "the chip works" from "the chip can be sold".
 
 The chapter follows the aging of a chip in six steps:
 
@@ -37,13 +37,13 @@ The chart below is a **schematic**, not a data set: it exists to fix the three r
 
 ### Where burn-in acts
 
-[Burn-in](/en/empacotamento) exists to attack the first region. Components are subjected to conditions **at or above the specified maximum**, in order to **stress the defects out** before shipment <Cite id="mil-std-883" />; in production this happens on the already assembled part, typically for **24 to 48 hours** <Cite id="semieng-burnin" />. It is an explicit trade: burn-in **reduces warranty cost at the cost of some yield** <Cite id="ieee-burnin" />, and it can itself **damage** devices through thermal runaway, electrostatic discharge or overvoltage <Cite id="semieng-burnin" />.
+[Burn-in](/en/empacotamento) exists to attack the first region. It is an explicit trade: burn-in **reduces warranty cost at the cost of some yield** <Cite id="ieee-burnin" />.
 
-Burn-in moves the **infant mortality**. It does nothing for the flat region or the wear-out region; what decides a product's long life is the physics that follows.
+Burn-in acts on the **infant mortality**. It does nothing for the flat region or the wear-out region; what decides a product's long life is the physics that follows.
 
 ## Wear-out mechanisms
 
-A chip does not wear out by mechanical fatigue: it wears out through interface chemistry and physics, slowly and **cumulatively**. Every mechanism has a physical driver and a signature that gives it away.
+A chip wears out through interface chemistry and physics, slowly and **cumulatively**. Every mechanism has a physical driver and a signature that gives it away.
 
 | Mechanism | Physical driver | Observable signature | Technology most affected |
 | --- | --- | --- | --- |
@@ -94,9 +94,9 @@ The four wear-out mechanisms in cross-section: interface traps that shift the th
 
 To compare components, the industry needed a common unit. That is the **FIT** (*failure in time*), defined as **one failure per 10⁹ device-hours**, and whose calculation JEDEC standardises in JESD85A <Cite id="rel-jesd85a" />.
 
-The arithmetic is what makes the number usable. Since 10⁹ divided by the rate in FIT gives the **MTTF** in hours, a component at 10 FIT has an MTTF of 10⁸ h <Cite id="rel-jesd85a" />. Converting: **100,000 h** is about **11 years** of continuous operation, and ten calendar years add up to **87,600 h** (10 × 8,760 h). Writing the goal in hours and the failure in FIT is what lets you compare a single chip with a customer's entire installed base.
+The arithmetic is what makes the number usable. Since 10⁹ divided by the rate in FIT gives the **MTTF** in hours, a component at 10 FIT has an MTTF of 10⁸ h <Cite id="rel-jesd85a" />. Converting: **100,000 h** is about **11 years** of continuous operation, and ten calendar years add up to **87,600 h** (10 × 8,760 h). Writing the goal in hours and the failure in FIT is what lets you compare one component's rate with a customer's entire installed base.
 
-Those goals differ by market. AEC-Q100 demonstrates the method with an automotive profile of **15 years** (**12,000 h** of operation within **131,400 h** of calendar time) <Cite id="rel-aec-q100" />. The useful-life horizon assumed for a component is usually counted in **a decade** <Cite id="rel-jep122" />; the two numbers coexist because they measure different things, powered time on one side and calendar time on the other.
+Those goals differ by market. AEC-Q100 demonstrates the method with an automotive profile of **15 years** (**12,000 h** of operation within **131,400 h** of calendar time) <Cite id="rel-aec-q100" />. The useful-life horizon assumed for a component is usually counted in **a decade** <Cite id="rel-jep122" />; the two numbers coexist because they measure different things, power-on time on one side and calendar time on the other.
 
 ### Accelerated testing
 

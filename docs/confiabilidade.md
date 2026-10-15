@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 Os capítulos anteriores contam como um chip é feito. A [fábrica](/na-fab) constrói o transistor camada por camada, a [evolução dos transistores](/transistores) mostra o que ficou dentro do die e o [empacotamento](/empacotamento) o veda numa carcaça. Falta a pergunta que decide se o produto existe de verdade: **por quanto tempo ele continua funcionando?**
 
-Confiabilidade não é uma medida isolada. É a **distribuição das falhas ao longo do tempo**, e essa distribuição quase nunca é uniforme. Entendê-la é o que separa "o chip funciona" de "o chip pode ser vendido".
+Confiabilidade é a **distribuição das falhas ao longo do tempo**, e essa distribuição quase nunca é uniforme. Entendê-la é o que separa "o chip funciona" de "o chip pode ser vendido".
 
 O capítulo percorre o envelhecimento do chip em seis etapas:
 
@@ -37,13 +37,13 @@ O gráfico abaixo é um **esquema**, não um conjunto de dados: ele existe para 
 
 ### Onde a queima age
 
-A [queima](/empacotamento) existe para atacar a primeira região. Os componentes são submetidos a condições **no nível ou acima do máximo especificado**, com o objetivo de **estressar os defeitos para fora** antes do embarque <Cite id="mil-std-883" />; na produção, isso acontece no componente já montado, tipicamente por **24 a 48 horas** <Cite id="semieng-burnin" />. É uma troca explícita: a queima **reduz o custo de garantia ao custo de algum rendimento** <Cite id="ieee-burnin" />, e ela mesma pode **danificar** dispositivos por fuga térmica, descarga eletrostática ou sobretensão <Cite id="semieng-burnin" />.
+A [queima](/empacotamento) existe para atacar a primeira região. É uma troca explícita: a queima **reduz o custo de garantia ao custo de algum rendimento** <Cite id="ieee-burnin" />.
 
-A queima mexe na **mortalidade infantil**. Ela não faz nada pela região plana nem pela de desgaste; a vida longa de um produto depende da física que vem a seguir.
+A queima ataca a **mortalidade infantil**. Ela não faz nada pela região plana nem pela de desgaste; a vida longa de um produto depende da física que vem a seguir.
 
 ## Mecanismos de desgaste
 
-O desgaste de um chip não é fadiga mecânica: é química e física de interface, ocorrendo devagar e de forma **acumulativa**. Cada mecanismo tem um motor físico e uma assinatura que o delata.
+O desgaste de um chip é química e física de interface, lento e **cumulativo**. Cada mecanismo tem um motor físico e uma assinatura que o delata.
 
 | Mecanismo | Motor físico | Assinatura observável | Tecnologia mais afetada |
 | --- | --- | --- | --- |
@@ -94,7 +94,7 @@ Os quatro mecanismos de desgaste em corte: armadilhas na interface que deslocam 
 
 Para comparar componentes, a indústria precisou de uma unidade comum. É o **FIT** (*failure in time*), definido como **uma falha por 10⁹ horas-dispositivo**, e cujo cálculo é padronizado pela JEDEC na JESD85A <Cite id="rel-jesd85a" />.
 
-A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de **11 anos** de operação contínua, e dez anos de calendário somam **87.600 h** (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar um chip de 1.000 unidades com o parque inteiro de um cliente.
+A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de **11 anos** de operação contínua, e dez anos de calendário somam **87.600 h** (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar a taxa de um único componente com todo o parque instalado de um cliente.
 
 Essas metas variam por mercado. A AEC-Q100 demonstra o método com um perfil automotivo de **15 anos** (**12.000 h** de operação dentro de **131.400 h** de calendário) <Cite id="rel-aec-q100" />. O horizonte de vida útil que se assume para um componente costuma ser contado em **uma década** <Cite id="rel-jep122" />; os dois números convivem porque medem coisas diferentes, tempo ligado de um lado e tempo de calendário do outro.
 

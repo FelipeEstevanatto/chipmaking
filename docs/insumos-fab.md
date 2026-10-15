@@ -1,7 +1,7 @@
 ---
 title: Os insumos da fab
 description: O que uma fábrica de semicondutores consome além do silício (fotorresiste, máscara, slurry, gases e água ultrapura) e por que essa lista é um gargalo tão silencioso quanto o quartzo.
-dataAsOf: 2026
+dataAsOf: 2022
 ---
 
 # Os insumos da fab
@@ -43,7 +43,7 @@ Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma más
 
 A [planarização químico-mecânica](/fabricacao-wafers#polimento-quimico-mecanico-cmp) parece um polimento, e é, mas com química envolvida. O **slurry** é uma suspensão de partículas abrasivas em uma solução que ataca quimicamente a superfície, de modo que o material é primeiro enfraquecido por reação e depois removido mecanicamente <Cite id="runnels-1994" />.
 
-A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, com a troca de abrasivos e a passagem do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />.
+A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />, cuja seção de [interconexão](/na-fab#interconexao-a-parte-do-chip-que-ninguem-ve) conta a troca de material.
 
 ## Gases e o neônio
 
@@ -55,7 +55,7 @@ O formato se repete: **insumo barato, pouco visível, insubstituível no curto p
 
 ## Água ultrapura
 
-A água é, em volume, o insumo mais íntimo de uma fab, e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de **18,2 MΩ·cm** a 25 °C e carbono orgânico total na casa das **partes por trilhão** <Cite id="fabm-upw" />.
+A água é, em volume, o insumo mais íntimo de uma fab, e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de **18,2 MΩ·cm** a 25 °C, o máximo teórico da água pura, e carbono orgânico total na casa das **partes por trilhão** <Cite id="fabm-upw" />.
 
 A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, **dopantes** (sódio e potássio no nível de ppb já alteram a tensão de limiar de um transistor), e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada **no próprio site**, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
 

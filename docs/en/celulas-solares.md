@@ -38,7 +38,7 @@ The wafer leaves the saw with a surface that has been **damaged and contaminated
 
 After etching, the surface is mirror-like and **reflects more than 35% of the incident light**. Texturing solves this by creating roughness at the micrometre scale <Cite id="saimm" />.
 
-On **monocrystalline** wafers, a weak solution of sodium and potassium hydroxide with isopropanol at **80 °C** attacks silicon **anisotropically** (different crystal planes react at different rates) producing **randomly distributed pyramids** that make light enter and bounce around instead of leaving <Cite id="saimm" />. On **multicrystalline** wafers this trick fails, because the orientation changes from grain to grain; there the texture is **mechanical** <Cite id="saimm" />. Either way, reflection drops **below 10%** <Cite id="saimm" />.
+On **monocrystalline** wafers, a weak solution of sodium and potassium hydroxide with isopropanol at **80 °C** attacks silicon **anisotropically** (different crystal planes react at different rates) producing **randomly distributed pyramids** that make light enter and bounce around instead of leaving <Cite id="saimm" />. On **multicrystalline** wafers (now nearly extinct, see the introduction) this trick fails, because the orientation changes from grain to grain; there the texture was **mechanical** <Cite id="saimm" />. Either way, reflection drops **below 10%** <Cite id="saimm" />.
 
 ### Emitter diffusion (the p-n junction)
 
@@ -106,7 +106,7 @@ The consequence is material: **1 µm of gallium arsenide** (a direct band gap) a
 
 On top of that, the theoretical maximum efficiency occurs for band gaps between **1.4 and 1.6 eV**, and silicon sits **below** that range <Cite id="saimm" />. Cadmium telluride, which is direct and sits inside the optimum, is the second-largest in market share <Cite id="saimm" />.
 
-So why does silicon dominate? For **historical and supply reasons**: the semiconductor industry had already built the capacity to produce ultra-high-purity silicon at large volumes <Cite id="saimm" />. Silicon's advantage is not in the atom, but in the industrial chain built around it.
+So why does silicon dominate? For **historical and supply reasons**: the semiconductor industry had already built the capacity to produce ultra-high-purity silicon at large volumes <Cite id="saimm" />. What silicon has is the industrial chain built around it.
 
 ## Scale, efficiency and cost
 
@@ -117,7 +117,7 @@ The industry figures at the time of the Xakalashe and Tangstad review give a sen
 - Efficiencies of up to **22%** were reported in industry.
 - Cell prices were approaching **US\$1 per watt-peak**; the cheapest crystalline silicon module was around **US\$2/Wp**, while CdTe modules were already **below US\$1/Wp**.
 
-These are 2011 numbers and they aged fast. Annual production today is measured in hundreds of gigawatts, not tens. But they show the shape of the contest that has defined photovoltaics since: silicon wins on scale and industrial chain, not on physics.
+These are 2011 numbers and they aged fast. Annual production today is measured in hundreds of gigawatts <Cite id="fraunhofer-pv-report" />. But they show the shape of the contest that has defined photovoltaics since: silicon wins on scale and industrial chain.
 
 ## Today's numbers
 
@@ -127,18 +127,18 @@ A few numbers from the most recent report measure how much has changed:
 
 - **Module price** keeps falling at a published learning rate: about **26.7%** for every **doubling of cumulative production** <Cite id="fraunhofer-pv-report" />.
 - Commercial silicon module efficiency rose from about **17% to just under 25%** over ten years <Cite id="fraunhofer-pv-report" />.
-- **Energy payback time** has fallen to about **1 year**, and the assumed system lifetime is about **20 years** <Cite id="fraunhofer-pv-report" />.
+- **Energy payback time** has fallen to about **1 year**, and the lifetime assumed in the report's calculations is about **20 years**, against the **25 to 30 years** typical of a module <Cite id="fraunhofer-pv-report" />.
 - The levelised cost of electricity from large solar plants is around **4 euro cents per kWh** <Cite id="fraunhofer-pv-report" />.
 
 <ClientOnly>
   <DataChart chart="pv-efficiency" />
 </ClientOnly>
 
-The gap between the first bar in that chart and the last three is this chapter's contest in miniature: what you can buy today is silicon, and what promises the next jump is the perovskite-on-silicon **tandem**, which has already reached **35%** in the laboratory <Cite id="fraunhofer-pv-report" />. Single-cell records are in the comparative chart from [NREL](/en/referencias) <Cite id="nrel-efficiency" />.
+The gap between the first two bars in that chart and the last three is this chapter's contest in miniature: what you can buy today is silicon, and what promises the next jump is the perovskite-on-silicon **tandem**, which has already reached **35%** in the laboratory <Cite id="fraunhofer-pv-report" />. Single-cell records are in the comparative chart from [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
 
 If the tandem takes hold, it uses the silicon wafer as a substrate and adds a layer on top. The quartz-to-wafer path described on this site stays the same, and the value per wafer rises.
 
-<SourceNote label="Sources" :ids="['saimm', 'moller-2012', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
+<SourceNote label="Sources" :ids="['saimm', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: 'where the wafer comes from' },

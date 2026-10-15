@@ -99,10 +99,10 @@ O limite último do SiO₂ é perto de **0,7 nm**, ou **duas camadas atômicas**
 
 ## Deposição: colocar material onde não havia
 
-Se a oxidação **consome** silício, a deposição **acrescenta** material. É o mesmo problema do padeiro com o bolo: o desafio não é só colocar a camada, é colocá-la com a espessura certa **em todas as superfícies**, inclusive nas paredes laterais e no fundo de trincheiras cada vez mais estreitas.
+Se a oxidação **consome** silício, a deposição **acrescenta** material. É o mesmo problema do padeiro com o bolo: o desafio é colocar a camada com a espessura certa **em todas as superfícies**, inclusive nas paredes laterais e no fundo de trincheiras cada vez mais estreitas.
 
 <DiagramFigure src="/assets/deposition-step-coverage.svg" alt="Três cortes da mesma trincheira preenchida por PVD, CVD e ALD: o sputtering deixa o fundo quase nu, o CVD cobre tudo mas engrossa na boca, e a ALD deposita a mesma espessura no fundo e nas paredes">
-A diferença entre os métodos não é a espessura que eles conseguem: é a espessura que eles conseguem **no fundo** da trincheira.
+O que separa os métodos é a espessura que eles conseguem **no fundo** da trincheira.
 </DiagramFigure>
 
 - **CVD** (*chemical vapor deposition*): precursores gasosos reagem na superfície do wafer e formam o filme. É o método de uso geral.
@@ -166,7 +166,7 @@ A solução industrial é quase banal de tão simples: **inclinar o wafer cerca 
 
 O número cresceu junto com a complexidade. Um transistor MOS simples dos anos 1970 precisava de **6 a 8 implantações**. Um CMOS moderno com memória embutida pode chegar a **35** <Cite id="axcelis-implant" />. E não são implantações raras: uma fábrica grande processa até **50.000 wafers por mês**, com **20 a 30 implantações por wafer**, o que exige cerca de **20 implantadores** trabalhando em paralelo <Cite id="axcelis-implant" />.
 
-Vale reparar no que isso significa em escala. Cada implantação é uma ida e volta completa: litografia, implantação, limpeza de fotoresiste, e normalmente uma metrologia para conferir. É esse tipo de contagem que faz o número total de etapas chegar a mil.
+Cada implantação é uma ida e volta completa: litografia, implantação, limpeza de fotoresiste, e normalmente uma metrologia para conferir. É esse tipo de contagem que faz o número total de etapas chegar a mil.
 
 ### O dano e a cura
 
@@ -182,7 +182,7 @@ Depois de algumas camadas, a superfície do wafer deixa de ser plana. Cada depó
 
 Isso seria um problema estético se a litografia não fosse **fotográfica**. Um sistema de projeção tem uma **profundidade de foco** finita: fora dela, a imagem sai borrada. Com o wafer acidentado, partes do campo ficam fora de foco e as dimensões críticas saem erradas <Cite id="cmp-depth-of-focus" />.
 
-A solução é o **CMP** (*chemical mechanical planarization*), que faz exatamente o que o nome diz: combina um ataque **químico** da suspensão com um desgaste **mecânico** do pad rotativo. O wafer é pressionado contra um pad giratório com uma **suspensão** de partículas abrasivas e reagentes, e o relevo vai embora <Cite id="amat-cmp" />.
+A solução é o **CMP** (*chemical mechanical planarization*), que faz exatamente o que o nome diz: combina um ataque **químico** da suspensão com um desgaste **mecânico** do pad rotativo. O wafer é pressionado contra um pad giratório, e o relevo vai embora <Cite id="amat-cmp" />. A química da suspensão está descrita em [os insumos da fab](/insumos-fab).
 
 O CMP entrou na produção nos **anos 1980**, na IBM, para planarizar o dielétrico entre níveis de metal. Foi adotado de forma ampla quando a dimensão crítica chegou a **0,35 µm**, ponto em que as alternativas (vidro refluído, ataque reverso, *spin-on glass*) deixaram de atender <Cite id="cmp-history" />. Um passo de CMP pode levar **pouco mais de 60 segundos**, incluindo a limpeza posterior <Cite id="amat-cmp" />.
 
@@ -213,7 +213,7 @@ No artigo que consolidou a técnica, os autores distinguem dois modos: um **ráp
 
 O transistor é a parte famosa, mas ele ocupa uma fração pequena do volume de um chip moderno. Em cima dele está uma **cidade de fios**, o BEOL, que distribui sinal, alimentação e clock para bilhões de dispositivos, em dezenas de níveis empilhados.
 
-Por muito tempo esses fios foram de **alumínio**. Em **setembro de 1997**, a IBM anunciou a primeira tecnologia de interconexão de **cobre** integrada de forma manufaturável, e começou a entregar produto em 1998 <Cite id="ibm-copper" />. O ganho não era cosmético: a fiação de cobre apresentou **40 a 45% menos resistência** que a de alumínio e um ganho substancial na resistência à **eletromigração** <Cite id="ibm-cu-electroplating" />.
+Por muito tempo esses fios foram de **alumínio**. Em **setembro de 1997**, a IBM anunciou a primeira tecnologia de interconexão de **cobre** integrada de forma manufaturável, e começou a entregar produto em 1998 <Cite id="ibm-copper" />. A fiação de cobre apresentou **40 a 45% menos resistência** que a de alumínio e um ganho substancial na resistência à **eletromigração** <Cite id="ibm-cu-electroplating" />.
 
 O motivo de trocar ficou claro no mesmo período. Com os fios ficando mais finos e mais próximos, a **constante de tempo RC** do fio cresceu, enquanto o atraso intrínseco do transistor caiu. Por volta de **0,25 µm**, as duas curvas se cruzaram: o **fio passou a ser mais lento que a porta** <Cite id="mpr-rc-limits" />. O próprio ITRS registrou o problema, observando que o atraso RC passara a ser dominado pela **interconexão global** e que só trocar materiais não bastava <Cite id="itrs-interconnect" />.
 

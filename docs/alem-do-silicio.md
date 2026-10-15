@@ -1,7 +1,7 @@
 ---
 title: Além do silício
 description: Os semicondutores de banda larga que competem com o silício onde ele perde (SiC e GaN) e as outras funções que o próprio silício desempenha além de processar e gerar energia.
-dataAsOf: 2026
+dataAsOf: 2014
 ---
 
 # Além do silício
@@ -12,7 +12,7 @@ Na primeira, existem semicondutores que **não** são silício e ganham dele em 
 
 ## Os vizinhos de banda larga
 
-O parâmetro que separa essa família é o **gap de banda**, e a diferença é grande: o silício tem **1,12 eV**, o carbeto de silício (4H-SiC) tem **3,26 eV** e o nitreto de gálio (GaN) tem **3,40 eV** <Cite id="elem-ioffe" /> <Cite id="wbg-ioffe-sic" /> <Cite id="wbg-ioffe-gan" />.
+O parâmetro que separa essa família é o **gap de banda**, e a diferença é grande: o silício tem **1,12 eV** <Cite id="elem-ioffe" />, o carbeto de silício (4H-SiC) tem **3,26 eV** <Cite id="wbg-ioffe-sic" /> e o nitreto de gálio (GaN) tem **3,40 eV** <Cite id="wbg-ioffe-gan" />.
 
 | Material | Gap (300 K) | Onde ganha |
 | --- | --- | --- |
@@ -24,7 +24,7 @@ A consequência do gap maior é uma **tensão de ruptura muito mais alta**: um m
 
 No chaveamento de alta tensão (inversores de tração de veículos elétricos, conversores de rede e fontes industriais), o SiC compete com o **IGBT**, um dispositivo bipolar que acumula portadores minoritários e por isso tem uma cauda de corrente no desligamento. O MOSFET de SiC elimina essa cauda, e a diferença de perda aparece justamente na frequência de chaveamento <Cite id="elem-sze" />.
 
-No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um **gás de elétrons bidimensional**, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por física, e não por engenharia: **emitir luz azul**. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
+No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um **gás de elétrons bidimensional**, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por razões de física, não por falta de engenharia: **emitir luz azul**. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
 
 Esses materiais **não** substituem o silício na lógica por causa do **substrato**, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem; é o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
 
@@ -49,6 +49,8 @@ A viga suspensa em corte: uma das pontas está ancorada no substrato e a outra f
 O silício venceu por ser **bom o bastante** numa faixa larguíssima de funções, com um óxido nativo que serve de isolante, um substrato que se cresce em diâmetros grandes e uma cadeia industrial construída em volta dele por sete décadas <Cite id="saimm" />.
 
 Os materiais deste capítulo entram onde essa combinação não basta, e complementam o silício em vez de substituí-lo. Um chip de potência em SiC continua sendo montado sobre silício, empacotado com silício e alimentado por silício.
+
+As constantes deste capítulo vêm de tabelas de referência, não de medições de um ano. Os dados datados mais recentes que ele cita são de 2014, e é esse o ano que o selo de atualidade registra.
 
 <SourceNote :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw']" />
 

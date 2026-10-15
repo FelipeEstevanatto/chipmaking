@@ -40,7 +40,7 @@ O ponto mais recente da série é de 2024. O **M6**, anunciado em agosto de 2026
 
 ## Rendimento contra área
 
-O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimento, calculado a partir da equação que o capítulo de [na fab](/na-fab) apresenta, para cinco densidades de defeitos <Cite id="leachman-yield" />.
+O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimento, calculado a partir da equação apresentada no capítulo [Na fab](/na-fab), para cinco densidades de defeitos <Cite id="leachman-yield" />.
 
 <ClientOnly>
   <DataChart chart="yield-vs-area" />
@@ -80,7 +80,7 @@ O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.
 
 ## O selo de atualidade
 
-Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usava, para a escala e o custo do setor, números de **2011** (que o próprio texto admite estarem defasados), enquanto [estrutura e tipos](/estrutura-wafers) cita dados do ano corrente.
+Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usa, para a escala e o custo do setor, números de **2011**, que o próprio texto admite estarem defasados, e o selo dele aponta o dado mais recente que o capítulo cita, não os números de 2011. Já [estrutura e tipos](/estrutura-wafers) cita um levantamento de 2024 publicado em 2025.
 
 Por isso cada capítulo declara, abaixo do título, o **ano do dado mais recente que cita**. É uma informação de leitura, não de validade: um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
 

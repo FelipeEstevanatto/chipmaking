@@ -33,7 +33,7 @@ The [timeline](/en/linha-do-tempo) gathers these same generations into one inter
 Channel, gate, source and drain in the plane of the wafer: the structure lithography had to draw in one pass. The silicon in front of the active area is cut away, so the front face of the slab is a section through source, channel and drain that leaves the channel's side wall in view; it is a drawing device, because a real wafer surface is flat. On the other three sides the field silicon meets the active area flush. The cut at the gate's front corner shows the gate oxide in section and the channel surface; the aluminium gate overlaps both diffusions, the alignment margin that the self-aligned gate would remove in 1968. Drawn by the author, from ASML.
 </DiagramFigure>
 
-The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. Kahng and Atalla built the first working MOSFET in **1959** and demonstrated it in **1960** <Cite id="chm-mosfet" />; the device had a **20 µm** gate and a 100 nm gate oxide, and a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has gates of the order of 25 nm <Cite id="wikipedia-22nm" />: in five decades that dimension shrank about eight hundredfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
+The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. Kahng and Atalla built the first working MOSFET in **1959** and demonstrated it in **1960** <Cite id="chm-mosfet" />; the device had a **20 µm** gate and a 100 nm gate oxide, and a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has gates of the order of 25 nm <Cite id="wikipedia-22nm" />, the typical value for the node; Intel's FinFET measured 26 nm <Cite id="ieee-node" />. In five decades that dimension shrank about eight hundredfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
 
 In practice this generation powered pocket calculators and the first home microcomputers: the NMOS **6502** family, for instance, drove the Apple II, the Commodore 64 and the NES.
 
@@ -71,7 +71,7 @@ This is the technique that made the first microprocessors viable. Faggin joined 
 
 <TransistorFacts year="1985" />
 
-With channels on the order of **1 µm**, the electric field concentrated at the drain accelerated carriers to energies high enough to cross the gate oxide. These **hot carriers** became trapped in the oxide, shifting the threshold voltage and shortening the device's useful life. The **LDD** structure (*Lightly Doped Drain*, IBM, 1980) inserts a lightly doped (**n⁻**) extension between the channel and the heavily doped (**n⁺**) contact: the potential drop spreads over a longer distance and the peak field falls. The extension is implanted using the gate itself as the mask, and it is the sidewall **spacer** that holds the **n⁺** contact away from the gate edge, by a distance set by the thickness of the spacer material <Cite id="motorola-ldd-patent" />. The nitride spacer would be reused later by the silicide processes. The price is a small extra series resistance.
+With channels on the order of **1 µm**, the electric field concentrated at the drain accelerated carriers to energies high enough to cross the gate oxide. These **hot carriers** became trapped in the oxide, shifting the threshold voltage and shortening the device's useful life. The **LDD** structure (*Lightly Doped Drain*, IBM) inserts a lightly doped (**n⁻**) extension between the channel and the heavily doped (**n⁺**) contact: the potential drop spreads over a longer distance and the peak field falls. The extension is implanted using the gate itself as the mask, and it is the sidewall **spacer** that holds the **n⁺** contact away from the gate edge, by a distance set by the thickness of the spacer material <Cite id="motorola-ldd-patent" />. The nitride spacer would be reused later by the silicide processes. The price is a small extra series resistance.
 
 The extension is not necessarily shallower than the contact. With phosphorus in the **n⁻** and arsenic in the **n⁺**, it tends to come out **deeper**, because phosphorus diffuses faster. What keeps it light is the dose, about two orders of magnitude lower <Cite id="motorola-ldd-patent" />.
 
@@ -79,7 +79,7 @@ The extension is not necessarily shallower than the contact. With phosphorus in 
 Left, the conventional junction: the n⁺ contact sits against the gate, and that is where the peak field concentrates. Right, the LDD: the n⁻ extension reaches slightly under the gate, is deeper and much more lightly doped than the n⁺ contact, and the spacer (purple, on the oxide) holds that contact away from the gate edge.
 </DiagramFigure>
 
-The concept originated at IBM in **1980**, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" />, the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
+The concept originated at IBM, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" />, the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
 
 ## 1995: STI (shallow trench)
 
@@ -113,7 +113,7 @@ The architecture became famous in the 2005–2006 console generation: the **Cell
 
 <TransistorFacts year="2003" />
 
-At the **90 nm** node (2003/2004), Intel used **strained silicon**: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility by **10–20%** at marginal cost <Cite id="intel-strain" />.
+At the **90 nm** node (2003/2004), Intel used **strained silicon**: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility at marginal cost <Cite id="intel-strain" />.
 
 <DiagramFigure src="/pdf-images/p15-1.png" alt="Silicon lattice vs silicon-germanium">
 Lattice comparison: pure silicon vs. SiGe as a stress-inducing substrate.
@@ -155,7 +155,7 @@ The channel leaves the plane: the vertical fin is wrapped by the gate on three s
 
 Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at **22 nm** (2011): the channel becomes a vertical “fin” and the gate wraps three sides, reducing leakage and allowing drive current to scale with adjacent fins (**fin quantization**).
 
-**Ivy Bridge** (22 nm, April 2012) was the first high-volume product <Cite id="intel-trigate" />; on mobile, the **Exynos 7420** (Galaxy S6) and Apple's **A9** (iPhone 6s) brought FinFET to smartphones in 2015. The architecture dominated every node from 22 nm down to 5 nm.
+**Ivy Bridge** (22 nm, April 2012) was the first high-volume product <Cite id="intel-trigate" />. The architecture dominated every node from 22 nm down to N3 (3 nm), with Samsung moving to GAA at 3 nm.
 
 ## 2012: FD-SOI (ultra-thin body)
 
@@ -177,9 +177,9 @@ The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundrie
 Stacked nanosheets, with the gate wrapping all four faces of each one.
 </DiagramFigure>
 
-At **3 nm** and below, FinFETs hit limits of variability and quantum effects. **GAAFET** stacks **nanosheets** wrapped by the gate on **all four sides**. Samsung went to mass production at 3 nm (**MBCFET**, 2022); TSMC and Intel followed at the N2 and **18A (RibbonFET)** nodes <Cite id="asml-gaa" />. Superior electrostatic control, up to **~40%** less leakage, and nanosheet width tunable for performance vs. power.
+At **3 nm** and below, FinFETs hit limits of variability and quantum effects. **GAAFET** stacks **nanosheets** wrapped by the gate on **all four sides**. Samsung, TSMC and Intel have announced they will adopt GAA at their next nodes <Cite id="asml-gaa" />. The electrostatic control is superior, and the nanosheet width can be tuned to favour performance or power.
 
-The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: **TSMC's N3 was still FinFET**. Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with **N2**, in volume production since late 2025, with the **Apple A20 Pro** among the first major products <Cite id="tsmc-n2" />.
+The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: **TSMC's N3 was still FinFET**. Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with **N2**, in volume production since late 2025 <Cite id="tsmc-n2" />.
 
 ## 2025/2026: BSPDN (backside power)
 
@@ -189,9 +189,9 @@ The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC
 Power delivery moves to the wafer backside, leaving the front free for signal.
 </DiagramFigure>
 
-**Backside Power Delivery Network (BSPDN)**, *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): power rails move to the **back side** of the wafer through **TSVs**, freeing the front layers for signal, with ~**11%** more density and dynamic voltage drop (**IR drop**) up to **10×** lower.
+**Backside Power Delivery Network (BSPDN)**, *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): power rails move to the **back side** of the wafer through **TSVs**, freeing the front layers for signal.
 
-It reached the market in **Intel Panther Lake** (Core Ultra series 3), the first chip to combine *PowerVia* and *RibbonFET* <Cite id="intel-18a" />; TSMC introduces *Super Power Rail* on **A16**, with volume production scheduled for the second half of 2026 <Cite id="tsmc-n2" />.
+It reached the market in **Intel Panther Lake** (Core Ultra series 3) <Cite id="intel-18a" />; TSMC introduces *Super Power Rail* on **A16**, with volume production scheduled for the second half of 2026 <Cite id="tsmc-n2" />.
 
 ## ~2029: Forksheet
 
@@ -213,13 +213,13 @@ Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented a
 NFET and PFET in the same cell, stacked instead of side by side.
 </DiagramFigure>
 
-Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) by up to **~50%** and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
+Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
 
 CFET is a bet inside silicon. Outside it, the candidate channel materials to replace silicon are **carbon nanotubes** and **transition metal dichalcogenides (TMDs)**, two-dimensional semiconductors that the IRDS keeps as CMOS-extension candidates, still short of manufacturing maturity <Cite id="irds-beyond-cmos" />. And there is a second axis, above the transistor: instead of stacking devices, the industry stacks **whole dies** (chiplets) in 2.5D and 3D, gaining density and performance in the package rather than on the wafer ([Packaging](/en/empacotamento)) <Cite id="tsmc-cowos" />.
 
 ## Addendum: what the node number means
 
-The “Node” column only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name. The story has three stages.
+The node number that opens each section only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name. The story has three stages.
 
 ### 1. The number was born from a coincidence
 
@@ -243,7 +243,7 @@ Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node num
 
 ### What replaced it
 
-Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the table at the top of the chapter.
+Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the node shown at the top of each section.
 
 <SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa', 'st-fdsoi-utbb']" />
 
