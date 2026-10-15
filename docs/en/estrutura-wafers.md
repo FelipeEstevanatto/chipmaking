@@ -33,15 +33,17 @@ We can infer the crystal structure with **XRD (X-ray diffraction)** under contro
 
 ### Miller indices
 
-Indices that describe crystallographic directions and planes; planes can have **anisotropic** properties (dependent on direction).
+Miller indices describe crystallographic directions and planes. Plane properties can be **anisotropic**, that is, dependent on direction.
 
 <DiagramFigure src="/assets/miller-indices.svg" alt="Miller indices in a cubic structure">
 Felix Kling (DeepKling), <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG from Wikimedia Commons.
 </DiagramFigure>
 
+The **{100}** and **{111}** planes are the ones most often cited in practice, and how the crystal behaves under a chemical etch depends on which of them is exposed. That **anisotropy** reappears in the alkaline etch described in [Wafer fabrication](/en/fabricacao-wafers), where the choice of plane yields flatter wafers.
+
 ## Why silicon, and not germanium
 
-The first transistors were not made of silicon but of **germanium**, the material Bardeen and Brattain used in 1947. The switch was not an aesthetic preference: three properties settled the contest <Cite id="ge-vs-si" />.
+The first transistors were not made of silicon but of **germanium**, the material Bardeen and Brattain used in 1947. Three properties settled the contest <Cite id="ge-vs-si" />.
 
 The first is the **band gap**. Germanium's is 0.7 eV; silicon's is 1.1 eV. A narrow gap means electron-hole pairs form thermally with little energy, and the material starts conducting on its own as it warms up. Germanium devices lost control at modest temperatures, whereas silicon ones operated hundreds of degrees higher, with far lower leakage currents <Cite id="ge-vs-si" />.
 
@@ -89,7 +91,11 @@ From 200 mm upwards the straight flat gives way to a single **V-shaped notch** w
 - included angle of **90°** (+5 / −1);
 - axis aligned to **&lt;110&gt;**, within **±1°**.
 
-That is the notch's entire informational payload: **orientation**. The standard also defines 200 mm wafers *with* a flat, and those come explicitly **without** a secondary fiducial <Cite id="semi-m1" />. In other words, from 200 mm upwards the edge stops telling you whether the wafer is **P** or **N**. That information moves to the lot certificate or to the **laser mark on the back** (SEMI **T7** format, with an optional **A/N** field) <Cite id="semi-t7" />.
+::: warning
+From 200 mm upwards the edge stops telling you whether the wafer is **P** or **N**. That information moves to the lot certificate or to the **laser mark on the back** (SEMI **T7** format, with an optional **A/N** field) <Cite id="semi-t7" />.
+:::
+
+That is the notch's entire informational payload: **orientation**. The standard also defines 200 mm wafers *with* a flat, and those come explicitly **without** a secondary fiducial <Cite id="semi-m1" />.
 
 ### What the diameter tells you
 
@@ -123,7 +129,7 @@ A **virgin**, polished wafer is a grey mirror. A wafer that has been through lit
 
 Wafer supply is highly concentrated, and most of the leading capacity is in Japan. In Nikkei's annual market-share survey, **Shin-Etsu** ranks first with **26.3%** and **SUMCO** second with **17.8%**, **44.1%** combined, ahead of the next suppliers <Cite id="nikkei-wafer-share" />.
 
-One figure that circulates widely deserves a note: that the two hold "60% of the market". The survey data point to **44.1%** by units, and to just over half of **300 mm volume** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" />, not 60%. What is not in doubt is the concentration: the next three companies come from Taiwan, Germany and South Korea and together account for **31.9%** <Cite id="nikkei-wafer-share" />. The top five therefore supply roughly **three quarters** of everything.
+It is frequently claimed that the two hold "60% of the market". The survey data point to **44.1%** by units, and to just over half of **300 mm volume** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" />, not 60%. What is not in doubt is the concentration: the next three companies come from Taiwan, Germany and South Korea and together account for **31.9%** <Cite id="nikkei-wafer-share" />. The top five therefore supply roughly **three quarters** of everything.
 
 There is no real room for a new entrant, and the barriers have been stacking up for decades: the crystal is hard to pull, the specification is unforgiving, and qualifying a supplier at a fab takes years.
 
@@ -131,22 +137,23 @@ The geography is just as telling. Most of that capacity sits in **Japan**, a leg
 
 ## Doping
 
-Doping introduces intentional impurities into an **intrinsic** semiconductor (one with no deliberate doping) to modulate its electrical, optical or structural properties, producing an **extrinsic** semiconductor.
+Doping introduces intentional impurities into an **intrinsic** semiconductor (one with no deliberate doping), to modulate its electrical, optical or structural properties, and produces an **extrinsic** semiconductor.
 
-- **Light doping:** ~1 dopant atom per 100 million silicon atoms.
-- **Heavy doping:** ~1 per 10 thousand atoms.
+- **Light doping:** ~1 dopant atom per 100 million silicon atoms (approximation).
+- **Heavy doping:** ~1 per 10 thousand atoms (approximation).
 
 A semiconductor with an equal number of excited electrons and holes (**n = p**) is **compensated** (behaving close to intrinsic in thermal equilibrium).
 
-There is one case where the choice of dopant stops being a process detail and starts deciding the reliability of the product: in photovoltaics, boron reacts with the oxygen in Cz silicon and degrades the cell under illumination, which pushed the industry to replace it with **gallium**, covered in the [solar cells and modules](/en/celulas-solares) chapter.
+There is one case where the choice of dopant stops being a process detail and starts deciding the reliability of the product. In photovoltaics, boron reacts with the oxygen in Cz silicon and degrades the cell under illumination, which pushed the industry to replace it with **gallium**, covered in the [solar cells and modules](/en/celulas-solares) chapter and in [Reliability](/en/confiabilidade#why-this-is-a-materials-story).
 
 <DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Intrinsic silicon, P-type (B) and N-type (Sb) doping">
 P-type: a hole with boron (B). N-type: a fifth valence electron with antimony (Sb). VectorVoyager, <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG from Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote label="Sources" :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />
+<SourceNote label="Sources" :ids="['ge-vs-si', 'semi-m1', 'semi-t7', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: '&lt;100&gt; / &lt;111&gt; orientation in CZ growth' },
   { text: 'Transistors', href: '/en/transistores', note: 'doping and ion implantation' },
+  { text: 'Reliability', href: '/en/confiabilidade', note: 'the wear that starts in the material' },
 ]" />

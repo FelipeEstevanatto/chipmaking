@@ -21,7 +21,7 @@ O texto segue essa ordem.
 
 ## Crescimento do monocristal (Czochralski, CZ)
 
-O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são depositados em cadinho de quartzo altamente purificado, em forno a vácuo sob argônio inerte. O material é fundido a cerca de **1414 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
+O método **Czochralski** é o padrão industrial dominante <Cite id="zulehner-2000" />. Pedaços de polissilício de altíssima pureza são carregados num cadinho de quartzo de alta pureza e fundidos a vácuo, sob argônio inerte. O material é fundido a cerca de **1414 °C**. Um cristal-semente orientado (geralmente &lt;100&gt; ou &lt;111&gt;) é imerso na superfície do silício líquido e puxado lentamente para cima enquanto rotaciona em sentido oposto ao cadinho. Controlando taxa de puxamento e temperatura, forma-se um lingote cilíndrico monocristalino (**bole**) com diâmetros de **200 mm** ou **300 mm** e extensão superior a **1 m**.
 
 A pureza vem de antes da fusão. O material que entra no cadinho não passou por filtragem nem por refusão: é o produto da **destilação do triclorossilano** descrita em [Purificação e polissilício](/polissilicio) <Cite id="wikipedia-tcs" />. Ele chega já na casa de **9N a 11N**, e o que o puxamento faz a partir daí é **redistribuir** os poucos dopantes restantes, conforme o coeficiente de segregação de cada um <Cite id="saimm" />.
 
@@ -95,6 +95,10 @@ Um lingote monocristalino (*boule*) e hastes de silício. Sebastian Wallroth, <a
 
 ## Corte em fatias (wafer slicing)
 
+::: warning
+A lâmina de 300 mm sai da serra **mais espessa que os 775 µm do padrão final** e vai *perder* material na lapidação e no polimento, justamente para garantir paralelismo e ausência de dano subsuperficial <Cite id="semi-m1" />.
+:::
+
 O lingote retificado é **dividido em blocos** e fatiado com **serras de múltiplos fios diamantados (DWS)** <Cite id="moller-2012" />. Um conjunto paralelo de fios de aço revestidos com micropartículas de diamante move-se em altíssima velocidade sob tensão controlada, cortando centenas de wafers simultaneamente, maximizando rendimento e reduzindo perda de **kerf**.
 
 ### Da serra de disco interno ao fio diamantado
@@ -107,11 +111,19 @@ A virada veio com a **serra de fio múltiplo** (*multi-wire*). A princípio o fi
 
 A terceira etapa está em curso. No **fio diamantado**, o abrasivo deixa de estar na lama e passa a estar **fixo no próprio fio**, aço revestido com diamante. A produtividade sobe, o *kerf* cai, a lâmina pode ser mais fina e o processo dispensa a lama de SiC, trocando-a por fluido de corte à base de água, com impacto ambiental menor. Em contrapartida, o fio custa mais, quebra com mais facilidade e exige limpeza criteriosa <Cite id="pv-tech-dws" />.
 
-Nos wafers de fab, o objetivo do corte não é a espessura mínima: é a **planura**. A lâmina de 300 mm sai da serra **mais espessa que os 775 µm do padrão final** e vai *perder* material na lapidação e no polimento, justamente para garantir paralelismo e ausência de dano subsuperficial <Cite id="semi-m1" />. É no ramo fotovoltaico, que aceita lâminas cerca de quatro a cinco vezes mais finas, que o *kerf* se torna a variável econômica decisiva, como se vê em [Wafers solares](#wafers-solares-o-outro-produto-da-mesma-cadeia).
+Nos wafers de fab, o objetivo do corte é a **planura**. É no ramo fotovoltaico, que aceita lâminas cerca de quatro a cinco vezes mais finas, que o *kerf* se torna a variável econômica decisiva, como se vê em [Wafers solares](#wafers-solares-o-outro-produto-da-mesma-cadeia).
+
+| Tecnologia | Abrasivo | Fatias por corte | Perda de kerf |
+| --- | --- | --- | --- |
+| Serra de disco interno (ID) | abrasivo na face interna do anel <Cite id="pv-tech-dws" /> | uma <Cite id="pv-tech-dws" /> | — |
+| Fio com lama de SiC | carbeto de silício em óleo mineral <Cite id="pv-tech-dws" /> | todas as do lingote, de uma vez <Cite id="pv-tech-dws" /> | cerca de 30% <Cite id="saimm" /> |
+| Fio diamantado | diamante fixo no fio <Cite id="pv-tech-dws" /> | todas as do lingote, de uma vez <Cite id="pv-tech-dws" /> | menor que a lama de SiC <Cite id="pv-tech-dws" /> |
 
 ## Arredondamento de bordas e lapidação
 
-A aresta que sai do corte é viva e frágil. O **edge profiling** (perfilagem da borda) desbasta um contorno curvo (coroa no ápice, chanfros para os dois lados) para que a tensão se distribua em vez de se concentrar num canto. Sem isso a borda lasca no manuseio e no transporte e, pior, cada trinca vira fonte de partículas que depois voltam à superfície ativa; contornar a borda reduz exatamente esses lascamentos e ainda limita o excesso de material na borda (*edge crown*) e o acúmulo de fotoresistor na borda no *spin coating* <Cite id="semi-mf928" />. Nos wafers de 300 mm o padrão pede mais: **borda polida**, porque os vales deixados pela retificação retêm partículas e até fósforo que retorna à superfície durante a dopagem <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
+A aresta que sai do corte é viva e frágil. O **edge profiling** (perfilagem da borda) desbasta um contorno curvo (coroa no ápice, chanfros para os dois lados) para que a tensão se distribua em vez de se concentrar num canto. Sem isso a borda lasca no manuseio e no transporte e, pior, cada trinca vira fonte de partículas que depois voltam à superfície ativa.
+
+Contornar a borda reduz exatamente esses lascamentos e ainda limita o excesso de material na borda (*edge crown*) e o acúmulo de fotoresistor na borda no *spin coating* <Cite id="semi-mf928" />. Nos wafers de 300 mm o padrão pede mais: **borda polida**, porque os vales deixados pela retificação retêm partículas e até fósforo que retorna à superfície durante a dopagem <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
 
 Depois vem a **lapidação (lapping)**: um lote de wafers é prensado entre duas placas de metal que giram em sentidos opostos, com lama abrasiva de alumina injetada entre elas. Como as duas faces são atacadas ao mesmo tempo, a operação corrige espessura, paralelismo e as ondulações deixadas pelo corte <Cite id="pei-2005" />.
 
@@ -139,7 +151,7 @@ Antes e depois do ataque, na mesma escala de profundidade (em micrômetros abaix
 
 O oxigênio dissolvido no cristal Czochralski não é inerte. Mantido por horas por volta de **450 °C**, ele forma pequenos aglomerados que doam elétrons, os **doadores térmicos**, e desviam a resistividade do wafer do valor que se queria. O tratamento existe para desfazer isso: um recozimento rápido (**RTP**, *Rapid Thermal Processing*), com lâmpadas levando o wafer a **800–1000 °C por cerca de 10 segundos**, aniquila os doadores térmicos e devolve ao cristal a resistividade que eles haviam deslocado <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
 
-A escolha do RTP em vez do forno não é sobre temperatura: é sobre tempo. O forno levaria **horas** na mesma faixa; em segundos, o wafer recebe o mesmo efeito sobre os doadores sem dar tempo para o boro e o fósforo já implantados difundirem. É a esse produto "temperatura × tempo" que a indústria chama de **orçamento térmico** <Cite id="tokuda-1989" />.
+O que separa o RTP do forno é o tempo. O forno levaria **horas** na mesma faixa; em segundos, o wafer recebe o mesmo efeito sobre os doadores sem dar tempo para o boro e o fósforo já implantados difundirem. É a esse produto "temperatura × tempo" que a indústria chama de **orçamento térmico** <Cite id="tokuda-1989" />.
 
 <DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Dois gráficos de temperatura por tempo: à esquerda, um forno que sobe a mil graus e mantém por horas; à direita, o RTP, que atinge a mesma temperatura por cerca de dez segundos, com uma faixa horizontal marcando os 450 graus onde os doadores térmicos se formam">
 Orçamento térmico. Um passo de forno se mede em horas; o RTP, em segundos. Os dois passam pela mesma faixa de temperatura, e a faixa em torno de 450 °C, marcada em laranja, é justamente onde o oxigênio do Czochralski monta os doadores térmicos. Desenho do autor, a partir de Tokuda et al. (1989) e Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
@@ -147,7 +159,7 @@ Orçamento térmico. Um passo de forno se mede em horas; o RTP, em segundos. Os 
 
 ## Polimento químico-mecânico (CMP)
 
-O **CMP** <Cite id="runnels-1994" /> é crítico para [fotolitografia](/fotolitografia). O wafer é pressionado contra almofada rotativa com suspensão alcalina de nanopartículas de sílica: oxidação química suave e remoção mecânica do óxido geram superfície espelhada com rugosidade sub-nanométrica.
+O **CMP** <Cite id="runnels-1994" /> é o que permite à fotolitografia imprimir camada após camada sem perder foco. O wafer é pressionado contra almofada rotativa com suspensão alcalina de nanopartículas de sílica: oxidação química suave e remoção mecânica do óxido geram superfície espelhada com rugosidade sub-nanométrica.
 
 A almofada não trabalha sozinha: ela é recondicionada continuamente por um disco abrasivo, que reabre os poros entupidos pelo material removido e mantém a taxa de remoção estável ao longo de milhares de wafers.
 
@@ -170,7 +182,7 @@ Limpeza padronizada **RCA** <Cite id="kern-1990" />:
 A bancada úmida (*wet bench*) onde ataques e limpezas acontecem: tanques com químicos, exaustão e enxágue em cascata. KristianMolhave, <a href="https://commons.wikimedia.org/wiki/File:WetEtchBench.jpg" target="_blank" rel="noopener noreferrer">WetEtchBench</a> (CC BY 2.5), Wikimedia Commons.
 </DiagramFigure>
 
-Após secagem Marangoni ou IPA, os wafers passam por metrologia óptica (**Laser Surface Scanning System**, espalhamento de feixe laser) para detecção de defeitos de superfície e contagem de partículas. Por fim, wafers que precisam de camadas especiais passam por **crescimento epitaxial (EPI Growing)** por **CVD** antes de serem embalados a vácuo sob atmosfera limpa (**cleanroom** classe 1/10) para envio às **fabs** (fundições de semicondutores).
+Após secagem Marangoni ou álcool isopropílico (IPA), os wafers passam por metrologia óptica (**Laser Surface Scanning System**, espalhamento de feixe laser) para detecção de defeitos de superfície e contagem de partículas. Por fim, wafers que precisam de camadas especiais passam por **crescimento epitaxial (EPI)** por **deposição química de vapor (CVD)** antes de serem embalados a vácuo sob atmosfera limpa (**cleanroom** classe 1/10) para envio às **fabs** (fábricas de semicondutores).
 
 ## Wafers solares: o outro produto da mesma cadeia
 
@@ -192,9 +204,9 @@ Já o **Czochralski**, descrito acima, é um processo em batelada que leva cerca
 
 ### Espessura: onde a fotovoltaica se separa
 
-Aqui está a diferença mais visível. Para extrair a potência elétrica, bastam cerca de **100 µm de silício**: a luz não precisa de mais material que isso <Cite id="saimm" />. Na prática, a indústria fotovoltaica trabalha com lâminas **abaixo de 200 µm** <Cite id="saimm" /> (e o padrão de 2023 já era de **150 µm** para lâminas monocristalinas do tipo p, com as do tipo n cerca de **5 a 10 µm mais finas** <Cite id="itrpv-2024" />), contra os **700 a 800 µm** típicos dos wafers de fab.
+Aqui está a diferença mais visível. Para extrair a potência elétrica, bastam cerca de **100 µm de silício**: a luz não precisa de mais material que isso <Cite id="saimm" />. Na prática, a indústria fotovoltaica trabalha com lâminas **abaixo de 200 µm** <Cite id="saimm" />. O padrão de 2023 já era de **150 µm** para lâminas monocristalinas do tipo p, com as do tipo n cerca de **5 a 10 µm mais finas** <Cite id="itrpv-2024" />, contra os **700 a 800 µm** típicos dos wafers de fab.
 
-Isso não é só economia de material: é economia de uma cadeia inteira. O wafer cristalino responde por **quase metade do custo final do módulo**, e a etapa de fabricação do wafer por cerca de **30%** desse custo <Cite id="saimm" />.
+A economia percorre a cadeia inteira. O wafer cristalino responde por **quase metade do custo final do módulo**, e a etapa de fabricação do wafer por cerca de **30%** desse custo <Cite id="saimm" />.
 
 ### O corte e o desperdício
 
@@ -205,6 +217,13 @@ O custo disso é o **kerf**: aproximadamente **30% do silício é perdido como s
 ### O wafer está crescendo
 
 A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padrão de **10 × 10 cm²** para **12,5 × 12,5 cm²**, **15,6 × 15,6 cm²** e os formatos atuais de **182 mm e 210 mm** de lado <Cite id="saimm" /> <Cite id="itrpv-2024" />. A força motriz é simples: célula maior significa **custo menor por watt-pico** <Cite id="saimm" />.
+
+| Parâmetro | Wafer de fab | Wafer solar |
+| --- | --- | --- |
+| Espessura | 775 µm (300 mm) <Cite id="semi-m1" /> | abaixo de 200 µm <Cite id="saimm" /> |
+| Cristal | monocristalino <Cite id="saimm" /> | mono ou multicristalino <Cite id="saimm" /> |
+| Objetivo do corte | planura <Cite id="semi-m1" /> | espessura mínima <Cite id="saimm" /> |
+| Kerf | — | cerca de 30% <Cite id="saimm" /> |
 
 <SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
 

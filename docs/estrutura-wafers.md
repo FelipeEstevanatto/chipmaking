@@ -29,19 +29,21 @@ A estrutura cúbica de diamante.
 Orientações cristalográficas (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.
 </DiagramFigure>
 
-Podemos inferir a estrutura do cristal com **DRX (difração de raios-X)** em condições controladas (amostra limpa e orientada). A **lei de Bragg** descreve a reflexão dos raios X pelos planos cristalinos e permite determinar geometria da rede, inclusive em alguns materiais parcialmente cristalinos ou filmes finos quando a resolução experimental é suficiente.
+Podemos inferir a estrutura do cristal com **DRX (difração de raios-X)** em condições controladas (amostra limpa e orientada). A **lei de Bragg** descreve a reflexão dos raios X pelos planos cristalinos e permite determinar a geometria da rede, inclusive em alguns materiais parcialmente cristalinos ou filmes finos quando a resolução experimental é suficiente.
 
 ### Índices de Miller
 
-Índices que descrevem direções e planos cristalográficos; planos podem ter propriedades **anisotrópicas** (dependentes da direção).
+Os índices de Miller descrevem direções e planos cristalográficos. As propriedades dos planos podem ser **anisotrópicas**, ou seja, dependentes da direção.
 
 <DiagramFigure src="/assets/miller-indices.svg" alt="Índices de Miller em estrutura cúbica">
 Felix Kling (DeepKling), <a href="https://commons.wikimedia.org/wiki/File:Miller_Indices_Felix_Kling.svg" target="_blank" rel="noopener noreferrer">Miller Indices</a> (CC BY 3.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
+Os planos **{100}** e **{111}** são os mais citados na prática, e o comportamento do cristal diante de um ataque químico depende de qual deles está exposto. É essa **anisotropia** que reaparece no ataque alcalino descrito em [Fabricação de wafers](/fabricacao-wafers), onde a escolha do plano rende wafers mais planos.
+
 ## Por que silício, e não germânio
 
-Os primeiros transistores não eram de silício, e sim de **germânio**, o material que Bardeen e Brattain usaram em 1947. A troca não foi preferência estética: foram três propriedades que decidiram a disputa <Cite id="ge-vs-si" />.
+Os primeiros transistores não eram de silício, e sim de **germânio**, o material que Bardeen e Brattain usaram em 1947. A troca não foi preferência estética: três propriedades decidiram a disputa <Cite id="ge-vs-si" />.
 
 A primeira é o **gap de banda**. O germânio tem 0,7 eV; o silício, 1,1 eV. Um gap estreito significa que pares elétron-buraco se formam termicamente com pouca energia, e o material passa a conduzir sozinho quando esquenta. Dispositivos de germânio perdiam controle a temperaturas modestas, enquanto os de silício operavam centenas de graus mais alto, com correntes de fuga muito menores <Cite id="ge-vs-si" />.
 
@@ -89,7 +91,11 @@ A partir de 200 mm o chanfro reto é substituído por um único **entalhe em V**
 - ângulo incluído de **90°** (+5 / −1);
 - eixo alinhado a **&lt;110&gt;**, com tolerância de **±1°**.
 
-Esse é todo o conteúdo informacional do notch: **orientação**. A norma também define wafers de 200 mm *com* flat, e nesse caso eles vêm explicitamente **sem** fiducial secundário <Cite id="semi-m1" />. Ou seja: a partir de 200 mm a borda deixa de dizer se o wafer é **P** ou **N**. Essa informação passa a vir do certificado do lote ou da **marcação a laser no verso** (formato **SEMI T7**, com campo opcional **A/N**) <Cite id="semi-t7" />.
+::: warning
+A partir de 200 mm a borda deixa de dizer se o wafer é **P** ou **N**. Essa informação passa a vir do certificado do lote ou da **marcação a laser no verso** (formato **SEMI T7**, com campo opcional **A/N**) <Cite id="semi-t7" />.
+:::
+
+Esse é todo o conteúdo informacional do notch: **orientação**. A norma também define wafers de 200 mm *com* flat, e nesse caso eles vêm explicitamente **sem** fiducial secundário <Cite id="semi-m1" />.
 
 ### O que o diâmetro informa
 
@@ -123,7 +129,7 @@ Um wafer **virgem** e polido é um espelho cinza. Um wafer que já passou pela l
 
 A oferta de wafers é muito concentrada, e a maior parte da capacidade líder está no Japão. Na pesquisa anual de participação de mercado da Nikkei, a **Shin-Etsu** aparece em primeiro com **26,3%** e a **SUMCO** em segundo com **17,8%**, **44,1%** somados, à frente dos fornecedores seguintes <Cite id="nikkei-wafer-share" />.
 
-Vale registrar um número que circula com frequência: que as duas teriam "60% do mercado". Os dados da pesquisa apontam para **44,1%** em unidades, e para pouco mais da metade do **volume de 300 mm** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" />, não 60%. O que não está em dúvida é a concentração: as três empresas seguintes vêm de Taiwan, Alemanha e Coreia do Sul e, somadas, chegam a **31,9%** <Cite id="nikkei-wafer-share" />. As cinco maiores respondem, portanto, por cerca de **três quartos** de tudo.
+Circula com frequência que as duas teriam "60% do mercado". Os dados da pesquisa apontam para **44,1%** em unidades, e para pouco mais da metade do **volume de 300 mm** <Cite id="nikkei-wafer-share" /> <Cite id="wafer-market" />, não 60%. O que não está em dúvida é a concentração: as três empresas seguintes vêm de Taiwan, Alemanha e Coreia do Sul e, somadas, chegam a **31,9%** <Cite id="nikkei-wafer-share" />. As cinco maiores respondem, portanto, por cerca de **três quartos** de tudo.
 
 Não há espaço real para um entrante novo, e as barreiras se acumulam há décadas: o cristal é difícil de puxar, a especificação é implacável e a qualificação de um fornecedor por uma fab leva anos.
 
@@ -131,22 +137,23 @@ A geografia é igualmente reveladora. A maior parte dessa capacidade está no **
 
 ## Dopagem
 
-A dopagem introduz impurezas intencionais em semicondutor **intrínseco** (sem dopagem intencional) para modular propriedades elétricas, ópticas ou estruturais, gerando semicondutor **extrínseco**.
+A dopagem introduz impurezas intencionais num semicondutor **intrínseco** (sem dopagem intencional), para modular propriedades elétricas, ópticas ou estruturais, e gera um semicondutor **extrínseco**.
 
-- **Dopagem leve:** ~1 átomo dopante por 100 milhões de átomos.
-- **Dopagem pesada:** ~1 por 10 mil átomos.
+- **Dopagem leve:** ~1 átomo dopante por 100 milhões de átomos (aproximação).
+- **Dopagem pesada:** ~1 por 10 mil átomos (aproximação).
 
 Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) está **compensado** (comportamento próximo ao intrínseco em equilíbrio térmico).
 
-Há um caso em que a escolha do dopante deixa de ser detalhe de processo e passa a decidir a confiabilidade do produto: na fotovoltaica, o boro reage com o oxigênio do silício Cz e degrada a célula sob iluminação, o que levou a indústria a substituí-lo pelo **gálio**, assunto tratado no capítulo de [células e módulos solares](/celulas-solares).
+Há um caso em que a escolha do dopante deixa de ser detalhe de processo e passa a decidir a confiabilidade do produto. Na fotovoltaica, o boro reage com o oxigênio do silício Cz e degrada a célula sob iluminação, o que levou a indústria a substituí-lo pelo **gálio**, assunto tratado no capítulo de [células e módulos solares](/celulas-solares) e em [Confiabilidade](/confiabilidade#por-que-isso-e-uma-historia-de-materiais).
 
 <DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Silício intrínseco, dopagem tipo P (B) e tipo N (Sb)">
 Tipo P: buraco (<em>void</em>) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb). VectorVoyager, <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG da Wikimedia Commons.
 </DiagramFigure>
 
-<SourceNote :ids="['ge-vs-si', 'semi-m1', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />
+<SourceNote :ids="['ge-vs-si', 'semi-m1', 'semi-t7', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />
 
 <SeeAlso :links="[
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'orientação &lt;100&gt; / &lt;111&gt; no CZ' },
   { text: 'Transistores', href: '/transistores', note: 'dopagem e implantação iônica' },
+  { text: 'Confiabilidade', href: '/confiabilidade', note: 'o desgaste que começa no material' },
 ]" />

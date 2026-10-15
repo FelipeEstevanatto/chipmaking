@@ -22,6 +22,8 @@ The rest of the page follows that order.
 
 ## The element's data card
 
+The constants below are the ones the industry does not choose, and three of them decide entire processes: density, thermal conductivity and the gap.
+
 | Quantity | Value |
 | --- | --- |
 | Atomic number | **14** (group 14, period 3) |
@@ -42,11 +44,17 @@ The rest of the page follows that order.
 
 ## The lattice silicon forms
 
-The data card describes an arrangement, not a lone atom: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the four bonds industry builds with it: carbon, germanium, oxygen and nitrogen. Drag to rotate, and use the extent control to repeat more cells; the occupancy panel beside it shows how much of one unit cell is matter and how much is void.
+The data card describes an arrangement, not a lone atom: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the four bonds industry builds with it: carbon, germanium, oxygen and nitrogen. Drag to rotate, use the arrow keys to rotate without a mouse and the extent control to repeat more cells; the occupancy panel, which on a phone appears below the drawing, shows how much of one unit cell is matter and how much is void.
 
 <ClientOnly>
   <CrystalViewer />
 </ClientOnly>
+
+With carbon, it forms the silicon carbide of power devices; with germanium, the alloy that strains the channel; with oxygen, the quartz that opens the chain; with nitrogen, the nitride that masks and coats.
+
+::: info
+The lattice is to scale. In the main view the atoms are drawn at 72% of their covalent radius; in the unit cell they are at true size.
+:::
 
 The crystal continues in [Crystal structure](/en/estrutura-wafers), where the same lattice explains the Miller indices and the anisotropy of the planes.
 
@@ -54,7 +62,7 @@ Three of the numbers in the card have industrial consequences.
 
 The first is density. Solid silicon is **less dense than its own melt**, 2.33 against about 2.57 g/cm³. Almost every material shrinks as it solidifies; silicon **expands**. That is why the crystal grows floating on the melt in the [Czochralski](/en/fabricacao-wafers) process rather than sinking into it <Cite id="zulehner-2000" />.
 
-The second is thermal conductivity. **148 W/(m·K)** is a metal's number, not an insulator's, and it is one of the reasons silicon remains the substrate of choice even when another material could do the electrical job: it also does the job of carrying heat away <Cite id="elem-ioffe" />.
+The second is thermal conductivity. **148 W/(m·K)** is in a metal's range, and it is one of the reasons silicon remains the substrate of choice even when another material could do the electrical job: it also carries heat away <Cite id="elem-ioffe" />.
 
 The third is the gap.
 
@@ -88,7 +96,7 @@ For the industry the practical consequence is different. That **~4.7% of ²⁹Si
 
 ## Why the industry uses this element
 
-- It is the **second most abundant** element in the Earth's crust, which keeps the feedstock cheap <Cite id="saimm" />.
+- It is the **second most abundant element** in the Earth's crust, which keeps the feedstock cheap <Cite id="saimm" />.
 - It forms a stable, insulating, water-insoluble **native oxide**, which serves as a mask and as a gate dielectric, something germanium does not do <Cite id="ge-vs-si" />.
 - And its **melting point**, 1414 °C, is within reach of ordinary metallurgy, which allows it to be reduced in electric furnaces before any fine chemistry <Cite id="saimm" />.
 
@@ -100,5 +108,6 @@ None of those properties is the best possible on its own. It is the combination,
   { text: 'Crystal structure', href: '/en/estrutura-wafers', note: 'the diamond cubic lattice and doping' },
   { text: 'Beyond silicon', href: '/en/alem-do-silicio', note: 'SiC, GaN and the other jobs of silicon' },
   { text: 'Solar cells and modules', href: '/en/celulas-solares', note: 'why the indirect gap makes absorption expensive' },
+  { text: 'Introduction', href: '/en/introducao', note: 'the market and the two purities' },
   { text: 'References', href: '/en/referencias', note: 'numbered list' },
 ]" />

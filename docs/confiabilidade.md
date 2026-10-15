@@ -48,9 +48,9 @@ O desgaste de um chip é química e física de interface, lento e **cumulativo**
 | Mecanismo | Motor físico | Assinatura observável | Tecnologia mais afetada |
 | --- | --- | --- | --- |
 | NBTI / PBTI | Armadilhas de interface geradas sob polarização de porta e temperatura | Deslocamento da tensão de limiar, com recuperação parcial | CMOS de óxido fino (porta) |
-| HCI | Portadores quentes perto do dreno, injetados no óxido | Degradação do ganho e da corrente de saturação | nMOS de canal curto |
+| HCI (*hot carrier injection*) | Portadores quentes perto do dreno, injetados no óxido | Degradação do ganho e da corrente de saturação | nMOS de canal curto |
 | TDDB | Acúmulo de defeitos no dielétrico sob campo elétrico | Fuga crescente até a ruptura súbita | Óxido de porta e dielétricos finos |
-| Eletromigração | Transferência de momento dos elétrons para os átomos do metal | Vazio (*open*) e montículo (*short*) no fio | Interconexão do BEOL, vias e *bumps* |
+| Eletromigração | Transferência de momento dos elétrons para os átomos do metal | Vazio (*open*) e montículo (*short*) no fio | Interconexão do BEOL (*back end of line*), vias e *bumps* |
 | Erros suaves | Deposição de carga por uma partícula energética | Bit invertido de forma transitória, não destrutiva | SRAM, DRAM e lógica |
 | ESD / EOS | Descarga eletrostática ou sobretensão elétrica | Ruptura súbita de óxido ou de junção | Entradas e saídas (*I/O*) |
 
@@ -82,19 +82,23 @@ $$
 \mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right)
 $$
 
-onde $J$ é a densidade de corrente e $T$ é a temperatura <Cite id="rel-black-1969" />. O expoente $n$ fica tipicamente perto de **2** para o alumínio, e a energia de ativação $E_a$ depende do metal e do caminho de difusão, na casa de **0,5 a 0,7 eV** para o alumínio e **0,8 a 1,0 eV** para o cobre <Cite id="rel-jep122" />.
+onde $J$ é a densidade de corrente e $T$ é a temperatura <Cite id="rel-black-1969" />. O expoente $n$ fica tipicamente perto de **2** para o alumínio. A energia de ativação $E_a$ depende do metal e do caminho de difusão: na casa de **0,5 a 0,7 eV** para o alumínio e **0,8 a 1,0 eV** para o cobre <Cite id="rel-jep122" />.
 
-Vale desconfiar de qualquer $n$ ou $E_a$ apresentado como constante universal: o próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até **1,4 eV**, com **0,7 eV** como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />. O que se sustenta é a **direção**: dobrar $J$ encolhe a vida muito mais que dobrar a temperatura ambiente, e é por isso que a troca do alumínio pelo cobre, em **1997**, foi tão importante <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
+::: warning Não trate $n$ ou $E_a$ como constante universal
+O próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até **1,4 eV**, com **0,7 eV** como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />.
+:::
+
+O que se sustenta é a **direção**: a vida cai depressa com a corrente, na $n$-ésima potência, e exponencialmente com a temperatura, e é essa sensibilidade que fez a troca do alumínio pelo cobre, em **1997**, importar tanto <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
 
 <DiagramFigure src="/assets/wearout-mechanisms.svg" alt="Quatro cortes esquemáticos de um MOSFET, um por mecanismo de desgaste: armadilhas na interface óxido-silício que deslocam a tensão de limiar, portadores quentes injetados no óxido perto do dreno, um filamento condutor que atravessa o óxido de porta e a eletromigração num fio de cobre, com um vazio a montante e um montículo a jusante">
-Os quatro mecanismos de desgaste em corte: armadilhas na interface que deslocam a tensão de limiar <Cite id="rel-schroder-2003" />, portadores quentes que saltam para o óxido perto do dreno <Cite id="rel-hu-1985" />, o filamento condutor que rompe o óxido de porta <Cite id="rel-mcpherson-2012" /> e a eletromigração que abre um vazio e ergue um montículo no fio de cobre <Cite id="rel-black-1969" />. Desenho do autor.
+Os quatro mecanismos de desgaste em corte. As armadilhas na interface deslocam a tensão de limiar <Cite id="rel-schroder-2003" /> e os portadores quentes saltam para o óxido perto do dreno <Cite id="rel-hu-1985" />. O filamento condutor rompe o óxido de porta <Cite id="rel-mcpherson-2012" />, e a eletromigração abre um vazio e ergue um montículo no fio de cobre <Cite id="rel-black-1969" />. Desenho do autor.
 </DiagramFigure>
 
 ## Quantificar a falha
 
 Para comparar componentes, a indústria precisou de uma unidade comum. É o **FIT** (*failure in time*), definido como **uma falha por 10⁹ horas-dispositivo**, e cujo cálculo é padronizado pela JEDEC na JESD85A <Cite id="rel-jesd85a" />.
 
-A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de **11 anos** de operação contínua, e dez anos de calendário somam **87.600 h** (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar a taxa de um único componente com todo o parque instalado de um cliente.
+A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de **11 anos** de operação contínua, e dez anos de calendário somam **87.600 h** (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar a taxa de um único componente com toda a base instalada de um cliente.
 
 Essas metas variam por mercado. A AEC-Q100 demonstra o método com um perfil automotivo de **15 anos** (**12.000 h** de operação dentro de **131.400 h** de calendário) <Cite id="rel-aec-q100" />. O horizonte de vida útil que se assume para um componente costuma ser contado em **uma década** <Cite id="rel-jep122" />; os dois números convivem porque medem coisas diferentes, tempo ligado de um lado e tempo de calendário do outro.
 
@@ -114,7 +118,7 @@ Como a probabilidade cresce com o número de bits expostos, a métrica natural �
 
 ## Qualificação
 
-"Confiável" não é uma opinião; é um conjunto de ensaios que o fornecedor precisa passar antes de vender. A JEDEC publica os métodos, inclusive como calcular e declarar a taxa de falhas em FIT, na JESD85A <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
+"Confiável" não é uma opinião; é um conjunto de ensaios que o fornecedor precisa passar antes de vender. A JEDEC publica os métodos na JESD85A, inclusive como calcular e declarar a taxa de falhas em FIT <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
 
 O regime **automotivo** é mais duro que o de consumo, e a AEC-Q100 é o documento que o define: componentes que atendem às suas especificações são considerados adequados ao ambiente automotivo severo **sem qualificação adicional em nível de componente** <Cite id="rel-aec-q100" />. O eixo da dureza é a **temperatura de operação**, dividida em graus:
 
@@ -127,7 +131,7 @@ O regime **automotivo** é mais duro que o de consumo, e a AEC-Q100 é o documen
 
 <Cite id="rel-aec-q100" />
 
-Um teste de vida em operação (**HTOL**) no grau 0 estressa o dispositivo a **+150 °C** por **1.000 h** <Cite id="rel-aec-q100" />. É por isso que o automotivo é outro regime: ele exige que o silício sobreviva a uma janela térmica e a um tempo de missão que o consumidor nunca vê, e a qualificação lista explicitamente os mecanismos que precisam ser cobertos: **eletromigração, TDDB, injeção de portadores quentes, instabilidade de polarização e temperatura e migração por tensão** <Cite id="rel-aec-q100" />.
+Um teste de vida em operação em alta temperatura (**HTOL**, *high-temperature operating life*) no grau 0 estressa o dispositivo a **+150 °C** por **1.000 h** <Cite id="rel-aec-q100" />. É por isso que o automotivo é outro regime. Ele exige que o silício sobreviva a uma janela térmica e a um tempo de missão que o consumidor nunca vê, e a qualificação lista explicitamente os mecanismos a cobrir: **eletromigração, TDDB, injeção de portadores quentes, instabilidade de polarização e temperatura e migração por tensão** <Cite id="rel-aec-q100" />.
 
 ## Por que isso é uma história de materiais
 

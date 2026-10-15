@@ -22,6 +22,8 @@ O resto da página segue essa ordem.
 
 ## A ficha do elemento
 
+As constantes abaixo são as que a indústria não escolhe, e três delas decidem processos inteiros: a densidade, a condutividade térmica e o gap.
+
 | Grandeza | Valor |
 | --- | --- |
 | Número atômico | **14** (grupo 14, período 3) |
@@ -42,11 +44,17 @@ O resto da página segue essa ordem.
 
 ## A rede que o silício forma
 
-A ficha descreve um arranjo, não um átomo solto: cada silício se liga a quatro vizinhos e a rede repete esse tetraedro em todas as direções. O visualizador abaixo desenha esse arranjo, junto com as quatro ligações que a indústria constrói com ele: carbono, germânio, oxigênio e nitrogênio. Arraste para girar e use o controle de extensão para repetir mais células; o quadro da ocupação, ao lado, mostra quanto de uma célula unitária é matéria e quanto é vazio.
+A ficha descreve um arranjo, não um átomo solto: cada silício se liga a quatro vizinhos e a rede repete esse tetraedro em todas as direções. O visualizador abaixo desenha esse arranjo, junto com as quatro ligações que a indústria constrói com ele: carbono, germânio, oxigênio e nitrogênio. Arraste para girar, use as setas do teclado para girar sem mouse e o controle de extensão para repetir mais células; o painel de ocupação, que no celular aparece abaixo do desenho, mostra quanto de uma célula unitária é matéria e quanto é vazio.
 
 <ClientOnly>
   <CrystalViewer />
 </ClientOnly>
+
+Com carbono, forma o carbeto de silício dos dispositivos de potência; com germânio, a liga que estica o canal; com oxigênio, o quartzo que abre a cadeia; com nitrogênio, o nitreto que mascara e reveste.
+
+::: info
+A rede está em escala. Na estrutura principal os átomos são desenhados a 72% do raio covalente; na célula unitária, no tamanho real.
+:::
 
 O cristal continua em [Estrutura e tipos de wafer](/estrutura-wafers), onde essa mesma rede explica os índices de Miller e a anisotropia dos planos.
 
@@ -54,7 +62,7 @@ Três dos números da ficha têm consequência industrial.
 
 A primeira é a densidade. O silício sólido é **menos denso que o próprio fundido**, 2,33 contra cerca de 2,57 g/cm³. Quase todo material encolhe ao solidificar; o silício **expande**. É por isso que o cristal cresce flutuando sobre o banho no [Czochralski](/fabricacao-wafers), e não afundando nele <Cite id="zulehner-2000" />.
 
-A segunda é a condutividade térmica. **148 W/(m·K)** é um valor de metal, não de isolante, e é uma das razões pelas quais o silício continua sendo o substrato preferido mesmo quando outro material poderia fazer o trabalho elétrico: ele também faz o trabalho de tirar o calor <Cite id="elem-ioffe" />.
+A segunda é a condutividade térmica. **148 W/(m·K)** está na faixa de um metal, e é uma das razões pelas quais o silício continua o substrato preferido mesmo quando outro material poderia fazer o trabalho elétrico: ele também tira o calor <Cite id="elem-ioffe" />.
 
 A terceira é o gap.
 
@@ -78,9 +86,9 @@ O silício natural é uma mistura de três isótopos estáveis, e a proporção 
 
 | Isótopo | Abundância |
 | --- | --- |
-| ²⁸Si | **92,19% a 92,32%** |
-| ²⁹Si | **4,65% a 4,70%** |
-| ³⁰Si | **3,04% a 3,11%** |
+| ²⁸Si | **92,19 % a 92,32 %** |
+| ²⁹Si | **4,65 % a 4,70 %** |
+| ³⁰Si | **3,04 % a 3,11 %** |
 
 A variação é pequena, mas não nula, e é medida com precisão suficiente para virar ferramenta: a razão entre isótopos de silício num sedimento conta a história do clima em que ele se formou <Cite id="elem-ciaaw" />.
 
@@ -88,7 +96,7 @@ Para a indústria, a consequência prática é outra. Os **~4,7% de ²⁹Si** n�
 
 ## Por que a indústria usa este elemento
 
-- Ele é o **segundo mais abundante** da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
+- Ele é o **segundo elemento mais abundante** da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
 - Ele forma um **óxido nativo** estável, isolante e insolúvel em água, que serve de máscara e de dielétrico de porta, o que o germânio não faz <Cite id="ge-vs-si" />.
 - E ele tem uma **temperatura de fusão** que a metalurgia comum alcança, 1414 °C, o que permite reduzi-lo em fornos elétricos antes de qualquer química fina <Cite id="saimm" />.
 
@@ -100,5 +108,6 @@ Nenhuma dessas propriedades é a melhor possível isoladamente. É a combinaçã
   { text: 'Estrutura e tipos de wafer', href: '/estrutura-wafers', note: 'a rede cúbica de diamante e a dopagem' },
   { text: 'Além do silício', href: '/alem-do-silicio', note: 'SiC, GaN e as outras funções do silício' },
   { text: 'Células e módulos solares', href: '/celulas-solares', note: 'por que o gap indireto encarece a absorção' },
+  { text: 'Introdução', href: '/introducao', note: 'o mercado e as duas purezas' },
   { text: 'Referências', href: '/referencias', note: 'lista numerada' },
 ]" />

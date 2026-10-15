@@ -42,7 +42,13 @@ The manufacturing sequence therefore runs: **fab → wafer test → packaging �
 
 Every product needs its own card. It is a set of needles or springs positioned exactly over the die's pads, and a card "may have literally a couple of thousand probes", which makes it complex and expensive to create <Cite id="cadence-kgd" />.
 
-That imposes a practical limitation which often surprises: wafer test **is not the same** as final test. The card has different electrical characteristics from the package and often **cannot run at the product's operating speed** <Cite id="cadence-kgd" />. Wafer test is a coarse sieve, not the definitive measurement.
+That imposes a practical limitation which often surprises.
+
+::: warning
+Wafer test **is not the same** as final test. The card has different electrical characteristics from the package and often **cannot run at the product's operating speed** <Cite id="cadence-kgd" />.
+:::
+
+Wafer test is a coarse sieve, not the definitive measurement.
 
 ### The known good die problem
 
@@ -88,11 +94,11 @@ The alternatives fall into three families:
 - ***Laser grooving* + plasma**: the laser opens a narrow groove and the plasma deepens and separates it, with widths **below 10 µm** and clean edges <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separates by plasma **before** thinning, which reduces contamination and cracking <Cite id="pdbg-dicing" />.
 
-A classic study showed that **mechanical grinding** creates weak regions where chip strength falls **30 to 35%** below the wafer average. Two interventions improved this dramatically: **halving the grinding speed raised average chip strength by 56%**, and **deliberately blunting a new saw blade raised strength five-fold** <Cite id="ieee-die-strength" />. Dicing is not the end of a process; it is the beginning of the product's mechanical reliability.
+A classic study showed that **mechanical grinding** creates weak regions where chip strength falls **30 to 35%** below the wafer average. Two interventions changed the picture: **halving the grinding speed raised average chip strength by 56%**, and **deliberately blunting a new saw blade raised strength five-fold** <Cite id="ieee-die-strength" />. Dicing defines the product's mechanical reliability.
 
 ## Wire bonding: the technology that assembles 80% of the world
 
-There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: **more than 80% of semiconductor packages** are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the same level, adding an uncomfortable detail: about **one quarter to one third of package failures** come precisely from the wire bond <Cite id="pmc-bonding-wire" />.
+There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: **more than 80% of semiconductor packages** are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the level, with about **one quarter to one third of package failures** coming from the wire bond itself <Cite id="pmc-bonding-wire" />.
 
 The principle is what the figure shows: the die sits **face up**, and extremely fine wires run from the pads on its **periphery** down to the substrate. Each wire is an electrical connection, and there are two kinds of tip: the **ball bond**, in which a ball of wire is melted and pressed onto the pad, and the **wedge bond**, in which the wire is crushed sideways. The latter produces lower loops, which matters at radio frequencies <Cite id="inseto-wire-guide" />.
 
@@ -132,7 +138,7 @@ The formal description of the C4 process is by **L. F. Miller**, in 1969, and US
 
 ### From C4 to the copper pillar
 
-Solder bumps have a scale limit. Standard C4 operates at **130 to 250 µm** pitches, and below about **130 µm** there is simply no lateral room left: with a bump height of ~70 µm, neighbouring solders touch and short-circuit <Cite id="semieng-flipchip-bumps" />.
+Solder bumps have a scale limit. Standard C4 operates at **130 to 250 µm** pitches, and below about **130 µm** there is no lateral room left: with a bump height of ~70 µm, neighbouring solders touch and short-circuit <Cite id="semieng-flipchip-bumps" />.
 
 The answer was the **copper pillar**: instead of a flattened ball, a copper cylinder with a solder cap. IBM patented the technology in **2001**; Intel used it in 65 nm processors in **2006**, citing better electromigration resistance, better thermal conduction and higher contact density <Cite id="synopsys-cu-pillar" />. The pillar is used **below a 130 µm pitch**, typically with **~40 µm of copper and ~25 µm of solder**, and microbumps are **under 10 µm tall** <Cite id="semieng-flipchip-bumps" />.
 
@@ -146,7 +152,7 @@ The road of advanced packaging is a single metric going down: the distance betwe
 
 ### 2.5D: chips side by side
 
-In **2.5D** integration, the dies sit **side by side** on an intermediate piece called an **interposer**, usually made of silicon. An important detail: only the **interposers** need vias running through the silicon, not the chips, which allows existing die designs to be reused <Cite id="fue-packaging-roadmap" />.
+In **2.5D** integration, the dies sit **side by side** on an intermediate piece called an **interposer**, usually made of silicon. Only the **interposers need vias running through the silicon**, not the chips, which allows existing die designs to be reused <Cite id="fue-packaging-roadmap" />.
 
 TSMC calls its 2.5D platform **CoWoS** (*chip on wafer on substrate*), and it has been in production **since 2012** <Cite id="tsmc-cowos" />. There are now three variants worth distinguishing:
 
@@ -202,7 +208,7 @@ That is where **2.5D** integration, described above, comes in. The silicon inter
 
 None of this is free, and the cost shows up in density. The TSVs, which must pass through every die in the stack, occupy **area that stores nothing**. SemiAnalysis's comparison using SK hynix figures is blunt: a D1z DDR4 die delivers **0.296 Gb/mm²**, while an HBM3 die delivers **0.16 Gb/mm²**, **85% denser** in the DDR4 case <Cite id="semianalysis-hbm" />.
 
-In other words: the fastest memory in the world is also the **least dense**. The industry accepts the trade-off because, in AI systems, bandwidth constrains performance more than capacity does, and an accelerator without enough bandwidth leaves compute units **idle** <Cite id="semianalysis-hbm" />.
+The fastest memory in the world is also the **least dense**. The industry accepts the trade-off because, in AI systems, bandwidth constrains performance more than capacity does, and an accelerator without enough bandwidth leaves compute units **idle** <Cite id="semianalysis-hbm" />.
 
 ## Chiplets: dividing in order to yield
 
@@ -216,7 +222,7 @@ Every defect kills an entire die. The larger the die, the more defects it runs i
 
 The alternative is to **split the product into smaller chips**. Instead of one large monolithic die, several *chiplets* are fabricated and then assembled together in the same package, communicating over fast interconnects rather than internal wiring.
 
-AMD's arithmetic, presented at Hot Chips 2017, is the classic example. Replacing a hypothetical **777 mm²** monolithic die with **four 213 mm² dies** (totalling **852 mm²**, that is, about **10% more silicon**) produced a cost of roughly **0.59 times** the monolithic one <Cite id="amd-chiplet-economics" />. More total area, **41% less cost**.
+AMD's arithmetic, presented at Hot Chips 2017, is the classic example. Replacing a hypothetical **777 mm²** monolithic die with **four 213 mm² dies** (totalling **852 mm²**, that is, about **10% more silicon**) produced a cost of roughly **0.59 times** the monolithic one <Cite id="amd-chiplet-economics" />. The result is more total area and **41% less cost**.
 
 The reason is exactly the one in the figure: the four small dies each yield much better individually, and only the working ones go on to assembly.
 
@@ -250,7 +256,7 @@ It runs on two axes. The first is **frequency**: how much the chip holds within 
 
 #### Frequency: the same die, two prices
 
-The **Core i7-8700K and Core i7-8086K** pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, $75 more than the 8700K <Cite id="tomshardware-8086k" />.
+The **Core i7-8700K and Core i7-8086K** pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, US\$75 more than the 8700K <Cite id="tomshardware-8086k" />.
 
 **Silicon Lottery** bought processors at retail, measured every unit before reselling it, and published the distribution. In the 8700K batch, 17% of units reached 5.2 GHz; in the 8086K batch, **none** fell below 5.0 GHz <Cite id="siliconlottery-stats" />.
 
@@ -266,7 +272,9 @@ The second axis is **harvesting**. A chip with one defective block is sold with 
 
 The case that went furthest is Nvidia's **GF100** in 2010: 3 billion transistors on about 530 mm², on TSMC's then-new 40 nm node. No board ever shipped with the full chip: the **GTX 480** carried only 480 of the 512 cores, with one of the 16 shader clusters fused off, the GTX 470 came with 448 and the GTX 465 with 352 <Cite id="wikipedia-gf100" />.
 
-SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock side, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />. That chip only arrived with the **GF110**, a redesigned GF100, at the end of that year <Cite id="wikipedia-gf100" />.
+SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />.
+
+That chip only arrived with the **GF110**, a redesigned GF100, at the end of that year <Cite id="wikipedia-gf100" />.
 
 Not every disabled block is a defect. In one batch of **Radeon RX 460**, 128 cores present on the die were disabled and came back with a BIOS swap, about 14% more cores; the risk is that the chip was disabled for a defect, in which case the picture comes out with artifacts <Cite id="extremetech-rx460" />.
 
@@ -291,5 +299,7 @@ A bottleneck that is small in value can be large in consequence. That is what ha
   { text: 'Photolithography', href: '/en/fotolitografia', note: 'the reticle limit' },
   { text: 'Transistor evolution', href: '/en/transistores', note: 'what is inside the die' },
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: 'thickness and thinning' },
+  { text: 'Data and numbers', href: '/en/dados', note: 'the series and the data files' },
+  { text: 'Reliability', href: '/en/confiabilidade' },
   { text: 'References', href: '/en/referencias', note: 'numbered list' },
 ]" />

@@ -21,7 +21,7 @@ The text follows that order.
 
 ## Crystal growth (Czochralski, CZ)
 
-The **Czochralski** method is the dominant industrial standard <Cite id="zulehner-2000" />. Pieces of ultra-high-purity polysilicon are placed in a highly purified quartz crucible, inside a vacuum furnace under inert argon. The material is melted at about **1414 °C**. A crystallographically oriented seed crystal (usually &lt;100&gt; or &lt;111&gt;) is dipped into the surface of the molten silicon and slowly pulled upwards while rotating in the opposite direction to the crucible. By controlling the pull rate and temperature precisely, a cylindrical monocrystalline ingot (**boule**) is formed with diameters of **200 mm** or **300 mm** and a length greater than **1 m**.
+The **Czochralski** method is the dominant industrial standard <Cite id="zulehner-2000" />. Pieces of ultra-high-purity polysilicon are loaded into a quartz crucible of high purity and melted under vacuum, in inert argon. The material is melted at about **1414 °C**. A crystallographically oriented seed crystal (usually &lt;100&gt; or &lt;111&gt;) is dipped into the surface of the molten silicon and slowly pulled upwards while rotating in the opposite direction to the crucible. By controlling the pull rate and temperature precisely, a cylindrical monocrystalline ingot (**boule**) is formed with diameters of **200 mm** or **300 mm** and a length greater than **1 m**.
 
 That purity comes from before the melt. The material entering the crucible was not filtered or re-melted into purity: it is the product of the **trichlorosilane distillation** described in [Purification & polysilicon](/en/polissilicio) <Cite id="wikipedia-tcs" />. It arrives already at **9N to 11N**, and what the pulling does from there is **redistribute** the few dopants that remain, according to each one's segregation coefficient <Cite id="saimm" />.
 
@@ -95,6 +95,10 @@ A monocrystalline ingot (*boule*) and silicon rods. Sebastian Wallroth, <a href=
 
 ## Wafer slicing
 
+::: warning
+A 300 mm slice leaves the saw **thicker than the 775 µm of the final spec** and will *lose* material in lapping and polishing precisely to guarantee parallelism and the absence of subsurface damage <Cite id="semi-m1" />.
+:::
+
 The ground ingot is **divided into blocks** and sliced using **diamond wire saws (DWS)** <Cite id="moller-2012" />. A parallel set of steel wires coated with diamond microparticles moves at very high speed under controlled tension, cutting hundreds of wafers simultaneously, maximising yield and reducing **kerf** loss.
 
 ### From the inner-diameter saw to diamond wire
@@ -107,11 +111,19 @@ The turning point came with the **multi-wire saw**. At first the wire cut nothin
 
 The third stage is under way. With **diamond wire**, the abrasive leaves the slurry and becomes **fixed to the wire itself**, steel coated with diamond. Throughput rises, kerf falls, the slice can be thinner, and the process does away with SiC slurry in favour of a water-based cutting fluid with a far smaller environmental footprint. In exchange, the wire costs more, breaks more easily and demands careful cleaning <Cite id="pv-tech-dws" />.
 
-For fab wafers, the goal of slicing is not minimum thickness: it is **flatness**. A 300 mm slice leaves the saw **thicker than the 775 µm of the final spec** and will *lose* material in lapping and polishing precisely to guarantee parallelism and the absence of subsurface damage <Cite id="semi-m1" />. It is in photovoltaics, which accepts slices about four to five times thinner, that kerf becomes the decisive economic variable, as seen in [Solar wafers](#solar-wafers-the-other-product-of-the-same-chain).
+For fab wafers, the goal of slicing is **flatness**. It is in photovoltaics, which accepts slices about four to five times thinner, that kerf becomes the decisive economic variable, as seen in [Solar wafers](#solar-wafers-the-other-product-of-the-same-chain).
+
+| Technology | Abrasive | Wafers per cut | Kerf loss |
+| --- | --- | --- | --- |
+| Inner-diameter (ID) saw | abrasive on the inner face of a ring <Cite id="pv-tech-dws" /> | one <Cite id="pv-tech-dws" /> | — |
+| SiC slurry wire | silicon carbide in mineral oil <Cite id="pv-tech-dws" /> | the whole ingot at once <Cite id="pv-tech-dws" /> | about 30% <Cite id="saimm" /> |
+| Diamond wire | diamond fixed to the wire <Cite id="pv-tech-dws" /> | the whole ingot at once <Cite id="pv-tech-dws" /> | less than SiC slurry <Cite id="pv-tech-dws" /> |
 
 ## Edge profiling and lapping
 
-The edge a saw leaves behind is sharp and brittle. **Edge profiling** grinds a curved contour (a crown at the apex with a bevel on either side) so that stress spreads out instead of concentrating in a corner. Without it the edge chips during handling and transport and, worse, every crack becomes a source of particles that later return to the active surface; contouring the edge reduces exactly that chipping and also limits edge crown (excess material at the edge) and photoresist build-up at the edge during spin coating <Cite id="semi-mf928" />. On 300 mm wafers the standard asks for more: a **polished edge**, because the valleys left by grinding trap particles and even phosphorus that comes back to the surface during doping <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
+The edge a saw leaves behind is sharp and brittle. **Edge profiling** grinds a curved contour (a crown at the apex with a bevel on either side) so that stress spreads out instead of concentrating in a corner. Without it the edge chips during handling and transport and, worse, every crack becomes a source of particles that later return to the active surface.
+
+Contouring the edge reduces exactly that chipping and also limits edge crown (excess material at the edge) and photoresist build-up at the edge during spin coating <Cite id="semi-mf928" />. On 300 mm wafers the standard asks for more: a **polished edge**, because the valleys left by grinding trap particles and even phosphorus that comes back to the surface during doping <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
 
 Then comes **lapping**: a batch of wafers is pressed between two metal plates rotating in opposite directions, with an alumina slurry injected between them. Because both faces are attacked at once, the operation corrects thickness, parallelism and the waviness left by the cut <Cite id="pei-2005" />.
 
@@ -139,7 +151,7 @@ Before and after the etch, on the same depth scale (in micrometres below the ori
 
 The oxygen dissolved in a Czochralski crystal is not inert. Held for hours at around **450 °C**, it forms small clusters that donate electrons, **thermal donors**, and pull the wafer's resistivity away from the value that was wanted. The treatment exists to undo that: a rapid anneal (**RTP**, *Rapid Thermal Processing*), with lamps taking the wafer to **800–1000 °C for about 10 seconds**, annihilates the thermal donors and restores the resistivity they had shifted <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
 
-Choosing RTP over a furnace is not about temperature: it is about time. A furnace would take **hours** in the same range; in seconds the wafer gets the same effect on the donors without giving the boron and phosphorus already implanted any time to diffuse. It is this "temperature × time" product that the industry calls the **thermal budget** <Cite id="tokuda-1989" />.
+What separates RTP from a furnace is time. A furnace would take **hours** in the same range; in seconds the wafer gets the same effect on the donors without giving the boron and phosphorus already implanted any time to diffuse. It is this "temperature × time" product that the industry calls the **thermal budget** <Cite id="tokuda-1989" />.
 
 <DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Two temperature-versus-time plots: on the left, a furnace ramping to a thousand degrees and holding for hours; on the right, RTP reaching the same temperature for about ten seconds, with a horizontal band marking the 450 degrees where thermal donors form">
 Thermal budget. A furnace step is measured in hours; RTP is measured in seconds. Both pass through the same temperature range, and the band around 450 °C, shaded orange, is exactly where the Czochralski oxygen builds thermal donors. Author's drawing, after Tokuda et al. (1989) and Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
@@ -147,7 +159,7 @@ Thermal budget. A furnace step is measured in hours; RTP is measured in seconds.
 
 ## Chemical-mechanical polishing (CMP)
 
-**CMP** <Cite id="runnels-1994" /> is critical for [photolithography](/en/fotolitografia). The wafer is pressed against a rotating pad while an alkaline colloidal suspension of silica nanoparticles is injected: gentle chemical attack oxidises the surface while the mechanical abrasive removes the resulting oxide microscopically. The result is a mirror-like surface with sub-nanometre roughness.
+**CMP** <Cite id="runnels-1994" /> is what allows photolithography to print layer after layer without losing focus. The wafer is pressed against a rotating pad while an alkaline colloidal suspension of silica nanoparticles is injected: gentle chemical attack oxidises the surface while the mechanical abrasive removes the resulting oxide microscopically. The result is a mirror-like surface with sub-nanometre roughness.
 
 The pad does not work unaided: it is continuously reconditioned by an abrasive disc that reopens the pores clogged by removed material and keeps the removal rate stable across thousands of wafers.
 
@@ -170,7 +182,7 @@ Standardised **RCA** cleaning <Cite id="kern-1990" />:
 The wet bench where etches and cleans happen: chemical tanks, exhaust, and cascade rinsing. KristianMolhave, <a href="https://commons.wikimedia.org/wiki/File:WetEtchBench.jpg" target="_blank" rel="noopener noreferrer">WetEtchBench</a> (CC BY 2.5), Wikimedia Commons.
 </DiagramFigure>
 
-After Marangoni or IPA drying, the wafers go through optical metrology (**Laser Surface Scanning System**) to detect surface defects and count particles. Finally, wafers that need special layers go through **epitaxial growth (EPI Growing)** by **CVD** before being vacuum-packed under a clean atmosphere (**cleanroom** class 1/10) for shipment to **fabs** (semiconductor foundries).
+After Marangoni or isopropyl alcohol (IPA) drying, the wafers go through optical metrology (**Laser Surface Scanning System**) to detect surface defects and count particles. Finally, wafers that need special layers go through **epitaxial growth (EPI)** by **chemical vapour deposition (CVD)** before being vacuum-packed under a clean atmosphere (**cleanroom** class 1/10) for shipment to **fabs** (semiconductor factories).
 
 ## Solar wafers: the other product of the same chain
 
@@ -192,9 +204,9 @@ The **Czochralski** process described above, by contrast, is a batch process tak
 
 ### Thickness: where photovoltaics diverges
 
-This is the most visible difference. Extracting the electrical power needs only about **100 µm of silicon**: light does not require more material than that <Cite id="saimm" />. In practice the photovoltaic industry works with wafers **below 200 µm** <Cite id="saimm" /> (and the 2023 standard was already **150 µm** for p-type monocrystalline wafers, with n-type wafers about **5 to 10 µm thinner** <Cite id="itrpv-2024" />), against the **700 to 800 µm** typical of fab wafers.
+This is the most visible difference. Extracting the electrical power needs only about **100 µm of silicon**: light does not require more material than that <Cite id="saimm" />. In practice the photovoltaic industry works with wafers **below 200 µm** <Cite id="saimm" />. The 2023 standard was already **150 µm** for p-type monocrystalline wafers, with n-type wafers about **5 to 10 µm thinner** <Cite id="itrpv-2024" />, against the **700 to 800 µm** typical of fab wafers.
 
-This is not just material savings: it is savings across an entire chain. The crystalline wafer accounts for **nearly half of the final module cost**, and the wafer manufacturing step for about **30%** of that cost <Cite id="saimm" />.
+The savings run across the entire chain. The crystalline wafer accounts for **nearly half of the final module cost**, and the wafer manufacturing step for about **30%** of that cost <Cite id="saimm" />.
 
 ### Slicing and waste
 
@@ -205,6 +217,13 @@ The cost of that is **kerf**: roughly **30% of the silicon is lost as saw dust**
 ### Wafers keep growing
 
 The photovoltaic industry has migrated to larger areas over time: from the **10 × 10 cm²** standard to **12.5 × 12.5 cm²**, **15.6 × 15.6 cm²** and today's **182 mm and 210 mm** formats <Cite id="saimm" /> <Cite id="itrpv-2024" />. The driving force is simple: a larger cell means a **lower cost per watt-peak** <Cite id="saimm" />.
+
+| Parameter | Fab wafer | Solar wafer |
+| --- | --- | --- |
+| Thickness | 775 µm (300 mm) <Cite id="semi-m1" /> | below 200 µm <Cite id="saimm" /> |
+| Crystal | monocrystalline <Cite id="saimm" /> | mono- or multicrystalline <Cite id="saimm" /> |
+| Slicing goal | flatness <Cite id="semi-m1" /> | minimum thickness <Cite id="saimm" /> |
+| Kerf | — | about 30% <Cite id="saimm" /> |
 
 <SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
 

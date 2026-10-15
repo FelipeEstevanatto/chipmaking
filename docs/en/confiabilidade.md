@@ -48,9 +48,9 @@ A chip wears out through interface chemistry and physics, slowly and **cumulativ
 | Mechanism | Physical driver | Observable signature | Technology most affected |
 | --- | --- | --- | --- |
 | NBTI / PBTI | Interface traps generated under gate bias and temperature | Threshold-voltage shift, with partial recovery | Thin-oxide CMOS (gate) |
-| HCI | Hot carriers near the drain, injected into the oxide | Degraded gain and saturation current | Short-channel nMOS |
+| HCI (*hot carrier injection*) | Hot carriers near the drain, injected into the oxide | Degraded gain and saturation current | Short-channel nMOS |
 | TDDB | Defect accumulation in the dielectric under electric field | Rising leakage until sudden breakdown | Gate oxide and thin dielectrics |
-| Electromigration | Momentum transfer from electrons to metal atoms | A void (*open*) and a hillock (*short*) in the wire | BEOL interconnect, vias and bumps |
+| Electromigration | Momentum transfer from electrons to metal atoms | A void (*open*) and a hillock (*short*) in the wire | BEOL (*back end of line*) interconnect, vias and bumps |
 | Soft errors | Charge deposited by an energetic particle | A bit flipped transiently, non-destructively | SRAM, DRAM and logic |
 | ESD / EOS | Electrostatic discharge or electrical overstress | Instant oxide or junction breakdown | Inputs and outputs (*I/O*) |
 
@@ -82,12 +82,16 @@ $$
 \mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right)
 $$
 
-where $J$ is the current density and $T$ is the temperature <Cite id="rel-black-1969" />. The exponent $n$ sits typically near **2** for aluminium, and the activation energy $E_a$ depends on the metal and on the diffusion path, on the order of **0.5 to 0.7 eV** for aluminium and **0.8 to 1.0 eV** for copper <Cite id="rel-jep122" />.
+where $J$ is the current density and $T$ is the temperature <Cite id="rel-black-1969" />. The exponent $n$ sits typically near **2** for aluminium. The activation energy $E_a$ depends on the metal and on the diffusion path: on the order of **0.5 to 0.7 eV** for aluminium and **0.8 to 1.0 eV** for copper <Cite id="rel-jep122" />.
 
-Be wary of any $n$ or $E_a$ presented as a universal constant: qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />. What holds up is the **direction**: doubling $J$ shortens life far more than doubling room temperature, which is why swapping aluminium for copper in **1997** mattered so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
+::: warning Do not treat $n$ or $E_a$ as a universal constant
+Qualification material itself records that measured activation energies range from negative values up to **1.4 eV**, with **0.7 eV** called "typical" only by convention <Cite id="rel-aec-q100" />.
+:::
+
+What holds up is the **direction**: life falls steeply with current, as the $n$-th power, and exponentially with temperature, and it is that sensitivity that made swapping aluminium for copper in **1997** matter so much <Cite id="ibm-copper" />. Copper's electromigration lifetime is **more than two orders of magnitude longer** <Cite id="ibm-cu-electroplating" />.
 
 <DiagramFigure src="/assets/wearout-mechanisms.svg" alt="Four schematic MOSFET cross-sections, one per wear-out mechanism: traps at the oxide-silicon interface that shift the threshold voltage, hot carriers injected into the oxide near the drain, a conductive filament through the gate oxide, and electromigration in a copper wire, with a void upstream and a hillock downstream">
-The four wear-out mechanisms in cross-section: interface traps that shift the threshold voltage <Cite id="rel-schroder-2003" />, hot carriers that jump into the oxide near the drain <Cite id="rel-hu-1985" />, the conductive filament that breaks down the gate oxide <Cite id="rel-mcpherson-2012" />, and electromigration that opens a void and raises a hillock in the copper wire <Cite id="rel-black-1969" />. Author's drawing.
+The four wear-out mechanisms in cross-section. Interface traps shift the threshold voltage <Cite id="rel-schroder-2003" /> and hot carriers jump into the oxide near the drain <Cite id="rel-hu-1985" />. The conductive filament breaks down the gate oxide <Cite id="rel-mcpherson-2012" />, and electromigration opens a void and raises a hillock in the copper wire <Cite id="rel-black-1969" />. Author's drawing.
 </DiagramFigure>
 
 ## Quantifying failure
@@ -114,7 +118,7 @@ Because the probability grows with the number of bits exposed, the natural metri
 
 ## Qualification
 
-"Reliable" is not an opinion; it is a set of tests a supplier must pass before selling. JEDEC publishes the methods, including how to calculate and declare a failure rate in FIT, in JESD85A <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
+"Reliable" is not an opinion; it is a set of tests a supplier must pass before selling. JEDEC publishes the methods in JESD85A, including how to calculate and declare a failure rate in FIT <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
 
 The **automotive** regime is harsher than consumer, and AEC-Q100 is the document that defines it: components meeting its specifications are held suitable for the harsh automotive environment **without additional component-level qualification testing** <Cite id="rel-aec-q100" />. The axis of that harshness is **operating temperature**, divided into grades:
 
@@ -127,7 +131,7 @@ The **automotive** regime is harsher than consumer, and AEC-Q100 is the document
 
 <Cite id="rel-aec-q100" />
 
-A high-temperature operating life (**HTOL**) test at grade 0 stresses the device at **+150 °C** for **1,000 h** <Cite id="rel-aec-q100" />. That is why automotive is a different regime: it demands that the silicon survive a thermal window and a mission time the consumer never sees, and the qualification explicitly lists the mechanisms that must be covered: **electromigration, TDDB, hot carrier injection, bias temperature instability and stress migration** <Cite id="rel-aec-q100" />.
+A high-temperature operating life (**HTOL**) test at grade 0 stresses the device at **+150 °C** for **1,000 h** <Cite id="rel-aec-q100" />. That is why automotive is a different regime. It demands that the silicon survive a thermal window and a mission time the consumer never sees, and the qualification explicitly lists the mechanisms to cover: **electromigration, TDDB, hot carrier injection, bias temperature instability and stress migration** <Cite id="rel-aec-q100" />.
 
 ## Why this is a materials story
 

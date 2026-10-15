@@ -42,7 +42,13 @@ A sequência de fabricação fica assim: **fab → teste de wafer → empacotame
 
 Cada produto precisa do seu próprio cartão. Ele é um conjunto de agulhas ou molas posicionadas exatamente sobre os pads do die, e um cartão pode ter **alguns milhares de sondas**, o que o torna complexo e caro de fazer <Cite id="cadence-kgd" />.
 
-Isso impõe uma limitação prática que costuma surpreender: o teste de wafer **não é igual** ao teste final. O cartão tem características elétricas diferentes das do invólucro e, muitas vezes, **não consegue rodar na velocidade de operação** do produto <Cite id="cadence-kgd" />. O teste de wafer é uma peneira grossa, não a medida definitiva.
+Isso impõe uma limitação prática que costuma surpreender.
+
+::: warning
+O teste de wafer **não é igual** ao teste final. O cartão tem características elétricas diferentes das do invólucro e, muitas vezes, **não consegue rodar na velocidade de operação** do produto <Cite id="cadence-kgd" />.
+:::
+
+O teste de wafer é uma peneira grossa, não a medida definitiva.
 
 ### O problema do die bom
 
@@ -88,11 +94,11 @@ As alternativas se dividem em três famílias:
 - ***Laser grooving* + plasma**: o laser abre um sulco estreito e o plasma aprofunda e separa, com larguras **abaixo de 10 µm** e bordas limpas <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separa por plasma **antes** do afinamento, o que reduz contaminação e trincas <Cite id="pdbg-dicing" />.
 
-Um estudo clássico mostrou que o **desbaste mecânico** cria regiões fracas onde a resistência da pastilha cai **30 a 35%** em relação à média do wafer. Duas intervenções melhoraram isso de forma dramática: **reduzir a velocidade de desbaste pela metade aumentou a resistência média em 56%**, e **desgastar de propósito o fio de uma lâmina nova aumentou a resistência em cinco vezes** <Cite id="ieee-die-strength" />. O corte não é o fim de um processo; é o começo da confiabilidade mecânica do produto.
+Um estudo clássico mostrou que o **desbaste mecânico** cria regiões fracas onde a resistência da pastilha cai **30 a 35%** em relação à média do wafer. Duas intervenções mudaram esse quadro: **reduzir a velocidade de desbaste pela metade aumentou a resistência média em 56%**, e **desgastar de propósito o fio de uma lâmina nova aumentou a resistência em cinco vezes** <Cite id="ieee-die-strength" />. O corte define a confiabilidade mecânica do produto.
 
 ## Wire bonding: a tecnologia que monta 80% do mundo
 
-Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: **mais de 80% dos invólucros de semicondutores** ainda são montados por ligação por fio <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o mesmo patamar, acrescentando um dado incômodo: cerca de **um quarto a um terço das falhas de pacote** vem justamente da ligação por fio <Cite id="pmc-bonding-wire" />.
+Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: **mais de 80% dos invólucros de semicondutores** ainda são montados por ligação por fio <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o patamar, com cerca de **um quarto a um terço das falhas de pacote** vindas da própria ligação por fio <Cite id="pmc-bonding-wire" />.
 
 O princípio é o que se vê na figura: o die fica **de face para cima**, e fios finíssimos saem dos pads na sua **periferia** e descem até o substrato. Cada fio é uma conexão elétrica, e há dois tipos de ponta: a **ball bond**, em que uma esfera de fio é fundida e prensada sobre o pad, e a **wedge bond**, em que o fio é esmagado lateralmente. Esta produz laços mais baixos, o que importa em radiofrequência <Cite id="inseto-wire-guide" />.
 
@@ -110,7 +116,7 @@ Os dois "contra" são o preço dessa escolha. O cobre é mais **duro**, o que au
 
 A economia explica bem. Um fio de cobre de 25 µm custa **menos de um décimo** de um fio de ouro equivalente; e enquanto a ligação por fio de **ouro** se torna mais cara que o flip-chip acima de **1.024 contatos**, a de **cobre** continua competitiva **até cerca de 2.000 contatos** <Cite id="imaps-cu-wire" />.
 
-A ligação por fio ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo: microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é processador de alta performance.
+A ligação por fio ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo: microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é um processador de alto desempenho.
 
 ## Flip-chip: virar o die de cabeça para baixo
 
@@ -132,7 +138,7 @@ A descrição formal do processo C4 é de **L. F. Miller**, em 1969, e a patente
 
 ### Do C4 ao pilar de cobre
 
-As esferas de solda têm um limite de escala. O C4 padrão opera em passos de **130 a 250 µm**, e abaixo de cerca de **130 µm** simplesmente não sobra espaço lateral: com altura de esfera de ~70 µm, as soldas vizinhas se tocam e curto-circuitam <Cite id="semieng-flipchip-bumps" />.
+As esferas de solda têm um limite de escala. O C4 padrão opera em passos de **130 a 250 µm**, e abaixo de cerca de **130 µm** não sobra espaço lateral: com altura de esfera de ~70 µm, as soldas vizinhas se tocam e curto-circuitam <Cite id="semieng-flipchip-bumps" />.
 
 A resposta foi o **pilar de cobre**: em vez de uma esfera achatada, um cilindro de cobre com uma camada de solda no topo. A IBM patenteou a tecnologia em **2001**; a Intel a usou em processadores de 65 nm em **2006**, citando melhor resistência à eletromigração, melhor condução térmica e maior densidade de contatos <Cite id="synopsys-cu-pillar" />. O pilar é usado **abaixo de 130 µm de passo**, tipicamente com **~40 µm de cobre e ~25 µm de solda**, e os microbumps ficam **abaixo de 10 µm de altura** <Cite id="semieng-flipchip-bumps" />.
 
@@ -146,13 +152,13 @@ A estrada do empacotamento avançado é uma só métrica descendo: a distância 
 
 ### 2.5D: os chips lado a lado
 
-Na integração **2.5D**, os dies ficam **lado a lado** sobre uma peça intermediária chamada **interposer**, tipicamente de silício. Detalhe importante: são apenas **os interposers que precisam de vias atravessando o silício**, não os chips, o que permite reaproveitar projetos de die existentes <Cite id="fue-packaging-roadmap" />.
+Na integração **2.5D**, os dies ficam **lado a lado** sobre uma peça intermediária chamada **interposer**, tipicamente de silício. Apenas **os interposers precisam de vias atravessando o silício**, não os chips, o que permite reaproveitar projetos de die existentes <Cite id="fue-packaging-roadmap" />.
 
 A TSMC chama sua plataforma 2.5D de **CoWoS** (*chip on wafer on substrate*), e ela está em produção **desde 2012** <Cite id="tsmc-cowos" />. Hoje são três variantes que vale distinguir:
 
 - **CoWoS-S**: interposer de **silício**, suportando até **3,3× o retículo** (cerca de **2.700 mm²**), com capacitores de trincheira profunda embutidos <Cite id="tsmc-cowos" />.
 - **CoWoS-R**: em vez de silício, um **interposer de redistribuição**, polímero com trilhas de cobre. Está em produção em volume **desde 2023** e escala além das 3,3× <Cite id="tsmc-cowos" />.
-- **CoWoS-L**: combina um interposer de redistribuição com **pontes de silício localizadas** (*LSI*), posicionadas apenas onde a densidade de conexão exigir <Cite id="tsmc-cowos" />.
+- **CoWoS-L**: combina um interposer de redistribuição com **pontes de silício localizadas** (*local silicon interconnect*, LSI), posicionadas apenas onde a densidade de conexão exigir <Cite id="tsmc-cowos" />.
 
 A primeira quebra da barreira do retículo veio em **março de 2020**, com a TSMC e a Broadcom anunciando um interposer de **2× o retículo** (~1.700 mm²). Ele suportava até **6 cubos de HBM**, **96 GB** de memória e **2,7 TB/s** de banda, **2,7 vezes** a solução CoWoS de 2016, usando **costura de máscaras** para ultrapassar o tamanho de um campo de exposição <Cite id="tsmc-2x-cowos" />.
 
@@ -202,7 +208,7 @@ Aí entra a integração **2.5D**, descrita acima. O interposer de silício exis
 
 Nada disso é de graça, e o custo aparece na densidade. As TSVs, que precisam atravessar cada die da pilha, ocupam **área que não armazena nada**. A comparação feita pela SemiAnalysis com números da SK hynix é direta: uma pastilha DDR4 D1z entrega **0,296 Gb/mm²**, enquanto uma HBM3 entrega **0,16 Gb/mm²**, **85% mais densa** no caso do DDR4 <Cite id="semianalysis-hbm" />.
 
-Ou seja: a memória mais rápida do mundo é também a **menos densa**. A indústria aceita esse trade-off porque, em sistemas de IA, a largura de banda limita o desempenho mais do que a capacidade, e um acelerador sem banda suficiente deixa unidades de computação **paradas** <Cite id="semianalysis-hbm" />.
+A memória mais rápida do mundo é também a **menos densa**. A indústria aceita esse trade-off porque, em sistemas de IA, a largura de banda limita o desempenho mais do que a capacidade, e um acelerador sem banda suficiente deixa unidades de computação **paradas** <Cite id="semianalysis-hbm" />.
 
 ## Chiplets: dividir para render
 
@@ -216,7 +222,7 @@ Cada defeito mata um die inteiro. Quanto maior o die, mais defeitos ele encontra
 
 A alternativa é **partir o produto em chips menores**. Em vez de um die monolítico grande, fabricam-se vários *chiplets* que depois são montados juntos no mesmo pacote, comunicando-se por interconexões rápidas em vez de trilhas internas.
 
-A aritmética da AMD, apresentada no Hot Chips de 2017, é o exemplo clássico. Substituir um die monolítico hipotético de **777 mm²** por **quatro dies de 213 mm²** (totalizando **852 mm²**, ou seja, cerca de **10% mais silício**) resultou em um custo de aproximadamente **0,59 vezes** o do monolítico <Cite id="amd-chiplet-economics" />. Mais área total, **41% menos custo**.
+A aritmética da AMD, apresentada no Hot Chips de 2017, é o exemplo clássico. Substituir um die monolítico hipotético de **777 mm²** por **quatro dies de 213 mm²** (totalizando **852 mm²**, ou seja, cerca de **10% mais silício**) resultou em um custo de aproximadamente **0,59 vezes** o do monolítico <Cite id="amd-chiplet-economics" />. O resultado é mais área total e **41% menos custo**.
 
 O motivo é exatamente o da figura: os quatro dies pequenos rendem muito melhor individualmente, e só os que funcionam seguem para a montagem.
 
@@ -252,7 +258,7 @@ Ela corre sobre dois eixos. O primeiro é **frequência**: quanto o chip aguenta
 
 O par **Core i7-8700K e Core i7-8086K** mostra o eixo inteiro. É o mesmo die Coffee Lake, com os mesmos seis núcleos e *hyper-threading*, mas o 8086K saiu com frequências de turbo mais altas porque a Intel reservou para ele os melhores exemplares da produção: 50 mil unidades, US\$ 75 mais caras que o 8700K <Cite id="tomshardware-8086k" />.
 
-A **Silicon Lottery** comprava processadores no varejo, media cada unidade antes de revender e publicava a distribuição. No lote de 8700K, 17 % das unidades chegavam a 5,2 GHz; no lote de 8086K, **nenhuma** ficou abaixo de 5,0 GHz <Cite id="siliconlottery-stats" />.
+A **Silicon Lottery** comprava processadores no varejo, media cada unidade antes de revender e publicava a distribuição. No lote de 8700K, 17% das unidades chegavam a 5,2 GHz; no lote de 8086K, **nenhuma** ficou abaixo de 5,0 GHz <Cite id="siliconlottery-stats" />.
 
 <ClientOnly>
   <DataChart chart="binning-bins" />
@@ -262,13 +268,15 @@ Na memória o eixo vira **grau de velocidade** e a mecânica é a mesma. Um chip
 
 #### Colher em vez de descartar
 
-O segundo eixo é a **colheita** (*harvesting*). Um chip com um bloco defeituoso passa a ser vendido com esse bloco desligado, e a AMD já vendeu modelos de três núcleos a partir de um die de quatro <Cite id="gamersnexus-binning" />. A Apple transformou a prática em linha de produto: o **A12X** saiu com 7 dos 8 núcleos de GPU porque o rendimento não entregava 8; dois anos depois, o **A12Z** era o mesmo chip com o oitavo ligado, porque o processo tinha melhorado. No **iPhone 17e**, o A19 tem 4 núcleos de GPU contra 5 do iPhone 17, e o desempenho gráfico cai na mesma proporção, cerca de 20 % <Cite id="macworld-binning" />.
+O segundo eixo é a **colheita** (*harvesting*). Um chip com um bloco defeituoso passa a ser vendido com esse bloco desligado, e a AMD já vendeu modelos de três núcleos a partir de um die de quatro <Cite id="gamersnexus-binning" />. A Apple transformou a prática em linha de produto: o **A12X** saiu com 7 dos 8 núcleos de GPU porque o rendimento não entregava 8; dois anos depois, o **A12Z** era o mesmo chip com o oitavo ligado, porque o processo tinha melhorado. No **iPhone 17e**, o A19 tem 4 núcleos de GPU contra 5 do iPhone 17, e o desempenho gráfico cai na mesma proporção, cerca de 20% <Cite id="macworld-binning" />.
 
 O caso levado ao extremo foi o **GF100** da Nvidia, em 2010: 3 bilhões de transistores em cerca de 530 mm², no 40 nm recém-estreado da TSMC. Nenhuma placa saiu com o chip completo: a **GTX 480** recebeu apenas 480 dos 512 núcleos, com um dos 16 *clusters* de shaders desligado, o GTX 470 ficou com 448 e o GTX 465 com 352 <Cite id="wikipedia-gf100" />.
 
-A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20 % e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. Pelo lado do relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20 % sobre a meta original, contra 10 % do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />. Esse chip só apareceu no **GF110**, um GF100 redesenhado, no fim do mesmo ano <Cite id="wikipedia-gf100" />.
+A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20% e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. No relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20% sobre a meta original, contra 10% do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />.
 
-Nem todo bloco desligado é defeito. Num lote de **Radeon RX 460**, 128 núcleos presentes no die estavam desativados e voltaram a funcionar com uma troca de BIOS, cerca de 14 % mais núcleos; o risco é o chip ter sido desativado por defeito, e aí a imagem sai com artefatos <Cite id="extremetech-rx460" />.
+Esse chip só apareceu no **GF110**, um GF100 redesenhado, no fim do mesmo ano <Cite id="wikipedia-gf100" />.
+
+Nem todo bloco desligado é defeito. Num lote de **Radeon RX 460**, 128 núcleos presentes no die estavam desativados e voltaram a funcionar com uma troca de BIOS, cerca de 14% mais núcleos; o risco é o chip ter sido desativado por defeito, e aí a imagem sai com artefatos <Cite id="extremetech-rx460" />.
 
 Sem classificação, o que sobra é descarte. A Macworld ilustra a conta com o A18: um wafer rende cerca de **500** chips dessa classe, e jogar fora todos os que têm um defeito deixaria cerca de **200** <Cite id="macworld-binning" />. A classificação existe para que os outros 300 não virem lixo.
 
@@ -291,5 +299,7 @@ Um gargalo pequeno em valor pode ser um gargalo grande em consequência. Foi o q
   { text: 'Fotolitografia', href: '/fotolitografia', note: 'o limite do retículo' },
   { text: 'Evolução dos transistores', href: '/transistores', note: 'o que está dentro do die' },
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'espessura e afinamento' },
+  { text: 'Dados e números', href: '/dados', note: 'as séries e os arquivos de dados' },
+  { text: 'Confiabilidade', href: '/confiabilidade' },
   { text: 'Referências', href: '/referencias', note: 'lista numerada' },
 ]" />

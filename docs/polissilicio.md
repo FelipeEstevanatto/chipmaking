@@ -6,7 +6,7 @@ dataAsOf: 2025
 
 # Purificação química e polissilício
 
-O silício de grau metalúrgico ([MG-Si](/glossario)) contém impurezas metálicas e dopantes que afetam severamente o desempenho de semicondutores e painéis solares <Cite id="energy-central" />. Para atingir o grau de **polissilício** (silício policristalino de altíssima pureza), ele deve ser refinado quimicamente <Cite id="csiro" />.
+O silício de grau metalúrgico ([MG-Si](/glossario)) contém impurezas metálicas e dopantes que comprometem o desempenho de semicondutores e painéis solares <Cite id="energy-central" />. Para atingir o grau de **polissilício** (silício policristalino de altíssima pureza), ele deve ser refinado quimicamente <Cite id="csiro" />.
 
 A matéria-prima nunca foi o gargalo: o silício é o **segundo elemento mais abundante da crosta terrestre**, atrás apenas do oxigênio <Cite id="pv-mfg-polysilicon" />. Todo o valor desta etapa está em separar do silício os poucos átomos de boro, fósforo e metais que arruínam um transistor ou uma célula solar, e nenhuma filtragem física dá conta disso.
 
@@ -32,7 +32,7 @@ A rota completa: o quartzo vira silício bruto no forno de arco, o silício brut
 
 ### Duas rotas a partir do mesmo MG-Si
 
-O MG-Si tem mais de um caminho adiante. A divisão é se o passo seguinte usa cloro <Cite id="saimm" />:
+O MG-Si tem mais de um caminho adiante, e o que separa as rotas é o uso de cloro na etapa seguinte <Cite id="saimm" />:
 
 ```mermaid
 flowchart TD
@@ -70,11 +70,11 @@ O detalhe que explica a economia do forno é uma terceira reação, que fecha o 
 
 O **monóxido de silício** gasoso sobe junto com o CO, recombina-se nas zonas frias da carga e regenera SiO₂ e carbono, que voltam a alimentar a primeira reação. Por isso o forno é praticamente **autossuficiente em reagentes**: consome energia elétrica em grande quantidade, mas desperdiça pouca matéria-prima <Cite id="pv-mfg-polysilicon" />.
 
-O produto é o **MG-Si**, drenado pelo fundo do forno com pureza de 98% a 99,5% <Cite id="saimm" />. O passo seguinte, a cloração, é justamente onde a impureza deixa de ser um problema de minério e passa a ser um problema de química. Os detalhes da redução carbotérmica estão em [Mineração e MG-Si](/mineracao-mg-si).
+O produto é o **MG-Si**, drenado pelo fundo do forno com pureza de 98,5% a 99,5% <Cite id="saimm" />. O passo seguinte, a cloração, é justamente onde a impureza deixa de ser um problema de minério e passa a ser um problema de química. Os detalhes da redução carbotérmica estão em [Mineração e MG-Si](/mineracao-mg-si).
 
 ## Conversão em triclorossilano (TCS)
 
-Para virar gás, o MG-Si é **moído até virar pó**, em vez de fundido. A moagem multiplica a superfície exposta ao gás, e a reação corre em segundos em vez de horas.
+Para virar gás, o MG-Si é **reduzido a pó** em vez de fundido. A moagem multiplica a superfície exposta ao gás, e a reação corre em segundos em vez de horas.
 
 Esse pó é injetado em um **reator de leito fluidizado** operando com **alta pressão e velocidade**, onde partículas sofrem a ação de um **gás clorídrico anidro (HCl)** na presença de um **catalisador** <Cite id="pv-mfg-polysilicon" />. O resultado não é uma substância só, mas uma **família de clorossilanos** e outros cloretos voláteis, dos quais o **triclorossilano** (TCS, SiHCl₃) é de longe o mais importante <Cite id="pv-mfg-polysilicon" />:
 
@@ -92,7 +92,7 @@ Existe um segundo caminho até o TCS, que dispensa o HCl e reaproveita o própri
 Si + 3SiCl₄ + 2H₂ → 4SiHCl₃
 ```
 
-As duas rotas convivem na indústria, e a escolha entre elas é decisão de projeto de planta, não de bancada. A conversão do STC entrega TCS mais puro; a hidrocloração é a mais econômica <Cite id="jarkin-2021" />. Comparadas por quilo de SiHCl₃ produzido, as duas opções para reaproveitar o STC ficam assim <Cite id="jarkin-2021" />:
+As duas rotas convivem na indústria, e a escolha entre elas é decisão de projeto de planta, não de bancada. A conversão do STC produz TCS mais puro; a hidrocloração é a mais econômica <Cite id="jarkin-2021" />. Comparadas por quilo de SiHCl₃ produzido, as duas opções para reaproveitar o STC ficam assim <Cite id="jarkin-2021" />:
 
 | Parâmetro | Hidrocloração (Si + SiCl₄ + H₂) | Conversão do STC (SiCl₄ + H₂) |
 | --- | --- | --- |
@@ -111,7 +111,7 @@ O gás TCS purificado é convertido de volta a silício metálico sólido e ultr
 
 ### Processo Siemens (CVD)
 
-Criado na década de 1950 pelas empresas Siemens e Wacker, é o método dominante no mercado mundial <Cite id="bernreuter-production" />. O gás TCS é injetado com hidrogênio (H₂) em um reator de redoma de aço onde **eletrodos de grafita** fazem passar corrente por um **núcleo de silício em forma de “U”**, a semente <Cite id="pv-mfg-polysilicon" />. Esse núcleo é aquecido eletricamente a cerca de **1100–1150 °C** <Cite id="bernreuter-production" />, e o TCS sofre **redução por hidrogênio**, num mecanismo equivalente ao de um **CVD** (*chemical vapour deposition*): o silício sólido se deposita sobre a semente e cresce ao redor dela, liberando HCl gasoso <Cite id="pv-mfg-polysilicon" />.
+O processo Siemens foi criado na década de 1950 pelas empresas Siemens e Wacker e é o método dominante no mercado mundial <Cite id="bernreuter-production" />. O gás TCS é injetado com hidrogênio (H₂) em um reator de redoma de aço onde **eletrodos de grafita** fazem passar corrente por um **núcleo de silício em forma de “U”**, a semente <Cite id="pv-mfg-polysilicon" />. Esse núcleo é aquecido eletricamente a cerca de **1100–1150 °C** <Cite id="bernreuter-production" />, e o TCS sofre **redução por hidrogênio**, num mecanismo equivalente ao de um **CVD** (*chemical vapour deposition*): o silício sólido se deposita sobre a semente e cresce ao redor dela, liberando HCl gasoso <Cite id="pv-mfg-polysilicon" />.
 
 <DiagramFigure src="/assets/siemens-reactor.svg" alt="Corte do reator Siemens de redoma: à esquerda, a redoma de aço com duas hastes de silício em U incandescentes sobre eletrodos de grafita, gás TCS e hidrogênio entrando pela base e gás gasto saindo pelo topo; à direita, ampliação da superfície da haste mostrando o silício se depositando sobre ela">
 O reator Siemens em corte. À esquerda, a redoma de aço fechada: os eletrodos de grafita atravessam a base e aquecem por efeito Joule os filamentos de silício em “U”, que incandescem a 1100–1150 °C enquanto o TCS e o hidrogênio sobem entre eles. À direita, a ampliação da superfície da haste: a redução do TCS deposita silício sobre o filamento, que engorda até virar bastão. Desenho do autor, a partir de Bernreuter Research e PV-Manufacturing.org <Cite id="bernreuter-production" /> <Cite id="pv-mfg-polysilicon" />.
@@ -125,7 +125,7 @@ SiHCl₃ + H₂ → Si + 3HCl
 
 Quando o processo termina, a **redoma de aço é erguida** e o conjunto (núcleo em “U” e silício depositado) é retirado inteiro e fraturado em pedaços menores <Cite id="bernreuter-production" />. Os bastões atingem de **15 a 20 cm de diâmetro** <Cite id="bernreuter-production" /> e o material sai com pureza de **9N** ou mais, pronto para ser classificado <Cite id="pv-mfg-polysilicon" />.
 
-O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004 a fatia do processo no mercado global **só ficou abaixo de 90% uma vez**, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou, mas quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US\$ 10 por quilograma** <Cite id="bernreuter-production" />.
+O processo gasta **mais de 100 kWh por quilograma** de silício depositado, com rendimento baixo. Esse gasto de energia é a principal desvantagem <Cite id="saimm" />. Alternativas foram tentadas por décadas. Um levantamento de 1985 listava **17 rotas** além do Siemens, e poucas chegaram à produção <Cite id="bernreuter-production" />. Desde 2004, a fatia do processo no mercado global caiu abaixo de 90% uma única vez, em 2008, no pico da escassez <Cite id="bernreuter-production" />. A química ficou, mas quem opera o reator mudou. Plantas chinesas, com eletricidade barata e equipamento doméstico, levaram o **custo de produção** a menos de **US\$ 10 por quilograma** <Cite id="bernreuter-production" />.
 
 Classes de pureza <Cite id="bernreuter-production" />:
 
@@ -171,7 +171,7 @@ O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na eta
 
 O mesmo vale para o subproduto mais incômodo da cloração, o **tetracloreto de silício** (SiCl₄). Em vez de sair como efluente clorado, ele volta ao processo por **hidrocloração**, junto com hidrogênio e mais silício bruto <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
 
-E os volumes não são pequenos. Para cada quilo de polissilício produzido, o estágio de síntese direta gera de **2 a 5 kg** de SiCl₄, e o estágio de deposição outros **11 a 14 kg** <Cite id="jarkin-2021" />. Sem o reciclo, uma planta seria ao mesmo tempo uma fábrica de polissilício e uma fábrica de tetracloreto, nesta última numa proporção de dez para um. É por isso que uma planta de polissilício se mede pela **energia** que consome, e não pela matéria-prima que descarta: o cloro circula, e o que o sistema perde como resíduo é bem menos do que a equação do reator sugere.
+Para cada quilo de polissilício produzido, o estágio de síntese direta gera de **2 a 5 kg** de SiCl₄, e o estágio de deposição outros **11 a 14 kg** <Cite id="jarkin-2021" />. Sem o reciclo, uma planta seria ao mesmo tempo uma fábrica de polissilício e uma fábrica de tetracloreto, nesta última numa proporção de dez para um. É por isso que uma planta de polissilício se mede pela **energia** que consome, e não pela matéria-prima que descarta: o cloro circula, e o que o sistema perde como resíduo é bem menos do que a equação do reator sugere.
 
 <VideoPressEmbed id="ZlxguS11" title="Animação da rota de produção de polissilício" />
 
@@ -183,9 +183,25 @@ E os volumes não são pequenos. Para cada quilo de polissilício produzido, o e
 
 A rota química domina, e é cara em **energia**. Cloração, destilação e o reator Siemens se somam. Ela também **manipula compostos tóxicos e corrosivos** o tempo todo, entre eles clorossilanos e ácido clorídrico <Cite id="saimm" />.
 
-O TCS ilustra bem o problema. É um **líquido incolor e volátil** (densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C) que **reage violentamente com a água**, inclusive com a umidade do ar, liberando ácido clorídrico e calor. A faixa de inflamabilidade em ar vai de **1,2% a 90,5% em volume**, e a autoignição ocorre a apenas **185 °C** <Cite id="icsc-tcs" />. Com ponto de fulgor de **−27 °C**, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é **4,7 vezes mais denso que o ar**, ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob **gás inerte**, e que as instruções de combate a incêndio da ficha internacional prescrevem explicitamente **não usar água** <Cite id="icsc-tcs" />.
+O TCS ilustra bem o problema. É um **líquido incolor e volátil** (densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C). A faixa de inflamabilidade em ar vai de **1,2% a 90,5% em volume**, e a autoignição ocorre a apenas **185 °C** <Cite id="icsc-tcs" />.
+
+Com ponto de fulgor de **−27 °C**, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é **4,7 vezes mais denso que o ar**, ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob **gás inerte**.
+
+::: warning
+O TCS **reage violentamente com a água**, inclusive com a umidade do ar, liberando ácido clorídrico e calor, e as instruções de combate a incêndio da ficha internacional prescrevem explicitamente **não usar água** <Cite id="icsc-tcs" />.
+:::
 
 Em **2006** a indústria solar **ultrapassou a de semicondutores** como maior consumidora de polissilício <Cite id="saimm" />. Em 2008, a produção mundial foi de aproximadamente **75 mil toneladas**, das quais **45 mil** foram para fotovoltaica <Cite id="saimm" />.
+
+## Siemens e FBR lado a lado
+
+| Parâmetro | Siemens (CVD) | FBR |
+| --- | --- | --- |
+| Temperatura do reator | 1100–1150 °C <Cite id="bernreuter-production" /> | 650–700 °C (monossilano) <Cite id="bernreuter-production" /> |
+| Energia por quilograma | mais de 100 kWh <Cite id="saimm" /> | cerca de 90% menos que o Siemens <Cite id="bernreuter-production" /> |
+| Forma do produto | hastes | grânulos |
+| Etapa de fratura | necessária | dispensada |
+| Participação no mercado | cerca de 78% (2008) <Cite id="saimm" /> | cerca de 16% (2008) <Cite id="saimm" /> |
 
 ## A rota metalúrgica (UMG)
 
@@ -204,7 +220,7 @@ A rota tem potencial para se tornar dominante, mas em 2008 respondia por **menos
 
 ### Um caso industrial: os blocos de silício da Elkem em Kristiansand
 
-Entre **2009 e 2023**, uma planta em Kristiansand, no sul da Noruega, operou em escala industrial uma das poucas rotas sem cloro que de fato entregou silício de grau solar <Cite id="elkem-solar-route" /> <Cite id="rec-closure-2023" />.
+Entre **2009 e 2023**, uma planta em Kristiansand, no sul da Noruega, operou uma das poucas rotas sem cloro que chegou a produzir silício de grau solar em escala industrial <Cite id="elkem-solar-route" /> <Cite id="rec-closure-2023" />.
 
 A Elkem vinha estudando rotas metalúrgicas desde o fim dos anos 1970 e chegou ao conceito industrializado em **2009**. Ele encadeia **cinco etapas**, das quais **três são de purificação** <Cite id="elkem-solar-route" /> <Cite id="elkem-lca" />:
 
@@ -240,7 +256,7 @@ O parque industrial de **Herøya**, em Porsgrunn, onde o silício de Kristiansan
 
 O arco termina de forma amarga. Em **novembro de 2023** a REC fechou a produção de polissilício em Kristiansand e Porsgrunn, citando **preços de eletricidade altos** e prejuízos acumulados de **335 milhões de coroas norueguesas** (cerca de **US\$ 31 milhões**); o fechamento atingiu cerca de **250 trabalhadores** <Cite id="rec-closure-2023" />. Em **janeiro de 2024** a Elkem comprou as instalações por **US\$ 22 milhões**, sem planos de retomar o modelo de negócio anterior <Cite id="elkem-buys-rec" />.
 
-Vale ser preciso sobre o motivo. A rota metalúrgica **não perdeu por qualidade**: as células provaram paridade elétrica com o polissilício Siemens. Perdeu por economia: o custo da rota é dominado pela **eletricidade**, que na Noruega disparou com a crise energética europeia, enquanto o preço global do polissilício despencava diante da sobreoferta. Insumo em alta contra preço de venda em queda é o pior cenário possível.
+A rota metalúrgica **não perdeu por qualidade**: as células provaram paridade elétrica com o polissilício Siemens. Perdeu por economia: o custo da rota é dominado pela **eletricidade**, que na Noruega disparou com a crise energética europeia, enquanto o preço global do polissilício despencava diante da sobreoferta. Insumo em alta contra preço de venda em queda é o pior cenário possível.
 
 <SourceNote :ids="['elkem-solar-route', 'elkem-lca', 'rec-solar-epd', 'snl-rec', 'rec-closure-2023', 'elkem-buys-rec']" />
 
@@ -269,7 +285,7 @@ Repare também que a coluna do grau solar policristalino lista **apenas o teor d
 
 ### O ciclo do porco (*pork cycle*)
 
-O preço do polissilício não oscila por acaso. Entre **1981 e 2004**, o preço de contrato de longo prazo alternou entre pico e vale num intervalo **notavelmente regular de sete a oito anos** <Cite id="bernreuter-market" />. O padrão tem nome: *pork cycle*, o ciclo do porco, e a causa é sempre **o atraso entre o sinal e a resposta**.
+O preço do polissilício não oscila por acaso. Entre **1981 e 2004**, o preço de contrato de longo prazo alternou entre pico e vale num intervalo regular de sete a oito anos <Cite id="bernreuter-market" />. O padrão tem nome: *pork cycle*, o ciclo do porco, e a causa é sempre **o atraso entre o sinal e a resposta**.
 
 <DiagramFigure src="/assets/polysilicon-pork-cycle.svg" alt="Diagrama do ciclo do preço em quatro etapas (escassez, investimento, o atraso de dois a três anos até as plantas entrarem em operação e a sobreoferta) com uma seta de retorno mostrando que o investimento para e a escassez volta; abaixo, um gráfico de linha do preço mostrando o pico em que a decisão de construir é tomada e, dois a três anos depois, o vale em que a capacidade entra em operação">
 Por que o preço cicla. O sinal de preço é verdadeiro, mas a resposta chega tarde: uma planta de polissilício leva de dois a três anos entre engenharia, obra e ramp-up. Quando a capacidade finalmente entra em operação, o mercado que a justificava já não existe. Desenho do autor, a partir de Bernreuter Research <Cite id="bernreuter-market" /> <Cite id="bernreuter-pork-cycle" />.
@@ -303,7 +319,9 @@ Esse crescimento nos anos 2000 fez o número de plantas saltar de **11** (2004) 
 
 ### A ascensão chinesa
 
-Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar. As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%**, pouco dissuasivas, enquanto os americanos apanharam com taxas de até **57%**, contornadas por um tempo pelo regime de *processing trade*, que isentou essas importações de direitos até agosto de 2015 e cuja brecha o Mofcom anunciou fechar em agosto de 2014 <Cite id="bernreuter-market" />.
+Em 2004 a China praticamente não produzia polissilício. Em **2018** já detinha **55%** do volume global; em **2023**, **mais de 90%** <Cite id="bernreuter-market" />. O caminho passou por tarifas. Em **julho de 2013** o Ministério do Comércio chinês (Mofcom) impôs direitos sobre importações dos **Estados Unidos e da Coreia do Sul**, e várias plantas ociosas voltaram a operar.
+
+As alíquotas para os dois principais fornecedores coreanos ficaram **abaixo de 3%**, pouco dissuasivas, enquanto os americanos foram taxados em até **57%**, contornadas por um tempo pelo regime de *processing trade*, que isentou essas importações de direitos até agosto de 2015 e cuja brecha o Mofcom anunciou fechar em agosto de 2014 <Cite id="bernreuter-market" />.
 
 A expansão mudou a natureza do mercado por três forças ao mesmo tempo:
 
@@ -317,7 +335,11 @@ No fim, o mapa virou geopolítico. Fora da China, o último grande projeto foi a
 
 ### Uma nota sobre o presente
 
-Em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />. A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural: a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />. É esse tipo de ciclo curto, contra capacidade instalada abundante, num mercado onde mais de 90% da oferta sai de um só país, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
+Em **2025** houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a **CNY 45/kg**, com módulos a **CNY 0,70/W** e células TOPCon subindo cerca de **1,7%** no mês <Cite id="trendforce-2025" />.
+
+A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural: a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />.
+
+É esse tipo de ciclo curto, contra capacidade instalada abundante, num mercado onde mais de 90% da oferta sai de um só país, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
 
 <SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle']" />
 
