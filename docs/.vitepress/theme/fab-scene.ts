@@ -123,15 +123,18 @@ const SUF = 330
 /** The bottom of the drawn substrate. */
 const BASE = 496
 
-/** The three openings the mask carries, shared by lithography and etching. */
+/**
+ * The three openings the mask carries, shared by lithography, etching and deposition, so that a
+ * reader stepping through those modules sees the same pattern rather than three unrelated ones.
+ */
 const WIN = [
-  { a: 268, b: 328 },
-  { a: 420, b: 480 },
-  { a: 572, b: 632 },
+  { a: 302, b: 358 },
+  { a: 422, b: 478 },
+  { a: 542, b: 598 },
 ]
 
-/** The trench the ALD film is laid into, in deposition. */
-const TRENCH = { a: 398, b: 502, depth: 112 }
+/** The same opening seen from close up: the trench the ALD film is laid into. */
+const TRENCH = { a: WIN[1].a, b: WIN[1].b, depth: 112 }
 
 /** Share of an oxide's thickness that lies below the original surface (Si density 2.33, SiO₂ 2.27). */
 const CONSUMED = 0.456
@@ -304,12 +307,19 @@ export class FabScene {
         ]
       }
       case 'measure': {
-        const points = Math.round(clamp01((s - 1) / 5.5) * 96)
-        return [
-          { id: 'film', value: '3.10 nm' },
-          { id: 'points', value: `${points}` },
-          { id: 'precision', value: '±0.02 nm' },
-        ]
+        const list = stagePhases('measure')
+        const at = (i: number, d: number) => list[i]?.at ?? d
+        const tCd = at(1, 4.2)
+        if (s < tCd) {
+          const points = Math.round(clamp01(s / tCd) * 96)
+          return [
+            { id: 'film', value: '3.10 nm' },
+            { id: 'points', value: `${points}` },
+            { id: 'precision', value: '±0.02 nm' },
+          ]
+        }
+        if (s < at(2, 7.4)) return [{ id: 'cd', value: '45 nm' }, { id: 'precision', value: '±0.5 nm' }]
+        return [{ id: 'film', value: '3.10 nm' }, { id: 'cd', value: '45 nm' }]
       }
     }
   }
@@ -321,7 +331,7 @@ export class FabScene {
   }
 
   private aldCycles(s: number): number {
-    return Math.min(24, Math.floor(Math.max(0, s - 0.5) / 0.3))
+    return Math.min(12, Math.floor(Math.max(0, s - 0.6) / 0.95))
   }
 
   private spinRpm(s: number): number {
@@ -335,14 +345,44 @@ export class FabScene {
     return 46555 / Math.sqrt(rpm)
   }
 
+  /** Thickness against spin speed: the film thins as the square root of the rotation. */
+  private spinInset(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
+    const f = this.plotFrame(ctx, p, 124, 44, 158, 128, 'rpm', 'nm')
+    const wMin = 500
+    const wMax = 4000
+    const hAt = (rpm: number) => 46555 / Math.sqrt(rpm)
+    const hMax = hAt(wMin)
+    const hMin = hAt(wMax)
+    ctx.beginPath()
+    for (let i = 0; i <= 24; i += 1) {
+      const rpm = wMin + (i / 24) * (wMax - wMin)
+      const px = f.ax + (i / 24) * f.aw
+      const py = f.ay - ((hAt(rpm) - hMin) / (hMax - hMin)) * f.ah
+      if (i) ctx.lineTo(px, py)
+      else ctx.moveTo(px, py)
+    }
+    ctx.strokeStyle = p.resistLine
+    ctx.lineWidth = 2.4
+    ctx.stroke()
+    const rpm = Math.max(this.spinRpm(s), wMin)
+    const ny = (hAt(rpm) - hMin) / (hMax - hMin)
+    this.dot(ctx, f.ax + ((rpm - wMin) / (wMax - wMin)) * f.aw, f.ay - ny * f.ah, 4.5, p.heat, 0.95)
+  }
+
+  /** A lithography phase boundary in seconds, read from the module's own phase script. */
+  private coatAt(index: number, fallback: number): number {
+    return stagePhases('coat')[index]?.at ?? fallback
+  }
+
   private coatReadout(s: number): FabReadout[] {
     const nm = Math.round(this.resistNm(s))
-    if (s < 1.6) return [{ id: 'spin', value: '0 rpm' }, { id: 'resist', value: `${nm} nm` }]
-    if (s < 4.6) {
+    if (s < this.coatAt(1, 1.6)) return [{ id: 'spin', value: '0 rpm' }, { id: 'resist', value: `${nm} nm` }]
+    if (s < this.coatAt(2, 4.6)) {
       return [{ id: 'spin', value: `${this.spinRpm(s)} rpm` }, { id: 'resist', value: `${nm} nm` }]
     }
-    if (s < 6.2) return [{ id: 'bake', value: '95 °C' }, { id: 'resist', value: `${nm} nm` }]
-    if (s < 8.8) return [{ id: 'wavelength', value: '193 nm' }, { id: 'dose', value: '30 mJ/cm²' }]
+    if (s < this.coatAt(3, 6.2)) return [{ id: 'bake', value: '95 °C' }, { id: 'resist', value: `${nm} nm` }]
+    if (s < this.coatAt(4, 8.8)) return [{ id: 'wavelength', value: '193 nm' }, { id: 'dose', value: '30 mJ/cm²' }]
+    if (s < this.coatAt(5, 10.8)) return [{ id: 'bake', value: '110 °C' }, { id: 'resist', value: `${nm} nm` }]
     return [{ id: 'cd', value: '45 nm' }, { id: 'resist', value: `${nm} nm` }]
   }
 
@@ -675,7 +715,7 @@ export class FabScene {
 
   private drawDeposit(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
     const cycles = this.aldCycles(s)
-    const f = cycles * 0.79
+    const f = cycles // one scene px per cycle, which is what the readout's 0.11 nm per cycle buys
     const { a, b, depth } = TRENCH
     const floor = SUF + depth
 
@@ -689,31 +729,46 @@ export class FabScene {
     ]
     const below: Array<[number, number]> = [...surface, [X1, BASE], [X0, BASE]]
 
-    // The showerhead above the wafer, its nozzles brightening on each precursor pulse.
-    this.rect(ctx, 236, 74, 428, 20, p.mask, p.panelLine)
-    const cyc = this.motion ? (Math.max(0, s - 0.5) / 0.3) % 1 : 0
-    const pulse = this.motion ? (cyc < 0.45 ? 1 : 0.3) : 0.9
-    for (let x = 262; x <= 640; x += 42) this.dot(ctx, x, 100, 3.2, p.filmLine, 0.85 * pulse)
+    // The four half-steps of the cycle: pulse A, purge, pulse B, purge. Each pulse stops on its own
+    // when the surface runs out of sites, which is the whole of why ALD is called self-limiting.
+    const at = (s - 0.6) / 0.95
+    const half = at < 0 ? -1 : ((Math.floor(at * 4) % 4) + 4) % 4
+    const pulseA = half === 0
+    const pulseB = half === 2
 
-    // Precursor falling from the head onto the field and into the trench.
+    // The showerhead above the wafer, its nozzles brightening while a precursor is flowing.
+    this.rect(ctx, 236, 74, 364, 20, p.mask, p.panelLine)
+    for (let x = 262; x <= 580; x += 42) {
+      this.dot(ctx, x, 100, 3.2, p.filmLine, pulseA ? 1 : pulseB ? 0.55 : 0.25)
+    }
+
+    // The precursor of the moment: A in blue, B in orange, nothing at all during the purges.
     if (this.motion) {
-      const drops = 22
+      const drops = 18
       for (let i = 0; i < drops; i += 1) {
-        const phase = (((s * 0.5 + i / drops) % 1) + 1) % 1
-        const px = 250 + ((i * 89) % 400)
-        const inTrench = px > a && px < b
-        const target = inTrench ? floor : SUF
+        const phase = (((s * 0.95 + i / drops) % 1) + 1) % 1
+        const px = 250 + ((i * 89) % 330)
+        const target = px > a && px < b ? floor : SUF
         const y = 106 + phase * (target - 118)
-        this.dot(ctx, px, y, 2.8, p.filmLine, 0.9 * (1 - Math.max(0, (phase - 0.9) / 0.1)))
+        const alpha = 0.9 * (1 - Math.max(0, (phase - 0.9) / 0.1))
+        if (pulseA) this.dot(ctx, px, y, 2.8, p.filmLine, alpha)
+        else if (pulseB) this.dot(ctx, px, y, 3.4, p.ion, alpha)
       }
     }
+    this.text(
+      ctx,
+      half < 0 ? '' : pulseA ? 'precursor A' : pulseB ? 'precursor B' : 'purge',
+      X0 + 18,
+      96,
+      p.muted,
+      13,
+      'left',
+    )
 
     // The substrate, then the ALD film as a true conformal coat: the surface polyline stroked at
     // width 2f, clipped to the vacuum, so the half that would fall inside the silicon is thrown
     // away and wall, floor and top all come out the same thickness.
     this.poly(ctx, below, p.si, p.siLine)
-    this.rect(ctx, X0, SUF - 14, a - X0, 14, p.oxide, p.oxideLine)
-    this.rect(ctx, b, SUF - 14, X1 - b, 14, p.oxide, p.oxideLine)
 
     if (f > 0.4) {
       ctx.save()
@@ -738,34 +793,51 @@ export class FabScene {
       ctx.lineWidth = f * 2
       ctx.stroke()
       ctx.restore()
-    }
 
-    if (f > 0.4) {
       this.text(ctx, 'barrier', X1 - 8, SUF - f - 20, p.muted, 15, 'right')
       this.lead(ctx, X1 - 96, SUF - f - 12, X1 - 132, SUF - f / 2, p.faint)
     }
+
     this.text(ctx, 'Si', a - 34, BASE - 24, p.muted, 16, 'right')
-    this.text(ctx, 'SiO₂', X0 + 22, SUF - 7, p.muted, 13, 'left')
 
     // The trench is not made here: an earlier lap opened it. Saying so is what keeps the module from
     // looking like the wafer arrived with a hole in it.
     this.text(ctx, 'trench from an earlier lap', 256, 210, p.muted, 12, 'right')
     this.lead(ctx, 262, 216, a + 4, SUF + 18, p.faint)
 
+    this.depositInset(ctx, p, cycles)
     this.dimV(ctx, b + 26, floor - f, floor, `${(cycles * 0.11).toFixed(2)} nm`, p.muted)
-    this.scaleBar(ctx, p, 36, '5 nm')
+    this.scaleBar(ctx, p, 36, '4 nm')
     this.caption(ctx, p, `ALD · cycle ${cycles}`)
+  }
+
+  /** Thickness against cycles: a straight line, which is the whole promise of ALD. */
+  private depositInset(ctx: CanvasRenderingContext2D, p: Palette, cycles: number) {
+    const f = this.plotFrame(ctx, p, 604, 44, 268, 150, 'cycles', 'thickness')
+    const maxCycles = 12
+    const maxNm = maxCycles * 0.11
+    ctx.beginPath()
+    for (let i = 0; i <= 24; i += 1) {
+      const n = (i / 24) * maxCycles
+      const px = f.ax + (n / maxCycles) * f.aw
+      const py = f.ay - ((n * 0.11) / maxNm) * f.ah
+      if (i) ctx.lineTo(px, py)
+      else ctx.moveTo(px, py)
+    }
+    ctx.strokeStyle = p.film
+    ctx.lineWidth = 2.4
+    ctx.stroke()
+    this.dot(ctx, f.ax + (cycles / maxCycles) * f.aw, f.ay - ((cycles * 0.11) / maxNm) * f.ah, 4.5, p.heat, 0.95)
   }
 
   /* ------------------------------------------------------------ 3. lithography */
 
   private drawCoat(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
-    const ph = stagePhases('coat')
-    const at = (i: number, fallback: number) => ph[i]?.at ?? fallback
-    const tSpin = at(1, 1.6)
-    const tBake = at(2, 4.6)
-    const tExpose = at(3, 6.2)
-    const tDevelop = at(4, 8.8)
+    const tSpin = this.coatAt(1, 1.6)
+    const tBake = this.coatAt(2, 4.6)
+    const tExpose = this.coatAt(3, 6.2)
+    const tPeb = this.coatAt(4, 8.8)
+    const tDevelop = this.coatAt(5, 10.8)
 
     const stackTop = SUF - 22 // oxide (14) + deposited film (8) already on the wafer
     const nm = this.resistNm(s)
@@ -783,13 +855,17 @@ export class FabScene {
       this.coatFilm(ctx, p, s, stackTop, rPx, tSpin)
       if (s < tBake) this.coatSpin(ctx, p, s, stackTop, rPx)
       else if (s < tExpose) this.coatBake(ctx, p, s, stackTop, rPx, tBake, tExpose)
-      else if (s < tDevelop) this.coatExpose(ctx, p, s, stackTop, rPx, tExpose, tDevelop)
+      else if (s < tPeb) this.coatExpose(ctx, p, s, stackTop, rPx, tExpose, tPeb)
+      else if (s < tDevelop) this.coatPeb(ctx, p, s, stackTop, rPx, tPeb, tDevelop)
       else this.coatDevelop(ctx, p, s, stackTop, rPx, tDevelop)
       this.text(ctx, 'photoresist', X0 + 4, stackTop - rPx - 12, p.muted, 14, 'left')
     }
 
-    // The exposed areas of a positive tone are the ones the development will take away.
-    const expo = span(s, tExpose + 1.0, tExpose + 1.8)
+    // The latent image arrives in two steps, which is what a chemically amplified resist does: the
+    // photons only create the acid, and the post-exposure bake is what turns it into a real change.
+    const latent = 0.3 * span(s, tExpose + 1.0, tExpose + 1.8)
+    const baked = 0.7 * span(s, tPeb + 0.2, tPeb + 1.4)
+    const expo = Math.min(1, latent + baked)
     if (expo > 0.02) {
       for (const w of WIN) {
         ctx.save()
@@ -808,6 +884,7 @@ export class FabScene {
     }
 
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
+    this.spinInset(ctx, p, s)
     this.scaleBar(ctx, p, 60, '2 µm')
   }
 
@@ -906,7 +983,19 @@ export class FabScene {
   private coatBake(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tBake: number, tExpose: number) {
     const on = Math.min(span(s, tBake, tBake + 0.4), 1 - span(s, tExpose - 0.5, tExpose))
     if (on <= 0.01) return
+    this.hotplate(ctx, p, s, on, stackTop, rPx, '95 °C')
 
+    if (this.motion) {
+      for (let i = 0; i < 9; i += 1) {
+        const phase = (i / 9 + s * 0.55) % 1
+        const vx = X0 + 96 + i * 60 + Math.sin((s + i) * 1.7) * 8
+        this.dot(ctx, vx, stackTop - rPx - 8 - phase * 82, 1.8 + phase * 2.4, p.muted, (1 - phase) * 0.45 * on)
+      }
+    }
+  }
+
+  /** The hotplate under the wafer, with heat climbing through it. Both bakes sit on it. */
+  private hotplate(ctx: CanvasRenderingContext2D, p: Palette, s: number, on: number, stackTop: number, rPx: number, label: string) {
     const hpY = BASE - 2
     const g = ctx.createLinearGradient(0, hpY - 12, 0, hpY + 14)
     g.addColorStop(0, 'rgba(0,0,0,0)')
@@ -934,29 +1023,21 @@ export class FabScene {
     }
     ctx.restore()
 
-    if (this.motion) {
-      for (let i = 0; i < 9; i += 1) {
-        const phase = (i / 9 + s * 0.55) % 1
-        const vx = X0 + 96 + i * 60 + Math.sin((s + i) * 1.7) * 8
-        this.dot(ctx, vx, stackTop - rPx - 8 - phase * 82, 1.8 + phase * 2.4, p.muted, (1 - phase) * 0.45 * on)
-      }
-    }
-
     ctx.save()
     ctx.globalAlpha = 0.13 * on * (0.75 + 0.25 * Math.sin(s * 5))
     ctx.fillStyle = p.heat
     ctx.fillRect(X0, stackTop - rPx, VW, BASE - (stackTop - rPx))
     ctx.restore()
 
-    this.text(ctx, '95 °C', 450, BASE + 26, p.heat, 15)
+    this.text(ctx, label, 450, BASE + 26, p.heat, 15)
   }
 
   /** Exposure: a chrome-on-quartz mask coming down, and the cones of light it lets through. */
-  private coatExpose(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tExpose: number, tDevelop: number) {
+  private coatExpose(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tExpose: number, tPeb: number) {
     const park = stackTop - rPx - MASK_GAP
     const maskY = lerp(54, park, span(s, tExpose, tExpose + 1.0))
     const maskH = 14
-    const lit = span(s, tExpose + 1.0, tExpose + 1.4) * (1 - span(s, tDevelop - 0.5, tDevelop))
+    const lit = span(s, tExpose + 1.0, tExpose + 1.4) * (1 - span(s, tPeb - 0.5, tPeb))
     const shimmer = 0.86 + 0.14 * Math.sin(s * 22)
 
     // The lamp, and the wash of light it throws down on the mask.
@@ -967,12 +1048,12 @@ export class FabScene {
       g.addColorStop(0, `rgba(128, 90, 213, ${0.24 * lit})`)
       g.addColorStop(1, 'rgba(128, 90, 213, 0)')
       ctx.fillStyle = g
-      ctx.fillRect(210, 16, 480, maskY - 16)
+      ctx.fillRect(288, 16, 324, maskY - 16)
       this.text(ctx, '193 nm', 322, 22, p.metal, 13, 'right')
     }
 
     this.coatMask(ctx, p, maskY, maskH, 1)
-    this.text(ctx, 'mask', 200, maskY - 10, p.muted, 14, 'left')
+    this.text(ctx, 'mask', 288, maskY - 10, p.muted, 14, 'left')
 
     // One cone of light per opening, with a glow, a core and photons falling through it.
     if (lit <= 0.01) return
@@ -994,26 +1075,33 @@ export class FabScene {
     }
   }
 
+  /** Post-exposure bake: the wafer leaves the scanner, and the acid the light made does its work. */
+  private coatPeb(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tPeb: number, tDevelop: number) {
+    const lift = span(s, tPeb, tPeb + 0.9)
+    if (lift < 1) this.coatMask(ctx, p, lerp(stackTop - rPx - MASK_GAP, 18, lift), 14, 1 - lift)
+
+    const on = Math.min(span(s, tPeb, tPeb + 0.4), 1 - span(s, tDevelop - 0.4, tDevelop))
+    if (on <= 0.01) return
+    this.hotplate(ctx, p, s, on, stackTop, rPx, '110 °C')
+  }
+
   /** The chrome-on-quartz mask: an opaque bar everywhere except the openings. */
   private coatMask(ctx: CanvasRenderingContext2D, p: Palette, maskY: number, maskH: number, alpha: number) {
     if (alpha <= 0.02) return
     ctx.save()
     ctx.globalAlpha = alpha
-    this.rect(ctx, 200, maskY, 500, maskH, p.quartz, p.panelLine)
-    let cursor = 200
+    this.rect(ctx, 288, maskY, 324, maskH, p.quartz, p.panelLine)
+    let cursor = 288
     for (const w of WIN) {
       this.rect(ctx, cursor, maskY, w.a - cursor, maskH, p.mask)
       cursor = w.b
     }
-    this.rect(ctx, cursor, maskY, 700 - cursor, maskH, p.mask)
+    this.rect(ctx, cursor, maskY, 612 - cursor, maskH, p.mask)
     ctx.restore()
   }
 
-  /** Develop: the mask lifts away, developer floods the surface, and the exposed resist goes. */
+  /** Develop: developer floods the surface and the exposed resist goes with it. */
   private coatDevelop(ctx: CanvasRenderingContext2D, p: Palette, s: number, stackTop: number, rPx: number, tDevelop: number) {
-    const lift = span(s, tDevelop, tDevelop + 0.9)
-    if (lift < 1) this.coatMask(ctx, p, lerp(stackTop - rPx - MASK_GAP, 18, lift), 14, 1 - lift)
-
     if (this.motion) {
       for (let i = 0; i < 12; i += 1) {
         const phase = (i / 12 + s * 0.85) % 1
@@ -1035,30 +1123,38 @@ export class FabScene {
   private drawEtch(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
     const depthNm = this.etchDepthNm(s)
     const depth = depthNm * 0.9
+    const oxideT = 14
+    const filmT = 8
     const maskH = 26
-    const maskTop = SUF - maskH
+    // The mask sits on the film lithography left, not on bare silicon.
+    const filmTop = SUF - oxideT - filmT
+    const maskTop = filmTop - maskH
+    const trenchBottom = SUF + depth
     const on = span(s, 0.2, 1.0)
 
-    // The wafer, with the trenches cut only where the mask opened.
+    // The stack the lithography module handed over, cut only where the mask opened.
     this.silicon(ctx, p, SUF)
+    this.rect(ctx, X0, SUF - oxideT, VW, oxideT, p.oxide, p.oxideLine)
+    this.rect(ctx, X0, filmTop, VW, filmT, p.film, p.filmLine)
+
     if (depth > 1) {
       for (const w of WIN) {
         const cxm = (w.a + w.b) / 2
-        ctx.clearRect(w.a, SUF, w.b - w.a, depth)
-        const shade = ctx.createLinearGradient(0, SUF, 0, SUF + depth)
+        ctx.clearRect(w.a, filmTop, w.b - w.a, trenchBottom - filmTop)
+        const shade = ctx.createLinearGradient(0, filmTop, 0, trenchBottom)
         shade.addColorStop(0, 'rgba(0, 0, 0, 0.03)')
         shade.addColorStop(1, 'rgba(0, 0, 0, 0.24)')
         ctx.fillStyle = shade
-        ctx.fillRect(w.a, SUF, w.b - w.a, depth)
-        this.line(ctx, w.a, SUF, w.a, SUF + depth, p.siLine, 1.6)
-        this.line(ctx, w.b, SUF, w.b, SUF + depth, p.siLine, 1.6)
-        this.line(ctx, w.a, SUF + depth, w.b, SUF + depth, p.siLine, 1.6)
+        ctx.fillRect(w.a, filmTop, w.b - w.a, trenchBottom - filmTop)
+        this.line(ctx, w.a, filmTop, w.a, trenchBottom, p.siLine, 1.6)
+        this.line(ctx, w.b, filmTop, w.b, trenchBottom, p.siLine, 1.6)
+        this.line(ctx, w.a, trenchBottom, w.b, trenchBottom, p.siLine, 1.6)
 
         // The by-products of the etch are pumped away, so they leave the trench.
         if (this.motion && depth > 14) {
           for (let k = 0; k < 3; k += 1) {
             const t = (((s * 0.7 + k / 3) % 1) + 1) % 1
-            this.dot(ctx, cxm + Math.sin(k * 2.1 + s) * 9, SUF + depth - t * (depth + 46), 2, p.good, (1 - t) * 0.5)
+            this.dot(ctx, cxm + Math.sin(k * 2.1 + s) * 9, trenchBottom - t * (depth + 46), 2, p.good, (1 - t) * 0.5)
           }
         }
 
@@ -1070,7 +1166,7 @@ export class FabScene {
           ctx.strokeStyle = p.filmLine
           ctx.lineWidth = 1.4
           ctx.beginPath()
-          ctx.ellipse(cxm, SUF + depth, 6 + flash * 16, 2 + flash * 5, 0, 0, Math.PI * 2)
+          ctx.ellipse(cxm, trenchBottom, 6 + flash * 16, 2 + flash * 5, 0, 0, Math.PI * 2)
           ctx.stroke()
           ctx.restore()
         }
@@ -1101,7 +1197,7 @@ export class FabScene {
       for (let i = 0; i < cols; i += 1) {
         const x = X0 + 18 + (i / (cols - 1)) * (VW - 36)
         const inWindow = WIN.some((w) => x > w.a && x < w.b)
-        const endY = inWindow ? SUF + depth : maskTop + 4
+        const endY = inWindow ? trenchBottom : maskTop + 4
         ctx.save()
         ctx.globalAlpha = 0.15 * on
         this.line(ctx, x, 58, x, endY, p.filmLine, 1)
@@ -1113,22 +1209,23 @@ export class FabScene {
       }
     }
 
-    // The mask, worn down by the ions that miss it: at 20:1 selectivity it loses a twentieth of the
-    // depth the silicon does. The line it started at stays dashed, so the loss is visible.
+    // The resist mask, worn down by the ions that miss it: at 20:1 selectivity it loses a twentieth
+    // of the depth the silicon does. The line it started at stays dashed, so the loss is visible.
     const worn = Math.min(5, depth / 20)
     const mTop = maskTop + worn
-    if (worn > 0.4) this.line(ctx, X0, maskTop, X1, maskTop, p.metalLine, 1, [4, 3])
+    if (worn > 0.4) this.line(ctx, X0, maskTop, X1, maskTop, p.resistLine, 1, [4, 3])
     let cursor = X0
     for (const w of WIN) {
-      this.rect(ctx, cursor, mTop, w.a - cursor, maskH - worn, p.metal, p.metalLine)
+      this.rect(ctx, cursor, mTop, w.a - cursor, maskH - worn, p.resist, p.resistLine)
       cursor = w.b
     }
-    this.rect(ctx, cursor, mTop, X1 - cursor, maskH - worn, p.metal, p.metalLine)
+    this.rect(ctx, cursor, mTop, X1 - cursor, maskH - worn, p.resist, p.resistLine)
 
-    this.text(ctx, 'mask', X0 - 6, mTop + (maskH - worn) / 2, p.muted, 14, 'right')
+    this.text(ctx, 'photoresist', X0 - 6, mTop + (maskH - worn) / 2, p.muted, 14, 'right')
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
+    this.text(ctx, 'SiO₂', X0 + 22, SUF - oxideT / 2, p.muted, 12, 'left')
     this.etchProfileInset(ctx, p, s)
-    if (depth > 20) this.dimV(ctx, X1 + 12, SUF, SUF + depth, `${Math.round(depthNm)} nm`, p.muted)
+    if (depth > 20) this.dimV(ctx, X1 + 12, filmTop, trenchBottom, `${Math.round(depthNm)} nm`, p.muted)
     this.scaleBar(ctx, p, 45, '50 nm')
   }
 
@@ -1187,11 +1284,16 @@ export class FabScene {
   private drawImplant(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
     const win = WIN[1]
     const cxm = (win.a + win.b) / 2
+    const oxideT = 14
+    const filmT = 8
+    // The same stack lithography and etching worked on, with one window open over the junction.
+    const filmTop = SUF - oxideT - filmT
     const maskH = 30
-    const maskTop = SUF - maskH
+    const maskTop = filmTop - maskH
 
-    // The resisted wafer, with one window open over the junction.
     this.silicon(ctx, p, SUF)
+    this.rect(ctx, X0, SUF - oxideT, VW, oxideT, p.oxide, p.oxideLine)
+    this.rect(ctx, X0, filmTop, VW, filmT, p.film, p.filmLine)
     this.rect(ctx, X0, maskTop, win.a - X0, maskH, p.resist, p.resistLine)
     this.rect(ctx, win.b, maskTop, X1 - win.b, maskH, p.resist, p.resistLine)
 
@@ -1214,7 +1316,7 @@ export class FabScene {
     const tilt = (7 * Math.PI) / 180
     const topY = 46
     const bw = 30
-    const dx = (SUF - topY) * Math.tan(tilt)
+    const dx = (filmTop - topY) * Math.tan(tilt)
     const beamOn = 1 - span(s, 5.4, 5.9)
     ctx.save()
     ctx.globalAlpha = 0.42 * beamOn
@@ -1222,8 +1324,8 @@ export class FabScene {
     ctx.beginPath()
     ctx.moveTo(cxm - dx - bw, topY)
     ctx.lineTo(cxm - dx + bw, topY)
-    ctx.lineTo(cxm + bw, SUF)
-    ctx.lineTo(cxm - bw, SUF)
+    ctx.lineTo(cxm + bw, filmTop)
+    ctx.lineTo(cxm - bw, filmTop)
     ctx.closePath()
     ctx.fill()
     ctx.restore()
@@ -1231,7 +1333,7 @@ export class FabScene {
     if (this.motion && s < 5.6) {
       for (let i = 0; i < 16; i += 1) {
         const phase = (((s * 1.6 + i / 16) % 1) + 1) % 1
-        const y = topY + phase * (SUF - topY)
+        const y = topY + phase * (filmTop - topY)
         const x = cxm - dx + (y - topY) * Math.tan(tilt) + Math.sin(i * 2.1) * 6
         this.dot(ctx, x, y, 2.6, p.beam, beamOn)
       }
@@ -1268,7 +1370,7 @@ export class FabScene {
     }
 
     this.text(ctx, 'photoresist', X0 + 4, maskTop - 14, p.muted, 14, 'left')
-    this.text(ctx, '7°', cxm - dx - bw - 12, (topY + SUF) / 2, p.beam, 16, 'right')
+    this.text(ctx, '7°', cxm - dx - bw - 12, (topY + filmTop) / 2, p.beam, 16, 'right')
     this.text(ctx, 'Si', X1 - 26, BASE - 24, p.muted, 16, 'right')
 
     this.profileInset(ctx, p, s)
@@ -1370,6 +1472,7 @@ export class FabScene {
 
     // The plane the polish aims for, so dishing and erosion read against something.
     this.line(ctx, X0 - 28, D, X1 + 28, D, p.faint, 1.2, [5, 4])
+    this.text(ctx, 'target plane', X0 - 34, D, p.muted, 12, 'right')
 
     // The pad, sliding sideways (which is how a turning pad looks in a cross-section) and lifting
     // off at the end so the surface it leaves behind can be read.
@@ -1433,32 +1536,46 @@ export class FabScene {
   /* -------------------------------------------------------------- 7. metrology */
 
   private drawMeasure(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
+    const list = stagePhases('measure')
+    const at = (i: number, d: number) => list[i]?.at ?? d
+    const tCd = at(1, 4.2)
+    const tLoop = at(2, 7.4)
+
+    const oxide = 14
     const film = 22
-    const top = SUF - film
+    const top = SUF - oxide - film
     this.silicon(ctx, p, SUF)
+    this.rect(ctx, X0, SUF - oxide, VW, oxide, p.oxide, p.oxideLine)
     this.rect(ctx, X0, top, VW, film, p.film, p.filmLine)
 
-    const sweep = clamp01((s - 1) / 5.5)
+    // 1. Film thickness, read off the surface by an ellipsometer.
+    const sweep = clamp01(s / tCd)
     // The head stays left of the map inset, so the beam never slides behind the panel.
     const spotX = lerp(X0 + 60, 600, sweep)
-
-    // The head, the incident beam and the two reflections an ellipsometer works from.
     const angle = (68 * Math.PI) / 180
-    const len = 150
+    const len = 130
     const inX = spotX - Math.cos(angle) * len
     const inY = top - Math.sin(angle) * len
-    this.rect(ctx, inX - 34, inY - 26, 44, 26, p.mask, p.panelLine)
-    this.line(ctx, inX, inY, spotX, top, p.good, 2.4)
-    this.line(ctx, spotX, top, spotX + Math.cos(angle) * len, top - Math.sin(angle) * len, p.good, 2.4)
-    this.line(ctx, spotX, top, spotX + Math.cos(angle) * (len - 14), top - Math.sin(angle) * (len - 14), p.beam, 1.6)
-    this.text(ctx, 'ellipsometer', inX - 22, inY - 32, p.muted, 13, 'right')
+    const quiet = 1 - span(s, tCd, tCd + 0.4)
+    if (quiet > 0.02) {
+      ctx.save()
+      ctx.globalAlpha = quiet
+      this.rect(ctx, inX - 34, inY - 26, 44, 26, p.mask, p.panelLine)
+      this.line(ctx, inX, inY, spotX, top, p.good, 2.4)
+      this.line(ctx, spotX, top, spotX + Math.cos(angle) * len, top - Math.sin(angle) * len, p.good, 2.4)
+      this.line(ctx, spotX, top, spotX + Math.cos(angle) * (len - 14), top - Math.sin(angle) * (len - 14), p.beam, 1.6)
+      this.text(ctx, 'ellipsometer', inX - 22, inY - 32, p.muted, 13, 'right')
+      this.dot(ctx, spotX, top + film / 2, 5, p.good, 0.9)
+      this.line(ctx, spotX, top - 6, spotX, SUF + 18, p.good, 1.2, [3, 3])
+      ctx.restore()
+    }
 
-    // The measurement point lights up where the beam lands.
-    this.dot(ctx, spotX, top + film / 2, 5, p.good, 0.9)
-    this.line(ctx, spotX, top - 6, spotX, SUF + 16, p.good, 1.2, [3, 3])
+    // 2. Critical dimension, which needs its own ruler: a 45 nm line cannot share a scale with a
+    // 3 nm film, so it gets its own inset rather than a zoom that would lose the film.
+    if (s > tCd - 0.3) this.cdInset(ctx, p, s, tCd)
 
-    // The run-to-run loop: the measurement goes back into the process.
-    const loop = span(s, 3.5, 5.5)
+    // 3. The run-to-run loop: the measurement goes back into the process.
+    const loop = span(s, tLoop - 0.5, tLoop + 1.5)
     if (loop > 0.02) {
       ctx.save()
       ctx.globalAlpha = loop * 0.85
@@ -1472,16 +1589,56 @@ export class FabScene {
       this.text(ctx, 'run-to-run', 450, 20, p.good, 14)
     }
 
-    this.mapInset(ctx, p, s)
+    if (s < tCd + 0.4) this.mapInset(ctx, p, s, tCd)
 
     this.text(ctx, 'film', X1 - 26, top + film / 2, p.muted, 16, 'right')
     this.text(ctx, 'Si', X0 + 26, BASE - 24, p.muted, 16, 'left')
+    this.text(ctx, 'SiO₂', X0 + 122, SUF - oxide / 2, p.muted, 12, 'left')
     this.dimV(ctx, X1 + 12, top, SUF, '3.1 nm', p.muted)
     this.scaleBar(ctx, p, 36, '5 nm')
   }
 
+  /** The other measurement the chapter names: a linewidth, read back by an electron beam. */
+  private cdInset(ctx: CanvasRenderingContext2D, p: Palette, s: number, tCd: number) {
+    const x = 124
+    const y = 40
+    const w = 168
+    const h = 132
+    this.rect(ctx, x, y, w, h, p.panel, p.panelLine, 1.4)
+    this.text(ctx, 'CD-SEM', x + w / 2, y + 15, p.muted, 12)
+
+    const cx = x + w / 2
+    const baseY = y + h - 30
+    this.rect(ctx, x + 16, baseY, w - 32, 14, p.si, p.siLine, 1.1)
+    this.line(ctx, cx - 20, baseY - 22, cx + 20, baseY - 22, p.resistLine, 1.2)
+
+    // The line whose width is being read, and the column that reads it.
+    const hit = span(s, tCd + 0.2, tCd + 0.9)
+    this.rect(ctx, cx - 34, y + 26, 68, 16, p.mask, p.panelLine, 1)
+    if (hit > 0.02) {
+      ctx.save()
+      ctx.globalAlpha = 0.5 * hit
+      this.poly(ctx, [[cx - 5, y + 42], [cx + 5, y + 42], [cx + 2, baseY - 22], [cx - 2, baseY - 22]], p.good)
+      ctx.restore()
+      this.dot(ctx, cx, baseY - 22, 3, p.good, hit)
+    }
+
+    // The width it reports, marked across the line it landed on.
+    const read = span(s, tCd + 0.6, tCd + 1.6)
+    if (read > 0.02) {
+      ctx.save()
+      ctx.globalAlpha = read
+      this.rect(ctx, cx - 20, baseY - 22, 40, 22, p.resist, p.resistLine, 1.2)
+      this.line(ctx, cx - 20, baseY - 30, cx + 20, baseY - 30, p.good, 1.2)
+      this.line(ctx, cx - 20, baseY - 34, cx - 20, baseY - 26, p.good, 1.2)
+      this.line(ctx, cx + 20, baseY - 34, cx + 20, baseY - 26, p.good, 1.2)
+      ctx.restore()
+      this.text(ctx, '45 nm', cx, baseY - 42, p.good, 12)
+    }
+  }
+
   /** What the ellipsometer is really producing: a thickness map of the wafer, built point by point. */
-  private mapInset(ctx: CanvasRenderingContext2D, p: Palette, s: number) {
+  private mapInset(ctx: CanvasRenderingContext2D, p: Palette, s: number, tCd: number) {
     const x = 604
     const y = 44
     const w = 268
@@ -1508,7 +1665,7 @@ export class FabScene {
     }
 
     const N = 96
-    const shown = Math.round(clamp01((s - 1) / 5.5) * N)
+    const shown = Math.round(clamp01(s / tCd) * N)
     for (let k = 0; k < N; k += 1) {
       const a = k * 0.5
       const rr = R * (0.1 + 0.86 * (k / (N - 1)))

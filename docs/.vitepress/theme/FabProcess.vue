@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useIsEnglish } from './locale'
 import { FAB_STAGES, READOUT_LABELS, STAGE_DURATION, type FabReadout } from './fab-stages'
 import { DARK, FabScene, LIGHT, SCENE_H, SCENE_W } from './fab-scene'
@@ -27,12 +27,13 @@ const isEnglish = useIsEnglish()
 const stages = FAB_STAGES
 const stage = ref(0)
 const playing = ref(false)
-const paused = ref(false)
+const lap = ref(1)
 const readout = ref<FabReadout[]>([])
 const progress = ref(0)
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const rootRef = ref<HTMLElement | null>(null)
+const modulesRef = ref<HTMLElement | null>(null)
 
 const scene = new FabScene()
 const reduced = ref(false)
@@ -43,6 +44,7 @@ let lastFrame = 0
 let stageStartedAt = 0
 let readoutClock = 999
 let dark = false
+let dirty = true
 let observer: IntersectionObserver | null = null
 let themeObserver: MutationObserver | null = null
 let sizeObserver: ResizeObserver | null = null
@@ -59,20 +61,30 @@ const labels = computed(() => ({
     ? `Module ${stage.value + 1} of ${stages.length}: ${text(current.value.tab)}`
     : `Módulo ${stage.value + 1} de ${stages.length}: ${text(current.value.tab)}`,
   modules: isEnglish.value ? 'Modules of the loop' : 'Módulos do laço',
+  stack: isEnglish.value ? 'Layers on the wafer' : 'Camadas do wafer',
+  prev: isEnglish.value ? 'Previous module' : 'Módulo anterior',
+  next: isEnglish.value ? 'Next module' : 'Próximo módulo',
+  ownChapter: isEnglish.value ? 'Has its own chapter' : 'Tem capítulo próprio',
+  lap: isEnglish.value
+    ? `Lap ${lap.value} through the seven modules`
+    : `Volta ${lap.value} pelos sete módulos`,
+  lapNote: isEnglish.value
+    ? 'A real wafer goes round the same modules dozens of times. The seven are the visit order of one lap.'
+    : 'Um wafer real dá dezenas de voltas pelos mesmos módulos. Os sete são a ordem de uma volta.',
   timeline: isEnglish.value ? 'Process timeline' : 'Linha do processo',
   phases: isEnglish.value ? 'Phases of the module' : 'Fases do módulo',
-  canvas: isEnglish.value
-    ? `Animated cross-section of the wafer during ${text(current.value.tab).toLowerCase()}.`
-    : `Corte animado do wafer durante a etapa de ${text(current.value.tab).toLowerCase()}.`,
   note: isEnglish.value
-    ? 'Each drawing is a schematic of one module, with its own scale bar. None of them is a measurement.'
-    : 'Cada desenho é um esquema de um módulo, com sua própria escala. Nenhum deles é uma medição.',
+    ? 'Each drawing is a schematic of one module, with its own scale bar. The layers carry over from module to module; the scale cannot, which is why a 3 nm film and a 430 nm oxide are never in the same picture.'
+    : 'Cada desenho é um esquema de um módulo, com sua própria escala. As camadas passam de um módulo para o outro; a escala não, e é por isso que um filme de 3 nm e um óxido de 430 nm nunca estão no mesmo desenho.',
 }))
 
 const readoutLabel = (id: string) => {
   const entry = READOUT_LABELS[id]
   return entry ? (isEnglish.value ? entry.en : entry.pt) : id
 }
+
+/** Portuguese writes 0,11 where English writes 0.11, and the readout values come from the scene. */
+const readoutValue = (value: string) => (isEnglish.value ? value : value.replace(/\./g, ','))
 
 // The phase script is written in seconds; `STAGE_DURATION` is in milliseconds.
 const duration = computed(() => STAGE_DURATION[current.value.mode] / 1000)
@@ -87,6 +99,15 @@ const phaseNow = computed(() => {
   let index = 0
   for (let i = 0; i < list.length; i += 1) if (t >= list[i].at - 1e-6) index = i
   return index
+})
+
+/** What a screen reader is told: the module, and the step of the process it is on. */
+const canvasLabel = computed(() => {
+  const tab = text(current.value.tab).toLowerCase()
+  const step = text(current.value.phases[phaseNow.value].label)
+  return isEnglish.value
+    ? `Animated cross-section of the wafer during ${tab}. Step: ${step}.`
+    : `Corte animado do wafer na etapa de ${tab}. Passo: ${step}.`
 })
 
 /** How long a phase lasts, so the badges are as wide as the step they stand for. */
@@ -104,11 +125,11 @@ function goToPhase(index: number) {
   const list = current.value.phases
   if (!list[index]) return
   playing.value = false
-  paused.value = true
   const fraction = list[index].at / duration.value
   scene.seek(fraction)
   progress.value = fraction
   readout.value = scene.readout()
+  dirty = true
 }
 
 /** Sizes the backing store to the space the page gave the canvas, so nothing is blurry. */
@@ -131,6 +152,7 @@ function paint() {
   if (!ctx) return
   ctx.clearRect(0, 0, SCENE_W, SCENE_H)
   scene.draw(ctx, dark ? DARK : LIGHT)
+  dirty = false
 }
 
 function goTo(index: number) {
@@ -140,27 +162,73 @@ function goTo(index: number) {
   if (reduced.value) scene.settle()
   stageStartedAt = performance.now()
   readoutClock = 999
-  paused.value = false
   progress.value = reduced.value ? 1 : 0
+  readout.value = scene.readout()
+  dirty = true
+}
+
+/** Starts the clock. A module that already ran to its end replays from the beginning. */
+function play() {
+  if (!reduced.value && scene.progress() >= 1) goTo(stage.value)
+  playing.value = true
+  stageStartedAt = performance.now()
+}
+
+/** The reader picked a module from the tabs or the arrows: show it and start it. */
+function choose(index: number) {
+  goTo(index)
+  play()
+}
+
+/** Steps a module forward or back, counting a lap each time the loop wraps round. */
+function step(delta: number) {
+  const from = stage.value
+  choose(from + delta)
+  if (delta > 0 && from === stages.length - 1) lap.value += 1
+  else if (delta < 0 && from === 0) lap.value = Math.max(1, lap.value - 1)
+}
+
+// The rail scrolls sideways when the seven tabs do not fit; centre the active one. Only the rail's
+// own scrollLeft moves, so an auto-advance never drags the page up to the figure.
+watch(
+  stage,
+  () => {
+    const box = modulesRef.value
+    const active = box?.querySelector('.fab-process__tab.is-current') as HTMLElement | null
+    if (!box || !active) return
+    const boxRect = box.getBoundingClientRect()
+    const activeRect = active.getBoundingClientRect()
+    box.scrollLeft += activeRect.left - boxRect.left - (boxRect.width - activeRect.width) / 2
+  },
+  { flush: 'post' },
+)
+
+function onKeydown(event: KeyboardEvent) {
+  // The slider and the buttons keep their own arrow keys; this is only for the frame itself.
+  if (event.target !== rootRef.value) return
+  if (event.key === 'ArrowLeft') {
+    step(-1)
+    event.preventDefault()
+  } else if (event.key === 'ArrowRight') {
+    step(1)
+    event.preventDefault()
+  }
 }
 
 /** The scrubber: stop the clock and sit where the reader put the handle. */
 function onScrub(event: Event) {
   const value = Number((event.target as HTMLInputElement).value)
   playing.value = false
-  paused.value = true
   scene.seek(value / 1000)
   progress.value = value / 1000
   readout.value = scene.readout()
+  dirty = true
 }
 
+/** The play/pause button: one switch over the whole sequence, current module included. */
 function toggle() {
-  playing.value = !playing.value
-  stageStartedAt = performance.now()
-  if (!playing.value) return
-  paused.value = false
-  // Pressing play on a module that already ran replays it, rather than sitting on the end state.
-  if (scene.progress() >= 1) goTo(stage.value)
+  if (playing.value) playing.value = false
+  else play()
 }
 
 /** How long a module holds before the next one takes over: its play time plus a beat to read it. */
@@ -173,22 +241,29 @@ function frame(now: number) {
   const dt = lastFrame ? Math.min(64, now - lastFrame) : 16
   lastFrame = now
 
-  scene.update(reduced.value || paused.value ? 0 : dt)
-  paint()
+  const frozen = reduced.value || !playing.value
+  if (!frozen) scene.update(dt)
 
-  readoutClock += dt
-  if (readoutClock > 160) {
-    readoutClock = 0
-    readout.value = scene.readout()
-    progress.value = scene.progress()
+  // A frozen scene only needs redrawing when something has actually changed.
+  if (!frozen || dirty) paint()
+
+  if (!frozen) {
+    readoutClock += dt
+    if (readoutClock > 160) {
+      readoutClock = 0
+      readout.value = scene.readout()
+      progress.value = scene.progress()
+    }
   }
 
-  if (playing.value && now - stageStartedAt > dwell()) goTo(stage.value + 1)
+  if (playing.value && now - stageStartedAt > dwell()) step(1)
 }
 
 function start() {
   if (raf) return
   lastFrame = 0
+  // Give the module a full dwell from the moment the reader can actually see it.
+  if (playing.value) stageStartedAt = performance.now()
   raf = requestAnimationFrame(frame)
 }
 
@@ -204,6 +279,8 @@ onMounted(() => {
   dark = document.documentElement.classList.contains('dark')
   goTo(0)
   resize()
+  // The sequence starts on its own as the figure scrolls into view; the button pauses it.
+  if (!reduced.value) play()
 
   // The column the chapter is set in changes width when the sidebar folds, so the backing store
   // follows the element rather than the window.
@@ -235,7 +312,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="rootRef" class="fab-process">
+  <div ref="rootRef" class="fab-process" tabindex="0" @keydown="onKeydown">
     <div class="fab-process__head">
       <p class="fab-process__title">{{ labels.title }}</p>
       <button class="fab-process__play" type="button" @click="toggle">
@@ -245,26 +322,63 @@ onBeforeUnmount(() => {
 
     <p class="fab-process__step">{{ labels.step }}</p>
 
-    <ol class="fab-process__modules" :aria-label="labels.modules">
-      <li v-for="(s, i) in stages" :key="s.id">
-        <button
-          type="button"
-          :class="['fab-process__tab', { 'is-current': i === stage }]"
-          :aria-pressed="i === stage"
-          @click="goTo(i)"
-        >
-          <span class="fab-process__tab-num">{{ i + 1 }}</span>
-          {{ text(s.tab) }}
-        </button>
-      </li>
-    </ol>
+    <div class="fab-process__rail">
+      <button
+        type="button"
+        class="fab-process__step-btn"
+        :title="labels.prev"
+        :aria-label="labels.prev"
+        @click="step(-1)"
+      >
+        ‹
+      </button>
+      <ol ref="modulesRef" class="fab-process__modules" :aria-label="labels.modules">
+        <li v-for="(s, i) in stages" :key="s.id">
+          <button
+            type="button"
+            :class="['fab-process__tab', { 'is-current': i === stage }]"
+            :aria-pressed="i === stage"
+            :title="text(s.tab)"
+            @click="choose(i)"
+          >
+            <span class="fab-process__tab-num">{{ i + 1 }}</span>
+            <span class="fab-process__tab-label">{{ text(s.tab) }}</span>
+            <span v-if="s.ownChapter" class="fab-process__tab-mark" :title="labels.ownChapter" aria-hidden="true">↗</span>
+          </button>
+        </li>
+      </ol>
+      <button
+        type="button"
+        class="fab-process__step-btn"
+        :title="labels.next"
+        :aria-label="labels.next"
+        @click="step(1)"
+      >
+        ›
+      </button>
+    </div>
+
+    <p class="fab-process__lap" :title="labels.lapNote">
+      <span aria-hidden="true">↻</span> {{ labels.lap }}
+    </p>
 
     <canvas
       ref="canvasRef"
       class="fab-process__canvas"
       role="img"
-      :aria-label="labels.canvas"
+      :aria-label="canvasLabel"
     />
+
+    <ol class="fab-process__stack" :aria-label="labels.stack">
+      <li
+        v-for="layer in current.stack"
+        :key="layer.id"
+        :class="['fab-process__layer', `fab-process__layer--${layer.id}`, `is-${layer.role}`]"
+      >
+        <span class="fab-process__layer-swatch" aria-hidden="true" />
+        {{ text(layer.label) }}
+      </li>
+    </ol>
 
     <div class="fab-process__timeline">
       <input
@@ -282,11 +396,12 @@ onBeforeUnmount(() => {
       </span>
     </div>
 
-    <ol v-if="current.phases.length > 1" class="fab-process__phases" :aria-label="labels.phases">
+    <ol class="fab-process__phases" :aria-label="labels.phases">
       <li v-for="(phase, i) in current.phases" :key="i" :style="{ flexGrow: phaseSpan(i) }">
         <button
           type="button"
           :class="['fab-process__phase', { 'is-current': i === phaseNow }]"
+          :title="text(phase.label)"
           :aria-current="i === phaseNow ? 'step' : undefined"
           @click="goToPhase(i)"
         >
@@ -298,7 +413,7 @@ onBeforeUnmount(() => {
     <ul v-if="readout.length" class="fab-process__readout">
       <li v-for="line in readout" :key="line.id">
         <span class="fab-process__readout-label">{{ readoutLabel(line.id) }}</span>
-        <span class="fab-process__readout-value">{{ line.value }}</span>
+        <span class="fab-process__readout-value">{{ readoutValue(line.value) }}</span>
       </li>
     </ul>
 
@@ -321,14 +436,23 @@ onBeforeUnmount(() => {
   background: var(--vp-c-bg-soft);
 }
 
+/* VitePress spaces every `li + li` in the page by 8px; inside these rows that only pushes the
+   siblings down and leaves the first item looking raised. Reset it. */
+.fab-process li {
+  margin: 0;
+}
+
 .fab-process__head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
 }
 
 .fab-process__title {
+  flex: 1 1 auto;
+  min-width: 11rem;
   margin: 0;
   font-weight: 700;
   color: var(--vp-c-text-1);
@@ -352,29 +476,166 @@ onBeforeUnmount(() => {
 
 .fab-process__step {
   margin: 0.15rem 0 0.7rem;
+  overflow: hidden;
   font-size: 0.82rem;
   color: var(--vp-c-text-3);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fab-process:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.fab-process__rail {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.fab-process__step-btn {
+  flex: 0 0 auto;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.fab-process__step-btn:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .fab-process__modules {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0 0 0.8rem;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  gap: 0.15rem;
+  min-width: 0;
+  margin: 0;
   padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
   list-style: none;
 }
 
+.fab-process__modules::-webkit-scrollbar {
+  display: none;
+}
+
+.fab-process__modules li {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.fab-process__tab-mark {
+  margin-left: 0.1rem;
+  color: var(--vp-c-text-3);
+  font-size: 0.7rem;
+}
+
+.fab-process__lap {
+  margin: 0.35rem 0 0.8rem;
+  overflow: hidden;
+  font-size: 0.76rem;
+  color: var(--vp-c-text-3);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fab-process__stack {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.3rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.fab-process__stack::-webkit-scrollbar {
+  display: none;
+}
+
+.fab-process__layer {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.35rem;
+  height: 1.7rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding: 0 0.5rem 0 0.3rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-3);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.fab-process__layer-swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 2px;
+  background: var(--swatch, transparent);
+}
+
+.fab-process__layer.is-carry {
+  opacity: 0.72;
+}
+
+.fab-process__layer.is-add {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.fab-process__layer.is-remove {
+  border-color: var(--vp-c-danger-1);
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.fab-process__layer--si { --swatch: #cfd8e3; }
+.fab-process__layer--oxide { --swatch: #f6e05e; }
+.fab-process__layer--dielectric { --swatch: #f6e05e; }
+.fab-process__layer--film { --swatch: #90cdf4; }
+.fab-process__layer--barrier { --swatch: #90cdf4; }
+.fab-process__layer--resist { --swatch: #c6f6d5; }
+.fab-process__layer--copper { --swatch: #ed8936; }
+.fab-process__layer--doped { --swatch: #dd6b20; }
+.fab-process__layer--trench { --swatch: #ffffff; }
+.fab-process__layer--relief { --swatch: #c53030; }
+
 .fab-process__tab {
   display: inline-flex;
+  flex: 1 1 auto;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.25rem 0.6rem 0.25rem 0.35rem;
+  gap: 0.2rem;
+  height: 1.7rem;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0.35rem 0 0.25rem;
   border: 1px solid var(--vp-c-divider);
   border-radius: 999px;
   background: var(--vp-c-bg);
   color: var(--vp-c-text-2);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+  line-height: 1;
+  white-space: nowrap;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
 }
@@ -392,20 +653,24 @@ onBeforeUnmount(() => {
 }
 
 .fab-process__tab-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 999px;
-  background: var(--vp-c-bg-soft);
-  font-size: 0.7rem;
+  flex: 0 0 auto;
+  min-width: 0.5rem;
+  color: var(--vp-c-text-3);
+  font-size: 0.66rem;
   font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.fab-process__tab-label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .fab-process__tab.is-current .fab-process__tab-num {
-  background: var(--vp-c-brand-1);
-  color: #fff;
+  color: var(--vp-c-brand-1);
 }
 
 .fab-process__canvas {
@@ -493,6 +758,7 @@ onBeforeUnmount(() => {
 
 .fab-process__phases {
   display: flex;
+  align-items: stretch;
   gap: 1px;
   margin: 0.25rem 7px 0;
   padding: 0;
@@ -507,14 +773,18 @@ onBeforeUnmount(() => {
 
 .fab-process__phase {
   flex: 1 1 auto;
+  width: 100%;
   min-width: 0;
-  padding: 0.25rem 0.45rem;
+  height: 1.75rem;
+  box-sizing: border-box;
+  padding: 0 0.45rem;
   overflow: hidden;
   border: 1px solid var(--vp-c-divider);
   border-radius: 6px;
   background: var(--vp-c-bg);
   color: var(--vp-c-text-3);
   font-size: 0.72rem;
+  line-height: 1.75rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   cursor: pointer;

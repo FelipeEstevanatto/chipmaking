@@ -70,6 +70,14 @@ export interface FabStage {
   note: { pt: string; en: string }
   /** The sub-steps of the module, in order, each with the second it begins. */
   phases: FabPhase[]
+  /**
+   * The layers this module leaves on the wafer, bottom up. `carry` is what an earlier lap put
+   * there, `add` is what this module lays down, `remove` is what it takes away. It is what keeps
+   * the modules reading as one wafer instead of seven unrelated schematics.
+   */
+  stack: Array<{ id: string; label: { pt: string; en: string }; role: 'carry' | 'add' | 'remove' }>
+  /** True for a module whose process has its own chapter. */
+  ownChapter?: boolean
 }
 
 export const FAB_STAGES: FabStage[] = [
@@ -83,6 +91,10 @@ export const FAB_STAGES: FabStage[] = [
       { at: 2.9, label: { pt: 'Regime parabólico', en: 'Parabolic regime' } },
     ],
     tab: { pt: 'Oxidação', en: 'Oxidation' },
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'add' },
+    ],
     title: {
       pt: 'O silício cresce o próprio isolante',
       en: 'Silicon grows its own insulator',
@@ -101,6 +113,11 @@ export const FAB_STAGES: FabStage[] = [
     mode: 'deposit',
     phases: [{ at: 0, label: { pt: 'Crescimento conforme', en: 'Conformal growth' } }],
     tab: { pt: 'Deposição', en: 'Deposition' },
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
+      { id: 'barrier', label: { pt: 'Barreira', en: 'Barrier' }, role: 'add' },
+    ],
     title: {
       pt: 'Material chega átomo a átomo',
       en: 'Material arrives atom by atom',
@@ -122,9 +139,17 @@ export const FAB_STAGES: FabStage[] = [
       { at: 1.6, label: { pt: 'Spin coating', en: 'Spin coat' } },
       { at: 4.6, label: { pt: 'Soft bake', en: 'Soft bake' } },
       { at: 6.2, label: { pt: 'Exposição', en: 'Expose' } },
-      { at: 8.8, label: { pt: 'Revelação', en: 'Develop' } },
+      { at: 8.8, label: { pt: 'PEB', en: 'PEB' } },
+      { at: 10.8, label: { pt: 'Revelação', en: 'Develop' } },
     ],
     tab: { pt: 'Litografia', en: 'Lithography' },
+    ownChapter: true,
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
+      { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
+      { id: 'resist', label: { pt: 'Fotoresistor', en: 'Photoresist' }, role: 'add' },
+    ],
     title: {
       pt: 'O desenho vira máscara',
       en: 'The drawing becomes a mask',
@@ -146,6 +171,13 @@ export const FAB_STAGES: FabStage[] = [
       { at: 5.6, label: { pt: 'Sobreataque', en: 'Overetch' } },
     ],
     tab: { pt: 'Corrosão', en: 'Etching' },
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
+      { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
+      { id: 'resist', label: { pt: 'Fotoresistor', en: 'Photoresist' }, role: 'carry' },
+      { id: 'trench', label: { pt: 'Trincheira', en: 'Trench' }, role: 'add' },
+    ],
     title: {
       pt: 'A química decide a forma',
       en: 'The chemistry decides the shape',
@@ -167,6 +199,13 @@ export const FAB_STAGES: FabStage[] = [
       { at: 5.9, label: { pt: 'Recozimento', en: 'Anneal' } },
     ],
     tab: { pt: 'Implantação', en: 'Ion implantation' },
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
+      { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
+      { id: 'resist', label: { pt: 'Fotoresistor', en: 'Photoresist' }, role: 'carry' },
+      { id: 'doped', label: { pt: 'Região dopada', en: 'Doped region' }, role: 'add' },
+    ],
     title: {
       pt: 'Íons entram à força',
       en: 'Ions driven in by force',
@@ -188,6 +227,12 @@ export const FAB_STAGES: FabStage[] = [
       { at: 6.0, label: { pt: 'Sobrepolimento', en: 'Overpolish' } },
     ],
     tab: { pt: 'Planarização', en: 'Planarisation' },
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'dielectric', label: { pt: 'Dielétrico', en: 'Dielectric' }, role: 'carry' },
+      { id: 'copper', label: { pt: 'Cobre', en: 'Copper' }, role: 'carry' },
+      { id: 'relief', label: { pt: 'Relevo', en: 'Relief' }, role: 'remove' },
+    ],
     title: {
       pt: 'O relevo vai embora',
       en: 'The relief goes away',
@@ -205,10 +250,16 @@ export const FAB_STAGES: FabStage[] = [
     id: 'metrology',
     mode: 'measure',
     phases: [
-      { at: 0, label: { pt: 'Varredura', en: 'Sweep' } },
-      { at: 3.5, label: { pt: 'Controle run-to-run', en: 'Run-to-run control' } },
+      { at: 0, label: { pt: 'Espessura', en: 'Thickness' } },
+      { at: 4.2, label: { pt: 'Dimensão crítica', en: 'Critical dimension' } },
+      { at: 7.4, label: { pt: 'Controle run-to-run', en: 'Run-to-run control' } },
     ],
     tab: { pt: 'Metrologia', en: 'Metrology' },
+    stack: [
+      { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
+      { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
+      { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
+    ],
     title: {
       pt: 'Medir para poder continuar',
       en: 'Measuring so you can continue',
@@ -227,12 +278,12 @@ export const FAB_STAGES: FabStage[] = [
 /** How long the scene takes to play a module through, in milliseconds. */
 export const STAGE_DURATION: Record<FabMode, number> = {
   furnace: 8000,
-  deposit: 8000,
-  coat: 12000,
+  deposit: 12000,
+  coat: 13000,
   etch: 8000,
   implant: 10000,
   cmp: 8000,
-  measure: 8000,
+  measure: 10000,
 }
 
 const BY_MODE = new Map<FabMode, FabStage>(FAB_STAGES.map((stage) => [stage.mode, stage]))
