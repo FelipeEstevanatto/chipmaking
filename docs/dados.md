@@ -1,6 +1,6 @@
 ---
 title: Dados e números
-description: As séries do site em gráfico e em arquivo — contagem de transistores, modelo de rendimento, classificação por frequência e o selo de atualidade de cada capítulo.
+description: "As séries do site em gráfico e em arquivo: contagem de transistores, modelo de rendimento, classificação por frequência e o selo de atualidade de cada capítulo."
 dataAsOf: 2026
 ---
 
@@ -12,7 +12,7 @@ Esta página é o outro lado dessa regra: reunir as **séries** que sustentam os
 
 ## Transistores por chip
 
-A curva mais citada da indústria é também a mais difícil de atribuir, porque nenhuma fonte primária tabula contagens de transistores atravessando cinco décadas e vários fabricantes. A série abaixo é uma **compilação**, e a tabela nomeia cada produto para que a origem de cada ponto seja rastreável; onde o fabricante publica a contagem, a linha cita o fabricante <Cite id="dados-transistor-count" />.
+A curva mais citada da indústria é também a mais difícil de atribuir, porque nenhuma fonte primária tabula contagens de transistores atravessando cinco décadas e vários fabricantes. A série abaixo é uma **compilação**, e a tabela nomeia cada produto para que a origem de cada ponto seja rastreável; onde o fabricante publica a contagem, a linha cita o fabricante <Cite id="dados-transistor-count" />. A série alterna processadores e GPUs, e é por isso que um ponto de 2022 aparece acima de um de 2024.
 
 <ClientOnly>
   <DataChart chart="transistor-count" />
@@ -27,20 +27,23 @@ A curva mais citada da indústria é também a mais difícil de atribuir, porque
 | 2000 | Pentium 4 | **42 milhões** | 180 nm | <Cite id="dados-transistor-count" /> |
 | 2006 | Core 2 Duo | **291 milhões** | 65 nm | <Cite id="dados-transistor-count" /> |
 | 2013 | Apple A7 | **1 bilhão** | 28 nm | <Cite id="dados-transistor-count" /> |
+| 2018 | NVIDIA TU102 | **18,6 bilhões** | 12 nm | <Cite id="nvidia-ada-whitepaper" /> |
 | 2020 | Apple M1 | **16 bilhões** | 5 nm | <Cite id="apple-m1" /> |
+| 2022 | NVIDIA AD102 | **76,3 bilhões** | 4N (5 nm) | <Cite id="nvidia-ada-whitepaper" /> |
 | 2024 | Apple M4 | **28 bilhões** | 3 nm | <Cite id="apple-m4" /> |
+| 2025 | NVIDIA GB202 | **92,2 bilhões** | 4N (5 nm) | <Cite id="nvidia-blackwell-whitepaper" /> |
 
 <DiagramFigure src="/assets/die-80386.jpg" alt="Fotografia do die de um Intel 80386 DX, com faixas regulares de células repetidas emolduradas por blocos irregulares de lógica e por uma borda de pads">
-O die do Intel 80386, o chip de 1985 da tabela: 275.000 transistores <Cite id="dados-transistor-count" />. As faixas de blocos densos e repetitivos são as matrizes de PLA e ROM, onde a mesma célula se repete em grade; entre elas ficam os blocos irregulares da lógica e dos caminhos de dados, e na borda a moldura de pads de contato. Pauli Rautakorpi — <a href="https://commons.wikimedia.org/wiki/File:Intel_80386_DX_die.JPG" target="_blank" rel="noopener noreferrer">Intel 80386 DX die</a> (CC BY 3.0, imagem reduzida), Wikimedia Commons.
+O die do Intel 80386, o chip de 1985 da tabela: 275.000 transistores <Cite id="dados-transistor-count" />. As faixas de blocos densos e repetitivos são as matrizes de PLA e ROM, onde a mesma célula se repete em grade; entre elas ficam os blocos irregulares da lógica e dos caminhos de dados, e na borda a moldura de pads de contato. Pauli Rautakorpi, <a href="https://commons.wikimedia.org/wiki/File:Intel_80386_DX_die.JPG" target="_blank" rel="noopener noreferrer">Intel 80386 DX die</a> (CC BY 3.0, imagem reduzida), Wikimedia Commons.
 </DiagramFigure>
 
-A leitura da série muda com o botão acima. Em escala linear, as últimas duas linhas achatam todo o resto e a impressão de continuidade da lei de Moore desaparece. Em escala **logarítmica**, o que se vê é uma reta: crescimento **exponencial** com tempo de duplicação de poucos anos, e é essa regularidade que a indústria perseguiu por décadas.
+A leitura da série muda com o botão acima. Em escala linear, os últimos pontos achatam todo o resto e a impressão de continuidade da lei de Moore desaparece. Em escala **logarítmica**, o que se vê é uma reta: crescimento **exponencial** com tempo de duplicação de poucos anos, e é essa regularidade que a indústria perseguiu por décadas.
 
-O ponto mais recente da série é de 2024. O **M6**, anunciado em agosto de 2026 e estreando no Mac mini, é o primeiro chip da Apple em **2 nm**, mas o comunicado descreve apenas “densidade maior de transistores num die menor” e não publica a contagem <Cite id="apple-m6" />. O valor de **cerca de 46 bilhões de transistores** que aparece em resumos de terceiros não tem fonte primária que o sustente, e o chip também não está na compilação que sustenta a tabela. O M6 fica de fora da série, pela mesma regra que vale para o resto do site: um número sem fonte não entra no texto.
+A série desenhada acima termina em 2025, com a contagem que a NVIDIA publica para o GB202. O **M6**, anunciado em agosto de 2026 e estreando no Mac mini, é o primeiro chip da Apple em **2 nm**, mas o comunicado descreve apenas “densidade maior de transistores num die menor” e não publica a contagem <Cite id="apple-m6" />. O valor de **cerca de 46 bilhões de transistores** que aparece em resumos de terceiros não tem fonte primária que o sustente, e o chip também não está na compilação que sustenta a tabela. O M6 fica de fora da série, pela mesma regra que vale para o resto do site: um número sem fonte não entra no texto.
 
 ## Rendimento contra área
 
-O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimento, calculado a partir da equação que o capítulo de [na fab](/na-fab) apresenta, para cinco densidades de defeitos <Cite id="leachman-yield" />.
+O segundo gráfico é o **modelo de Poisson** do rendimento, calculado a partir da equação apresentada no capítulo [Na fab](/na-fab), para cinco densidades de defeitos <Cite id="leachman-yield" />. É um modelo, não uma medição.
 
 <ClientOnly>
   <DataChart chart="yield-vs-area" />
@@ -48,7 +51,7 @@ O segundo gráfico não é uma medição: é o **modelo de Poisson** do rendimen
 
 Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
-O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o **fator de agrupamento** α do binomial negativo: em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson; conforme α desce, eles chegam em blocos, a maior parte dos dies sai limpa e as falhas se concentram em poucos. O Poisson não vê isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
+O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o **fator de agrupamento** α do binomial negativo. Em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson. Conforme α desce, eles chegam em blocos: a maior parte dos dies sai limpa e as falhas se concentram em poucos. O Poisson não vê isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
 
 <ClientOnly>
   <YieldExplorer />
@@ -62,11 +65,11 @@ O rendimento diz quantos dies sobrevivem; a **classificação** diz por quanto c
   <DataChart chart="binning-bins" />
 </ClientOnly>
 
-As fatias saem da diferença entre percentis consecutivos publicados, arredondados ao ponto percentual, e não de uma contagem direta.
+As fatias saem da diferença entre percentis consecutivos publicados, arredondados ao ponto percentual. Não são uma contagem direta.
 
 ## As séries em arquivo
 
-Cada gráfico do site existe também como arquivo de dados, gerado a partir da **mesma definição** que o desenha — não de uma planilha paralela que envelheceria sozinha:
+Cada gráfico do site existe também como arquivo de dados, gerado a partir da **mesma definição** que o desenha, não de uma planilha paralela que envelheceria sozinha:
 
 - [Contagem de transistores](/data/transistor-count.csv)
 - [Rendimento contra área](/data/yield-vs-area.csv)
@@ -80,11 +83,11 @@ O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.
 
 ## O selo de atualidade
 
-Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usava, para a escala e o custo do setor, números de **2011** (que o próprio texto admite estarem defasados), enquanto [estrutura e tipos](/estrutura-wafers) cita dados do ano corrente.
+Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usa, para a escala e o custo do setor, números de **2011**, que o próprio texto admite estarem defasados, e o selo dele aponta o dado mais recente que o capítulo cita, não os números de 2011. Já [estrutura e tipos](/estrutura-wafers) cita um levantamento de 2024 publicado em 2025.
 
 Por isso cada capítulo declara, abaixo do título, o **ano do dado mais recente que cita**. É uma informação de leitura, não de validade: um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
 
-<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'apple-m6', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
+<SourceNote :ids="['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'apple-m6', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k']" />
 
 <SeeAlso :links="[
   { text: 'Na fab', href: '/na-fab', note: 'de onde sai a equação do rendimento' },

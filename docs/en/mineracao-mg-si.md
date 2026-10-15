@@ -6,7 +6,7 @@ dataAsOf: 2025
 
 # Quartz mining and metallurgical silicon production
 
-The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **plentiful** — although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
+The first step in the silicon chain is obtaining **High-Purity Quartz (HPQ)**, extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the **second most abundant element** in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, **plentiful**, although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
 
 Quartz enters the chain along **two distinct paths**, and it is worth separating them from the outset: it is the **raw material** for silicon (reduced to MG-Si, as we shall see next) and it is also the material of the **crucible** that holds the melt during crystal growth. The first use tolerates impurities that the chemistry downstream removes; the second does not.
 
@@ -24,7 +24,7 @@ The text follows that order.
 
 ## Quartz mining (HPQ)
 
-Not every silica will do for a crucible. The quartz must be free of **boron** and of alkali metals down to the **parts-per-billion** level, and deposits like that are exceedingly rare: roughly **70% to 90% of the world's high-purity quartz** comes from a single region — the pegmatites of **Spruce Pine**, in the Appalachian mountains of North Carolina <Cite id="construction-physics-spruce-pine" />.
+Not every silica will do for a crucible. The quartz must be free of **boron** and of alkali metals down to the **parts-per-billion** level, and deposits like that are exceedingly rare: roughly **70% to 90% of the world's high-purity quartz** comes from a single region, the pegmatites of **Spruce Pine**, in the Appalachian mountains of North Carolina <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine: where the quartz is pure enough
 
@@ -40,7 +40,7 @@ Unimin merged with Fairmount Santrol in 2018, and the resulting company took the
 What is mined there is a rock, not an isolated crystal: the district's pegmatitic granite carries quartz, feldspar and mica grown together into large crystals, and that mixture is what purification has to undo <Cite id="quartzcorp-hpq" />.
 
 <DiagramFigure src="/assets/spruce-pine-pegmatite.jpg" alt="Hand specimen of pegmatitic granite from the Spruce Pine district, with grey and milky quartz, white and pink feldspar, and dark sheets of mica">
-A specimen of the pegmatitic granite of the Spruce Pine district, from the Wiseman quarry. The quartz (grey) comes with feldspar (white and pink) and mica (black), the phases that flotation and magnetic separation later remove. James St. John — <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
+A specimen of the pegmatitic granite of the Spruce Pine district, from the Wiseman quarry. The quartz (grey) comes with feldspar (white and pink) and mica (black), the phases that flotation and magnetic separation later remove. James St. John, <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
 </DiagramFigure>
 
 Sibelco, one of the two miners at Spruce Pine, has published a video about the site and the IOTA® line <Cite id="sibelco-spruce-pine-video" />.
@@ -57,10 +57,10 @@ Part of the ore comes from the region's own dozens of pegmatite bodies; most of 
 The four purification steps at Drag, in the order the material goes through them. The finished product reaches 99.999% SiO₂ <Cite id="quartzcorp-hpq" />.
 </DiagramFigure>
 
-1. **flotation** — removes feldspar and mica;
-2. **magnetic separation** — removes ferrous contaminants;
-3. **acid leaching** — attacks remaining surface inclusions and impurities;
-4. **calcination** — eliminates residual organic contaminants.
+1. **flotation**: removes feldspar and mica;
+2. **magnetic separation**: removes ferrous contaminants;
+3. **acid leaching**: attacks remaining surface inclusions and impurities;
+4. **calcination**: eliminates residual organic contaminants.
 
 The finished product reaches **99.999% SiO₂** <Cite id="quartzcorp-hpq" />.
 
@@ -130,13 +130,13 @@ The furnace is a shell roughly **10 m in diameter**, pierced by **three pre-bake
 
 A layer of solid material (the **outer reaction zone**) is kept on top of the molten bath (the **inner reaction zone**) to **raise the silicon yield**. That interface is where the SiO that forms can react again before it leaves with the gas <Cite id="saimm" />.
 
-In practice the inside of the furnace has no horizontal layers: each electrode opens a **crater** in the charge, and the roof of that cavity is a **crust** of condensate, gluing the grains together and holding up the material above it <Cite id="vangskasen-2013" />. The gas rising from the crater meets the carbon in the charge and turns back into carbide; whatever escapes that reaction condenses in the cooler charge. That internal recycling is what sustains a silicon yield of around **85%** in a well-run furnace <Cite id="vangskasen-2013" />. The energy itself comes from the arc at the electrode tip — less than **20 cm** long, with currents of the order of **100 kA** per phase <Cite id="saevarsdottir-2010" />. The electrodes are **pre-baked** rather than self-baking (*Søderberg*), precisely to avoid the contamination that the latter's metal casing carries into the silicon <Cite id="elkem-electrodes" />.
+In practice the inside of the furnace has no horizontal layers: each electrode opens a **crater** in the charge, and the roof of that cavity is a **crust** of condensate, gluing the grains together and holding up the material above it <Cite id="vangskasen-2013" />. The gas rising from the crater meets the carbon in the charge and turns back into carbide; whatever escapes that reaction condenses in the cooler charge. That internal recycling is what sustains a silicon yield of around **85%** in a well-run furnace <Cite id="vangskasen-2013" />. The energy itself comes from the arc at the electrode tip, less than **20 cm** long, with currents of the order of **100 kA** per phase <Cite id="saevarsdottir-2010" />. The electrodes are **pre-baked** rather than self-baking (*Søderberg*), precisely to avoid the contamination that the latter's metal casing carries into the silicon <Cite id="elkem-electrodes" />.
 
 The silicon is then **tapped through a hole at the bottom** of the furnace and refined by slag treatment or gas purging, which remove inclusions and adjust the composition to the specified value. The metal is left to solidify in a mould and is then crushed to size <Cite id="saimm" />.
 
 <YouTubeEmbed id="2LKOG6wrEY8" title="Ferrosilicon Submerged Arc Furnace Smelting Operation, Tapping and Casting (SR Furnace)" />
 
-The video by SR Furnace, a maker of submerged-arc furnaces, shows the tapping and casting of a ferrosilicon furnace — the other product of these furnaces, made in the same kind of reactor <Cite id="abc-silicon-smelter-video" />.
+The video by SR Furnace, a maker of submerged-arc furnaces, shows the tapping and casting of a ferrosilicon furnace, the other product of these furnaces, made in the same kind of reactor <Cite id="abc-silicon-smelter-video" />.
 
 The resulting MG-Si has a typical specification of **98.5% to 99.5% Si**, with carbon, alkali-earth and transition metals, boron and phosphorus among its characteristic impurities <Cite id="saimm" />. Those impurities travel with the material into the chemical purification described in [Polysilicon](/en/polissilicio).
 
@@ -161,7 +161,7 @@ Much of the silicon made in these furnaces never becomes MG-Si for chemicals or 
 That set of factors, not the ore, is what decides where a plant is built.
 
 <DiagramFigure src="/assets/elkem-salten-ferrosilicon.jpg" alt="Aerial view of Elkem's plant at Salten, in Norway, between the fjord and the mountains, with the quartz stockyard beside the industrial buildings">
-Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
+Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
 <SourceNote label="Sources" :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'usgs-mcs-2026']" />

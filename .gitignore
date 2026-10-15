@@ -4,3 +4,5 @@ docs/.vitepress/cache
 .cache
 .temp/
 _extracted.txt
+__pycache__/
+*.pyc

@@ -228,8 +228,8 @@ export const FURNACE_STAGES: FurnaceStage[] = [
       en: 'Part of the silicon leaves as a gas',
     },
     note: {
-      pt: 'A terceira reação abre a válvula de escape do forno: quartzo e carbeto formam monóxido de silício gasoso, que sobe junto com o CO. É por essa porta que o forno perde silício — e é por ela que ele o recupera.',
-      en: 'The third reaction opens the furnace’s escape valve: quartz and carbide form gaseous silicon monoxide, which rises together with the CO. That is the door through which the furnace loses silicon — and the door through which it gets it back.',
+      pt: 'A terceira reação abre a válvula de escape do forno: quartzo e carbeto formam monóxido de silício gasoso, que sobe junto com o CO. É por essa porta que o forno perde silício, e por ela mesmo que ele o recupera.',
+      en: 'The third reaction opens the furnace’s escape valve: quartz and carbide form gaseous silicon monoxide, which rises together with the CO. That is the door through which the furnace loses silicon, and the same door through which it gets it back.',
     },
     melt: true,
     actors: [
@@ -269,8 +269,8 @@ export const FURNACE_STAGES: FurnaceStage[] = [
       en: 'The gas turns back into charge',
     },
     note: {
-      pt: 'Nas zonas frias a reação corre ao contrário: SiO e CO recompõem quartzo e carbono, que caem de volta na carga. Por isso o forno é autossuficiente em reagentes — ele gasta energia elétrica, não matéria-prima.',
-      en: 'In the cooler zones the reaction runs backwards: SiO and CO rebuild quartz and carbon, which fall back into the charge. That is why the furnace is self-sufficient in reactants — it spends electricity, not raw material.',
+      pt: 'Nas zonas frias a reação corre ao contrário: SiO e CO recompõem quartzo e carbeto de silício, que caem de volta na carga. Por isso o forno é autossuficiente em reagentes: ele gasta energia elétrica, não matéria-prima.',
+      en: 'In the cooler zones the reaction runs backwards: SiO and CO rebuild quartz and silicon carbide, which fall back into the charge. That is why the furnace is self-sufficient in reactants: it spends electricity, not raw material.',
     },
     melt: false,
     actors: [

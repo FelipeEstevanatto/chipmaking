@@ -8,7 +8,7 @@ dataAsOf: 2026
 
 # Packaging and test
 
-The [fab](/en/na-fab) delivers a wafer holding thousands of finished chips — and useless ones. They are stuck to each other, with no connection to the outside world, exposed to air and moisture, and nobody yet knows **which** of them work.
+The [fab](/en/na-fab) delivers a wafer holding thousands of finished chips, and useless ones. They are stuck to each other, with no connection to the outside world, exposed to air and moisture, and nobody yet knows **which** of them work.
 
 This is the part of the chain that usually gets left out of explanations, and that is a mistake. In value it is small; in **capacity** it has become the bottleneck of the AI industry. And it is where some of the most interesting technology bets in the sector live: the memory that had to move next to the processor, the chips that started being assembled like a puzzle, and the connection that does away with solder.
 
@@ -40,13 +40,19 @@ The manufacturing sequence therefore runs: **fab → wafer test → packaging �
 
 ### The probe card is a bespoke part
 
-Every product needs its own card. It is a set of needles or springs positioned exactly over the die's pads, and a card "may have literally a couple of thousand probes" — which makes it complex and expensive to create <Cite id="cadence-kgd" />.
+Every product needs its own card. It is a set of needles or springs positioned exactly over the die's pads, and a card "may have literally a couple of thousand probes", which makes it complex and expensive to create <Cite id="cadence-kgd" />.
 
-That imposes a practical limitation which often surprises: wafer test **is not the same** as final test. The card has different electrical characteristics from the package and often **cannot run at the product's operating speed** <Cite id="cadence-kgd" />. Wafer test is a coarse sieve, not the definitive measurement.
+That imposes a practical limitation which often surprises.
+
+::: warning
+Wafer test **is not the same** as final test. The card has different electrical characteristics from the package and often **cannot run at the product's operating speed** <Cite id="cadence-kgd" />.
+:::
+
+Wafer test is a coarse sieve, not the definitive measurement.
 
 ### The known good die problem
 
-One concept has become central to advanced packaging: the **known good die** (KGD). In a package where several dies are assembled together, a bad die that escapes can take the others down with it — the Cadence article calls this **collateral damage** <Cite id="cadence-kgd" />.
+One concept has become central to advanced packaging: the **known good die** (KGD). In a package where several dies are assembled together, a bad die that escapes can take the others down with it. The Cadence article calls this **collateral damage** <Cite id="cadence-kgd" />.
 
 In a monolithic package, a bad die costs one die. In a 2.5D package with eight HBM stacks and two logic chips, a bad die costs the entire package. That is why wafer test, which began as an economy measure, has become a **viability requirement** in modern packages.
 
@@ -54,13 +60,13 @@ In a monolithic package, a bad die costs one die. In a 2.5D package with eight H
 
 The market for electrical testers (**ATE**, *automated test equipment*) is one of the most concentrated in the sector. Advantest estimates it held **58% of the global market in 2024**, and states that **Advantest and Teradyne together account for about 80%** of the tester market <Cite id="advantest-ir" />.
 
-Test cost is often described as a small fraction of a chip's value, and that is true — with nuances. The ITRS records that continuous improvements brought the typical cost of test to **under 2 to 3% of revenue** for an integrated circuit <Cite id="itrs-2015-test" />. The same document offers a useful calculation: for a device that costs **US\$1.00** to manufacture, with test at **5%**, cutting test cost by 10% saves **US\$0.005** per unit, while gaining 1% of yield saves **US\$0.01** <Cite id="itrs-2015-test" />.
+Test cost is often described as a small fraction of a chip's value, and that is true, with nuances. The ITRS records that continuous improvements brought the typical cost of test to **under 2 to 3% of revenue** for an integrated circuit <Cite id="itrs-2015-test" />. The same document offers a useful calculation: for a device that costs **US\$1.00** to manufacture, with test at **5%**, cutting test cost by 10% saves **US\$0.005** per unit, while gaining 1% of yield saves **US\$0.01** <Cite id="itrs-2015-test" />.
 
-The practical conclusion of that arithmetic is that test **does not pay for itself**: it is justified by what it prevents. And what it prevents has a name — in one memory test floor analysed by the ITRS, **the probe card accounted for 60% of the entire cost of wafer test** <Cite id="itrs-2013-test" />.
+The practical conclusion of that arithmetic is that test **does not pay for itself**: it is justified by what it prevents. And what it prevents has a name: in one memory test floor analysed by the ITRS, **the probe card accounted for 60% of the entire cost of wafer test** <Cite id="itrs-2013-test" />.
 
 ### A third sieve
 
-Beyond wafer test and final test there is a third insertion point, increasingly common: **system-level test** (SLT). Rather than measuring electrical parameters, it **boots the device** — the assembled part runs real firmware and executes workloads in an environment resembling actual use <Cite id="teradyne-slt" />.
+Beyond wafer test and final test there is a third insertion point, increasingly common: **system-level test** (SLT). Rather than measuring electrical parameters, it **boots the device**: the assembled part runs real firmware and executes workloads in an environment resembling actual use <Cite id="teradyne-slt" />.
 
 It is the answer to a growing problem: some defects only appear when the chip does what it was built to do, and no isolated parameter measurement captures them.
 
@@ -88,15 +94,15 @@ The alternatives fall into three families:
 - ***Laser grooving* + plasma**: the laser opens a narrow groove and the plasma deepens and separates it, with widths **below 10 µm** and clean edges <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separates by plasma **before** thinning, which reduces contamination and cracking <Cite id="pdbg-dicing" />.
 
-It is worth noting how much this care pays. A classic study showed that **mechanical grinding** creates weak regions where chip strength falls **30 to 35%** below the wafer average. Two interventions improved this dramatically: **halving the grinding speed raised average chip strength by 56%**, and **deliberately blunting a new saw blade raised strength five-fold** <Cite id="ieee-die-strength" />. Dicing is not the end of a process; it is the beginning of the product's mechanical reliability.
+A classic study showed that **mechanical grinding** creates weak regions where chip strength falls **30 to 35%** below the wafer average. Two interventions changed the picture: **halving the grinding speed raised average chip strength by 56%**, and **deliberately blunting a new saw blade raised strength five-fold** <Cite id="ieee-die-strength" />. Dicing defines the product's mechanical reliability.
 
 ## Wire bonding: the technology that assembles 80% of the world
 
-There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: **more than 80% of semiconductor packages** are still assembled by wiring <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the same level, adding an uncomfortable detail — about **one quarter to one third of package failures** come precisely from the wire bond <Cite id="pmc-bonding-wire" />.
+There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: **more than 80% of semiconductor packages** are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the level, with about **one quarter to one third of package failures** coming from the wire bond itself <Cite id="pmc-bonding-wire" />.
 
-The principle is what the figure shows: the die sits **face up**, and extremely fine wires run from the pads on its **periphery** down to the substrate. Each wire is an electrical connection, and there are two kinds of tip: the **ball bond**, in which a ball of wire is melted and pressed onto the pad, and the **wedge bond**, in which the wire is crushed sideways — the latter produces lower loops, which matters at radio frequencies <Cite id="inseto-wire-guide" />.
+The principle is what the figure shows: the die sits **face up**, and extremely fine wires run from the pads on its **periphery** down to the substrate. Each wire is an electrical connection, and there are two kinds of tip: the **ball bond**, in which a ball of wire is melted and pressed onto the pad, and the **wedge bond**, in which the wire is crushed sideways. The latter produces lower loops, which matters at radio frequencies <Cite id="inseto-wire-guide" />.
 
-Wire diameter is the critical dimension. Leading-edge copper wiring uses **15 µm wire at 40 µm pitch**; gold uses **18 µm** at the same pitch <Cite id="imaps-cu-wire" />.
+Wire diameter is the critical dimension. Leading-edge copper wire bonding uses **15 µm wire at 40 µm pitch**; gold uses **18 µm** at the same pitch <Cite id="imaps-cu-wire" />.
 
 ### Gold giving way to copper
 
@@ -106,15 +112,15 @@ It was not only price. Copper is a **better conductor** and has **higher thermal
 
 Those last two are the price of the choice. Copper is **harder**, which increases stress on the silicon, and it **oxidises** readily, requiring an inert nitrogen atmosphere during bonding <Cite id="pmc-bonding-wire" />.
 
-### Why wiring still wins
+### Why wire bonding still wins
 
-Economics explains it well. A 25 µm copper wire costs **less than one tenth** of an equivalent gold wire; and while **gold** wire bonding becomes more expensive than flip-chip above **1,024 connections**, **copper** wiring stays competitive **up to about 2,000 connections** <Cite id="imaps-cu-wire" />.
+Economics explains it well. A 25 µm copper wire costs **less than one tenth** of an equivalent gold wire; and while **gold** wire bonding becomes more expensive than flip-chip above **1,024 connections**, **copper** wire bonding stays competitive **up to about 2,000 connections** <Cite id="imaps-cu-wire" />.
 
-In other words: wiring did not survive out of inertia. It won itself a much wider application band, and that is where most of the world's chips live — microcontrollers, regulators, sensors, memories, practically everything that is not a high-performance processor.
+Wire bonding won itself a much wider application band, and that is where most of the world's chips live: microcontrollers, regulators, sensors, memories, practically everything that is not a high-performance processor.
 
 ## Flip-chip: turning the die face down
 
-The limitation of wiring is geometric: the pads have to sit on the **edge** of the die, because that is where the wire leaves from. That limits the number of connections to the perimeter — and the perimeter grows with the square root of the area.
+The limitation of wire bonding is geometric: the pads have to sit on the **edge** of the die, because that is where the wire leaves from. That limits the number of connections to the perimeter, and the perimeter grows with the square root of the area.
 
 **Flip-chip** solves it by inverting the die. It is mounted **face down**, and the connection is made by solder bumps or copper pillars distributed across **the entire active surface** <Cite id="wiley-packaging-ch3" />.
 
@@ -126,13 +132,13 @@ The gain is threefold: the electrical path becomes **short**, **inductance** fal
 
 ### C4: a sixty-year-old invention
 
-Solder-bump connection was born at IBM. In the **summer of 1962**, the company reduced to practice a flip-chip transistor with solder connections — there were just **3 bumps per chip**, each with a *5 mil* copper ball embedded to act as a standoff <Cite id="totta-flipchip" />. Glass dams followed, preventing the solder from spreading and the chip from collapsing: hence the name **C4**, *controlled collapse chip connection* <Cite id="totta-flipchip" />.
+Solder-bump connection was born at IBM. In the **summer of 1962**, the company reduced to practice a flip-chip transistor with solder connections: there were just **3 bumps per chip**, each with a *5 mil* copper ball embedded to act as a standoff <Cite id="totta-flipchip" />. Glass dams followed, preventing the solder from spreading and the chip from collapsing: hence the name **C4**, *controlled collapse chip connection* <Cite id="totta-flipchip" />.
 
-The formal description of the C4 process is by **L. F. Miller**, in 1969, and US patent **3,429,040** was granted in February of that year <Cite id="springer-flipchip-history" />. Over **forty years**, the number of bumps per chip went from **3 to 7,018** <Cite id="totta-flipchip" /> — probably the best measure of how far the idea travelled.
+The formal description of the C4 process is by **L. F. Miller**, in 1969, and US patent **3,429,040** was granted in February of that year <Cite id="springer-flipchip-history" />. Over **forty years**, the number of bumps per chip went from **3 to 7,018** <Cite id="totta-flipchip" />, probably the best measure of how far the idea travelled.
 
 ### From C4 to the copper pillar
 
-Solder bumps have a scale limit. Standard C4 operates at **130 to 250 µm** pitches, and below about **130 µm** there is simply no lateral room left — with a bump height of ~70 µm, neighbouring solders touch and short-circuit <Cite id="semieng-flipchip-bumps" />.
+Solder bumps have a scale limit. Standard C4 operates at **130 to 250 µm** pitches, and below about **130 µm** there is no lateral room left: with a bump height of ~70 µm, neighbouring solders touch and short-circuit <Cite id="semieng-flipchip-bumps" />.
 
 The answer was the **copper pillar**: instead of a flattened ball, a copper cylinder with a solder cap. IBM patented the technology in **2001**; Intel used it in 65 nm processors in **2006**, citing better electromigration resistance, better thermal conduction and higher contact density <Cite id="synopsys-cu-pillar" />. The pillar is used **below a 130 µm pitch**, typically with **~40 µm of copper and ~25 µm of solder**, and microbumps are **under 10 µm tall** <Cite id="semieng-flipchip-bumps" />.
 
@@ -140,27 +146,27 @@ The answer was the **copper pillar**: instead of a flattened ball, a copper cyli
 
 Up to here, each package held **one** die. From here on the question changes: how do you put several chips in the same package, connected fast enough to behave as one?
 
-<DiagramFigure src="/assets/package-generations.svg" alt="Four connection generations side by side: edge wiring with 15 to 25 micrometre wire, flip-chip with bumps above 130 micrometres, 2.5D with about 40 micrometre microbumps on an interposer, and 3D stacking with direct bonding below 10 micrometres">
+<DiagramFigure src="/assets/package-generations.svg" alt="Four connection generations side by side: edge wire bonding with 15 to 25 micrometre wire, flip-chip with bumps above 130 micrometres, 2.5D with about 40 micrometre microbumps on an interposer, and 3D stacking with direct bonding below 10 micrometres">
 The road of advanced packaging is a single metric going down: the distance between two neighbouring connections.
 </DiagramFigure>
 
 ### 2.5D: chips side by side
 
-In **2.5D** integration, the dies sit **side by side** on an intermediate piece called an **interposer**, usually made of silicon. An important detail: only the **interposers** need vias running through the silicon, not the chips — which allows existing die designs to be reused <Cite id="fue-packaging-roadmap" />.
+In **2.5D** integration, the dies sit **side by side** on an intermediate piece called an **interposer**, usually made of silicon. Only the **interposers need vias running through the silicon**, not the chips, which allows existing die designs to be reused <Cite id="fue-packaging-roadmap" />.
 
 TSMC calls its 2.5D platform **CoWoS** (*chip on wafer on substrate*), and it has been in production **since 2012** <Cite id="tsmc-cowos" />. There are now three variants worth distinguishing:
 
 - **CoWoS-S**: a **silicon** interposer, supporting up to **3.3× the reticle** (about **2,700 mm²**), with embedded deep-trench capacitors <Cite id="tsmc-cowos" />.
-- **CoWoS-R**: instead of silicon, a **redistribution interposer** — polymer with copper traces. It has been in volume production **since 2023** and scales beyond 3.3× <Cite id="tsmc-cowos" />.
+- **CoWoS-R**: instead of silicon, a **redistribution interposer**, polymer with copper traces. It has been in volume production **since 2023** and scales beyond 3.3× <Cite id="tsmc-cowos" />.
 - **CoWoS-L**: combines a redistribution interposer with **local silicon interconnect** (*LSI*) bridges, placed only where connection density demands <Cite id="tsmc-cowos" />.
 
 The first breach of the reticle barrier came in **March 2020**, when TSMC and Broadcom announced a **2× reticle** (~1,700 mm²) interposer. It supported up to **6 HBM cubes**, **96 GB** of memory and **2.7 TB/s** of bandwidth, **2.7 times** the 2016 CoWoS solution, using **mask stitching** to exceed the size of one exposure field <Cite id="tsmc-2x-cowos" />.
 
 ### 3D: chips stacked
 
-In **3D** integration, dies are **stacked** and connected by **through-silicon vias** (TSV). The dimensions tell the story of the process: in HBM, TSVs are typically **2 to 5 µm in diameter** and **30 to 60 µm deep**, in the *via-middle* scheme — formed **after** the front-end and **before** the BEOL, a balance between density, cost and thermal behaviour <Cite id="semieng-tsv" />. In interposers, TSVs are larger, **10 µm or more**, with an aspect ratio around **10:1** <Cite id="semieng-tsv" />.
+In **3D** integration, dies are **stacked** and connected by **through-silicon vias** (TSV). The dimensions tell the story of the process: in HBM, TSVs are typically **2 to 5 µm in diameter** and **30 to 60 µm deep**, in the *via-middle* scheme, formed **after** the front-end and **before** the BEOL, a balance between density, cost and thermal behaviour <Cite id="semieng-tsv" />. In interposers, TSVs are larger, **10 µm or more**, with an aspect ratio around **10:1** <Cite id="semieng-tsv" />.
 
-These are holes a few micrometres across, tens of micrometres deep, **filled with copper** and polished — in each of the hundreds of thousands of vias in a memory stack.
+These are holes a few micrometres across, tens of micrometres deep, **filled with copper** and polished, in each of the hundreds of thousands of vias in a memory stack.
 
 ### Hybrid bonding
 
@@ -172,7 +178,7 @@ The numbers this unlocks are of another order: **more than one million interconn
 
 Intel describes its implementation, **Foveros Direct 3D**, as capable of **sub-10 µm pitch** and **up to 10 times** the interconnect density of conventional microbumps <Cite id="intel-foveros-direct" />.
 
-There is a yield argument behind this, and it is elegant: bonding **die to wafer** allows stacking only **known good dies**, raising compound yield, and allows joining **dies of different sizes** — which wafer-to-wafer bonding does not <Cite id="imec-d2w-hb" />.
+There is a yield argument behind this, and it is elegant: bonding **die to wafer** allows stacking only **known good dies**, raising compound yield, and allows joining **dies of different sizes**, which wafer-to-wafer bonding does not <Cite id="imec-d2w-hb" />.
 
 ## HBM: the memory that had to move next door
 
@@ -200,13 +206,13 @@ That is where **2.5D** integration, described above, comes in. The silicon inter
 
 ### What HBM costs
 
-None of this is free, and the cost shows up in density. The TSVs, which must pass through every die in the stack, occupy **area that stores nothing**. SemiAnalysis's comparison using SK hynix figures is blunt: a D1z DDR4 die delivers **0.296 Gb/mm²**, while an HBM3 die delivers **0.16 Gb/mm²** — **85% denser** in the DDR4 case <Cite id="semianalysis-hbm" />.
+None of this is free, and the cost shows up in density. The TSVs, which must pass through every die in the stack, occupy **area that stores nothing**. SemiAnalysis's comparison using SK hynix figures is blunt: a D1z DDR4 die delivers **0.296 Gb/mm²**, while an HBM3 die delivers **0.16 Gb/mm²**, **85% denser** in the DDR4 case <Cite id="semianalysis-hbm" />.
 
-In other words: the fastest memory in the world is also the **least dense**. The industry accepts the trade-off because, in AI systems, bandwidth constrains performance more than capacity does — and an accelerator without enough bandwidth leaves compute units **idle** <Cite id="semianalysis-hbm" />.
+The fastest memory in the world is also the **least dense**. The industry accepts the trade-off because, in AI systems, bandwidth constrains performance more than capacity does, and an accelerator without enough bandwidth leaves compute units **idle** <Cite id="semianalysis-hbm" />.
 
 ## Chiplets: dividing in order to yield
 
-A chip is limited by a physical number: the **reticle**. One lithography exposure covers at most about **830 mm²** <Cite id="ectc-cowos-s5" />. No design larger than that is possible — not because it is hard to design, but because it does not fit the equipment.
+A chip is limited by a physical number: the **reticle**. One lithography exposure covers at most about **830 mm²** <Cite id="ectc-cowos-s5" />. No design larger than that is possible, not because it is hard to design, but because it does not fit the equipment.
 
 The reticle is not the only limit, though. Yield is another, and it gets worse with area.
 
@@ -216,25 +222,25 @@ Every defect kills an entire die. The larger the die, the more defects it runs i
 
 The alternative is to **split the product into smaller chips**. Instead of one large monolithic die, several *chiplets* are fabricated and then assembled together in the same package, communicating over fast interconnects rather than internal wiring.
 
-AMD's arithmetic, presented at Hot Chips 2017, is the classic example. Replacing a hypothetical **777 mm²** monolithic die with **four 213 mm² dies** (totalling **852 mm²**, that is, about **10% more silicon**) produced a cost of roughly **0.59 times** the monolithic one <Cite id="amd-chiplet-economics" />. More total area, **41% less cost**.
+AMD's arithmetic, presented at Hot Chips 2017, is the classic example. Replacing a hypothetical **777 mm²** monolithic die with **four 213 mm² dies** (totalling **852 mm²**, that is, about **10% more silicon**) produced a cost of roughly **0.59 times** the monolithic one <Cite id="amd-chiplet-economics" />. The result is more total area and **41% less cost**.
 
 The reason is exactly the one in the figure: the four small dies each yield much better individually, and only the working ones go on to assembly.
 
 ### UCIe and the standardisation of the interface
 
-Chiplets created a new problem: each manufacturer defined its own way for dies to talk to each other. That locks the customer to the supplier — the opposite of the ecosystem that made the rest of the industry grow.
+Chiplets created a new problem: each manufacturer defined its own way for dies to talk to each other. That locks the customer to the supplier, the opposite of the ecosystem that made the rest of the industry grow.
 
-The answer came in **March 2022**, when **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung and TSMC** came together to ratify the **UCIe** (*Universal Chiplet Interconnect Express*) specification, an open die-to-die interface. UCIe 1.0 provided for rates up to **32 GT/s** with **16 to 64 lanes** <Cite id="ucie-formation" />. In August **2025**, version **3.0** doubled the rates to **48 and 64 GT/s** <Cite id="ucie-3" />.
+The answer came in **March 2022**, when **ASE, AMD, Arm, Google Cloud, Intel, Meta, Microsoft, Qualcomm, Samsung and TSMC** came together to ratify the **UCIe** (*Universal Chiplet Interconnect Express*) specification, an open die-to-die interface. UCIe 1.0 provided for rates up to **32 GT/s** with **16 to 64 lanes** <Cite id="ucie-formation" />. In August **2025**, version **3.0** raised the maximum rate from **32 to 64 GT/s** <Cite id="ucie-3" />.
 
 The bet is the same one that made PCIe and USB work: a common bus turns a proprietary product into a market.
 
 ## Final test, burn-in and binning
 
-Once assembled, the part goes back to the tester. **Final test** repeats much of what wafer test already did, and that is not redundancy: it exists to catch **defects that assembly itself created** — a missing solder ball, an unattached wire <Cite id="anysilicon-wafer-sort" />.
+Once assembled, the part goes back to the tester. **Final test** repeats much of what wafer test already did, and that is not redundancy: it exists to catch **defects that assembly itself created**: a missing solder ball, an unattached wire <Cite id="anysilicon-wafer-sort" />.
 
 ### Burn-in
 
-There is a class of failure that no simple electrical test captures: **latent** defects that only manifest after some time in use. They produce what is called **infant mortality** — the concentration of failures in the first months of a product's life.
+There is a class of failure that no simple electrical test captures: **latent** defects that only manifest after some time in use. They produce what is called **infant mortality**: the concentration of failures in the first months of a product's life.
 
 ***Burn-in*** exists to bring that forward: components are subjected to conditions **at or above the specified maximum**, in order to **stress the defects out** before shipment <Cite id="mil-std-883" />. In production it is done on the **already assembled** part, in sockets and ovens, typically for **24 to 48 hours** <Cite id="semieng-burnin" />.
 
@@ -250,7 +256,7 @@ It runs on two axes. The first is **frequency**: how much the chip holds within 
 
 #### Frequency: the same die, two prices
 
-The **Core i7-8700K and Core i7-8086K** pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, $75 more than the 8700K <Cite id="tomshardware-8086k" />.
+The **Core i7-8700K and Core i7-8086K** pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, US\$75 more than the 8700K <Cite id="tomshardware-8086k" />.
 
 **Silicon Lottery** bought processors at retail, measured every unit before reselling it, and published the distribution. In the 8700K batch, 17% of units reached 5.2 GHz; in the 8086K batch, **none** fell below 5.0 GHz <Cite id="siliconlottery-stats" />.
 
@@ -264,7 +270,11 @@ In memory the axis becomes the **speed grade** and the mechanics are the same. A
 
 The second axis is **harvesting**. A chip with one defective block is sold with that block disabled, and AMD has sold tri-core parts out of a quad-core die <Cite id="gamersnexus-binning" />. Apple turned the practice into a product line: the **A12X** shipped with 7 of its 8 GPU cores because yields could not deliver 8; two years later the **A12Z** was the same chip with the eighth core enabled, because the process had improved. In the **iPhone 17e**, the A19 has 4 GPU cores against 5 in the iPhone 17, and graphics performance drops in proportion, about 20% <Cite id="macworld-binning" />.
 
-The case that went furthest is Nvidia's **GF100** in 2010: 3 billion transistors on about 530 mm², on TSMC's then-new 40 nm node. No board ever shipped with the full chip — the **GTX 480** carried only 480 of the 512 cores, with one of the 16 shader clusters fused off, the GTX 470 came with 448 and the GTX 465 with 352 <Cite id="wikipedia-gf100" />. SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock side, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />. That chip only arrived with the **GF110**, a redesigned GF100, at the end of that year <Cite id="wikipedia-gf100" />.
+The case that went furthest is Nvidia's **GF100** in 2010: 3 billion transistors on about 530 mm², on TSMC's then-new 40 nm node. No board ever shipped with the full chip: the **GTX 480** carried only 480 of the 512 cores, with one of the 16 shader clusters fused off, the GTX 470 came with 448 and the GTX 465 with 352 <Cite id="wikipedia-gf100" />.
+
+SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />.
+
+That chip only arrived with the **GF110**, a redesigned GF100, at the end of that year <Cite id="wikipedia-gf100" />.
 
 Not every disabled block is a defect. In one batch of **Radeon RX 460**, 128 cores present on the die were disabled and came back with a BIOS swap, about 14% more cores; the risk is that the chip was disabled for a defect, in which case the picture comes out with artifacts <Cite id="extremetech-rx460" />.
 
@@ -274,9 +284,9 @@ Without binning, the only alternative is to scrap them. Macworld runs the number
 
 The economic size of this step misleads in two directions.
 
-The first: it is **small**. CSET cites an earlier report estimating assembly, test and packaging (*ATP*) at about **10% of the value of a finished chip**, against roughly **45%** contributed by design and front-end fabrication. A report by the SIA with BCG arrives at an even smaller number, **6%** — with the segment accounting for **3% of R&D** and **13% of industry capital expenditure** <Cite id="cset-packaging" />.
+The first: it is **small**. CSET cites an earlier report estimating assembly, test and packaging (*ATP*) at about **10% of the value of a finished chip**, against roughly **45%** contributed by design and front-end fabrication. A report by the SIA with BCG arrives at an even smaller number, **6%**, with the segment accounting for **3% of R&D** and **13% of industry capital expenditure** <Cite id="cset-packaging" />.
 
-The second: despite that, the **ITRS records that packaging cost often exceeds the cost of fabricating the integrated circuit itself** <Cite id="itrs-assembly" />. The two statements coexist because they measure different things — share of the product's final value on one hand, industrial cost of the step on the other.
+The second: despite that, the **ITRS records that packaging cost often exceeds the cost of fabricating the integrated circuit itself** <Cite id="itrs-assembly" />. The two statements coexist because they measure different things: share of the product's final value on one hand, industrial cost of the step on the other.
 
 And there is a third, more recent figure that explains why the subject stopped being peripheral. The **advanced packaging** market (the part that does CoWoS, HBM and chiplets) was worth about **US\$46 billion in 2024** and is heading for **more than US\$79 billion by 2030** <Cite id="yole-advanced-packaging" />. It is a minority of the total, but it is the minority that **constrains** the rest: TSMC stated in 2024 that CoWoS capacity had **more than doubled** year on year and that it intended to double it again, and that customer demand still **far exceeded** its ability to supply <Cite id="tsmc-q3-2024" />.
 
@@ -289,5 +299,7 @@ A bottleneck that is small in value can be large in consequence. That is what ha
   { text: 'Photolithography', href: '/en/fotolitografia', note: 'the reticle limit' },
   { text: 'Transistor evolution', href: '/en/transistores', note: 'what is inside the die' },
   { text: 'Wafer fabrication', href: '/en/fabricacao-wafers', note: 'thickness and thinning' },
+  { text: 'Data and numbers', href: '/en/dados', note: 'the series and the data files' },
+  { text: 'Reliability', href: '/en/confiabilidade' },
   { text: 'References', href: '/en/referencias', note: 'numbered list' },
 ]" />

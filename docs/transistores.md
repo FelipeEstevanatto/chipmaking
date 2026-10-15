@@ -1,6 +1,6 @@
 ---
 title: Evolução dos transistores
-description: De MOSFET planar a CFET — silício esticado, HKMG, FinFET, FD-SOI, GAAFET, backside power e forksheet.
+description: "De MOSFET planar a CFET: silício esticado, HKMG, FinFET, FD-SOI, GAAFET, backside power e forksheet."
 dataAsOf: 2026
 ---
 
@@ -33,7 +33,7 @@ A [linha do tempo](/linha-do-tempo) reúne essas mesmas gerações numa lista in
 Canal, porta, fonte e dreno no plano do wafer: a estrutura que a litografia precisava desenhar de uma vez. O silício à frente da área ativa foi removido, e a face dianteira do bloco é um corte transversal por fonte, canal e dreno, que deixa a lateral do canal à vista; é um recurso do desenho, porque a superfície do wafer real é plana. Nos outros três lados, o silício de campo encontra a área ativa rente. O corte no canto dianteiro da porta mostra o óxido de porta em seção e a superfície do canal; a porta de alumínio sobrepõe as duas difusões, a folga de alinhamento que a porta autoalinhada eliminaria em 1968. Desenhado pelo autor, a partir da ASML.
 </DiagramFigure>
 
-Transistores planares (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. Kahng e Atalla obtiveram o primeiro MOSFET funcional em **1959** e o demonstraram em **1960** <Cite id="chm-mosfet" />; o dispositivo tinha porta de **20 µm** e óxido de porta de 100 nm, e uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o “nó de 22 nm”, de 2011, tem portas da ordem de 25 nm <Cite id="wikipedia-22nm" />: em cinco décadas, essa dimensão encolheu cerca de 800 vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
+Transistores planares (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidados na década de 1960 após Kahng e Atalla (Bell Labs), sustentaram a Lei de Moore por décadas. Canal, portão (*gate*), fonte (*source*) e dreno (*drain*) ficam no plano bidimensional do wafer. Kahng e Atalla obtiveram o primeiro MOSFET funcional em **1959** e o demonstraram em **1960** <Cite id="chm-mosfet" />; o dispositivo tinha porta de **20 µm** e óxido de porta de 100 nm, e uma versão de **10 µm** veio no mesmo ano <Cite id="semiconductor-scale" />. Para comparação, o “nó de 22 nm”, de 2011, tem portas da ordem de 25 nm <Cite id="wikipedia-22nm" />, o valor típico do nó; o FinFET da Intel media 26 nm <Cite id="ieee-node" />. Em cinco décadas, essa dimensão encolheu cerca de 800 vezes. Abaixo do nó de **28 nm**, a proximidade fonte–dreno degradou o controle do portão, com **efeitos de canal curto (SCE)** e fuga por tunelamento quântico.
 
 Na prática, essa geração equipou as calculadoras de bolso e os primeiros microcomputadores domésticos: a família NMOS **6502**, por exemplo, movia o Apple II, o Commodore 64 e o NES.
 
@@ -47,7 +47,7 @@ Em **1963**, Frank Wanlass (Fairchild) patenteou o **CMOS** (*Complementary MOS*
 Par complementar: NMOS em poço p e PMOS em poço n, com um único caminho entre V<sub>DD</sub> e GND.
 </DiagramFigure>
 
-O primeiro uso em larga escala foi a **família lógica RCA CD4000** (1968), que popularizou o CMOS em relógios digitais, calculadoras e instrumentos a bateria. Décadas depois, o mesmo princípio virou o **relógio de tempo real** de todo PC — alimentado até hoje por aquela que o mercado apelidou de “bateria da CMOS”.
+O primeiro uso em larga escala foi a **família lógica RCA CD4000** (1968), que popularizou o CMOS em relógios digitais, calculadoras e instrumentos a bateria. Décadas depois, o mesmo princípio virou o **relógio de tempo real** de todo PC, alimentado até hoje por aquela que o mercado apelidou de “bateria da CMOS”.
 
 ## 1968: Porta de silício autoalinhada
 
@@ -55,15 +55,15 @@ O primeiro uso em larga escala foi a **família lógica RCA CD4000** (1968), que
 
 Até o fim da década de 1960 a porta era de **alumínio**, depositada **depois** da difusão de fonte e dreno. Para garantir que o canal ficasse inteiramente coberto, a porta precisava **sobrepor** fonte e dreno, somando capacitância parasita e obrigando a folgas de alinhamento que desperdiçavam área.
 
-A **porta de silício autoalinhada** resolveu o problema trocando a ordem das etapas: o polissilício é depositado e definido **antes**, e passa ele próprio a servir de máscara para o implante de fonte e dreno. As junções ficam automaticamente alinhadas à porta, com sobreposição mínima — e o polissilício ainda suporta os recozimentos em alta temperatura que o alumínio não tolerava.
+A **porta de silício autoalinhada** resolveu o problema trocando a ordem das etapas: o polissilício é depositado e definido **antes**, e passa ele próprio a servir de máscara para o implante de fonte e dreno. As junções ficam automaticamente alinhadas à porta, com sobreposição mínima, e o polissilício ainda suporta os recozimentos em alta temperatura que o alumínio não tolerava.
 
-A cronologia tem três nomes. Em **1965**, Boyd Watkins descreveu uma estrutura autoalinhada de porta de silício na General Microelectronics, mas o depósito da patente só saiu em 1969. Em **1967**, Robert Kerwin, Donald Klein e John Sarace, dos Bell Labs, publicaram a troca do alumínio por silício policristalino e demonstraram transistores autoalinhados ainda como dispositivos discretos <Cite id="chm-sigate" />. A transposição para circuitos integrados veio na Fairchild, onde Tom Klein e Federico Faggin resolveram o que faltava — a gravura precisa do silício e a arquitetura de processo <Cite id="chm-sigate" />.
+A cronologia tem três nomes. Em **1965**, Boyd Watkins descreveu uma estrutura autoalinhada de porta de silício na General Microelectronics, mas o depósito da patente só saiu em 1969. Em **1967**, Robert Kerwin, Donald Klein e John Sarace, dos Bell Labs, publicaram a troca do alumínio por silício policristalino e demonstraram transistores autoalinhados ainda como dispositivos discretos <Cite id="chm-sigate" />. A transposição para circuitos integrados veio na Fairchild, onde Tom Klein e Federico Faggin resolveram o que faltava: a gravura precisa do silício e a arquitetura de processo <Cite id="chm-sigate" />.
 
 <DiagramFigure src="/assets/silicon-gate.svg" alt="Comparação entre porta de alumínio com sobreposição e porta de silício autoalinhada">
 Acima, porta de alumínio com sobreposição de fonte e dreno; abaixo, porta de silício autoalinhada.
 </DiagramFigure>
 
-O primeiro produto comercial foi o **Fairchild 3708** (1968), um multiplexador analógico de 8 canais criado como substituto do problemático 3705 de porta de alumínio. Comparado a ele, o 3708 era cerca de **5× mais rápido**, tinha aproximadamente **100× menos corrente de fuga** e a resistência de condução das chaves analógicas era **3× menor** <Cite id="faggin-sgt" />. Vale registrar a disputa: a Intel apresentava o 1101 como o primeiro CI de porta de silício, mas o 3708 chegou antes — e a própria Intel se beneficiou do processo ao contratar Les Vadasz e Federico Faggin, que o haviam desenvolvido <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
+O primeiro produto comercial foi o **Fairchild 3708** (1968), um multiplexador analógico de 8 canais criado como substituto do problemático 3705 de porta de alumínio. Comparado a ele, o 3708 era cerca de **5× mais rápido**, tinha aproximadamente **100× menos corrente de fuga** e a resistência de condução das chaves analógicas era **3× menor** <Cite id="faggin-sgt" />. Vale registrar a disputa: a Intel apresentava o 1101 como o primeiro CI de porta de silício, mas o 3708 chegou antes, e a própria Intel se beneficiou do processo ao contratar Les Vadasz e Federico Faggin, que o haviam desenvolvido <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
 
 Foi essa técnica que tornou viáveis os primeiros microprocessadores. Faggin entrou na Intel em **abril de 1970** e foi o arquiteto da família 4000: o **Intel 4004** (1971) saiu com 2.300 transistores numa pastilha de 12 mm², em pMOS de 10 µm, projetado para a calculadora Busicom 141-PF <Cite id="intel-4004" />. Sem a porta autoalinhada e o contato enterrado, o 4004 não caberia num die fabricável <Cite id="chm-sigate" />.
 
@@ -71,7 +71,7 @@ Foi essa técnica que tornou viáveis os primeiros microprocessadores. Faggin en
 
 <TransistorFacts year="1985" />
 
-Com canais da ordem de **1 µm**, o campo elétrico concentrado junto ao dreno acelerava os portadores a energias altas o bastante para atravessar o óxido de porta. Esses **portadores quentes** ficavam presos no óxido, deslocando a tensão de limiar e encurtando a vida útil do dispositivo. A estrutura **LDD** (*Lightly Doped Drain*, IBM, 1980) intercala uma extensão pouco dopada (**n⁻**) entre o canal e o contato fortemente dopado (**n⁺**): a queda de potencial se distribui por uma distância maior e o campo de pico cai. A extensão é implantada com a própria porta como máscara, e é o **espaçador** lateral que afasta o contato **n⁺** da borda da porta, numa distância determinada pela espessura do material do espaçador <Cite id="motorola-ldd-patent" />. O espaçador de nitreto seria reaproveitado depois nos processos de siliceto. O preço é uma pequena resistência série extra.
+Com canais da ordem de **1 µm**, o campo elétrico concentrado junto ao dreno acelerava os portadores a energias altas o bastante para atravessar o óxido de porta. Esses **portadores quentes** ficavam presos no óxido, deslocando a tensão de limiar e encurtando a vida útil do dispositivo. A estrutura **LDD** (*Lightly Doped Drain*, IBM) intercala uma extensão pouco dopada (**n⁻**) entre o canal e o contato fortemente dopado (**n⁺**): a queda de potencial se distribui por uma distância maior e o campo de pico cai. A extensão é implantada com a própria porta como máscara, e é o **espaçador** lateral que afasta o contato **n⁺** da borda da porta, numa distância determinada pela espessura do material do espaçador <Cite id="motorola-ldd-patent" />. O espaçador de nitreto seria reaproveitado depois nos processos de siliceto. O preço é uma pequena resistência série extra.
 
 A extensão não é necessariamente mais rasa que o contato. Com fósforo no **n⁻** e arsênio no **n⁺**, ela tende a sair mais **profunda**, porque o fósforo difunde mais rápido. O que a mantém leve é a dose, cerca de duas ordens de grandeza menor <Cite id="motorola-ldd-patent" />.
 
@@ -79,13 +79,13 @@ A extensão não é necessariamente mais rasa que o contato. Com fósforo no **n
 À esquerda, a junção convencional: o contato n⁺ encosta na porta, e o campo de pico se concentra ali. À direita, a LDD: a extensão n⁻ entra um pouco por baixo da porta, é mais profunda e muito menos dopada que o contato n⁺, e o espaçador (roxo, sobre o óxido) afasta esse contato da borda da porta.
 </DiagramFigure>
 
-O conceito nasceu na IBM em **1980**, mas a adoção em produção veio com a **CHMOS III** da Intel: o próprio paper da Intel descreve a estrutura LDD como o recurso que garantia a confiabilidade do transistor, ao lado de uma porta de **250 Å** e canal elétrico típico de **1,0 µm**, e já anunciava o uso da tecnologia na produção do microprocessador de 32 bits seguinte <Cite id="intel-chmos3" />. O produto foi o **80386** (1985), fabricado em CHMOS III com 1,5 µm e duas camadas de metal <Cite id="intel-80386" /> — o processador dos PCs da era Windows 3.x. Deixou de ser exceção conforme os canais desciam abaixo de 1 µm: já em **1987** havia processos CMOS de **0,8 µm** construídos em torno dela <Cite id="ldd-08um" />.
+O conceito nasceu na IBM, mas a adoção em produção veio com a **CHMOS III** da Intel: o próprio paper da Intel descreve a estrutura LDD como o recurso que garantia a confiabilidade do transistor, ao lado de uma porta de **250 Å** e canal elétrico típico de **1,0 µm**, e já anunciava o uso da tecnologia na produção do microprocessador de 32 bits seguinte <Cite id="intel-chmos3" />. O produto foi o **80386** (1985), fabricado em CHMOS III com 1,5 µm e duas camadas de metal <Cite id="intel-80386" />, o processador dos PCs da era Windows 3.x. Deixou de ser exceção conforme os canais desciam abaixo de 1 µm: já em **1987** havia processos CMOS de **0,8 µm** construídos em torno dela <Cite id="ldd-08um" />.
 
 ## 1995: STI (trincheira rasa)
 
 <TransistorFacts year="1995" />
 
-O isolamento entre transistores vizinhos era feito por **LOCOS** (*Local Oxidation of Silicon*): um nitreto delimita as áreas ativas e a oxidação térmica cresce um óxido de campo espesso. O processo avança lateralmente sob o nitreto e forma o **“bico de pássaro”**, que consome área ativa e limita a densidade. A trincheira rasa foi **proposta no início dos anos 1980**, mas passou anos sem uso prático: faltavam tanto a planarização quanto uma deposição de óxido capaz de preencher trincheiras estreitas. Foi o **CMP** que destravou o processo <Cite id="shmj-sti" />. Abre-se então uma trincheira rasa no silício, preenchida com óxido depositado e planarizada por CMP: paredes verticais, sem bico de pássaro, e superfície plana — requisito para a profundidade de foco da litografia.
+O isolamento entre transistores vizinhos era feito por **LOCOS** (*Local Oxidation of Silicon*): um nitreto delimita as áreas ativas e a oxidação térmica cresce um óxido de campo espesso. O processo avança lateralmente sob o nitreto e forma o **“bico de pássaro”**, que consome área ativa e limita a densidade. A trincheira rasa foi **proposta no início dos anos 1980**, mas passou anos sem uso prático: faltavam tanto a planarização quanto uma deposição de óxido capaz de preencher trincheiras estreitas. Foi o **CMP** que destravou o processo <Cite id="shmj-sti" />. Abre-se então uma trincheira rasa no silício, preenchida com óxido depositado e planarizada por CMP: paredes verticais, sem bico de pássaro, e superfície plana, requisito para a profundidade de foco da litografia.
 
 <DiagramFigure src="/assets/sti.svg" alt="Corte transversal de dois esquemas de isolamento sobre a mesma superfície de silício: à esquerda, LOCOS, com o óxido de campo acima da superfície e o bico de pássaro estreitando para dentro da área ativa; à direita, trincheira rasa com liner de óxido nas paredes e óxido depositado nivelado com a superfície">
 À esquerda, o LOCOS: o óxido de campo cresce acima da superfície e o bico de pássaro corre por baixo dela, estreitando até a ponta dentro da área ativa. À direita, a trincheira rasa: paredes quase verticais, um liner de óxido crescido nas paredes e no fundo, e o óxido depositado nivelado com a superfície original, a linha tracejada que atravessa os dois painéis.
@@ -113,14 +113,14 @@ A arquitetura ficou famosa na geração de consoles de 2005–2006: o **Cell** d
 
 <TransistorFacts year="2003" />
 
-No nó **90 nm** (2003/2004), a Intel usou **strained silicon**: estresse mecânico no canal (p.ex. Si sobre SiGe) aumenta espaçamento atômico e mobilidade em **10–20%** com custo marginal <Cite id="intel-strain" />.
+No nó **90 nm** (2003/2004), a Intel usou **strained silicon**: estresse mecânico no canal (p.ex. Si sobre SiGe) aumenta o espaçamento atômico e a mobilidade com custo marginal <Cite id="intel-strain" />.
 
 <DiagramFigure src="/pdf-images/p15-1.png" alt="Malha de silício vs silício-germânio">
 Comparação de malhas: silício puro vs. SiGe como substrato para estresse.
 </DiagramFigure>
 
 <DiagramFigure src="/pdf-images/p15-2.png" alt="Silício esticado sobre SiGe">
-Camada de silício “esticado” sobre silício-germânio — setas indicam tensão horizontal.
+Camada de silício “esticado” sobre silício-germânio. Setas indicam tensão horizontal.
 </DiagramFigure>
 
 <DiagramFigure src="/pdf-images/p16-1.png" alt="Fluxo de elétrons em silício normal vs esticado">
@@ -143,7 +143,7 @@ A troca não foi direta. Antes do high-k, o dielétrico já havia mudado uma vez
 
 O processo de 45 nm trabalha com **1,0 nm de EOT** (*equivalent oxide thickness*, a espessura de SiO₂ que daria a mesma capacitância), e o filme de high-k é fisicamente mais espesso que isso <Cite id="hkmg-paper" />. O comprimento de porta é de **35 nm**, o passo de contato é de **160 nm**, e os transistores NMOS e PMOS usam metais de **funções de trabalho diferentes**, num fluxo *high-k first, metal gate last* em que o metal entra por último, no lugar da porta sacrificial <Cite id="hkmg-paper" />.
 
-A estreia comercial foi o **Core 2 Extreme QX9650**, em novembro de 2007, seguido em janeiro de 2008 pela linha de volume — os Core 2 Duo e Quad de 45 nm que equiparam laptops e MacBooks da época <Cite id="intel-45nm" />.
+A estreia comercial foi o **Core 2 Extreme QX9650**, em novembro de 2007, seguido em janeiro de 2008 pela linha de volume, os Core 2 Duo e Quad de 45 nm que equiparam laptops e MacBooks da época <Cite id="intel-45nm" />.
 
 ## 2011: FinFET (Tri-Gate)
 
@@ -155,7 +155,7 @@ O canal sai do plano: a aleta vertical é envolvida pelo portão em três lados.
 
 Abaixo de **20 nm**, planares perderam controle. A Intel comercializou **FinFET** no **22 nm** (2011): canal em “aleta” vertical; portão envolve três lados, reduzindo fuga e permitindo escalar corrente com múltiplas aletas adjacentes (**quantização de aleta**).
 
-O **Ivy Bridge** (22 nm, abril de 2012) foi o primeiro produto de alto volume <Cite id="intel-trigate" />; no celular, o **Exynos 7420** (Galaxy S6) e o **Apple A9** (iPhone 6s) levaram o FinFET aos smartphones em 2015. A arquitetura dominou os nós de 22 nm a 5 nm.
+O **Ivy Bridge** (22 nm, abril de 2012) foi o primeiro produto de alto volume <Cite id="intel-trigate" />. A arquitetura dominou os nós de 22 nm até o N3 (3 nm), com a Samsung a passar a GAA no 3 nm.
 
 ## 2012: FD-SOI (corpo ultrafino)
 
@@ -177,9 +177,9 @@ As plataformas comerciais vieram da STMicroelectronics (28 nm) e da GlobalFoundr
 Nanofolhas empilhadas, com o portão envolvendo as quatro faces de cada uma.
 </DiagramFigure>
 
-Em **3 nm** e abaixo, FinFETs encontram limites de variabilidade e efeitos quânticos. **GAAFET** empilha **nanofolhas** envolvidas pelo portão nos **quatro lados**. Samsung em massa no 3 nm (**MBCFET**, 2022); TSMC e Intel nos nós N2 e **18A (RibbonFET)** <Cite id="asml-gaa" />. Controle eletrostático superior, até **~40%** menos vazamento, largura de nanofolhas ajustável para performance vs. consumo.
+Em **3 nm** e abaixo, FinFETs encontram limites de variabilidade e efeitos quânticos. **GAAFET** empilha **nanofolhas** envolvidas pelo portão nos **quatro lados**. Samsung, TSMC e Intel anunciaram a adoção do GAA nos próximos nós <Cite id="asml-gaa" />. O controle eletrostático é superior e a largura das nanofolhas pode ser ajustada para privilegiar desempenho ou consumo.
 
-O primeiro produto comercial com GAA foi o ASIC minerador **MicroBT WhatsMiner M56S++**, no processo SF3E da Samsung, identificado em 2023 <Cite id="techinsights-gaa" />. Vale a ressalva: o **N3 da TSMC ainda era FinFET** — o Apple A17 Pro do iPhone 15 Pro é um chip de 3 nm FinFET. A TSMC só adotou nanofolhas no **N2**, com produção em volume no fim de 2025 e o **Apple A20 Pro** entre os primeiros grandes produtos <Cite id="tsmc-n2" />.
+O primeiro produto comercial com GAA foi o ASIC minerador **MicroBT WhatsMiner M56S++**, no processo SF3E da Samsung, identificado em 2023 <Cite id="techinsights-gaa" />. Vale a ressalva: o **N3 da TSMC ainda era FinFET**. O Apple A17 Pro do iPhone 15 Pro é um chip de 3 nm FinFET. A TSMC só adotou nanofolhas no **N2**, com produção em volume no fim de 2025 <Cite id="tsmc-n2" />.
 
 ## 2025/2026: BSPDN (backside power)
 
@@ -189,9 +189,9 @@ O primeiro produto comercial com GAA foi o ASIC minerador **MicroBT WhatsMiner M
 A alimentação migra para o verso do wafer e o lado frontal fica livre para sinal.
 </DiagramFigure>
 
-**Backside Power Delivery Network (BSPDN)** — *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): barramentos de alimentação migram para o **verso** do wafer via **TSVs**, liberando camadas frontais para sinal, ~**11%** mais densidade e queda de tensão dinâmica (**IR drop**) até **10×** menor.
+**Backside Power Delivery Network (BSPDN)**, *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): barramentos de alimentação migram para o **verso** do wafer via **TSVs**, liberando camadas frontais para sinal.
 
-Chega ao mercado no **Intel Panther Lake** (Core Ultra série 3), o primeiro chip a combinar *PowerVia* e *RibbonFET* <Cite id="intel-18a" />; a TSMC estreia a *Super Power Rail* no **A16**, com produção em volume prevista para o segundo semestre de 2026 <Cite id="tsmc-n2" />.
+Chega ao mercado no **Intel Panther Lake** (Core Ultra série 3) <Cite id="intel-18a" />; a TSMC estreia a *Super Power Rail* no **A16**, com produção em volume prevista para o segundo semestre de 2026 <Cite id="tsmc-n2" />.
 
 ## ~2029: Forksheet
 
@@ -213,23 +213,23 @@ A imec demonstrou o processo em wafers de 300 mm em 2021 e, em 2025, apresentou 
 NFET e PFET na mesma célula, empilhados em vez de lado a lado.
 </DiagramFigure>
 
-Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha verticalmente NFET e PFET na mesma célula, reduzindo até **~50%** a área por porta lógica (inversores, SRAM), estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó **A7**, depois de 2030 <Cite id="imec-forksheet" />.
+Abaixo de **1 nm** (era angstrom), **CFET (Complementary FET)** empilha verticalmente NFET e PFET na mesma célula, reduzindo a área por porta lógica (inversores, SRAM) e estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó **A7**, depois de 2030 <Cite id="imec-forksheet" />.
 
 O CFET é uma aposta dentro do silício. Fora dele, os canais candidatos a substituir o silício são os **nanotubos de carbono** e os **dicalcogenetos de metais de transição (TMDs)**, semicondutores bidimensionais que o IRDS mantém como candidatos a extensão do CMOS, ainda sem maturidade de manufatura <Cite id="irds-beyond-cmos" />. E há um segundo eixo, acima do transistor: em vez de empilhar dispositivos, a indústria empilha **dies inteiros** (chiplets) em 2.5D e 3D, ganhando densidade e desempenho no pacote em vez de no wafer ([Empacotamento](/empacotamento)) <Cite id="tsmc-cowos" />.
 
 ## Adendo: o que o número do nó significa
 
-A coluna "Nó" só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração. A história tem três etapas.
+O número do nó que abre cada seção só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração. A história tem três etapas.
 
 ### 1. O número nasceu de uma coincidência
 
 O "nó" não foi inventado como conceito. Ele registra a observação de que **duas dimensões diferentes davam aproximadamente o mesmo número**. A primeira é o **comprimento de porta** (*gate length*), a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o **meio-passo do metal** (*metal half-pitch*), metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.
 
-Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%** — e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />. Esse encolhimento nunca dependeu só do transistor: cada geração também exigiu uma litografia mais fina, e é o **EUV** que sustenta os nós de 7 nm e abaixo ([Fotolitografia](/fotolitografia)) <Cite id="asianometry-euv" />.
+Enquanto os dois andaram juntos, o rótulo funcionou. Cada geração encolhia essas dimensões em cerca de **30%**, e como 0,7 × 0,7 ≈ 0,5, a área de cada retângulo caía pela metade e a densidade dobrava. A Lei de Moore reduzida a aritmética <Cite id="ieee-node" />. Esse encolhimento nunca dependeu só do transistor: cada geração também exigiu uma litografia mais fina, e é o **EUV** que sustenta os nós de 7 nm e abaixo ([Fotolitografia](/fotolitografia)) <Cite id="asianometry-euv" />.
 
 ### 2. Os dois números se separaram em meados dos anos 1990
 
-Para continuar ganhando velocidade, a indústria passou a encolher o **comprimento de porta mais rápido** que as demais dimensões. No nó dito "**130 nm**", os transistores reais tinham portas de **70 nm** — pouco mais da metade do número estampado no nome <Cite id="ieee-node" />.
+Para continuar ganhando velocidade, a indústria passou a encolher o **comprimento de porta mais rápido** que as demais dimensões. No nó dito "**130 nm**", os transistores reais tinham portas de **70 nm**, pouco mais da metade do número estampado no nome <Cite id="ieee-node" />.
 
 O roteiro setorial que definia os nós, o **ITRS**, registrou a ruptura nos próprios documentos. Já na edição de **1999** ele eliminou o "nó de 150 nm" e redefiniu a designação a partir do **meio-passo de DRAM**, escrevendo que "o nó de tecnologia agora não é muito mais do que um rótulo simples para marcas de escala ainda meio convenientes ao longo desse caminho" <Cite id="itrs-1999" />. Em **2001**, o texto ficou explícito: a designação do nó "é definida pelo meio-passo do DRAM, e não pelo comprimento de porta do transistor nem pela dimensão mínima característica daquele nó" <Cite id="itrs-2001" />.
 
@@ -243,7 +243,7 @@ Paolo Gargini, que presidiu o ITRS e depois o IRDS, resume: o número do nó "�
 
 ### O que veio no lugar
 
-Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1**: 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração**, e é exatamente assim que eles devem ser lidos na tabela do início do capítulo.
+Como nenhuma dimensão única resume mais um processo, o IRDS propôs trocar o rótulo por uma métrica de **três números**: o passo de porta contactada (**G**), o passo de metal (**M**) e o número de camadas de dispositivos (**T**). Os chips chamados de "5 nm", por exemplo, seriam **G48M36T1**: 48 nm de passo de porta, 36 nm de passo de metal, uma camada <Cite id="ieee-node" />. Não é um número redondo, mas diz algo verificável. Enquanto isso, a indústria segue usando 3 nm, 2 nm e 18A como **nomes de geração**, e é exatamente assim que eles devem ser lidos no nó que abre cada seção.
 
 <SourceNote :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa', 'st-fdsoi-utbb']" />
 

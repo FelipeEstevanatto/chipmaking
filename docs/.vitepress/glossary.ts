@@ -294,19 +294,19 @@ export const GLOSSARY: GlossaryEntry[] = [
   },
   {
     term: 'HKMG',
-    pt: 'Portão metálico + dielétrico High-K',
+    pt: 'Porta metálica + dielétrico High-K',
     en: 'Metal gate + high-K dielectric',
     chapter: '/transistores',
   },
   {
     term: 'FinFET',
-    pt: 'Transistor de aleta 3D (portão tri-lateral)',
+    pt: 'Transistor de aleta 3D (porta tri-lateral)',
     en: '3D fin transistor (three-sided gate)',
     chapter: '/transistores',
   },
   {
     term: 'GAAFET',
-    pt: 'Transistor de portão envolvente em nanofolhas',
+    pt: 'Transistor de porta envolvente em nanofolhas',
     en: 'Gate-all-around nanosheet transistor',
     chapter: '/transistores',
     variants: ['GAA'],
