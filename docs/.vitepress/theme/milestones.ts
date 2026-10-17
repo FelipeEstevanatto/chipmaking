@@ -15,7 +15,7 @@
 
 export interface Milestone {
   year: string
-  /** English label, when the year itself is a phrase ("Anos 1990", "Hoje"). */
+  /** English label, when the year itself is a phrase ("Hoje"). */
   yearEn?: string
   title: { pt: string; en: string }
   note: { pt: string; en: string }
@@ -121,12 +121,11 @@ export const MILESTONES: Record<MilestoneSet, Milestone[]> = {
       sourceIds: ['kato-litho'],
     },
     {
-      year: 'Anos 1990',
-      yearEn: 'The 1990s',
-      title: { pt: 'As gerações de excímero', en: 'The excimer generations' },
+      year: '1990',
+      title: { pt: 'A i-line se difunde', en: 'i-line spreads' },
       note: {
-        pt: 'A i-line (365 nm) se difunde por volta de 1990; o KrF (248 nm) e o ArF (193 nm) vêm na sequência.',
-        en: 'i-line (365 nm) spreads around 1990; KrF (248 nm) and ArF (193 nm) follow.',
+        pt: 'A i-line (365 nm) se difunde por volta de 1990; depois vêm as gerações de excímero, o KrF (248 nm) e o ArF (193 nm).',
+        en: 'i-line (365 nm) spreads around 1990; the excimer generations, KrF (248 nm) and ArF (193 nm), come later.',
       },
       sourceIds: ['kato-litho'],
     },

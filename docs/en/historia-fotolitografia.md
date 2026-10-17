@@ -1,6 +1,6 @@
 ---
 title: History of photolithography
-description: From contact printing to EUV — the four optical generations, the search for next-generation lithography and the rescue of 193 nm by immersion.
+description: "From contact printing to EUV: the four optical generations, the search for next-generation lithography and the rescue of 193 nm by immersion."
 ---
 
 # History of photolithography
@@ -26,25 +26,25 @@ The four machine arrangements compared, not to scale. Drawn by the author from K
 
 In the early decades, integrated circuits were exposed by **contact printing**: the mask was pressed **physically** against the wafer. The arrangement is simple and cheap (it uses no lens at all), but repeated contact **damages the mask and contaminates the wafer** <Cite id="kato-litho" />.
 
-In **1973** came **proximity printing**, which introduces an air gap between mask and wafer. The wear disappears, but diffraction worsens the **resolution** — still with no lens in the path <Cite id="kato-litho" />. Then **projection printing** added **lenses** to the system, and that became the basis of everything that followed <Cite id="kato-litho" />.
+In **1973** came **proximity printing**, which introduces an air gap between mask and wafer. The wear disappears, but diffraction worsens the **resolution**, still with no lens in the path <Cite id="kato-litho" />. Then **projection printing** added **lenses** to the system, and that became the basis of everything that followed <Cite id="kato-litho" />.
 
 In **1978** GCA launched the **DSW 4800**, the first successful wafer **stepper**: **10×** reduction optics, a Zeiss lens with 0.28 numerical aperture, a 10 × 10 mm field and **g-line (436 nm)** light <Cite id="kato-litho" />. Instead of exposing the whole wafer in one shot, the machine **steps from field to field**. Nikon launched its first commercial stepper in 1980.
 
-The stepper did not win by being better at everything. A 10× stepper managed about **11 100 mm wafers per hour**, against **40** for a projection aligner, and cost around **US\$450–600 thousand** against **US\$240 thousand** for its rival <Cite id="chiphistory-litho" />. It won on **cost per good die**, and because once features crossed the 1 µm mark, only the stepper delivered the resolution <Cite id="chiphistory-litho" />. Today the same arrangement costs **US\$50–60 million** and processes more than **200 300 mm wafers per hour** <Cite id="chiphistory-litho" />.
+The stepper did not win by being better at everything. A 10× stepper managed about **11 wafers of 100 mm per hour**, against **40** for a projection aligner, and cost around **US\$450–600 thousand** against **US\$240 thousand** for its rival <Cite id="chiphistory-litho" />. It won on **cost per good die**, and because once features crossed the 1 µm mark, only the stepper delivered the resolution <Cite id="chiphistory-litho" />. Today the same arrangement costs **US\$50–60 million** and processes more than **200 wafers of 300 mm per hour** <Cite id="chiphistory-litho" />.
 
 ### The wavelengths
 
 <DiagramFigure src="/assets/spectrum-of-lithography-lights.png" alt="Spectrum of the lights used in lithography: g-line 436 nm, i-line 365 nm, KrF 248 nm, ArF 193 nm and F2 157 nm">
-The emission peaks used in lithography compared — <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_lithography_lights.PNG" target="_blank" rel="noopener noreferrer">Spectrum of lithography lights</a>, Shigeru23 (CC BY-SA 4.0), Wikimedia Commons.
+The emission peaks used in lithography compared, <a href="https://commons.wikimedia.org/wiki/File:Spectrum_of_lithography_lights.PNG" target="_blank" rel="noopener noreferrer">Spectrum of lithography lights</a>, Shigeru23 (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
-The stepper alone would have sustained nothing — shrinking the wavelength is what kept the industry moving: **g-line (436 nm)** → **i-line (365 nm)**, widespread around 1990 → **248 nm** (KrF) → **193 nm** (ArF), the last two excimer lasers <Cite id="kato-litho" />.
+The stepper alone would have sustained nothing. Shrinking the wavelength is what kept the industry moving: **g-line (436 nm)** → **i-line (365 nm)**, widespread around 1990 → **248 nm** (KrF) → **193 nm** (ArF), the last two excimer lasers <Cite id="kato-litho" />.
 
 For decades the wavelength was **smaller** than the feature being printed. That changed at the **250 nm node**, built with **248 nm** light: from then on features became **smaller than the light itself**, and the industry survived on **resolution enhancement techniques** rather than a new source <Cite id="asianometry-euv" />. That inversion is the origin of the question that defines the rest of this page: when light can no longer draw the feature, which technology can?
 
 ## The candidate list
 
-In **1995** the industry set up a committee to choose **Next Generation Lithography (NGL)** <Cite id="asianometry-euv" />. The table held five or six bets, depending on how you count — and the favourite was not EUV.
+In **1995** the industry set up a committee to choose **Next Generation Lithography (NGL)** <Cite id="asianometry-euv" />. The table held five or six bets, depending on how you count, and the favourite was not EUV.
 
 | Candidate | Principle | Fate |
 |---|---|---|
@@ -63,7 +63,7 @@ The schedule slipped from the start. In **November 1997** the recommendation was
 
 In **December 1999** and **September 2000**, the recommendation was to keep **EUV and EPL** for the **70 nm** node, acknowledging the growing possibility that the industry might need **more than one** mainstream technology <Cite id="sematech-ngl" />. In **August 2001**, at the fifth and final workshop, the official recommendation was still to **fund commercialisation of both** <Cite id="sematech-ngl" />.
 
-EUV **was not anointed alone in 2001**. What happened is that **EPL died of throughput**, reducing the field to one candidate by **elimination** — while the formal recommendation to sustain both tracks was still in that year's report <Cite id="sematech-ngl" />. The practical effect was that EUV's target slipped from the **130/100 nm** node to the **70 nm** node, one to two generations later than the original plan <Cite id="sematech-ngl" />.
+EUV **was not anointed alone in 2001**. What happened is that **EPL died of throughput**, reducing the field to one candidate by **elimination**, while the formal recommendation to sustain both tracks was still in that year's report <Cite id="sematech-ngl" />. The practical effect was that EUV's target slipped from the **130/100 nm** node to the **70 nm** node, one to two generations later than the original plan <Cite id="sematech-ngl" />.
 
 ## Why the runners-up lost
 
@@ -80,16 +80,16 @@ The reason is on the record from IBM's own researchers: fab managers **always pr
 EUV was born under another name. The technique was called **soft X-ray projection lithography** until **1993**, when the research community adopted the term **extreme ultraviolet**. The switch had three motives: to **distinguish** it from proximity X-ray lithography, which had failed; to **evoke DUV**, which worked; and to bury the negative association with X-rays <Cite id="cset-euv" />. Deep down, EUV is soft X-rays wearing an ultraviolet name.
 
 <DiagramFigure src="/assets/euvl-tool-llnl.jpg" alt="EUV lithography tool at Lawrence Livermore National Laboratory">
-An EUV lithography tool in the second half of the 1990s — <a href="https://commons.wikimedia.org/wiki/File:Extreme_ultraviolet_lithography_tool.jpg" target="_blank" rel="noopener noreferrer">Extreme ultraviolet lithography tool</a>, Lawrence Livermore National Laboratory (public domain), Wikimedia Commons.
+An EUV lithography tool in the second half of the 1990s, <a href="https://commons.wikimedia.org/wiki/File:Extreme_ultraviolet_lithography_tool.jpg" target="_blank" rel="noopener noreferrer">Extreme ultraviolet lithography tool</a>, Lawrence Livermore National Laboratory (public domain), Wikimedia Commons.
 </DiagramFigure>
 
 Its technical difficulties all stem from a single property: **everything absorbs EUV**. There is no lens, only **multilayer mirrors**; the mask must be **defect-free**; the source must deliver **power**; and the photoresist must be **thinner**, because EUV penetrates so little <Cite id="asianometry-euv" />.
 
-In **1996** the US Congress cut Department of Energy funding for EUV <Cite id="construction-physics-euv" />. At that point a SEMATECH task force had ranked EUV **last of four** technologies, behind X-ray, electron beam and ion projection <Cite id="construction-physics-euv" />. Rather than let the national-lab team disperse, **Intel took on the risk** and, in **September 1997**, formed the **EUV LLC** consortium with AMD and Motorola, alongside the *Virtual National Laboratory* — Berkeley, Livermore and Sandia <Cite id="intel-euvllc" />.
+In **1996** the US Congress cut Department of Energy funding for EUV <Cite id="construction-physics-euv" />. The following year a SEMATECH task force ranked EUV **last of four** technologies, behind X-ray, electron beam and ion projection <Cite id="construction-physics-euv" />. Rather than let the national-lab team disperse, **Intel took on the risk** and, in **September 1997**, formed the **EUV LLC** consortium with AMD and Motorola, alongside the *Virtual National Laboratory*, Berkeley, Livermore and Sandia <Cite id="intel-euvllc" />.
 
 The announced figure was **US\$250 million over three years** (US\$130 million in cash and US\$120 million in equipment, materials and personnel), the largest private investment ever made in a Department of Energy project at the time <Cite id="intel-euvllc" />. IBM, Micron, Infineon and ASML itself joined later <Cite id="eet-euvlith" />. Europe and Japan responded with their own consortia, **EUCLIDES** and **ASET** <Cite id="construction-physics-euv" />.
 
-The candidate that **least** looked capable of lasting several generations is the one that won — and it is precisely that multi-generation continuity which explains why it won.
+The candidate that **least** looked capable of lasting several generations is the one that won: X-ray stalled on the mask and EPL on throughput, and only EUV could be extended from node to node with the same 13.5 nm.
 
 ## The 157 nm detour and the rescue by immersion
 
@@ -97,11 +97,11 @@ To bridge the gap between optical and EUV, the industry bet on **157 nm** (the F
 
 The 157 nm route was not easy: **calcium fluoride** lens materials, the photoresist and the mask all proved substantial obstacles <Cite id="asianometry-euv" />. Meanwhile the detour consumed time EUV did not have.
 
-The way out came from somewhere else. In **2002**, **Burn Lin**, then at TSMC, presented at a SEMATECH workshop on 157 nm the proposal to apply **water immersion** to the **193 nm** lithography that already existed. The audience of more than 200 people responded with enthusiasm, and SEMATECH took on the role of consolidating the technical concerns raised <Cite id="lin-immersion" />. The idea was nearly free: replacing the air between the last lens and the wafer with **purified water** cuts the **effective** 193 nm wavelength to about **134 nm** and reuses **existing optics, masks and photoresists** <Cite id="asml-immersion" />.
+The way out came from somewhere else, and the two sources that tell it disagree on the author and the date. ASML places the 157 nm conference in **December 2001** and credits the idea to **Jan Mulkens**, noting that IBM had already described immersion in the 1980s <Cite id="asml-immersion" />. In **2002**, **Burn Lin**, then at TSMC, presented at a SEMATECH workshop on 157 nm the proposal to apply **water immersion** to the **193 nm** lithography that already existed. The audience of more than 200 people responded with enthusiasm, and SEMATECH took on the role of consolidating the technical concerns raised <Cite id="lin-immersion" />. The idea was nearly free: replacing the air between the last lens and the wafer with **purified water** cuts the **effective** 193 nm wavelength to about **134 nm** and reuses **existing optics, masks and photoresists** <Cite id="asml-immersion" />.
 
 Execution was fast. In **May 2003** Intel abandoned 157 nm <Cite id="asianometry-euv" />; by **October** ASML already had images from a prototype, the **TWINSCAN AT:1150i** <Cite id="asml-immersion" />; and on **3 December** of the same year came the first order for the production scanner **XT:1250i**, placed by **TSMC** <Cite id="lin-immersion" />.
 
-The effect was twofold: immersion saved 193 nm and carried the industry through the 65, 45, 32 and 22 nm nodes without needing EUV — which pushed EUV even further out. It only entered high-volume production at the 7 nm node and below, roughly **two decades** after being chosen.
+The effect was twofold: immersion saved 193 nm and carried the industry through the 65, 45, 32 and 22 nm nodes without needing EUV, which pushed EUV even further out. It only entered high-volume production at the 7 nm node and below, roughly **two decades** after being chosen.
 
 ## Timeline
 

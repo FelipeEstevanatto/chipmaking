@@ -6,7 +6,7 @@ dataAsOf: 2025
 
 # Mineração e produção de silício metalúrgico
 
-O primeiro passo na cadeia de produção do silício é a obtenção de **Quartzo de Alta Pureza (HPQ)**, extraído de depósitos de quartzito ou quartzo mineral, extremamente abundante na crosta terrestre <Cite id="pv-education" />. O silício é o **segundo elemento mais abundante** da crosta, atrás apenas do oxigênio, e ocorre como sílica praticamente pura ou como silicatos; os recursos são, na prática, **abundantes** — embora a pureza varie consideravelmente de depósito para depósito <Cite id="saimm" />. Na década de 1970, essa mineração era altamente seletiva, focando em pegmatitos em regiões como o Brasil e Madagascar para garantir que as amostras fossem livres de impurezas críticas como ferro e boro <Cite id="sciencedirect-hpq" />. Hoje, a extração em larga escala concentra-se num punhado de depósitos excepcionais: o processo subsequente de purificação física e química só consegue partir de um material que já era bom <Cite id="sciencedirect-hpq" />.
+O primeiro passo na cadeia de produção do silício é a obtenção de **Quartzo de Alta Pureza (HPQ)**, extraído de depósitos de quartzito ou quartzo mineral, extremamente abundante na crosta terrestre <Cite id="pv-education" />. O silício é o **segundo elemento mais abundante** da crosta, atrás apenas do oxigênio, e ocorre como sílica praticamente pura ou como silicatos; os recursos são, na prática, **abundantes**, embora a pureza varie consideravelmente de depósito para depósito <Cite id="saimm" />. Na década de 1970, essa mineração era altamente seletiva, focando em pegmatitos em regiões como o Brasil e Madagascar para garantir que as amostras fossem livres de impurezas críticas como ferro e boro <Cite id="sciencedirect-hpq" />. Hoje, a extração em larga escala concentra-se num punhado de depósitos excepcionais: o processo subsequente de purificação física e química só consegue partir de um material que já era bom <Cite id="sciencedirect-hpq" />.
 
 O quartzo entra na cadeia por **dois caminhos distintos**, e vale separá-los desde já: ele é a **matéria-prima** do silício (reduzido a MG-Si, como veremos a seguir) e também o material do **cadinho** que contém o banho no crescimento do cristal. O primeiro uso tolera impurezas que a química a jusante remove; o segundo, não.
 
@@ -24,7 +24,7 @@ O texto segue essa ordem.
 
 ## Mineração de quartzo (HPQ)
 
-Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de **boro** e de metais alcalinos na casa das **partes por bilhão**, e depósitos assim são raríssimos: cerca de **70% a 90% do quartzo de alta pureza do mundo** sai de uma única região — os pegmatitos de **Spruce Pine**, nos montes Apalaches da Carolina do Norte <Cite id="construction-physics-spruce-pine" />.
+Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de **boro** e de metais alcalinos na casa das **partes por bilhão**, e depósitos assim são raríssimos: cerca de **70% a 90% do quartzo de alta pureza do mundo** sai de uma única região, os pegmatitos de **Spruce Pine**, nos montes Apalaches da Carolina do Norte <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine: onde o quartzo é puro o suficiente
 
@@ -40,7 +40,7 @@ A Unimin se fundiu com a Fairmount Santrol em 2018, e a empresa resultante adoto
 O que se extrai ali é uma rocha, não um cristal isolado: o granito pegmatítico do distrito traz quartzo, feldspato e mica crescidos juntos em cristais grandes, e é essa mistura que a purificação precisa desfazer <Cite id="quartzcorp-hpq" />.
 
 <DiagramFigure src="/assets/spruce-pine-pegmatite.jpg" alt="Amostra de granito pegmatítico do distrito de Spruce Pine, com quartzo cinza e leitoso, feldspato branco e rosa, e mica escura em placas">
-Amostra do granito pegmatítico do distrito de Spruce Pine, no afloramento Wiseman. O quartzo (cinza) vem acompanhado de feldspato (branco e rosa) e mica (preto), as fases que a flotação e a separação magnética removem depois. James St. John — <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
+Amostra do granito pegmatítico do distrito de Spruce Pine, no afloramento Wiseman. O quartzo (cinza) vem acompanhado de feldspato (branco e rosa) e mica (preto), as fases que a flotação e a separação magnética removem depois. James St. John, <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
 </DiagramFigure>
 
 A Sibelco, uma das duas mineradoras de Spruce Pine, publicou um vídeo sobre o sítio e a linha IOTA® <Cite id="sibelco-spruce-pine-video" />.
@@ -57,10 +57,10 @@ Parte do minério sai dali mesmo, das dezenas de corpos pegmatíticos da região
 As quatro etapas da purificação em Drag, na ordem em que o material as percorre. O produto final chega a 99,999% de SiO₂ <Cite id="quartzcorp-hpq" />.
 </DiagramFigure>
 
-1. **flotação** — remove feldspato e mica;
-2. **separação magnética** — remove contaminantes ferrosos;
-3. **lixiviação ácida** — ataca inclusões e impurezas superficiais remanescentes;
-4. **calcinação** — elimina contaminantes orgânicos residuais.
+1. **flotação**: remove feldspato e mica;
+2. **separação magnética**: remove contaminantes ferrosos;
+3. **lixiviação ácida**: ataca inclusões e impurezas superficiais remanescentes;
+4. **calcinação**: elimina contaminantes orgânicos residuais.
 
 O produto final chega a **99,999% de SiO₂** <Cite id="quartzcorp-hpq" />.
 
@@ -130,13 +130,13 @@ O forno é um invólucro com cerca de **10 m de diâmetro**, atravessado por **t
 
 Mantém-se uma camada de material sólido (a **zona de reação externa**) sobre o banho fundido (a **zona de reação interna**) para **aumentar o rendimento de silício**. É nessa interface que o SiO gerado consegue voltar a reagir antes de sair com o gás <Cite id="saimm" />.
 
-Na prática, o interior do forno não tem camadas horizontais: cada eletrodo abre uma **cratera** na carga, e o teto dessa cavidade é uma **crosta** de condensado, que gruda nos grãos e sustenta o material de cima <Cite id="vangskasen-2013" />. O gás que sobe da cratera encontra o carbono da carga e volta a virar carbeto; o que escapa dessa reação condensa na carga mais fria. É essa reciclagem interna que sustenta um rendimento de silício em torno de **85%** num forno bem operado <Cite id="vangskasen-2013" />. Quem entrega a energia é o arco na ponta do eletrodo — menos de **20 cm** de comprimento, com correntes da ordem de **100 kA** por fase <Cite id="saevarsdottir-2010" />. Os eletrodos são **pré-cozidos**, e não do tipo auto-cozido (*Søderberg*), justamente para não trazer ao silício a contaminação que o invólucro metálico destes últimos carrega <Cite id="elkem-electrodes" />.
+Na prática, o interior do forno não tem camadas horizontais: cada eletrodo abre uma **cratera** na carga, e o teto dessa cavidade é uma **crosta** de condensado, que gruda nos grãos e sustenta o material de cima <Cite id="vangskasen-2013" />. O gás que sobe da cratera encontra o carbono da carga e volta a virar carbeto; o que escapa dessa reação condensa na carga mais fria. É essa reciclagem interna que sustenta um rendimento de silício em torno de **85%** num forno bem operado <Cite id="vangskasen-2013" />. Quem entrega a energia é o arco na ponta do eletrodo, menos de **20 cm** de comprimento, com correntes da ordem de **100 kA** por fase <Cite id="saevarsdottir-2010" />. Os eletrodos são **pré-cozidos**, e não do tipo auto-cozido (*Søderberg*), justamente para não trazer ao silício a contaminação que o invólucro metálico destes últimos carrega <Cite id="elkem-electrodes" />.
 
 O silício é então **vazado por um furo no fundo** do forno e refinado por tratamento com escória ou purga de gás, que removem inclusões e ajustam a composição ao valor especificado. Depois o metal é deixado solidificar em molde e é britado no tamanho pedido <Cite id="saimm" />.
 
 <YouTubeEmbed id="2LKOG6wrEY8" title="Ferrosilicon Submerged Arc Furnace Smelting Operation, Tapping and Casting (SR Furnace)" />
 
-O vídeo da SR Furnace, fabricante de fornos de arco submerso, mostra o vazamento e a lingotagem em um forno de ferrossilício — o outro produto desses fornos, feito no mesmo tipo de reator <Cite id="abc-silicon-smelter-video" />.
+O vídeo da SR Furnace, fabricante de fornos de arco submerso, mostra o vazamento e a lingotagem em um forno de ferrossilício, o outro produto desses fornos, feito no mesmo tipo de reator <Cite id="abc-silicon-smelter-video" />.
 
 O MG-Si resultante tem especificação típica de **98,5% a 99,5% de Si**, com carbono, metais alcalinoterrosos e de transição, boro e fósforo entre as impurezas características <Cite id="saimm" />. Essas impurezas viajam com o material até a purificação química, descrita em [Polissilício](/polissilicio).
 
@@ -161,7 +161,7 @@ Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chi
 É esse conjunto de fatores, e não o minério, que decide onde uma planta se instala.
 
 <DiagramFigure src="/assets/elkem-salten-ferrosilicon.jpg" alt="Vista aérea da planta da Elkem em Salten, na Noruega, entre o fiorde e as montanhas, com a área de estocagem de quartzo ao lado das naves industriais">
-A planta da Elkem em Salten, em Straumen, no norte da Noruega, produz ferrossilício desde 1967. Frankemann — <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
+A planta da Elkem em Salten, em Straumen, no norte da Noruega, produz ferrossilício desde 1967. Frankemann, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
 <SourceNote :ids="['pv-education', 'pv-mfg-polysilicon', 'sciencedirect-hpq', 'sibelco-hpq', 'quartzcorp-hpq', 'sibelco-spruce-pine-video', 'ntnu-silicon-video', 'abc-silicon-smelter-video', 'elkem', 'elkem-electrodes', 'saevarsdottir-2010', 'vangskasen-2013', 'csiro', 'saimm', 'usgs-mcs-2026']" />

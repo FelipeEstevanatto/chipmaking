@@ -7,7 +7,7 @@ description: Fontes USGS, Bernreuter, ASML, papers de wafer e bibliografia compl
 
 ## Referências numeradas
 
-No estilo de notas de rodapé: cada **\[n\]** no texto aponta para a entrada abaixo. Quando há URL, o título é link direto para a fonte.
+No estilo de notas de rodapé: cada **\[n\]** no texto aponta para a entrada abaixo, e a numeração é fixa, em ordem de entrada na lista. Uma fonte nova entra no fim, com o número seguinte. Quando há URL, o título é link direto para a fonte.
 
 <RefList />
 

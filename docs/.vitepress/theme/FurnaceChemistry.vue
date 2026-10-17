@@ -62,8 +62,8 @@ const labels = computed(() => ({
     ? `Animated diagram of the furnace chemistry. ${text(current.value.title)}. ${current.value.equation}`
     : `Diagrama animado da química do forno. ${text(current.value.title)}. ${current.value.equation}`,
   legend: isEnglish.value
-    ? 'Si silicon · O oxygen · C carbon — a schematic of the bond changes, not a balanced atom count'
-    : 'Si silício · O oxigênio · C carbono — esquema das trocas de ligação, não uma contagem balanceada de átomos',
+    ? 'Si silicon · O oxygen · C carbon: a schematic of the bond changes, not a balanced atom count'
+    : 'Si silício · O oxigênio · C carbono: esquema das trocas de ligação, não uma contagem balanceada de átomos',
   hint: isEnglish.value
     ? 'Point at an atom to see its name.'
     : 'Aponte para um átomo para ver o nome dele.',

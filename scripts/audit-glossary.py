@@ -93,6 +93,7 @@ class Annotated(HTMLParser):
                                       "milestone-rail",
                                       "see-also", "glossary", "doc-meta", "build-footer",
                                       "data-chart", "furnace-chemistry", "crystal-viewer",
+                                      "fab-process",
                                       "yield-explorer",
                                       "usgs-production-table", "home-sections", "chain-flow")):
             return "foreign"

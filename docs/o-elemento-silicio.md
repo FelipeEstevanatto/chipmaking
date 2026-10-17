@@ -1,12 +1,12 @@
 ---
 title: O elemento silício
-description: A ficha do elemento — massa atômica, densidades, gap de banda, isótopos e por que esses números reaparecem em todo o resto do site.
+description: "A ficha do elemento: massa atômica, densidades, gap de banda, isótopos e por que esses números reaparecem em todo o resto do site."
 dataAsOf: 2026
 ---
 
 # O elemento silício
 
-Todos os capítulos deste site tratam do silício como matéria-prima: minério, forno, lingote, wafer, transistor. Esta página faz o caminho inverso e olha para o **átomo** — as constantes que a indústria não escolhe, apenas obedece.
+Todos os capítulos deste site tratam do silício como matéria-prima: minério, forno, lingote, wafer, transistor. Esta página faz o caminho inverso e olha para o **átomo**: as constantes que a indústria não escolhe, apenas obedece.
 
 Elas reaparecem em cada etapa da cadeia. O [forno de arco](/mineracao-mg-si) precisa vencer uma ligação forte; o [crescimento do cristal](/fabricacao-wafers) precisa de uma rede que se repete; a [célula solar](/celulas-solares) é limitada por um número que está nesta tabela desde o começo.
 
@@ -21,6 +21,8 @@ Esta página percorre, nesta ordem:
 O resto da página segue essa ordem.
 
 ## A ficha do elemento
+
+As constantes abaixo são as que a indústria não escolhe, e três delas decidem processos inteiros: a densidade, a condutividade térmica e o gap.
 
 | Grandeza | Valor |
 | --- | --- |
@@ -42,29 +44,35 @@ O resto da página segue essa ordem.
 
 ## A rede que o silício forma
 
-A ficha descreve um arranjo, não um átomo solto: cada silício se liga a quatro vizinhos e a rede repete esse tetraedro em todas as direções. O visualizador abaixo desenha esse arranjo, junto com as quatro ligações que a indústria constrói com ele: carbono, germânio, oxigênio e nitrogênio. Arraste para girar e use o controle de extensão para repetir mais células; o quadro da ocupação, ao lado, mostra quanto de uma célula unitária é matéria e quanto é vazio.
+A ficha descreve um arranjo, não um átomo solto: cada silício se liga a quatro vizinhos e a rede repete esse tetraedro em todas as direções. O visualizador abaixo desenha esse arranjo, junto com as quatro ligações que a indústria constrói com ele: carbono, germânio, oxigênio e nitrogênio. Arraste para girar, use as setas do teclado para girar sem mouse e o controle de extensão para repetir mais células; o painel de ocupação, que no celular aparece abaixo do desenho, mostra quanto de uma célula unitária é matéria e quanto é vazio.
 
 <ClientOnly>
   <CrystalViewer />
 </ClientOnly>
 
+Com carbono, forma o carbeto de silício dos dispositivos de potência; com germânio, a liga que estica o canal; com oxigênio, o quartzo que abre a cadeia; com nitrogênio, o nitreto que mascara e reveste.
+
+::: info
+A rede está em escala. Na estrutura principal os átomos são desenhados a 72% do raio covalente; na célula unitária, no tamanho real.
+:::
+
 O cristal continua em [Estrutura e tipos de wafer](/estrutura-wafers), onde essa mesma rede explica os índices de Miller e a anisotropia dos planos.
 
 Três dos números da ficha têm consequência industrial.
 
-A primeira é a densidade. O silício sólido é **menos denso que o próprio fundido** — 2,33 contra cerca de 2,57 g/cm³. Quase todo material encolhe ao solidificar; o silício **expande**. É por isso que o cristal cresce flutuando sobre o banho no [Czochralski](/fabricacao-wafers), e não afundando nele <Cite id="zulehner-2000" />.
+A primeira é a densidade. O silício sólido é **menos denso que o próprio fundido**, 2,33 contra cerca de 2,57 g/cm³. Quase todo material encolhe ao solidificar; o silício **expande**. É por isso que o cristal cresce flutuando sobre o banho no [Czochralski](/fabricacao-wafers), e não afundando nele <Cite id="zulehner-2000" />.
 
-A segunda é a condutividade térmica. **148 W/(m·K)** é um valor de metal, não de isolante, e é uma das razões pelas quais o silício continua sendo o substrato preferido mesmo quando outro material poderia fazer o trabalho elétrico — ele também faz o trabalho de tirar o calor <Cite id="elem-ioffe" />.
+A segunda é a condutividade térmica. **148 W/(m·K)** está na faixa de um metal, e é uma das razões pelas quais o silício continua o substrato preferido mesmo quando outro material poderia fazer o trabalho elétrico: ele também tira o calor <Cite id="elem-ioffe" />.
 
 A terceira é o gap.
 
 ## O gap indireto explica mais do que o solar
 
-O silício tem gap de **1,12 eV**, estreito o suficiente para conduzir quando se quer e largo o suficiente para não conduzir quando não se quer — a razão pela qual ele desbancou o [germânio](/estrutura-wafers), cujo gap é de 0,66 eV <Cite id="elem-sze" />.
+O silício tem gap de **1,12 eV**, estreito o suficiente para conduzir quando se quer e largo o suficiente para não conduzir quando não se quer: a razão pela qual ele desbancou o [germânio](/estrutura-wafers), cujo gap é de 0,66 eV <Cite id="elem-sze" />.
 
 O detalhe decisivo, porém, é que esse gap é **indireto**: o mínimo da banda de condução e o máximo da banda de valência não estão no mesmo ponto do espaço de momentos. Absorver ou emitir um fóton exige, então, a ajuda de uma vibração da rede, o que torna os dois processos muito menos prováveis <Cite id="elem-sze" />.
 
-Daí saem duas consequências. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem** — o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio) <Cite id="si-photonics-laser" />.
+Daí saem duas consequências. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem**, o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio) <Cite id="si-photonics-laser" />.
 
 <ClientOnly>
   <DataChart chart="band-gap" />
@@ -78,9 +86,9 @@ O silício natural é uma mistura de três isótopos estáveis, e a proporção 
 
 | Isótopo | Abundância |
 | --- | --- |
-| ²⁸Si | **92,19% a 92,32%** |
-| ²⁹Si | **4,65% a 4,70%** |
-| ³⁰Si | **3,04% a 3,11%** |
+| ²⁸Si | **92,19 % a 92,32 %** |
+| ²⁹Si | **4,65 % a 4,70 %** |
+| ³⁰Si | **3,04 % a 3,11 %** |
 
 A variação é pequena, mas não nula, e é medida com precisão suficiente para virar ferramenta: a razão entre isótopos de silício num sedimento conta a história do clima em que ele se formou <Cite id="elem-ciaaw" />.
 
@@ -88,11 +96,11 @@ Para a indústria, a consequência prática é outra. Os **~4,7% de ²⁹Si** n�
 
 ## Por que a indústria usa este elemento
 
-- Ele é o **segundo mais abundante** da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
-- Ele forma um **óxido nativo** estável, isolante e insolúvel em água, que serve de máscara e de dielétrico de porta — o que o germânio não faz <Cite id="ge-vs-si" />.
+- Ele é o **segundo elemento mais abundante** da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
+- Ele forma um **óxido nativo** estável, isolante e insolúvel em água, que serve de máscara e de dielétrico de porta, o que o germânio não faz <Cite id="ge-vs-si" />.
 - E ele tem uma **temperatura de fusão** que a metalurgia comum alcança, 1414 °C, o que permite reduzi-lo em fornos elétricos antes de qualquer química fina <Cite id="saimm" />.
 
-Nenhuma dessas propriedades é a melhor possível isoladamente. É a combinação delas, mais a cadeia industrial construída em volta, que sustenta a posição do silício — a mesma conclusão a que chega o capítulo de [células e módulos solares](/celulas-solares).
+Nenhuma dessas propriedades é a melhor possível isoladamente. É a combinação delas, mais a cadeia industrial construída em volta, que sustenta a posição do silício: a mesma conclusão a que chega o capítulo de [células e módulos solares](/celulas-solares).
 
 <SourceNote :ids="['elem-ioffe', 'elem-sze', 'elem-ciaaw', 'zulehner-2000', 'saimm', 'ge-vs-si', 'wbg-si28-qubit', 'wbg-ioffe-sic', 'intel-strain', 'struct-quartz-levien', 'struct-si3n4-kohatsu']" />
 
@@ -100,5 +108,6 @@ Nenhuma dessas propriedades é a melhor possível isoladamente. É a combinaçã
   { text: 'Estrutura e tipos de wafer', href: '/estrutura-wafers', note: 'a rede cúbica de diamante e a dopagem' },
   { text: 'Além do silício', href: '/alem-do-silicio', note: 'SiC, GaN e as outras funções do silício' },
   { text: 'Células e módulos solares', href: '/celulas-solares', note: 'por que o gap indireto encarece a absorção' },
+  { text: 'Introdução', href: '/introducao', note: 'o mercado e as duas purezas' },
   { text: 'Referências', href: '/referencias', note: 'lista numerada' },
 ]" />

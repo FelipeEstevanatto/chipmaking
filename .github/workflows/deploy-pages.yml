@@ -3,12 +3,8 @@ name: Deploy VitePress to GitHub Pages
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -17,20 +13,48 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - run: bun install --frozen-lockfile
       - run: bun run build
+
+      # The audits are the site's own rules, and until now they only ran when someone remembered.
+      # None of them needs the network, so they run on every push, before anything deploys.
+      - name: Prose, drawings, glossary, maths, links, numbers
+        run: |
+          python3 scripts/audit-prose.py
+          python3 scripts/audit-svgs.py
+          python3 scripts/audit-glossary.py
+          python3 scripts/audit-math.py
+          python3 scripts/audit-links.py
+          python3 scripts/audit-numbers.py
+
+      # The CSVs under docs/public/data are generated from charts/specs.ts. Editing a series without
+      # re-exporting ships a chart that disagrees with its own data file.
+      - name: Chart data matches the specs
+        run: |
+          bun run data:export
+          git diff --exit-code -- docs/public/data
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/.vitepress/dist
 
   deploy:
+    if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
