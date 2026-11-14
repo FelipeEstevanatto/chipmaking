@@ -1,0 +1,19 @@
+Chipmaking content licence
+
+Copyright (c) 2026 Felipe Estevanatto
+
+The written content of this repository (docs/**/*.md in both languages), the original drawings in
+docs/public/assets/ and the data files in docs/public/data/ are licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0).
+
+You are free to share and adapt this material for any purpose, including commercially, as long as
+you give appropriate credit ("Felipe Estevanatto, Chipmaking,
+https://felipeestevanatto.github.io/chipmaking/"), provide a link to the licence, and indicate if
+changes were made.
+
+Summary: https://creativecommons.org/licenses/by/4.0/
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Not covered: third-party photographs and figures, which keep the licence stated in their captions,
+and the figures in docs/public/pdf-images/, which are extracted from the source PDF and are not
+covered by this licence. The code is covered by LICENSE (MIT).

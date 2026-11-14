@@ -2,6 +2,8 @@
 /** Inlined at build time by Vite's `define` - see `buildInfoForClient` in docs/.vitepress/config.ts. */
 declare const __BUILD_INFO__: {
   repo: string
+  author: string
+  authorUrl: string
   repoLabel: string
   sha: string
   shortSha: string
@@ -46,6 +48,11 @@ const refLabel = computed(() => {
       </p>
 
       <p class="build-footer-side">
+        <span class="build-footer-author">
+          {{ isEnglish ? 'Written by' : 'Escrito por' }}
+          <a :href="info.authorUrl" target="_blank" rel="noopener">{{ info.author }}</a>
+        </span>
+        <span class="build-footer-sep" aria-hidden="true">&#183;</span>
         <a class="build-footer-repo" :href="info.repo" target="_blank" rel="noopener">
           <svg
             class="build-footer-icon"

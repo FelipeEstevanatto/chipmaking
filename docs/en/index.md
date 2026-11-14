@@ -5,7 +5,7 @@ description: "From quartz mining to GAA transistors: the silicon chain for solar
 hero:
   name: Silicon
   text: Chip Making
-  tagline: "From quartz to chip: purification, wafers, photolithography and transistor architectures explained."
+  tagline: "A sourced, bilingual guide to how silicon becomes a chip, from the quartz mine to the gate-all-around transistor."
   actions:
     - theme: brand
       text: Start reading
