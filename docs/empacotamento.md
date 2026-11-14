@@ -82,7 +82,7 @@ Os parâmetros acompanham o material. Para silício usa-se o fuso a **30.000 rpm
 
 Três situações empurraram a indústria para alternativas.
 
-A primeira é a **fragilidade dos dielétricos de baixa constante dielétrica**. Os filmes *low-k* do [BEOL](/na-fab#interconexao-a-parte-do-chip-que-ninguem-ve) são mecanicamente frágeis e **se danificam facilmente** no corte com lâmina, o que motivou a busca por outros métodos <Cite id="ectc-2016-dicing" />.
+A primeira é a **fragilidade dos dielétricos de baixa constante dielétrica**. Os filmes *low-k* do [BEOL](/na-fab#interconexao) são mecanicamente frágeis e **se danificam facilmente** no corte com lâmina, o que motivou a busca por outros métodos <Cite id="ectc-2016-dicing" />.
 
 A segunda é o **lascamento em wafers finos**. Em um wafer de **25 µm** de espessura (número que hoje é comum em memórias empilhadas), uma lâmina padrão causa lascamento substancial na face de trás; é preciso recorrer a grãos muito mais finos <Cite id="disco-thin-wafer" />.
 

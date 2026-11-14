@@ -1,0 +1,238 @@
+{
+  "docs/alem-do-silicio.md": {
+    "style-bold": 25,
+    "style-contrast": 4,
+    "style-kicker": 2
+  },
+  "docs/celulas-solares.md": {
+    "style-bold": 104,
+    "style-contrast": 1
+  },
+  "docs/confiabilidade.md": {
+    "style-bold": 65,
+    "style-contrast": 2
+  },
+  "docs/dados.md": {
+    "style-bold": 16,
+    "style-contrast": 4,
+    "style-kicker": 1,
+    "style-sourcing": 1
+  },
+  "docs/empacotamento.md": {
+    "style-bold": 243,
+    "style-commentary": 1,
+    "style-contrast": 3,
+    "style-heading": 11
+  },
+  "docs/en/alem-do-silicio.md": {
+    "style-bold": 25,
+    "style-contrast": 3
+  },
+  "docs/en/celulas-solares.md": {
+    "style-bold": 103,
+    "style-contrast": 1
+  },
+  "docs/en/confiabilidade.md": {
+    "style-bold": 64,
+    "style-contrast": 3
+  },
+  "docs/en/dados.md": {
+    "style-bold": 16,
+    "style-contrast": 4,
+    "style-sourcing": 1
+  },
+  "docs/en/empacotamento.md": {
+    "style-bold": 242,
+    "style-commentary": 1,
+    "style-contrast": 4,
+    "style-heading": 11
+  },
+  "docs/en/estrutura-wafers.md": {
+    "style-bold": 72,
+    "style-contrast": 1,
+    "style-heading": 3,
+    "style-kicker": 1,
+    "style-sourcing": 1
+  },
+  "docs/en/fabricacao-wafers.md": {
+    "style-bold": 114,
+    "style-heading": 4,
+    "style-kicker": 1
+  },
+  "docs/en/fotolitografia.md": {
+    "style-bold": 133,
+    "style-heading": 4
+  },
+  "docs/en/gargalos.md": {
+    "style-bold": 10,
+    "style-commentary": 1
+  },
+  "docs/en/historia-fotolitografia.md": {
+    "style-bold": 113,
+    "style-commentary": 1,
+    "style-heading": 1
+  },
+  "docs/en/insumos-fab.md": {
+    "style-bold": 20,
+    "style-contrast": 1,
+    "style-heading": 1
+  },
+  "docs/en/introducao.md": {
+    "style-bold": 2
+  },
+  "docs/en/mineracao-mg-si.md": {
+    "style-bold": 55,
+    "style-contrast": 4,
+    "style-heading": 2,
+    "style-kicker": 1
+  },
+  "docs/en/na-fab.md": {
+    "style-bold": 14,
+    "style-contrast": 1
+  },
+  "docs/en/o-elemento-silicio.md": {
+    "style-bold": 13,
+    "style-commentary": 1,
+    "style-contrast": 1
+  },
+  "docs/en/polissilicio.md": {
+    "style-bold": 198,
+    "style-commentary": 1,
+    "style-contrast": 3,
+    "style-heading": 3
+  },
+  "docs/en/precos-e-valor.md": {
+    "style-bold": 13,
+    "style-commentary": 1,
+    "style-contrast": 2
+  },
+  "docs/en/transistores.md": {
+    "style-bold": 151,
+    "style-contrast": 3,
+    "style-heading": 15,
+    "style-kicker": 1
+  },
+  "docs/estrutura-wafers.md": {
+    "style-bold": 72,
+    "style-contrast": 3,
+    "style-heading": 3
+  },
+  "docs/fabricacao-wafers.md": {
+    "style-bold": 113,
+    "style-heading": 4,
+    "style-kicker": 1
+  },
+  "docs/fotolitografia.md": {
+    "style-bold": 129,
+    "style-contrast": 1,
+    "style-heading": 4
+  },
+  "docs/gargalos.md": {
+    "style-bold": 10,
+    "style-commentary": 1
+  },
+  "docs/historia-fotolitografia.md": {
+    "style-bold": 112,
+    "style-commentary": 1,
+    "style-contrast": 2,
+    "style-heading": 1
+  },
+  "docs/insumos-fab.md": {
+    "style-bold": 20,
+    "style-contrast": 1,
+    "style-heading": 1,
+    "style-kicker": 1
+  },
+  "docs/introducao.md": {
+    "style-bold": 2
+  },
+  "docs/mineracao-mg-si.md": {
+    "style-bold": 55,
+    "style-contrast": 4,
+    "style-heading": 2,
+    "style-kicker": 1
+  },
+  "docs/na-fab.md": {
+    "style-bold": 14,
+    "style-contrast": 1
+  },
+  "docs/o-elemento-silicio.md": {
+    "style-bold": 13,
+    "style-commentary": 1,
+    "style-contrast": 2
+  },
+  "docs/polissilicio.md": {
+    "style-bold": 198,
+    "style-commentary": 1,
+    "style-contrast": 3,
+    "style-heading": 3
+  },
+  "docs/precos-e-valor.md": {
+    "style-bold": 14,
+    "style-commentary": 1
+  },
+  "docs/public/assets/chlorine-loop.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/copper-damascene.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/deposition-step-coverage.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/duv-vs-euv.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/etch-anisotropy.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/euv-bragg-mirror.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/fab-loop.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/fbr-reactor.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/fdsoi.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/high-na-anamorphic.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/implant-profile.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/lithography-generations.svg": {
+    "svg-slogan": 4
+  },
+  "docs/public/assets/mems-structure.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/polysilicon-pork-cycle.svg": {
+    "svg-emdash": 1,
+    "svg-slogan": 2
+  },
+  "docs/public/assets/polysilicon-process.svg": {
+    "svg-emdash": 1
+  },
+  "docs/public/assets/siemens-reactor.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/submerged-arc-furnace.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/wafer-edge-profile.svg": {
+    "svg-slogan": 1
+  },
+  "docs/public/assets/wafer-identification.svg": {
+    "svg-emdash": 4
+  },
+  "docs/transistores.md": {
+    "style-bold": 151,
+    "style-contrast": 1,
+    "style-heading": 15,
+    "style-kicker": 1
+  }
+}

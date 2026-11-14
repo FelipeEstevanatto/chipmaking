@@ -28,9 +28,10 @@ jobs:
 
       # The audits are the site's own rules, and until now they only ran when someone remembered.
       # None of them needs the network, so they run on every push, before anything deploys.
-      - name: Prose, drawings, glossary, maths, links, numbers
+      - name: Prose, style, drawings, glossary, maths, links, numbers
         run: |
           python3 scripts/audit-prose.py
+          python3 scripts/audit-style.py
           python3 scripts/audit-svgs.py
           python3 scripts/audit-glossary.py
           python3 scripts/audit-math.py

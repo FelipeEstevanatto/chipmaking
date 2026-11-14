@@ -43,7 +43,7 @@ That changes the nature of a defect. A defect buried in a mask's multilayer cann
 
 [Chemical-mechanical planarisation](/en/fabricacao-wafers#chemical-mechanical-polishing-cmp) (CMP) looks like polishing, and it is, with chemistry in the mix. The **slurry** is a suspension of abrasive particles in a solution that chemically attacks the surface, so the material is first weakened by reaction and then removed mechanically <Cite id="runnels-1994" />.
 
-The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection-the-part-of-the-chip-nobody-sees) section tells the material change.
+The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection) section tells the material change.
 
 ## Gases and neon
 
