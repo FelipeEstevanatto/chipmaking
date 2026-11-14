@@ -259,9 +259,10 @@ export const CHARTS: Record<string, ChartSpec> = {
 
   /**
    * Deal–Grove thickness against time, computed rather than measured: x = (A/2)(√(1 + 4Bt/A²) − 1)
-   * with τ = 0, from the Arrhenius constants for (100) silicon in the Stanford EE212 oxidation
-   * handout (dry O₂: B = 7.72e2 µm²/h at 1.23 eV, B/A = 6.23e6 µm/h at 2.0 eV; H₂O: B = 3.86e2
-   * µm²/h at 0.78 eV, B/A = 1.63e8 µm/h at 2.05 eV). Rounded to the nanometre.
+   * with τ = 0, from the Arrhenius constants in the Stanford EE212 oxidation handout (dry O₂: B = 7.72e2
+   * µm²/h at 1.23 eV, B/A = 6.23e6 µm/h at 2.0 eV; H₂O: B = 3.86e2 µm²/h at 0.78 eV, B/A =
+   * 1.63e8 µm/h at 2.05 eV), used as published; the handout does not state a crystal orientation,
+   * so the caption does not claim one. Rounded to the nanometre.
    */
   'deal-grove-oxidation': {
     id: 'deal-grove-oxidation',
@@ -277,8 +278,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       { pt: 'Seca (O₂), 1.000 °C', en: 'Dry (O₂), 1,000 °C', color: '#f6ad55', data: [17, 31, 54, 91, 121, 146, 190, 228, 261] },
     ],
     caption: {
-      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove para silício (100), sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce cerca de seis vezes mais rápido nestas temperaturas, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
-      en: 'Oxide thickness computed with the Deal–Grove model for (100) silicon, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows about six times faster at these temperatures, and every curve slows once diffusion through the oxide sets the pace.',
+      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove, sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce de cinco a oito vezes mais rápido nestas temperaturas, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
+      en: 'Oxide thickness computed with the Deal–Grove model, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows five to eight times faster at these temperatures, and every curve slows once diffusion through the oxide sets the pace.',
     },
     sourceIds: ['deal-grove-1965', 'stanford-ee212-oxidation'],
     slug: 'deal-grove-oxidation',
