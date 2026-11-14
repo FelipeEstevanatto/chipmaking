@@ -101,7 +101,7 @@ export const CHARTS: Record<string, ChartSpec> = {
       { pt: 'Silício metalúrgico — China', en: 'Metallurgical silicon — China' },
       { pt: 'Polissilício — China', en: 'Polysilicon — China' },
       { pt: 'Wafers 300 mm — cinco maiores', en: '300 mm wafers — five largest' },
-      { pt: 'Neônio grau semicondutor — Ucrânia', en: 'Semiconductor-grade neon — Ukraine' },
+      { pt: 'Neônio (oferta mundial) — Ucrânia', en: 'Neon (world supply) — Ukraine' },
       { pt: 'Litografia EUV — ASML', en: 'EUV lithography — ASML' },
     ],
     datasets: [
@@ -110,7 +110,7 @@ export const CHARTS: Record<string, ChartSpec> = {
         en: 'Lower bound',
         color: '#2b6cb0',
         grouped: false,
-        data: [70, 87, 90, 75, 90, 100],
+        data: [70, 87, 90, 75, 50, 100],
       },
       {
         pt: 'Faixa publicada',
@@ -131,7 +131,7 @@ export const CHARTS: Record<string, ChartSpec> = {
       pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
       en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the lower bound; the light segment adds the published range where the source gives an interval.',
     },
-    sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'fabm-neon-2022', 'asml-euv-products'],
+    sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'usitc-neon-2022', 'asml-euv-products'],
     slug: 'chokepoint-share',
   },
 

@@ -23,7 +23,7 @@ The answer has a pattern, and it repeats step by step.
 | Polysilicon | China | **more than 90%** of global volume in 2023 <Cite id="bernreuter-market" /> | The feedstock of both the wafer and the solar cell |
 | Silicon wafers | Japan (Shin-Etsu and SUMCO) | **44.1%** for the top two; the top five hold about **three quarters** <Cite id="nikkei-wafer-share" /> | The starting wafer of every fab on the planet |
 | EUV lithography | ASML (Netherlands) | **sole supplier** <Cite id="asml-euv-products" /> | The critical layers of leading-edge nodes |
-| Semiconductor-grade neon | Ukraine | **about half** of world neon and **90%** of the semiconductor grade <Cite id="fabm-neon-2022" /> | The excimer lasers of [DUV lithography](/en/fotolitografia) |
+| Neon | Ukraine | **about half** of world neon in 2022, and up to **90%** of US imports <Cite id="usitc-neon-2022" /> | The excimer lasers of [DUV lithography](/en/fotolitografia) |
 
 Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same pattern as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
 
@@ -34,11 +34,11 @@ Visible chokepoints generate industrial policy, and the amounts involved are the
 | Programme | Instrument | Value | Date | Source |
 | --- | --- | --- | --- | --- |
 | United States | *CHIPS and Science Act* | **US\$ 50 billion** to the Department of Commerce, split into **US\$ 39 billion** of manufacturing incentives and **US\$ 11 billion** for research and development (R&D) <Cite id="choke-nist-chips" /> | 2022 | NIST (CHIPS) |
-| European Union | *European Chips Act* | **more than EUR 32 billion** across **18 state-aid decisions**, of public and private investment <Cite id="choke-eu-chips-act" /> | in force on **21 September 2023**; *Chips Act 2.0* was proposed in **June 2026** | Comissão Europeia |
-| China | *Big Fund* | three phases <Cite id="choke-big-fund" /> | third phase launched in **2024** | Wikipedia (Big Fund) |
+| European Union | *European Chips Act* | **more than EUR 32 billion** across **18 state-aid decisions**, of public and private investment <Cite id="choke-eu-chips-act" /> | in force on **21 September 2023**; *Chips Act 2.0* was proposed in **June 2026** | European Commission |
+| China | *Big Fund* | three phases of registered capital: **138.7 billion yuan** (2014), **204 billion** (2019) and **344 billion**, about **US\$ 47.5 billion** (2024) <Cite id="choke-big-fund" /> | third phase set up in **May 2024** | Reuters |
 
 ::: warning
-The figure that made headlines, **US\$ 52.7 billion**, includes items outside that envelope. The difference between the two matters.
+The figure that made headlines, **US\$ 52.7 billion**, also counts programmes outside the Department of Commerce envelope above.
 :::
 
 What these programmes buy is **capacity**, not self-sufficiency. A new wafer plant takes years to qualify, and qualifying a supplier inside a fab is, as this site has already recorded, a multi-year process <Cite id="nikkei-wafer-share" />.
@@ -59,7 +59,7 @@ Large markets should have many suppliers. Three forces push the other way.
 
 The chain was **optimised for cost** for decades, and concentration is the result of that optimisation. The price of efficiency is the absence of a plan B.
 
-<SourceNote label="Sources" :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'fabm-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
+<SourceNote label="Sources" :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Prices and value', href: '/en/precos-e-valor', note: 'where the money sits in the chain' },

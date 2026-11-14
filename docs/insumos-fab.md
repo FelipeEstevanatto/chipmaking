@@ -49,7 +49,7 @@ A consequência de projeto é que o slurry é **específico de cada material**: 
 
 Excimer lasers da litografia DUV precisam de **neônio** na mistura gasosa, e a recuperação desse gás virou projeto de engenharia dentro da fábrica à medida que o custo dele subiu <Cite id="fabm-neon-2017" />.
 
-O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país respondia por **cerca de metade** do neônio mundial e por **90%** do neônio de grau semicondutor, produzido como subproduto da siderurgia, e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="fabm-neon-2022" />.
+O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país fornecia cerca de metade do neônio mundial e, na década anterior, até 90% do neônio importado pelos Estados Unidos, herança da siderurgia soviética, e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="usitc-neon-2022" />.
 
 O padrão se repete: **insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria**. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
 
@@ -65,7 +65,7 @@ Nenhum dos insumos desta página é caro por unidade. Todos são difíceis de su
 
 O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige **requalificar o processo inteiro**, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
 
-<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'fabm-neon-2022', 'fabm-upw']" />
+<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'fabm-upw']" />
 
 <SeeAlso :links="[
   { text: 'O mapa dos gargalos', href: '/gargalos', note: 'a concentração de cada etapa' },

@@ -49,7 +49,7 @@ The design consequence is that slurry is **material-specific**: removing oxide w
 
 DUV lithography excimer lasers need **neon** in the gas mixture, and recovering that gas became an engineering project inside the fab as its cost rose <Cite id="fabm-neon-2017" />.
 
-The episode that exposed the dependency was the 2022 invasion of Ukraine. The country accounted for **about half** of world neon and **90%** of semiconductor-grade neon, produced as a by-product of steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="fabm-neon-2022" />.
+The episode that exposed the dependency was the 2022 invasion of Ukraine. The country supplied about half of the world's neon and, over the previous decade, up to 90% of US neon imports, a legacy of Soviet steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="usitc-neon-2022" />.
 
 The pattern repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
 
@@ -65,7 +65,7 @@ None of the inputs on this page is expensive per unit. All of them are hard to r
 
 The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
-<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'fabm-neon-2022', 'fabm-upw']" />
+<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'fabm-upw']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The chokepoint map', href: '/en/gargalos', note: 'the concentration of each step' },

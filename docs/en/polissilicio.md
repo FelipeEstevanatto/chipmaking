@@ -84,9 +84,9 @@ Si + 3HCl → SiHCl₃ + H₂
 
 The reaction runs in the **300 to 600 °C** range, under **0.18 to 0.5 MPa** of pressure. Compressing the bed raises the TCS fraction in the outgoing gas, with an experimental optimum near **0.4 MPa** <Cite id="jarkin-2021" />. The number the industry chases is the **hydrogen chloride conversion**: in the newest Wacker reactors it approaches **100%**, and TCS selectivity passes **95%** with extra bed loading (*turbo loading*) <Cite id="jarkin-2021" />.
 
-What leaves the reactor, however, is not pure TCS. It comes out mixed with **silicon tetrachloride** (SiCl₄, or STC), **dichlorosilane** (H₂SiCl₂) and high-boiling compounds with Si–Si bonds, among them **hexachlorodisilane** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="wikipedia-tcs" />. Each has its own boiling point, which is precisely what the distillation just downstream exploits to separate them.
+What leaves the reactor, however, is not pure TCS. It comes out mixed with **silicon tetrachloride** (SiCl₄, or STC), **dichlorosilane** (H₂SiCl₂) and high-boiling compounds with Si–Si bonds, among them **hexachlorodisilane** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="jarkin-2021-part2" />. Each has its own boiling point, which is precisely what the distillation just downstream exploits to separate them.
 
-There is a second route to TCS that skips the HCl and recycles the STC itself <Cite id="wikipedia-tcs" />:
+There is a second route to TCS that skips the HCl and recycles the STC itself <Cite id="jarkin-2021-part2" />:
 
 ```text
 Si + 3SiCl₄ + 2H₂ → 4SiHCl₃
@@ -103,7 +103,7 @@ Both routes coexist in industry, and choosing between them is a plant-design dec
 
 Which is why large plants rarely pick just one: above 10,000 t/y the usual route is the **hybrid method**, combining direct-synthesis reactors with hydrochlorination reactors <Cite id="jarkin-2021" />.
 
-With a boiling point of just **31.8 °C**, TCS leaves the reactor already as a gas <Cite id="ratedpower" /> <Cite id="wikipedia-tcs" />. At the top of the reactor a filter separates the gaseous TCS from the residual hydrogen and HCl <Cite id="pv-mfg-polysilicon" />, and the gas goes on to **fractional distillation**, where the difference in volatility between TCS and the chlorides of boron, phosphorus and metals performs the separation with very high precision <Cite id="ratedpower" />. It is here, and not before, that silicon becomes genuinely pure.
+With a boiling point of just **31.8 °C**, TCS leaves the reactor already as a gas <Cite id="ratedpower" /> <Cite id="jarkin-2021-part2" />. At the top of the reactor a filter separates the gaseous TCS from the residual hydrogen and HCl <Cite id="pv-mfg-polysilicon" />, and the gas goes on to **fractional distillation**, where the difference in volatility between TCS and the chlorides of boron, phosphorus and metals performs the separation with very high precision <Cite id="ratedpower" />. It is here, and not before, that silicon becomes genuinely pure.
 
 ## Processes for obtaining solid polysilicon
 
@@ -163,13 +163,13 @@ Si + 3HCl → SiHCl₃ + H₂        (chlorination)
 SiHCl₃ + H₂ → Si + 3HCl        (deposition)
 ```
 
-The HCl leaving the deposition reactor is **not waste**: it is the very reagent that feeds the chlorination reactor. Adding the two equations together, the HCl cancels out on both sides and only the transformation that matters remains: **raw silicon goes in, pure silicon comes out** <Cite id="wikipedia-tcs" />.
+The HCl leaving the deposition reactor is **not waste**: it is the very reagent that feeds the chlorination reactor. Adding the two equations together, the HCl cancels out on both sides and only the transformation that matters remains: **raw silicon goes in, pure silicon comes out** <Cite id="jarkin-2021-part2" />.
 
 <DiagramFigure src="/assets/chlorine-loop.svg" alt="Diagram of the four-step chlorine loop: chlorination of raw silicon with HCl, distillation of the TCS, deposition returning solid silicon and HCl, and recycling of the silicon tetrachloride back into TCS; arrows show the HCl and SiCl4 returning to the start">
-The chlorine loop. Raw silicon enters at step 1 and polysilicon leaves at step 3. Those are the only two open ends of the system. Everything else circulates: the HCl released during deposition goes back to chlorination, and the silicon tetrachloride separated in distillation is converted back into TCS rather than discarded. Author's drawing, after Wikipedia (trichlorosilane) and Jarkin et al. <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+The chlorine loop. Raw silicon enters at step 1 and polysilicon leaves at step 3. Those are the only two open ends of the system. Everything else circulates: the HCl released during deposition goes back to chlorination, and the silicon tetrachloride separated in distillation is converted back into TCS rather than discarded. Author's drawing, after Jarkin et al. (parts 1 and 2) <Cite id="jarkin-2021-part2" /> <Cite id="jarkin-2021" />.
 </DiagramFigure>
 
-The same applies to the most awkward byproduct of chlorination, **silicon tetrachloride** (SiCl₄). Instead of leaving as a chlorinated effluent, it returns to the process through **hydrochlorination**, together with hydrogen and more raw silicon <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+The same applies to the most awkward byproduct of chlorination, **silicon tetrachloride** (SiCl₄). Instead of leaving as a chlorinated effluent, it returns to the process through **hydrochlorination**, together with hydrogen and more raw silicon <Cite id="jarkin-2021-part2" /> <Cite id="jarkin-2021" />.
 
 For every kilogram of polysilicon produced, the direct-synthesis stage generates **2 to 5 kg** of SiCl₄, and the deposition stage another **11 to 14 kg** <Cite id="jarkin-2021" />. Without recycling, a plant would be a polysilicon factory and a tetrachloride factory at the same time, the latter at a ratio of ten to one. That is why a polysilicon plant is judged by the **energy** it consumes rather than by the raw material it throws away: the chlorine circulates, and what the system loses as waste is far less than the reactor equation suggests.
 

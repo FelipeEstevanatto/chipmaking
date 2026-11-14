@@ -84,9 +84,9 @@ Si + 3HCl → SiHCl₃ + H₂
 
 A reação roda na faixa de **300 a 600 °C**, sob pressão de **0,18 a 0,5 MPa**. Comprimir o leito aumenta a fração de TCS no gás de saída, e o ótimo experimental fica em torno de **0,4 MPa** <Cite id="jarkin-2021" />. O número que o setor persegue é a **conversão do HCl**: nas gerações mais recentes de reator da Wacker ela se aproxima de **100%**, e a seletividade para TCS passa de **95%** com o carregamento extra de leito (*turbo loading*) <Cite id="jarkin-2021" />.
 
-O que sai do reator, porém, não é TCS puro. Junto com ele vêm **tetracloreto de silício** (SiCl₄, ou STC), **diclorossilano** (H₂SiCl₂) e compostos de ponto de ebulição alto com ligações Si–Si, entre eles o **hexaclorodissilano** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="wikipedia-tcs" />. Cada um tem seu próprio ponto de ebulição, e é justamente isso que a destilação logo adiante vai explorar para separá-los.
+O que sai do reator, porém, não é TCS puro. Junto com ele vêm **tetracloreto de silício** (SiCl₄, ou STC), **diclorossilano** (H₂SiCl₂) e compostos de ponto de ebulição alto com ligações Si–Si, entre eles o **hexaclorodissilano** (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="jarkin-2021-part2" />. Cada um tem seu próprio ponto de ebulição, e é justamente isso que a destilação logo adiante vai explorar para separá-los.
 
-Existe um segundo caminho até o TCS, que dispensa o HCl e reaproveita o próprio STC <Cite id="wikipedia-tcs" />:
+Existe um segundo caminho até o TCS, que dispensa o HCl e reaproveita o próprio STC <Cite id="jarkin-2021-part2" />:
 
 ```text
 Si + 3SiCl₄ + 2H₂ → 4SiHCl₃
@@ -103,7 +103,7 @@ As duas rotas convivem na indústria, e a escolha entre elas é decisão de proj
 
 É por isso que plantas grandes raramente escolhem uma só: acima de 10.000 t/ano o caminho usual é o **método híbrido**, combinando reatores de síntese direta com reatores de hidrocloração <Cite id="jarkin-2021" />.
 
-Com ponto de ebulição de apenas **31,8 °C**, o TCS sai do reator já como gás <Cite id="ratedpower" /> <Cite id="wikipedia-tcs" />. No topo do reator um filtro separa o TCS gasoso do hidrogênio e do HCl residual <Cite id="pv-mfg-polysilicon" />, e o gás segue para **destilação fracionada**, onde a diferença de volatilidade entre o TCS e os cloretos de boro, fósforo e metais faz a separação com altíssima precisão <Cite id="ratedpower" />. É aqui, e não antes, que o silício se torna realmente puro.
+Com ponto de ebulição de apenas **31,8 °C**, o TCS sai do reator já como gás <Cite id="ratedpower" /> <Cite id="jarkin-2021-part2" />. No topo do reator um filtro separa o TCS gasoso do hidrogênio e do HCl residual <Cite id="pv-mfg-polysilicon" />, e o gás segue para **destilação fracionada**, onde a diferença de volatilidade entre o TCS e os cloretos de boro, fósforo e metais faz a separação com altíssima precisão <Cite id="ratedpower" />. É aqui, e não antes, que o silício se torna realmente puro.
 
 ## Processos de obtenção do polissilício sólido
 
@@ -163,13 +163,13 @@ Si + 3HCl → SiHCl₃ + H₂        (cloração)
 SiHCl₃ + H₂ → Si + 3HCl        (deposição)
 ```
 
-O HCl que sai do reator de deposição **não é resíduo**: é o próprio reagente que alimenta o reator de cloração. Somando as duas equações, o HCl desaparece dos dois lados e sobra apenas a transformação que interessa: **silício bruto entra, silício puro sai** <Cite id="wikipedia-tcs" />.
+O HCl que sai do reator de deposição **não é resíduo**: é o próprio reagente que alimenta o reator de cloração. Somando as duas equações, o HCl desaparece dos dois lados e sobra apenas a transformação que interessa: **silício bruto entra, silício puro sai** <Cite id="jarkin-2021-part2" />.
 
 <DiagramFigure src="/assets/chlorine-loop.svg" alt="Diagrama do ciclo do cloro em quatro etapas: cloração do silício bruto com HCl, destilação do TCS, deposição que devolve silício sólido e HCl, e reciclagem do tetracloreto de silício de volta a TCS; setas mostram o HCl e o SiCl4 retornando ao início">
-O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na etapa 3. São as duas únicas pontas abertas do sistema. Todo o resto circula: o HCl liberado na deposição volta para a cloração, e o tetracloreto de silício separado na destilação é reconvertido em TCS em vez de descartado. Desenho do autor, a partir de Wikipedia (trichlorosilane) e Jarkin et al. <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na etapa 3. São as duas únicas pontas abertas do sistema. Todo o resto circula: o HCl liberado na deposição volta para a cloração, e o tetracloreto de silício separado na destilação é reconvertido em TCS em vez de descartado. Desenho do autor, a partir de Jarkin et al. (partes 1 e 2) <Cite id="jarkin-2021-part2" /> <Cite id="jarkin-2021" />.
 </DiagramFigure>
 
-O mesmo vale para o subproduto mais incômodo da cloração, o **tetracloreto de silício** (SiCl₄). Em vez de sair como efluente clorado, ele volta ao processo por **hidrocloração**, junto com hidrogênio e mais silício bruto <Cite id="wikipedia-tcs" /> <Cite id="jarkin-2021" />.
+O mesmo vale para o subproduto mais incômodo da cloração, o **tetracloreto de silício** (SiCl₄). Em vez de sair como efluente clorado, ele volta ao processo por **hidrocloração**, junto com hidrogênio e mais silício bruto <Cite id="jarkin-2021-part2" /> <Cite id="jarkin-2021" />.
 
 Para cada quilo de polissilício produzido, o estágio de síntese direta gera de **2 a 5 kg** de SiCl₄, e o estágio de deposição outros **11 a 14 kg** <Cite id="jarkin-2021" />. Sem o reciclo, uma planta seria ao mesmo tempo uma fábrica de polissilício e uma fábrica de tetracloreto, nesta última numa proporção de dez para um. É por isso que uma planta de polissilício se mede pela **energia** que consome, e não pela matéria-prima que descarta: o cloro circula, e o que o sistema perde como resíduo é bem menos do que a equação do reator sugere.
 
