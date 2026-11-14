@@ -20,6 +20,10 @@ The parameter that separates this family is the **band gap**, and the difference
 | **4H-SiC** | 3.26 eV | High-voltage power switching |
 | **GaN** | 3.40 eV | High-frequency power, radio frequency and blue light |
 
+<ClientOnly>
+  <DataChart chart="band-gap" />
+</ClientOnly>
+
 A wider gap means a **much higher breakdown voltage**: a material with a wide forbidden band withstands a larger electric field before going into avalanche <Cite id="elem-sze" />. And that changes device geometry. A power transistor needs a thick, lightly doped drift region to hold off voltage; the higher the critical field, **the thinner and more heavily doped** that region can be, and the lower the on-resistance. That is why SiC and GaN can do, in a small volume, what silicon can only do in a larger one.
 
 In high-voltage switching (electric-vehicle traction inverters, grid converters and industrial supplies), SiC competes with the **IGBT**, a bipolar device that stores minority carriers and therefore has a current tail when it turns off. A SiC MOSFET eliminates that tail, and the loss difference shows up precisely at switching frequency <Cite id="elem-sze" />.

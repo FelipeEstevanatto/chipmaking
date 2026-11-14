@@ -367,6 +367,62 @@ export const CHARTS: Record<string, ChartSpec> = {
     sourceIds: ['cu-interconnect-review', 'air-gap-keff', 'hollow-airgap'],
     slug: 'low-k-dielectric',
   },
+
+  /**
+   * CSET's packaging report, which quotes its own earlier estimate (~10% ATP, ~45% design plus
+   * front-end) and the SIA/BCG figure (6% ATP) side by side. The rest of the value is not broken
+   * down in that passage, so the chart does not invent a remainder.
+   */
+  'chip-value-split': {
+    id: 'chip-value-split',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Fatia do valor de um chip pronto (%)', en: 'Share of a finished chip\'s value (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'Projeto e fabricação front-end (CSET)', en: 'Design and front-end fabrication (CSET)' },
+      { pt: 'Montagem, teste e encapsulamento (CSET)', en: 'Assembly, test and packaging (CSET)' },
+      { pt: 'Montagem, teste e encapsulamento (SIA/BCG)', en: 'Assembly, test and packaging (SIA/BCG)' },
+    ],
+    datasets: [
+      { pt: 'Estimativa', en: 'Estimate', color: '#2b6cb0', data: [45, 10, 6] },
+    ],
+    caption: {
+      pt: 'Onde fica o valor de um chip, nas duas estimativas que o relatório do CSET sobre encapsulamento põe lado a lado. Projeto e front-end somam cerca de 45 %; a etapa de montagem, teste e encapsulamento fica entre 6 e 10 %, conforme a fonte. O restante não é detalhado nessa passagem, e o gráfico não o inventa.',
+      en: 'Where a chip\'s value sits, in the two estimates that CSET\'s packaging report puts side by side. Design and front-end come to about 45%; assembly, test and packaging sits between 6 and 10%, depending on the source. The rest is not broken down in that passage, and the chart does not invent it.',
+    },
+    sourceIds: ['cset-packaging'],
+    slug: 'chip-value-split',
+  },
+
+  /**
+   * Advanced-packaging share by company in 2020, measured in wafers, as CSET's packaging report
+   * tabulates it. Only the firms the report names with a share are drawn.
+   */
+  'advanced-packaging-share': {
+    id: 'advanced-packaging-share',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Participação em wafers de encapsulamento avançado, 2020 (%)', en: 'Share of advanced-packaging wafers, 2020 (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'ASE (Taiwan)', en: 'ASE (Taiwan)' },
+      { pt: 'TSMC (Taiwan)', en: 'TSMC (Taiwan)' },
+      { pt: 'Samsung (Coreia do Sul)', en: 'Samsung (South Korea)' },
+      { pt: 'Chipbond (Taiwan)', en: 'Chipbond (Taiwan)' },
+      { pt: 'Nepes (Coreia do Sul)', en: 'Nepes (South Korea)' },
+      { pt: 'ChipMOS (Taiwan)', en: 'ChipMOS (Taiwan)' },
+    ],
+    datasets: [
+      { pt: 'Participação', en: 'Share', color: '#2b6cb0', data: [26, 15, 6, 5, 3, 2] },
+    ],
+    caption: {
+      pt: 'As empresas de encapsulamento avançado que o relatório do CSET cita com participação, medida em wafers processados em 2020. Quatro das seis estão em Taiwan, e as empresas taiwanesas somam quase metade da capacidade mundial de encapsulamento avançado.',
+      en: 'The advanced-packaging firms that CSET\'s report names with a share, measured in wafers processed in 2020. Four of the six are in Taiwan, and Taiwanese firms hold nearly half of the world\'s advanced-packaging capacity.',
+    },
+    sourceIds: ['cset-packaging'],
+    slug: 'advanced-packaging-share',
+  },
 }
 
 export const chartIds = Object.keys(CHARTS)

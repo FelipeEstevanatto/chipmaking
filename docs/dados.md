@@ -81,6 +81,8 @@ Cada gráfico do site existe também como arquivo de dados, gerado a partir da *
 - [Crescimento do óxido térmico](/data/deal-grove-oxidation.csv)
 - [Amostragem da metrologia](/data/metrology-sampling.csv)
 - [Constantes dielétricas low-k](/data/low-k-dielectric.csv)
+- [Divisão do valor de um chip](/data/chip-value-split.csv)
+- [Participação no encapsulamento avançado](/data/advanced-packaging-share.csv)
 
 O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.vitepress/theme/charts/specs.ts`, então o gráfico e o CSV não podem divergir.
 

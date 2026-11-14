@@ -39,11 +39,19 @@ No DUV a máscara é uma placa de quartzo com cromo: luz atravessa onde há dese
 
 Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma máscara não pode ser corrigido depois de pronto: ele se replica em cada wafer exposto com aquela máscara, e o blank precisa chegar **livre de defeitos** para que a máscara seja utilizável <Cite id="asianometry-euv" />. É a mesma lógica dos insumos de quartzo: **a qualidade tem de estar no material de entrada**, porque a etapa seguinte não conserta.
 
+<DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="À esquerda, o corte de um refletor de Bragg com camadas alternadas de molibdênio e silício, um feixe entrando e reflexões parciais saindo em paralelo; à direita, a cadeia de perda de luz da fonte ao wafer ao longo de dez espelhos">
+O blank de uma máscara EUV é o mesmo tipo de multicamada de molibdênio e silício dos espelhos do scanner, e por isso um defeito enterrado nele é refletido em todos os wafers. Desenho do autor, a partir de ASML/Branch Education.
+</DiagramFigure>
+
 ## O slurry do CMP
 
 A [planarização químico-mecânica](/fabricacao-wafers#polimento-quimico-mecanico-cmp) (CMP) parece um polimento, e é, mas com química envolvida. O **slurry** é uma suspensão de partículas abrasivas em uma solução que ataca quimicamente a superfície, de modo que o material é primeiro enfraquecido por reação e depois removido mecanicamente <Cite id="runnels-1994" />.
 
 A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />, cuja seção de [interconexão](/na-fab#interconexao) conta a troca de material.
+
+<DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Dois cortes depois do polimento de cobre: uma linha larga de cobre afundada abaixo do dielétrico e um bloco denso de linhas finas em que metal e dielétrico juntos ficam abaixo do campo aberto">
+Os dois defeitos contra os quais um slurry precisa ser ajustado: o dishing de uma linha larga de cobre e a erosão de um arranjo denso, descritos no capítulo Na fab. Diagrama do autor; os rebaixos estão exagerados.
+</DiagramFigure>
 
 ## Gases e o neônio
 

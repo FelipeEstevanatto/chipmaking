@@ -27,6 +27,12 @@ The answer has a pattern, and it repeats step by step.
 
 Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same pattern as the Spruce Pine chokepoint: **a cheap, barely visible and short-term irreplaceable input**.
 
+Packaging, the last step before the chip is sold, is concentrated as well. In 2020 four of the six advanced-packaging firms with a named share were in Taiwan, and Taiwanese firms held nearly half of the world's advanced-packaging capacity <Cite id="cset-packaging" />.
+
+<ClientOnly>
+  <DataChart chart="advanced-packaging-share" />
+</ClientOnly>
+
 ## The money of policy
 
 Visible chokepoints generate industrial policy, and the amounts involved are the measure of how seriously each government took the risk.
@@ -59,7 +65,7 @@ Large markets should have many suppliers. Three forces push the other way.
 
 The chain was **optimised for cost** for decades, and concentration is the result of that optimisation. The price of efficiency is the absence of a plan B.
 
-<SourceNote label="Sources" :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
+<SourceNote label="Sources" :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls', 'cset-packaging']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Prices and value', href: '/en/precos-e-valor', note: 'where the money sits in the chain' },

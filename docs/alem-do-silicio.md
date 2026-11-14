@@ -20,6 +20,10 @@ O parâmetro que separa essa família é o **gap de banda**, e a diferença é g
 | **4H-SiC** | 3,26 eV | Chaveamento de potência em alta tensão |
 | **GaN** | 3,40 eV | Potência em alta frequência, radiofrequência e luz azul |
 
+<ClientOnly>
+  <DataChart chart="band-gap" />
+</ClientOnly>
+
 A consequência do gap maior é uma **tensão de ruptura muito mais alta**: um material com banda proibida larga suporta um campo elétrico maior antes de entrar em avalanche <Cite id="elem-sze" />. E isso muda a geometria do dispositivo. Um transistor de potência precisa de uma região de deriva espessa e pouco dopada para segurar a tensão; quanto maior o campo crítico, **mais fina e mais dopada** essa região pode ser, e menor é a resistência em condução. É por isso que SiC e GaN conseguem fazer, num volume pequeno, o que o silício só faz num volume maior.
 
 No chaveamento de alta tensão (inversores de tração de veículos elétricos, conversores de rede e fontes industriais), o SiC compete com o **IGBT**, um dispositivo bipolar que acumula portadores minoritários e por isso tem uma cauda de corrente no desligamento. O MOSFET de SiC elimina essa cauda, e a diferença de perda aparece justamente na frequência de chaveamento <Cite id="elem-sze" />.

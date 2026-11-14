@@ -27,6 +27,12 @@ A resposta tem um padrão, e o padrão se repete etapa por etapa.
 
 O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo padrão do gargalo de Spruce Pine: **um insumo barato, pouco visível e insubstituível a curto prazo**.
 
+O encapsulamento, a última etapa antes de o chip ser vendido, também é concentrado. Em 2020, quatro das seis empresas de encapsulamento avançado com participação citada estavam em Taiwan, e as empresas taiwanesas detinham quase metade da capacidade mundial de encapsulamento avançado <Cite id="cset-packaging" />.
+
+<ClientOnly>
+  <DataChart chart="advanced-packaging-share" />
+</ClientOnly>
+
 ## O dinheiro da política
 
 Gargalos visíveis geram política industrial, e os valores envolvidos são a medida do quanto cada governo levou o risco a sério.
@@ -59,7 +65,7 @@ Mercados grandes deveriam ter muitos fornecedores. Três forças empurram na dir
 
 A cadeia foi **otimizada para custo** durante décadas, e a concentração é o resultado dessa otimização. O preço da eficiência é a ausência de plano B.
 
-<SourceNote :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
+<SourceNote :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls', 'cset-packaging']" />
 
 <SeeAlso :links="[
   { text: 'Preços e valor', href: '/precos-e-valor', note: 'onde o dinheiro está na cadeia' },

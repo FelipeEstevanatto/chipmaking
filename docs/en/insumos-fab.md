@@ -39,11 +39,19 @@ In DUV the mask is a quartz plate with chrome: light passes where the pattern is
 
 That changes the nature of a defect. A defect buried in a mask's multilayer cannot be repaired once the mask is finished: it replicates onto every wafer exposed with that mask, and the blank has to arrive **defect-free** for the mask to be usable <Cite id="asianometry-euv" />. It is the same logic as the quartz inputs: **the quality has to be in the incoming material**, because the next step does not fix it.
 
+<DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="On the left, a cross-section of a Bragg reflector with alternating molybdenum and silicon layers, an incoming beam and parallel partial reflections leaving it; on the right, the light-loss chain from the source to the wafer across ten mirrors">
+An EUV mask blank is the same kind of molybdenum and silicon multilayer as the scanner's mirrors, so a defect buried in it is reflected onto every wafer. Drawn by the author, from ASML/Branch Education.
+</DiagramFigure>
+
 ## The CMP slurry
 
 [Chemical-mechanical planarisation](/en/fabricacao-wafers#chemical-mechanical-polishing-cmp) (CMP) looks like polishing, and it is, with chemistry in the mix. The **slurry** is a suspension of abrasive particles in a solution that chemically attacks the surface, so the material is first weakened by reaction and then removed mechanically <Cite id="runnels-1994" />.
 
 The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection) section tells the material change.
+
+<DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Two cross-sections after copper polishing: a wide copper line dished below the dielectric, and a dense block of narrow lines where metal and dielectric together sit below the open field">
+The two defects a slurry has to be tuned against: dishing of a wide copper line and erosion of a dense array, described in the In the fab chapter. Author's diagram; the recesses are exaggerated.
+</DiagramFigure>
 
 ## Gases and neon
 

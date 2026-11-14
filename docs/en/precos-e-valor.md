@@ -27,6 +27,10 @@ Mass shrinks at every rung. A kilogram of metallurgical silicon becomes less tha
 
 Most of the value, however, is not in the material. Design and front-end together account for about 45% of a finished chip's value. The assembly and test step, which this site covers in [packaging](/en/empacotamento), sits near 10%. The semiconductor material itself is a smaller fraction still <Cite id="cset-packaging" />.
 
+<ClientOnly>
+  <DataChart chart="chip-value-split" />
+</ClientOnly>
+
 ## The commodity rung
 
 Polysilicon is the rung where price behaves like a commodity, and the only one where the whole cycle is visible in public numbers. It went from **US\$ 6.75/kg** at the all-time low of June 2020 to **US\$ 39/kg** in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
