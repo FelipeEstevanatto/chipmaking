@@ -22,12 +22,12 @@ Chipmaking follows silicon through its whole production chain: quartz mining, th
 
 ## What is in it
 
-- **Two languages, one text.** Every chapter exists in Portuguese and English, file for file, and a CI check fails when the two drift apart.
-- **269 numbered sources.** Each number in the prose carries a `[n]` marker that resolves to the references page, and the rule is to cite whoever measured, not whoever repeated it.
-- **53 original drawings** of process steps and device structures, plus interactive pieces: USGS production charts, a WebGL crystal viewer that computes packing fractions from the unit cell, an animation of the arc-furnace chemistry, and a fab-loop explorer.
-- **A 65-term glossary** that annotates each term on its first use per page.
+- **Two languages, one text.** Every chapter exists in Portuguese and English, file for file, and a CI check fails when their glossary annotations drift apart.
+- **272 numbered sources.** Each number in the prose carries a `[n]` marker that resolves to the references page, and the rule is to cite whoever measured, not whoever repeated it.
+- **50 original drawings** of process steps and device structures, plus five credited third-party diagrams and interactive pieces: USGS production charts, a WebGL crystal viewer that computes packing fractions from the unit cell, an animation of the arc-furnace chemistry, and a fab-loop explorer.
+- **A 63-term glossary** that annotates each term on its first use per page.
 - **Chart data as CSV**, generated from the same specs that draw the charts, so the downloadable data and the picture cannot disagree.
-- **Audits in CI.** Every push runs checks for prose style, drawing structure, glossary coverage, maths rendering, internal links and number parity between the two languages.
+- **Audits in CI.** Every push runs checks for prose style, drawing structure, glossary coverage, maths rendering, internal links and a number-parity report between the two languages.
 
 ## Chapters
 
@@ -54,7 +54,7 @@ Built with [VitePress](https://vitepress.dev/) and [Bun](https://bun.sh/). The a
 bun install
 bun run dev       # http://localhost:5000/chipmaking/
 bun run build     # writes docs/.vitepress/dist
-bun run audit     # every check CI runs
+bun run audit     # the audits CI runs
 ```
 
 Each push to `main` builds the site and publishes it to GitHub Pages through `.github/workflows/deploy-pages.yml`.

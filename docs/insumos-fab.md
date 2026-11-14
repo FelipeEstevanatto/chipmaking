@@ -40,7 +40,7 @@ No DUV a máscara é uma placa de quartzo com cromo: luz atravessa onde há dese
 Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma máscara não pode ser corrigido depois de pronto: ele se replica em cada wafer exposto com aquela máscara, e o blank precisa chegar **livre de defeitos** para que a máscara seja utilizável <Cite id="asianometry-euv" />. É a mesma lógica dos insumos de quartzo: **a qualidade tem de estar no material de entrada**, porque a etapa seguinte não conserta.
 
 <DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="À esquerda, o corte de um refletor de Bragg com camadas alternadas de molibdênio e silício, um feixe entrando e reflexões parciais saindo em paralelo; à direita, a cadeia de perda de luz da fonte ao wafer ao longo de dez espelhos">
-O blank de uma máscara EUV é o mesmo tipo de multicamada de molibdênio e silício dos espelhos do scanner, e por isso um defeito enterrado nele é refletido em todos os wafers. Desenho do autor, a partir de ASML/Branch Education.
+O blank de uma máscara EUV é o mesmo tipo de multicamada de molibdênio e silício dos espelhos do scanner, e por isso um defeito enterrado nele é refletido em todos os wafers <Cite id="branch-euv" />. Desenho do autor, a partir de ASML/Branch Education.
 </DiagramFigure>
 
 ## O slurry do CMP
@@ -73,7 +73,7 @@ Nenhum dos insumos desta página é caro por unidade. Todos são difíceis de su
 
 O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige **requalificar o processo inteiro**, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
 
-<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw']" />
+<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
 
 <SeeAlso :links="[
   { text: 'O mapa dos gargalos', href: '/gargalos', note: 'a concentração de cada etapa' },

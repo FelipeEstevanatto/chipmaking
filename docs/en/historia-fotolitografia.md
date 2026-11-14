@@ -13,7 +13,7 @@ The path has six parts:
 2. [The candidate list](#the-candidate-list): the 1995 bets and the fate of each one.
 3. [The decision of the century](#the-decision-of-the-century): how the field narrowed to a single technology.
 4. [Why the runners-up lost](#why-the-runners-up-lost): X-ray, ion projection and EPL.
-5. [EUV: from soft X-ray to consortium](#euv): the name change and the risk Intel took on.
+5. [EUV lithography](#euv-lithography): the name change and the risk Intel took on.
 6. [The 157 nm detour and the rescue by immersion](#the-157-nm-detour-and-the-rescue-by-immersion): the way out that saved 193 nm.
 
 The sections below follow that order, and the full chronology, with the source behind each date, is in [Timeline](#timeline) at the end of the chapter.
@@ -67,15 +67,15 @@ EUV was not anointed alone in 2001. What happened is that EPL died of throughput
 
 ## Why the runners-up lost
 
-**Proximity X-ray.** With no projection optics, the mask has to be the same size as the final pattern: unworkable once features reached 100 nm. The mask must be thin so it neither absorbs nor distorts, but too thin and the X-rays pass straight through. And the smaller the features, the closer the mask has to sit to the wafer, eventually requiring gaps below 10 µm, with the wafer moving rapidly during exposure. IBM built a dedicated facility costing around US\$500 million and was already demonstrating 0.33 µm exposures in 1991, but the programme never reached commercial production <Cite id="asianometry-euv" />.
+Proximity X-ray had no projection optics, so the mask had to be the same size as the final pattern: unworkable once features reached 100 nm. The mask must be thin so it neither absorbs nor distorts, but too thin and the X-rays pass straight through. And the smaller the features, the closer the mask has to sit to the wafer, eventually requiring gaps below 10 µm, with the wafer moving rapidly during exposure. IBM built a dedicated facility costing around US\$500 million and was already demonstrating 0.33 µm exposures in 1991, but the programme never reached commercial production <Cite id="asianometry-euv" />.
 
 The reason is on the record from IBM's own researchers: fab managers always prefer incremental optical improvement to a drastic technology swap, and the migration would only come when optics hit its limit <Cite id="asianometry-euv" />. X-ray never did the whole job.
 
-**Ion projection (IPL).** Ions scatter less than photons and electrons, which promised better precision, but the technology was immature: critical items such as the mask did not yet exist in 1995. Siemens and the Vienna startup IMS developed the route under the MEDEA programme, which ended without next steps <Cite id="asianometry-euv" />.
+Ion projection (IPL) promised better precision because ions scatter less than photons and electrons, but the technology was immature: critical items such as the mask did not yet exist in 1995. Siemens and the Vienna startup IMS developed the route under the MEDEA programme, which ended without next steps <Cite id="asianometry-euv" />.
 
-**EPL / SCALPEL.** Of the alternatives, it held out longest: SCALPEL was invented at Bell Labs in 1989 and proved capable of printing very small features <Cite id="asianometry-euv" />. The problem was throughput. Electrons are charged particles and repel each other; raising the current to expose faster increases beam blur and destroys resolution. There is therefore an inherent trade-off between throughput and resolution <Cite id="spectrum-epl" />. Early production tools managed 20 to 30 wafers per hour, when the industry wanted 50 to 80 <Cite id="spectrum-epl" />. ASML even joined the eLith joint venture with Applied Materials and Bell Labs, and left on concluding it did not know how to overcome the blur; eLith shut down shortly after <Cite id="eet-euvlith" />.
+EPL/SCALPEL held out longest: SCALPEL was invented at Bell Labs in 1989 and proved capable of printing very small features <Cite id="asianometry-euv" />. The problem was throughput. Electrons are charged particles and repel each other; raising the current to expose faster increases beam blur and destroys resolution. There is therefore an inherent trade-off between throughput and resolution <Cite id="spectrum-epl" />. Early production tools managed 20 to 30 wafers per hour, when the industry wanted 50 to 80 <Cite id="spectrum-epl" />. ASML even joined the eLith joint venture with Applied Materials and Bell Labs, and left on concluding it did not know how to overcome the blur; eLith shut down shortly after <Cite id="eet-euvlith" />.
 
-## EUV
+## EUV lithography
 
 EUV was born under another name. The technique was called soft X-ray projection lithography until 1993, when the research community adopted the term extreme ultraviolet. The switch had three motives: to distinguish it from proximity X-ray lithography, which had failed; to evoke DUV, which worked; and to bury the negative association with X-rays <Cite id="cset-euv" />. Deep down, EUV is soft X-rays wearing an ultraviolet name.
 

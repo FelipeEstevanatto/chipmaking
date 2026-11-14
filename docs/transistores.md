@@ -21,7 +21,7 @@ Da estrutura planar ao CFET, o capítulo percorre as gerações do transistor na
 11. [2022: GAAFET](#_2022-gaafet-gate-all-around-nanosheets)
 12. [2025/2026: BSPDN](#_2025-2026-bspdn-backside-power)
 13. [~2029: Forksheet](#_2029-forksheet)
-14. [Futuro: CFET](#futuro-cfet)
+14. [CFET](#cfet)
 
 A [linha do tempo](/linha-do-tempo) reúne essas mesmas gerações numa lista interativa, com os produtos de cada uma. As seções abaixo seguem a ordem acima.
 
@@ -115,8 +115,8 @@ A arquitetura ficou famosa na geração de consoles de 2005–2006: o Cell da Pl
 
 No nó 90 nm (2003/2004), a Intel usou strained silicon: estresse mecânico no canal (p.ex. Si sobre SiGe) aumenta o espaçamento atômico e a mobilidade com custo marginal <Cite id="intel-strain" />.
 
-<DiagramFigure src="/assets/strained-silicon.svg" alt="Três painéis: as malhas relaxadas de silício e de silício-germânio, com os átomos do SiGe mais afastados; uma camada fina de silício crescida sobre o SiGe e esticada para o espaçamento dele; e um elétron atravessando um canal esticado mais rápido que um relaxado">
-Silício esticado. O SiGe tem espaçamento atômico maior que o do silício, então uma camada fina de silício crescida sobre ele é esticada para acompanhar, e os elétrons atravessam o canal esticado com mobilidade maior <Cite id="intel-strain" />. Desenho do autor; a diferença de espaçamento, cerca de 4% entre silício e germânio <Cite id="elem-ioffe" />, está exagerada muitas vezes.
+<DiagramFigure src="/assets/strained-silicon.svg" alt="Três painéis: as malhas relaxadas de silício e de silício-germânio, com o espaçamento do SiGe marcado; uma camada fina de silício crescida sobre o SiGe e esticada para o espaçamento dele, com setas de tração; e um corte de transistor com porta, fonte, dreno e um caminho de corrente pelo canal, ao lado de duas fileiras de malha, a esticada com caminho mais longo no mesmo tempo">
+Silício esticado. O SiGe tem espaçamento atômico maior que o do silício, então uma camada fina de silício crescida sobre ele é esticada para acompanhar, e os elétrons atravessam o canal esticado com mobilidade maior <Cite id="intel-strain" />. Desenho do autor; a deformação no processo da Intel é de cerca de 1% <Cite id="intel-strain" />, e o desenho a exagera muitas vezes. A página da Intel sobre transistores esticados, com as figuras originais, está em <a href="https://web.archive.org/web/20101125112707/https://www.intel.com/pressroom/kits/advancedtech/doodle/ref_strain/strain.htm" target="_blank" rel="noopener noreferrer">Strained Transistors</a> (arquivo).
 </DiagramFigure>
 
 O primeiro processador de alto volume com silício esticado foi o Pentium 4 “Prescott”, lançado em fevereiro de 2004 no nó de 90 nm, que também estreou interconexões de cobre e dielétrico *low-k* <Cite id="intel-90nm" />.
@@ -197,7 +197,7 @@ Para o nó A10, a imec propôs uma arquitetura intermediária chamada forksheet.
 
 A imec demonstrou o processo em wafers de 300 mm em 2021 e, em 2025, apresentou uma variante *outer wall* com melhor manufaturabilidade e desempenho. É a ponte declarada entre GAAFET e CFET <Cite id="imec-forksheet" />.
 
-## Futuro: CFET
+## CFET
 
 <TransistorFacts year="Futuro" />
 

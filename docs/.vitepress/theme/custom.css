@@ -333,6 +333,13 @@ html[lang^='en'] .vp-doc .diagram-figure > figcaption::before {
   color: var(--vp-c-text-2);
 }
 
+.ref-list-note {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--vp-c-text-2);
+  font-size: 0.875rem;
+}
+
 .ref-usgs-years {
   margin: 0.5rem 0 1.5rem;
   padding-left: 1.25rem;

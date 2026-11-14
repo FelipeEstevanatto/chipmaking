@@ -28,7 +28,7 @@ O texto segue essa ordem.
 A rota completa: o quartzo vira silício bruto no forno de arco, o silício bruto vira gás para poder ser destilado, e o gás volta a ser silício sólido, agora ultrapuro, nos reatores de deposição.
 </DiagramFigure>
 
-**O silício se purifica como gás, não como sólido.** Convertido em triclorossilano, que ferve a 31,8 °C, ele pode ser separado por destilação fracionada, o mesmo método das refinarias de petróleo, de impurezas que nenhum filtro reteria <Cite id="pv-mfg-polysilicon" />. Destilar o gás e depositar o sólido de novo é o que leva o silício metalúrgico ao grau solar ou eletrônico.
+O silício se purifica como gás. Convertido em triclorossilano, que ferve a 31,8 °C, ele pode ser separado por destilação fracionada, o mesmo método das refinarias de petróleo, de impurezas que nenhum filtro reteria <Cite id="pv-mfg-polysilicon" />. Destilar o gás e depositar o sólido de novo é o que leva o silício metalúrgico ao grau solar ou eletrônico.
 
 ### Duas rotas a partir do mesmo MG-Si
 

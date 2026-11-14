@@ -13,7 +13,7 @@ A trajetória tem seis partes:
 2. [A lista de candidatos](#a-lista-de-candidatos): as apostas de 1995 e o destino de cada uma.
 3. [A decisão do século](#a-decisao-do-seculo): como o campo se estreitou até sobrar uma tecnologia.
 4. [Por que os concorrentes perderam](#por-que-os-concorrentes-perderam): raio X, projeção por íons e EPL.
-5. [O EUV: de raio X mole a consórcio](#euv): a troca de nome e o risco assumido pela Intel.
+5. [A litografia EUV](#a-litografia-euv): a troca de nome e o risco assumido pela Intel.
 6. [O desvio de 157 nm e o resgate pela imersão](#o-desvio-de-157-nm-e-o-resgate-pela-imersao): a saída que salvou o 193 nm.
 
 As seções abaixo seguem essa ordem, e a cronologia completa, com a fonte de cada data, está em [Linha do tempo](#linha-do-tempo), no fim do capítulo.
@@ -67,15 +67,15 @@ O EUV não foi ungido sozinho em 2001. O que houve foi o EPL morrer de produtivi
 
 ## Por que os concorrentes perderam
 
-**Raio X por proximidade.** Sem óptica de projeção, a máscara precisa ter o mesmo tamanho do padrão final: inviável quando os traços chegaram a 100 nm. A máscara tem de ser fina para não absorver nem distorcer, mas fina demais e os raios X a atravessam. E quanto menores os traços, mais perto a máscara precisa ficar do wafer, chegando a exigir folgas abaixo de 10 µm, com o wafer se movendo rapidamente durante a exposição. A IBM construiu uma instalação dedicada de cerca de US\$ 500 milhões e já demonstrava exposições de 0,33 µm em 1991, mas o programa nunca chegou à produção comercial <Cite id="asianometry-euv" />.
+No raio X por proximidade, sem óptica de projeção, a máscara precisa ter o mesmo tamanho do padrão final: inviável quando os traços chegaram a 100 nm. A máscara tem de ser fina para não absorver nem distorcer, mas fina demais e os raios X a atravessam. E quanto menores os traços, mais perto a máscara precisa ficar do wafer, chegando a exigir folgas abaixo de 10 µm, com o wafer se movendo rapidamente durante a exposição. A IBM construiu uma instalação dedicada de cerca de US\$ 500 milhões e já demonstrava exposições de 0,33 µm em 1991, mas o programa nunca chegou à produção comercial <Cite id="asianometry-euv" />.
 
 A razão está registrada pelos próprios pesquisadores da IBM: gestores de fábrica sempre preferem a melhoria incremental do óptico a uma troca drástica de tecnologia, e a migração só viria quando a óptica atingisse o limite <Cite id="asianometry-euv" />. O raio X nunca fez o serviço completo.
 
-**Projeção por íons (IPL).** Íons *scatterizam* menos que fótons e elétrons, o que prometia mais precisão, mas a tecnologia era imatura: itens críticos como a máscara ainda não existiam em 1995. A Siemens e a startup vienense IMS desenvolveram a rota dentro do programa MEDEA, que terminou sem próximos passos <Cite id="asianometry-euv" />.
+A projeção por íons (IPL) prometia mais precisão, porque os íons se espalham menos que fótons e elétrons, mas a tecnologia era imatura: itens críticos como a máscara ainda não existiam em 1995. A Siemens e a startup vienense IMS desenvolveram a rota dentro do programa MEDEA, que terminou sem próximos passos <Cite id="asianometry-euv" />.
 
-**EPL / SCALPEL.** Das alternativas, foi a que mais tempo resistiu: o SCALPEL nasceu nos Bell Labs em 1989 e provou ser capaz de imprimir traços muito pequenos <Cite id="asianometry-euv" />. O problema era vazão. Elétrons são partículas carregadas e se repelem; aumentar a corrente para expor mais rápido aumenta o borrão do feixe e destrói a resolução. Existe, portanto, um compromisso inerente entre produtividade e resolução <Cite id="spectrum-epl" />. As ferramentas de produção iniciais ficaram em 20 a 30 wafers por hora, quando a indústria queria 50 a 80 <Cite id="spectrum-epl" />. A ASML chegou a entrar na joint venture eLith com a Applied Materials e os Bell Labs, e saiu ao concluir que não sabia contornar o borrão; a eLith encerrou as atividades na sequência <Cite id="eet-euvlith" />.
+O EPL/SCALPEL foi a alternativa que mais tempo resistiu: o SCALPEL nasceu nos Bell Labs em 1989 e provou ser capaz de imprimir traços muito pequenos <Cite id="asianometry-euv" />. O problema era vazão. Elétrons são partículas carregadas e se repelem; aumentar a corrente para expor mais rápido aumenta o borrão do feixe e destrói a resolução. Existe, portanto, um compromisso inerente entre produtividade e resolução <Cite id="spectrum-epl" />. As ferramentas de produção iniciais ficaram em 20 a 30 wafers por hora, quando a indústria queria 50 a 80 <Cite id="spectrum-epl" />. A ASML chegou a entrar na joint venture eLith com a Applied Materials e os Bell Labs, e saiu ao concluir que não sabia contornar o borrão; a eLith encerrou as atividades na sequência <Cite id="eet-euvlith" />.
 
-## EUV
+## A litografia EUV
 
 O EUV nasceu com outro nome. A técnica se chamava litografia por projeção de raio X mole até 1993, quando a comunidade de pesquisa decidiu adotar o termo extreme ultraviolet. A troca tinha três motivos: diferenciar a técnica da litografia por proximidade de raio X, que não funcionou; evocar o DUV, que funcionava; e enterrar a associação negativa com o raio X <Cite id="cset-euv" />. No fundo, EUV são raios X moles com nome de ultravioleta.
 

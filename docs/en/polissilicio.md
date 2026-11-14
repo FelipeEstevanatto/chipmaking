@@ -28,7 +28,7 @@ The text follows that order.
 The full route: quartz becomes crude silicon in the arc furnace, crude silicon becomes a gas so that it can be distilled, and the gas becomes solid silicon again, now ultrapure, in the deposition reactors.
 </DiagramFigure>
 
-**Silicon is purified as a gas, not as a solid.** Turned into trichlorosilane, which boils at 31.8 °C, it can be separated by fractional distillation, the same method oil refineries use, from impurities no filter would hold back <Cite id="pv-mfg-polysilicon" />. Distilling the gas and depositing a solid again is what takes metallurgical-grade silicon to solar or electronic grade.
+Silicon is purified as a gas. Turned into trichlorosilane, which boils at 31.8 °C, it can be separated by fractional distillation, the same method oil refineries use, from impurities no filter would hold back <Cite id="pv-mfg-polysilicon" />. Distilling the gas and depositing a solid again is what takes metallurgical-grade silicon to solar or electronic grade.
 
 ### Two routes out of the same MG-Si
 

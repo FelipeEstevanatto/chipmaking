@@ -86,12 +86,12 @@ A primeira é a fragilidade dos dielétricos de baixa constante dielétrica. Os 
 
 A segunda é o lascamento em wafers finos. Em um wafer de 25 µm de espessura (número que hoje é comum em memórias empilhadas), uma lâmina padrão causa lascamento substancial na face de trás; é preciso recorrer a grãos muito mais finos <Cite id="disco-thin-wafer" />.
 
-A terceira é o HBM, onde as camadas são finas e a resistência da peça é crítica. Um estudo comparando lâmina, laser e *stealth* em wafers para integração 2.5D/3D encontrou a **maior resistência à fratura no fatiamento por *stealth*, e observou que wafers de 60 µm** resistem mais que os de 90 ou 120 µm <Cite id="mdpi-singulation-hbm" />.
+A terceira é o HBM, onde as camadas são finas e a resistência da peça é crítica. Um estudo comparando lâmina, laser e *stealth* em wafers para integração 2.5D/3D encontrou a maior resistência à fratura no fatiamento por *stealth*, e observou que wafers de 60 µm resistem mais que os de 90 ou 120 µm <Cite id="mdpi-singulation-hbm" />.
 
 As alternativas se dividem em três famílias:
 
 - **Laser de corte** e *stealth dicing*: no *stealth*, um laser com comprimento de onda que atravessa o silício é focalizado dentro do wafer, formando uma camada modificada; a separação acontece depois, por expansão da fita. O processo é totalmente seco, sem kerf e sem lascamento <Cite id="hamamatsu-stealth" />.
-- ***Laser grooving* + plasma: o laser abre um sulco estreito e o plasma aprofunda e separa, com larguras abaixo de 10 µm** e bordas limpas <Cite id="imaps-plasma-dicing" />.
+- ***Laser grooving* + plasma**: o laser abre um sulco estreito e o plasma aprofunda e separa, com larguras abaixo de 10 µm e bordas limpas <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separa por plasma antes do afinamento, o que reduz contaminação e trincas <Cite id="pdbg-dicing" />.
 
 Um estudo clássico mostrou que o desbaste mecânico cria regiões fracas onde a resistência da pastilha cai 30 a 35% em relação à média do wafer. Duas intervenções mudaram esse quadro: reduzir a velocidade de desbaste pela metade aumentou a resistência média em 56%, e desgastar de propósito o fio de uma lâmina nova aumentou a resistência em cinco vezes <Cite id="ieee-die-strength" />. O corte define a confiabilidade mecânica do produto.

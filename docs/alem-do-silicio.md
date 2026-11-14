@@ -30,7 +30,7 @@ No chaveamento de alta tensão (inversores de tração de veículos elétricos, 
 
 No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um **gás de elétrons bidimensional**, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por razões de física, não por falta de engenharia: **emitir luz azul**. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
 
-Esses materiais **não** substituem o silício na lógica por causa do **substrato**, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem. O SiC só chegou ao wafer de 200 mm em abril de 2022, quando a Wolfspeed abriu em Marcy, Nova York, o que ela chama de primeira e maior fábrica de carbeto de silício de 200 mm do mundo <Cite id="wolfspeed-mohawk-200mm" />, enquanto as fábricas de silício já processam wafers de 300 mm há anos. É o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
+Esses materiais **não** substituem o silício na lógica por causa do **substrato**, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem. Só em abril de 2022 abriu uma fábrica de SiC de 200 mm: a da Wolfspeed em Marcy, Nova York, que a empresa chama de primeira e maior do mundo <Cite id="wolfspeed-mohawk-200mm" />, enquanto as fábricas de silício já processam wafers de 300 mm <Cite id="zulehner-2000" />. É o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
 
 ## As outras vidas do silício
 
@@ -56,7 +56,7 @@ Os materiais deste capítulo entram onde essa combinação não basta, e complem
 
 As constantes deste capítulo vêm de tabelas de referência, não de medições de um ano. A fonte datada mais recente que ele cita é a fábrica de SiC de 200 mm da Wolfspeed, de 2022, e é esse o ano que o selo de atualidade registra.
 
-<SourceNote :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm']" />
+<SourceNote :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm', 'zulehner-2000']" />
 
 <SeeAlso :links="[
   { text: 'O elemento silício', href: '/o-elemento-silicio', note: 'por que o silício, e não o germânio' },

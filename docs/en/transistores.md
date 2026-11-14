@@ -21,7 +21,7 @@ From the planar structure to the CFET, the chapter walks the generations of the 
 11. [2022: GAAFET](#_2022-gaafet-gate-all-around-nanosheets)
 12. [2025/2026: BSPDN](#_2025-2026-bspdn-backside-power)
 13. [~2029: Forksheet](#_2029-forksheet)
-14. [Future: CFET](#future-cfet)
+14. [CFET](#cfet)
 
 The [timeline](/en/linha-do-tempo) gathers these same generations into one interactive list, with each one's products. The sections below follow the order above.
 
@@ -115,8 +115,8 @@ The architecture became famous in the 2005–2006 console generation: the Cell i
 
 At the 90 nm node (2003/2004), Intel used strained silicon: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility at marginal cost <Cite id="intel-strain" />.
 
-<DiagramFigure src="/assets/strained-silicon.svg" alt="Three panels: relaxed silicon and silicon-germanium lattices, the SiGe atoms spaced further apart; a thin silicon layer grown on SiGe and stretched sideways to its spacing; and an electron crossing a strained channel faster than a relaxed one">
-Strained silicon. SiGe has a wider atomic spacing than silicon, so a thin silicon layer grown on it is pulled apart to match, and electrons move through the stretched channel with higher mobility <Cite id="intel-strain" />. Author's drawing; the difference in spacing, about 4% between silicon and germanium <Cite id="elem-ioffe" />, is exaggerated many times.
+<DiagramFigure src="/assets/strained-silicon.svg" alt="Three panels: relaxed silicon and silicon-germanium lattices with the SiGe spacing marked; a thin silicon layer grown on SiGe and stretched sideways to its spacing, with tensile arrows; and a transistor cross-section with a gate, source, drain and a current path through the channel, beside two lattice rows, the strained one with a longer path in the same time">
+Strained silicon. SiGe has a wider atomic spacing than silicon, so a thin silicon layer grown on it is pulled apart to match, and electrons move through the stretched channel with higher mobility <Cite id="intel-strain" />. Author's drawing; the strain in Intel's process is about 1% <Cite id="intel-strain" />, and the drawing exaggerates it many times. Intel's page on strained transistors, with the original figures, is at <a href="https://web.archive.org/web/20101125112707/https://www.intel.com/pressroom/kits/advancedtech/doodle/ref_strain/strain.htm" target="_blank" rel="noopener noreferrer">Strained Transistors</a> (archive).
 </DiagramFigure>
 
 The first high-volume processor with strained silicon was the Pentium 4 “Prescott”, launched in February 2004 at the 90 nm node, which also introduced copper interconnects and a low-k dielectric <Cite id="intel-90nm" />.
@@ -197,7 +197,7 @@ Left, gate-all-around nanosheets with a wide gap between the n and p gates; righ
 
 Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented an *outer wall* variant with better manufacturability and performance. It is the declared bridge between GAAFET and CFET <Cite id="imec-forksheet" />.
 
-## Future: CFET
+## CFET
 
 <TransistorFacts year="Futuro" />
 

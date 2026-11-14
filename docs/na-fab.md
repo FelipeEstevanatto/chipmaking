@@ -3,7 +3,7 @@ title: Na fab
 description: >-
   Como uma lâmina vazia vira um chip: oxidação, deposição, corrosão, implantação,
   polimento e metrologia, ao longo de 600 a mais de 1.000 etapas de processo.
-dataAsOf: 2025
+dataAsOf: 2024
 ---
 
 # Na fab: como um wafer vira um chip
@@ -47,11 +47,9 @@ As fábricas se planejam com outra métrica, os dias por camada de máscara. A m
 
 <Cite id="semieng-cycle-time" />
 
-Os wafers andam em lotes, e o lote padrão é de 25 wafers <Cite id="semieng-cycle-time" />. Às vezes os lotes são redistribuídos entre si para nivelar a carga dos equipamentos.
+Os wafers circulam em lotes, e o lote padrão é de 25 wafers <Cite id="semieng-cycle-time" />. Às vezes os lotes são redistribuídos entre si para nivelar a carga dos equipamentos.
 
-### Exposições de litografia
-
-Um fluxo de 32/28 nm usava 38 exposições de litografia, das quais 15 de imersão; um fluxo de 22/20 nm usava 52 exposições, com 31 de imersão e 11 passos de multipadronagem <Cite id="semieng-litho-layers" />. O wafer volta ao scanner dezenas de vezes, e o número exato depende do nó e do fabricante.
+A litografia é o módulo que mais recebe o wafer. Um fluxo de 32/28 nm usava 38 exposições de litografia, das quais 15 de imersão; um fluxo de 22/20 nm usava 52 exposições, com 31 de imersão e 11 passos de multipadronagem <Cite id="semieng-litho-layers" />. O número exato depende do nó e do fabricante.
 
 ### As três zonas do chip
 
@@ -61,7 +59,7 @@ Um fluxo de lógica de ponta se divide em três regiões, que usam equipamentos 
 - **MOL** (*middle-of-line*): faz os contatos que ligam o transistor ao primeiro nível de metal.
 - **BEOL** (*back-end-of-line*): constrói a pilha de fios metálicos que conecta tudo.
 
-O FEOL trabalha em temperaturas altas, porque ainda está formando cristal e dopagem. O BEOL trabalha frio, porque a partir do primeiro nível de metal o calor em excesso estraga o que já está pronto. Toda etapa depois do FEOL, inclusive a [fotolitografia](/fotolitografia), precisa caber num orçamento térmico apertado.
+O FEOL trabalha em temperaturas altas, porque ainda está formando cristal e dopagem. O BEOL trabalha frio, porque a partir do primeiro nível de metal o calor em excesso estraga o que já está pronto. Depois do FEOL o orçamento térmico fecha: o transistor pronto e o primeiro nível de metal não suportam mais aquelas temperaturas, e o resto do fluxo, a [fotolitografia](/fotolitografia) de cada camada inclusive, roda frio.
 
 ## Oxidação térmica
 
@@ -177,7 +175,7 @@ Um recozimento devolve a ordem cristalina e, ao mesmo tempo, ativa eletricamente
 Esse compromisso levou aos recozimentos rápidos (RTP, *rapid thermal processing*) e, mais recentemente, a recozimentos por laser medidos em milissegundos. Quanto mais raso o perfil, mais curto o pulso.
 
 <DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Dois gráficos de temperatura por tempo: à esquerda, um forno que sobe a mil graus e mantém por horas; à direita, o RTP, que atinge a mesma temperatura por cerca de dez segundos">
-Um recozimento em forno mantém o wafer quente por horas; o RTP atinge a mesma temperatura por segundos, o que deixa pouco tempo para os dopantes se espalharem. Desenho do autor, a partir de Tokuda et al. (1989) e Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+Um recozimento em forno mantém o wafer quente por horas; o RTP atinge a mesma temperatura por segundos. A faixa em torno de 450 °C, por onde o forno passa devagar, é onde se formam os doadores térmicos de oxigênio. Desenho do autor, a partir de Tokuda et al. (1989) e Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
 </DiagramFigure>
 
 ## Planarização

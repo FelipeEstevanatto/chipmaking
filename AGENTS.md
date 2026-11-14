@@ -361,10 +361,11 @@ Never touch an em dash that is data:
   no banned word, no often-empty phrase. It skips the data dashes listed above, and a page's
   frontmatter `description` counts as prose because a reader sees it in search results, while a
   frontmatter `title` does not.
-- `python scripts/audit-style.py` — the shapes the word lists miss: bold in running prose,
-  "Topic: subtitle" headings, "not X, but Y", commentary that grades a fact (striking, elegant,
-  "that difference matters"), the source check narrated to the reader, five-word paragraph endings,
-  and em dashes or slogans in SVG labels. The backlog is large, so it is a ratchet:
+- `python scripts/audit-style.py` — the shapes the word lists miss: bold in running prose, bold that
+  runs across a clause, "Topic: subtitle" headings ("1960: MOSFET" is a chronology label and is
+  exempt), "not X, but Y", commentary that grades a fact (striking, elegant, "that difference
+  matters"), the source check narrated to the reader, five-word paragraph endings, and em dashes or
+  slogans in SVG labels. The backlog is large, so it is a ratchet:
   `scripts/style-baseline.json` holds each file's count per rule and the check fails when one rises.
   After a cleanup, run it with `--update-baseline` to lower the ratchet; never raise the baseline to
   pass. `--list` prints the per-chapter table and `--show <file>` the lines.

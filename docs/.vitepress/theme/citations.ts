@@ -8,6 +8,8 @@ export interface Citation {
   url?: string
   /** Short label for source lines and tooltips */
   short: string
+  /** Caveat about the source or the figure, shown on the references page. */
+  note?: string
 }
 
 const list: Citation[] = [
@@ -714,10 +716,11 @@ const list: Citation[] = [
   {
     key: 'semiconductor-scale',
     num: 88,
-    title: 'List of semiconductor scale examples (compilation; no primary source located for the 1960 device dimensions)',
+    title: 'List of semiconductor scale examples',
     publisher: 'Wikipedia (CC BY-SA 4.0)',
     url: 'https://en.wikipedia.org/wiki/List_of_semiconductor_scale_examples',
     short: 'Wikipedia (semiconductor scale)',
+    note: 'Compilation of published device dimensions; no primary source was located for the 1960 MOSFET dimensions.',
   },
   {
     key: 'chm-sigate',
@@ -878,6 +881,7 @@ const list: Citation[] = [
     publisher: 'Semiconductor Engineering',
     url: 'https://semiengineering.com/optical-lithography-take-two/',
     short: 'SemiEngineering',
+    note: 'The widely repeated figure of 50 to 80 lithography exposures has no clear primary source; the counts here are the documented ones.',
   },
   {
     key: 'hitachi-metrology',
@@ -2166,6 +2170,7 @@ const list: Citation[] = [
     publisher: 'J. D. Plummer, M. D. Deal & P. B. Griffin — Stanford University, EE 212 (1999)',
     url: 'https://dunham.ece.uw.edu/ee528/notes/Chapter6.pdf',
     short: 'Plummer, Deal & Griffin (EE212)',
+    note: 'The linked copy is hosted by the University of Washington EE 528 course.',
   },
   {
     key: 'wolfspeed-mohawk-200mm',
@@ -2187,7 +2192,8 @@ const list: Citation[] = [
     key: 'usitc-taiwan-2023',
     num: 272,
     title: 'U.S. Exposure to the Taiwanese Semiconductor Industry',
-    publisher: 'Lin Jones — USITC Office of Industries working paper (November 2023)',
+    publisher:
+      'Lin Jones, Sarah Krulikowski, Nathan Lotze & Samantha Schreiber - USITC Economics Working Paper 2023-11-A (November 2023, revised March 2024)',
     url: 'https://www.usitc.gov/publications/332/working_papers/us_exposure_to_the_taiwanese_semiconductor_industry_11-21-2023_508.pdf',
     short: 'USITC (Taiwan exposure, 2023)',
   },

@@ -1,188 +1,237 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img">
-  <title>Strained silicon: a relaxed silicon-germanium layer has a wider atomic spacing than silicon, so a thin silicon layer grown on it is stretched sideways to match, and electrons cross the stretched channel faster</title>
-  <desc>Three panels. Left: relaxed silicon and relaxed silicon-germanium lattices side by side, the SiGe atoms spaced further apart. Centre: a thin silicon layer grown on SiGe, its atoms pulled apart to the SiGe spacing, with outward arrows marking tensile strain. Right: an electron path through a relaxed channel and a strained channel, the strained one drawn longer per unit time. Schematic: the difference in spacing, about 4 percent between Si and Ge, is exaggerated many times.</desc>
-  <rect width="960" height="400" fill="#ffffff" />
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="660" viewBox="0 0 960 660" role="img">
+  <title>Strained silicon: relaxed silicon and silicon-germanium lattices, a thin silicon layer stretched to match the SiGe spacing, and an electron crossing the strained channel further in the same time</title>
+  <desc>Three panels. Panel 1: a relaxed silicon lattice and a relaxed silicon-germanium lattice side by side, the SiGe atoms spaced further apart. Panel 2: a thin silicon layer grown on SiGe, its atoms pulled sideways to the SiGe spacing, with outward arrows marking tensile strain. Panel 3: a transistor cross-section with a gate, source, drain, a dashed ellipse around the channel and a current path through it, beside two lattice rows with arrows, the strained arrow drawn longer for the same time. Schematic: the difference in spacing is exaggerated many times.</desc>
+  <rect width="960" height="660" fill="#ffffff" />
   <defs>
-    <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096" />
-    </marker>
-    <marker id="arrRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <radialGradient id="siAtom" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="45%" stop-color="#cfd8e3" />
+      <stop offset="100%" stop-color="#7d8b9c" />
+    </radialGradient>
+    <radialGradient id="geAtom" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#f7fafc" />
+      <stop offset="45%" stop-color="#68d391" />
+      <stop offset="100%" stop-color="#2f855a" />
+    </radialGradient>
+    <radialGradient id="electronAtom" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#f7fafc" />
+      <stop offset="50%" stop-color="#4299e1" />
+      <stop offset="100%" stop-color="#2b6cb0" />
+    </radialGradient>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#c53030" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2b6cb0" />
     </marker>
   </defs>
   <style>
-    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .h { font: 600 23px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .pt { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .t { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
     .note { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
-    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
-    .ge { fill: #b794f4; stroke: #553c9a; stroke-width: 1.4; }
-    .bond { stroke: #a0aec0; stroke-width: 1.4; }
-    .strain { fill: none; stroke: #c53030; stroke-width: 2; }
+    .val { font: 600 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .bondSi { stroke: #718096; stroke-width: 3; stroke-linecap: round; }
+    .bondGe { stroke: #276749; stroke-width: 3; stroke-linecap: round; }
+    .strain { fill: none; stroke: #c53030; stroke-width: 2.4; }
     .path { fill: none; stroke: #2b6cb0; stroke-width: 2.4; }
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
+    .panel { fill: #f7fafc; stroke: #e2e8f0; stroke-width: 1; }
   </style>
 
   <text class="h" x="40" y="38">Strained silicon on SiGe</text>
-  <text class="pt" x="40" y="96">1. Relaxed lattices</text>
-  <line class="bond" x1="64.0" y1="150.0" x2="94.0" y2="150.0" />
-  <line class="bond" x1="64.0" y1="150.0" x2="64.0" y2="180.0" />
-  <line class="bond" x1="94.0" y1="150.0" x2="124.0" y2="150.0" />
-  <line class="bond" x1="94.0" y1="150.0" x2="94.0" y2="180.0" />
-  <line class="bond" x1="124.0" y1="150.0" x2="154.0" y2="150.0" />
-  <line class="bond" x1="124.0" y1="150.0" x2="124.0" y2="180.0" />
-  <line class="bond" x1="154.0" y1="150.0" x2="154.0" y2="180.0" />
-  <line class="bond" x1="64.0" y1="180.0" x2="94.0" y2="180.0" />
-  <line class="bond" x1="64.0" y1="180.0" x2="64.0" y2="210.0" />
-  <line class="bond" x1="94.0" y1="180.0" x2="124.0" y2="180.0" />
-  <line class="bond" x1="94.0" y1="180.0" x2="94.0" y2="210.0" />
-  <line class="bond" x1="124.0" y1="180.0" x2="154.0" y2="180.0" />
-  <line class="bond" x1="124.0" y1="180.0" x2="124.0" y2="210.0" />
-  <line class="bond" x1="154.0" y1="180.0" x2="154.0" y2="210.0" />
-  <line class="bond" x1="64.0" y1="210.0" x2="94.0" y2="210.0" />
-  <line class="bond" x1="64.0" y1="210.0" x2="64.0" y2="240.0" />
-  <line class="bond" x1="94.0" y1="210.0" x2="124.0" y2="210.0" />
-  <line class="bond" x1="94.0" y1="210.0" x2="94.0" y2="240.0" />
-  <line class="bond" x1="124.0" y1="210.0" x2="154.0" y2="210.0" />
-  <line class="bond" x1="124.0" y1="210.0" x2="124.0" y2="240.0" />
-  <line class="bond" x1="154.0" y1="210.0" x2="154.0" y2="240.0" />
-  <line class="bond" x1="64.0" y1="240.0" x2="94.0" y2="240.0" />
-  <line class="bond" x1="94.0" y1="240.0" x2="124.0" y2="240.0" />
-  <line class="bond" x1="124.0" y1="240.0" x2="154.0" y2="240.0" />
-  <circle class="si" cx="64.0" cy="150.0" r="9" />
-  <circle class="si" cx="94.0" cy="150.0" r="9" />
-  <circle class="si" cx="124.0" cy="150.0" r="9" />
-  <circle class="si" cx="154.0" cy="150.0" r="9" />
-  <circle class="si" cx="64.0" cy="180.0" r="9" />
-  <circle class="si" cx="94.0" cy="180.0" r="9" />
-  <circle class="si" cx="124.0" cy="180.0" r="9" />
-  <circle class="si" cx="154.0" cy="180.0" r="9" />
-  <circle class="si" cx="64.0" cy="210.0" r="9" />
-  <circle class="si" cx="94.0" cy="210.0" r="9" />
-  <circle class="si" cx="124.0" cy="210.0" r="9" />
-  <circle class="si" cx="154.0" cy="210.0" r="9" />
-  <circle class="si" cx="64.0" cy="240.0" r="9" />
-  <circle class="si" cx="94.0" cy="240.0" r="9" />
-  <circle class="si" cx="124.0" cy="240.0" r="9" />
-  <circle class="si" cx="154.0" cy="240.0" r="9" />
-  <text class="t" x="64" y="282">Si</text>
-  <line class="bond" x1="196.0" y1="150.0" x2="234.0" y2="150.0" />
-  <line class="bond" x1="196.0" y1="150.0" x2="196.0" y2="188.0" />
-  <line class="bond" x1="234.0" y1="150.0" x2="272.0" y2="150.0" />
-  <line class="bond" x1="234.0" y1="150.0" x2="234.0" y2="188.0" />
-  <line class="bond" x1="272.0" y1="150.0" x2="310.0" y2="150.0" />
-  <line class="bond" x1="272.0" y1="150.0" x2="272.0" y2="188.0" />
-  <line class="bond" x1="310.0" y1="150.0" x2="310.0" y2="188.0" />
-  <line class="bond" x1="196.0" y1="188.0" x2="234.0" y2="188.0" />
-  <line class="bond" x1="196.0" y1="188.0" x2="196.0" y2="226.0" />
-  <line class="bond" x1="234.0" y1="188.0" x2="272.0" y2="188.0" />
-  <line class="bond" x1="234.0" y1="188.0" x2="234.0" y2="226.0" />
-  <line class="bond" x1="272.0" y1="188.0" x2="310.0" y2="188.0" />
-  <line class="bond" x1="272.0" y1="188.0" x2="272.0" y2="226.0" />
-  <line class="bond" x1="310.0" y1="188.0" x2="310.0" y2="226.0" />
-  <line class="bond" x1="196.0" y1="226.0" x2="234.0" y2="226.0" />
-  <line class="bond" x1="196.0" y1="226.0" x2="196.0" y2="264.0" />
-  <line class="bond" x1="234.0" y1="226.0" x2="272.0" y2="226.0" />
-  <line class="bond" x1="234.0" y1="226.0" x2="234.0" y2="264.0" />
-  <line class="bond" x1="272.0" y1="226.0" x2="310.0" y2="226.0" />
-  <line class="bond" x1="272.0" y1="226.0" x2="272.0" y2="264.0" />
-  <line class="bond" x1="310.0" y1="226.0" x2="310.0" y2="264.0" />
-  <line class="bond" x1="196.0" y1="264.0" x2="234.0" y2="264.0" />
-  <line class="bond" x1="234.0" y1="264.0" x2="272.0" y2="264.0" />
-  <line class="bond" x1="272.0" y1="264.0" x2="310.0" y2="264.0" />
-  <circle class="ge" cx="196.0" cy="150.0" r="9" />
-  <circle class="si" cx="234.0" cy="150.0" r="9" />
-  <circle class="si" cx="272.0" cy="150.0" r="9" />
-  <circle class="ge" cx="310.0" cy="150.0" r="9" />
-  <circle class="si" cx="196.0" cy="188.0" r="9" />
-  <circle class="si" cx="234.0" cy="188.0" r="9" />
-  <circle class="ge" cx="272.0" cy="188.0" r="9" />
-  <circle class="si" cx="310.0" cy="188.0" r="9" />
-  <circle class="si" cx="196.0" cy="226.0" r="9" />
-  <circle class="ge" cx="234.0" cy="226.0" r="9" />
-  <circle class="si" cx="272.0" cy="226.0" r="9" />
-  <circle class="si" cx="310.0" cy="226.0" r="9" />
-  <circle class="ge" cx="196.0" cy="264.0" r="9" />
-  <circle class="si" cx="234.0" cy="264.0" r="9" />
-  <circle class="si" cx="272.0" cy="264.0" r="9" />
-  <circle class="ge" cx="310.0" cy="264.0" r="9" />
-  <text class="t" x="196" y="306">SiGe</text>
-  <text class="note" x="40" y="350">SiGe atoms sit</text>
-  <text class="note" x="40" y="372">further apart.</text>
-  <text class="pt" x="360" y="96">2. Si grown on SiGe</text>
-  <line class="bond" x1="384.0" y1="150.0" x2="422.0" y2="150.0" />
-  <line class="bond" x1="384.0" y1="150.0" x2="384.0" y2="180.0" />
-  <line class="bond" x1="422.0" y1="150.0" x2="460.0" y2="150.0" />
-  <line class="bond" x1="422.0" y1="150.0" x2="422.0" y2="180.0" />
-  <line class="bond" x1="460.0" y1="150.0" x2="498.0" y2="150.0" />
-  <line class="bond" x1="460.0" y1="150.0" x2="460.0" y2="180.0" />
-  <line class="bond" x1="498.0" y1="150.0" x2="536.0" y2="150.0" />
-  <line class="bond" x1="498.0" y1="150.0" x2="498.0" y2="180.0" />
-  <line class="bond" x1="536.0" y1="150.0" x2="536.0" y2="180.0" />
-  <line class="bond" x1="384.0" y1="180.0" x2="422.0" y2="180.0" />
-  <line class="bond" x1="422.0" y1="180.0" x2="460.0" y2="180.0" />
-  <line class="bond" x1="460.0" y1="180.0" x2="498.0" y2="180.0" />
-  <line class="bond" x1="498.0" y1="180.0" x2="536.0" y2="180.0" />
-  <circle class="si" cx="384.0" cy="150.0" r="9" />
-  <circle class="si" cx="422.0" cy="150.0" r="9" />
-  <circle class="si" cx="460.0" cy="150.0" r="9" />
-  <circle class="si" cx="498.0" cy="150.0" r="9" />
-  <circle class="si" cx="536.0" cy="150.0" r="9" />
-  <circle class="si" cx="384.0" cy="180.0" r="9" />
-  <circle class="si" cx="422.0" cy="180.0" r="9" />
-  <circle class="si" cx="460.0" cy="180.0" r="9" />
-  <circle class="si" cx="498.0" cy="180.0" r="9" />
-  <circle class="si" cx="536.0" cy="180.0" r="9" />
-  <line class="bond" x1="384.0" y1="226.0" x2="422.0" y2="226.0" />
-  <line class="bond" x1="384.0" y1="226.0" x2="384.0" y2="264.0" />
-  <line class="bond" x1="422.0" y1="226.0" x2="460.0" y2="226.0" />
-  <line class="bond" x1="422.0" y1="226.0" x2="422.0" y2="264.0" />
-  <line class="bond" x1="460.0" y1="226.0" x2="498.0" y2="226.0" />
-  <line class="bond" x1="460.0" y1="226.0" x2="460.0" y2="264.0" />
-  <line class="bond" x1="498.0" y1="226.0" x2="536.0" y2="226.0" />
-  <line class="bond" x1="498.0" y1="226.0" x2="498.0" y2="264.0" />
-  <line class="bond" x1="536.0" y1="226.0" x2="536.0" y2="264.0" />
-  <line class="bond" x1="384.0" y1="264.0" x2="422.0" y2="264.0" />
-  <line class="bond" x1="384.0" y1="264.0" x2="384.0" y2="302.0" />
-  <line class="bond" x1="422.0" y1="264.0" x2="460.0" y2="264.0" />
-  <line class="bond" x1="422.0" y1="264.0" x2="422.0" y2="302.0" />
-  <line class="bond" x1="460.0" y1="264.0" x2="498.0" y2="264.0" />
-  <line class="bond" x1="460.0" y1="264.0" x2="460.0" y2="302.0" />
-  <line class="bond" x1="498.0" y1="264.0" x2="536.0" y2="264.0" />
-  <line class="bond" x1="498.0" y1="264.0" x2="498.0" y2="302.0" />
-  <line class="bond" x1="536.0" y1="264.0" x2="536.0" y2="302.0" />
-  <line class="bond" x1="384.0" y1="302.0" x2="422.0" y2="302.0" />
-  <line class="bond" x1="422.0" y1="302.0" x2="460.0" y2="302.0" />
-  <line class="bond" x1="460.0" y1="302.0" x2="498.0" y2="302.0" />
-  <line class="bond" x1="498.0" y1="302.0" x2="536.0" y2="302.0" />
-  <circle class="ge" cx="384.0" cy="226.0" r="9" />
-  <circle class="si" cx="422.0" cy="226.0" r="9" />
-  <circle class="si" cx="460.0" cy="226.0" r="9" />
-  <circle class="ge" cx="498.0" cy="226.0" r="9" />
-  <circle class="si" cx="536.0" cy="226.0" r="9" />
-  <circle class="si" cx="384.0" cy="264.0" r="9" />
-  <circle class="si" cx="422.0" cy="264.0" r="9" />
-  <circle class="ge" cx="460.0" cy="264.0" r="9" />
-  <circle class="si" cx="498.0" cy="264.0" r="9" />
-  <circle class="si" cx="536.0" cy="264.0" r="9" />
-  <circle class="si" cx="384.0" cy="302.0" r="9" />
-  <circle class="ge" cx="422.0" cy="302.0" r="9" />
-  <circle class="si" cx="460.0" cy="302.0" r="9" />
-  <circle class="si" cx="498.0" cy="302.0" r="9" />
-  <circle class="ge" cx="536.0" cy="302.0" r="9" />
-  <path class="strain" d="M 376,132 L 340,132" marker-end="url(#arrRed)" />
-  <path class="strain" d="M 544,132 L 580,132" marker-end="url(#arrRed)" />
-  <path class="lead" d="M 548,165 L 600,165" />
-  <text class="t" x="606" y="170">Si, stretched</text>
-  <path class="lead" d="M 548,264 L 600,264" />
-  <text class="t" x="606" y="269">SiGe</text>
-  <text class="note" x="360" y="350">The thin Si layer takes the</text>
-  <text class="note" x="360" y="372">wider SiGe spacing.</text>
-  <text class="pt" x="700" y="96">3. Channel</text>
-  <text class="t" x="700" y="150">relaxed Si</text>
-  <path class="path" d="M 700,172 L 810,172" marker-end="url(#arr)" />
-  <text class="t" x="700" y="236">strained Si</text>
-  <path class="path" d="M 700,258 L 900,258" marker-end="url(#arr)" />
-  <text class="note" x="700" y="300">same time, longer path:</text>
-  <text class="note" x="700" y="322">higher mobility</text>
+  <text class="note" x="40" y="64">The SiGe lattice pulls the silicon layer apart.</text>
+
+  <rect class="panel" x="20" y="80" width="440" height="320" rx="10" />
+  <rect class="panel" x="480" y="80" width="460" height="320" rx="10" />
+  <rect class="panel" x="20" y="410" width="920" height="240" rx="10" />
+  <text class="pt" x="40" y="110">1. Relaxed lattices</text>
+  <line class="bondSi" x1="50.0" y1="150.0" x2="86.0" y2="150.0" />
+  <line class="bondSi" x1="50.0" y1="150.0" x2="50.0" y2="186.0" />
+  <line class="bondSi" x1="86.0" y1="150.0" x2="122.0" y2="150.0" />
+  <line class="bondSi" x1="86.0" y1="150.0" x2="86.0" y2="186.0" />
+  <line class="bondSi" x1="122.0" y1="150.0" x2="158.0" y2="150.0" />
+  <line class="bondSi" x1="122.0" y1="150.0" x2="122.0" y2="186.0" />
+  <line class="bondSi" x1="158.0" y1="150.0" x2="158.0" y2="186.0" />
+  <line class="bondSi" x1="50.0" y1="186.0" x2="86.0" y2="186.0" />
+  <line class="bondSi" x1="50.0" y1="186.0" x2="50.0" y2="222.0" />
+  <line class="bondSi" x1="86.0" y1="186.0" x2="122.0" y2="186.0" />
+  <line class="bondSi" x1="86.0" y1="186.0" x2="86.0" y2="222.0" />
+  <line class="bondSi" x1="122.0" y1="186.0" x2="158.0" y2="186.0" />
+  <line class="bondSi" x1="122.0" y1="186.0" x2="122.0" y2="222.0" />
+  <line class="bondSi" x1="158.0" y1="186.0" x2="158.0" y2="222.0" />
+  <line class="bondSi" x1="50.0" y1="222.0" x2="86.0" y2="222.0" />
+  <line class="bondSi" x1="50.0" y1="222.0" x2="50.0" y2="258.0" />
+  <line class="bondSi" x1="86.0" y1="222.0" x2="122.0" y2="222.0" />
+  <line class="bondSi" x1="86.0" y1="222.0" x2="86.0" y2="258.0" />
+  <line class="bondSi" x1="122.0" y1="222.0" x2="158.0" y2="222.0" />
+  <line class="bondSi" x1="122.0" y1="222.0" x2="122.0" y2="258.0" />
+  <line class="bondSi" x1="158.0" y1="222.0" x2="158.0" y2="258.0" />
+  <line class="bondSi" x1="50.0" y1="258.0" x2="86.0" y2="258.0" />
+  <line class="bondSi" x1="86.0" y1="258.0" x2="122.0" y2="258.0" />
+  <line class="bondSi" x1="122.0" y1="258.0" x2="158.0" y2="258.0" />
+  <circle cx="50.0" cy="150.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="86.0" cy="150.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="122.0" cy="150.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="158.0" cy="150.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="50.0" cy="186.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="86.0" cy="186.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="122.0" cy="186.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="158.0" cy="186.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="50.0" cy="222.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="86.0" cy="222.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="122.0" cy="222.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="158.0" cy="222.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="50.0" cy="258.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="86.0" cy="258.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="122.0" cy="258.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="158.0" cy="258.0" r="11" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <line class="bondGe" x1="220.0" y1="150.0" x2="288.0" y2="150.0" />
+  <line class="bondGe" x1="220.0" y1="150.0" x2="220.0" y2="202.0" />
+  <line class="bondGe" x1="288.0" y1="150.0" x2="356.0" y2="150.0" />
+  <line class="bondGe" x1="288.0" y1="150.0" x2="288.0" y2="202.0" />
+  <line class="bondGe" x1="356.0" y1="150.0" x2="424.0" y2="150.0" />
+  <line class="bondGe" x1="356.0" y1="150.0" x2="356.0" y2="202.0" />
+  <line class="bondGe" x1="424.0" y1="150.0" x2="424.0" y2="202.0" />
+  <line class="bondGe" x1="220.0" y1="202.0" x2="288.0" y2="202.0" />
+  <line class="bondGe" x1="220.0" y1="202.0" x2="220.0" y2="254.0" />
+  <line class="bondGe" x1="288.0" y1="202.0" x2="356.0" y2="202.0" />
+  <line class="bondGe" x1="288.0" y1="202.0" x2="288.0" y2="254.0" />
+  <line class="bondGe" x1="356.0" y1="202.0" x2="424.0" y2="202.0" />
+  <line class="bondGe" x1="356.0" y1="202.0" x2="356.0" y2="254.0" />
+  <line class="bondGe" x1="424.0" y1="202.0" x2="424.0" y2="254.0" />
+  <line class="bondGe" x1="220.0" y1="254.0" x2="288.0" y2="254.0" />
+  <line class="bondGe" x1="220.0" y1="254.0" x2="220.0" y2="306.0" />
+  <line class="bondGe" x1="288.0" y1="254.0" x2="356.0" y2="254.0" />
+  <line class="bondGe" x1="288.0" y1="254.0" x2="288.0" y2="306.0" />
+  <line class="bondGe" x1="356.0" y1="254.0" x2="424.0" y2="254.0" />
+  <line class="bondGe" x1="356.0" y1="254.0" x2="356.0" y2="306.0" />
+  <line class="bondGe" x1="424.0" y1="254.0" x2="424.0" y2="306.0" />
+  <line class="bondGe" x1="220.0" y1="306.0" x2="288.0" y2="306.0" />
+  <line class="bondGe" x1="288.0" y1="306.0" x2="356.0" y2="306.0" />
+  <line class="bondGe" x1="356.0" y1="306.0" x2="424.0" y2="306.0" />
+  <circle cx="220.0" cy="150.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="288.0" cy="150.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="356.0" cy="150.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="424.0" cy="150.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="220.0" cy="202.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="288.0" cy="202.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="356.0" cy="202.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="424.0" cy="202.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="220.0" cy="254.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="288.0" cy="254.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="356.0" cy="254.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="424.0" cy="254.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="220.0" cy="306.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="288.0" cy="306.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="356.0" cy="306.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="424.0" cy="306.0" r="14" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <path class="dim" d="M 50,298 L 86,298 M 50,292 L 50,304 M 86,292 L 86,304" />
+  <text class="note" x="54" y="292">a(Si)</text>
+  <path class="dim" d="M 220,352 L 288,352 M 220,346 L 220,358 M 288,346 L 288,358" />
+  <text class="note" x="224" y="346">a(SiGe)</text>
+  <text class="t" x="50" y="322">Si</text>
+  <text class="t" x="220" y="374">SiGe</text>
+  <text class="note" x="40" y="394">SiGe atoms sit further apart.</text>
+  <text class="pt" x="500" y="110">2. Silicon grown on SiGe</text>
+  <line class="bondSi" x1="560.0" y1="150.0" x2="612.0" y2="150.0" />
+  <line class="bondSi" x1="560.0" y1="150.0" x2="560.0" y2="180.0" />
+  <line class="bondSi" x1="612.0" y1="150.0" x2="664.0" y2="150.0" />
+  <line class="bondSi" x1="612.0" y1="150.0" x2="612.0" y2="180.0" />
+  <line class="bondSi" x1="664.0" y1="150.0" x2="716.0" y2="150.0" />
+  <line class="bondSi" x1="664.0" y1="150.0" x2="664.0" y2="180.0" />
+  <line class="bondSi" x1="716.0" y1="150.0" x2="716.0" y2="180.0" />
+  <line class="bondSi" x1="560.0" y1="180.0" x2="612.0" y2="180.0" />
+  <line class="bondSi" x1="612.0" y1="180.0" x2="664.0" y2="180.0" />
+  <line class="bondSi" x1="664.0" y1="180.0" x2="716.0" y2="180.0" />
+  <circle cx="560.0" cy="150.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="612.0" cy="150.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="664.0" cy="150.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="716.0" cy="150.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="560.0" cy="180.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="612.0" cy="180.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="664.0" cy="180.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="716.0" cy="180.0" r="13" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <line class="bondGe" x1="560.0" y1="210.0" x2="612.0" y2="210.0" />
+  <line class="bondGe" x1="560.0" y1="210.0" x2="560.0" y2="252.0" />
+  <line class="bondGe" x1="612.0" y1="210.0" x2="664.0" y2="210.0" />
+  <line class="bondGe" x1="612.0" y1="210.0" x2="612.0" y2="252.0" />
+  <line class="bondGe" x1="664.0" y1="210.0" x2="716.0" y2="210.0" />
+  <line class="bondGe" x1="664.0" y1="210.0" x2="664.0" y2="252.0" />
+  <line class="bondGe" x1="716.0" y1="210.0" x2="716.0" y2="252.0" />
+  <line class="bondGe" x1="560.0" y1="252.0" x2="612.0" y2="252.0" />
+  <line class="bondGe" x1="560.0" y1="252.0" x2="560.0" y2="294.0" />
+  <line class="bondGe" x1="612.0" y1="252.0" x2="664.0" y2="252.0" />
+  <line class="bondGe" x1="612.0" y1="252.0" x2="612.0" y2="294.0" />
+  <line class="bondGe" x1="664.0" y1="252.0" x2="716.0" y2="252.0" />
+  <line class="bondGe" x1="664.0" y1="252.0" x2="664.0" y2="294.0" />
+  <line class="bondGe" x1="716.0" y1="252.0" x2="716.0" y2="294.0" />
+  <line class="bondGe" x1="560.0" y1="294.0" x2="612.0" y2="294.0" />
+  <line class="bondGe" x1="612.0" y1="294.0" x2="664.0" y2="294.0" />
+  <line class="bondGe" x1="664.0" y1="294.0" x2="716.0" y2="294.0" />
+  <circle cx="560.0" cy="210.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="612.0" cy="210.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="664.0" cy="210.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="716.0" cy="210.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="560.0" cy="252.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="612.0" cy="252.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="664.0" cy="252.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="716.0" cy="252.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="560.0" cy="294.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="612.0" cy="294.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="664.0" cy="294.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <circle cx="716.0" cy="294.0" r="13" fill="url(#geAtom)" stroke="#276749" stroke-width="1.2" />
+  <line class="bondGe" x1="560.0" y1="180.0" x2="560.0" y2="210.0" />
+  <line class="bondGe" x1="612.0" y1="180.0" x2="612.0" y2="210.0" />
+  <line class="bondGe" x1="664.0" y1="180.0" x2="664.0" y2="210.0" />
+  <line class="bondGe" x1="716.0" y1="180.0" x2="716.0" y2="210.0" />
+  <text class="t" x="560" y="130">Si, stretched</text>
+  <text class="t" x="560" y="344">SiGe</text>
+  <path class="strain" d="M 546,165 L 506,165" marker-end="url(#arrowRed)" />
+  <path class="strain" d="M 730,165 L 770,165" marker-end="url(#arrowRed)" />
+  <text class="val" x="780" y="196">tensile strain</text>
+  <path class="lead" d="M 772,172 L 780,190" />
+  <text class="note" x="500" y="376">The Si layer takes the SiGe spacing.</text>
+  <text class="pt" x="40" y="442">3. Electron path through the channel</text>
+  <rect x="70" y="500" width="340" height="100" fill="#f7fafc" stroke="#a0aec0" />
+  <rect x="80" y="520" width="70" height="80" fill="#a0aec0" stroke="#718096" />
+  <rect x="330" y="520" width="70" height="80" fill="#a0aec0" stroke="#718096" />
+  <rect x="150" y="545" width="180" height="18" fill="#cbd5e0" stroke="#a0aec0" />
+  <rect x="190" y="535" width="100" height="6" fill="#805ad5" />
+  <rect x="190" y="505" width="100" height="30" rx="3" fill="#ed8936" stroke="#c05621" />
+  <path class="path" d="M 100,560 L 160,554 L 320,554 L 380,560" marker-end="url(#arrowBlue)" />
+  <ellipse cx="240" cy="554" rx="100" ry="20" fill="none" stroke="#2b6cb0" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.55" />
+  <circle cx="240" cy="554" r="5" fill="url(#electronAtom)" stroke="#2b6cb0" />
+  <text class="t" x="210" y="498">gate</text>
+  <text class="t" x="92" y="620">source</text>
+  <text class="t" x="342" y="620">drain</text>
+  <text class="note" x="150" y="585">channel</text>
+  <text class="note" x="240" y="585">current flow</text>
+  <text class="note" x="250" y="548">e-</text>
+  <text class="t" x="500" y="488">normal Si lattice</text>
+  <line class="bondSi" x1="500.0" y1="520.0" x2="544.0" y2="520.0" />
+  <line class="bondSi" x1="544.0" y1="520.0" x2="588.0" y2="520.0" />
+  <line class="bondSi" x1="588.0" y1="520.0" x2="632.0" y2="520.0" />
+  <line class="bondSi" x1="632.0" y1="520.0" x2="676.0" y2="520.0" />
+  <circle cx="500.0" cy="520.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="544.0" cy="520.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="588.0" cy="520.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="632.0" cy="520.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="676.0" cy="520.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <path class="path" d="M 500,505 L 640,505" marker-end="url(#arrowBlue)" />
+  <circle cx="500" cy="505" r="5" fill="url(#electronAtom)" stroke="#2b6cb0" />
+  <text class="t" x="500" y="578">strained Si lattice</text>
+  <line class="bondSi" x1="500.0" y1="610.0" x2="560.0" y2="610.0" />
+  <line class="bondSi" x1="560.0" y1="610.0" x2="620.0" y2="610.0" />
+  <line class="bondSi" x1="620.0" y1="610.0" x2="680.0" y2="610.0" />
+  <line class="bondSi" x1="680.0" y1="610.0" x2="740.0" y2="610.0" />
+  <circle cx="500.0" cy="610.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="560.0" cy="610.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="620.0" cy="610.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="680.0" cy="610.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <circle cx="740.0" cy="610.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
+  <path class="path" d="M 500,595 L 800,595" marker-end="url(#arrowBlue)" />
+  <circle cx="500" cy="595" r="5" fill="url(#electronAtom)" stroke="#2b6cb0" />
+  <text class="note" x="500" y="644">same time, longer path: higher mobility</text>
 </svg>

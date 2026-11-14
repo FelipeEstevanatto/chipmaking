@@ -30,7 +30,7 @@ In high-voltage switching (electric-vehicle traction inverters, grid converters 
 
 In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve for reasons of physics, not for lack of engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
 
-These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage. SiC reached 200 mm wafers only in April 2022, when Wolfspeed opened in Marcy, New York, what it calls the world's first and largest 200 mm silicon carbide fab <Cite id="wolfspeed-mohawk-200mm" />, while silicon fabs have run 300 mm wafers for years. It is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
+These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage. Only in April 2022 did a 200 mm SiC fab open: Wolfspeed's plant in Marcy, New York, which the company calls the world's first and largest <Cite id="wolfspeed-mohawk-200mm" />, while silicon fabs already run 300 mm wafers <Cite id="zulehner-2000" />. It is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
 
 ## Silicon's other lives
 
@@ -56,7 +56,7 @@ The materials in this chapter step in where that combination is not enough, and 
 
 The constants in this chapter come from reference tables, not from measurements of a year. Its most recent dated source is Wolfspeed's 200 mm SiC fab of 2022, and that is the year the freshness stamp records.
 
-<SourceNote label="Sources" :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm']" />
+<SourceNote label="Sources" :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm', 'zulehner-2000']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The silicon element', href: '/en/o-elemento-silicio', note: 'why silicon, and not germanium' },

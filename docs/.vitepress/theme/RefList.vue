@@ -18,6 +18,7 @@ import { allCitations } from './citations'
         </a>
         <span v-else>{{ c.title }}</span>
         <span v-if="c.publisher" class="ref-list-publisher"> - {{ c.publisher }}</span>
+        <span v-if="c.note" class="ref-list-note">{{ c.note }}</span>
       </span>
     </li>
   </ol>

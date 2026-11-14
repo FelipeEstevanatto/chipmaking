@@ -91,7 +91,7 @@ The third is HBM, where the layers are thin and part strength is critical. A stu
 The alternatives fall into three families:
 
 - **Laser cutting** and *stealth dicing*: in stealth dicing, a laser at a wavelength that passes through silicon is focused inside the wafer, forming a modified layer; separation happens afterwards, by tape expansion. The process is completely dry, kerf-free and chip-free <Cite id="hamamatsu-stealth" />.
-- ***Laser grooving* + plasma: the laser opens a narrow groove and the plasma deepens and separates it, with widths below 10 µm** and clean edges <Cite id="imaps-plasma-dicing" />.
+- ***Laser grooving* + plasma**: the laser opens a narrow groove and the plasma deepens and separates it, with widths below 10 µm and clean edges <Cite id="imaps-plasma-dicing" />.
 - **PDBG** (*plasma dicing before grinding*): separates by plasma before thinning, which reduces contamination and cracking <Cite id="pdbg-dicing" />.
 
 A classic study showed that mechanical grinding creates weak regions where chip strength falls 30 to 35% below the wafer average. Two interventions changed the picture: halving the grinding speed raised average chip strength by 56%, and deliberately blunting a new saw blade raised strength five-fold <Cite id="ieee-die-strength" />. Dicing defines the product's mechanical reliability.

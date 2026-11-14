@@ -3,7 +3,7 @@ title: In the fab
 description: >-
   How a blank wafer becomes a chip: oxidation, deposition, etching, implantation,
   polishing and metrology, over 600 to more than 1,000 process steps.
-dataAsOf: 2025
+dataAsOf: 2024
 ---
 
 # In the fab: how a wafer becomes a chip
@@ -12,7 +12,7 @@ At the end of [wafer fabrication](/en/fabricacao-wafers) there is a blank disc o
 
 The [photolithography](/en/fotolitografia) chapter shows how a pattern is printed onto that disc. This one covers the processes around the printing, which add the material, remove it, dope it and measure it.
 
-## A fab line is a loop
+## Fabrication is a loop
 
 <DiagramFigure src="/assets/fab-loop.svg" alt="Seven numbered process modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology) arranged around a central lot-transport hub, each joined to it by a two-way arrow; the hub gives 600 to more than 1,100 steps and a cycle time of about 40 days at 28 nm to 80 to 85 days at 7 nm">
 The seven modules, numbered in the order this chapter covers them. Lots travel between them through the fab's transport system, and the recipe decides the route, so a wafer returns to most modules dozens of times. Lithography is highlighted because it has its own chapter, and metrology because it measures the result. Author's diagram; the counts in the centre are those of the text below.
@@ -49,9 +49,7 @@ Fabs plan with a different metric, days per mask layer. The average sits between
 
 Wafers travel in lots, and the standard lot is 25 wafers <Cite id="semieng-cycle-time" />. Lots are sometimes reshuffled between each other to level the load on the equipment.
 
-### Lithography exposures
-
-A 32/28 nm flow used 38 lithography exposures, 15 of them immersion; a 22/20 nm flow used 52 exposures, with 31 immersion and 11 multi-patterning steps <Cite id="semieng-litho-layers" />. The wafer comes back to the scanner dozens of times, and the exact count depends on the node and the manufacturer.
+Lithography is the module the wafer returns to most. A 32/28 nm flow used 38 lithography exposures, 15 of them immersion; a 22/20 nm flow used 52 exposures, with 31 immersion and 11 multi-patterning steps <Cite id="semieng-litho-layers" />. The exact count depends on the node and the manufacturer.
 
 ### The three zones of a chip
 
@@ -61,7 +59,7 @@ A leading-edge logic flow is divided into three regions, which use different equ
 - **MOL** (*middle-of-line*): makes the contacts that connect the transistor to the first metal level.
 - **BEOL** (*back-end-of-line*): builds the stack of metal wires that ties everything together.
 
-The FEOL runs hot, because it is still forming crystal and doping. The BEOL runs cold, because from the first metal level onward excess heat ruins what is already finished. Every step after the FEOL, [photolithography](/en/fotolitografia) included, therefore has to fit inside a tight thermal budget.
+The FEOL runs hot, because it is still forming crystal and doping. The BEOL runs cold, because from the first metal level onward excess heat ruins what is already finished. After the FEOL the thermal budget closes: the finished transistor and the first metal level no longer take those temperatures, so the rest of the flow, [photolithography](/en/fotolitografia) at each layer included, runs cold.
 
 ## Thermal oxidation
 
@@ -152,7 +150,7 @@ Ion implantation accelerates the dopant ions to high energy and fires them into 
 
 Energies run from a few hundred eV to several MeV, placing ions from under 10 nm to about 10 µm deep. Doses run from 10¹¹ cm⁻², to adjust the transistor threshold voltage, up to 10¹⁸ cm⁻², to form buried dielectric layers <Cite id="cityu-implant" />.
 
-<DiagramFigure src="/assets/implant-profile.svg" alt="On the left, the ion beam tilted seven degrees from vertical over the crystal lattice; on the right, two concentration-versus-depth profiles, one untilted with a deep tail and one at seven degrees that is much narrower">
+<DiagramFigure src="/assets/implant-profile.svg" alt="On the left, the ion beam tilted 7 degrees from vertical over the crystal lattice; on the right, two concentration-versus-depth profiles, one untilted with a deep tail and one at 7 degrees that is much narrower">
 The wafer is tilted on purpose. Without the tilt, some ions slide down the open channels of the crystal and end up much deeper than intended.
 </DiagramFigure>
 
@@ -177,7 +175,7 @@ An anneal restores the crystal order and, at the same time, electrically activat
 That trade-off led to rapid thermal processing (RTP) and, more recently, to laser anneals measured in milliseconds. The shallower the profile, the shorter the pulse.
 
 <DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Two temperature-versus-time plots: on the left, a furnace ramping to a thousand degrees and holding for hours; on the right, RTP reaching the same temperature for about ten seconds">
-A furnace anneal holds the wafer hot for hours; RTP reaches the same temperature for seconds, which leaves the dopants little time to spread. Author's drawing, after Tokuda et al. (1989) and Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+A furnace anneal holds the wafer hot for hours; RTP reaches the same temperature for seconds. The band around 450 °C, which a furnace crosses slowly, is where oxygen thermal donors form. Author's drawing, after Tokuda et al. (1989) and Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
 </DiagramFigure>
 
 ## Planarisation

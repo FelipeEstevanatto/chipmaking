@@ -9,8 +9,11 @@ fact-checking process narrated to the reader. These rules come from AGENTS.md ("
 Rules, per chapter (prose lines only, as audit-prose.py reads them):
 
   style-bold        a **bold** span in running prose. AGENTS.md: no bold sprinkled mid-sentence.
+  style-bold-long   a bold span long enough to be a clause rather than a term. It catches emphasis
+                    that ran across a sentence, and the mixed ***term* clause** shape.
   style-heading     a heading shaped "Topic: subtitle". A plain noun is the heading; the section
-                    says the rest.
+                    says the rest. A year prefix ("1960: MOSFET") is a chronology label, not a
+                    subtitle.
   style-contrast    "not X, but Y" / "não X, mas Y", "X, not Y". State Y.
   style-commentary  a word that grades the fact instead of stating it (striking, elegant, honest,
                     "matters", "here is" / impressionante, elegante, "eis").
@@ -63,7 +66,7 @@ svgs = load("audit-svgs")
 # Navigation and bibliography pages are generated or tabular; they carry no argument to audit.
 SKIP_FILES = {"referencias.md", "glossario.md"}
 
-BOLD_RE = re.compile(r"\*\*[^*\n]+?\*\*")
+BOLD_RE = re.compile(r"\*\*(.+?)\*\*")
 HEADING_RE = re.compile(r"^(#{2,6})\s+(.*?)\s*(\{#[^}]*\})?\s*$")
 # "Topic: subtitle" where the part after the colon starts a phrase, not a number or a ratio.
 HEADING_COLON_RE = re.compile(r"^[^:]{1,60}:\s+\D")
@@ -132,6 +135,25 @@ def kicker(paragraph: str) -> str | None:
     return last if words(last) <= 5 else None
 
 
+def glossary_terms() -> set[str]:
+    """The terms a chapter is allowed to bold, read from the glossary source."""
+    text = open(os.path.join(REPO, "docs", ".vitepress", "glossary.ts"), encoding="utf-8").read()
+    start = text.find("export const GLOSSARY")
+    block = text[start:]
+    terms: set[str] = set()
+    for match in re.finditer(r"\bterm:\s*'((?:[^'\\]|\\.)*)'", block):
+        term = re.sub(r"\s+", " ", match.group(1)).strip().lower()
+        terms.add(term.strip(" .,:;"))
+    for match in re.finditer(r"\bvariants:\s*\[([^\]]+)\]", block):
+        for variant in re.findall(r"'((?:[^'\\]|\\.)*)'", match.group(1)):
+            term = re.sub(r"\s+", " ", variant).strip().lower()
+            terms.add(term.strip(" .,:;"))
+    return terms
+
+
+GLOSSARY_TERMS = glossary_terms()
+
+
 def audit_page(path: str) -> tuple[int, list[tuple[str, int, str]]]:
     findings: list[tuple[str, int, str]] = []
     total_words = 0
@@ -173,10 +195,16 @@ def audit_page(path: str) -> tuple[int, list[tuple[str, int, str]]]:
         heading = HEADING_RE.match(stripped)
         if heading:
             close_paragraph()
-            if HEADING_COLON_RE.match(heading.group(2)):
-                findings.append(("style-heading", number, heading.group(2)))
+            text = heading.group(2)
+            # A year prefix is a chronology label, not a subtitle.
+            if HEADING_COLON_RE.match(text) and not re.match(r"^~?\d{4}\b", text):
+                findings.append(("style-heading", number, text))
             continue
-        if not stripped or stripped.startswith((":::", "<", "- ", "* ", ">")) or re.match(r"^\d+\.\s", stripped):
+        is_list = bool(
+            re.match(r"^(?:[-*+]\s|\d+\.\s|>)", stripped)
+        ) or stripped.startswith((":::", "<"))
+        is_table = stripped.startswith("|")
+        if not stripped or is_list:
             close_paragraph()
             if not stripped or stripped.startswith((":::", "<")):
                 continue
@@ -184,8 +212,33 @@ def audit_page(path: str) -> tuple[int, list[tuple[str, int, str]]]:
             paragraph.append((number, stripped))
 
         total_words += words(stripped)
-        for match in BOLD_RE.finditer(stripped):
-            findings.append(("style-bold", number, match.group(0)))
+        if not is_table:
+            for match in BOLD_RE.finditer(stripped):
+                span = match.group(1)
+                long = len(span) > 60 or ";" in span or (
+                    len(span.split()) >= 8 and any(mark in span for mark in (",", " e ", " and "))
+                )
+                if is_list:
+                    if long:
+                        findings.append(("style-bold-long", number, match.group(0)))
+                    continue
+                after = stripped[match.end():].lstrip()
+                before = stripped[:match.start()].rstrip()
+                defined = bool(
+                    re.match(r"(?:é|são|is|are)\b", after)
+                    or re.search(r"\b(?:é|são|is|are|chama|chamam|called)\s*$", before, re.I)
+                )
+                term = bool(re.search(r"\b(?:o|a|os|as|um|uma|an?|the|this|that)\s*$", before, re.I))
+                if (
+                    defined
+                    or (term and len(span.split()) <= 6)
+                    or re.sub(r"\s+", " ", span).strip().lower().strip(" .,:;") in GLOSSARY_TERMS
+                ):
+                    continue
+                if long:
+                    findings.append(("style-bold-long", number, match.group(0)))
+                else:
+                    findings.append(("style-bold", number, match.group(0)))
         for rule, regex in (
             ("style-contrast", CONTRAST_RE),
             ("style-commentary", COMMENTARY_RE),

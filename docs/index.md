@@ -5,7 +5,7 @@ description: "Da mineração de quartzo aos transistores GAA: a cadeia do silíc
 hero:
   name: Silício
   text: Chip Making
-  tagline: "Um guia bilíngue e com fontes de como o silício vira chip, da mina de quartzo ao transistor gate-all-around."
+  tagline: "Um guia bilíngue e com fontes sobre como o silício vira chip, da mina de quartzo ao transistor gate-all-around."
   actions:
     - theme: brand
       text: Começar leitura

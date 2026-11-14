@@ -106,8 +106,8 @@ export const CHARTS: Record<string, ChartSpec> = {
     ],
     datasets: [
       {
-        pt: 'Piso citado',
-        en: 'Lower bound',
+        pt: 'Valor ou piso',
+        en: 'Value or lower bound',
         color: '#2b6cb0',
         grouped: false,
         data: [70, 87, 90, 75, 50, 100],
@@ -128,8 +128,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
-      en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the lower bound; the light segment adds the published range where the source gives an interval.',
+      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o valor ou o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
+      en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the value or the lower bound; the light segment adds the published range where the source gives an interval.',
     },
     sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'usitc-neon-2022', 'asml-euv-products'],
     slug: 'chokepoint-share',
@@ -259,7 +259,7 @@ export const CHARTS: Record<string, ChartSpec> = {
 
   /**
    * Deal–Grove thickness against time, computed rather than measured: x = (A/2)(√(1 + 4Bt/A²) − 1)
-   * with τ = 0, from the Arrhenius constants for (111) silicon in the Stanford EE212 oxidation
+   * with τ = 0, from the Arrhenius constants for (100) silicon in the Stanford EE212 oxidation
    * handout (dry O₂: B = 7.72e2 µm²/h at 1.23 eV, B/A = 6.23e6 µm/h at 2.0 eV; H₂O: B = 3.86e2
    * µm²/h at 0.78 eV, B/A = 1.63e8 µm/h at 2.05 eV). Rounded to the nanometre.
    */
@@ -277,8 +277,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       { pt: 'Seca (O₂), 1.000 °C', en: 'Dry (O₂), 1,000 °C', color: '#f6ad55', data: [17, 31, 54, 91, 121, 146, 190, 228, 261] },
     ],
     caption: {
-      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove para silício (111), sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce cerca de dez vezes mais rápido, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
-      en: 'Oxide thickness computed with the Deal–Grove model for (111) silicon, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows about ten times faster, and every curve slows once diffusion through the oxide sets the pace.',
+      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove para silício (100), sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce cerca de seis vezes mais rápido nestas temperaturas, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
+      en: 'Oxide thickness computed with the Deal–Grove model for (100) silicon, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows about six times faster at these temperatures, and every curve slows once diffusion through the oxide sets the pace.',
     },
     sourceIds: ['deal-grove-1965', 'stanford-ee212-oxidation'],
     slug: 'deal-grove-oxidation',

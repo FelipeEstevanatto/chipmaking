@@ -40,7 +40,7 @@ In DUV the mask is a quartz plate with chrome: light passes where the pattern is
 That changes the nature of a defect. A defect buried in a mask's multilayer cannot be repaired once the mask is finished: it replicates onto every wafer exposed with that mask, and the blank has to arrive **defect-free** for the mask to be usable <Cite id="asianometry-euv" />. It is the same logic as the quartz inputs: **the quality has to be in the incoming material**, because the next step does not fix it.
 
 <DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="On the left, a cross-section of a Bragg reflector with alternating molybdenum and silicon layers, an incoming beam and parallel partial reflections leaving it; on the right, the light-loss chain from the source to the wafer across ten mirrors">
-An EUV mask blank is the same kind of molybdenum and silicon multilayer as the scanner's mirrors, so a defect buried in it is reflected onto every wafer. Drawn by the author, from ASML/Branch Education.
+An EUV mask blank is the same kind of molybdenum and silicon multilayer as the scanner's mirrors, so a defect buried in it is reflected onto every wafer <Cite id="branch-euv" />. Drawn by the author, from ASML/Branch Education.
 </DiagramFigure>
 
 ## The CMP slurry
@@ -50,7 +50,7 @@ An EUV mask blank is the same kind of molybdenum and silicon multilayer as the s
 The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection) section tells the material change.
 
 <DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Two cross-sections after copper polishing: a wide copper line dished below the dielectric, and a dense block of narrow lines where metal and dielectric together sit below the open field">
-The two defects a slurry has to be tuned against: dishing of a wide copper line and erosion of a dense array, described in the In the fab chapter. Author's diagram; the recesses are exaggerated.
+The two defects a slurry has to be tuned against: dishing of a wide copper line and erosion of a dense array, described in the *In the fab* chapter. Author's diagram; the recesses are exaggerated.
 </DiagramFigure>
 
 ## Gases and neon
@@ -73,7 +73,7 @@ None of the inputs on this page is expensive per unit. All of them are hard to r
 
 The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
-<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw']" />
+<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The chokepoint map', href: '/en/gargalos', note: 'the concentration of each step' },
