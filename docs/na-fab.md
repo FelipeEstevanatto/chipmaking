@@ -14,8 +14,8 @@ O capítulo da [fotolitografia](/fotolitografia) mostra como um desenho é impre
 
 ## A fabricação é um laço
 
-<DiagramFigure src="/assets/fab-loop.svg" alt="O wafer circula repetidamente por sete módulos numerados (oxidação, deposição, litografia, corrosão, implantação, planarização e metrologia), acumulando de 600 a mais de mil etapas ao longo de cerca de três meses">
-O wafer dá dezenas de voltas pelos mesmos equipamentos. Os sete módulos estão numerados na ordem em que o wafer os visita; a litografia está destacada porque tem capítulo próprio, e a metrologia porque é ela que mede o resultado. Cada volta acrescenta uma camada, remove parte dela e mede o que sobrou.
+<DiagramFigure src="/assets/fab-loop.svg" alt="Sete módulos de processo numerados (oxidação, deposição, litografia, corrosão, implantação, planarização e metrologia) em volta de um centro de transporte de lotes, cada um ligado a ele por uma seta de mão dupla; o centro traz de 600 a mais de 1.100 etapas e um tempo de ciclo de cerca de 40 dias em 28 nm a 80 a 85 dias em 7 nm">
+Os sete módulos, numerados na ordem em que este capítulo os trata. Os lotes circulam entre eles pelo sistema de transporte da fábrica, e a receita decide o caminho, de modo que o wafer volta dezenas de vezes à maioria dos módulos. A litografia está destacada porque tem capítulo próprio, e a metrologia porque é ela que mede o resultado. Diagrama do autor; os números do centro são os do texto abaixo.
 </DiagramFigure>
 
 O laço tem sete módulos. Seis têm seção neste capítulo, na ordem em que o wafer os visita. O sétimo, a litografia, tem [capítulo próprio](/fotolitografia), porque é ali que está a maior parte da dificuldade de escala.
@@ -78,6 +78,10 @@ $$
 onde $x_0$ é a espessura do óxido. O modelo tem dois regimes. Enquanto o óxido é fino, o oxidante chega rápido à superfície e a reação dita o ritmo, então o crescimento é linear no tempo. Quando o óxido engrossa, o oxidante precisa difundir por dentro dele, e o crescimento passa a ser parabólico: desacelera <Cite id="deal-grove-1965" />.
 
 O artigo declara a faixa em que o modelo se ajusta: de 700 a 1.300 °C, de 0,1 a 1,0 atm, e espessuras de 300 a 20.000 Å, para os dois oxidantes <Cite id="deal-grove-1965" />. É a faixa em que o modelo foi validado; não é uma receita de processo.
+
+<ClientOnly>
+  <DataChart chart="deal-grove-oxidation" />
+</ClientOnly>
 
 ### Seco contra úmido
 
@@ -172,6 +176,10 @@ Um recozimento devolve a ordem cristalina e, ao mesmo tempo, ativa eletricamente
 
 Esse compromisso levou aos recozimentos rápidos (RTP, *rapid thermal processing*) e, mais recentemente, a recozimentos por laser medidos em milissegundos. Quanto mais raso o perfil, mais curto o pulso.
 
+<DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Dois gráficos de temperatura por tempo: à esquerda, um forno que sobe a mil graus e mantém por horas; à direita, o RTP, que atinge a mesma temperatura por cerca de dez segundos">
+Um recozimento em forno mantém o wafer quente por horas; o RTP atinge a mesma temperatura por segundos, o que deixa pouco tempo para os dopantes se espalharem. Desenho do autor, a partir de Tokuda et al. (1989) e Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+</DiagramFigure>
+
 ## Planarização
 
 Depois de algumas camadas, a superfície do wafer deixa de ser plana. Cada depósito e cada corrosão deixam degraus, e os degraus se acumulam.
@@ -184,6 +192,10 @@ O CMP entrou na produção nos anos 1980, na IBM, para planarizar o dielétrico 
 
 O CMP tem dois defeitos característicos. Em áreas largas de metal, o metal afunda abaixo da superfície, o que se chama **dishing**. Em áreas densas, o dielétrico entre os fios se desgasta mais rápido que o metal, o que se chama **erosão** <Cite id="cmp-history" />. Os dois pioram com o excesso de polimento, e os dois prejudicam a litografia da camada seguinte.
 
+<DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Dois cortes depois do polimento de cobre: à esquerda, uma linha larga de cobre com o topo afundado abaixo do dielétrico em volta; à direita, um bloco denso de linhas finas de cobre em que metal e dielétrico juntos ficam abaixo do campo aberto">
+O dishing escava uma linha larga; a erosão rebaixa um bloco denso inteiro, metal e dielétrico juntos. Diagrama do autor; os rebaixos estão exagerados muitas vezes em relação à largura das linhas.
+</DiagramFigure>
+
 ## Metrologia
 
 A KLA, que fabrica equipamentos de inspeção, diz que a maior parte dos passos de processo tem alguma metrologia ou inspeção associada <Cite id="kla-msa" />. São trabalhos diferentes:
@@ -192,6 +204,10 @@ A KLA, que fabrica equipamentos de inspeção, diz que a maior parte dos passos 
 - **Inspeção** procura o que não deveria estar lá: partículas, riscos, defeitos <Cite id="kla-msa" />.
 
 Medir todos os wafers seria inviável, então as fábricas amostram por lote. A metrologia costuma rodar em 100% dos lotes, mas só em 2 a 5 wafers de cada lote; a inspeção de defeitos roda em 10 a 33% dos lotes, com 1 a 5 wafers <Cite id="kla-msa" />. Os quatro tipos principais de medida são overlay, espessura de filme, dimensão crítica e forma do wafer <Cite id="kla-msa" />.
+
+<ClientOnly>
+  <DataChart chart="metrology-sampling" />
+</ClientOnly>
 
 O CD-SEM usa um feixe de elétrons para medir a largura de uma linha com resolução nanométrica, e é assim que a fábrica confere se a porta saiu com a largura que o desenho pedia. A elipsometria espectroscópica mede espessura sem tocar no wafer: mede como a luz muda de polarização ao refletir e resolve a espessura por modelo <Cite id="horiba-ellipsometry" />. É o método padrão para filmes ultrafinos, de poucos ångströms a dezenas de micrômetros, e para pilhas de múltiplas camadas <Cite id="horiba-ellipsometry" />.
 
@@ -223,6 +239,10 @@ O eletrólito é formulado para que o cobre cresça de baixo para cima, fechando
 
 Cada par de fios vizinhos forma um capacitor, e o dielétrico entre eles define a capacitância. O SiO₂ tem constante dielétrica em torno de 4,0. Baixá-la reduz a capacitância e, com ela, o atraso. As alternativas usadas na indústria vão de SiOF (k ≈ 3,5 a 3,8) e SiCOH (k ≈ 2,2 a 3,2) até o ar, com k = 1,0 <Cite id="cu-interconnect-review" />. As arquiteturas de air gap deixam vazios deliberados entre os fios.
 
+<ClientOnly>
+  <DataChart chart="low-k-dielectric" />
+</ClientOnly>
+
 Medições em estruturas com air gap encontram k efetivo da ordem de 2,2 <Cite id="air-gap-keff" />, e tecnologias que chegam a mais de 75% de fração de vazio alcançam k efetivo abaixo de 2,1 <Cite id="hollow-airgap" />. O custo é mecânico: uma estrutura com 75% de ar tem pouco material para sustentar a pilha acima dela.
 
 ### Quantos níveis de metal
@@ -243,11 +263,17 @@ onde $D_0$ é a densidade de defeitos e $A$ a área do die <Cite id="leachman-yi
 
 Em 1964, B. T. Murphy, dos Bell Labs, observou que os defeitos se agrupam em vez de cair ao acaso. Tratar a densidade como uma variável aleatória e integrar sobre a distribuição dá o modelo de Murphy <Cite id="murphy-1964" />. Mais tarde a indústria adotou a formulação binomial negativa, mais fácil de manipular e mais aderente aos dados reais <Cite id="murphy-integral" />.
 
+O explorador abaixo move a área do die e o fator de agrupamento α da binomial negativa. Com α = ∞ os defeitos caem ao acaso e o modelo é a lei de Poisson; quando α diminui eles chegam em aglomerados, a maioria dos dies sai limpa e as falhas se concentram em poucos. A [página de dados](/dados#rendimento-contra-area) traça a curva de Poisson para cinco densidades de defeito.
+
+<ClientOnly>
+  <YieldExplorer />
+</ClientOnly>
+
 ### Por que o rendimento demora meses
 
 O rendimento sobe à medida que a fábrica aprende o processo, e nenhuma mudança isolada de receita o resolve. O levantamento da Competitive Semiconductor Manufacturing, de Berkeley, mediu quanto tempo esse aprendizado leva em várias empresas. Para uma tecnologia nova, o tempo médio de qualificação de processo foi de 12 meses, com o melhor caso em 7. Para uma tecnologia parecida com uma que já estava em produção, a média caiu para 7 meses, com melhor caso em 4 <Cite id="berkeley-csm" />. A diferença entre a média e o benchmark, no tempo de subida de rendimento, ficou em torno de 40% <Cite id="berkeley-csm" />.
 
-<SourceNote :ids="['semieng-cycle-time', 'semieng-litho-layers', 'hitachi-metrology', 'imec-roadmap', 'deal-grove-1965', 'tu-wien-oxidation', 'ecs-sio2-limits', 'amat-ald', 'lam-ald', 'asm-ald-gapfill', 'yim-ald-gpc', 'amat-trillium', 'mks-rie', 'bosch-drie', 'lam-etch', 'ale-overview', 'cityu-implant', 'axcelis-implant', 'implant-dose-rate', 'cmp-depth-of-focus', 'cmp-history', 'amat-cmp', 'kla-msa', 'horiba-ellipsometry', 'r2r-control', 'ibm-copper', 'ibm-cu-electroplating', 'mpr-rc-limits', 'itrs-interconnect', 'cu-interconnect-review', 'air-gap-keff', 'hollow-airgap', 'techinsights-n3-beol', 'leachman-yield', 'murphy-1964', 'murphy-integral', 'berkeley-csm']" />
+<SourceNote :ids="['semieng-cycle-time', 'semieng-litho-layers', 'hitachi-metrology', 'imec-roadmap', 'deal-grove-1965', 'tu-wien-oxidation', 'ecs-sio2-limits', 'amat-ald', 'lam-ald', 'asm-ald-gapfill', 'yim-ald-gpc', 'amat-trillium', 'mks-rie', 'bosch-drie', 'lam-etch', 'ale-overview', 'cityu-implant', 'axcelis-implant', 'implant-dose-rate', 'cmp-depth-of-focus', 'cmp-history', 'amat-cmp', 'kla-msa', 'horiba-ellipsometry', 'r2r-control', 'ibm-copper', 'ibm-cu-electroplating', 'mpr-rc-limits', 'itrs-interconnect', 'cu-interconnect-review', 'air-gap-keff', 'hollow-airgap', 'techinsights-n3-beol', 'leachman-yield', 'murphy-1964', 'murphy-integral', 'berkeley-csm', 'stanford-ee212-oxidation', 'tokuda-1989', 'stein-1986']" />
 
 <SeeAlso :links="[
   { text: 'Fotolitografia', href: '/fotolitografia', note: 'como o desenho é impresso' },

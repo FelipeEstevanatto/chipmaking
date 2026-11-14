@@ -14,8 +14,8 @@ The [photolithography](/en/fotolitografia) chapter shows how a pattern is printe
 
 ## A fab line is a loop
 
-<DiagramFigure src="/assets/fab-loop.svg" alt="The wafer cycles repeatedly through seven numbered modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology), accumulating 600 to over a thousand steps over about three months">
-The wafer goes round the same equipment dozens of times. The seven modules are numbered in the order the wafer visits them; lithography is highlighted because it has its own chapter, and metrology because it measures the result. Each lap adds a layer, removes part of it and measures what is left.
+<DiagramFigure src="/assets/fab-loop.svg" alt="Seven numbered process modules (oxidation, deposition, lithography, etching, implantation, planarisation and metrology) arranged around a central lot-transport hub, each joined to it by a two-way arrow; the hub gives 600 to more than 1,100 steps and a cycle time of about 40 days at 28 nm to 80 to 85 days at 7 nm">
+The seven modules, numbered in the order this chapter covers them. Lots travel between them through the fab's transport system, and the recipe decides the route, so a wafer returns to most modules dozens of times. Lithography is highlighted because it has its own chapter, and metrology because it measures the result. Author's diagram; the counts in the centre are those of the text below.
 </DiagramFigure>
 
 The loop has seven modules. Six of them have a section in this chapter, in the order the wafer visits them; the seventh, lithography, has [its own chapter](/en/fotolitografia), because that is where most of the difficulty of scaling sits:
@@ -78,6 +78,10 @@ $$
 where $x_0$ is the oxide thickness. The model has two regimes. While the oxide is thin, the oxidant reaches the surface quickly and the reaction sets the pace, so growth is linear in time. As the oxide thickens, the oxidant has to diffuse through it, and growth becomes parabolic: it slows down <Cite id="deal-grove-1965" />.
 
 The paper states the range over which the model fits: 700 to 1,300 °C, 0.1 to 1.0 atm, and thicknesses from 300 to 20,000 Å, for both oxidants <Cite id="deal-grove-1965" />. That is the range over which the model was validated; it is not a process recipe.
+
+<ClientOnly>
+  <DataChart chart="deal-grove-oxidation" />
+</ClientOnly>
 
 ### Dry versus wet
 
@@ -172,6 +176,10 @@ An anneal restores the crystal order and, at the same time, electrically activat
 
 That trade-off led to rapid thermal processing (RTP) and, more recently, to laser anneals measured in milliseconds. The shallower the profile, the shorter the pulse.
 
+<DiagramFigure src="/assets/rtp-thermal-budget.svg" alt="Two temperature-versus-time plots: on the left, a furnace ramping to a thousand degrees and holding for hours; on the right, RTP reaching the same temperature for about ten seconds">
+A furnace anneal holds the wafer hot for hours; RTP reaches the same temperature for seconds, which leaves the dopants little time to spread. Author's drawing, after Tokuda et al. (1989) and Stein et al. (1986) <Cite id="tokuda-1989" /> <Cite id="stein-1986" />.
+</DiagramFigure>
+
 ## Planarisation
 
 After a few layers the wafer surface is no longer flat. Every deposition and every etch leaves steps, and the steps accumulate.
@@ -184,6 +192,10 @@ CMP entered production in the 1980s, at IBM, to planarise the dielectric between
 
 CMP has two characteristic defects. In wide metal areas the metal sinks below the surface, which is called **dishing**. In dense areas the dielectric between wires wears faster than the metal, which is called **erosion** <Cite id="cmp-history" />. Both get worse with overpolishing, and both degrade the lithography of the next layer.
 
+<DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Two cross-sections after copper polishing: on the left a single wide copper line whose top is dished below the dielectric around it; on the right a dense block of narrow copper lines where metal and dielectric together sit below the open field">
+Dishing hollows out a wide line; erosion lowers a whole dense block, metal and dielectric together. Author's diagram; the recesses are exaggerated many times relative to the line widths.
+</DiagramFigure>
+
 ## Metrology
 
 KLA, which builds inspection equipment, says that most process steps have some metrology or inspection associated with them <Cite id="kla-msa" />. The two are different jobs:
@@ -192,6 +204,10 @@ KLA, which builds inspection equipment, says that most process steps have some m
 - **Inspection** looks for what should not be there: particles, scratches, defects <Cite id="kla-msa" />.
 
 Measuring every wafer would be impractical, so fabs sample by lot. Metrology typically runs on 100% of lots, but only 2 to 5 wafers of each lot; defect inspection runs on 10 to 33% of lots, with 1 to 5 wafers <Cite id="kla-msa" />. The four main measurement types are overlay, film thickness, critical dimension and wafer shape <Cite id="kla-msa" />.
+
+<ClientOnly>
+  <DataChart chart="metrology-sampling" />
+</ClientOnly>
 
 CD-SEM uses an electron beam to measure a line's width at nanometre resolution, which is how a fab checks that the gate came out as wide as the drawing asked. Spectroscopic ellipsometry measures thickness without touching the wafer: it measures how light changes polarisation on reflection and solves for thickness with a model <Cite id="horiba-ellipsometry" />. It is the standard method for ultrathin films, from a few ångströms to tens of micrometres, and for multilayer stacks <Cite id="horiba-ellipsometry" />.
 
@@ -223,6 +239,10 @@ The electrolyte is formulated so that copper grows from the bottom up, closing t
 
 Every pair of neighbouring wires forms a capacitor, and the dielectric between them sets its capacitance. SiO₂ has a dielectric constant around 4.0. Lowering it reduces capacitance and, with it, delay. The alternatives used in industry range from SiOF (k ≈ 3.5 to 3.8) and SiCOH (k ≈ 2.2 to 3.2) to air, with k = 1.0 <Cite id="cu-interconnect-review" />. Air-gap architectures leave deliberate voids between the wires.
 
+<ClientOnly>
+  <DataChart chart="low-k-dielectric" />
+</ClientOnly>
+
 Measurements on air-gap structures find an effective k around 2.2 <Cite id="air-gap-keff" />, and technologies reaching more than 75% void fraction achieve an effective k below 2.1 <Cite id="hollow-airgap" />. The cost is mechanical: a structure that is 75% air has little material to support the stack above it.
 
 ### How many metal levels
@@ -243,11 +263,17 @@ where $D_0$ is the defect density and $A$ the die area <Cite id="leachman-yield"
 
 In 1964, B. T. Murphy at Bell Labs observed that defects cluster rather than fall at random. Treating the density as a random variable and integrating over its distribution gives Murphy's model <Cite id="murphy-1964" />. The industry later adopted the negative binomial formulation, which is easier to manipulate and fits real data better <Cite id="murphy-integral" />.
 
+The explorer below moves the die area and the clustering factor α of the negative binomial. At α = ∞ defects land at random and the model is the Poisson law; as α falls they arrive in clumps, most dies come out clean, and the failures concentrate in a few. The [data page](/en/dados#yield-against-area) plots the Poisson curve for five defect densities.
+
+<ClientOnly>
+  <YieldExplorer />
+</ClientOnly>
+
 ### Why yield takes months
 
 Yield rises as the fab learns the process, and no single recipe change gets it there. The Competitive Semiconductor Manufacturing survey at Berkeley measured how long that learning takes across companies. For a new technology, the average process qualification time was 12 months, with the best case at 7. For a technology similar to one already in production, the average fell to 7 months, with a best case of 4 <Cite id="berkeley-csm" />. The gap between the average and the benchmark in yield ramp time was around 40% <Cite id="berkeley-csm" />.
 
-<SourceNote label="Sources" :ids="['semieng-cycle-time', 'semieng-litho-layers', 'hitachi-metrology', 'imec-roadmap', 'deal-grove-1965', 'tu-wien-oxidation', 'ecs-sio2-limits', 'amat-ald', 'lam-ald', 'asm-ald-gapfill', 'yim-ald-gpc', 'amat-trillium', 'mks-rie', 'bosch-drie', 'lam-etch', 'ale-overview', 'cityu-implant', 'axcelis-implant', 'implant-dose-rate', 'cmp-depth-of-focus', 'cmp-history', 'amat-cmp', 'kla-msa', 'horiba-ellipsometry', 'r2r-control', 'ibm-copper', 'ibm-cu-electroplating', 'mpr-rc-limits', 'itrs-interconnect', 'cu-interconnect-review', 'air-gap-keff', 'hollow-airgap', 'techinsights-n3-beol', 'leachman-yield', 'murphy-1964', 'murphy-integral', 'berkeley-csm']" />
+<SourceNote label="Sources" :ids="['semieng-cycle-time', 'semieng-litho-layers', 'hitachi-metrology', 'imec-roadmap', 'deal-grove-1965', 'tu-wien-oxidation', 'ecs-sio2-limits', 'amat-ald', 'lam-ald', 'asm-ald-gapfill', 'yim-ald-gpc', 'amat-trillium', 'mks-rie', 'bosch-drie', 'lam-etch', 'ale-overview', 'cityu-implant', 'axcelis-implant', 'implant-dose-rate', 'cmp-depth-of-focus', 'cmp-history', 'amat-cmp', 'kla-msa', 'horiba-ellipsometry', 'r2r-control', 'ibm-copper', 'ibm-cu-electroplating', 'mpr-rc-limits', 'itrs-interconnect', 'cu-interconnect-review', 'air-gap-keff', 'hollow-airgap', 'techinsights-n3-beol', 'leachman-yield', 'murphy-1964', 'murphy-integral', 'berkeley-csm', 'stanford-ee212-oxidation', 'tokuda-1989', 'stein-1986']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Photolithography', href: '/en/fotolitografia', note: 'how the pattern is printed' },

@@ -78,6 +78,9 @@ Cada gráfico do site existe também como arquivo de dados, gerado a partir da *
 - [Eficiência fotovoltaica](/data/pv-efficiency.csv)
 - [Curva da banheira](/data/bathtub.csv)
 - [Classificação por frequência](/data/binning-bins.csv)
+- [Crescimento do óxido térmico](/data/deal-grove-oxidation.csv)
+- [Amostragem da metrologia](/data/metrology-sampling.csv)
+- [Constantes dielétricas low-k](/data/low-k-dielectric.csv)
 
 O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.vitepress/theme/charts/specs.ts`, então o gráfico e o CSV não podem divergir.
 

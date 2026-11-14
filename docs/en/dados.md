@@ -78,6 +78,9 @@ Every chart on the site also exists as a data file, generated from the **same de
 - [Photovoltaic efficiency](/data/pv-efficiency.csv)
 - [Bathtub curve](/data/bathtub.csv)
 - [Binning by frequency](/data/binning-bins.csv)
+- [Thermal oxide growth](/data/deal-grove-oxidation.csv)
+- [Metrology sampling](/data/metrology-sampling.csv)
+- [Low-k dielectric constants](/data/low-k-dielectric.csv)
 
 The script `scripts/export-chart-data.ts` rewrites all of them from `docs/.vitepress/theme/charts/specs.ts`, so the chart and the CSV cannot drift apart.
 

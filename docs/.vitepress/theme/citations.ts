@@ -2157,6 +2157,14 @@ const list: Citation[] = [
     url: 'https://past.date-conference.com/proceedings-archive/2013/PDFFILES/08.1_1.PDF',
     short: 'Magarshack et al. (2013)',
   },
+  {
+    key: 'stanford-ee212-oxidation',
+    num: 269,
+    title: 'EE 212 Class Handout #10: Thermal Oxidation (Deal–Grove rate constants, Arrhenius form)',
+    publisher: 'J. D. Plummer, M. D. Deal & P. B. Griffin — Stanford University, EE 212 (1999)',
+    url: 'https://dunham.ece.uw.edu/ee528/notes/Chapter6.pdf',
+    short: 'Plummer, Deal & Griffin (EE212)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

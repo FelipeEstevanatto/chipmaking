@@ -256,6 +256,117 @@ export const CHARTS: Record<string, ChartSpec> = {
     sourceIds: ['siliconlottery-stats', 'tomshardware-8086k'],
     slug: 'binning-bins',
   },
+
+  /**
+   * Deal–Grove thickness against time, computed rather than measured: x = (A/2)(√(1 + 4Bt/A²) − 1)
+   * with τ = 0, from the Arrhenius constants for (111) silicon in the Stanford EE212 oxidation
+   * handout (dry O₂: B = 7.72e2 µm²/h at 1.23 eV, B/A = 6.23e6 µm/h at 2.0 eV; H₂O: B = 3.86e2
+   * µm²/h at 0.78 eV, B/A = 1.63e8 µm/h at 2.05 eV). Rounded to the nanometre.
+   */
+  'deal-grove-oxidation': {
+    id: 'deal-grove-oxidation',
+    type: 'line',
+    toggleLogY: true,
+    xLabel: { pt: 'Tempo de oxidação (h)', en: 'Oxidation time (h)' },
+    yLabel: { pt: 'Espessura do óxido (nm)', en: 'Oxide thickness (nm)' },
+    labels: [0.25, 0.5, 1, 2, 3, 4, 6, 8, 10],
+    datasets: [
+      { pt: 'Úmida (H₂O), 1.100 °C', en: 'Wet (H₂O), 1,100 °C', color: '#2c5282', data: [313, 463, 675, 976, 1207, 1402, 1729, 2004, 2247] },
+      { pt: 'Úmida (H₂O), 1.000 °C', en: 'Wet (H₂O), 1,000 °C', color: '#63b3ed', data: [182, 291, 449, 678, 855, 1004, 1255, 1467, 1654] },
+      { pt: 'Seca (O₂), 1.100 °C', en: 'Dry (O₂), 1,100 °C', color: '#c05621', data: [46, 75, 118, 180, 228, 269, 337, 395, 446] },
+      { pt: 'Seca (O₂), 1.000 °C', en: 'Dry (O₂), 1,000 °C', color: '#f6ad55', data: [17, 31, 54, 91, 121, 146, 190, 228, 261] },
+    ],
+    caption: {
+      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove para silício (111), sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce cerca de dez vezes mais rápido, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
+      en: 'Oxide thickness computed with the Deal–Grove model for (111) silicon, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows about ten times faster, and every curve slows once diffusion through the oxide sets the pace.',
+    },
+    sourceIds: ['deal-grove-1965', 'stanford-ee212-oxidation'],
+    slug: 'deal-grove-oxidation',
+  },
+
+  /**
+   * KLA's sampling table, multiplied out: the share of all wafers that get each check is the share
+   * of lots sampled times the wafers measured out of a 25-wafer lot. Derived from that table, so it
+   * cites it.
+   */
+  'metrology-sampling': {
+    id: 'metrology-sampling',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Fatia (%)', en: 'Share (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'Metrologia: lotes amostrados', en: 'Metrology: lots sampled' },
+      { pt: 'Metrologia: wafers medidos por lote', en: 'Metrology: wafers measured per lot' },
+      { pt: 'Metrologia: todos os wafers', en: 'Metrology: all wafers' },
+      { pt: 'Inspeção: lotes amostrados', en: 'Inspection: lots sampled' },
+      { pt: 'Inspeção: wafers inspecionados por lote', en: 'Inspection: wafers inspected per lot' },
+      { pt: 'Inspeção: todos os wafers', en: 'Inspection: all wafers' },
+    ],
+    datasets: [
+      {
+        pt: 'Piso',
+        en: 'Lower bound',
+        color: '#2b6cb0',
+        grouped: false,
+        data: [100, 8, 8, 10, 4, 0.4],
+      },
+      {
+        pt: 'Faixa publicada',
+        en: 'Published range',
+        color: '#90cdf4',
+        grouped: false,
+        data: [null, [8, 20], [8, 20], [10, 33], [4, 20], [0.4, 6.6]],
+      },
+    ],
+    caption: {
+      pt: 'Quanto da produção a fábrica mede, segundo a tabela de amostragem da KLA, com lotes de 25 wafers. A metrologia vê todo lote, mas só 2 a 5 wafers de cada um; a inspeção de defeitos vê 10 a 33 % dos lotes, com 1 a 5 wafers. As linhas "todos os wafers" multiplicam as duas anteriores e são derivadas da tabela, não publicadas nela.',
+      en: 'How much of the output a fab measures, according to KLA\'s sampling table, with 25-wafer lots. Metrology sees every lot but only 2 to 5 wafers of each; defect inspection sees 10 to 33% of lots, with 1 to 5 wafers. The "all wafers" rows multiply the two rows above them and are derived from the table, not published in it.',
+    },
+    sourceIds: ['kla-msa', 'semieng-cycle-time'],
+    slug: 'metrology-sampling',
+  },
+
+  /**
+   * Dielectric constants between the wires. Ranges where the source gives a range; air gap is the
+   * effective k of the measured structures, not of a material.
+   */
+  'low-k-dielectric': {
+    id: 'low-k-dielectric',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Constante dielétrica k', en: 'Dielectric constant k' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'SiO₂', en: 'SiO₂' },
+      { pt: 'SiOF', en: 'SiOF' },
+      { pt: 'SiCOH', en: 'SiCOH' },
+      { pt: 'Air gap (k efetivo medido)', en: 'Air gap (measured effective k)' },
+      { pt: 'Ar', en: 'Air' },
+    ],
+    datasets: [
+      {
+        pt: 'Valor ou piso',
+        en: 'Value or lower bound',
+        color: '#805ad5',
+        grouped: false,
+        data: [4.0, 3.5, 2.2, 2.1, 1.0],
+      },
+      {
+        pt: 'Faixa publicada',
+        en: 'Published range',
+        color: '#b794f4',
+        grouped: false,
+        data: [null, [3.5, 3.8], [2.2, 3.2], [2.1, 2.2], null],
+      },
+    ],
+    caption: {
+      pt: 'A constante dielétrica do isolante entre os fios, do SiO₂ ao ar. Quanto menor o k, menor a capacitância entre fios vizinhos e menor o atraso. A linha do air gap é o k efetivo medido em estruturas reais com vazios entre os fios; a barra escura vai até o valor ou o piso, e o trecho claro acrescenta a faixa publicada.',
+      en: 'The dielectric constant of the insulator between the wires, from SiO₂ to air. A lower k means lower capacitance between neighbouring wires and less delay. The air-gap row is the effective k measured on real structures with voids between the wires; the dark bar reaches the value or lower bound, and the light segment adds the published range.',
+    },
+    sourceIds: ['cu-interconnect-review', 'air-gap-keff', 'hollow-airgap'],
+    slug: 'low-k-dielectric',
+  },
 }
 
 export const chartIds = Object.keys(CHARTS)
