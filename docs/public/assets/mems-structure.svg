@@ -10,7 +10,7 @@
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
   </style>
 
-  <text class="h" x="40" y="40">Silicon MEMS: a released cantilever over an etched cavity</text>
+  <text class="h" x="40" y="40">Silicon MEMS cantilever over an etched cavity</text>
 
   <!-- substrate with the cavity etched into its top face -->
   <path class="sub" d="M 60,210 L 290,210 L 361,310 L 619,310 L 690,210 L 840,210 L 840,400 L 60,400 Z" />

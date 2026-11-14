@@ -34,16 +34,16 @@
     .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
-    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1d2430; }
-    .vessel { fill: #eef2f7; stroke: #718096; stroke-width: 3; }
-    .steel { fill: #a8b3c2; stroke: #718096; stroke-width: 2; }
+    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1a202c; }
+    .vessel { fill: #edf2f7; stroke: #718096; stroke-width: 3; }
+    .steel { fill: #a0aec0; stroke: #718096; stroke-width: 2; }
     .gas { fill: none; stroke: #2b6cb0; stroke-width: 2.4; }
     .gran { fill: none; stroke: #2f855a; stroke-width: 2.4; }
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
     .bubble { fill: #ffffff; opacity: 0.5; }
   </style>
 
-  <text class="h" x="40" y="38">Fluidized bed reactor: growing granules from the gas</text>
+  <text class="h" x="40" y="38">Fluidized bed reactor</text>
 
   <!-- ===================== seed feed hopper ===================== -->
   <path class="steel" d="M352,88 L448,88 L432,140 L368,140 Z" />

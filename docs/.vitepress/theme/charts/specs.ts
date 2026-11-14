@@ -424,6 +424,37 @@ export const CHARTS: Record<string, ChartSpec> = {
     sourceIds: ['cset-packaging'],
     slug: 'advanced-packaging-share',
   },
+
+  /**
+   * Bandwidth per HBM stack. The JEDEC bars are the standards' own figures (the table beside the
+   * chart); the vendor bars are the first products each company announced at that generation, which
+   * ran ahead of the spec (SK hynix's HBM2E at 3.6 Gb/s against JEDEC's 3.2). Micron gives "more than
+   * 1.2 TB/s", drawn at 1,200. No projection is drawn.
+   */
+  'hbm-bandwidth': {
+    id: 'hbm-bandwidth',
+    type: 'bar',
+    xLabel: { pt: 'Geração', en: 'Generation' },
+    yLabel: { pt: 'Banda por pilha (GB/s)', en: 'Bandwidth per stack (GB/s)' },
+    labels: [
+      { pt: 'HBM (2015)', en: 'HBM (2015)' },
+      { pt: 'HBM2 (2016)', en: 'HBM2 (2016)' },
+      { pt: 'HBM2E (2020)', en: 'HBM2E (2020)' },
+      { pt: 'HBM3 (2022)', en: 'HBM3 (2022)' },
+      { pt: 'HBM3E (2024)', en: 'HBM3E (2024)' },
+      { pt: 'HBM4 (2025)', en: 'HBM4 (2025)' },
+    ],
+    datasets: [
+      { pt: 'Padrão JEDEC', en: 'JEDEC standard', color: '#2b6cb0', grouped: false, data: [null, 256, null, 819, null, 2000] },
+      { pt: 'Produto anunciado pelo fabricante', en: 'Vendor product', color: '#90cdf4', grouped: false, data: [128, null, 460, null, 1200, null] },
+    ],
+    caption: {
+      pt: 'Banda por pilha de HBM em cada geração. As barras escuras são os padrões da JEDEC; as claras, os primeiros produtos anunciados por AMD, SK hynix e Micron, que às vezes passam do padrão. Cada geração dobra algo: a taxa por pino, a largura da interface ou o número de canais.',
+      en: 'Bandwidth per HBM stack at each generation. The dark bars are the JEDEC standards; the light ones are the first products announced by AMD, SK hynix and Micron, which sometimes run ahead of the standard. Each generation doubles something: the per-pin rate, the interface width or the channel count.',
+    },
+    sourceIds: ['anandtech-hbm1', 'jedec-hbm2', 'skhynix-hbm2e', 'jedec-hbm3', 'micron-hbm3e', 'jedec-hbm4'],
+    slug: 'hbm-bandwidth',
+  },
 }
 
 export const chartIds = Object.keys(CHARTS)

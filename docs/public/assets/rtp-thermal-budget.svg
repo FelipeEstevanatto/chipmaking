@@ -7,10 +7,10 @@
     .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
-    .m { font: 600 16.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1d2430; }
+    .m { font: 600 16.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1a202c; }
     .grid { stroke: #cbd5e0; stroke-width: 1.1; stroke-dasharray: 6 5; }
     .axis { stroke: #4a5568; stroke-width: 1.4; }
-    .band { fill: #fef3e2; stroke: #f6ad55; stroke-width: 1.1; }
+    .band { fill: #fbd9b5; stroke: #f6ad55; stroke-width: 1.1; }
     .furnace { fill: none; stroke: #2b6cb0; stroke-width: 2.6; stroke-linejoin: round; }
     .rtp { fill: none; stroke: #c53030; stroke-width: 2.6; stroke-linejoin: round; }
   </style>
@@ -19,7 +19,7 @@
 
   <!-- temperature window in which oxygen clusters become thermal donors -->
   <rect class="band" x="110" y="290" width="810" height="16" />
-  <text class="sm" x="130" y="284" fill="#7b341e">oxygen thermal donors form here (~450 &#176;C)</text>
+  <text class="sm" x="130" y="284" fill="#c05621">oxygen thermal donors form here (~450 &#176;C)</text>
 
   <!-- temperature axis, shared by both panels -->
   <line class="axis" x1="110" y1="142" x2="110" y2="400" />

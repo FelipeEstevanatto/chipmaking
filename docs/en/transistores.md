@@ -165,8 +165,8 @@ The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundrie
 
 <TransistorFacts year="2022" />
 
-<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Two views of the GAAFET: left, the stacked nanosheets with the gate crossing them; right, a section through the gate, with the oxide and the gate wrapping each sheet on all four sides">
-Stacked nanosheets, with the gate wrapping all four faces of each one.
+<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Two views of the GAAFET: left, three stacked nanosheets running from a source block to a drain block through the gate, with the drain drawn cut away; right, a section through the gate, with the oxide and the gate wrapping each sheet on all four sides">
+Stacked nanosheets run from source to drain through the gate, which wraps all four faces of each one. The drain is drawn cut away so the sheets show where they end. Author's diagram, not to scale.
 </DiagramFigure>
 
 At 3 nm and below, FinFETs hit limits of variability and quantum effects. GAAFET stacks nanosheets wrapped by the gate on all four sides. Samsung, TSMC and Intel have announced they will adopt GAA at their next nodes <Cite id="asml-gaa" />. The electrostatic control is superior, and the nanosheet width can be tuned to favour performance or power.
@@ -201,8 +201,8 @@ Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented a
 
 <TransistorFacts year="Futuro" />
 
-<DiagramFigure src="/assets/cfet.svg" alt="Comparison of an NFET and PFET side by side with a stacked CFET">
-NFET and PFET in the same cell, stacked instead of side by side.
+<DiagramFigure src="/assets/cfet.svg" alt="Two sections through the gate: on the left, a pFET stack and an nFET stack side by side, each in its own gate, across a cell width W; on the right, a CFET with the nFET sheets above the pFET sheets in one shared gate, separated by an isolation layer, across about W/2">
+NFET and PFET in the same cell, stacked under one shared gate instead of side by side. Author's diagram, not to scale.
 </DiagramFigure>
 
 Below 1 nm (the angstrom era), CFET (Complementary FET) stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the A7 node, after 2030 <Cite id="imec-forksheet" />.

@@ -41,7 +41,6 @@
   </style>
 
   <text class="h" x="40" y="38">Strained silicon on SiGe</text>
-  <text class="note" x="40" y="64">The SiGe lattice pulls the silicon layer apart.</text>
 
   <rect class="panel" x="20" y="80" width="440" height="320" rx="10" />
   <rect class="panel" x="480" y="80" width="460" height="320" rx="10" />
@@ -133,7 +132,7 @@
   <text class="note" x="224" y="346">a(SiGe)</text>
   <text class="t" x="50" y="322">Si</text>
   <text class="t" x="220" y="374">SiGe</text>
-  <text class="note" x="40" y="394">SiGe atoms sit further apart.</text>
+  <text class="note" x="40" y="394">wider spacing in SiGe</text>
   <text class="pt" x="500" y="110">2. Silicon grown on SiGe</text>
   <line class="bondSi" x1="560.0" y1="150.0" x2="612.0" y2="150.0" />
   <line class="bondSi" x1="560.0" y1="150.0" x2="560.0" y2="180.0" />
@@ -192,8 +191,8 @@
   <path class="strain" d="M 730,165 L 770,165" marker-end="url(#arrowRed)" />
   <text class="val" x="780" y="196">tensile strain</text>
   <path class="lead" d="M 772,172 L 780,190" />
-  <text class="note" x="500" y="376">The Si layer takes the SiGe spacing.</text>
-  <text class="pt" x="40" y="442">3. Electron path through the channel</text>
+  <text class="note" x="500" y="376">Si takes the SiGe spacing</text>
+  <text class="pt" x="40" y="442">3. Channel</text>
   <rect x="70" y="500" width="340" height="100" fill="#f7fafc" stroke="#a0aec0" />
   <rect x="80" y="520" width="70" height="80" fill="#a0aec0" stroke="#718096" />
   <rect x="330" y="520" width="70" height="80" fill="#a0aec0" stroke="#718096" />
@@ -233,5 +232,5 @@
   <circle cx="740.0" cy="610.0" r="10" fill="url(#siAtom)" stroke="#7d8b9c" stroke-width="1.2" />
   <path class="path" d="M 500,595 L 800,595" marker-end="url(#arrowBlue)" />
   <circle cx="500" cy="595" r="5" fill="url(#electronAtom)" stroke="#2b6cb0" />
-  <text class="note" x="500" y="644">same time, longer path: higher mobility</text>
+  <text class="note" x="500" y="644">higher electron mobility</text>
 </svg>

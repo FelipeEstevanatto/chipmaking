@@ -26,12 +26,12 @@
     .refl { stroke: #805ad5; stroke-width: 1.5; fill: none; opacity: 0.75; }
     .out { stroke: #805ad5; stroke-width: 4.4; fill: none; stroke-linecap: round; }
     .bx { fill: #edf2f7; stroke: #a0aec0; stroke-width: 1.5; }
-    .bx2 { fill: #faf5ff; stroke: #805ad5; stroke-width: 1.8; }
+    .bx2 { fill: #f7fafc; stroke: #805ad5; stroke-width: 1.8; }
     .chain { stroke: #4a5568; stroke-width: 2.6; fill: none; }
     .num { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
   </style>
 
-  <text class="h" x="40" y="34">The EUV mirror: a stack of molybdenum and silicon</text>
+  <text class="h" x="40" y="34">EUV mirror, Mo/Si multilayer</text>
 
   <text class="sec" x="40" y="96">A Bragg reflector is around 50 layer pairs</text>
 

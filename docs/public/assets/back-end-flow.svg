@@ -23,7 +23,7 @@
     .ok { stroke: #2f855a; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
   </style>
 
-  <text class="h" x="40" y="36">From a wafer to a part you can solder</text>
+  <text class="h" x="40" y="36">Back-end flow, wafer to packaged part</text>
 
   <!-- 1 wafer -->
   <circle class="si" cx="120" cy="176" r="50" />

@@ -56,9 +56,8 @@
   <rect class="stage" x="157" y="232" width="180" height="10" />
   <path class="lead" d="M 340,188 L 356,188" />
   <text class="lbl" x="360" y="194">in contact</text>
-  <text class="note" x="247" y="272" text-anchor="middle">No optics between the mask and the wafer.</text>
-  <text class="note" x="247" y="294" text-anchor="middle">The mask touches the resist, so the gap is near zero.</text>
-  <text class="note" x="247" y="316" text-anchor="middle">It wears the mask and contaminates the wafer.</text>
+  <text class="note" x="247" y="272" text-anchor="middle">no optics, gap near zero</text>
+  <text class="note" x="247" y="294" text-anchor="middle">mask wear, wafer contamination</text>
 
   <!-- === 2. proximity printing === -->
   <text class="pt" x="713" y="44" text-anchor="middle">Proximity printing</text>
@@ -87,9 +86,8 @@
   <path class="lead" d="M 803,160 L 819,160" />
   <path class="lead" d="M 803,188 L 819,188" />
   <text class="lbl" x="824" y="180">air gap</text>
-  <text class="note" x="713" y="272" text-anchor="middle">The air gap ends the wear of contact.</text>
-  <text class="note" x="713" y="294" text-anchor="middle">Diffraction spreads the light: the image blurs.</text>
-  <text class="note" x="713" y="316" text-anchor="middle">Resolution drops, but the mask survives.</text>
+  <text class="note" x="713" y="272" text-anchor="middle">no mask wear</text>
+  <text class="note" x="713" y="294" text-anchor="middle">diffraction blurs the image</text>
 
   <!-- ==================================================================
        ROW 2. Projection and the stepper. The resist sits at y=512 in both
@@ -121,9 +119,8 @@
   <rect class="stage" x="157" y="556" width="180" height="10" />
   <path class="lead" d="M 340,452 L 356,452" />
   <text class="lbl" x="360" y="458">1:1 mask</text>
-  <text class="note" x="247" y="606" text-anchor="middle">The mask is wafer-sized: every die at once.</text>
-  <text class="note" x="247" y="628" text-anchor="middle">No contact, so the mask lasts and defects fall.</text>
-  <text class="note" x="247" y="650" text-anchor="middle">The optics cover the wafer, not just one field.</text>
+  <text class="note" x="247" y="606" text-anchor="middle">wafer-sized mask, all dies at once</text>
+  <text class="note" x="247" y="628" text-anchor="middle">no contact, fewer defects</text>
 
   <!-- === 4. reduction stepper === -->
   <text class="pt" x="713" y="372" text-anchor="middle">Reduction stepper</text>
@@ -149,7 +146,6 @@
   <rect class="stage" x="623" y="556" width="180" height="10" />
   <path class="lead" d="M 766,488 L 790,488" />
   <text class="lbl" x="794" y="494">10&#215; reduction</text>
-  <text class="note" x="713" y="606" text-anchor="middle">The reticle is bigger than the image: 10&#215; reduction.</text>
-  <text class="note" x="713" y="628" text-anchor="middle">One field at a time: 10 &#215; 10 mm in 1978.</text>
-  <text class="note" x="713" y="650" text-anchor="middle">It won on cost per good die, not on throughput.</text>
+  <text class="note" x="713" y="606" text-anchor="middle">one 10 &#215; 10 mm field at a time (1978)</text>
+  <text class="note" x="713" y="628" text-anchor="middle">lower cost per good die</text>
 </svg>

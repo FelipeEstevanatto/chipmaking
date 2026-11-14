@@ -11,13 +11,13 @@
     .curve { fill: none; stroke: #2b6cb0; stroke-width: 3; }
     .ret { stroke: #c53030; stroke-width: 2; stroke-dasharray: 7 5; }
     .ptM { fill: #c53030; stroke: #ffffff; stroke-width: 2; }
-    .ptC { fill: #38a169; stroke: #ffffff; stroke-width: 2; }
+    .ptC { fill: #48bb78; stroke: #ffffff; stroke-width: 2; }
     .labM { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
     .labC { font: 600 16px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #276749; }
     .lbl { font: 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #2d3748; }
   </style>
 
-  <text class="h" x="40" y="36">Why one big die loses to four small ones</text>
+  <text class="h" x="40" y="36">Yield of one large die and four chiplets</text>
 
   <line class="grid" x1="130" y1="110" x2="880" y2="110" />
   <line class="grid" x1="130" y1="182.5" x2="880" y2="182.5" />

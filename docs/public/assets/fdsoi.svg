@@ -42,7 +42,7 @@
   <rect class="gate" x="155" y="192" width="90" height="36" />
   <text class="inv" x="200" y="215" text-anchor="middle">gate</text>
 
-  <text class="note" x="200" y="378" text-anchor="middle">partially depleted: the body floats</text>
+  <text class="note" x="200" y="378" text-anchor="middle">partially depleted, floating body</text>
 
   <!-- ================= RIGHT: fully depleted (UTBB) ================= -->
   <rect class="si" x="420" y="302" width="280" height="54" />

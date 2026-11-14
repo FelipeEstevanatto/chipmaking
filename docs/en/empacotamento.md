@@ -194,9 +194,9 @@ HBM is a JEDEC standard, and the evolution of its versions is the history of the
 
 <Cite id="jedec-hbm2" /> <Cite id="jedec-hbm3" /> <Cite id="jedec-hbm4" />
 
-<DiagramFigure src="/assets/hbm-bandwidth.svg" alt="Bar chart of bandwidth per HBM stack, from 128 gigabytes per second in the first generation to about 2,048 in HBM4 and a projected 4,096 for HBM4E, with JEDEC-numbered standards highlighted">
-Each generation doubles something: the per-pin rate, the interface width or the channel count. The compound result is the jump visible in the chart.
-</DiagramFigure>
+<ClientOnly>
+  <DataChart chart="hbm-bandwidth" />
+</ClientOnly>
 
 HBM4 shows why this memory cannot be a plug-in module. The standard doubles the interface from 1,024 to 2,048 bits and the channels from 16 to 32 per stack, with speeds up to 8 Gb/s, dies of 24 or 32 Gb in 4-, 8-, 12- or 16-high stacks, and up to 64 GB per cube <Cite id="jedec-hbm4" />.
 
@@ -292,7 +292,7 @@ And there is a third, more recent figure that explains why the subject stopped b
 
 A bottleneck that is small in value can be large in consequence. That is what happened to packaging: for decades the cheap step at the end of the line, it is now the step that decides how many AI chips the world can assemble.
 
-<SourceNote label="Sources" :ids="['semiprobe-wafer-test', 'cadence-kgd', 'advantest-ir', 'itrs-2015-test', 'itrs-2013-test', 'teradyne-slt', 'ku-dicing-sop', 'disco-dad3221', 'disco-thin-wafer', 'ectc-2016-dicing', 'mdpi-singulation-hbm', 'hamamatsu-stealth', 'imaps-plasma-dicing', 'pdbg-dicing', 'ieee-die-strength', 'semieng-wirebond', 'semieng-wirebond2', 'pmc-bonding-wire', 'inseto-wire-guide', 'imaps-cu-wire', 'semi-gspmo-2020', 'gold-bulletin-ball-bonds', 'wiley-packaging-ch3', 'totta-flipchip', 'springer-flipchip-history', 'semieng-flipchip-bumps', 'synopsys-cu-pillar', 'fue-packaging-roadmap', 'tsmc-cowos', 'tsmc-2x-cowos', 'semieng-tsv', 'semieng-bump-pitch', 'imec-hybrid-bonding', 'imec-d2w-hb', 'intel-foveros-direct', 'jedec-hbm2', 'jedec-hbm3', 'jedec-hbm4', 'rambus-hbm', 'semianalysis-hbm', 'ectc-cowos-s5', 'amd-chiplet-economics', 'ucie-formation', 'ucie-3', 'anysilicon-wafer-sort', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'semieng-binning', 'bit-tech-binning', 'gamersnexus-binning', 'siliconlottery-stats', 'tomshardware-8086k', 'macworld-binning', 'extremetech-rx460', 'semiaccurate-fermi-clusters', 'semiaccurate-fermi-yields', 'semiaccurate-fermi-silicon', 'semiaccurate-fermi-clocks', 'anandtech-gtx480', 'anandtech-gtx580', 'cset-packaging', 'itrs-assembly', 'yole-advanced-packaging', 'tsmc-q3-2024']" />
+<SourceNote label="Sources" :ids="['semiprobe-wafer-test', 'cadence-kgd', 'advantest-ir', 'itrs-2015-test', 'itrs-2013-test', 'teradyne-slt', 'ku-dicing-sop', 'disco-dad3221', 'disco-thin-wafer', 'ectc-2016-dicing', 'mdpi-singulation-hbm', 'hamamatsu-stealth', 'imaps-plasma-dicing', 'pdbg-dicing', 'ieee-die-strength', 'semieng-wirebond', 'semieng-wirebond2', 'pmc-bonding-wire', 'inseto-wire-guide', 'imaps-cu-wire', 'semi-gspmo-2020', 'gold-bulletin-ball-bonds', 'wiley-packaging-ch3', 'totta-flipchip', 'springer-flipchip-history', 'semieng-flipchip-bumps', 'synopsys-cu-pillar', 'fue-packaging-roadmap', 'tsmc-cowos', 'tsmc-2x-cowos', 'semieng-tsv', 'semieng-bump-pitch', 'imec-hybrid-bonding', 'imec-d2w-hb', 'intel-foveros-direct', 'jedec-hbm2', 'jedec-hbm3', 'jedec-hbm4', 'anandtech-hbm1', 'skhynix-hbm2e', 'micron-hbm3e', 'rambus-hbm', 'semianalysis-hbm', 'ectc-cowos-s5', 'amd-chiplet-economics', 'ucie-formation', 'ucie-3', 'anysilicon-wafer-sort', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'semieng-binning', 'bit-tech-binning', 'gamersnexus-binning', 'siliconlottery-stats', 'tomshardware-8086k', 'macworld-binning', 'extremetech-rx460', 'semiaccurate-fermi-clusters', 'semiaccurate-fermi-yields', 'semiaccurate-fermi-silicon', 'semiaccurate-fermi-clocks', 'anandtech-gtx480', 'anandtech-gtx580', 'cset-packaging', 'itrs-assembly', 'yole-advanced-packaging', 'tsmc-q3-2024']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'In the fab', href: '/en/na-fab', note: 'where the processed wafer comes from' },

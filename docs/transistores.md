@@ -165,8 +165,8 @@ As plataformas comerciais vieram da STMicroelectronics (28 nm) e da GlobalFoundr
 
 <TransistorFacts year="2022" />
 
-<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Duas vistas do GAAFET: à esquerda, as nanofolhas empilhadas com o portão cruzando-as; à direita, o corte pelo portão, com o óxido e a porta envolvendo cada nanofolha nos quatro lados">
-Nanofolhas empilhadas, com o portão envolvendo as quatro faces de cada uma.
+<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Duas vistas do GAAFET: à esquerda, três nanofolhas empilhadas que vão de um bloco de fonte a um bloco de dreno atravessando o portão, com o dreno desenhado em corte; à direita, o corte pelo portão, com o óxido e a porta envolvendo cada nanofolha nos quatro lados">
+As nanofolhas empilhadas vão da fonte ao dreno atravessando o portão, que envolve as quatro faces de cada uma. O dreno aparece em corte para mostrar onde as folhas terminam. Diagrama do autor, fora de escala.
 </DiagramFigure>
 
 Em 3 nm e abaixo, FinFETs encontram limites de variabilidade e efeitos quânticos. GAAFET empilha nanofolhas envolvidas pelo portão nos quatro lados. Samsung, TSMC e Intel anunciaram a adoção do GAA nos próximos nós <Cite id="asml-gaa" />. O controle eletrostático é superior e a largura das nanofolhas pode ser ajustada para privilegiar desempenho ou consumo.
@@ -201,8 +201,8 @@ A imec demonstrou o processo em wafers de 300 mm em 2021 e, em 2025, apresentou 
 
 <TransistorFacts year="Futuro" />
 
-<DiagramFigure src="/assets/cfet.svg" alt="Comparação entre NFET e PFET lado a lado e um CFET empilhado">
-NFET e PFET na mesma célula, empilhados em vez de lado a lado.
+<DiagramFigure src="/assets/cfet.svg" alt="Dois cortes pelo portão: à esquerda, uma pilha pFET e uma pilha nFET lado a lado, cada uma com seu portão, numa largura de célula W; à direita, um CFET com as folhas nFET sobre as folhas pFET num único portão compartilhado, separadas por uma camada de isolamento, em cerca de W/2">
+NFET e PFET na mesma célula, empilhados sob um portão compartilhado em vez de lado a lado. Diagrama do autor, fora de escala.
 </DiagramFigure>
 
 Abaixo de 1 nm (era angstrom), CFET (Complementary FET) empilha verticalmente NFET e PFET na mesma célula, reduzindo a área por porta lógica (inversores, SRAM) e estendendo a Lei de Moore além de GAAFET convencional. Como o empilhamento é muito mais complexo de fabricar, a imec só projeta produção em massa a partir do nó A7, depois de 2030 <Cite id="imec-forksheet" />.

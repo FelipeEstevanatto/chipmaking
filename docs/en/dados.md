@@ -83,6 +83,7 @@ Every chart on the site also exists as a data file, generated from the **same de
 - [Low-k dielectric constants](/data/low-k-dielectric.csv)
 - [Value split of a chip](/data/chip-value-split.csv)
 - [Advanced-packaging share](/data/advanced-packaging-share.csv)
+- [HBM bandwidth per stack](/data/hbm-bandwidth.csv)
 
 The script `scripts/export-chart-data.ts` rewrites all of them from `docs/.vitepress/theme/charts/specs.ts`, so the chart and the CSV cannot drift apart.
 

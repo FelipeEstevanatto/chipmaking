@@ -166,58 +166,6 @@
     "style-bold-long": 1,
     "style-commentary": 1
   },
-  "docs/public/assets/chlorine-loop.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/deposition-step-coverage.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/duv-vs-euv.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/etch-anisotropy.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/euv-bragg-mirror.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/fbr-reactor.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/fdsoi.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/high-na-anamorphic.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/implant-profile.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/lithography-generations.svg": {
-    "svg-slogan": 4
-  },
-  "docs/public/assets/mems-structure.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/polysilicon-pork-cycle.svg": {
-    "svg-emdash": 1,
-    "svg-slogan": 2
-  },
-  "docs/public/assets/polysilicon-process.svg": {
-    "svg-emdash": 1
-  },
-  "docs/public/assets/siemens-reactor.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/submerged-arc-furnace.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/wafer-edge-profile.svg": {
-    "svg-slogan": 1
-  },
-  "docs/public/assets/wafer-identification.svg": {
-    "svg-emdash": 4
-  },
   "docs/transistores.md": {
     "style-bold": 1
   }

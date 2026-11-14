@@ -1885,7 +1885,7 @@ const list: Citation[] = [
     num: 234,
     title: "NVIDIA's GeForce GTX 480 and GTX 470: 6 Months Late, Was It Worth the Wait?",
     publisher: 'Ryan Smith — AnandTech (26 March 2010)',
-    url: 'https://www.anandtech.com/show/2977',
+    url: 'https://web.archive.org/web/2024/https://www.anandtech.com/show/2977',
     short: 'AnandTech (GTX 480)',
   },
   {
@@ -1949,7 +1949,7 @@ const list: Citation[] = [
     num: 242,
     title: "NVIDIA's GeForce GTX 580: Fermi Refined",
     publisher: 'Ryan Smith — AnandTech (9 November 2010)',
-    url: 'https://www.anandtech.com/show/4008',
+    url: 'https://web.archive.org/web/2024/https://www.anandtech.com/show/4008',
     short: 'AnandTech (GTX 580)',
   },
   {
@@ -2196,6 +2196,31 @@ const list: Citation[] = [
       'Lin Jones, Sarah Krulikowski, Nathan Lotze & Samantha Schreiber - USITC Economics Working Paper 2023-11-A (November 2023, revised March 2024)',
     url: 'https://www.usitc.gov/publications/332/working_papers/us_exposure_to_the_taiwanese_semiconductor_industry_11-21-2023_508.pdf',
     short: 'USITC (Taiwan exposure, 2023)',
+  },
+  {
+    key: 'anandtech-hbm1',
+    num: 273,
+    title: 'AMD Dives Deep On High Bandwidth Memory: What Will HBM Bring AMD?',
+    publisher: 'Ryan Smith — AnandTech (19 May 2015)',
+    url: 'https://web.archive.org/web/2024/https://www.anandtech.com/show/9266',
+    short: 'AnandTech (HBM, 2015)',
+    note: "Reports AMD's figures for first-generation HBM: 1 Gb/s per pin on a 1,024-bit interface, 128 GB/s per stack.",
+  },
+  {
+    key: 'skhynix-hbm2e',
+    num: 274,
+    title: 'SK hynix Starts Mass-Production of High-Speed DRAM, HBM2E',
+    publisher: 'SK hynix press release, 1 July 2020 (reposted by AIwire)',
+    url: 'https://aiwire.net/2020/07/06/sk-hynix-starts-mass-production-of-high-speed-dram-hbm2e',
+    short: 'SK hynix (HBM2E)',
+  },
+  {
+    key: 'micron-hbm3e',
+    num: 275,
+    title: 'Micron Commences Volume Production of Industry-Leading HBM3E Solution to Accelerate the Growth of AI',
+    publisher: 'Micron Technology press release, 26 February 2024',
+    url: 'https://micron.gcs-web.com/node/46656',
+    short: 'Micron (HBM3E)',
   },
 ]
 

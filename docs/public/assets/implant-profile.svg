@@ -22,7 +22,7 @@
     .dash { stroke: #a0aec0; stroke-width: 1.2; stroke-dasharray: 5 4; }
   </style>
 
-  <text class="h" x="40" y="36">Ion implantation: shooting dopant into the lattice</text>
+  <text class="h" x="40" y="36">Ion implantation and channelling</text>
 
   <text class="pt" x="60" y="100">Geometry</text>
 

@@ -31,7 +31,7 @@ W, H = 1120, 672
 PAPER = '#ffffff'
 INK = '#1a202c'
 INK_SOFT = '#2d3748'
-INK_MONO = '#1d2430'
+INK_MONO = '#1a202c'
 
 
 def pt(cx, cy, r, deg):
@@ -114,20 +114,20 @@ add(f'  <rect width="{W}" height="{H}" fill="{PAPER}" />')
 add('  <style>')
 add(f'    .t {{ font: 600 15.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK}; }}')
 add(f'    .h {{ font: 600 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK}; }}')
-add(f'    .s {{ font: 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK_SOFT}; }}')
-add(f'    .m {{ font: 600 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: {INK_MONO}; }}')
-add(f'    .note {{ font: 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK_SOFT}; }}')
-add('    .wafer { fill: #eef2f7; stroke: #2d3748; stroke-width: 2; }')
-add('    .prim { stroke: #b7470a; stroke-width: 5.5; fill: none; stroke-linecap: round; }')
-add('    .sec { stroke: #1e5fa8; stroke-width: 5.5; fill: none; stroke-linecap: round; }')
+add(f'    .s {{ font: 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK_SOFT}; }}')
+add(f'    .m {{ font: 600 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: {INK_MONO}; }}')
+add(f'    .note {{ font: 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: {INK_SOFT}; }}')
+add('    .wafer { fill: #edf2f7; stroke: #2d3748; stroke-width: 2; }')
+add('    .prim { stroke: #c05621; stroke-width: 5.5; fill: none; stroke-linecap: round; }')
+add('    .sec { stroke: #2b6cb0; stroke-width: 5.5; fill: none; stroke-linecap: round; }')
 add('    .cut { fill: #ffffff; stroke: #2d3748; stroke-width: 2; }')
-add('    .dash { stroke: #5a6675; stroke-width: 1.4; fill: none; stroke-dasharray: 5 4; }')
+add('    .dash { stroke: #4a5568; stroke-width: 1.4; fill: none; stroke-dasharray: 5 4; }')
 add('    .vin { fill: none; stroke: #1a202c; stroke-width: 2.8; stroke-linejoin: round; }')
-add('    .box { fill: none; stroke: #a9b4c2; stroke-width: 1.3; }')
+add('    .box { fill: none; stroke: #a0aec0; stroke-width: 1.3; }')
 add('  </style>')
 
 # ------------------------------------------------------- flats (150 mm and below)
-add(f'  <text class="h" x="28" y="32">Wafers with flats {MDASH} 150 mm and smaller</text>')
+add(f'  <text class="h" x="28" y="32">Wafers with flats (150 mm and smaller)</text>')
 
 for (typ, orient, sec_at, desc), cx in zip(configs, CXS):
     flats = [PRIMARY] if sec_at is None else [PRIMARY, (90.0 + sec_at, SEC_HALF)]
@@ -139,12 +139,12 @@ for (typ, orient, sec_at, desc), cx in zip(configs, CXS):
     add(f'  <text class="s" x="{cx}" y="292" text-anchor="middle">{desc}</text>')
 
 add('  <line class="prim" x1="28" y1="326" x2="56" y2="326" />')
-add(f'  <text class="s" x="64" y="330">primary flat {MDASH} crystal reference</text>')
+add(f'  <text class="s" x="64" y="330">primary flat, crystal reference</text>')
 add('  <line class="sec" x1="530" y1="326" x2="558" y2="326" />')
-add(f'  <text class="s" x="566" y="330">secondary flat {MDASH} orientation + doping type</text>')
+add(f'  <text class="s" x="566" y="330">secondary flat, orientation and doping type</text>')
 
 # ------------------------------------------------------- notch (200 / 300 mm)
-add(f'  <text class="h" x="28" y="372">Wafers with a notch {MDASH} 200 mm and 300 mm</text>')
+add(f'  <text class="h" x="28" y="372">Wafers with a notch (200 mm and 300 mm)</text>')
 
 ly = cyc + math.sqrt(rc * rc - NW * NW)
 apex_y = ly - ND
@@ -168,15 +168,14 @@ add('  <text class="s" x="530" y="572" text-anchor="middle">1.00 mm deep (SEMI M
 
 # annotation column
 ax = 664
-add(f'  <text class="t" x="{ax}" y="418">What the notch tells you</text>')
-add(f'  <text class="s" x="{ax}" y="446">Its axis is aligned to {LT}110{GT} within {PM}1{DEG}, so the</text>')
-add(f'  <text class="s" x="{ax}" y="464">tools know where the lattice rests under the pattern.</text>')
-add(f'  <text class="s" x="{ax}" y="482">That is all it encodes.</text>')
-add(f'  <text class="t" x="{ax}" y="516">What it does not tell you</text>')
-add(f'  <text class="s" x="{ax}" y="544">A notched wafer has no secondary fiducial, so the</text>')
-add(f'  <text class="s" x="{ax}" y="562">notch carries no doping type. P or N comes from the</text>')
-add(f'  <text class="s" x="{ax}" y="580">certificate, or from the laser mark on the back:</text>')
-add(f'  <text class="s" x="{ax}" y="598">SEMI T7, with an optional A/N field.</text>')
+add(f'  <text class="t" x="{ax}" y="418">Notch encodes</text>')
+add(f'  <text class="s" x="{ax}" y="446">axis along {LT}110{GT}, within {PM}1{DEG}</text>')
+add(f'  <text class="s" x="{ax}" y="464">lattice orientation only</text>')
+add(f'  <text class="t" x="{ax}" y="516">Not encoded</text>')
+add(f'  <text class="s" x="{ax}" y="544">doping type (no second fiducial)</text>')
+add(f'  <text class="s" x="{ax}" y="562">P or N from the certificate</text>')
+add(f'  <text class="s" x="{ax}" y="580">or the laser mark on the back</text>')
+add(f'  <text class="s" x="{ax}" y="598">(SEMI T7, optional A/N field)</text>')
 
 add('</svg>')
 

@@ -18,17 +18,17 @@
     .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
-    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1d2430; }
+    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1a202c; }
     .chem { fill: #e9d8fd; stroke: #6b46c1; stroke-width: 2; }
     .solid { fill: #edf2f7; stroke: #a0aec0; stroke-width: 2; }
-    .dep { fill: #bee3f8; stroke: #2b6cb0; stroke-width: 2; }
+    .dep { fill: #b9d9f5; stroke: #2b6cb0; stroke-width: 2; }
     .out { fill: #c6f6d5; stroke: #2f855a; stroke-width: 2; }
     .flow { fill: none; stroke: #718096; stroke-width: 2.4; }
     .back { fill: none; stroke: #2f855a; stroke-width: 2.4; }
     .feed { fill: none; stroke: #c05621; stroke-width: 2.4; }
   </style>
 
-  <text class="h" x="40" y="34">The chlorine loop: what actually gets consumed</text>
+  <text class="h" x="40" y="34">Chlorine loop of polysilicon refining</text>
 
   <!-- ===================== 1. chlorination ===================== -->
   <rect class="chem" x="120" y="100" width="290" height="124" rx="10" />
@@ -55,14 +55,14 @@
   <rect class="out" x="120" y="440" width="290" height="124" rx="10" />
   <text class="t" x="265" y="470" text-anchor="middle">4. Byproduct recycle</text>
   <text class="sm" x="265" y="496" text-anchor="middle">The SiCl4 byproduct is turned</text>
-  <text class="sm" x="265" y="518" text-anchor="middle">back into TCS, not thrown away</text>
+  <text class="sm" x="265" y="518" text-anchor="middle">back into TCS</text>
   <text class="m" x="265" y="546" text-anchor="middle">Si + 3 SiCl4 + 2 H2 &#8594; 4 SiHCl3</text>
 
   <!-- ===================== feed in ===================== -->
   <text class="l" x="30" y="140">MG-Si in</text>
   <path class="feed" d="M30,166 L116,166" marker-end="url(#loopIn)" />
-  <text class="sm" x="30" y="196">the only silicon</text>
-  <text class="sm" x="30" y="222">that is added</text>
+  <text class="sm" x="30" y="254">the only silicon</text>
+  <text class="sm" x="30" y="276">that is added</text>
 
   <!-- ===================== product out ===================== -->
   <path class="flow" d="M735,566 L735,624" marker-end="url(#loopArrow)" />
@@ -83,5 +83,5 @@
   <text class="sm" x="248" y="326" text-anchor="end">recycled TCS</text>
 
   <!-- ===================== the point ===================== -->
-  <text class="t" x="499" y="300" text-anchor="middle">Nothing is burnt up</text>
+  <text class="t" x="499" y="300" text-anchor="middle">closed chlorine loop</text>
 </svg>

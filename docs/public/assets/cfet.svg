@@ -1,61 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" role="img">
-  <title>Side-by-side NFET and PFET versus a stacked complementary FET (CFET)</title>
-  <desc>Two transistor arrangements side by side. Left: NFET and PFET next to each other. Right: the same pair stacked, with the PFET above the NFET. Not to scale.</desc>
-  <rect width="800" height="400" fill="#ffffff" />
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img">
+  <title>Side-by-side nFET and pFET nanosheet stacks compared with a complementary FET (CFET), where the nFET stack sits on top of the pFET stack under one shared gate</title>
+  <desc>Two sections through the gate. Left: a pFET stack and an nFET stack, each three sheets inside its own gate, standing side by side on the substrate, with the cell width W marked below. Right: a CFET, three nFET sheets above three pFET sheets in a single gate column, separated by an isolation layer, with a footprint of about W/2. Schematic, not to scale.</desc>
+  <rect width="960" height="520" fill="#ffffff" />
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096" />
+    </marker>
+  </defs>
   <style>
-    .lbl { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .lbl-inv { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
-    .note { font: 13px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
-    .head { font: 600 14px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
-    .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1; }
-    .chan { fill: #63b3ed; stroke: #2b6cb0; stroke-width: 1; }
-    .si { fill: #cbd5e0; stroke: #a0aec0; stroke-width: 1; }
-    .dim { fill: none; stroke: #718096; stroke-width: 1.3; }
-    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
+    .pt { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .lbl { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .dimt { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
+    .gate { fill: #4a5568; stroke: #2d3748; stroke-width: 1.3; }
+    .n { fill: #63b3ed; stroke: #2b6cb0; stroke-width: 1.3; }
+    .p { fill: #f6ad55; stroke: #c05621; stroke-width: 1.3; }
+    .iso { fill: #805ad5; stroke: #553c9a; stroke-width: 1.2; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
     .divider { stroke: #cbd5e0; stroke-width: 1.5; stroke-dasharray: 6 5; }
   </style>
 
-  <text class="head" x="210" y="38" text-anchor="middle">side by side</text>
-  <text class="head" x="585" y="38" text-anchor="middle">CFET (stacked)</text>
-  <line class="divider" x1="400" y1="56" x2="400" y2="340" />
-
-  <!-- ================= LEFT ================= -->
-  <rect class="si" x="70" y="280" width="280" height="60" />
-  <text class="lbl" x="210" y="316" text-anchor="middle">Si</text>
-
-  <!-- PFET -->
-  <rect class="chan" x="95" y="225" width="110" height="55" />
-  <rect class="gate" x="110" y="185" width="80" height="40" />
-  <text class="lbl-inv" x="150" y="257" text-anchor="middle">PFET</text>
-  <text class="lbl-inv" x="150" y="211" text-anchor="middle">gate</text>
-
-  <!-- NFET -->
-  <rect class="chan" x="225" y="225" width="110" height="55" />
-  <rect class="gate" x="240" y="185" width="80" height="40" />
-  <text class="lbl-inv" x="280" y="257" text-anchor="middle">NFET</text>
-  <text class="lbl-inv" x="280" y="211" text-anchor="middle">gate</text>
-
-  <path class="dim" d="M95,368 L335,368" />
-  <path class="dim" d="M95,361 L95,375" />
-  <path class="dim" d="M335,361 L335,375" />
-  <text class="note" x="215" y="362" text-anchor="middle">W</text>
-
-  <!-- ================= RIGHT ================= -->
-  <rect class="si" x="525" y="290" width="120" height="50" />
-  <text class="lbl" x="585" y="321" text-anchor="middle">Si</text>
-
-  <!-- gate wrapping both stacked channels -->
-  <rect class="gate" x="525" y="180" width="120" height="110" />
-  <rect class="chan" x="539" y="192" width="92" height="24" />
-  <rect class="chan" x="539" y="252" width="92" height="24" />
-  <text class="lbl-inv" x="585" y="209" text-anchor="middle">NFET</text>
-  <text class="lbl-inv" x="585" y="269" text-anchor="middle">PFET</text>
-
-  <text class="note" x="676" y="239" text-anchor="end">gate</text>
-  <path class="lead" d="M672,235 L648,235" />
-
-  <path class="dim" d="M525,368 L645,368" />
-  <path class="dim" d="M525,361 L525,375" />
-  <path class="dim" d="M645,361 L645,375" />
-  <text class="note" x="585" y="362" text-anchor="middle">~ W/2</text>
+  <text class="pt" x="240" y="40" text-anchor="middle">Side by side</text>
+  <text class="pt" x="720" y="40" text-anchor="middle">CFET, stacked</text>
+  <line class="divider" x1="480" y1="60" x2="480" y2="490" />
+  <rect class="gate" x="90" y="230" width="110" height="170" />
+  <rect class="p" x="112" y="254" width="66" height="22" />
+  <rect class="p" x="112" y="300" width="66" height="22" />
+  <rect class="p" x="112" y="346" width="66" height="22" />
+  <rect class="gate" x="280" y="230" width="110" height="170" />
+  <rect class="n" x="302" y="254" width="66" height="22" />
+  <rect class="n" x="302" y="300" width="66" height="22" />
+  <rect class="n" x="302" y="346" width="66" height="22" />
+  <rect class="si" x="60" y="400" width="360" height="34" />
+  <path class="lead" d="M 145,230 L 145,180" />
+  <text class="lbl" x="145" y="172" text-anchor="middle">pFET sheets</text>
+  <path class="lead" d="M 335,230 L 335,180" />
+  <text class="lbl" x="335" y="172" text-anchor="middle">nFET sheets</text>
+  <path class="dim" d="M 90,462 L 390,462" marker-start="url(#arr)" marker-end="url(#arr)" />
+  <text class="dimt" x="240" y="486" text-anchor="middle">W</text>
+  <rect class="gate" x="665" y="70" width="110" height="330" />
+  <rect class="n" x="687" y="94" width="66" height="22" />
+  <rect class="n" x="687" y="140" width="66" height="22" />
+  <rect class="n" x="687" y="186" width="66" height="22" />
+  <rect class="iso" x="665" y="228" width="110" height="12" />
+  <rect class="p" x="687" y="264" width="66" height="22" />
+  <rect class="p" x="687" y="310" width="66" height="22" />
+  <rect class="p" x="687" y="356" width="66" height="22" />
+  <rect class="si" x="560" y="400" width="320" height="34" />
+  <path class="lead" d="M 775,100 L 820,100" />
+  <text class="lbl" x="826" y="105">nFET sheets</text>
+  <path class="lead" d="M 775,234 L 820,234" />
+  <text class="lbl" x="826" y="239">isolation</text>
+  <path class="lead" d="M 775,310 L 820,310" />
+  <text class="lbl" x="826" y="315">pFET sheets</text>
+  <path class="lead" d="M 665,100 L 610,100" />
+  <text class="lbl" x="604" y="105" text-anchor="end">shared gate</text>
+  <path class="dim" d="M 665,462 L 775,462" marker-start="url(#arr)" marker-end="url(#arr)" />
+  <text class="dimt" x="720" y="486" text-anchor="middle">~W/2</text>
 </svg>
