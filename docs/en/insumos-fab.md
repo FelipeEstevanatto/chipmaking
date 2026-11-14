@@ -1,7 +1,7 @@
 ---
 title: Fab consumables
 description: What a semiconductor fab consumes besides silicon (photoresist, mask, slurry, gases and ultrapure water) and why that list is as silent a chokepoint as quartz.
-dataAsOf: 2022
+dataAsOf: 2023
 ---
 
 # Fab consumables
@@ -57,7 +57,7 @@ The two defects a slurry has to be tuned against: dishing of a wide copper line 
 
 DUV lithography excimer lasers need **neon** in the gas mixture, and recovering that gas became an engineering project inside the fab as its cost rose <Cite id="fabm-neon-2017" />.
 
-The episode that exposed the dependency was the 2022 invasion of Ukraine. The country supplied about half of the world's neon and, over the previous decade, up to 90% of US neon imports, a legacy of Soviet steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="usitc-neon-2022" />.
+The episode that exposed the dependency was the 2022 invasion of Ukraine. The country supplied about half of the world's neon and, over the previous decade, up to 90% of US neon imports, a legacy of Soviet steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="usitc-neon-2022" />. The share was already falling as buyers diversified: a USITC model put Ukraine at 70% of world neon in 2014 and 50% in 2021 <Cite id="usitc-neon-pe-2022" />, and a later USITC paper gave 25 to 30% of the world's purified neon <Cite id="usitc-taiwan-2023" />.
 
 The pattern repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
 
@@ -73,7 +73,7 @@ None of the inputs on this page is expensive per unit. All of them are hard to r
 
 The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
-<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'fabm-upw']" />
+<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The chokepoint map', href: '/en/gargalos', note: 'the concentration of each step' },

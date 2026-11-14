@@ -2167,6 +2167,30 @@ const list: Citation[] = [
     url: 'https://dunham.ece.uw.edu/ee528/notes/Chapter6.pdf',
     short: 'Plummer, Deal & Griffin (EE212)',
   },
+  {
+    key: 'wolfspeed-mohawk-200mm',
+    num: 270,
+    title: "Wolfspeed Opens the World's Largest 200mm Silicon Carbide Fab Enabling Highly Anticipated Device Production",
+    publisher: 'Wolfspeed press release, 25 April 2022',
+    url: 'https://www.wolfspeed.com/company/news-events/news/wolfspeed-opens-the-worlds-largest-200mm-silicon-carbide-fab-enabling-highly-anticipated-device-production/',
+    short: 'Wolfspeed (Mohawk Valley)',
+  },
+  {
+    key: 'usitc-neon-pe-2022',
+    num: 271,
+    title: 'A PE Model of Neon Exports from Ukraine',
+    publisher: 'Samantha DeCarlo, Samuel Goodman & David Riker — USITC Economics Working Paper 2022-07-C (July 2022)',
+    url: 'https://www.usitc.gov/publications/332/working_papers/ecwp_2022-07-c_as_pdf.pdf',
+    short: 'USITC (neon PE model)',
+  },
+  {
+    key: 'usitc-taiwan-2023',
+    num: 272,
+    title: 'U.S. Exposure to the Taiwanese Semiconductor Industry',
+    publisher: 'Lin Jones — USITC Office of Industries working paper (November 2023)',
+    url: 'https://www.usitc.gov/publications/332/working_papers/us_exposure_to_the_taiwanese_semiconductor_industry_11-21-2023_508.pdf',
+    short: 'USITC (Taiwan exposure, 2023)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<
