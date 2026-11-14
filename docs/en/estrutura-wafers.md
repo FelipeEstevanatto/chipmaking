@@ -21,9 +21,9 @@ The text follows that order.
 
 Crystalline silicon adopts the **diamond cubic crystal structure**.
 
-<DiagramFigure src="/pdf-images/p08-1.png" alt="Diamond cubic crystal structure">
-The diamond cubic crystal structure.
-</DiagramFigure>
+<ClientOnly>
+  <CrystalViewer />
+</ClientOnly>
 
 <DiagramFigure src="/pdf-images/p08-2.png" alt="Silicon unit cell">
 Crystallographic orientations (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) and the lattice constant a<sub>Si</sub>.

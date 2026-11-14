@@ -115,16 +115,8 @@ A arquitetura ficou famosa na geração de consoles de 2005–2006: o Cell da Pl
 
 No nó 90 nm (2003/2004), a Intel usou strained silicon: estresse mecânico no canal (p.ex. Si sobre SiGe) aumenta o espaçamento atômico e a mobilidade com custo marginal <Cite id="intel-strain" />.
 
-<DiagramFigure src="/pdf-images/p15-1.png" alt="Malha de silício vs silício-germânio">
-Comparação de malhas: silício puro vs. SiGe como substrato para estresse.
-</DiagramFigure>
-
-<DiagramFigure src="/pdf-images/p15-2.png" alt="Silício esticado sobre SiGe">
-Camada de silício “esticado” sobre silício-germânio. Setas indicam tensão horizontal.
-</DiagramFigure>
-
-<DiagramFigure src="/pdf-images/p16-1.png" alt="Fluxo de elétrons em silício normal vs esticado">
-Malha normal vs. esticada e fluxo de elétrons mais rápido no canal.
+<DiagramFigure src="/assets/strained-silicon.svg" alt="Três painéis: as malhas relaxadas de silício e de silício-germânio, com os átomos do SiGe mais afastados; uma camada fina de silício crescida sobre o SiGe e esticada para o espaçamento dele; e um elétron atravessando um canal esticado mais rápido que um relaxado">
+Silício esticado. O SiGe tem espaçamento atômico maior que o do silício, então uma camada fina de silício crescida sobre ele é esticada para acompanhar, e os elétrons atravessam o canal esticado com mobilidade maior <Cite id="intel-strain" />. Desenho do autor; a diferença de espaçamento, cerca de 4% entre silício e germânio <Cite id="elem-ioffe" />, está exagerada muitas vezes.
 </DiagramFigure>
 
 O primeiro processador de alto volume com silício esticado foi o Pentium 4 “Prescott”, lançado em fevereiro de 2004 no nó de 90 nm, que também estreou interconexões de cobre e dielétrico *low-k* <Cite id="intel-90nm" />.

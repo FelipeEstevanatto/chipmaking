@@ -21,9 +21,9 @@ O texto segue essa ordem.
 
 O silício cristalino adota a **estrutura cúbica de diamante** (*diamond cubic crystal structure*).
 
-<DiagramFigure src="/pdf-images/p08-1.png" alt="Estrutura cúbica de diamante">
-A estrutura cúbica de diamante.
-</DiagramFigure>
+<ClientOnly>
+  <CrystalViewer />
+</ClientOnly>
 
 <DiagramFigure src="/pdf-images/p08-2.png" alt="Célula unitária do silício">
 Orientações cristalográficas (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.

@@ -115,16 +115,8 @@ The architecture became famous in the 2005–2006 console generation: the Cell i
 
 At the 90 nm node (2003/2004), Intel used strained silicon: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility at marginal cost <Cite id="intel-strain" />.
 
-<DiagramFigure src="/pdf-images/p15-1.png" alt="Silicon lattice vs silicon-germanium">
-Lattice comparison: pure silicon vs. SiGe as a stress-inducing substrate.
-</DiagramFigure>
-
-<DiagramFigure src="/pdf-images/p15-2.png" alt="Strained silicon on SiGe">
-A layer of “stretched” silicon on silicon-germanium. Arrows indicate horizontal strain.
-</DiagramFigure>
-
-<DiagramFigure src="/pdf-images/p16-1.png" alt="Electron flow in normal vs strained silicon">
-Normal vs. strained lattice and the faster electron flow in the channel.
+<DiagramFigure src="/assets/strained-silicon.svg" alt="Three panels: relaxed silicon and silicon-germanium lattices, the SiGe atoms spaced further apart; a thin silicon layer grown on SiGe and stretched sideways to its spacing; and an electron crossing a strained channel faster than a relaxed one">
+Strained silicon. SiGe has a wider atomic spacing than silicon, so a thin silicon layer grown on it is pulled apart to match, and electrons move through the stretched channel with higher mobility <Cite id="intel-strain" />. Author's drawing; the difference in spacing, about 4% between silicon and germanium <Cite id="elem-ioffe" />, is exaggerated many times.
 </DiagramFigure>
 
 The first high-volume processor with strained silicon was the Pentium 4 “Prescott”, launched in February 2004 at the 90 nm node, which also introduced copper interconnects and a low-k dielectric <Cite id="intel-90nm" />.
