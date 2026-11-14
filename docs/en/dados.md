@@ -49,7 +49,7 @@ The second chart is the **Poisson model** of yield, evaluated from the equation 
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Doubling a die's area **costs more than twice as much per good die**: at D₀ = 0.1 defect/cm², yield falls from 90% to 82% when the area doubles from 1 to 2 cm². That is the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets-dividing-in-order-to-yield) instead of continuing to enlarge the monolithic die. The Poisson model is conservative at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
+Doubling a die's area **costs more than twice as much per good die**: at D₀ = 0.1 defect/cm², yield falls from 90% to 82% when the area doubles from 1 to 2 cm². That is the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets) instead of continuing to enlarge the monolithic die. The Poisson model is conservative at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
 
 The chart above is a curve; clustering shows up in a map. The two controls below move the die area and the **clustering factor** α of the negative binomial. At α = ∞ defects land at random across the wafer and the model is the Poisson law itself. As α falls they arrive in clumps: most dies come out clean and the failures concentrate in a few. Poisson cannot see that, which is why it understates the yield of a real wafer; the gap between the two bars is the size of the error.
 

@@ -49,7 +49,7 @@ O segundo gráfico é o **modelo de Poisson** do rendimento, calculado a partir 
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
+Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
 O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o **fator de agrupamento** α do binomial negativo. Em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson. Conforme α desce, eles chegam em blocos: a maior parte dos dies sai limpa e as falhas se concentram em poucos. O Poisson não vê isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
 
