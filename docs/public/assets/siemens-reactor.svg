@@ -6,7 +6,7 @@
     <linearGradient id="rodGlow" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#dd6b20" />
       <stop offset="45%" stop-color="#f6ad55" />
-      <stop offset="100%" stop-color="#d69e2e" />
+      <stop offset="100%" stop-color="#b7791f" />
     </linearGradient>
     <marker id="gasIn" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
       <path d="M0,0 L9,4.5 L0,9 z" fill="#2b6cb0" />
@@ -23,11 +23,11 @@
     .t { font: 600 19px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .l { font: 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
     .sm { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
-    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1d2430; }
+    .m { font: 600 17px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #1a202c; }
     .jar { fill: #e2e8f0; fill-opacity: 0.42; stroke: #718096; stroke-width: 3; }
     .rod { fill: none; stroke: url(#rodGlow); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
     .elec { fill: #4a5568; stroke: #2d3748; stroke-width: 1.4; }
-    .base { fill: #a8b3c2; stroke: #718096; stroke-width: 2; }
+    .base { fill: #a0aec0; stroke: #718096; stroke-width: 2; }
     .gas { fill: none; stroke: #2b6cb0; stroke-width: 2.2; }
     .spent { fill: none; stroke: #c53030; stroke-width: 2.2; }
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
@@ -36,7 +36,7 @@
     .molecule { fill: #2b6cb0; opacity: 0.75; }
   </style>
 
-  <text class="h" x="40" y="38">Siemens process: depositing silicon from TCS gas</text>
+  <text class="h" x="40" y="38">Siemens reactor</text>
 
   <!-- ===================== bell jar ===================== -->
   <path class="jar" d="M250,520 L250,230 A170,95 0 0 1 590,230 L590,520 Z" />
@@ -66,8 +66,8 @@
 
   <!-- ===================== labels, left column ===================== -->
   <text class="t" x="40" y="200">Steel bell jar</text>
-  <text class="sm" x="40" y="224">the vessel is opened to</text>
-  <text class="sm" x="40" y="245">harvest the rods</text>
+  <text class="sm" x="40" y="224">opened to harvest</text>
+  <text class="sm" x="40" y="245">the rods</text>
   <path class="lead" d="M150,214 L246,238" />
 
   <text class="t" x="40" y="316">U-shaped filament</text>
@@ -108,11 +108,10 @@
   <circle cx="795" cy="288" r="116" fill="none" stroke="#a0aec0" stroke-width="1.6" />
   <path class="lead" d="M560,300 L676,300" />
 
-  <text class="t" x="795" y="446" text-anchor="middle">Where the silicon lands</text>
-  <text class="sm" x="795" y="474" text-anchor="middle">Gas meets the hot rod, hydrogen</text>
-  <text class="sm" x="795" y="496" text-anchor="middle">reduces the TCS, and silicon</text>
-  <text class="sm" x="795" y="518" text-anchor="middle">adds to the rod surface.</text>
+  <text class="t" x="795" y="446" text-anchor="middle">Rod surface</text>
+  <text class="sm" x="795" y="474" text-anchor="middle">H2 reduces TCS</text>
+  <text class="sm" x="795" y="496" text-anchor="middle">on the hot rod</text>
   <text class="m" x="795" y="550" text-anchor="middle">SiHCl3 + H2 &#8594; Si + 3HCl</text>
-  <text class="sm" x="795" y="582" text-anchor="middle">Poly grows outward until the rods</text>
-  <text class="sm" x="795" y="604" text-anchor="middle">reach 15&#8211;20 cm across.</text>
+  <text class="sm" x="795" y="582" text-anchor="middle">rods grow to</text>
+  <text class="sm" x="795" y="604" text-anchor="middle">15&#8211;20 cm across</text>
 </svg>

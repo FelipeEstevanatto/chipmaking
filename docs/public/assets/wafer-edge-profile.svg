@@ -11,11 +11,11 @@
     .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.6; }
     .crack { fill: none; stroke: #c53030; stroke-width: 1.7; stroke-linejoin: round; }
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
-    .bad { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #b91c1c; }
+    .bad { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
     .good { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #276749; }
   </style>
 
-  <text class="h" x="40" y="36">Wafer edge: as-cut versus rounded profile</text>
+  <text class="h" x="40" y="36">Wafer edge, as-cut and rounded</text>
 
   <!-- ===================== top: as-cut ===================== -->
   <text class="t" x="40" y="100">As-cut</text>

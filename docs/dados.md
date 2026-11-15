@@ -49,7 +49,7 @@ O segundo gráfico é o **modelo de Poisson** do rendimento, calculado a partir 
   <DataChart chart="yield-vs-area" />
 </ClientOnly>
 
-Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets-dividir-para-render) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
+Dobrar a área de um die **custa mais que o dobro por die bom**: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
 O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o **fator de agrupamento** α do binomial negativo. Em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson. Conforme α desce, eles chegam em blocos: a maior parte dos dies sai limpa e as falhas se concentram em poucos. O Poisson não vê isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
 
@@ -78,6 +78,12 @@ Cada gráfico do site existe também como arquivo de dados, gerado a partir da *
 - [Eficiência fotovoltaica](/data/pv-efficiency.csv)
 - [Curva da banheira](/data/bathtub.csv)
 - [Classificação por frequência](/data/binning-bins.csv)
+- [Crescimento do óxido térmico](/data/deal-grove-oxidation.csv)
+- [Amostragem da metrologia](/data/metrology-sampling.csv)
+- [Constantes dielétricas low-k](/data/low-k-dielectric.csv)
+- [Divisão do valor de um chip](/data/chip-value-split.csv)
+- [Participação no encapsulamento avançado](/data/advanced-packaging-share.csv)
+- [Banda por pilha de HBM](/data/hbm-bandwidth.csv)
 
 O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.vitepress/theme/charts/specs.ts`, então o gráfico e o CSV não podem divergir.
 

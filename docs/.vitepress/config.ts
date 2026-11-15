@@ -14,6 +14,9 @@ const base = '/chipmaking/'
 
 const repoUrl = 'https://github.com/FelipeEstevanatto/chipmaking'
 
+/** The author, credited in the footer of every page and in the `author` meta tag. */
+const author = { name: 'Felipe Estevanatto', url: 'https://github.com/FelipeEstevanatto' }
+
 /**
  * Where the site is published, without the subpath (`base` carries that). The social tags are the one
  * place VitePress does not rewrite `base`, so they are the only place the absolute URL is spelled
@@ -40,6 +43,8 @@ function git(command: string): string {
  */
 const buildInfo = {
   repo: repoUrl,
+  author: author.name,
+  authorUrl: author.url,
   sha: process.env.GITHUB_SHA || git('git rev-parse HEAD'),
   ref: process.env.GITHUB_REF_NAME || git('git rev-parse --abbrev-ref HEAD'),
   // Commit date, so a rebuild of an unchanged commit keeps the same stamp. Falls back to build time.
@@ -56,7 +61,10 @@ const buildInfoForClient = {
 const shared = {
   base,
   appearance: true,
-  head: [['link', { rel: 'icon', href: `${base}favicon.svg` }]],
+  head: [
+    ['link', { rel: 'icon', href: `${base}favicon.svg` }],
+    ['meta', { name: 'author', content: author.name }],
+  ],
 } as const
 
 function ptSidebar(): DefaultTheme.SidebarItem[] {

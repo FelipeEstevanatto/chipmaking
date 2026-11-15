@@ -1,7 +1,7 @@
 ---
 title: Fab consumables
 description: What a semiconductor fab consumes besides silicon (photoresist, mask, slurry, gases and ultrapure water) and why that list is as silent a chokepoint as quartz.
-dataAsOf: 2022
+dataAsOf: 2023
 ---
 
 # Fab consumables
@@ -39,17 +39,25 @@ In DUV the mask is a quartz plate with chrome: light passes where the pattern is
 
 That changes the nature of a defect. A defect buried in a mask's multilayer cannot be repaired once the mask is finished: it replicates onto every wafer exposed with that mask, and the blank has to arrive **defect-free** for the mask to be usable <Cite id="asianometry-euv" />. It is the same logic as the quartz inputs: **the quality has to be in the incoming material**, because the next step does not fix it.
 
+<DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="On the left, a cross-section of a Bragg reflector with alternating molybdenum and silicon layers, an incoming beam and parallel partial reflections leaving it; on the right, the light-loss chain from the source to the wafer across ten mirrors">
+An EUV mask blank is the same kind of molybdenum and silicon multilayer as the scanner's mirrors, so a defect buried in it is reflected onto every wafer <Cite id="branch-euv" />. Drawn by the author, from ASML/Branch Education.
+</DiagramFigure>
+
 ## The CMP slurry
 
 [Chemical-mechanical planarisation](/en/fabricacao-wafers#chemical-mechanical-polishing-cmp) (CMP) looks like polishing, and it is, with chemistry in the mix. The **slurry** is a suspension of abrasive particles in a solution that chemically attacks the surface, so the material is first weakened by reaction and then removed mechanically <Cite id="runnels-1994" />.
 
-The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection-the-part-of-the-chip-nobody-sees) section tells the material change.
+The design consequence is that slurry is **material-specific**: removing oxide without scratching copper, and the reverse, are different formulations. The history of the process, from aluminium to copper, is covered in the chapter [In the fab](/en/na-fab) <Cite id="cmp-history" />, whose [interconnection](/en/na-fab#interconnection) section tells the material change.
+
+<DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Two cross-sections after copper polishing: a wide copper line dished below the dielectric, and a dense block of narrow lines where metal and dielectric together sit below the open field">
+The two defects a slurry has to be tuned against: dishing of a wide copper line and erosion of a dense array, described in the *In the fab* chapter. Author's diagram; the recesses are exaggerated.
+</DiagramFigure>
 
 ## Gases and neon
 
 DUV lithography excimer lasers need **neon** in the gas mixture, and recovering that gas became an engineering project inside the fab as its cost rose <Cite id="fabm-neon-2017" />.
 
-The episode that exposed the dependency was the 2022 invasion of Ukraine. The country accounted for **about half** of world neon and **90%** of semiconductor-grade neon, produced as a by-product of steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="fabm-neon-2022" />.
+The episode that exposed the dependency was the 2022 invasion of Ukraine. The country supplied about half of the world's neon and, over the previous decade, up to 90% of US neon imports, a legacy of Soviet steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="usitc-neon-2022" />. The share was already falling as buyers diversified: a USITC model put Ukraine at 70% of world neon in 2014 and 50% in 2021 <Cite id="usitc-neon-pe-2022" />, and a later USITC paper gave 25 to 30% of the world's purified neon <Cite id="usitc-taiwan-2023" />.
 
 The pattern repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
 
@@ -65,7 +73,7 @@ None of the inputs on this page is expensive per unit. All of them are hard to r
 
 The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
-<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'fabm-neon-2022', 'fabm-upw']" />
+<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The chokepoint map', href: '/en/gargalos', note: 'the concentration of each step' },

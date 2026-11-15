@@ -1,7 +1,7 @@
 ---
 title: Beyond silicon
 description: The wide-bandgap semiconductors that compete with silicon where it loses (SiC and GaN) and the other jobs silicon itself does beyond computing and generating power.
-dataAsOf: 2014
+dataAsOf: 2022
 ---
 
 # Beyond silicon
@@ -20,13 +20,17 @@ The parameter that separates this family is the **band gap**, and the difference
 | **4H-SiC** | 3.26 eV | High-voltage power switching |
 | **GaN** | 3.40 eV | High-frequency power, radio frequency and blue light |
 
+<ClientOnly>
+  <DataChart chart="band-gap" />
+</ClientOnly>
+
 A wider gap means a **much higher breakdown voltage**: a material with a wide forbidden band withstands a larger electric field before going into avalanche <Cite id="elem-sze" />. And that changes device geometry. A power transistor needs a thick, lightly doped drift region to hold off voltage; the higher the critical field, **the thinner and more heavily doped** that region can be, and the lower the on-resistance. That is why SiC and GaN can do, in a small volume, what silicon can only do in a larger one.
 
 In high-voltage switching (electric-vehicle traction inverters, grid converters and industrial supplies), SiC competes with the **IGBT**, a bipolar device that stores minority carriers and therefore has a current tail when it turns off. A SiC MOSFET eliminates that tail, and the loss difference shows up precisely at switching frequency <Cite id="elem-sze" />.
 
 In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve for reasons of physics, not for lack of engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
 
-These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage; it is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
+These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage. Only in April 2022 did a 200 mm SiC fab open: Wolfspeed's plant in Marcy, New York, which the company calls the world's first and largest <Cite id="wolfspeed-mohawk-200mm" />, while silicon fabs already run 300 mm wafers <Cite id="zulehner-2000" />. It is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
 
 ## Silicon's other lives
 
@@ -50,9 +54,9 @@ Silicon won by being **good enough** across an extremely wide range of jobs, wit
 
 The materials in this chapter step in where that combination is not enough, and complement silicon rather than replace it. A SiC power chip is still mounted on silicon, packaged with silicon and driven by silicon.
 
-The constants in this chapter come from reference tables, not from measurements of a year. Its most recent dated sources are from 2014, and that is the year the freshness stamp records.
+The constants in this chapter come from reference tables, not from measurements of a year. Its most recent dated source is Wolfspeed's 200 mm SiC fab of 2022, and that is the year the freshness stamp records.
 
-<SourceNote label="Sources" :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw']" />
+<SourceNote label="Sources" :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm', 'zulehner-2000']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The silicon element', href: '/en/o-elemento-silicio', note: 'why silicon, and not germanium' },

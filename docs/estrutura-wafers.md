@@ -21,9 +21,9 @@ O texto segue essa ordem.
 
 O silício cristalino adota a **estrutura cúbica de diamante** (*diamond cubic crystal structure*).
 
-<DiagramFigure src="/pdf-images/p08-1.png" alt="Estrutura cúbica de diamante">
-A estrutura cúbica de diamante.
-</DiagramFigure>
+<ClientOnly>
+  <CrystalViewer />
+</ClientOnly>
 
 <DiagramFigure src="/pdf-images/p08-2.png" alt="Célula unitária do silício">
 Orientações cristalográficas (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) e constante de rede a<sub>Si</sub>.
@@ -146,8 +146,8 @@ Um semicondutor com igual número de elétrons excitados e buracos (**n = p**) e
 
 Há um caso em que a escolha do dopante deixa de ser detalhe de processo e passa a decidir a confiabilidade do produto. Na fotovoltaica, o boro reage com o oxigênio do silício Cz e degrada a célula sob iluminação, o que levou a indústria a substituí-lo pelo **gálio**, assunto tratado no capítulo de [células e módulos solares](/celulas-solares) e em [Confiabilidade](/confiabilidade#por-que-isso-e-uma-historia-de-materiais).
 
-<DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Silício intrínseco, dopagem tipo P (B) e tipo N (Sb)">
-Tipo P: buraco (<em>void</em>) com boro (B). Tipo N: quinto elétron de valência com antimônio (Sb). VectorVoyager, <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG da Wikimedia Commons.
+<DiagramFigure src="/assets/silicon-doping-lattice.svg" alt="Três malhas planas de silício, com cada ligação desenhada como um par de elétrons: silício puro; tipo P, em que um átomo de boro deixa uma ligação com um só elétron e um buraco; e tipo N, em que um átomo de antimônio traz um quinto elétron fora das ligações">
+Tipo P: o boro (B) deixa um buraco. Tipo N: o antimônio (Sb) traz um quinto elétron de valência, livre para se mover. Desenho do autor; a rede real é tridimensional, e o desenho a achata.
 </DiagramFigure>
 
 <SourceNote :ids="['ge-vs-si', 'semi-m1', 'semi-t7', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />

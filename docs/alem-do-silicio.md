@@ -1,7 +1,7 @@
 ---
 title: Além do silício
 description: Os semicondutores de banda larga que competem com o silício onde ele perde (SiC e GaN) e as outras funções que o próprio silício desempenha além de processar e gerar energia.
-dataAsOf: 2014
+dataAsOf: 2022
 ---
 
 # Além do silício
@@ -20,13 +20,17 @@ O parâmetro que separa essa família é o **gap de banda**, e a diferença é g
 | **4H-SiC** | 3,26 eV | Chaveamento de potência em alta tensão |
 | **GaN** | 3,40 eV | Potência em alta frequência, radiofrequência e luz azul |
 
+<ClientOnly>
+  <DataChart chart="band-gap" />
+</ClientOnly>
+
 A consequência do gap maior é uma **tensão de ruptura muito mais alta**: um material com banda proibida larga suporta um campo elétrico maior antes de entrar em avalanche <Cite id="elem-sze" />. E isso muda a geometria do dispositivo. Um transistor de potência precisa de uma região de deriva espessa e pouco dopada para segurar a tensão; quanto maior o campo crítico, **mais fina e mais dopada** essa região pode ser, e menor é a resistência em condução. É por isso que SiC e GaN conseguem fazer, num volume pequeno, o que o silício só faz num volume maior.
 
 No chaveamento de alta tensão (inversores de tração de veículos elétricos, conversores de rede e fontes industriais), o SiC compete com o **IGBT**, um dispositivo bipolar que acumula portadores minoritários e por isso tem uma cauda de corrente no desligamento. O MOSFET de SiC elimina essa cauda, e a diferença de perda aparece justamente na frequência de chaveamento <Cite id="elem-sze" />.
 
 No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um **gás de elétrons bidimensional**, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por razões de física, não por falta de engenharia: **emitir luz azul**. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
 
-Esses materiais **não** substituem o silício na lógica por causa do **substrato**, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem; é o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
+Esses materiais **não** substituem o silício na lógica por causa do **substrato**, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem. Só em abril de 2022 abriu uma fábrica de SiC de 200 mm: a da Wolfspeed em Marcy, Nova York, que a empresa chama de primeira e maior do mundo <Cite id="wolfspeed-mohawk-200mm" />, enquanto as fábricas de silício já processam wafers de 300 mm <Cite id="zulehner-2000" />. É o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
 
 ## As outras vidas do silício
 
@@ -50,9 +54,9 @@ O silício venceu por ser **bom o bastante** numa faixa larguíssima de funçõe
 
 Os materiais deste capítulo entram onde essa combinação não basta, e complementam o silício em vez de substituí-lo. Um chip de potência em SiC continua sendo montado sobre silício, empacotado com silício e alimentado por silício.
 
-As constantes deste capítulo vêm de tabelas de referência, não de medições de um ano. Os dados datados mais recentes que ele cita são de 2014, e é esse o ano que o selo de atualidade registra.
+As constantes deste capítulo vêm de tabelas de referência, não de medições de um ano. A fonte datada mais recente que ele cita é a fábrica de SiC de 200 mm da Wolfspeed, de 2022, e é esse o ano que o selo de atualidade registra.
 
-<SourceNote :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw']" />
+<SourceNote :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm', 'zulehner-2000']" />
 
 <SeeAlso :links="[
   { text: 'O elemento silício', href: '/o-elemento-silicio', note: 'por que o silício, e não o germânio' },

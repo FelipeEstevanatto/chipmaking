@@ -124,7 +124,7 @@
   <rect class="clamp" x="617" y="228" width="46" height="16" rx="3" />
   <path class="slip" d="M390,120 L390,168" marker-end="url(#dArrow)" />
   <path class="slip" d="M670,120 L670,168" marker-end="url(#dArrow)" />
-  <text class="t" x="530" y="48" text-anchor="middle">Pre-baked carbon electrodes, about 1 m across</text>
+  <text class="t" x="530" y="48" text-anchor="middle">carbon electrodes, ~1 m across</text>
   <text class="s" x="530" y="72" text-anchor="middle">consumed and slipping down as the furnace runs</text>
 
   <!-- ==================== gas rising through the charge ==================== -->
@@ -132,7 +132,7 @@
   <path class="gas" d="M468,545 L468,290" marker-end="url(#fArrow)" />
   <path class="gas" d="M565,545 L565,290" marker-end="url(#fArrow)" />
   <path class="gas" d="M686,545 L686,290" marker-end="url(#fArrow)" />
-  <text class="in" x="752" y="236" text-anchor="middle">Off-gas: CO + SiO</text>
+  <text class="in" x="752" y="236" text-anchor="middle">Off-gas (CO + SiO)</text>
 
   <!-- ==================== in-drawing labels ==================== -->
   <text class="in" x="530" y="600" text-anchor="middle">Molten silicon</text>

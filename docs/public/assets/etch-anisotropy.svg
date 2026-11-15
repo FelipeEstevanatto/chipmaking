@@ -14,7 +14,7 @@
     .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 4 3; }
   </style>
 
-  <text class="h" x="40" y="36">Etching: why direction decides the shape</text>
+  <text class="h" x="40" y="36">Etch profiles under one mask opening</text>
 
   <text class="pt" x="180" y="106" text-anchor="middle">Wet etch</text>
   <text class="tag" x="180" y="128" text-anchor="middle" fill="#c05621">isotropic</text>
@@ -22,8 +22,7 @@
   <path class="pit" d="M 117,250 Q 180,352 243,250 Z" />
   <path class="mk" d="M 50,238 L 135,238 L 135,250 L 50,250 Z" />
   <path class="mk" d="M 225,238 L 310,238 L 310,250 L 225,250 Z" />
-  <text class="note" x="180" y="504" text-anchor="middle">Also etches under the</text>
-  <text class="note" x="180" y="526" text-anchor="middle">mask and undercuts the wall.</text>
+  <text class="note" x="180" y="504" text-anchor="middle">undercuts the mask</text>
 
   <text class="pt" x="480" y="106" text-anchor="middle">RIE</text>
   <text class="tag" x="480" y="128" text-anchor="middle" fill="#2b6cb0">directional</text>
@@ -31,8 +30,8 @@
   <path class="pit" d="M 435,250 L 443,392 L 517,392 L 525,250 Z" />
   <path class="mk" d="M 350,238 L 435,238 L 435,250 L 350,250 Z" />
   <path class="mk" d="M 525,238 L 610,238 L 610,250 L 525,250 Z" />
-  <text class="note" x="480" y="504" text-anchor="middle">Ions accelerated at the wafer:</text>
-  <text class="note" x="480" y="526" text-anchor="middle">the wall comes out almost straight.</text>
+  <text class="note" x="480" y="504" text-anchor="middle">ion-driven</text>
+  <text class="note" x="480" y="526" text-anchor="middle">near-vertical wall</text>
 
   <text class="pt" x="780" y="106" text-anchor="middle">DRIE (Bosch)</text>
   <text class="tag" x="780" y="128" text-anchor="middle" fill="#276749">40:1 in production</text>
@@ -40,7 +39,7 @@
   <path class="pit" d="M 768,250 L 766,300 L 770,338 L 766,376 L 770,414 L 766,452 L 768,466 L 792,466 L 794,452 L 790,414 L 794,376 L 790,338 L 794,300 L 792,250 Z" />
   <path class="mk" d="M 650,238 L 768,238 L 768,250 L 650,250 Z" />
   <path class="mk" d="M 792,238 L 910,238 L 910,250 L 792,250 Z" />
-  <text class="note" x="780" y="504" text-anchor="middle">Alternates etch and passivation:</text>
-  <text class="note" x="780" y="526" text-anchor="middle">hence the scallops in the wall.</text>
+  <text class="note" x="780" y="504" text-anchor="middle">etch and passivation cycles</text>
+  <text class="note" x="780" y="526" text-anchor="middle">scalloped wall</text>
 
 </svg>

@@ -46,13 +46,13 @@ THIRD_PARTY = {
     "immersion-lithography.svg",
     "line-doubling.svg",
     "miller-indices.svg",
-    "silicon-doping-p-n.svg",
 }
 
 # CSS classes are the only font sizes we control; anything else is a guess.
 FONT_RE = re.compile(r"font(?:-size)?\s*:\s*(?:[^;]*?\s)?([0-9.]+)px")
 CLASS_RE = re.compile(r"\.([A-Za-z0-9_-]+)\s*\{([^}]*)\}")
-HEX_RE = re.compile(r"(?<!&)#[0-9a-fA-F]{3,8}")
+# Not after "&" (a numeric reference like &#176;) or "(" (an id reference like url(#bedClip)).
+HEX_RE = re.compile(r"(?<![&(\w])#[0-9a-fA-F]{3,8}(?![\w-])")
 NAMED_ENTITY_RE = re.compile(r"&([A-Za-z][A-Za-z0-9]*);")
 XML_ENTITIES = {"amp", "lt", "gt", "quot", "apos"}
 FOREIGN_RE = re.compile(r"inkscape:|sodipodi:|<metadata|xmlns:dc|xmlns:cc|xmlns:rdf")
@@ -72,6 +72,8 @@ PALETTE = {
     "#234e52", "#285e61", "#319795", "#4fd1c5", "#b2f5ea",
     "#1a365d", "#2a4365",
     "#c0c0c0", "#646464", "#666666", "#8d8e8e", "#469aac",
+    # Light tint of the mask purple, for chemistry boxes; every other hue already has one.
+    "#e9d8fd",
 }
 
 PT_STRONG = re.compile(r"[áàâãéêíóôõúç]", re.IGNORECASE)

@@ -101,16 +101,16 @@ export const CHARTS: Record<string, ChartSpec> = {
       { pt: 'Silício metalúrgico — China', en: 'Metallurgical silicon — China' },
       { pt: 'Polissilício — China', en: 'Polysilicon — China' },
       { pt: 'Wafers 300 mm — cinco maiores', en: '300 mm wafers — five largest' },
-      { pt: 'Neônio grau semicondutor — Ucrânia', en: 'Semiconductor-grade neon — Ukraine' },
+      { pt: 'Neônio (oferta mundial) — Ucrânia', en: 'Neon (world supply) — Ukraine' },
       { pt: 'Litografia EUV — ASML', en: 'EUV lithography — ASML' },
     ],
     datasets: [
       {
-        pt: 'Piso citado',
-        en: 'Lower bound',
+        pt: 'Valor ou piso',
+        en: 'Value or lower bound',
         color: '#2b6cb0',
         grouped: false,
-        data: [70, 87, 90, 75, 90, 100],
+        data: [70, 87, 90, 75, 50, 100],
       },
       {
         pt: 'Faixa publicada',
@@ -128,10 +128,10 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
-      en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the lower bound; the light segment adds the published range where the source gives an interval.',
+      pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o valor ou o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
+      en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the value or the lower bound; the light segment adds the published range where the source gives an interval.',
     },
-    sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'fabm-neon-2022', 'asml-euv-products'],
+    sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'usitc-neon-2022', 'asml-euv-products'],
     slug: 'chokepoint-share',
   },
 
@@ -255,6 +255,205 @@ export const CHARTS: Record<string, ChartSpec> = {
     },
     sourceIds: ['siliconlottery-stats', 'tomshardware-8086k'],
     slug: 'binning-bins',
+  },
+
+  /**
+   * Deal–Grove thickness against time, computed rather than measured: x = (A/2)(√(1 + 4Bt/A²) − 1)
+   * with τ = 0, from the Arrhenius constants in the Stanford EE212 oxidation handout (dry O₂: B = 7.72e2
+   * µm²/h at 1.23 eV, B/A = 6.23e6 µm/h at 2.0 eV; H₂O: B = 3.86e2 µm²/h at 0.78 eV, B/A =
+   * 1.63e8 µm/h at 2.05 eV), used as published; the handout does not state a crystal orientation,
+   * so the caption does not claim one. Rounded to the nanometre.
+   */
+  'deal-grove-oxidation': {
+    id: 'deal-grove-oxidation',
+    type: 'line',
+    toggleLogY: true,
+    xLabel: { pt: 'Tempo de oxidação (h)', en: 'Oxidation time (h)' },
+    yLabel: { pt: 'Espessura do óxido (nm)', en: 'Oxide thickness (nm)' },
+    labels: [0.25, 0.5, 1, 2, 3, 4, 6, 8, 10],
+    datasets: [
+      { pt: 'Úmida (H₂O), 1.100 °C', en: 'Wet (H₂O), 1,100 °C', color: '#2c5282', data: [313, 463, 675, 976, 1207, 1402, 1729, 2004, 2247] },
+      { pt: 'Úmida (H₂O), 1.000 °C', en: 'Wet (H₂O), 1,000 °C', color: '#63b3ed', data: [182, 291, 449, 678, 855, 1004, 1255, 1467, 1654] },
+      { pt: 'Seca (O₂), 1.100 °C', en: 'Dry (O₂), 1,100 °C', color: '#c05621', data: [46, 75, 118, 180, 228, 269, 337, 395, 446] },
+      { pt: 'Seca (O₂), 1.000 °C', en: 'Dry (O₂), 1,000 °C', color: '#f6ad55', data: [17, 31, 54, 91, 121, 146, 190, 228, 261] },
+    ],
+    caption: {
+      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove, sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce de cinco a oito vezes mais rápido nestas temperaturas, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
+      en: 'Oxide thickness computed with the Deal–Grove model, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows five to eight times faster at these temperatures, and every curve slows once diffusion through the oxide sets the pace.',
+    },
+    sourceIds: ['deal-grove-1965', 'stanford-ee212-oxidation'],
+    slug: 'deal-grove-oxidation',
+  },
+
+  /**
+   * KLA's sampling table, multiplied out: the share of all wafers that get each check is the share
+   * of lots sampled times the wafers measured out of a 25-wafer lot. Derived from that table, so it
+   * cites it.
+   */
+  'metrology-sampling': {
+    id: 'metrology-sampling',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Fatia (%)', en: 'Share (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'Metrologia: lotes amostrados', en: 'Metrology: lots sampled' },
+      { pt: 'Metrologia: wafers medidos por lote', en: 'Metrology: wafers measured per lot' },
+      { pt: 'Metrologia: todos os wafers', en: 'Metrology: all wafers' },
+      { pt: 'Inspeção: lotes amostrados', en: 'Inspection: lots sampled' },
+      { pt: 'Inspeção: wafers inspecionados por lote', en: 'Inspection: wafers inspected per lot' },
+      { pt: 'Inspeção: todos os wafers', en: 'Inspection: all wafers' },
+    ],
+    datasets: [
+      {
+        pt: 'Piso',
+        en: 'Lower bound',
+        color: '#2b6cb0',
+        grouped: false,
+        data: [100, 8, 8, 10, 4, 0.4],
+      },
+      {
+        pt: 'Faixa publicada',
+        en: 'Published range',
+        color: '#90cdf4',
+        grouped: false,
+        data: [null, [8, 20], [8, 20], [10, 33], [4, 20], [0.4, 6.6]],
+      },
+    ],
+    caption: {
+      pt: 'Quanto da produção a fábrica mede, segundo a tabela de amostragem da KLA, com lotes de 25 wafers. A metrologia vê todo lote, mas só 2 a 5 wafers de cada um; a inspeção de defeitos vê 10 a 33 % dos lotes, com 1 a 5 wafers. As linhas "todos os wafers" multiplicam as duas anteriores e são derivadas da tabela, não publicadas nela.',
+      en: 'How much of the output a fab measures, according to KLA\'s sampling table, with 25-wafer lots. Metrology sees every lot but only 2 to 5 wafers of each; defect inspection sees 10 to 33% of lots, with 1 to 5 wafers. The "all wafers" rows multiply the two rows above them and are derived from the table, not published in it.',
+    },
+    sourceIds: ['kla-msa', 'semieng-cycle-time'],
+    slug: 'metrology-sampling',
+  },
+
+  /**
+   * Dielectric constants between the wires. Ranges where the source gives a range; air gap is the
+   * effective k of the measured structures, not of a material.
+   */
+  'low-k-dielectric': {
+    id: 'low-k-dielectric',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Constante dielétrica k', en: 'Dielectric constant k' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'SiO₂', en: 'SiO₂' },
+      { pt: 'SiOF', en: 'SiOF' },
+      { pt: 'SiCOH', en: 'SiCOH' },
+      { pt: 'Air gap (k efetivo medido)', en: 'Air gap (measured effective k)' },
+      { pt: 'Ar', en: 'Air' },
+    ],
+    datasets: [
+      {
+        pt: 'Valor ou piso',
+        en: 'Value or lower bound',
+        color: '#805ad5',
+        grouped: false,
+        data: [4.0, 3.5, 2.2, 2.1, 1.0],
+      },
+      {
+        pt: 'Faixa publicada',
+        en: 'Published range',
+        color: '#b794f4',
+        grouped: false,
+        data: [null, [3.5, 3.8], [2.2, 3.2], [2.1, 2.2], null],
+      },
+    ],
+    caption: {
+      pt: 'A constante dielétrica do isolante entre os fios, do SiO₂ ao ar. Quanto menor o k, menor a capacitância entre fios vizinhos e menor o atraso. A linha do air gap é o k efetivo medido em estruturas reais com vazios entre os fios; a barra escura vai até o valor ou o piso, e o trecho claro acrescenta a faixa publicada.',
+      en: 'The dielectric constant of the insulator between the wires, from SiO₂ to air. A lower k means lower capacitance between neighbouring wires and less delay. The air-gap row is the effective k measured on real structures with voids between the wires; the dark bar reaches the value or lower bound, and the light segment adds the published range.',
+    },
+    sourceIds: ['cu-interconnect-review', 'air-gap-keff', 'hollow-airgap'],
+    slug: 'low-k-dielectric',
+  },
+
+  /**
+   * CSET's packaging report, which quotes its own earlier estimate (~10% ATP, ~45% design plus
+   * front-end) and the SIA/BCG figure (6% ATP) side by side. The rest of the value is not broken
+   * down in that passage, so the chart does not invent a remainder.
+   */
+  'chip-value-split': {
+    id: 'chip-value-split',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Fatia do valor de um chip pronto (%)', en: 'Share of a finished chip\'s value (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'Projeto e fabricação front-end (CSET)', en: 'Design and front-end fabrication (CSET)' },
+      { pt: 'Montagem, teste e encapsulamento (CSET)', en: 'Assembly, test and packaging (CSET)' },
+      { pt: 'Montagem, teste e encapsulamento (SIA/BCG)', en: 'Assembly, test and packaging (SIA/BCG)' },
+    ],
+    datasets: [
+      { pt: 'Estimativa', en: 'Estimate', color: '#2b6cb0', data: [45, 10, 6] },
+    ],
+    caption: {
+      pt: 'Onde fica o valor de um chip, nas duas estimativas que o relatório do CSET sobre encapsulamento põe lado a lado. Projeto e front-end somam cerca de 45 %; a etapa de montagem, teste e encapsulamento fica entre 6 e 10 %, conforme a fonte. O restante não é detalhado nessa passagem, e o gráfico não o inventa.',
+      en: 'Where a chip\'s value sits, in the two estimates that CSET\'s packaging report puts side by side. Design and front-end come to about 45%; assembly, test and packaging sits between 6 and 10%, depending on the source. The rest is not broken down in that passage, and the chart does not invent it.',
+    },
+    sourceIds: ['cset-packaging'],
+    slug: 'chip-value-split',
+  },
+
+  /**
+   * Advanced-packaging share by company in 2020, measured in wafers, as CSET's packaging report
+   * tabulates it. Only the firms the report names with a share are drawn.
+   */
+  'advanced-packaging-share': {
+    id: 'advanced-packaging-share',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Participação em wafers de encapsulamento avançado, 2020 (%)', en: 'Share of advanced-packaging wafers, 2020 (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'ASE (Taiwan)', en: 'ASE (Taiwan)' },
+      { pt: 'TSMC (Taiwan)', en: 'TSMC (Taiwan)' },
+      { pt: 'Samsung (Coreia do Sul)', en: 'Samsung (South Korea)' },
+      { pt: 'Chipbond (Taiwan)', en: 'Chipbond (Taiwan)' },
+      { pt: 'Nepes (Coreia do Sul)', en: 'Nepes (South Korea)' },
+      { pt: 'ChipMOS (Taiwan)', en: 'ChipMOS (Taiwan)' },
+    ],
+    datasets: [
+      { pt: 'Participação', en: 'Share', color: '#2b6cb0', data: [26, 15, 6, 5, 3, 2] },
+    ],
+    caption: {
+      pt: 'As empresas de encapsulamento avançado que o relatório do CSET cita com participação, medida em wafers processados em 2020. Quatro das seis estão em Taiwan, e as empresas taiwanesas somam quase metade da capacidade mundial de encapsulamento avançado.',
+      en: 'The advanced-packaging firms that CSET\'s report names with a share, measured in wafers processed in 2020. Four of the six are in Taiwan, and Taiwanese firms hold nearly half of the world\'s advanced-packaging capacity.',
+    },
+    sourceIds: ['cset-packaging'],
+    slug: 'advanced-packaging-share',
+  },
+
+  /**
+   * Bandwidth per HBM stack. The JEDEC bars are the standards' own figures (the table beside the
+   * chart); the vendor bars are the first products each company announced at that generation, which
+   * ran ahead of the spec (SK hynix's HBM2E at 3.6 Gb/s against JEDEC's 3.2). Micron gives "more than
+   * 1.2 TB/s", drawn at 1,200. No projection is drawn.
+   */
+  'hbm-bandwidth': {
+    id: 'hbm-bandwidth',
+    type: 'bar',
+    xLabel: { pt: 'Geração', en: 'Generation' },
+    yLabel: { pt: 'Banda por pilha (GB/s)', en: 'Bandwidth per stack (GB/s)' },
+    labels: [
+      { pt: 'HBM (2015)', en: 'HBM (2015)' },
+      { pt: 'HBM2 (2016)', en: 'HBM2 (2016)' },
+      { pt: 'HBM2E (2020)', en: 'HBM2E (2020)' },
+      { pt: 'HBM3 (2022)', en: 'HBM3 (2022)' },
+      { pt: 'HBM3E (2024)', en: 'HBM3E (2024)' },
+      { pt: 'HBM4 (2025)', en: 'HBM4 (2025)' },
+    ],
+    datasets: [
+      { pt: 'Padrão JEDEC', en: 'JEDEC standard', color: '#2b6cb0', grouped: false, data: [null, 256, null, 819, null, 2000] },
+      { pt: 'Produto anunciado pelo fabricante', en: 'Vendor product', color: '#90cdf4', grouped: false, data: [128, null, 460, null, 1200, null] },
+    ],
+    caption: {
+      pt: 'Banda por pilha de HBM em cada geração. As barras escuras são os padrões da JEDEC; as claras, os primeiros produtos anunciados por AMD, SK hynix e Micron, que às vezes passam do padrão. Cada geração dobra algo: a taxa por pino, a largura da interface ou o número de canais.',
+      en: 'Bandwidth per HBM stack at each generation. The dark bars are the JEDEC standards; the light ones are the first products announced by AMD, SK hynix and Micron, which sometimes run ahead of the standard. Each generation doubles something: the per-pin rate, the interface width or the channel count.',
+    },
+    sourceIds: ['anandtech-hbm1', 'jedec-hbm2', 'skhynix-hbm2e', 'jedec-hbm3', 'micron-hbm3e', 'jedec-hbm4'],
+    slug: 'hbm-bandwidth',
   },
 }
 

@@ -1,0 +1,353 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img">
+  <title>Silicon doping: an intrinsic silicon lattice, a p-type lattice where a boron atom leaves one bond short of an electron (a hole), and an n-type lattice where an antimony atom brings a fifth electron that is free to move</title>
+  <desc>Three panels with the same flat 4 by 4 silicon lattice, every bond drawn as a shared pair of electrons. Middle: one silicon replaced by boron, with one bond missing an electron, marked as a hole. Right: one silicon replaced by antimony, with a fifth electron outside the bonds, marked as free. Schematic: the real lattice is three-dimensional (diamond cubic), and the drawing flattens it.</desc>
+  <rect width="960" height="430" fill="#ffffff" />
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096" />
+    </marker>
+  </defs>
+  <style>
+    .pt { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .at { font: 600 15px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .val { font: 700 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
+    .b { fill: #b794f4; stroke: #553c9a; stroke-width: 1.6; }
+    .sb { fill: #90cdf4; stroke: #2b6cb0; stroke-width: 1.6; }
+    .bond { stroke: #a0aec0; stroke-width: 1.6; }
+    .e { fill: #2d3748; }
+    .free { fill: #c53030; }
+    .hole { fill: #ffffff; stroke: #c53030; stroke-width: 2; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 5 4; }
+  </style>
+
+  <text class="pt" x="170" y="40" text-anchor="middle">Intrinsic</text>
+  <text class="t" x="170" y="64" text-anchor="middle">pure silicon</text>
+  <line class="bond" x1="77" y1="130" x2="139" y2="130" />
+  <line class="bond" x1="77" y1="130" x2="77" y2="192" />
+  <line class="bond" x1="139" y1="130" x2="201" y2="130" />
+  <line class="bond" x1="139" y1="130" x2="139" y2="192" />
+  <line class="bond" x1="201" y1="130" x2="263" y2="130" />
+  <line class="bond" x1="201" y1="130" x2="201" y2="192" />
+  <line class="bond" x1="263" y1="130" x2="263" y2="192" />
+  <line class="bond" x1="77" y1="192" x2="139" y2="192" />
+  <line class="bond" x1="77" y1="192" x2="77" y2="254" />
+  <line class="bond" x1="139" y1="192" x2="201" y2="192" />
+  <line class="bond" x1="139" y1="192" x2="139" y2="254" />
+  <line class="bond" x1="201" y1="192" x2="263" y2="192" />
+  <line class="bond" x1="201" y1="192" x2="201" y2="254" />
+  <line class="bond" x1="263" y1="192" x2="263" y2="254" />
+  <line class="bond" x1="77" y1="254" x2="139" y2="254" />
+  <line class="bond" x1="77" y1="254" x2="77" y2="316" />
+  <line class="bond" x1="139" y1="254" x2="201" y2="254" />
+  <line class="bond" x1="139" y1="254" x2="139" y2="316" />
+  <line class="bond" x1="201" y1="254" x2="263" y2="254" />
+  <line class="bond" x1="201" y1="254" x2="201" y2="316" />
+  <line class="bond" x1="263" y1="254" x2="263" y2="316" />
+  <line class="bond" x1="77" y1="316" x2="139" y2="316" />
+  <line class="bond" x1="139" y1="316" x2="201" y2="316" />
+  <line class="bond" x1="201" y1="316" x2="263" y2="316" />
+  <circle class="e" cx="108.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="72.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="82.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="134.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="144.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="196.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="206.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="258.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="268.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="72.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="82.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="134.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="144.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="196.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="206.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="258.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="268.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="72.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="82.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="134.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="144.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="196.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="206.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="258.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="268.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="108.0" cy="321.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="170.0" cy="321.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="232.0" cy="321.0" r="3.6" />
+  <circle class="si" cx="77" cy="130" r="17" />
+  <text class="at" x="77" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="139" cy="130" r="17" />
+  <text class="at" x="139" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="201" cy="130" r="17" />
+  <text class="at" x="201" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="263" cy="130" r="17" />
+  <text class="at" x="263" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="77" cy="192" r="17" />
+  <text class="at" x="77" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="139" cy="192" r="17" />
+  <text class="at" x="139" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="201" cy="192" r="17" />
+  <text class="at" x="201" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="263" cy="192" r="17" />
+  <text class="at" x="263" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="77" cy="254" r="17" />
+  <text class="at" x="77" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="139" cy="254" r="17" />
+  <text class="at" x="139" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="201" cy="254" r="17" />
+  <text class="at" x="201" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="263" cy="254" r="17" />
+  <text class="at" x="263" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="77" cy="316" r="17" />
+  <text class="at" x="77" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="139" cy="316" r="17" />
+  <text class="at" x="139" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="201" cy="316" r="17" />
+  <text class="at" x="201" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="263" cy="316" r="17" />
+  <text class="at" x="263" y="321" text-anchor="middle">Si</text>
+
+  <text class="pt" x="490" y="40" text-anchor="middle">p-type</text>
+  <text class="t" x="490" y="64" text-anchor="middle">doped with boron</text>
+  <line class="bond" x1="397" y1="130" x2="459" y2="130" />
+  <line class="bond" x1="397" y1="130" x2="397" y2="192" />
+  <line class="bond" x1="459" y1="130" x2="521" y2="130" />
+  <line class="bond" x1="459" y1="130" x2="459" y2="192" />
+  <line class="bond" x1="521" y1="130" x2="583" y2="130" />
+  <line class="bond" x1="521" y1="130" x2="521" y2="192" />
+  <line class="bond" x1="583" y1="130" x2="583" y2="192" />
+  <line class="bond" x1="397" y1="192" x2="459" y2="192" />
+  <line class="bond" x1="397" y1="192" x2="397" y2="254" />
+  <line class="bond" x1="459" y1="192" x2="521" y2="192" />
+  <line class="bond" x1="459" y1="192" x2="459" y2="254" />
+  <line class="bond" x1="521" y1="192" x2="583" y2="192" />
+  <line class="bond" x1="521" y1="192" x2="521" y2="254" />
+  <line class="bond" x1="583" y1="192" x2="583" y2="254" />
+  <line class="bond" x1="397" y1="254" x2="459" y2="254" />
+  <line class="bond" x1="397" y1="254" x2="397" y2="316" />
+  <line class="bond" x1="459" y1="254" x2="521" y2="254" />
+  <line class="bond" x1="459" y1="254" x2="459" y2="316" />
+  <line class="bond" x1="521" y1="254" x2="583" y2="254" />
+  <line class="bond" x1="521" y1="254" x2="521" y2="316" />
+  <line class="bond" x1="583" y1="254" x2="583" y2="316" />
+  <line class="bond" x1="397" y1="316" x2="459" y2="316" />
+  <line class="bond" x1="459" y1="316" x2="521" y2="316" />
+  <line class="bond" x1="521" y1="316" x2="583" y2="316" />
+  <circle class="e" cx="428.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="392.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="402.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="454.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="464.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="516.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="526.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="578.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="588.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="392.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="402.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="187.0" r="3.6" />
+  <circle class="hole" cx="490.0" cy="197.0" r="5" />
+  <circle class="e" cx="454.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="464.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="516.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="526.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="578.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="588.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="392.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="402.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="454.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="464.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="516.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="526.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="578.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="588.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="428.0" cy="321.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="490.0" cy="321.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="552.0" cy="321.0" r="3.6" />
+  <circle class="si" cx="397" cy="130" r="17" />
+  <text class="at" x="397" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="459" cy="130" r="17" />
+  <text class="at" x="459" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="521" cy="130" r="17" />
+  <text class="at" x="521" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="583" cy="130" r="17" />
+  <text class="at" x="583" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="397" cy="192" r="17" />
+  <text class="at" x="397" y="197" text-anchor="middle">Si</text>
+  <circle class="b" cx="459" cy="192" r="19" />
+  <text class="at" x="459" y="197" text-anchor="middle">B</text>
+  <circle class="si" cx="521" cy="192" r="17" />
+  <text class="at" x="521" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="583" cy="192" r="17" />
+  <text class="at" x="583" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="397" cy="254" r="17" />
+  <text class="at" x="397" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="459" cy="254" r="17" />
+  <text class="at" x="459" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="521" cy="254" r="17" />
+  <text class="at" x="521" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="583" cy="254" r="17" />
+  <text class="at" x="583" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="397" cy="316" r="17" />
+  <text class="at" x="397" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="459" cy="316" r="17" />
+  <text class="at" x="459" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="521" cy="316" r="17" />
+  <text class="at" x="521" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="583" cy="316" r="17" />
+  <text class="at" x="583" y="321" text-anchor="middle">Si</text>
+  <path class="lead" d="M 494,203 L 520,358" />
+  <text class="val" x="524" y="364">hole</text>
+
+  <text class="pt" x="810" y="40" text-anchor="middle">n-type</text>
+  <text class="t" x="810" y="64" text-anchor="middle">doped with antimony</text>
+  <line class="bond" x1="717" y1="130" x2="779" y2="130" />
+  <line class="bond" x1="717" y1="130" x2="717" y2="192" />
+  <line class="bond" x1="779" y1="130" x2="841" y2="130" />
+  <line class="bond" x1="779" y1="130" x2="779" y2="192" />
+  <line class="bond" x1="841" y1="130" x2="903" y2="130" />
+  <line class="bond" x1="841" y1="130" x2="841" y2="192" />
+  <line class="bond" x1="903" y1="130" x2="903" y2="192" />
+  <line class="bond" x1="717" y1="192" x2="779" y2="192" />
+  <line class="bond" x1="717" y1="192" x2="717" y2="254" />
+  <line class="bond" x1="779" y1="192" x2="841" y2="192" />
+  <line class="bond" x1="779" y1="192" x2="779" y2="254" />
+  <line class="bond" x1="841" y1="192" x2="903" y2="192" />
+  <line class="bond" x1="841" y1="192" x2="841" y2="254" />
+  <line class="bond" x1="903" y1="192" x2="903" y2="254" />
+  <line class="bond" x1="717" y1="254" x2="779" y2="254" />
+  <line class="bond" x1="717" y1="254" x2="717" y2="316" />
+  <line class="bond" x1="779" y1="254" x2="841" y2="254" />
+  <line class="bond" x1="779" y1="254" x2="779" y2="316" />
+  <line class="bond" x1="841" y1="254" x2="903" y2="254" />
+  <line class="bond" x1="841" y1="254" x2="841" y2="316" />
+  <line class="bond" x1="903" y1="254" x2="903" y2="316" />
+  <line class="bond" x1="717" y1="316" x2="779" y2="316" />
+  <line class="bond" x1="779" y1="316" x2="841" y2="316" />
+  <line class="bond" x1="841" y1="316" x2="903" y2="316" />
+  <circle class="e" cx="748.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="712.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="722.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="774.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="784.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="125.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="135.0" r="3.6" />
+  <circle class="e" cx="836.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="846.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="898.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="908.0" cy="161.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="712.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="722.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="774.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="784.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="187.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="197.0" r="3.6" />
+  <circle class="e" cx="836.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="846.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="898.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="908.0" cy="223.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="712.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="722.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="774.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="784.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="249.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="259.0" r="3.6" />
+  <circle class="e" cx="836.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="846.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="898.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="908.0" cy="285.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="748.0" cy="321.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="810.0" cy="321.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="311.0" r="3.6" />
+  <circle class="e" cx="872.0" cy="321.0" r="3.6" />
+  <circle class="si" cx="717" cy="130" r="17" />
+  <text class="at" x="717" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="779" cy="130" r="17" />
+  <text class="at" x="779" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="841" cy="130" r="17" />
+  <text class="at" x="841" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="903" cy="130" r="17" />
+  <text class="at" x="903" y="135" text-anchor="middle">Si</text>
+  <circle class="si" cx="717" cy="192" r="17" />
+  <text class="at" x="717" y="197" text-anchor="middle">Si</text>
+  <circle class="sb" cx="779" cy="192" r="19" />
+  <text class="at" x="779" y="197" text-anchor="middle">Sb</text>
+  <circle class="si" cx="841" cy="192" r="17" />
+  <text class="at" x="841" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="903" cy="192" r="17" />
+  <text class="at" x="903" y="197" text-anchor="middle">Si</text>
+  <circle class="si" cx="717" cy="254" r="17" />
+  <text class="at" x="717" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="779" cy="254" r="17" />
+  <text class="at" x="779" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="841" cy="254" r="17" />
+  <text class="at" x="841" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="903" cy="254" r="17" />
+  <text class="at" x="903" y="259" text-anchor="middle">Si</text>
+  <circle class="si" cx="717" cy="316" r="17" />
+  <text class="at" x="717" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="779" cy="316" r="17" />
+  <text class="at" x="779" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="841" cy="316" r="17" />
+  <text class="at" x="841" y="321" text-anchor="middle">Si</text>
+  <circle class="si" cx="903" cy="316" r="17" />
+  <text class="at" x="903" y="321" text-anchor="middle">Si</text>
+  <circle class="free" cx="803" cy="162" r="5" />
+  <path class="lead" d="M 807,168 L 843,358" />
+  <text class="val" x="847" y="364">free electron</text>
+
+  <circle class="e" cx="40" cy="408" r="3.6" /><circle class="e" cx="52" cy="408" r="3.6" />
+  <text class="t" x="66" y="414">shared electron pair (covalent bond)</text>
+</svg>

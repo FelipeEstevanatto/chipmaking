@@ -23,9 +23,15 @@ A resposta tem um padrão, e o padrão se repete etapa por etapa.
 | Polissilício | China | **mais de 90%** do volume global em 2023 <Cite id="bernreuter-market" /> | O insumo tanto do wafer quanto da célula solar |
 | Wafers de silício | Japão (Shin-Etsu e SUMCO) | **44,1%** para as duas maiores; cinco maiores somam cerca de **três quartos** <Cite id="nikkei-wafer-share" /> | A lâmina de partida de toda fab do planeta |
 | Litografia EUV | ASML (Holanda) | **fornecedora única** <Cite id="asml-euv-products" /> | As camadas críticas dos nós de ponta |
-| Neônio grau semicondutor | Ucrânia | **cerca de metade** do neônio mundial e **90%** do grau semicondutor <Cite id="fabm-neon-2022" /> | Os lasers de excímero da [litografia DUV](/fotolitografia) |
+| Neônio | Ucrânia | **cerca de metade** do neônio mundial em 2022, e até **90%** das importações dos EUA <Cite id="usitc-neon-2022" /> | Os lasers de excímero da [litografia DUV](/fotolitografia) |
 
 O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo padrão do gargalo de Spruce Pine: **um insumo barato, pouco visível e insubstituível a curto prazo**.
+
+O encapsulamento, a última etapa antes de o chip ser vendido, também é concentrado. Em 2020, quatro das seis empresas de encapsulamento avançado com participação citada estavam em Taiwan, e as empresas taiwanesas detinham quase metade da capacidade mundial de encapsulamento avançado <Cite id="cset-packaging" />.
+
+<ClientOnly>
+  <DataChart chart="advanced-packaging-share" />
+</ClientOnly>
 
 ## O dinheiro da política
 
@@ -35,10 +41,10 @@ Gargalos visíveis geram política industrial, e os valores envolvidos são a me
 | --- | --- | --- | --- | --- |
 | Estados Unidos | *CHIPS and Science Act* | **US\$ 50 bilhões** ao Departamento de Comércio, em **US\$ 39 bilhões** de incentivos à fabricação e **US\$ 11 bilhões** para pesquisa e desenvolvimento (P&D) <Cite id="choke-nist-chips" /> | 2022 | NIST (CHIPS) |
 | União Europeia | *European Chips Act* | **mais de EUR 32 bilhões** em **18 decisões** de auxílio estatal, de investimento público e privado <Cite id="choke-eu-chips-act" /> | em vigor em **21 de setembro de 2023**; o *Chips Act 2.0* foi proposto em **junho de 2026** | Comissão Europeia |
-| China | *Big Fund* | três fases <Cite id="choke-big-fund" /> | terceira fase lançada em **2024** | Wikipedia (Big Fund) |
+| China | *Big Fund* | três fases de capital registrado: **138,7 bilhões de yuans** (2014), **204 bilhões** (2019) e **344 bilhões**, cerca de **US\$ 47,5 bilhões** (2024) <Cite id="choke-big-fund" /> | terceira fase criada em **maio de 2024** | Reuters |
 
 ::: warning
-A cifra que virou manchete, **US\$ 52,7 bilhões**, inclui itens que ficam fora desse envelope. A diferença entre as duas importa.
+A cifra que virou manchete, **US\$ 52,7 bilhões**, soma também programas fora do envelope do Departamento de Comércio acima.
 :::
 
 O que esses programas compram é **capacidade**, não autossuficiência. Uma planta nova de wafer leva anos para ser qualificada, e a qualificação de um fornecedor por uma fab é, como este site já registrou, um processo de anos <Cite id="nikkei-wafer-share" />.
@@ -59,7 +65,7 @@ Mercados grandes deveriam ter muitos fornecedores. Três forças empurram na dir
 
 A cadeia foi **otimizada para custo** durante décadas, e a concentração é o resultado dessa otimização. O preço da eficiência é a ausência de plano B.
 
-<SourceNote :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'fabm-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls']" />
+<SourceNote :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls', 'cset-packaging']" />
 
 <SeeAlso :links="[
   { text: 'Preços e valor', href: '/precos-e-valor', note: 'onde o dinheiro está na cadeia' },

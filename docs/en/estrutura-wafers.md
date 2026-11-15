@@ -21,9 +21,9 @@ The text follows that order.
 
 Crystalline silicon adopts the **diamond cubic crystal structure**.
 
-<DiagramFigure src="/pdf-images/p08-1.png" alt="Diamond cubic crystal structure">
-The diamond cubic crystal structure.
-</DiagramFigure>
+<ClientOnly>
+  <CrystalViewer />
+</ClientOnly>
 
 <DiagramFigure src="/pdf-images/p08-2.png" alt="Silicon unit cell">
 Crystallographic orientations (&lt;100&gt;, &lt;110&gt;, &lt;001&gt;) and the lattice constant a<sub>Si</sub>.
@@ -146,8 +146,8 @@ A semiconductor with an equal number of excited electrons and holes (**n = p**) 
 
 There is one case where the choice of dopant stops being a process detail and starts deciding the reliability of the product. In photovoltaics, boron reacts with the oxygen in Cz silicon and degrades the cell under illumination, which pushed the industry to replace it with **gallium**, covered in the [solar cells and modules](/en/celulas-solares) chapter and in [Reliability](/en/confiabilidade#why-this-is-a-materials-story).
 
-<DiagramFigure src="/assets/silicon-doping-p-n.svg" alt="Intrinsic silicon, P-type (B) and N-type (Sb) doping">
-P-type: a hole with boron (B). N-type: a fifth valence electron with antimony (Sb). VectorVoyager, <a href="https://commons.wikimedia.org/wiki/File:Silicon_doping_-_Type_P_and_N.svg" target="_blank" rel="noopener noreferrer">Silicon doping (P and N)</a> (CC BY-SA 4.0), SVG from Wikimedia Commons.
+<DiagramFigure src="/assets/silicon-doping-lattice.svg" alt="Three flat silicon lattices with each bond drawn as a pair of electrons: pure silicon; p-type, where a boron atom leaves one bond with a single electron and a hole; and n-type, where an antimony atom brings a fifth electron outside the bonds">
+P-type: boron (B) leaves a hole. N-type: antimony (Sb) brings a fifth valence electron, free to move. Author's drawing; the real lattice is three-dimensional and the drawing flattens it.
 </DiagramFigure>
 
 <SourceNote label="Sources" :ids="['ge-vs-si', 'semi-m1', 'semi-t7', 'nikkei-wafer-share', 'wafer-market', 'eng-450mm', 'intel-450mm', 'asianometry-wafer', 'lid-hallam']" />

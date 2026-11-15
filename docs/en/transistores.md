@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # Architectural evolution of transistors
 
-From the planar structure to the CFET, the chapter walks the generations of the transistor in chronological order. Each section opens with that generation's process node and the payoff it brought; what the "node" label means is in the [addendum at the end of the chapter](#addendum-what-the-node-number-means).
+From the planar structure to the CFET, the chapter walks the generations of the transistor in chronological order. Each section opens with that generation's process node and the payoff it brought; what the "node" label means is in the [addendum at the end of the chapter](#what-the-node-number-means).
 
 1. [1960: Planar MOSFET](#_1960-planar-mosfet)
 2. [1963: CMOS complementary pair](#_1963-cmos-complementary-pair)
@@ -21,7 +21,7 @@ From the planar structure to the CFET, the chapter walks the generations of the 
 11. [2022: GAAFET](#_2022-gaafet-gate-all-around-nanosheets)
 12. [2025/2026: BSPDN](#_2025-2026-bspdn-backside-power)
 13. [~2029: Forksheet](#_2029-forksheet)
-14. [Future: CFET](#future-cfet)
+14. [CFET](#cfet)
 
 The [timeline](/en/linha-do-tempo) gathers these same generations into one interactive list, with each one's products. The sections below follow the order above.
 
@@ -33,101 +33,93 @@ The [timeline](/en/linha-do-tempo) gathers these same generations into one inter
 Channel, gate, source and drain in the plane of the wafer: the structure lithography had to draw in one pass. The silicon in front of the active area is cut away, so the front face of the slab is a section through source, channel and drain that leaves the channel's side wall in view; it is a drawing device, because a real wafer surface is flat. On the other three sides the field silicon meets the active area flush. The cut at the gate's front corner shows the gate oxide in section and the channel surface; the aluminium gate overlaps both diffusions, the alignment margin that the self-aligned gate would remove in 1968. Drawn by the author, from ASML.
 </DiagramFigure>
 
-The original planar transistors (**MOSFET**, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. Kahng and Atalla built the first working MOSFET in **1959** and demonstrated it in **1960** <Cite id="chm-mosfet" />; the device had a **20 µm** gate and a 100 nm gate oxide, and a **10 µm** version followed the same year <Cite id="semiconductor-scale" />. For comparison, the 2011 “22 nm” node has gates of the order of 25 nm <Cite id="wikipedia-22nm" />, the typical value for the node; Intel's FinFET measured 26 nm <Cite id="ieee-node" />. In five decades that dimension shrank about eight hundredfold. Below the **28 nm** node, the proximity of source and drain degraded the gate's control, producing **short-channel effects (SCE)** and leakage through quantum tunnelling.
+The original planar transistors (MOSFET, *Metal-Oxide-Semiconductor Field-Effect Transistor*), consolidated in the 1960s after Kahng and Atalla at Bell Labs, sustained Moore's Law for decades. The channel, the gate electrode, the source and the drain all sit in the two-dimensional plane of the wafer. Kahng and Atalla built the first working MOSFET in 1959 and demonstrated it in 1960 <Cite id="chm-mosfet" />; the device had a 20 µm gate and a 100 nm gate oxide, and a 10 µm version followed the same year <Cite id="semiconductor-scale" />. For comparison, the gate of Intel's 2011 “22 nm” FinFET measured 26 nm <Cite id="ieee-node" />. In five decades that dimension shrank about eight hundredfold. Below the 28 nm node, the proximity of source and drain degraded the gate's control, producing short-channel effects (SCE) and leakage through quantum tunnelling.
 
-In practice this generation powered pocket calculators and the first home microcomputers: the NMOS **6502** family, for instance, drove the Apple II, the Commodore 64 and the NES.
+In practice this generation powered pocket calculators and the first home microcomputers: the NMOS 6502 family, for instance, drove the Apple II, the Commodore 64 and the NES.
 
 ## 1963: CMOS (complementary pair)
 
 <TransistorFacts year="1963" />
 
-In **1963** Frank Wanlass (Fairchild) patented **CMOS** (*Complementary MOS*): an NMOS and a PMOS wired in series so that **one conducts while the other is cut off**. Because there is never a direct path between supply and ground in the steady state, standby current reduces to leakage alone, essentially zero static power. RCA brought the 4000 family to market in 1968 and, ever since, CMOS has been the basis of virtually all digital logic: it is what allows billions of gates on one chip without melting it.
+In 1963 Frank Wanlass (Fairchild) patented CMOS (*Complementary MOS*): an NMOS and a PMOS wired in series so that one conducts while the other is cut off. Because there is never a direct path between supply and ground in the steady state, standby current reduces to leakage alone, essentially zero static power. RCA brought the 4000 family to market in 1968 and, ever since, CMOS has been the basis of virtually all digital logic: it is what allows billions of gates on one chip without melting it.
 
 <DiagramFigure src="/assets/cmos.svg" alt="CMOS cross-section with an NMOS in a p-well and a PMOS in an n-well">
 Complementary pair: an NMOS in a p-well and a PMOS in an n-well, with a single path between V<sub>DD</sub> and GND.
 </DiagramFigure>
 
-Its first large-scale use was the **RCA CD4000 logic family** (1968), which made CMOS the standard for digital watches, calculators and battery-powered instruments. Decades later the same principle became the **real-time clock** of every PC, still kept alive by what the industry nicknamed the “CMOS battery”.
+Its first large-scale use was the RCA CD4000 logic family (1968), which made CMOS the standard for digital watches, calculators and battery-powered instruments. Decades later the same principle became the real-time clock of every PC, still kept alive by what the industry nicknamed the “CMOS battery”.
 
 ## 1968: Self-aligned silicon gate
 
 <TransistorFacts year="1968" />
 
-Until the late 1960s the gate was **aluminium**, deposited **after** the source and drain diffusion. To guarantee that the channel was fully covered, the gate had to **overlap** source and drain, adding parasitic capacitance and forcing alignment tolerances that wasted area.
+Until the late 1960s the gate was aluminium, deposited after the source and drain diffusion. To guarantee that the channel was fully covered, the gate had to overlap source and drain, adding parasitic capacitance and forcing alignment tolerances that wasted area.
 
-The **self-aligned silicon gate** solved this by reversing the order of the steps: the polysilicon is deposited and patterned **first**, and then serves itself as the mask for the source/drain implant. The junctions end up automatically aligned to the gate, with minimal overlap, and polysilicon also survives the high-temperature anneals that aluminium could not.
+The self-aligned silicon gate solved this by reversing the order of the steps: the polysilicon is deposited and patterned first, and then serves itself as the mask for the source/drain implant. The junctions end up automatically aligned to the gate, with minimal overlap, and polysilicon also survives the high-temperature anneals that aluminium could not.
 
-The chronology has three names. In **1965** Boyd Watkins described a self-aligned silicon-gate structure at General Microelectronics, but the patent filing only came in 1969. In **1967** Robert Kerwin, Donald Klein and John Sarace at Bell Labs published the replacement of aluminium with polycrystalline silicon and demonstrated self-aligned transistors, still as discrete devices <Cite id="chm-sigate" />. The move to integrated circuits came at Fairchild, where Tom Klein and Federico Faggin solved what was still missing: precision silicon etching and the process architecture <Cite id="chm-sigate" />.
+The chronology has three names. In 1965 Boyd Watkins described a self-aligned silicon-gate structure at General Microelectronics, but the patent filing only came in 1969. In 1967 Robert Kerwin, Donald Klein and John Sarace at Bell Labs published the replacement of aluminium with polycrystalline silicon and demonstrated self-aligned transistors, still as discrete devices <Cite id="chm-sigate" />. The move to integrated circuits came at Fairchild, where Tom Klein and Federico Faggin solved what was still missing: precision silicon etching and the process architecture <Cite id="chm-sigate" />.
 
 <DiagramFigure src="/assets/silicon-gate.svg" alt="Comparison of an overlapping aluminium gate with a self-aligned silicon gate">
 Above, an aluminium gate overlapping source and drain; below, a self-aligned silicon gate.
 </DiagramFigure>
 
-The first commercial product was the **Fairchild 3708** (1968), an 8-channel analog multiplexer created as a replacement for the troublesome aluminium-gate 3705. Compared with it, the 3708 was about **5× faster**, had roughly **100× less leakage current**, and the on-resistance of its analog switches was **3× lower** <Cite id="faggin-sgt" />. The credit is disputed: Intel presented the 1101 as the first silicon-gate IC, but the 3708 got there first, and Intel itself benefited from the process by hiring Les Vadasz and Federico Faggin, who had developed it <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
+The first commercial product was the Fairchild 3708 (1968), an 8-channel analog multiplexer created as a replacement for the troublesome aluminium-gate 3705. Compared with it, the 3708 was about 5× faster, had roughly 100× less leakage current, and the on-resistance of its analog switches was 3× lower <Cite id="faggin-sgt" />. The credit is disputed: Intel presented the 1101 as the first silicon-gate IC, but the 3708 got there first, and Intel itself benefited from the process by hiring Les Vadasz and Federico Faggin, who had developed it <Cite id="faggin-sgt" /> <Cite id="chm-sigate" />.
 
-This is the technique that made the first microprocessors viable. Faggin joined Intel in **April 1970** and was the architect of the 4000 family: the **Intel 4004** (1971) shipped with 2,300 transistors on a 12 mm² die, built on a 10 µm pMOS process for the Busicom 141-PF calculator <Cite id="intel-4004" />. Without the self-aligned gate and the buried contact, the 4004 would not have fit on a manufacturable die <Cite id="chm-sigate" />.
+This is the technique that made the first microprocessors viable. Faggin joined Intel in April 1970 and was the architect of the 4000 family: the Intel 4004 (1971) shipped with 2,300 transistors on a 12 mm² die, built on a 10 µm pMOS process for the Busicom 141-PF calculator <Cite id="intel-4004" />. Without the self-aligned gate and the buried contact, the 4004 would not have fit on a manufacturable die <Cite id="chm-sigate" />.
 
 ## 1985: LDD (lightly doped drain)
 
 <TransistorFacts year="1985" />
 
-With channels on the order of **1 µm**, the electric field concentrated at the drain accelerated carriers to energies high enough to cross the gate oxide. These **hot carriers** became trapped in the oxide, shifting the threshold voltage and shortening the device's useful life. The **LDD** structure (*Lightly Doped Drain*, IBM) inserts a lightly doped (**n⁻**) extension between the channel and the heavily doped (**n⁺**) contact: the potential drop spreads over a longer distance and the peak field falls. The extension is implanted using the gate itself as the mask, and it is the sidewall **spacer** that holds the **n⁺** contact away from the gate edge, by a distance set by the thickness of the spacer material <Cite id="motorola-ldd-patent" />. The nitride spacer would be reused later by the silicide processes. The price is a small extra series resistance.
+With channels on the order of 1 µm, the electric field concentrated at the drain accelerated carriers to energies high enough to cross the gate oxide. These hot carriers became trapped in the oxide, shifting the threshold voltage and shortening the device's useful life. The LDD structure (*Lightly Doped Drain*, IBM) inserts a lightly doped (n⁻) extension between the channel and the heavily doped (n⁺) contact: the potential drop spreads over a longer distance and the peak field falls. The extension is implanted using the gate itself as the mask, and it is the sidewall spacer that holds the n⁺ contact away from the gate edge, by a distance set by the thickness of the spacer material <Cite id="motorola-ldd-patent" />. The nitride spacer would be reused later by the silicide processes. The price is a small extra series resistance.
 
-The extension is not necessarily shallower than the contact. With phosphorus in the **n⁻** and arsenic in the **n⁺**, it tends to come out **deeper**, because phosphorus diffuses faster. What keeps it light is the dose, about two orders of magnitude lower <Cite id="motorola-ldd-patent" />.
+The extension is not necessarily shallower than the contact. With phosphorus in the n⁻ and arsenic in the n⁺, it tends to come out deeper, because phosphorus diffuses faster. What keeps it light is the dose, about two orders of magnitude lower <Cite id="motorola-ldd-patent" />.
 
 <DiagramFigure src="/assets/ldd.svg" alt="Cross-sections of two transistors: left, the conventional junction with the n⁺ contact against the gate; right, the LDD, with the deeper n− extension under the spacer and the n⁺ contact offset from the gate">
 Left, the conventional junction: the n⁺ contact sits against the gate, and that is where the peak field concentrates. Right, the LDD: the n⁻ extension reaches slightly under the gate, is deeper and much more lightly doped than the n⁺ contact, and the spacer (purple, on the oxide) holds that contact away from the gate edge.
 </DiagramFigure>
 
-The concept originated at IBM, but production adoption came with Intel's **CHMOS III**: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a **250 Å** gate oxide and a typical **1.0 µm** electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the **80386** (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" />, the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by **1987** there were **0.8 µm** CMOS processes built around it <Cite id="ldd-08um" />.
+The concept originated at IBM, but production adoption came with Intel's CHMOS III: Intel's own paper describes the LDD structure as the feature that insured transistor reliability, alongside a 250 Å gate oxide and a typical 1.0 µm electrical channel, and already announced that the technology would be used to produce the next 32-bit microprocessor <Cite id="intel-chmos3" />. That product was the 80386 (1985), built in CHMOS III at 1.5 µm with two layers of metal <Cite id="intel-80386" />, the processor behind the Windows 3.x era. It stopped being the exception as channels dropped below 1 µm: by 1987 there were 0.8 µm CMOS processes built around it <Cite id="ldd-08um" />.
 
 ## 1995: STI (shallow trench)
 
 <TransistorFacts year="1995" />
 
-Isolation between neighbouring transistors used to be done with **LOCOS** (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the **“bird’s beak”**, which eats into the active area and limits density. The shallow trench was **proposed in the early 1980s**, but spent years without practical use: both the planarisation and an oxide deposition able to fill narrow trenches were missing. It was **CMP** that unlocked the process <Cite id="shmj-sti" />. A shallow trench is then etched into the silicon, filled with deposited oxide and planarised by CMP: vertical walls, no bird’s beak, and a flat surface, a requirement for the lithographic depth of focus.
+Isolation between neighbouring transistors used to be done with LOCOS (*Local Oxidation of Silicon*): a nitride mask delimits the active areas and thermal oxidation grows a thick field oxide. The process creeps sideways under the nitride and forms the “bird’s beak”, which eats into the active area and limits density. The shallow trench was proposed in the early 1980s, but spent years without practical use: both the planarisation and an oxide deposition able to fill narrow trenches were missing. It was CMP that unlocked the process <Cite id="shmj-sti" />. A shallow trench is then etched into the silicon, filled with deposited oxide and planarised by CMP: vertical walls, no bird’s beak, and a flat surface, a requirement for the lithographic depth of focus.
 
 <DiagramFigure src="/assets/sti.svg" alt="Cross-section of two isolation schemes on the same silicon surface: left, LOCOS, with the field oxide above the surface and the bird's beak tapering into the active area; right, a shallow trench with an oxide liner on its walls and deposited oxide level with the surface">
 Left, LOCOS: the field oxide grows above the surface and the bird's beak runs below it, tapering to a point inside the active area. Right, the shallow trench: near-vertical walls, a grown oxide liner on the walls and floor, and deposited oxide level with the original surface, the dashed line that runs across both panels.
 </DiagramFigure>
 
-The trench cut comes from **reactive ion etching** (**RIE**), **0.1 µm to 1 µm** deep, and the walls take a **thermal oxide liner**, on the order of **20 nm**, before the deposited oxide closes the gap (**550 nm of TEOS** in the patent's example) <Cite id="ibm-sti-patent" />. The trench **corners** are where oxidation stress concentrates crystal defects, and the grown oxide is what stabilises that etched surface <Cite id="ibm-sti-patent" />. Its thickness is held down by necessity, because a thick nitride liner is eaten by the hot phosphoric acid that strips the mask nitride, and the recess turns into a void in the fill after the hydrofluoric acid dip <Cite id="ibm-sti-patent" />.
+The trench cut comes from reactive ion etching (RIE), 0.1 µm to 1 µm deep, and the walls take a thermal oxide liner, on the order of 20 nm, before the deposited oxide closes the gap (550 nm of TEOS in the patent's example) <Cite id="ibm-sti-patent" />. The trench corners are where oxidation stress concentrates crystal defects, and the grown oxide is what stabilises that etched surface <Cite id="ibm-sti-patent" />. Its thickness is held down by necessity, because a thick nitride liner is eaten by the hot phosphoric acid that strips the mask nitride, and the recess turns into a void in the fill after the hydrofluoric acid dip <Cite id="ibm-sti-patent" />.
 
-Production arrived **before the 0.25 µm node**, not at it. IBM led the application in **0.35 µm DRAM**, and Toshiba was already in mass production by 1996 <Cite id="shmj-sti" />. On the logic side, Intel started from STI **a generation earlier** too: the P856 flow is described as identical to that of **P854 (0.35 µm)**, which already began with a shallow trench <Cite id="intel-p856" />. It was **P856 (0.25 µm)**, certified in **Q3 1997**, that carried STI into the **Pentium II** at volume <Cite id="intel-p856" /><Cite id="voldman-esd" />.
+Production arrived before the 0.25 µm node, not at it. IBM led the application in 0.35 µm DRAM, and Toshiba was already in mass production by 1996 <Cite id="shmj-sti" />. On the logic side, Intel started from STI a generation earlier too: the P856 flow is described as identical to that of P854 (0.35 µm), which already began with a shallow trench <Cite id="intel-p856" />. It was P856 (0.25 µm), certified in Q3 1997, that carried STI into the Pentium II at volume <Cite id="intel-p856" /><Cite id="voldman-esd" />.
 
 ## 1998: SOI (silicon on insulator)
 
 <TransistorFacts year="1998" />
 
-In **SOI** (*Silicon On Insulator*) the transistor is built in a **thin silicon film** on top of a **buried oxide** layer (BOX). The junctions no longer touch the substrate, which slashes **junction capacitance** (faster switching for less energy), eliminates the **latch-up** that plagues bulk CMOS, and improves radiation tolerance. IBM brought SOI to its servers through the RS64 family, which was already shipping in iSeries 400 machines in **1998** <Cite id="ibm-rs64-soi" />. The company's first SOI processor was the **RS64-III *IStar***, still on the **0.22 µm** process <Cite id="wikipedia-rs64" />; in **2000** the **RS64-IV** shipped on **0.18 µm** copper SOI <Cite id="ibm-rs64-soi" />, and today the **FD-SOI** variant (ultra-thin body) occupies niches in low-power and RF designs.
+In SOI (*Silicon On Insulator*) the transistor is built in a thin silicon film on top of a buried oxide layer (BOX). The junctions no longer touch the substrate, which slashes junction capacitance (faster switching for less energy), eliminates the latch-up that plagues bulk CMOS, and improves radiation tolerance. IBM brought SOI to its servers through the RS64 family, which was already shipping in iSeries 400 machines in 1998 <Cite id="ibm-rs64-soi" />. IBM planned to move its copper 0.22 µm CMOS-7S process to SOI in the first quarter of 1999, which would make it the first microprocessor vendor in volume production with SOI <Cite id="mpr-race-018" />; in 2000 the RS64-IV shipped on 0.18 µm copper SOI <Cite id="ibm-rs64-soi" />, and today the FD-SOI variant (ultra-thin body) occupies niches in low-power and RF designs.
 
 <DiagramFigure src="/assets/soi.svg" alt="Cross-sections of two transistors on the same surface line: on the left, bulk silicon with the n+ regions embedded in the substrate; on the right, SOI with the transistor built in a thin film on a buried oxide over a handle wafer">
 Left, the bulk transistor: the n+ junctions run into the substrate, which continues downwards with no boundary. Right, SOI: the same transistor fits in the thin film, the n+ junctions stop at the buried oxide, and the handle wafer below the oxide is electrically inert. Both panels share the same surface line.
 </DiagramFigure>
 
-The buried oxide is not grown in the transistor, it comes inside the wafer. **SIMOX** formed it with an extremely high-dose oxygen implant, which called for heavy implantation machines of limited output; **Smart Cut**, patented by CEA in **1994**, implants hydrogen ions, bonds the wafer face to a support substrate and heats the stack above **500 °C**, where the pressure of the microbubbles splits the thin film off the rest of the wafer <Cite id="bruel-smartcut" />. The film thickness then follows the implantation energy: **10 keV** yields about **0.1 µm** <Cite id="bruel-smartcut" />.
+The buried oxide is not grown in the transistor, it comes inside the wafer. SIMOX formed it with an extremely high-dose oxygen implant, which called for heavy implantation machines of limited output; Smart Cut, patented by CEA in 1994, implants hydrogen ions, bonds the wafer face to a support substrate and heats the stack above 500 °C, where the pressure of the microbubbles splits the thin film off the rest of the wafer <Cite id="bruel-smartcut" />. The film thickness then follows the implantation energy: 10 keV yields about 0.1 µm <Cite id="bruel-smartcut" />.
 
-The architecture became famous in the 2005–2006 console generation: the **Cell** in the PlayStation 3 and the **Xenon** in the Xbox 360 both shipped on 90 nm SOI, while AMD's **Athlon 64** brought the same technology to PCs <Cite id="ibm-cell" />.
+The architecture became famous in the 2005–2006 console generation: the Cell in the PlayStation 3 and the Xenon in the Xbox 360 both shipped on 90 nm SOI, while AMD's Athlon 64 brought the same technology to PCs <Cite id="ibm-cell" />.
 
 ## 2003: Strained silicon (Intel)
 
 <TransistorFacts year="2003" />
 
-At the **90 nm** node (2003/2004), Intel used **strained silicon**: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility at marginal cost <Cite id="intel-strain" />.
+At the 90 nm node (2003/2004), Intel used strained silicon: mechanical stress in the channel (e.g. Si on SiGe) increases atomic spacing and mobility at marginal cost <Cite id="intel-strain" />.
 
-<DiagramFigure src="/pdf-images/p15-1.png" alt="Silicon lattice vs silicon-germanium">
-Lattice comparison: pure silicon vs. SiGe as a stress-inducing substrate.
+<DiagramFigure src="/assets/strained-silicon.svg" alt="Three panels: relaxed silicon and silicon-germanium lattices with the SiGe spacing marked; a thin silicon layer grown on SiGe and stretched sideways to its spacing, with tensile arrows; and a transistor cross-section with a gate, source, drain and a current path through the channel, beside two lattice rows, the strained one with a longer path in the same time">
+Strained silicon. SiGe has a wider atomic spacing than silicon, so a thin silicon layer grown on it is pulled apart to match, and electrons move through the stretched channel with higher mobility <Cite id="intel-strain" />. Author's drawing; the strain in Intel's process is about 1% <Cite id="intel-strain" />, and the drawing exaggerates it many times. Intel's page on strained transistors, with the original figures, is at <a href="https://web.archive.org/web/20101125112707/https://www.intel.com/pressroom/kits/advancedtech/doodle/ref_strain/strain.htm" target="_blank" rel="noopener noreferrer">Strained Transistors</a> (archive).
 </DiagramFigure>
 
-<DiagramFigure src="/pdf-images/p15-2.png" alt="Strained silicon on SiGe">
-A layer of “stretched” silicon on silicon-germanium. Arrows indicate horizontal strain.
-</DiagramFigure>
-
-<DiagramFigure src="/pdf-images/p16-1.png" alt="Electron flow in normal vs strained silicon">
-Normal vs. strained lattice and the faster electron flow in the channel.
-</DiagramFigure>
-
-The first high-volume processor with strained silicon was the **Pentium 4 “Prescott”**, launched in February 2004 at the 90 nm node, which also introduced copper interconnects and a low-k dielectric <Cite id="intel-90nm" />.
+The first high-volume processor with strained silicon was the Pentium 4 “Prescott”, launched in February 2004 at the 90 nm node, which also introduced copper interconnects and a low-k dielectric <Cite id="intel-90nm" />.
 
 ## 2007: High-K metal gate (HKMG)
 
@@ -137,13 +129,13 @@ The first high-volume processor with strained silicon was the **Pentium 4 “Pre
 Left, the SiO₂ gate with polysilicon: the thin oxide lets carriers tunnel through, the red arrows. Right, a thin <strong>interfacial oxide</strong> under the <strong>high-k</strong> film, under a metal electrode: the stack is physically thicker, with the same equivalent oxide thickness (<strong>EOT</strong> of <strong>1.0 nm</strong> at the 45 nm node), and it is the physical thickness that pushes direct tunnelling down.
 </DiagramFigure>
 
-With the gate oxide already too thin to hold back **tunnelling**, leakage became the obstacle to scaling; the answer came in **2007**, at the **45 nm** node, by trading SiO₂ and polysilicon for a **hafnium-based high-k** dielectric and **metal electrodes** <Cite id="intel-45nm" />.
+With the gate oxide already too thin to hold back tunnelling, leakage became the obstacle to scaling; the answer came in 2007, at the 45 nm node, by trading SiO₂ and polysilicon for a hafnium-based high-k dielectric and metal electrodes <Cite id="intel-45nm" />.
 
-The switch was not direct. Before high-k the dielectric had already changed once: adding **nitrogen** to SiO₂ forms **silicon oxynitride (SiON)**, with a higher effective dielectric constant, which buys a few tenths of a nanometre of physical film for the same capacitance and pushed the oxide's limit out by several nodes <Cite id="ecs-gate-dielectrics" />.
+The switch was not direct. Before high-k the dielectric had already changed once: adding nitrogen to SiO₂ forms silicon oxynitride (SiON), with a higher effective dielectric constant, which buys a few tenths of a nanometre of physical film for the same capacitance and pushed the oxide's limit out by several nodes <Cite id="ecs-gate-dielectrics" />.
 
-The 45 nm process runs at **1.0 nm EOT** (*equivalent oxide thickness*, the thickness of SiO₂ that would give the same capacitance), and the high-k film is physically thicker than that <Cite id="hkmg-paper" />. The gate is **35 nm** long, the contacted gate pitch is **160 nm**, and the NMOS and PMOS transistors use metals with **different work functions**, in a *high-k first, metal gate last* flow where the metal goes in last, replacing the sacrificial gate <Cite id="hkmg-paper" />.
+The 45 nm process runs at 1.0 nm EOT (*equivalent oxide thickness*, the thickness of SiO₂ that would give the same capacitance), and the high-k film is physically thicker than that <Cite id="hkmg-paper" />. The gate is 35 nm long, the contacted gate pitch is 160 nm, and the NMOS and PMOS transistors use metals with different work functions, in a *high-k first, metal gate last* flow where the metal goes in last, replacing the sacrificial gate <Cite id="hkmg-paper" />.
 
-The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followed in January 2008 by the volume line, the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
+The commercial debut was the Core 2 Extreme QX9650 in November 2007, followed in January 2008 by the volume line, the 45 nm Core 2 Duo and Quad chips that went into the laptops and MacBooks of the period <Cite id="intel-45nm" />.
 
 ## 2011: FinFET (Tri-Gate)
 
@@ -153,7 +145,7 @@ The commercial debut was the **Core 2 Extreme QX9650** in November 2007, followe
 The channel leaves the plane: the vertical fin is wrapped by the gate on three sides.
 </DiagramFigure>
 
-Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at **22 nm** (2011): the channel becomes a vertical “fin” and the gate wraps three sides, reducing leakage and allowing drive current to scale with adjacent fins (**fin quantization**).
+Below 20 nm, planar devices lost control. Intel commercialised FinFET at 22 nm (2011): the channel becomes a vertical “fin” and the gate wraps three sides, reducing leakage and allowing drive current to scale with adjacent fins (fin quantization).
 
 **Ivy Bridge** (22 nm, April 2012) was the first high-volume product <Cite id="intel-trigate" />. The architecture dominated every node from 22 nm down to N3 (3 nm), with Samsung moving to GAA at 3 nm.
 
@@ -161,25 +153,25 @@ Below **20 nm**, planar devices lost control. Intel commercialised **FinFET** at
 
 <TransistorFacts year="2012" />
 
-While the rest of the industry moved to FinFET, **FD-SOI** took a different route, reviving the SOI idea with an **ultra-thin silicon film** (~7 nm) on an **ultra-thin BOX** (~25 nm) <Cite id="st-fdsoi-utbb" />. With the film that thin the channel becomes **fully depleted** (no “floating body” effects as in partially depleted SOI) and a **back plane** under the BOX allows **body bias** to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
+While the rest of the industry moved to FinFET, FD-SOI took a different route, reviving the SOI idea with an ultra-thin silicon film (~7 nm) on an ultra-thin BOX (~25 nm) <Cite id="st-fdsoi-utbb" />. With the film that thin the channel becomes fully depleted (no “floating body” effects as in partially depleted SOI) and a back plane under the BOX allows body bias to raise or lower the threshold voltage on the fly. In practice this lets a circuit spend energy only when it needs performance, which is valuable in IoT, RF and automotive designs.
 
 <DiagramFigure src="/assets/fdsoi.svg" alt="Comparison of partially depleted SOI with a floating body against FD-SOI with an ultra-thin body and BOX, raised source and drain, and a back plane">
 Left, partially depleted SOI with a floating body; right, FD-SOI (ultra-thin body and BOX), with raised source and drain and the back plane that takes the body bias.
 </DiagramFigure>
 
-The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundries (**22FDX**). The best-known case is the **Google Nest Mini**, whose Synaptics AS-370 SoC was identified in a teardown as built on 22FDX <Cite id="techinsights-22fdx" />. The technology also underpins BLE MCUs, Wi-Fi cameras and GNSS SoCs, with dozens of designs already in mass production <Cite id="verisilicon-fdsoi" />.
+The commercial platforms came from STMicroelectronics (28 nm) and GlobalFoundries (22FDX). The best-known case is the Google Nest Mini, whose Synaptics AS-370 SoC was identified in a teardown as built on 22FDX <Cite id="techinsights-22fdx" />. The technology also underpins BLE MCUs, Wi-Fi cameras and GNSS SoCs, with dozens of designs already in mass production <Cite id="verisilicon-fdsoi" />.
 
 ## 2022: GAAFET (gate-all-around / nanosheets)
 
 <TransistorFacts year="2022" />
 
-<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Two views of the GAAFET: left, the stacked nanosheets with the gate crossing them; right, a section through the gate, with the oxide and the gate wrapping each sheet on all four sides">
-Stacked nanosheets, with the gate wrapping all four faces of each one.
+<DiagramFigure src="/assets/gaafet-nanosheet.svg" alt="Two views of the GAAFET: left, three stacked nanosheets running from a source block to a drain block through the gate, with the drain drawn cut away; right, a section through the gate, with the oxide and the gate wrapping each sheet on all four sides">
+Stacked nanosheets run from source to drain through the gate, which wraps all four faces of each one. The drain is drawn cut away so the sheets show where they end. Author's diagram, not to scale.
 </DiagramFigure>
 
-At **3 nm** and below, FinFETs hit limits of variability and quantum effects. **GAAFET** stacks **nanosheets** wrapped by the gate on **all four sides**. Samsung, TSMC and Intel have announced they will adopt GAA at their next nodes <Cite id="asml-gaa" />. The electrostatic control is superior, and the nanosheet width can be tuned to favour performance or power.
+At 3 nm and below, FinFETs hit limits of variability and quantum effects. GAAFET stacks nanosheets wrapped by the gate on all four sides. Samsung, TSMC and Intel have announced they will adopt GAA at their next nodes <Cite id="asml-gaa" />. The electrostatic control is superior, and the nanosheet width can be tuned to favour performance or power.
 
-The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: **TSMC's N3 was still FinFET**. Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with **N2**, in volume production since late 2025 <Cite id="tsmc-n2" />.
+The first commercial GAA product was MicroBT's WhatsMiner M56S++ mining ASIC, on Samsung's SF3E process, identified in 2023 <Cite id="techinsights-gaa" />. One caveat: TSMC's N3 was still FinFET. Apple's A17 Pro in the iPhone 15 Pro is a 3 nm FinFET chip. TSMC only moved to nanosheets with N2, in volume production since late 2025 <Cite id="tsmc-n2" />.
 
 ## 2025/2026: BSPDN (backside power)
 
@@ -189,15 +181,15 @@ The first commercial GAA product was MicroBT's **WhatsMiner M56S++** mining ASIC
 Power delivery moves to the wafer backside, leaving the front free for signal.
 </DiagramFigure>
 
-**Backside Power Delivery Network (BSPDN)**, *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): power rails move to the **back side** of the wafer through **TSVs**, freeing the front layers for signal.
+**Backside Power Delivery Network (BSPDN)**, *PowerVia* (Intel 18A), *Super Power Rail* (TSMC): power rails move to the back side of the wafer through TSVs, freeing the front layers for signal.
 
-It reached the market in **Intel Panther Lake** (Core Ultra series 3) <Cite id="intel-18a" />; TSMC introduces *Super Power Rail* on **A16**, with volume production scheduled for the second half of 2026 <Cite id="tsmc-n2" />.
+It reached the market in Intel Panther Lake (Core Ultra series 3) <Cite id="intel-18a" />; TSMC introduces *Super Power Rail* on A16, with volume production scheduled for the second half of 2026 <Cite id="tsmc-n2" />.
 
 ## ~2029: Forksheet
 
 <TransistorFacts year="~2029" />
 
-For the **A10** node, imec proposed an intermediate architecture called the **forksheet**. The idea is to place a **dielectric wall** between the n and p gates: the wall separates the two gate trenches and lets them sit far closer than conventional nanosheets allow, without having to stack the transistors as CFET does. The result is a smaller standard cell while keeping much of the nanosheet manufacturing flow, which makes the transition less disruptive.
+For the A10 node, imec proposed an intermediate architecture called the forksheet. The idea is to place a dielectric wall between the n and p gates: the wall separates the two gate trenches and lets them sit far closer than conventional nanosheets allow, without having to stack the transistors as CFET does. The result is a smaller standard cell while keeping much of the nanosheet manufacturing flow, which makes the transition less disruptive.
 
 <DiagramFigure src="/assets/forksheet.svg" alt="Comparison of gate-all-around nanosheets with a wide n-p gap and a forksheet with a dielectric wall between the gates">
 Left, gate-all-around nanosheets with a wide gap between the n and p gates; right, a forksheet with the dielectric wall bringing them closer.
@@ -205,47 +197,47 @@ Left, gate-all-around nanosheets with a wide gap between the n and p gates; righ
 
 Imec demonstrated the process on 300 mm wafers in 2021 and, in 2025, presented an *outer wall* variant with better manufacturability and performance. It is the declared bridge between GAAFET and CFET <Cite id="imec-forksheet" />.
 
-## Future: CFET
+## CFET
 
 <TransistorFacts year="Futuro" />
 
-<DiagramFigure src="/assets/cfet.svg" alt="Comparison of an NFET and PFET side by side with a stacked CFET">
-NFET and PFET in the same cell, stacked instead of side by side.
+<DiagramFigure src="/assets/cfet.svg" alt="Two sections through the gate: on the left, a pFET stack and an nFET stack side by side, each in its own gate, across a cell width W; on the right, a CFET with the nFET sheets above the pFET sheets in one shared gate, separated by an isolation layer, across about W/2">
+NFET and PFET in the same cell, stacked under one shared gate instead of side by side. Author's diagram, not to scale.
 </DiagramFigure>
 
-Below **1 nm** (the angstrom era), **CFET (Complementary FET)** stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the **A7** node, after 2030 <Cite id="imec-forksheet" />.
+Below 1 nm (the angstrom era), CFET (Complementary FET) stacks NFET and PFET vertically in the same cell, cutting the area per logic gate (inverters, SRAM) and extending Moore's Law beyond conventional GAAFET. Because the stacking is far harder to manufacture, imec expects mass production only from the A7 node, after 2030 <Cite id="imec-forksheet" />.
 
-CFET is a bet inside silicon. Outside it, the candidate channel materials to replace silicon are **carbon nanotubes** and **transition metal dichalcogenides (TMDs)**, two-dimensional semiconductors that the IRDS keeps as CMOS-extension candidates, still short of manufacturing maturity <Cite id="irds-beyond-cmos" />. And there is a second axis, above the transistor: instead of stacking devices, the industry stacks **whole dies** (chiplets) in 2.5D and 3D, gaining density and performance in the package rather than on the wafer ([Packaging](/en/empacotamento)) <Cite id="tsmc-cowos" />.
+CFET is a bet inside silicon. Outside it, the candidate channel materials to replace silicon are carbon nanotubes and transition metal dichalcogenides (TMDs), two-dimensional semiconductors that the IRDS keeps as CMOS-extension candidates, still short of manufacturing maturity <Cite id="irds-beyond-cmos" />. And there is a second axis, above the transistor: instead of stacking devices, the industry stacks whole dies (chiplets) in 2.5D and 3D, gaining density and performance in the package rather than on the wafer ([Packaging](/en/empacotamento)) <Cite id="tsmc-cowos" />.
 
-## Addendum: what the node number means
+## What the node number means
 
-The node number that opens each section only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name. The story has three stages.
+The node number that opens each section only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name, in three stages.
 
 ### 1. The number was born from a coincidence
 
-The “node” was not invented as a concept. It records the observation that **two different dimensions gave roughly the same number**. The first is the **gate length**, the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the **metal half-pitch**, half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
+The “node” was not invented as a concept. It records the observation that two different dimensions gave roughly the same number. The first is the gate length, the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the metal half-pitch, half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.
 
-For as long as the two moved together, the label worked. Each generation shrank those dimensions by about **30%**, and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />. That shrink never depended on the transistor alone: each generation also demanded finer lithography, and it is **EUV** that sustains the 7 nm node and below ([Photolithography](/en/fotolitografia)) <Cite id="asianometry-euv" />.
+For as long as the two moved together, the label worked. Each generation shrank those dimensions by about 30%, and since 0.7 × 0.7 ≈ 0.5, the area of a rectangle halved and density doubled. Moore's Law reduced to arithmetic <Cite id="ieee-node" />. That shrink never depended on the transistor alone: each generation also demanded finer lithography, and it is EUV that sustains the 7 nm node and below ([Photolithography](/en/fotolitografia)) <Cite id="asianometry-euv" />.
 
 ### 2. The two numbers came apart in the mid-1990s
 
-To keep gaining speed, the industry began shrinking the **gate length faster** than the other dimensions. At the so-called “**130 nm**” node, the real transistors had **70 nm** gates, barely more than half the number printed on the label <Cite id="ieee-node" />.
+To keep gaining speed, the industry began shrinking the gate length faster than the other dimensions. At the so-called “130 nm” node, the real transistors had 70 nm gates, barely more than half the number printed on the label <Cite id="ieee-node" />.
 
-The industry roadmap that defined the nodes, the **ITRS**, recorded the break in its own documents. As early as **1999** it eliminated the “150 nm node” and redefined the designation from the **DRAM half-pitch**, writing that “technology node is now not much more than a simple label for still somewhat convenient ‘tick marks’ along this path” <Cite id="itrs-1999" />. By **2001** the text was explicit: the node designation “is defined by DRAM half pitch, not by the transistor gate length or minimum feature size characteristic of that node” <Cite id="itrs-2001" />.
+The industry roadmap that defined the nodes, the ITRS, recorded the break in its own documents. As early as 1999 it eliminated the “150 nm node” and redefined the designation from the DRAM half-pitch, writing that “technology node is now not much more than a simple label for still somewhat convenient ‘tick marks’ along this path” <Cite id="itrs-1999" />. By 2001 the text was explicit: the node designation “is defined by DRAM half pitch, not by the transistor gate length or minimum feature size characteristic of that node” <Cite id="itrs-2001" />.
 
 The number no longer measured the transistor: it measured a memory dimension, and served mainly as a generation marker.
 
 ### 3. With FinFET, the number stopped measuring anything
 
-The final break came with the structural change of the transistor. At Intel's “**22 nm**” node (2011), the first with FinFETs, the devices had **26 nm** gates, a **40 nm** half-pitch and **8 nm** fins <Cite id="ieee-node" />. None of those three measurements is 22.
+The final break came with the structural change of the transistor. At Intel's “22 nm” node (2011), the first with FinFETs, the devices had 26 nm gates, a 40 nm half-pitch and 8 nm fins <Cite id="ieee-node" />. None of those three measurements is 22.
 
 Paolo Gargini, who chaired the ITRS and later the IRDS, sums it up: the node number "… had by then absolutely no meaning, because it had nothing to do with any dimension that you can find on the die" <Cite id="ieee-node" />. The article carrying that quote ran in IEEE Spectrum under a blunt headline: *“The Node is Nonsense”*.
 
 ### What replaced it
 
-Since no single dimension describes a process any more, the IRDS proposed replacing the label with a **three-number metric**: contacted gate pitch (**G**), metal pitch (**M**) and the number of device tiers (**T**). Chips called “5 nm”, for example, would be **G48M36T1**: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. It is not a round number, but it says something verifiable. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as **generation names**, and that is exactly how they should be read in the node shown at the top of each section.
+Since no single dimension describes a process any more, the IRDS proposed replacing the label with a three-number metric: contacted gate pitch (G), metal pitch (M) and the number of device tiers (T). Chips called “5 nm”, for example, would be G48M36T1: a 48 nm gate pitch, a 36 nm metal pitch, one tier <Cite id="ieee-node" />. Each of the three numbers can be measured on the chip. Meanwhile the industry keeps using 3 nm, 2 nm and 18A as generation names, and that is exactly how they should be read in the node shown at the top of each section.
 
-<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'wikipedia-rs64', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'wikipedia-22nm', 'intel-strain', 'asml-gaa', 'st-fdsoi-utbb']" />
+<SourceNote label="Sources" :ids="['intel-4004', 'intel-chmos3', 'intel-80386', 'ldd-08um', 'motorola-ldd-patent', 'intel-p856', 'shmj-sti', 'ibm-sti-patent', 'voldman-esd', 'ibm-cell', 'mpr-race-018', 'ibm-rs64-soi', 'bruel-smartcut', 'intel-90nm', 'hkmg-paper', 'intel-45nm', 'intel-trigate', 'techinsights-22fdx', 'verisilicon-fdsoi', 'techinsights-gaa', 'tsmc-n2', 'intel-18a', 'imec-forksheet', 'semiconductor-scale', 'chm-sigate', 'faggin-sgt', 'ieee-node', 'itrs-1999', 'itrs-2001', 'chm-mosfet', 'ecs-gate-dielectrics', 'irds-beyond-cmos', 'asianometry-euv', 'tsmc-cowos', 'intel-strain', 'asml-gaa', 'st-fdsoi-utbb']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'chronology and interactive comparator' },

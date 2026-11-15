@@ -1,7 +1,7 @@
 ---
 title: Os insumos da fab
 description: O que uma fábrica de semicondutores consome além do silício (fotorresiste, máscara, slurry, gases e água ultrapura) e por que essa lista é um gargalo tão silencioso quanto o quartzo.
-dataAsOf: 2022
+dataAsOf: 2023
 ---
 
 # Os insumos da fab
@@ -39,17 +39,25 @@ No DUV a máscara é uma placa de quartzo com cromo: luz atravessa onde há dese
 
 Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma máscara não pode ser corrigido depois de pronto: ele se replica em cada wafer exposto com aquela máscara, e o blank precisa chegar **livre de defeitos** para que a máscara seja utilizável <Cite id="asianometry-euv" />. É a mesma lógica dos insumos de quartzo: **a qualidade tem de estar no material de entrada**, porque a etapa seguinte não conserta.
 
+<DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="À esquerda, o corte de um refletor de Bragg com camadas alternadas de molibdênio e silício, um feixe entrando e reflexões parciais saindo em paralelo; à direita, a cadeia de perda de luz da fonte ao wafer ao longo de dez espelhos">
+O blank de uma máscara EUV é o mesmo tipo de multicamada de molibdênio e silício dos espelhos do scanner, e por isso um defeito enterrado nele é refletido em todos os wafers <Cite id="branch-euv" />. Desenho do autor, a partir de ASML/Branch Education.
+</DiagramFigure>
+
 ## O slurry do CMP
 
 A [planarização químico-mecânica](/fabricacao-wafers#polimento-quimico-mecanico-cmp) (CMP) parece um polimento, e é, mas com química envolvida. O **slurry** é uma suspensão de partículas abrasivas em uma solução que ataca quimicamente a superfície, de modo que o material é primeiro enfraquecido por reação e depois removido mecanicamente <Cite id="runnels-1994" />.
 
-A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />, cuja seção de [interconexão](/na-fab#interconexao-a-parte-do-chip-que-ninguem-ve) conta a troca de material.
+A consequência de projeto é que o slurry é **específico de cada material**: o que remove óxido sem arranhar cobre, e vice-versa, são formulações diferentes. A história do processo, do alumínio ao cobre, está no capítulo [Na fab](/na-fab) <Cite id="cmp-history" />, cuja seção de [interconexão](/na-fab#interconexao) conta a troca de material.
+
+<DiagramFigure src="/assets/cmp-dishing-erosion.svg" alt="Dois cortes depois do polimento de cobre: uma linha larga de cobre afundada abaixo do dielétrico e um bloco denso de linhas finas em que metal e dielétrico juntos ficam abaixo do campo aberto">
+Os dois defeitos contra os quais um slurry precisa ser ajustado: o dishing de uma linha larga de cobre e a erosão de um arranjo denso, descritos no capítulo Na fab. Diagrama do autor; os rebaixos estão exagerados.
+</DiagramFigure>
 
 ## Gases e o neônio
 
 Excimer lasers da litografia DUV precisam de **neônio** na mistura gasosa, e a recuperação desse gás virou projeto de engenharia dentro da fábrica à medida que o custo dele subiu <Cite id="fabm-neon-2017" />.
 
-O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país respondia por **cerca de metade** do neônio mundial e por **90%** do neônio de grau semicondutor, produzido como subproduto da siderurgia, e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="fabm-neon-2022" />.
+O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país fornecia cerca de metade do neônio mundial e, na década anterior, até 90% do neônio importado pelos Estados Unidos, herança da siderurgia soviética, e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="usitc-neon-2022" />. A fatia já vinha caindo com a diversificação dos compradores: um modelo da USITC pôs a Ucrânia em 70% do neônio mundial em 2014 e 50% em 2021 <Cite id="usitc-neon-pe-2022" />, e um trabalho posterior da USITC deu 25 a 30% do neônio purificado do mundo <Cite id="usitc-taiwan-2023" />.
 
 O padrão se repete: **insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria**. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
 
@@ -65,7 +73,7 @@ Nenhum dos insumos desta página é caro por unidade. Todos são difíceis de su
 
 O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige **requalificar o processo inteiro**, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
 
-<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'fabm-neon-2022', 'fabm-upw']" />
+<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
 
 <SeeAlso :links="[
   { text: 'O mapa dos gargalos', href: '/gargalos', note: 'a concentração de cada etapa' },

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img">
+  <title>The two characteristic CMP defects: dishing, where a wide copper line is polished below the surrounding dielectric, and erosion, where a dense array of narrow lines and the dielectric between them are both worn below the open field</title>
+  <desc>Two cross-sections after copper CMP, sharing the same target surface drawn as a dashed line. Left: a single wide copper line whose top is concave, sitting below the flat dielectric on both sides. Right: eight narrow copper lines in a dense block whose whole top, metal and dielectric, sits below the field on either side. Schematic; the recesses are exaggerated many times relative to the line widths.</desc>
+  <rect width="960" height="480" fill="#ffffff" />
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096" />
+    </marker>
+  </defs>
+  <style>
+    .h { font: 600 21px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .pt { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .note { font: 16.5px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #4a5568; }
+    .val { font: 700 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .diel { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
+    .cu { fill: #ed8936; stroke: #c05621; stroke-width: 1.4; }
+    .ref { fill: none; stroke: #718096; stroke-width: 1.4; stroke-dasharray: 7 5; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
+  </style>
+
+  <text class="h" x="40" y="40">Dishing and erosion after copper CMP</text>
+
+  <!-- Left: dishing -->
+  <text class="pt" x="60" y="100">Dishing</text>
+  <text class="t" x="60" y="124">one wide line</text>
+  <path class="ref" d="M 60,200 L 440,200" />
+  <path class="diel" d="M 60,200 L 160,200 L 160,320 L 340,320 L 340,200 L 440,200 L 440,360 L 60,360 Z" />
+  <path class="cu" d="M 160,200 Q 250,252 340,200 L 340,320 L 160,320 Z" />
+  <path class="dim" d="M 250,202 L 250,224" marker-start="url(#arr)" marker-end="url(#arr)" />
+  <path class="lead" d="M 256,214 L 300,160" />
+  <text class="val" x="306" y="156">recess</text>
+  <text class="t" x="230" y="290">Cu</text>
+  <path class="lead" d="M 100,280 L 100,400" />
+  <text class="t" x="60" y="420">dielectric</text>
+
+  <!-- Right: erosion -->
+  <text class="pt" x="520" y="100">Erosion</text>
+  <text class="t" x="520" y="124">dense array of narrow lines</text>
+  <path class="ref" d="M 520,200 L 900,200" />
+  <path class="diel" d="M 520,200 L 570,200 L 582,218 L 838,218 L 850,200 L 900,200 L 900,360 L 520,360 Z" />
+  <rect class="cu" x="596" y="218" width="16" height="92" />
+  <rect class="cu" x="626" y="218" width="16" height="92" />
+  <rect class="cu" x="656" y="218" width="16" height="92" />
+  <rect class="cu" x="686" y="218" width="16" height="92" />
+  <rect class="cu" x="716" y="218" width="16" height="92" />
+  <rect class="cu" x="746" y="218" width="16" height="92" />
+  <rect class="cu" x="776" y="218" width="16" height="92" />
+  <rect class="cu" x="806" y="218" width="16" height="92" />
+  <path class="dim" d="M 875,202 L 875,216" marker-start="url(#arr)" marker-end="url(#arr)" />
+  <path class="lead" d="M 875,210 L 875,160" />
+  <text class="val" x="836" y="154">recess</text>
+  <text class="t" x="520" y="400">field</text>
+  <text class="t" x="650" y="400">metal and dielectric</text>
+  <text class="t" x="650" y="422">worn down together</text>
+
+  <path class="ref" d="M 300,456 L 350,456" />
+  <text class="note" x="360" y="461">target surface after polish</text>
+</svg>

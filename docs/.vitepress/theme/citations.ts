@@ -8,6 +8,8 @@ export interface Citation {
   url?: string
   /** Short label for source lines and tooltips */
   short: string
+  /** Caveat about the source or the figure, shown on the references page. */
+  note?: string
 }
 
 const list: Citation[] = [
@@ -659,12 +661,14 @@ const list: Citation[] = [
     short: 'Bernreuter (pork cycle)',
   },
   {
-    key: 'wikipedia-tcs',
+    key: 'jarkin-2021-part2',
     num: 82,
-    title: 'Trichlorosilane',
-    publisher: 'Wikipedia (CC BY-SA 4.0)',
-    url: 'https://en.wikipedia.org/wiki/Trichlorosilane',
-    short: 'Wikipedia (trichlorosilane)',
+    title:
+      'Methods of trichlorosilane synthesis for polycrystalline silicon production. Part 2: Hydrochlorination and redistribution',
+    publisher:
+      'V. N. Jarkin, O. A. Kisarin, T. V. Kritskaya — Modern Electronic Materials 7(2): 33–43 (2021), open access, CC BY 4.0',
+    url: 'https://doi.org/10.3897/j.moem.7.2.65572',
+    short: 'Jarkin et al. (hydrochlorination)',
   },
   {
     key: 'jarkin-2021',
@@ -716,6 +720,7 @@ const list: Citation[] = [
     publisher: 'Wikipedia (CC BY-SA 4.0)',
     url: 'https://en.wikipedia.org/wiki/List_of_semiconductor_scale_examples',
     short: 'Wikipedia (semiconductor scale)',
+    note: 'Compilation of published device dimensions; no primary source was located for the 1960 MOSFET dimensions.',
   },
   {
     key: 'chm-sigate',
@@ -876,6 +881,7 @@ const list: Citation[] = [
     publisher: 'Semiconductor Engineering',
     url: 'https://semiengineering.com/optical-lithography-take-two/',
     short: 'SemiEngineering',
+    note: 'The widely repeated figure of 50 to 80 lithography exposures has no clear primary source; the counts here are the documented ones.',
   },
   {
     key: 'hitachi-metrology',
@@ -1709,12 +1715,12 @@ const list: Citation[] = [
     short: 'ASMC (2017)',
   },
   {
-    key: 'fabm-neon-2022',
+    key: 'usitc-neon-2022',
     num: 213,
-    title: '2020-2023 global chip shortage (compilation of the reported neon supply figures)',
-    publisher: 'Wikipedia',
-    url: 'https://en.wikipedia.org/wiki/2020%E2%80%932023_global_chip_shortage',
-    short: 'Wikipedia (neon)',
+    title: 'Ukraine, Neon, and Semiconductors (Executive Briefing on Trade)',
+    publisher: 'Samantha DeCarlo & Samuel Goodman — U.S. International Trade Commission (April 2022)',
+    url: 'https://www.usitc.gov/publications/332/executive_briefings/ebot_decarlo_goodman_ukraine_neon_and_semiconductors.pdf',
+    short: 'USITC (Ukraine neon)',
   },
   {
     key: 'fabm-upw',
@@ -1774,10 +1780,10 @@ const list: Citation[] = [
   {
     key: 'choke-big-fund',
     num: 221,
-    title: 'China Integrated Circuit Industry Investment Fund (compilation of the three fund phases)',
-    publisher: 'Wikipedia',
-    url: 'https://en.wikipedia.org/wiki/China_Integrated_Circuit_Industry_Investment_Fund',
-    short: 'Wikipedia (Big Fund)',
+    title: 'China sets up third fund with $47.5 billion to boost semiconductor sector',
+    publisher: 'Reuters, 27 May 2024 (syndicated copy on Yahoo News)',
+    url: 'https://ca.news.yahoo.com/china-sets-47-5-billion-031106530.html',
+    short: 'Reuters (Big Fund III)',
   },
   {
     key: 'choke-cset-controls',
@@ -1875,12 +1881,12 @@ const list: Citation[] = [
     short: 'SemiAccurate (Fermi yields, 2010)',
   },
   {
-    key: 'wikipedia-gf100',
+    key: 'anandtech-gtx480',
     num: 234,
-    title: 'GeForce 400 series (compilation of vendor specifications)',
-    publisher: 'Wikipedia',
-    url: 'https://en.wikipedia.org/wiki/GeForce_400_series',
-    short: 'Wikipedia (GeForce 400)',
+    title: "NVIDIA's GeForce GTX 480 and GTX 470: 6 Months Late, Was It Worth the Wait?",
+    publisher: 'Ryan Smith — AnandTech (26 March 2010)',
+    url: 'https://web.archive.org/web/2024/https://www.anandtech.com/show/2977',
+    short: 'AnandTech (GTX 480)',
   },
   {
     key: 'semiaccurate-fermi-clocks',
@@ -1915,12 +1921,12 @@ const list: Citation[] = [
     short: 'US 5,447,884',
   },
   {
-    key: 'wikipedia-rs64',
+    key: 'mpr-race-018',
     num: 239,
-    title: 'IBM RS64 (compilation of processor specifications)',
-    publisher: 'Wikipedia',
-    url: 'https://en.wikipedia.org/wiki/IBM_RS64',
-    short: 'Wikipedia (RS64)',
+    title: 'The Race to Point One Eight',
+    publisher: 'Keith Diefendorff — Microprocessor Report 12(12), 14 September 1998',
+    url: 'https://www.cecs.uci.edu/~papers/mpr/MPR/19980914/121201.pdf',
+    short: 'Microprocessor Report (1998)',
   },
   {
     key: 'ibm-rs64-soi',
@@ -1939,12 +1945,12 @@ const list: Citation[] = [
     short: 'US 5,374,564',
   },
   {
-    key: 'wikipedia-22nm',
+    key: 'anandtech-gtx580',
     num: 242,
-    title: '22 nm process',
-    publisher: 'Wikipedia (CC BY-SA 4.0)',
-    url: 'https://en.wikipedia.org/wiki/22_nm_process',
-    short: 'Wikipedia (22 nm)',
+    title: "NVIDIA's GeForce GTX 580: Fermi Refined",
+    publisher: 'Ryan Smith — AnandTech (9 November 2010)',
+    url: 'https://web.archive.org/web/2024/https://www.anandtech.com/show/4008',
+    short: 'AnandTech (GTX 580)',
   },
   {
     key: 'wikipedia-photolithography',
@@ -1953,7 +1959,7 @@ const list: Citation[] = [
       'Photolithography (compilation of the process flow and the typical recipe parameters: dehydration bake, HMDS, soft bake, PEB, developer, hard bake, stripping)',
     publisher: 'Wikipedia (CC BY-SA 4.0)',
     url: 'https://en.wikipedia.org/wiki/Photolithography',
-    short: 'Wikipedia (fotolitografia)',
+    short: 'Wikipedia (photolithography)',
   },
   {
     key: 'sibelco-spruce-pine-video',
@@ -2156,6 +2162,65 @@ const list: Citation[] = [
     publisher: 'Magarshack, Flatresse & Cesana — Design, Automation & Test in Europe (DATE), 2013',
     url: 'https://past.date-conference.com/proceedings-archive/2013/PDFFILES/08.1_1.PDF',
     short: 'Magarshack et al. (2013)',
+  },
+  {
+    key: 'stanford-ee212-oxidation',
+    num: 269,
+    title: 'EE 212 Class Handout #10: Thermal Oxidation (Deal–Grove rate constants, Arrhenius form)',
+    publisher: 'J. D. Plummer, M. D. Deal & P. B. Griffin — Stanford University, EE 212 (1999)',
+    url: 'https://dunham.ece.uw.edu/ee528/notes/Chapter6.pdf',
+    short: 'Plummer, Deal & Griffin (EE212)',
+    note: 'The linked copy is hosted by the University of Washington EE 528 course.',
+  },
+  {
+    key: 'wolfspeed-mohawk-200mm',
+    num: 270,
+    title: "Wolfspeed Opens the World's Largest 200mm Silicon Carbide Fab Enabling Highly Anticipated Device Production",
+    publisher: 'Wolfspeed press release, 25 April 2022',
+    url: 'https://www.wolfspeed.com/company/news-events/news/wolfspeed-opens-the-worlds-largest-200mm-silicon-carbide-fab-enabling-highly-anticipated-device-production/',
+    short: 'Wolfspeed (Mohawk Valley)',
+  },
+  {
+    key: 'usitc-neon-pe-2022',
+    num: 271,
+    title: 'A PE Model of Neon Exports from Ukraine',
+    publisher: 'Samantha DeCarlo, Samuel Goodman & David Riker — USITC Economics Working Paper 2022-07-C (July 2022)',
+    url: 'https://www.usitc.gov/publications/332/working_papers/ecwp_2022-07-c_as_pdf.pdf',
+    short: 'USITC (neon PE model)',
+  },
+  {
+    key: 'usitc-taiwan-2023',
+    num: 272,
+    title: 'U.S. Exposure to the Taiwanese Semiconductor Industry',
+    publisher:
+      'Lin Jones, Sarah Krulikowski, Nathan Lotze & Samantha Schreiber - USITC Economics Working Paper 2023-11-A (November 2023, revised March 2024)',
+    url: 'https://www.usitc.gov/publications/332/working_papers/us_exposure_to_the_taiwanese_semiconductor_industry_11-21-2023_508.pdf',
+    short: 'USITC (Taiwan exposure, 2023)',
+  },
+  {
+    key: 'anandtech-hbm1',
+    num: 273,
+    title: 'AMD Dives Deep On High Bandwidth Memory: What Will HBM Bring AMD?',
+    publisher: 'Ryan Smith — AnandTech (19 May 2015)',
+    url: 'https://web.archive.org/web/2024/https://www.anandtech.com/show/9266',
+    short: 'AnandTech (HBM, 2015)',
+    note: "Reports AMD's figures for first-generation HBM: 1 Gb/s per pin on a 1,024-bit interface, 128 GB/s per stack.",
+  },
+  {
+    key: 'skhynix-hbm2e',
+    num: 274,
+    title: 'SK hynix Starts Mass-Production of High-Speed DRAM, HBM2E',
+    publisher: 'SK hynix press release, 1 July 2020 (reposted by AIwire)',
+    url: 'https://aiwire.net/2020/07/06/sk-hynix-starts-mass-production-of-high-speed-dram-hbm2e',
+    short: 'SK hynix (HBM2E)',
+  },
+  {
+    key: 'micron-hbm3e',
+    num: 275,
+    title: 'Micron Commences Volume Production of Industry-Leading HBM3E Solution to Accelerate the Growth of AI',
+    publisher: 'Micron Technology press release, 26 February 2024',
+    url: 'https://micron.gcs-web.com/node/46656',
+    short: 'Micron (HBM3E)',
   },
 ]
 

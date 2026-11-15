@@ -27,6 +27,10 @@ A massa encolhe a cada degrau. Um quilo de silício metalúrgico vira menos de u
 
 A maior parte do valor, porém, não está no material. Projeto e front-end somam cerca de 45% do valor de um chip pronto. A etapa de montagem e teste, tratada em [empacotamento](/empacotamento), fica perto de 10%. O próprio material semicondutor é uma fração menor ainda <Cite id="cset-packaging" />.
 
+<ClientOnly>
+  <DataChart chart="chip-value-split" />
+</ClientOnly>
+
 ## O degrau de commodity
 
 O polissilício é o degrau da cadeia em que o preço se comporta como commodity, e o único em que se observa o ciclo inteiro em números públicos. Foram **6,75 US\$/kg** no fundo histórico de junho de 2020 e **39 US\$/kg** em agosto de 2022, com a subida completa em cerca de dois anos <Cite id="bernreuter-pork-cycle" />.
