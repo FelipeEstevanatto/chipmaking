@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # The silicon element
 
-Every chapter of this site treats silicon as a feedstock: ore, furnace, ingot, wafer, transistor. This page goes the other way and looks at the **atom**: the constants the industry does not choose, only obeys.
+Every chapter of this site treats silicon as a feedstock: ore, furnace, ingot, wafer, transistor. This page goes the other way and looks at the atom: the constants the industry does not choose, only obeys.
 
 They come back at every step of the chain. The [submerged arc furnace](/en/mineracao-mg-si) has to beat a strong bond; [crystal growth](/en/fabricacao-wafers) needs a lattice that repeats; the [solar cell](/en/celulas-solares) is limited by a number that sits in this table from the start.
 
@@ -60,7 +60,7 @@ The crystal continues in [Crystal structure](/en/estrutura-wafers), where the sa
 
 Three of the numbers in the card have industrial consequences.
 
-The first is density. Solid silicon is **less dense than its own melt**, 2.33 against about 2.57 g/cm³. Almost every material shrinks as it solidifies; silicon **expands**. That is why the crystal grows floating on the melt in the [Czochralski](/en/fabricacao-wafers) process rather than sinking into it <Cite id="zulehner-2000" />.
+The first is density. Solid silicon is **less dense than its own melt**, 2.33 against about 2.57 g/cm³. Almost every material shrinks as it solidifies; silicon expands. That is why the crystal grows floating on the melt in the [Czochralski](/en/fabricacao-wafers) process rather than sinking into it <Cite id="zulehner-2000" />.
 
 The second is thermal conductivity. **148 W/(m·K)** is in a metal's range, and it is one of the reasons silicon remains the substrate of choice even when another material could do the electrical job: it also carries heat away <Cite id="elem-ioffe" />.
 
@@ -72,7 +72,7 @@ Silicon's gap is **1.12 eV**, narrow enough to conduct when you want it to and w
 
 The decisive detail, though, is that this gap is **indirect**: the conduction-band minimum and the valence-band maximum do not sit at the same point in momentum space. Absorbing or emitting a photon therefore needs a lattice vibration to help, which makes both processes far less likely <Cite id="elem-sze" />.
 
-Two consequences follow. The first is that **1 µm of gallium arsenide absorbs what 100 µm of silicon absorbs**, which explains the thickness of the solar wafer and the choice of thin-film materials in [solar cells and modules](/en/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. The second is that silicon **does not emit light efficiently**, which forces silicon photonics to look for its laser in another material, as discussed in [Beyond silicon](/en/alem-do-silicio) <Cite id="si-photonics-laser" />.
+Two consequences follow. The first is that 1 µm of gallium arsenide absorbs what 100 µm of silicon absorbs, which explains the thickness of the solar wafer and the choice of thin-film materials in [solar cells and modules](/en/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. The second is that silicon does not emit light efficiently, which forces silicon photonics to look for its laser in another material, as discussed in [Beyond silicon](/en/alem-do-silicio) <Cite id="si-photonics-laser" />.
 
 <ClientOnly>
   <DataChart chart="band-gap" />
@@ -82,7 +82,7 @@ The chart above shows where silicon falls among semiconductors: narrow gap, larg
 
 ## The three isotopes
 
-Natural silicon is a mixture of three stable isotopes, and the proportion between them is remarkably constant on Earth <Cite id="elem-ciaaw" />:
+Natural silicon is a mixture of three stable isotopes, and the proportion between them is nearly constant on Earth <Cite id="elem-ciaaw" />:
 
 | Isotope | Abundance |
 | --- | --- |
@@ -92,13 +92,13 @@ Natural silicon is a mixture of three stable isotopes, and the proportion betwee
 
 The variation is small but not zero, and it is measured precisely enough to become a tool: the ratio of silicon isotopes in a sediment records the climate in which it formed <Cite id="elem-ciaaw" />.
 
-For the industry the practical consequence is different. That **~4.7% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope (not the substance, the **isotope**) is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+For the industry the practical consequence is different. That **~4.7% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope (not the substance, the isotope) is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Why the industry uses this element
 
-- It is the **second most abundant element** in the Earth's crust, which keeps the feedstock cheap <Cite id="saimm" />.
-- It forms a stable, insulating, water-insoluble **native oxide**, which serves as a mask and as a gate dielectric, something germanium does not do <Cite id="ge-vs-si" />.
-- And its **melting point**, 1414 °C, is within reach of ordinary metallurgy, which allows it to be reduced in electric furnaces before any fine chemistry <Cite id="saimm" />.
+- It is the second most abundant element in the Earth's crust, which keeps the feedstock cheap <Cite id="saimm" />.
+- It forms a stable, insulating, water-insoluble native oxide, which serves as a mask and as a gate dielectric, something germanium does not do <Cite id="ge-vs-si" />.
+- And its melting point, 1414 °C, is within reach of ordinary metallurgy, which allows it to be reduced in electric furnaces before any fine chemistry <Cite id="saimm" />.
 
 None of those properties is the best possible on its own. It is the combination, plus the industrial chain built around them, that sustains silicon's position: the same conclusion [solar cells and modules](/en/celulas-solares) reaches.
 

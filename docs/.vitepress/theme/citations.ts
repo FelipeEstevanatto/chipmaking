@@ -2247,6 +2247,38 @@ const list: Citation[] = [
     url: 'https://doi.org/10.1146/annurev-matsci-082908-145350',
     short: 'French & Tran (2009)',
   },
+  {
+    key: 'intel-chip-timeline',
+    num: 279,
+    title: 'Intel chips timeline poster (transistor counts and process technology, 4004 to 3rd generation Core)',
+    publisher: 'Intel Corporation (2012)',
+    url: 'https://www.intel.com/content/dam/www/public/us/en/documents/corporate-information/history-intel-chips-timeline-poster.pdf',
+    short: 'Intel (chips timeline)',
+  },
+  {
+    key: 'microchemicals-hardbake',
+    num: 280,
+    title: 'Hardbake, reflow and DUV hardening (application note)',
+    publisher: 'MicroChemicals GmbH',
+    url: 'https://microchemicals.com/dokumente/application_notes/photoresist_hardbake_reflow_uv_hardening.pdf',
+    short: 'MicroChemicals (hardbake)',
+  },
+  {
+    key: 'meyerhofer-1978',
+    num: 281,
+    title: 'Characteristics of resist films produced by spinning',
+    publisher: 'D. Meyerhofer — Journal of Applied Physics 49(7): 3993–3997 (1978)',
+    url: 'https://doi.org/10.1063/1.325357',
+    short: 'Meyerhofer (1978)',
+  },
+  {
+    key: 'icsc-stc',
+    num: 282,
+    title: 'ICSC 0574 — Tetrachlorosilane',
+    publisher: 'International Chemical Safety Cards (IPCS/ILO), May 2002',
+    url: 'https://www.inchem.org/documents/icsc/icsc/eics0574.htm',
+    short: 'ICSC 0574 (tetrachlorosilane)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

@@ -58,7 +58,7 @@ Os capítulos do Panorama amarram o resto: a escada de preços, os semicondutore
 | FIT | Uma falha por 10⁹ horas-dispositivo; a unidade da confiabilidade |
 | SiC / GaN | Carbeto de silício e nitreto de gálio, os semicondutores de potência vizinhos |
 
-O glossário completo, com 63 entradas e filtro, é gerado de `docs/.vitepress/glossary.ts` e aparece no site em `/glossario` e `/en/glossario`.
+O glossário completo, com 67 entradas e filtro, é gerado de `docs/.vitepress/glossary.ts` e aparece no site em `/glossario` e `/en/glossario`.
 
 ## Como rodar
 

@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # O mapa dos gargalos
 
-Este site descreve a cadeia do silício etapa por etapa, e os fatos de geografia ficaram espalhados: o quartzo de [Spruce Pine](/mineracao-mg-si#spruce-pine), o polissilício [chinês](/polissilicio#a-ascensao-chinesa), os wafers [japoneses](/estrutura-wafers#quem-fabrica-os-wafers), a litografia [única](/historia-fotolitografia). Esta página junta os pedaços numa tabela só e faz a pergunta que eles, separados, não fazem: **o que para o mundo se cada um desses pontos parar?**
+Este site descreve a cadeia do silício etapa por etapa, e os fatos de geografia ficaram espalhados: o quartzo de [Spruce Pine](/mineracao-mg-si#spruce-pine), o polissilício [chinês](/polissilicio#a-ascensao-chinesa), os wafers [japoneses](/estrutura-wafers#quem-fabrica-os-wafers), a litografia [única](/historia-fotolitografia). Esta página junta os pedaços numa tabela só e faz a pergunta que eles, separados, não fazem: o que para o mundo se cada um desses pontos parar?
 
 A página percorre quatro pontos:
 
@@ -32,7 +32,7 @@ As seções seguem essa ordem.
 | Litografia EUV | ASML (Holanda) | **fornecedora única** <Cite id="asml-euv-products" /> | As camadas críticas dos nós de ponta |
 | Neônio | Ucrânia | **cerca de metade** do neônio mundial em 2022, e até **90%** das importações dos EUA <Cite id="usitc-neon-2022" /> | Os lasers de excímero da [litografia DUV](/fotolitografia) |
 
-O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo padrão do gargalo de Spruce Pine: **um insumo barato, pouco visível e insubstituível a curto prazo**.
+O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo padrão do gargalo de Spruce Pine: um insumo barato, pouco visível e insubstituível a curto prazo.
 
 O encapsulamento, a última etapa antes de o chip ser vendido, também é concentrado. Em 2020, quatro das seis empresas de encapsulamento avançado com participação citada estavam em Taiwan, e as empresas taiwanesas detinham quase metade da capacidade mundial de encapsulamento avançado <Cite id="cset-packaging" />.
 
@@ -51,16 +51,16 @@ Gargalos visíveis geram política industrial, e os valores envolvidos são a me
 | China | *Big Fund* | três fases de capital registrado: **138,7 bilhões de yuans** (2014), **204 bilhões** (2019) e **344 bilhões**, cerca de **US\$ 47,5 bilhões** (2024) <Cite id="choke-big-fund" /> | terceira fase criada em **maio de 2024** | Reuters |
 
 ::: warning
-A cifra que virou manchete, **US\$ 52,7 bilhões**, soma também programas fora do envelope do Departamento de Comércio acima.
+A cifra que virou manchete, US\$ 52,7 bilhões, soma também programas fora do envelope do Departamento de Comércio acima.
 :::
 
 O que esses programas compram é **capacidade**, não autossuficiência. Uma planta nova de wafer leva anos para ser qualificada, e a qualificação de um fornecedor por uma fab é, como este site já registrou, um processo de anos <Cite id="nikkei-wafer-share" />.
 
 ## O controle de exportação é um gargalo de projeto
 
-Há uma segunda categoria de gargalo, mais recente: o criado por **regra**. Estados Unidos, Holanda e Japão alinharam restrições à exportação de equipamento avançado de litografia, precisamente a etapa em que existe um fornecedor único <Cite id="choke-cset-controls" />.
+Há uma segunda categoria de gargalo, mais recente: o criado por regra. Estados Unidos, Holanda e Japão alinharam restrições à exportação de equipamento avançado de litografia, precisamente a etapa em que existe um fornecedor único <Cite id="choke-cset-controls" />.
 
-O ponto técnico é que esse gargalo **não se resolve comprando de outro fornecedor**. Uma fab não substitui um scanner EUV por dois scanners DUV sem refazer o processo: cada máquina é qualificada dentro de uma receita específica. A restrição comercial funciona, portanto, com a mesma força de um monopólio mineral, mas é reversível por decisão política, e essa diferença importa.
+O ponto técnico é que esse gargalo não se resolve comprando de outro fornecedor. Uma fab não substitui um scanner EUV por dois scanners DUV sem refazer o processo: cada máquina é qualificada dentro de uma receita específica. A restrição comercial funciona, portanto, com a mesma força de um monopólio mineral, mas uma decisão política pode revertê-la.
 
 ## Por que a concentração não é acidente
 
@@ -70,7 +70,7 @@ Mercados grandes deveriam ter muitos fornecedores. Três forças empurram na dir
 - **Qualificação é um ativo.** Trocar de fornecedor de material exige requalificar o processo. Isso prende o cliente e desestimula o entrante, como se discute em [insumos da fab](/insumos-fab).
 - **O risco é correlacionado.** Quando cada etapa tem um fornecedor, o risco de cada etapa não se diversifica: ele se soma. É o argumento que a própria [fabricação de wafers](/estrutura-wafers#quem-fabrica-os-wafers) já faz sobre o Japão, e que a [história da litografia](/historia-fotolitografia) faz sobre o consórcio que apostou no EUV quando a lista de candidatos tinha seis nomes.
 
-A cadeia foi **otimizada para custo** durante décadas, e a concentração é o resultado dessa otimização. O preço da eficiência é a ausência de plano B.
+A cadeia foi otimizada para custo durante décadas, e a concentração é o resultado dessa otimização. O preço da eficiência é a ausência de plano B.
 
 <SourceNote :ids="['construction-physics-spruce-pine', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'asml-euv-products', 'usitc-neon-2022', 'fabm-neon-2017', 'choke-nist-chips', 'choke-eu-chips-act', 'choke-big-fund', 'choke-cset-controls', 'cset-packaging']" />
 

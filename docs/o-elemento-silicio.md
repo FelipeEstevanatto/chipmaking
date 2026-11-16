@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # O elemento silício
 
-Todos os capítulos deste site tratam do silício como matéria-prima: minério, forno, lingote, wafer, transistor. Esta página faz o caminho inverso e olha para o **átomo**: as constantes que a indústria não escolhe, apenas obedece.
+Todos os capítulos deste site tratam do silício como matéria-prima: minério, forno, lingote, wafer, transistor. Esta página faz o caminho inverso e olha para o átomo: as constantes que a indústria não escolhe, apenas obedece.
 
 Elas reaparecem em cada etapa da cadeia. O [forno de arco](/mineracao-mg-si) precisa vencer uma ligação forte; o [crescimento do cristal](/fabricacao-wafers) precisa de uma rede que se repete; a [célula solar](/celulas-solares) é limitada por um número que está nesta tabela desde o começo.
 
@@ -60,19 +60,19 @@ O cristal continua em [Estrutura e tipos de wafer](/estrutura-wafers), onde essa
 
 Três dos números da ficha têm consequência industrial.
 
-A primeira é a densidade. O silício sólido é **menos denso que o próprio fundido**, 2,33 contra cerca de 2,57 g/cm³. Quase todo material encolhe ao solidificar; o silício **expande**. É por isso que o cristal cresce flutuando sobre o banho no [Czochralski](/fabricacao-wafers), e não afundando nele <Cite id="zulehner-2000" />.
+A primeira é a densidade. O silício sólido é **menos denso que o próprio fundido**, 2,33 contra cerca de 2,57 g/cm³. Quase todo material encolhe ao solidificar; o silício expande. É por isso que o cristal cresce flutuando sobre o banho no [Czochralski](/fabricacao-wafers), e não afundando nele <Cite id="zulehner-2000" />.
 
-A segunda é a condutividade térmica. **148 W/(m·K)** está na faixa de um metal, e é uma das razões pelas quais o silício continua o substrato preferido mesmo quando outro material poderia fazer o trabalho elétrico: ele também tira o calor <Cite id="elem-ioffe" />.
+A segunda é a condutividade térmica. 148 W/(m·K) está na faixa de um metal, e é uma das razões pelas quais o silício continua o substrato preferido mesmo quando outro material poderia fazer o trabalho elétrico: ele também tira o calor <Cite id="elem-ioffe" />.
 
 A terceira é o gap.
 
 ## O gap indireto explica mais do que o solar
 
-O silício tem gap de **1,12 eV**, estreito o suficiente para conduzir quando se quer e largo o suficiente para não conduzir quando não se quer: a razão pela qual ele desbancou o [germânio](/estrutura-wafers), cujo gap é de 0,66 eV <Cite id="elem-sze" />.
+O silício tem gap de 1,12 eV, estreito o suficiente para conduzir quando se quer e largo o suficiente para não conduzir quando não se quer: a razão pela qual ele desbancou o [germânio](/estrutura-wafers), cujo gap é de 0,66 eV <Cite id="elem-sze" />.
 
 O detalhe decisivo, porém, é que esse gap é **indireto**: o mínimo da banda de condução e o máximo da banda de valência não estão no mesmo ponto do espaço de momentos. Absorver ou emitir um fóton exige, então, a ajuda de uma vibração da rede, o que torna os dois processos muito menos prováveis <Cite id="elem-sze" />.
 
-Daí saem duas consequências. A primeira é que **1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem**, o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. A segunda é que o silício **não emite luz com eficiência**, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio) <Cite id="si-photonics-laser" />.
+Daí saem duas consequências. A primeira é que 1 µm de arseneto de gálio absorve o que 100 µm de silício absorvem, o que explica a espessura da lâmina solar e a escolha de materiais de filme fino no capítulo de [células e módulos](/celulas-solares) <Cite id="elem-ioffe" /> <Cite id="elem-sze" />. A segunda é que o silício não emite luz com eficiência, o que obriga a fotônica de silício a buscar o laser em outro material, como se discute em [Além do silício](/alem-do-silicio) <Cite id="si-photonics-laser" />.
 
 <ClientOnly>
   <DataChart chart="band-gap" />
@@ -82,7 +82,7 @@ O gráfico acima mostra onde o silício cai entre os semicondutores: gap estreit
 
 ## Os três isótopos
 
-O silício natural é uma mistura de três isótopos estáveis, e a proporção entre eles é notavelmente constante na Terra <Cite id="elem-ciaaw" />:
+O silício natural é uma mistura de três isótopos estáveis, e a proporção entre eles é quase constante na Terra <Cite id="elem-ciaaw" />:
 
 | Isótopo | Abundância |
 | --- | --- |
@@ -92,13 +92,13 @@ O silício natural é uma mistura de três isótopos estáveis, e a proporção 
 
 A variação é pequena, mas não nula, e é medida com precisão suficiente para virar ferramenta: a razão entre isótopos de silício num sedimento conta a história do clima em que ele se formou <Cite id="elem-ciaaw" />.
 
-Para a indústria, a consequência prática é outra. Os **~4,7% de ²⁹Si** não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo (não a substância, mas o **isótopo**) é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+Para a indústria, a consequência prática é outra. Os ~4,7% de ²⁹Si não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo (não a substância, mas o isótopo) é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Por que a indústria usa este elemento
 
-- Ele é o **segundo elemento mais abundante** da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
-- Ele forma um **óxido nativo** estável, isolante e insolúvel em água, que serve de máscara e de dielétrico de porta, o que o germânio não faz <Cite id="ge-vs-si" />.
-- E ele tem uma **temperatura de fusão** que a metalurgia comum alcança, 1414 °C, o que permite reduzi-lo em fornos elétricos antes de qualquer química fina <Cite id="saimm" />.
+- Ele é o segundo elemento mais abundante da crosta terrestre, o que mantém o insumo barato <Cite id="saimm" />.
+- Ele forma um óxido nativo estável, isolante e insolúvel em água, que serve de máscara e de dielétrico de porta, o que o germânio não faz <Cite id="ge-vs-si" />.
+- E ele tem uma temperatura de fusão que a metalurgia comum alcança, 1414 °C, o que permite reduzi-lo em fornos elétricos antes de qualquer química fina <Cite id="saimm" />.
 
 Nenhuma dessas propriedades é a melhor possível isoladamente. É a combinação delas, mais a cadeia industrial construída em volta, que sustenta a posição do silício: a mesma conclusão a que chega o capítulo de [células e módulos solares](/celulas-solares).
 

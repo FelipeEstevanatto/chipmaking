@@ -71,7 +71,7 @@ Performed in sequence, under strict control of temperature and contaminants <Cit
 4. **Alignment and exposure:** the scanner positions the reticle over the pattern already on the wafer and exposes. The light is **193 nm** in **DUV** and 13.5 nm in **EUV**; the chromium on the mask blocks it, and only the openings change the solubility of the resist.
 5. **Post-exposure bake (PEB):** 100–130 °C. In chemically amplified resists the acid-catalysed reaction happens here rather than during the exposure. The bake also reduces the standing waves that light interference leaves on the resist sidewalls.
 6. **Development:** TMAH (tetramethylammonium hydroxide) puddled onto the wafer. In a positive resist the exposed region is the one that dissolves. The developer temperature is held to within 0.2 °C.
-7. **Hard bake:** 120–180 °C for 20 to 30 minutes, to harden the resist before etching and implantation. The step is traditional of non-amplified resists; in chemically amplified ones excess heat consumes the acid that forms the image, so it is adjusted or dropped <Cite id="wikipedia-photolithography" />.
+7. **Hard bake:** an optional bake that hardens the resist before etching and implantation. A positive resist starts to cross-link at about 130 to 140 °C, which raises its stability against wet chemicals; the same cross-linking makes it harder to strip afterwards, and common removers reach their limit after hard bakes of about 150 to 160 °C <Cite id="microchemicals-hardbake" />.
 8. **Pattern transfer and removal:** etching or ion implantation in the areas left bare, then removal with a solvent such as NMP or with oxygen plasma ashing.
 
 The eight steps are split across two machines. The coater/developer track does the bakes, the coating, the development and the rinse; the scanner does the exposure. The two are installed side by side and linked, and the wafer passes from one to the other without leaving the system's control <Cite id="wikipedia-photolithography" />. Development runs one wafer at a time rather than in batches, so that each one receives the same dose.
@@ -221,7 +221,7 @@ The throughput figures below are measured at different doses (30 mJ/cm² on the 
 
 ## Videos
 
-<SourceNote label="Related videos" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv', 'smith-water-immersion-2003', 'french-tran-2009']" />
+<SourceNote label="Related videos" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv', 'smith-water-immersion-2003', 'french-tran-2009', 'microchemicals-hardbake']" />
 
 <YouTubeEmbed id="B2482h_TNwg" title="The $200M Machine that Prints Microchips: the EUV Photolithography System (Branch Education, sponsored by ASML)" />
 

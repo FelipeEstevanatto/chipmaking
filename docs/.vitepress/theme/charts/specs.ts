@@ -193,7 +193,7 @@ export const CHARTS: Record<string, ChartSpec> = {
       pt: 'Contagem de transistores em produtos que marcaram cada época, do Intel 4004 ao silício atual. Como as três primeiras décadas não estão tabuladas em nenhuma fonte primária única, a série é uma compilação, e a tabela do capítulo nomeia cada chip e sua fonte.',
       en: 'Transistor counts of landmark products, from the Intel 4004 to current silicon. Because the first three decades are not tabulated in any single primary source, the series is a compilation, and the chapter\'s table names each chip and its source.',
     },
-    sourceIds: ['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper'],
+    sourceIds: ['intel-chip-timeline', 'dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper'],
     slug: 'transistor-count',
   },
 
@@ -557,6 +557,56 @@ export const CHARTS: Record<string, ChartSpec> = {
     },
     sourceIds: ['rel-aec-q100'],
     slug: 'aec-q100-grades',
+  },
+
+  /**
+   * Polysilicon demand by sector, as Bernreuter Research tabulates it: 1995 and 2014 for both
+   * sectors, and 2018 for photovoltaics only (the source gives no semiconductor figure for 2018).
+   */
+  'polysilicon-demand': {
+    id: 'polysilicon-demand',
+    type: 'bar',
+    toggleLogY: true,
+    xLabel: { pt: 'Ano', en: 'Year' },
+    yLabel: { pt: 'Demanda de polissilício (t)', en: 'Polysilicon demand (t)' },
+    labels: [1995, 2014, 2018],
+    datasets: [
+      { pt: 'Semicondutores', en: 'Semiconductors', color: '#2b6cb0', data: [13600, 28000, null] },
+      { pt: 'Fotovoltaica', en: 'Photovoltaics', color: '#48bb78', data: [1500, 250000, 420000] },
+    ],
+    caption: {
+      pt: 'Demanda de polissilício por setor, segundo a Bernreuter Research. Em 1995 os semicondutores levavam cerca de 90 % do total; em 2014 a proporção tinha se invertido, com a fotovoltaica multiplicada por cerca de 167. A fonte não dá o número dos semicondutores em 2018.',
+      en: 'Polysilicon demand by sector, according to Bernreuter Research. In 1995 semiconductors took about 90% of the total; by 2014 the ratio had reversed, with photovoltaics up about 167-fold. The source gives no semiconductor figure for 2018.',
+    },
+    sourceIds: ['bernreuter'],
+    slug: 'polysilicon-demand',
+  },
+
+  /**
+   * Boiling points of the chlorosilanes that leave the chlorination reactor, plus boron trichloride,
+   * the impurity that distillation has the hardest time separating from dichlorosilane.
+   */
+  'chlorosilane-boiling-points': {
+    id: 'chlorosilane-boiling-points',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Ponto de ebulição (°C)', en: 'Boiling point (°C)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'Diclorossilano (SiH₂Cl₂)', en: 'Dichlorosilane (SiH₂Cl₂)' },
+      { pt: 'Tricloreto de boro (BCl₃)', en: 'Boron trichloride (BCl₃)' },
+      { pt: 'Triclorossilano (SiHCl₃)', en: 'Trichlorosilane (SiHCl₃)' },
+      { pt: 'Tetracloreto de silício (SiCl₄)', en: 'Silicon tetrachloride (SiCl₄)' },
+    ],
+    datasets: [
+      { pt: 'Ponto de ebulição', en: 'Boiling point', color: '#805ad5', data: [8.4, 12.6, 31.8, 57] },
+    ],
+    caption: {
+      pt: 'Os pontos de ebulição que a destilação fracionada explora. O TCS fica a cerca de 25 °C de cada vizinho, mas o diclorossilano e o tricloreto de boro ficam a 4 °C um do outro, e é isso que torna difícil limpar o boro do diclorossilano.',
+      en: 'The boiling points that fractional distillation exploits. TCS sits about 25 °C from each neighbour, but dichlorosilane and boron trichloride sit 4 °C apart, which is what makes boron hard to clean out of dichlorosilane.',
+    },
+    sourceIds: ['jarkin-2021-part2', 'icsc-tcs', 'icsc-stc'],
+    slug: 'chlorosilane-boiling-points',
   },
 }
 

@@ -49,6 +49,10 @@ As fábricas se planejam com outra métrica, os dias por camada de máscara. A m
 
 Os wafers circulam em lotes, e o lote padrão é de 25 wafers <Cite id="semieng-cycle-time" />. Às vezes os lotes são redistribuídos entre si para nivelar a carga dos equipamentos.
 
+<DiagramFigure src="/assets/wafer-cassette-200mm.jpg" alt="Um cassete vazio de plástico escuro para wafers de 200 mm, com fileiras de ranhuras paralelas nas duas paredes internas">
+Um cassete para wafers de 200 mm (8 polegadas): as ranhuras paralelas de cada parede mantêm os wafers em pé e separados. 邱鈺乾, <a href="https://commons.wikimedia.org/wiki/File:8_inch_cassette.JPG" target="_blank" rel="noopener noreferrer">8 inch cassette</a> (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
+
 A litografia é o módulo que mais recebe o wafer. Um fluxo de 32/28 nm usava 38 exposições de litografia, das quais 15 de imersão; um fluxo de 22/20 nm usava 52 exposições, com 31 de imersão e 11 passos de multipadronagem <Cite id="semieng-litho-layers" />. O número exato depende do nó e do fabricante.
 
 ### As três zonas do chip

@@ -94,7 +94,7 @@ class Annotated(HTMLParser):
                                       "see-also", "glossary", "doc-meta", "build-footer",
                                       "data-chart", "furnace-chemistry", "crystal-viewer",
                                       "fab-process",
-                                      "yield-explorer", "rayleigh-calc", "ox-explorer",
+                                      "yield-explorer", "rayleigh-calc", "ox-explorer", "poly-energy",
                                       "usgs-production-table", "home-sections", "chain-flow")):
             return "foreign"
         if "a" in tags:

@@ -12,7 +12,7 @@ This page is about the inputs that are not silicon but decide whether silicon be
 
 The chapter follows the fab consumables in six items:
 
-1. [Photoresist: chemical amplification](#photoresist-chemical-amplification): the chemical that light modifies, and the amplification that makes it sensitive.
+1. [Chemically amplified photoresist](#chemically-amplified-photoresist): the chemical that light modifies, and the amplification that makes it sensitive.
 2. [The mask, which is also optics](#the-mask-which-is-also-optics): why it stops being transparent.
 3. [The CMP slurry](#the-cmp-slurry): the suspension that combines chemical attack and mechanical removal.
 4. [Gases and neon](#gases-and-neon): the gas lithography needs and the dependency it creates.
@@ -21,23 +21,23 @@ The chapter follows the fab consumables in six items:
 
 The text follows that order.
 
-## Photoresist: chemical amplification
+## Chemically amplified photoresist
 
-The most characteristic lithography input is **photoresist**, and the invention that transformed it came from Hiroshi Ito and C. Grant Willson in the early 1980s. Instead of each photon triggering a single reaction in a resist molecule, they designed a system in which the photon generates an **acid catalyst**, which in turn unleashes hundreds of cascading reactions during development <Cite id="fabm-ito-1983" />.
+The most characteristic lithography input is **photoresist**, and the invention that transformed it came from Hiroshi Ito and C. Grant Willson in the early 1980s. Instead of each photon triggering a single reaction in a resist molecule, they designed a system in which the photon generates an acid catalyst, which in turn unleashes hundreds of cascading reactions during development <Cite id="fabm-ito-1983" />.
 
 <DiagramFigure src="/assets/resist-chemical-amplification.svg" alt="Schematic of two resists side by side: on the left, the conventional resist, where one photon changes a single molecule; on the right, the chemically amplified resist, where one photon generates an acid that deprotects many protecting groups along the polymer chain">
 Side by side, the same photon in both resists: in the conventional one it changes a single molecule, while in the amplified one it generates an acid that deprotects many protecting groups along the chain. Author's drawing <Cite id="fabm-ito-1983" />.
 </DiagramFigure>
 
-That principle, **chemical amplification**, is what allows doses low enough to expose quickly and features fine enough for the following nodes. Without it, every reduction in wavelength would have demanded a larger dose, and lithography would have hit a productivity wall far earlier than it did.
+That principle, chemical amplification, is what allows doses low enough to expose quickly and features fine enough for the following nodes. Without it, every reduction in wavelength would have demanded a larger dose, and lithography would have hit a productivity wall far earlier than it did.
 
-In **EUV** the trade-off returns through thickness. Because extreme ultraviolet is absorbed by almost everything, the resist has to be **thinner** than in previous generations so the light passes through to the bottom of the film <Cite id="asianometry-euv" />. A thin resist protects the substrate less during etching, which pushes the problem to the next step of the flow.
+In **EUV** the trade-off returns through thickness. Because extreme ultraviolet is absorbed by almost everything, the resist has to be thinner than in previous generations so the light passes through to the bottom of the film <Cite id="asianometry-euv" />. A thin resist protects the substrate less during etching, which pushes the problem to the next step of the flow.
 
 ## The mask, which is also optics
 
-In DUV the mask is a quartz plate with chrome: light passes where the pattern is. In EUV that stops working, because no material is transparent at 13.5 nm, and the mask becomes a **multilayer mirror**, of the same kind as the scanner's mirrors <Cite id="asianometry-euv" />.
+In DUV the mask is a quartz plate with chrome: light passes where the pattern is. In EUV that stops working, because no material is transparent at 13.5 nm, and the mask becomes a multilayer mirror, of the same kind as the scanner's mirrors <Cite id="asianometry-euv" />.
 
-That changes the nature of a defect. A defect buried in a mask's multilayer cannot be repaired once the mask is finished: it replicates onto every wafer exposed with that mask, and the blank has to arrive **defect-free** for the mask to be usable <Cite id="asianometry-euv" />. It is the same logic as the quartz inputs: **the quality has to be in the incoming material**, because the next step does not fix it.
+That changes the nature of a defect. A defect buried in a mask's multilayer cannot be repaired once the mask is finished: it replicates onto every wafer exposed with that mask, and the blank has to arrive defect-free for the mask to be usable <Cite id="asianometry-euv" />. It is the same logic as the quartz inputs: the quality has to be in the incoming material, because the next step does not fix it.
 
 <DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="On the left, a cross-section of a Bragg reflector with alternating molybdenum and silicon layers, an incoming beam and parallel partial reflections leaving it; on the right, the light-loss chain from the source to the wafer across ten mirrors">
 An EUV mask blank is the same kind of molybdenum and silicon multilayer as the scanner's mirrors, so a defect buried in it is reflected onto every wafer <Cite id="branch-euv" />. Drawn by the author, from ASML/Branch Education.
@@ -55,23 +55,23 @@ The two defects a slurry has to be tuned against: dishing of a wide copper line 
 
 ## Gases and neon
 
-DUV lithography excimer lasers need **neon** in the gas mixture, and recovering that gas became an engineering project inside the fab as its cost rose <Cite id="fabm-neon-2017" />.
+DUV lithography excimer lasers need neon in the gas mixture, and recovering that gas became an engineering project inside the fab as its cost rose <Cite id="fabm-neon-2017" />.
 
 The episode that exposed the dependency was the 2022 invasion of Ukraine. The country supplied about half of the world's neon and, over the previous decade, up to 90% of US neon imports, a legacy of Soviet steelmaking, and the interruption of the purification plants turned a gas nobody monitored into a supply-chain risk item <Cite id="usitc-neon-2022" />. The share was already falling as buyers diversified: a USITC model put Ukraine at 70% of world neon in 2014 and 50% in 2021 <Cite id="usitc-neon-pe-2022" />, and a later USITC paper gave 25 to 30% of the world's purified neon <Cite id="usitc-taiwan-2023" />.
 
-The pattern repeats: **a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry**. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
+The pattern repeats: a cheap input, barely visible, irreplaceable in the short term and produced as a by-product of another industry. It is the same design as the Spruce Pine quartz and the Chinese share of polysilicon, both covered in [the chokepoint map](/en/gargalos).
 
 ## Ultrapure water
 
-Water is, by volume, the largest input of a fab, and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around **18.2 MΩ·cm** at 25 °C, the theoretical maximum for pure water, and total organic carbon in the **parts per trillion** range <Cite id="fabm-upw" />.
+Water is, by volume, the largest input of a fab, and the easiest to underestimate, because "water" suggests an ordinary resource. The water that touches the wafer is **ultrapure** (UPW): resistivity around 18.2 MΩ·cm at 25 °C, the theoretical maximum for pure water, and total organic carbon in the parts per trillion range <Cite id="fabm-upw" />.
 
-The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, **dopants** (sodium and potassium at the parts per billion (ppb) level already shift a transistor's threshold voltage), and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified **on site**, with resistivity measured in line, because a specification like that does not survive transport.
+The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, dopants (sodium and potassium at the parts per billion (ppb) level already shift a transistor's threshold voltage), and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified on site, with resistivity measured in line, because a specification like that does not survive transport.
 
 ## Why this list is a chokepoint
 
-None of the inputs on this page is expensive per unit. All of them are hard to replace.
+None of the inputs on this page is expensive per unit, and all of them are hard to replace.
 
-The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means **requalifying the entire process**, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
+The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means requalifying the entire process, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
 <SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
 

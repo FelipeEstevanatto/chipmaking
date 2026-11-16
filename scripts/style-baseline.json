@@ -16,10 +16,7 @@
     "style-contrast": 2
   },
   "docs/dados.md": {
-    "style-bold": 9,
-    "style-contrast": 4,
-    "style-kicker": 1,
-    "style-sourcing": 1
+    "style-contrast": 4
   },
   "docs/empacotamento.md": {
     "style-contrast": 1
@@ -35,9 +32,7 @@
     "style-contrast": 2
   },
   "docs/en/dados.md": {
-    "style-bold": 8,
-    "style-contrast": 4,
-    "style-sourcing": 1
+    "style-contrast": 4
   },
   "docs/en/empacotamento.md": {
     "style-bold": 2,
@@ -47,19 +42,8 @@
     "style-bold": 1,
     "style-kicker": 1
   },
-  "docs/en/gargalos.md": {
-    "style-bold": 5,
-    "style-bold-long": 1,
-    "style-commentary": 1
-  },
   "docs/en/insumos-fab.md": {
-    "style-bold": 9,
-    "style-bold-long": 1,
-    "style-contrast": 1,
-    "style-heading": 1
-  },
-  "docs/en/introducao.md": {
-    "style-bold": 2
+    "style-contrast": 1
   },
   "docs/en/mineracao-mg-si.md": {
     "style-contrast": 4
@@ -68,9 +52,6 @@
     "style-contrast": 1
   },
   "docs/en/o-elemento-silicio.md": {
-    "style-bold": 2,
-    "style-bold-long": 1,
-    "style-commentary": 1,
     "style-contrast": 1
   },
   "docs/en/polissilicio.md": {
@@ -78,9 +59,6 @@
     "style-contrast": 1
   },
   "docs/en/precos-e-valor.md": {
-    "style-bold": 9,
-    "style-bold-long": 1,
-    "style-commentary": 1,
     "style-contrast": 2
   },
   "docs/en/transistores.md": {
@@ -96,23 +74,11 @@
   "docs/fotolitografia.md": {
     "style-contrast": 1
   },
-  "docs/gargalos.md": {
-    "style-bold": 5,
-    "style-bold-long": 1,
-    "style-commentary": 1
-  },
   "docs/historia-fotolitografia.md": {
     "style-contrast": 2
   },
   "docs/insumos-fab.md": {
-    "style-bold": 9,
-    "style-bold-long": 1,
-    "style-contrast": 1,
-    "style-heading": 1,
-    "style-kicker": 1
-  },
-  "docs/introducao.md": {
-    "style-bold": 2
+    "style-contrast": 1
   },
   "docs/mineracao-mg-si.md": {
     "style-contrast": 4
@@ -121,18 +87,10 @@
     "style-contrast": 1
   },
   "docs/o-elemento-silicio.md": {
-    "style-bold": 4,
-    "style-bold-long": 1,
-    "style-commentary": 1,
     "style-contrast": 2
   },
   "docs/polissilicio.md": {
     "style-contrast": 1
-  },
-  "docs/precos-e-valor.md": {
-    "style-bold": 9,
-    "style-bold-long": 1,
-    "style-commentary": 1
   },
   "docs/transistores.md": {
     "style-bold": 1

@@ -90,6 +90,10 @@ A reação roda na faixa de 300 a 600 °C, sob pressão de 0,18 a 0,5 MPa. Compr
 
 O que sai do reator, porém, não é TCS puro. Junto com ele vêm tetracloreto de silício (SiCl₄, ou STC), diclorossilano (H₂SiCl₂) e compostos de ponto de ebulição alto com ligações Si–Si, entre eles o hexaclorodissilano (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="jarkin-2021-part2" />. Cada um tem seu próprio ponto de ebulição, e é justamente isso que a destilação logo adiante vai explorar para separá-los.
 
+<ClientOnly>
+  <DataChart chart="chlorosilane-boiling-points" />
+</ClientOnly>
+
 Existe um segundo caminho até o TCS, que dispensa o HCl e reaproveita o próprio STC <Cite id="jarkin-2021-part2" />:
 
 ```text
@@ -207,6 +211,10 @@ Em 2006 a indústria solar ultrapassou a de semicondutores como maior consumidor
 | Etapa de fratura | necessária | dispensada |
 | Participação no mercado | cerca de 78% (2008) <Cite id="saimm" /> | cerca de 16% (2008) <Cite id="saimm" /> |
 
+<ClientOnly>
+  <PolyEnergyCalculator />
+</ClientOnly>
+
 ## A rota metalúrgica (UMG)
 
 Nem todo silício solar precisa passar por cloro. A rota metalúrgica parte do próprio MG-Si e o refina com uma sequência de etapas metalúrgicas, produzindo o silício de grau solar por via metalúrgica, o *upgraded metallurgical-grade silicon* (UMG). O consumo de energia é sensivelmente menor que o do processo Siemens <Cite id="saimm" />.
@@ -309,19 +317,11 @@ Os extremos recentes mostram o tamanho do movimento: em junho de 2020 o preço �
 
 Em 1995, cerca de 90% da demanda global por polissilício ia para semicondutores e 10% para fotovoltaica <Cite id="bernreuter" />. Em 2014, a proporção inverteu-se: o setor fotovoltaico passou a consumir a esmagadora maioria, e a demanda do setor saiu de 1.500 toneladas (1995) para cerca de 250.000 toneladas (2014) e 420.000 toneladas em 2018 <Cite id="bernreuter" />.
 
-<DiagramFigure src="/pdf-images/p05-1.png" alt="Demanda de polissilício semicondutores vs fotovoltaica 1995 e 2014">
-Inversão das fatias de mercado e crescimento de 18,4× entre 1995 e 2014 (15,1 kt → 278 kt).
-</DiagramFigure>
+<ClientOnly>
+  <DataChart chart="polysilicon-demand" />
+</ClientOnly>
 
-<SourceNote :ids="['bernreuter']" />
-
-*Between 1995 and 2014, the annual polysilicon demand increased by a factor of 18.4; the ratio between the shares of semiconductors and photovoltaics reversed completely*, fontes do gráfico no PDF: PV News, Sage Concepts e Bernreuter Research <Cite id="bernreuter" />.
-
-<DiagramFigure src="/pdf-images/p05-2.png" alt="Preço histórico do polissilício 1977–2017">
-Ciclos de escassez (*shortage*) e sobreoferta (*oversupply*).
-</DiagramFigure>
-
-<SourceNote :ids="['bernreuter']" />
+A demanda total cresceu 18,4 vezes entre 1995 e 2014, de cerca de 15.100 para cerca de 278.000 toneladas <Cite id="bernreuter" />.
 
 Esse crescimento nos anos 2000 fez o número de plantas saltar de 11 (2004) para 61 (2010). Os projetos brotavam por toda parte, inclusive fora da China, e dezenas fracassaram <Cite id="bernreuter-market" />. A sobreoferta fechou mais de 40 plantas entre o fim de 2010 e o início de 2013, a maioria delas na China, que já havia perdido 36 unidades de pequeno e médio porte em 2011/2012 <Cite id="bernreuter-market" />.
 
@@ -349,7 +349,7 @@ A alta, porém, veio de um pico artificial de instalações na China antes de um
 
 É esse tipo de ciclo curto, contra capacidade instalada abundante, num mercado onde mais de 90% da oferta sai de um só país, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
 
-<SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle', 'saevarsdottir-2010', 'sibelco-hpq', 'quartzcorp-hpq']" />
+<SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle', 'saevarsdottir-2010', 'sibelco-hpq', 'quartzcorp-hpq', 'icsc-tcs', 'icsc-stc']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'marcos do mercado de polissilício' },

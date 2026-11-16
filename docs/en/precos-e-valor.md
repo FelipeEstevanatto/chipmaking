@@ -6,9 +6,9 @@ dataAsOf: 2026
 
 # Prices and value
 
-The earlier chapters count silicon in kilograms, purity grades and nanometres. This page counts the same chain in **money**, because price is what decides where each step is done, who survives a downturn, and why the geographic concentration the [chokepoint map](/en/gargalos) covers exists.
+The earlier chapters count silicon in kilograms, purity grades and nanometres. This page counts the same chain in money, because price is what decides where each step is done, who survives a downturn, and why the geographic concentration the [chokepoint map](/en/gargalos) covers exists.
 
-The exercise has one virtue and one limit. The virtue is that price is the most honest summary of an industrial chain: it already contains energy, yield, capital and risk. The limit is that not every rung is public, and the page says which ones are not rather than filling the gap with a round number.
+The exercise has one virtue and one limit. The virtue is that price is the most compact summary of an industrial chain: it already contains energy, yield, capital and risk. The limit is that not every rung is public, and the page says which ones are not rather than filling the gap with a round number.
 
 The page climbs the chain in four steps:
 
@@ -32,7 +32,7 @@ The sections follow that order.
 | Assembly, test and packaging | % of finished chip value | **about 10%** (SIA/BCG estimate **6%**) | <Cite id="cset-packaging" /> |
 | Design + front-end fabrication | % of finished chip value | **about 45%** | <Cite id="cset-packaging" /> |
 
-Mass shrinks at every rung. A kilogram of metallurgical silicon becomes less than a kilogram of polysilicon, which becomes a wafer of a few hundred grams, which becomes a chip of a few grams. The price **per unit of mass** rises by orders of magnitude.
+Mass shrinks at every rung. A kilogram of metallurgical silicon becomes less than a kilogram of polysilicon, which becomes a wafer of a few hundred grams, which becomes a chip of a few grams. The price per unit of mass rises by orders of magnitude.
 
 Most of the value, however, is not in the material. Design and front-end together account for about 45% of a finished chip's value. The assembly and test step, which this site covers in [packaging](/en/empacotamento), sits near 10%. The semiconductor material itself is a smaller fraction still <Cite id="cset-packaging" />.
 
@@ -42,27 +42,27 @@ Most of the value, however, is not in the material. Design and front-end togethe
 
 ## The commodity rung
 
-Polysilicon is the rung where price behaves like a commodity, and the only one where the whole cycle is visible in public numbers. It went from **US\$ 6.75/kg** at the all-time low of June 2020 to **US\$ 39/kg** in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
+Polysilicon is the rung where price behaves like a commodity, and the only one where the whole cycle is visible in public numbers. It went from US\$ 6.75/kg at the all-time low of June 2020 to US\$ 39/kg in August 2022, the entire climb taking about two years <Cite id="bernreuter-pork-cycle" />.
 
-That range (nearly **6×** between trough and peak) is what decided who built new plants and who closed. The *pork cycle* dynamics and the list of companies that left the market are in the [polysilicon](/en/polissilicio) chapter.
+That range (nearly 6× between trough and peak) is what decided who built new plants and who closed. The *pork cycle* dynamics and the list of companies that left the market are in the [polysilicon](/en/polissilicio) chapter.
 
-At the other end of the chain, the module price fell for a different reason: scale and efficiency, with cost dropping a fixed fraction for every doubling of cumulative production <Cite id="fraunhofer-pv-report" />. It is the same learning curve: the cell, which sat near **US\$ 1/Wp** in 2011, is now a fraction of that, and the whole module landed around **CNY 0.70/W** in 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
+At the other end of the chain, the module price fell for a different reason: scale and efficiency, with cost dropping a fixed fraction for every doubling of cumulative production <Cite id="fraunhofer-pv-report" />. It is the same learning curve: the cell, which sat near US\$ 1/Wp in 2011, is now a fraction of that, and the whole module landed around CNY 0.70/W in 2025 <Cite id="saimm" /> <Cite id="trendforce-2025" />.
 
 ## The rung nobody publishes
 
-Missing from the table is the rung most interesting to anyone trying to understand the real cost of a chip: the **wafer price**, and above all the price of a wafer **processed** at a leading-edge node.
+Missing from the table is the rung most interesting to anyone trying to understand the real cost of a chip: the wafer price, and above all the price of a wafer processed at a leading-edge node.
 
 It is absent because it is not published in a comparable way. Wafer supply contracts are negotiated case by case and covered by confidentiality, so the numbers that circulate in presentations rarely have a primary source behind them: the same problem this site already recorded when handling wafer makers' market share in [crystal structure](/en/estrutura-wafers#who-makes-the-wafers), where the round "60%" figure did not survive the data.
 
-The practical consequence is a reading rule: **when a rung is presented as a closed number, ask where it came from**. Where a public index exists (as with polysilicon contract prices) the series is auditable; where it does not, what exists is a consultancy estimate.
+The practical consequence is a reading rule: when a rung is presented as a closed number, ask where it came from. Where a public index exists (as with polysilicon contract prices) the series is auditable; where it does not, what exists is a consultancy estimate.
 
 ## From kilogram to square millimetre
 
-The chain's final unit is neither mass nor area: it is the **cost per logic gate**, or per transistor. That is what decides whether shrinking pays.
+The chain's final unit is neither mass nor area: it is the cost per logic gate, or per transistor. That is what decides whether shrinking pays.
 
 The [transistor evolution](/en/transistores) chapter shows that the "node number" stopped measuring a physical dimension: today it is a generation name, not a measurement <Cite id="ieee-node" />. Price followed the same path: since density no longer doubles every generation, cost per transistor now depends on how many functions fit into the same metal pitch, not on the process label.
 
-That is why the chain's value migrated to its two extremes: **design**, which decides the architecture, and the **tool**, which decides what can be built. Both are the subject of the [chokepoint map](/en/gargalos).
+That is why the chain's value migrated to its two extremes: design, which decides the architecture, and the tool, which decides what can be built. Both are the subject of the [chokepoint map](/en/gargalos).
 
 <SourceNote label="Sources" :ids="['saimm', 'bernreuter-pork-cycle', 'trendforce-2025', 'itrs-2015-test', 'cset-packaging', 'fraunhofer-pv-report', 'ieee-node']" />
 

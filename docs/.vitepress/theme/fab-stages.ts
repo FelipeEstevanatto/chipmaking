@@ -141,6 +141,7 @@ export const FAB_STAGES: FabStage[] = [
   },
   {
     id: 'lithography',
+    sourceIds: ['meyerhofer-1978', 'asml-duv', 'branch-euv'],
     mode: 'coat',
     phases: [
       { at: 0, label: { pt: 'Dispensa', en: 'Dispense' } },
@@ -167,8 +168,8 @@ export const FAB_STAGES: FabStage[] = [
       en: 'A drop of photoresist lands at the centre and the wafer spins to spread it into a thin film. Then the mask comes down, ultraviolet light prints the pattern and development dissolves what was exposed. The light drawn here is the 193 nm DUV line.',
     },
     note: {
-      pt: 'A espessura da película cai com a raiz da rotação: quanto mais rápido o wafer gira, mais fino o filme, e é a relação clássica do spin coating. O comprimento de onda depende da camada: as poucas mais críticas vão para o EUV de 13,5 nm, e todo o resto continua no DUV de 193 nm.',
-      en: 'The film thickness falls with the square root of the spin speed: the faster the wafer spins, the thinner the film, which is the classic spin-coating relation. The wavelength depends on the layer: the few most critical ones go to EUV at 13.5 nm, and everything else stays on 193 nm DUV.',
+      pt: 'Quanto mais rápido o wafer gira, mais fino sai o filme de resiste. O comprimento de onda depende da camada: as poucas mais críticas vão para o EUV de 13,5 nm, e todo o resto continua no DUV de 193 nm.',
+      en: 'The faster the wafer spins, the thinner the resist film comes out. The wavelength depends on the layer: the few most critical ones go to EUV at 13.5 nm, and everything else stays on 193 nm DUV.',
     },
   },
   {

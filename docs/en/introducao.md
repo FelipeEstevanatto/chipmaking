@@ -14,7 +14,7 @@ Producing silicon wafers in sufficient quantity and quality is one of the main f
 
 ## Production estimates {#producao-estimada}
 
-Thousands of tonnes of **silicon metal** (not to be confused with electronic-grade polysilicon) and **ferrosilicon**, from the 2024–2026 USGS editions:
+Thousands of tonnes of silicon metal (not to be confused with electronic-grade polysilicon) and ferrosilicon, from the 2024–2026 USGS editions:
 
 <UsgsProductionTable />
 

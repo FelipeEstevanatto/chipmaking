@@ -23,6 +23,7 @@ import CrystalViewer from './CrystalViewer.vue'
 import YieldExplorer from './YieldExplorer.vue'
 import RayleighCalculator from './RayleighCalculator.vue'
 import OxidationExplorer from './OxidationExplorer.vue'
+import PolyEnergyCalculator from './PolyEnergyCalculator.vue'
 import ReadingProgress from './ReadingProgress.vue'
 import DocMeta from './DocMeta.vue'
 import GlossaryTable from './GlossaryTable.vue'
@@ -55,6 +56,7 @@ export default {
     app.component('YieldExplorer', YieldExplorer)
     app.component('RayleighCalculator', RayleighCalculator)
     app.component('OxidationExplorer', OxidationExplorer)
+    app.component('PolyEnergyCalculator', PolyEnergyCalculator)
     app.component('ReadingProgress', ReadingProgress)
     app.component('DocMeta', DocMeta)
     app.component('GlossaryTable', GlossaryTable)

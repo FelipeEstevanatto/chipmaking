@@ -90,6 +90,10 @@ The reaction runs in the 300 to 600 °C range, under 0.18 to 0.5 MPa of pressure
 
 What leaves the reactor, however, is not pure TCS. It comes out mixed with silicon tetrachloride (SiCl₄, or STC), dichlorosilane (H₂SiCl₂) and high-boiling compounds with Si–Si bonds, among them hexachlorodisilane (Si₂Cl₆) <Cite id="jarkin-2021" /> <Cite id="jarkin-2021-part2" />. Each has its own boiling point, which is precisely what the distillation just downstream exploits to separate them.
 
+<ClientOnly>
+  <DataChart chart="chlorosilane-boiling-points" />
+</ClientOnly>
+
 There is a second route to TCS that skips the HCl and recycles the STC itself <Cite id="jarkin-2021-part2" />:
 
 ```text
@@ -207,6 +211,10 @@ In 2006 the solar industry overtook the semiconductor industry as the largest co
 | Fracturing step | needed | not needed |
 | Market share | about 78% (2008) <Cite id="saimm" /> | about 16% (2008) <Cite id="saimm" /> |
 
+<ClientOnly>
+  <PolyEnergyCalculator />
+</ClientOnly>
+
 ## The metallurgical route (UMG)
 
 Not all solar silicon has to go through chlorine. The metallurgical route starts from MG-Si itself and refines it through a sequence of metallurgical steps, producing metallurgical-route solar-grade silicon, *upgraded metallurgical-grade silicon* (UMG). Its energy consumption is markedly lower than that of the Siemens process <Cite id="saimm" />.
@@ -309,19 +317,11 @@ The recent extremes show the scale of the movement: in June 2020 the spot price 
 
 In 1995, about 90% of global polysilicon demand went to semiconductors and 10% to photovoltaics <Cite id="bernreuter" />. By 2014 the proportions had reversed completely: the photovoltaic sector consumed the overwhelming majority, and its demand climbed from 1,500 tonnes (1995) to about 250,000 tonnes (2014) and 420,000 tonnes in 2018 <Cite id="bernreuter" />.
 
-<DiagramFigure src="/pdf-images/p05-1.png" alt="Polysilicon demand, semiconductors vs photovoltaics, 1995 and 2014">
-Inversion of market shares and 18.4× growth between 1995 and 2014 (15.1 kt → 278 kt).
-</DiagramFigure>
+<ClientOnly>
+  <DataChart chart="polysilicon-demand" />
+</ClientOnly>
 
-<SourceNote label="Sources" :ids="['bernreuter']" />
-
-*Between 1995 and 2014, the annual polysilicon demand increased by a factor of 18.4; the ratio between the shares of semiconductors and photovoltaics reversed completely*, chart sources: PV News, Sage Concepts and Bernreuter Research <Cite id="bernreuter" />.
-
-<DiagramFigure src="/pdf-images/p05-2.png" alt="Historical polysilicon price, 1977–2017">
-Shortage and oversupply cycles.
-</DiagramFigure>
-
-<SourceNote label="Sources" :ids="['bernreuter']" />
+Total demand grew by a factor of 18.4 between 1995 and 2014, from about 15,100 to about 278,000 tonnes <Cite id="bernreuter" />.
 
 That growth during the 2000s made the number of plants jump from 11 (2004) to 61 (2010). Projects sprang up everywhere, including outside China, and dozens failed <Cite id="bernreuter-market" />. The oversupply closed more than 40 plants between late 2010 and early 2013, most of them in China, which had already lost 36 small and medium-scale units in 2011/2012 <Cite id="bernreuter-market" />.
 
@@ -349,7 +349,7 @@ The rise came from an artificial installation rush in China ahead of a regulator
 
 It is this kind of short cycle, against abundant installed capacity, in a market where more than 90% of supply comes from a single country, that helps explain why European plants competitive on quality, such as the one in Kristiansand described above, could not sustain themselves.
 
-<SourceNote label="Sources" :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle', 'saevarsdottir-2010', 'sibelco-hpq', 'quartzcorp-hpq']" />
+<SourceNote label="Sources" :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle', 'saevarsdottir-2010', 'sibelco-hpq', 'quartzcorp-hpq', 'icsc-tcs', 'icsc-stc']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'milestones of the polysilicon market' },

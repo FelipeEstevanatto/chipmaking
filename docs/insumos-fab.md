@@ -12,7 +12,7 @@ Esta página trata dos insumos que não são silício, mas que decidem se o sil�
 
 O capítulo percorre os insumos da fab em seis itens:
 
-1. [O fotorresiste: amplificação química](#o-fotorresiste-amplificacao-quimica): o químico que a luz modifica, e a amplificação que o torna sensível.
+1. [Fotorresiste quimicamente amplificado](#fotorresiste-quimicamente-amplificado): o químico que a luz modifica, e a amplificação que o torna sensível.
 2. [A máscara, que também é óptica](#a-mascara-que-tambem-e-optica): por que ela deixa de ser transparente.
 3. [O slurry do CMP](#o-slurry-do-cmp): a suspensão que junta ataque químico e remoção mecânica.
 4. [Gases e o neônio](#gases-e-o-neonio): o gás que a litografia precisa e a dependência que ele cria.
@@ -21,23 +21,23 @@ O capítulo percorre os insumos da fab em seis itens:
 
 O texto segue essa ordem.
 
-## O fotorresiste: amplificação química
+## Fotorresiste quimicamente amplificado
 
-O insumo mais característico da litografia é o **fotorresiste**, e a invenção que o transformou veio de Hiroshi Ito e C. Grant Willson, no início dos anos 1980. Em vez de cada fóton provocar uma única reação na molécula de resiste, eles desenharam um sistema em que o fóton gera um **catalisador ácido**, que por sua vez desencadeia centenas de reações em cascata na etapa de revelação <Cite id="fabm-ito-1983" />.
+O insumo mais característico da litografia é o fotorresiste, e a invenção que o transformou veio de Hiroshi Ito e C. Grant Willson, no início dos anos 1980. Em vez de cada fóton provocar uma única reação na molécula de resiste, eles desenharam um sistema em que o fóton gera um catalisador ácido, que por sua vez desencadeia centenas de reações em cascata na etapa de revelação <Cite id="fabm-ito-1983" />.
 
 <DiagramFigure src="/assets/resist-chemical-amplification.svg" alt="Esquema de dois resistes lado a lado: à esquerda, o resiste convencional, em que um fóton muda uma só molécula; à direita, o resiste quimicamente amplificado, em que um fóton gera um ácido que desprotege muitos grupos de proteção ao longo da cadeia do polímero">
 Ao lado, o mesmo fóton nos dois resistes: no convencional ele muda uma única molécula, enquanto no amplificado ele gera um ácido que desprotege muitos grupos de proteção ao longo da cadeia. Desenho do autor <Cite id="fabm-ito-1983" />.
 </DiagramFigure>
 
-É esse princípio, a **amplificação química**, que permite usar doses de luz baixas o bastante para expor rápido e traços finos o bastante para os nós seguintes. Sem ele, cada redução de comprimento de onda exigiria uma dose maior, e a litografia teria esbarrado em produtividade muito antes do que esbarrou.
+É esse princípio, a amplificação química, que permite usar doses de luz baixas o bastante para expor rápido e traços finos o bastante para os nós seguintes. Sem ele, cada redução de comprimento de onda exigiria uma dose maior, e a litografia teria esbarrado em produtividade muito antes do que esbarrou.
 
-No **EUV** o compromisso volta pela espessura. Como o ultravioleta extremo é absorvido por quase tudo, o resiste precisa ser **mais fino** que nas gerações anteriores para que a luz o atravesse até o fundo do filme <Cite id="asianometry-euv" />. Um resiste fino protege menos o substrato durante a corrosão, o que empurra o problema para o próximo passo do fluxo.
+No **EUV** o compromisso volta pela espessura. Como o ultravioleta extremo é absorvido por quase tudo, o resiste precisa ser mais fino que nas gerações anteriores para que a luz o atravesse até o fundo do filme <Cite id="asianometry-euv" />. Um resiste fino protege menos o substrato durante a corrosão, o que empurra o problema para o próximo passo do fluxo.
 
 ## A máscara, que também é óptica
 
-No DUV a máscara é uma placa de quartzo com cromo: luz atravessa onde há desenho. No EUV isso deixa de funcionar, porque não existe material transparente a 13,5 nm, e a máscara passa a ser um **espelho multicamada**, do mesmo tipo dos espelhos do scanner <Cite id="asianometry-euv" />.
+No DUV a máscara é uma placa de quartzo com cromo: luz atravessa onde há desenho. No EUV isso deixa de funcionar, porque não existe material transparente a 13,5 nm, e a máscara passa a ser um espelho multicamada, do mesmo tipo dos espelhos do scanner <Cite id="asianometry-euv" />.
 
-Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma máscara não pode ser corrigido depois de pronto: ele se replica em cada wafer exposto com aquela máscara, e o blank precisa chegar **livre de defeitos** para que a máscara seja utilizável <Cite id="asianometry-euv" />. É a mesma lógica dos insumos de quartzo: **a qualidade tem de estar no material de entrada**, porque a etapa seguinte não conserta.
+Isso muda a natureza do defeito. Um defeito enterrado na multicamada de uma máscara não pode ser corrigido depois de pronto: ele se replica em cada wafer exposto com aquela máscara, e o blank precisa chegar livre de defeitos para que a máscara seja utilizável <Cite id="asianometry-euv" />. É a mesma lógica dos insumos de quartzo: a qualidade tem de estar no material de entrada, porque a etapa seguinte não conserta.
 
 <DiagramFigure src="/assets/euv-bragg-mirror.svg" alt="À esquerda, o corte de um refletor de Bragg com camadas alternadas de molibdênio e silício, um feixe entrando e reflexões parciais saindo em paralelo; à direita, a cadeia de perda de luz da fonte ao wafer ao longo de dez espelhos">
 O blank de uma máscara EUV é o mesmo tipo de multicamada de molibdênio e silício dos espelhos do scanner, e por isso um defeito enterrado nele é refletido em todos os wafers <Cite id="branch-euv" />. Desenho do autor, a partir de ASML/Branch Education.
@@ -55,23 +55,23 @@ Os dois defeitos contra os quais um slurry precisa ser ajustado: o dishing de um
 
 ## Gases e o neônio
 
-Excimer lasers da litografia DUV precisam de **neônio** na mistura gasosa, e a recuperação desse gás virou projeto de engenharia dentro da fábrica à medida que o custo dele subiu <Cite id="fabm-neon-2017" />.
+Excimer lasers da litografia DUV precisam de neônio na mistura gasosa, e a recuperação desse gás virou projeto de engenharia dentro da fábrica à medida que o custo dele subiu <Cite id="fabm-neon-2017" />.
 
 O episódio que expôs a dependência foi a invasão da Ucrânia em 2022. O país fornecia cerca de metade do neônio mundial e, na década anterior, até 90% do neônio importado pelos Estados Unidos, herança da siderurgia soviética, e a interrupção das plantas de purificação transformou um gás que ninguém acompanhava num item de risco de cadeia <Cite id="usitc-neon-2022" />. A fatia já vinha caindo com a diversificação dos compradores: um modelo da USITC pôs a Ucrânia em 70% do neônio mundial em 2014 e 50% em 2021 <Cite id="usitc-neon-pe-2022" />, e um trabalho posterior da USITC deu 25 a 30% do neônio purificado do mundo <Cite id="usitc-taiwan-2023" />.
 
-O padrão se repete: **insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria**. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
+O padrão se repete: insumo barato, pouco visível, insubstituível no curto prazo e produzido como subproduto de outra indústria. É o mesmo desenho do quartzo de Spruce Pine e da participação chinesa no polissilício, tratados em [o mapa dos gargalos](/gargalos).
 
 ## Água ultrapura
 
-A água é, em volume, o insumo de maior peso de uma fab, e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de **18,2 MΩ·cm** a 25 °C, o máximo teórico da água pura, e carbono orgânico total na casa das **partes por trilhão** <Cite id="fabm-upw" />.
+A água é, em volume, o insumo de maior peso de uma fab, e o mais fácil de subestimar, porque "água" sugere um recurso qualquer. A água que entra em contato com o wafer é **ultrapura** (UPW): resistividade da ordem de 18,2 MΩ·cm a 25 °C, o máximo teórico da água pura, e carbono orgânico total na casa das partes por trilhão <Cite id="fabm-upw" />.
 
-A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, **dopantes** (sódio e potássio no nível de partes por bilhão (ppb) já alteram a tensão de limiar de um transistor), e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada **no próprio site**, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
+A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, dopantes (sódio e potássio no nível de partes por bilhão (ppb) já alteram a tensão de limiar de um transistor), e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada no próprio site, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
 
 ## Por que essa lista é um gargalo
 
-Nenhum dos insumos desta página é caro por unidade. Todos são difíceis de substituir.
+Nenhum dos insumos desta página é caro por unidade, e todos são difíceis de substituir.
 
-O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige **requalificar o processo inteiro**, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
+O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige requalificar o processo inteiro, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
 
 <SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
 

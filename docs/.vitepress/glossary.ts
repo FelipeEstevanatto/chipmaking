@@ -201,6 +201,12 @@ export const GLOSSARY: GlossaryEntry[] = [
     chapter: '/fotolitografia',
   },
   {
+    term: 'NA',
+    pt: 'Abertura numérica (numerical aperture)',
+    en: 'Numerical aperture',
+    chapter: '/fotolitografia',
+  },
+  {
     term: 'SEMATECH',
     pt: 'Consórcio de pesquisa em semicondutores dos Estados Unidos',
     en: 'United States semiconductor research consortium',
@@ -336,6 +342,24 @@ export const GLOSSARY: GlossaryEntry[] = [
     term: 'PERC',
     pt: 'Emissor passivado e contato traseiro (passivated emitter and rear cell)',
     en: 'Passivated emitter and rear cell',
+    chapter: '/celulas-solares',
+  },
+  {
+    term: 'TOPCon',
+    pt: 'Contato passivado por óxido de tunelamento (tunnel oxide passivated contact)',
+    en: 'Tunnel oxide passivated contact',
+    chapter: '/celulas-solares',
+  },
+  {
+    term: 'SHJ',
+    pt: 'Heterojunção de silício (silicon heterojunction)',
+    en: 'Silicon heterojunction',
+    chapter: '/celulas-solares',
+  },
+  {
+    term: 'TBC',
+    pt: 'Contato traseiro TOPCon (TOPCon back contact)',
+    en: 'TOPCon back contact',
     chapter: '/celulas-solares',
   },
   {

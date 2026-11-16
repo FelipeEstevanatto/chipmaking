@@ -71,7 +71,7 @@ Executado em sequência, com controle rigoroso de temperatura e contaminantes <C
 4. **Alinhamento e exposição:** o scanner posiciona o retículo sobre o padrão que já está no wafer e expõe. A luz é de 193 nm no **DUV** e de 13,5 nm no **EUV**; o cromo da máscara bloqueia, e só as aberturas mudam a solubilidade da resina.
 5. **Cozimento pós-exposição (PEB):** 100–130 °C. Nas resinas quimicamente amplificadas é aqui que a reação catalisada pelo ácido acontece, e não durante a exposição. O cozimento também reduz as ondas estacionárias que a interferência da luz deixa nas paredes do resiste.
 6. **Revelação (*development*):** TMAH (hidróxido de tetrametilamônio) em poça sobre o wafer. Em resiste positivo, a região exposta é a que se dissolve. A temperatura do revelador é controlada com precisão de 0,2 °C.
-7. **Cozimento final (*hard bake*): 120–180 °C** por 20 a 30 minutos, para endurecer o resiste antes da gravação e da implantação. Esse passo é tradicional das resinas não amplificadas; nas quimicamente amplificadas o calor em excesso consome o ácido que forma a imagem, e o passo é ajustado ou dispensado <Cite id="wikipedia-photolithography" />.
+7. **Cozimento final (*hard bake*):** um cozimento opcional que endurece o resiste antes da gravação e da implantação. Um resiste positivo começa a reticular por volta de 130 a 140 °C, o que aumenta sua resistência a químicos úmidos; a mesma reticulação o torna mais difícil de remover depois, e os removedores comuns chegam ao limite depois de cozimentos de cerca de 150 a 160 °C <Cite id="microchemicals-hardbake" />.
 8. **Transferência de padrão e remoção:** gravação por etch ou implantação iônica nas áreas que ficaram sem resiste, e depois remoção por solvente como o NMP ou por plasma ashing de oxigênio.
 
 Os oito passos se dividem em duas máquinas. O track de coater/developer faz os cozimentos, o revestimento, a revelação e o enxágue; o scanner faz a exposição. Os dois ficam instalados lado a lado e ligados um ao outro, e o wafer passa de um para o outro sem sair do controle do sistema <Cite id="wikipedia-photolithography" />. A revelação é feita wafer a wafer, e não em lote, para que cada um receba a mesma dose.
@@ -221,7 +221,7 @@ As vazões abaixo são medidas em doses diferentes (30 mJ/cm² nos NXE e 50 mJ/c
 
 ## Vídeos
 
-<SourceNote label="Vídeos relacionados" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv', 'smith-water-immersion-2003', 'french-tran-2009']" />
+<SourceNote label="Vídeos relacionados" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv', 'smith-water-immersion-2003', 'french-tran-2009', 'microchemicals-hardbake']" />
 
 <YouTubeEmbed id="B2482h_TNwg" title="The $200M Machine that Prints Microchips: the EUV Photolithography System (Branch Education, patrocinado pela ASML)" />
 

@@ -49,6 +49,10 @@ Fabs plan with a different metric, days per mask layer. The average sits between
 
 Wafers travel in lots, and the standard lot is 25 wafers <Cite id="semieng-cycle-time" />. Lots are sometimes reshuffled between each other to level the load on the equipment.
 
+<DiagramFigure src="/assets/wafer-cassette-200mm.jpg" alt="An empty dark plastic cassette for 200 mm wafers, with rows of parallel slots on both inner walls">
+A cassette for 200 mm (8-inch) wafers: the parallel slots on each wall hold the wafers upright and apart. 邱鈺乾, <a href="https://commons.wikimedia.org/wiki/File:8_inch_cassette.JPG" target="_blank" rel="noopener noreferrer">8 inch cassette</a> (CC BY-SA 3.0), Wikimedia Commons.
+</DiagramFigure>
+
 Lithography is the module the wafer returns to most. A 32/28 nm flow used 38 lithography exposures, 15 of them immersion; a 22/20 nm flow used 52 exposures, with 31 immersion and 11 multi-patterning steps <Cite id="semieng-litho-layers" />. The exact count depends on the node and the manufacturer.
 
 ### The three zones of a chip

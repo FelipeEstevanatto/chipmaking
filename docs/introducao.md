@@ -14,7 +14,7 @@ A fabricação de wafers de silício em quantidade e qualidade é um dos princip
 
 ## Produção estimada {#producao-estimada}
 
-Milhares de toneladas de **silício metálico** (não confundir com polissilício de grau eletrônico) e de **ferrossilício**, a partir das edições de 2024 a 2026 do USGS:
+Milhares de toneladas de silício metálico (não confundir com polissilício de grau eletrônico) e de ferrossilício, a partir das edições de 2024 a 2026 do USGS:
 
 <UsgsProductionTable />
 
