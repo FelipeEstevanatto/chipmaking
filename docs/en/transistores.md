@@ -213,6 +213,10 @@ CFET is a bet inside silicon. Outside it, the candidate channel materials to rep
 
 The node number that opens each section only corresponds to a real physical dimension up to the mid-1990s. After that it became a generation name, in three stages.
 
+<ClientOnly>
+  <DataChart chart="node-name-vs-dimensions" />
+</ClientOnly>
+
 ### 1. The number was born from a coincidence
 
 The “node” was not invented as a concept. It records the observation that two different dimensions gave roughly the same number. The first is the gate length, the distance between source and drain that the gate controls, historically the measure that most determines how fast a transistor switches. The second is the metal half-pitch, half the distance from the start of one metal interconnect to the start of the next <Cite id="ieee-node" />.

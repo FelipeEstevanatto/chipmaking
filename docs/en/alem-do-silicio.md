@@ -6,13 +6,13 @@ dataAsOf: 2022
 
 # Beyond silicon
 
-Every chapter of this site treats silicon as **the** semiconductor material. That is true for logic and for photovoltaics, and false in two directions that deserve a chapter.
+Every chapter of this site treats silicon as the semiconductor material. That is true for logic and for photovoltaics, and false in two directions that deserve a chapter.
 
 In the first, there are semiconductors that are **not** silicon and beat it in specific applications, not by being better at everything, but by having one property silicon lacks. In the second, silicon does far more than process data and generate power: it is also mechanical structure, sensor, and more recently a qubit host.
 
 ## The wide-bandgap neighbours
 
-The parameter that separates this family is the **band gap**, and the difference is large: silicon is **1.12 eV** <Cite id="elem-ioffe" />, silicon carbide (4H-SiC) is **3.26 eV** <Cite id="wbg-ioffe-sic" /> and gallium nitride (GaN) is **3.40 eV** <Cite id="wbg-ioffe-gan" />.
+The parameter that separates this family is the band gap, and the difference is large: silicon is **1.12 eV** <Cite id="elem-ioffe" />, silicon carbide (4H-SiC) is **3.26 eV** <Cite id="wbg-ioffe-sic" /> and gallium nitride (GaN) is **3.40 eV** <Cite id="wbg-ioffe-gan" />.
 
 | Material | Gap (300 K) | Where it wins |
 | --- | --- | --- |
@@ -24,33 +24,33 @@ The parameter that separates this family is the **band gap**, and the difference
   <DataChart chart="band-gap" />
 </ClientOnly>
 
-A wider gap means a **much higher breakdown voltage**: a material with a wide forbidden band withstands a larger electric field before going into avalanche <Cite id="elem-sze" />. And that changes device geometry. A power transistor needs a thick, lightly doped drift region to hold off voltage; the higher the critical field, **the thinner and more heavily doped** that region can be, and the lower the on-resistance. That is why SiC and GaN can do, in a small volume, what silicon can only do in a larger one.
+A wider gap means a much higher breakdown voltage: a material with a wide forbidden band withstands a larger electric field before going into avalanche <Cite id="elem-sze" />. And that changes device geometry. A power transistor needs a thick, lightly doped drift region to hold off voltage; the higher the critical field, the thinner and more heavily doped that region can be, and the lower the on-resistance. That is why SiC and GaN can do, in a small volume, what silicon can only do in a larger one.
 
 In high-voltage switching (electric-vehicle traction inverters, grid converters and industrial supplies), SiC competes with the **IGBT**, a bipolar device that stores minority carriers and therefore has a current tail when it turns off. A SiC MOSFET eliminates that tail, and the loss difference shows up precisely at switching frequency <Cite id="elem-sze" />.
 
-In GaN the advantage comes from another interface: at the AlGaN/GaN contact a **two-dimensional electron gas** forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve for reasons of physics, not for lack of engineering: **emitting blue light**. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
+In GaN the advantage comes from another interface: at the AlGaN/GaN contact a two-dimensional electron gas forms, a high-mobility carrier layer with no intentional doping, the origin of the HEMT transistor and of its power and radio-frequency versions <Cite id="wbg-ioffe-gan" />. And the same material family solved a problem silicon cannot solve for reasons of physics, not for lack of engineering: emitting blue light. The efficient blue LED of Akasaki, Amano and Nakamura is what made solid-state white lighting possible, and it earned the 2014 Nobel Prize in Physics <Cite id="wbg-nobel-2014" />.
 
-These materials do **not** replace silicon in logic because of the **substrate**, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage. Only in April 2022 did a 200 mm SiC fab open: Wolfspeed's plant in Marcy, New York, which the company calls the world's first and largest <Cite id="wolfspeed-mohawk-200mm" />, while silicon fabs already run 300 mm wafers <Cite id="zulehner-2000" />. It is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
+These materials do not replace silicon in logic because of the substrate, not the gap. Growing a large, defect-free crystal is the hard part, and that is where silicon has decades of advantage. Only in April 2022 did a 200 mm SiC fab open: Wolfspeed's plant in Marcy, New York, which the company calls the world's first and largest <Cite id="wolfspeed-mohawk-200mm" />, while silicon fabs already run 300 mm wafers <Cite id="zulehner-2000" />. It is the same argument [solar cells and modules](/en/celulas-solares) makes to explain why silicon dominates photovoltaics with an indirect gap that is worse for absorbing light.
 
 ## Silicon's other lives
 
-Before being a processor, silicon is an excellent structural material: hard, elastic within a predictable range, and mouldable to sub-micrometre precision. Three of those jobs deserve a note.
+Before being a processor, silicon is an excellent structural material: hard, elastic within a predictable range, and mouldable to sub-micrometre precision. This section covers four of its other uses: MEMS, image sensors, silicon photonics and qubits.
 
-**MEMS.** Micro-electromechanical sensors (accelerometers, gyroscopes, microphones, pressure sensors) are machined silicon, not doped silicon. Manufacturing uses the same tools as the fab: **anisotropic** wet etching, which attacks different crystal planes at different rates, and deep plasma etching (**DRIE**), which digs vertical trenches <Cite id="bosch-drie" />. Every phone carries dozens of them.
+**MEMS.** Micro-electromechanical sensors (accelerometers, gyroscopes, microphones, pressure sensors) are machined silicon, not doped silicon. Manufacturing uses the same tools as the fab: anisotropic wet etching, which attacks different crystal planes at different rates, and deep plasma etching (DRIE), which digs vertical trenches <Cite id="bosch-drie" />.
 
 <DiagramFigure src="/assets/mems-structure.svg" alt="Cross-section of a silicon MEMS structure: a thin beam suspended over a cavity etched into the substrate, anchored to the substrate at one end and free at the other, with the cavity walls sloping inwards">
 The suspended beam in cross-section: one end is anchored to the substrate and the other hangs free over the cavity, opened by etching into the silicon itself <Cite id="bosch-drie" />. Drawn by the author.
 </DiagramFigure>
 
-**Image sensors.** The CMOS sensor is probably the most numerous silicon product in the world today. The current generation stacks two wafers (the pixel one and the circuit one) and joins them with **through-silicon vias** (TSV), the same technology the [packaging](/en/empacotamento) chapter describes for 3D packages <Cite id="semieng-tsv" />.
+**Image sensors.** The CMOS sensor is probably the most numerous silicon product in the world today. The current generation stacks two wafers (the pixel one and the circuit one) and joins them with through-silicon vias (TSV), the same technology the [packaging](/en/empacotamento) chapter describes for 3D packages <Cite id="semieng-tsv" />.
 
-**Silicon photonics.** Here silicon is, once again, a victim of its own gap. An indirect-gap material **does not emit light efficiently** <Cite id="elem-sze" />, which is why a photonic circuit integrated in silicon cannot make its own laser: it guides, modulates and detects light very well, but has to look for the source in another material, bonded to the chip. It is the same physical property that explains, in the solar chapter, why **100 µm of silicon** are needed to absorb what **1 µm of gallium arsenide** absorbs <Cite id="saimm" />.
+**Silicon photonics.** Here silicon is, once again, a victim of its own gap. An indirect-gap material does not emit light efficiently <Cite id="elem-sze" />, which is why a photonic circuit integrated in silicon cannot make its own laser: it guides, modulates and detects light very well, but has to look for the source in another material, bonded to the chip. It is the same physical property that explains, in the solar chapter, why **100 µm of silicon** are needed to absorb what 1 µm of gallium arsenide absorbs <Cite id="saimm" />.
 
-**Qubits.** And there is one use in which silicon is chosen precisely for being silicon: because the ²⁹Si isotope carries nuclear spin, natural silicon is a **magnetically noisy** environment for a qubit. Purifying the isotope (leaving almost only ²⁸Si) creates the quiet environment in which spin qubits operate <Cite id="wbg-si28-qubit" /> <Cite id="elem-ciaaw" />.
+**Qubits.** And there is one use in which silicon is chosen precisely for being silicon: because the ²⁹Si isotope carries nuclear spin, natural silicon is a magnetically noisy environment for a qubit. Purifying the isotope (leaving almost only ²⁸Si) creates the quiet environment in which spin qubits operate <Cite id="wbg-si28-qubit" /> <Cite id="elem-ciaaw" />.
 
 ## What remains
 
-Silicon won by being **good enough** across an extremely wide range of jobs, with a native oxide that serves as an insulator, a substrate that can be grown to large diameters, and an industrial chain built around it for seven decades <Cite id="saimm" />.
+Silicon won by being good enough across an extremely wide range of jobs, with a native oxide that serves as an insulator, a substrate that can be grown to large diameters, and an industrial chain built around it for seven decades <Cite id="saimm" />.
 
 The materials in this chapter step in where that combination is not enough, and complement silicon rather than replace it. A SiC power chip is still mounted on silicon, packaged with silicon and driven by silicon.
 

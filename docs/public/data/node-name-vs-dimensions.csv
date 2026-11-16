@@ -1,0 +1,4 @@
+label,Number in the name,Gate length,Metal half-pitch,Contacted gate pitch,Metal pitch
+"""130 nm"" node",130,70,,,
+"Intel ""22 nm"" node",22,26,40,,
+"""5 nm"" chips",5,,,48,36

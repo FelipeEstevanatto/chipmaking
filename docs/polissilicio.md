@@ -57,6 +57,10 @@ Esta página percorre a rota química, que domina o mercado e é a única que ch
 
 A etapa anterior a esta página já entrega o material de partida. O quartzo (SiO₂) é reduzido com carbono em um forno elétrico de arco submerso a cerca de 2000 °C <Cite id="csiro" />, numa sequência de reações em que o carbeto de silício (SiC) é um intermediário essencial:
 
+<DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Corte de um forno de arco submerso: três eletrodos pré-cozidos atravessam a carga, com o gás subindo até o capuz e o banho de silício líquido no fundo com o furo de vazamento">
+O forno de arco submerso onde se produz o MG-Si, descrito em detalhe no capítulo de mineração. Desenho do autor, a partir de <Cite id="saimm" /> <Cite id="saevarsdottir-2010" />.
+</DiagramFigure>
+
 ```text
 SiO₂ + 3C → SiC + 2CO (g)          (região superior, ~1600 °C)
 SiO₂ + 2SiC → 3Si + 2CO (g)        (região inferior, >1780 °C)
@@ -264,6 +268,10 @@ A rota metalúrgica não perdeu por qualidade: as células provaram paridade el�
 
 As classes de pureza citadas acima ficam mais concretas quando se olham os números. A Tabela I do *review* de Xakalashe e Tangstad compara as análises químicas típicas dos quatro produtos da cadeia <Cite id="saimm" />:
 
+<DiagramFigure src="/assets/quartz-purity-ladder.svg" alt="Escala logarítmica de concentração de impurezas, de 1 ppb a 10.000 ppm, com o silício metalúrgico entre 5.000 e 15.000 ppm, o quartzo de alta pureza entre 8 e 10 ppm e o boro do cristal em 1 ppm">
+Sete ordens de grandeza separam o metal que sai do forno do quartzo mais limpo. Desenho do autor <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
+</DiagramFigure>
+
 | Elemento | MG-Si (ppm) | Grau solar (ppm) | Grau solar policristalino | Grau eletrônico (ppm) |
 | --- | --- | --- | --- | --- |
 | **Si** (fração mássica) | 99 % | 99,9999 % | 99,99999 % | 99,999999999 % |
@@ -341,7 +349,7 @@ A alta, porém, veio de um pico artificial de instalações na China antes de um
 
 É esse tipo de ciclo curto, contra capacidade instalada abundante, num mercado onde mais de 90% da oferta sai de um só país, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
 
-<SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle']" />
+<SourceNote :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle', 'saevarsdottir-2010', 'sibelco-hpq', 'quartzcorp-hpq']" />
 
 <SeeAlso :links="[
   { text: 'Linha do tempo', href: '/linha-do-tempo', note: 'marcos do mercado de polissilício' },

@@ -84,6 +84,10 @@ Cada gráfico do site existe também como arquivo de dados, gerado a partir da *
 - [Divisão do valor de um chip](/data/chip-value-split.csv)
 - [Participação no encapsulamento avançado](/data/advanced-packaging-share.csv)
 - [Banda por pilha de HBM](/data/hbm-bandwidth.csv)
+- [Eficiência do módulo por tecnologia de célula](/data/pv-cell-technologies.csv)
+- [Nome do nó e dimensões medidas](/data/node-name-vs-dimensions.csv)
+- [FIT e MTTF](/data/fit-to-mttf.csv)
+- [Graus de temperatura da AEC-Q100](/data/aec-q100-grades.csv)
 
 O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.vitepress/theme/charts/specs.ts`, então o gráfico e o CSV não podem divergir.
 

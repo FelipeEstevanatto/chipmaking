@@ -8,9 +8,9 @@ dataAsOf: 2026
 
 # Células e módulos solares
 
-O wafer de silício tem dois destinos industriais. Um é a **fab** de semicondutores, que percorre a [fotolitografia](/fotolitografia) até chegar aos [transistores](/transistores). O outro é a **linha de células fotovoltaicas**, onde o mesmo material (só que multicristalino e com pureza menor) vira a célula que converte luz em eletricidade.
+O wafer de silício tem dois destinos industriais. Um é a fab de semicondutores, que percorre a [fotolitografia](/fotolitografia) até chegar aos [transistores](/transistores). O outro é a linha de células fotovoltaicas, onde o mesmo material, com pureza menor, vira a célula que converte luz em eletricidade.
 
-A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023** respondia por cerca de **97%** do mercado fotovoltaico, contra **3%** das tecnologias de filme fino <Cite id="itrpv-2024" />. Dentro do silício, o **monocristalino Czochralski** domina de forma praticamente absoluta. O wafer multicristalino deixou de ser produzido em massa <Cite id="itrpv-2024" />. O número mais antigo que aparece ao longo deste capítulo, de **pelo menos 80%**, vem do levantamento de 2011 de Xakalashe e Tangstad <Cite id="saimm" />.
+A célula de silício cristalino é, de longe, a tecnologia dominante: em 2023 respondia por cerca de 97% do mercado fotovoltaico, contra 3% das tecnologias de filme fino <Cite id="itrpv-2024" />. Dentro do silício, o monocristalino Czochralski domina de forma praticamente absoluta. O wafer multicristalino deixou de ser produzido em massa <Cite id="itrpv-2024" />. O número mais antigo que aparece ao longo deste capítulo, de pelo menos 80%, vem do levantamento de 2011 de Xakalashe e Tangstad <Cite id="saimm" />.
 
 ## As sete etapas da célula
 
@@ -18,7 +18,7 @@ A célula de silício cristalino é, de longe, a tecnologia dominante: em **2023
 A célula pronta em corte. O raio que uma pirâmide reflete é aproveitado pela seguinte, a luz atravessa o antirrefletor e o emissor até a junção p-n, e os dois contatos levam a corrente à carga. Sem escala: o wafer tem cerca de 200 µm e o emissor, cerca de 0,5 µm.
 </DiagramFigure>
 
-A célula pronta sai de **sete etapas**, nesta ordem:
+A célula pronta sai de sete etapas, nesta ordem:
 
 1. [Remoção da camada danificada](#remocao-da-camada-danificada): o ataque que tira o dano deixado pela serra.
 2. [Texturização](#texturizacao): a rugosidade que faz a luz entrar em vez de voltar.
@@ -28,94 +28,106 @@ A célula pronta sai de **sete etapas**, nesta ordem:
 6. [Metalização](#metalizacao): os contatos, onde cada milímetro de prata é um milímetro sem luz.
 7. [Queima dos contatos](#queima-dos-contatos): o tratamento térmico que faz o metal atravessar o antirrefletor.
 
-A escolha do dopante tipo p (boro ou gálio) atravessa a terceira etapa e virou subseção dentro dela: mudou o produto, não a sequência do processo.
+A escolha do dopante tipo p (boro ou gálio) atravessa a terceira etapa e virou subseção dentro dela: mudou o produto, não a sequência do processo. Essas sete etapas constroem a célula clássica tipo p; os desenhos tipo n que a substituíram na produção em massa estão em [células atuais](#celulas-atuais).
 
 ### Remoção da camada danificada
 
-O wafer sai do corte com uma superfície **danificada e contaminada** pela serra. No início do processo, **10 a 20 µm** são atacados quimicamente de ambos os lados, tipicamente com soluções alcalinas, seguidos de enxágue em água deionizada <Cite id="saimm" />.
+O wafer sai do corte com uma superfície danificada e contaminada pela serra. No início do processo, **10 a 20 µm** são atacados quimicamente de ambos os lados, tipicamente com soluções alcalinas, seguidos de enxágue em água deionizada <Cite id="saimm" />.
 
 ### Texturização
 
-Depois do ataque, a superfície fica espelhada e **reflete mais de 35% da luz incidente**. A texturização resolve isso criando rugosidade em escala micrométrica <Cite id="saimm" />.
+Depois do ataque, a superfície fica espelhada e reflete mais de 35% da luz incidente. A texturização resolve isso criando rugosidade em escala micrométrica <Cite id="saimm" />.
 
-Em wafers **monocristalinos**, uma solução fraca de hidróxido de sódio e potássio com isopropanol a **80 °C** ataca o silício de forma **anisotrópica** (planos cristalinos diferentes reagem a velocidades diferentes) e produz **pirâmides distribuídas aleatoriamente**, que fazem a luz entrar e ricochetear em vez de voltar <Cite id="saimm" />. Em wafers **multicristalinos** (hoje quase inexistentes, ver a introdução) esse truque não funciona, porque a orientação muda de grão para grão; ali a textura era **mecânica** <Cite id="saimm" />. O resultado, nos dois casos, é a reflexão cair **abaixo de 10%** <Cite id="saimm" />.
+Em wafers monocristalinos, uma solução fraca de hidróxido de sódio e potássio com isopropanol a 80 °C ataca o silício de forma anisotrópica (planos cristalinos diferentes reagem a velocidades diferentes) e produz pirâmides distribuídas aleatoriamente, que fazem a luz entrar e ricochetear em vez de voltar <Cite id="saimm" />. Em wafers multicristalinos (hoje quase inexistentes, ver a introdução) esse truque não funciona, porque a orientação muda de grão para grão; ali a textura era mecânica <Cite id="saimm" />. O resultado, nos dois casos, é a reflexão cair abaixo de 10% <Cite id="saimm" />.
 
 ### Difusão do emissor (junção p-n)
 
-É a etapa que transforma uma lâmina de silício num dispositivo. O wafer de partida é **tipo p**; introduz-se **fósforo** (tipo n) para formar a **junção p-n** <Cite id="saimm" />. Qual elemento faz a dopagem tipo p, porém, mudou. É o assunto da subseção seguinte.
+É a etapa que transforma uma lâmina de silício num dispositivo. O wafer de partida é **tipo p**; introduz-se fósforo (tipo n) para formar a junção p-n <Cite id="saimm" />. Qual elemento faz a dopagem tipo p, porém, mudou. É o assunto da subseção seguinte.
 
-O processo roda num forno a aproximadamente **900 °C por cerca de 30 minutos**, produzindo uma profundidade de penetração de **0,5 µm**. É essa camada rasa que a figura mostra como emissor. A fonte de dopante mais comum é o **POCl₃**, embora também se usem serigrafia ou deposição química de vapor <Cite id="saimm" />.
+O processo roda num forno a aproximadamente 900 °C por cerca de 30 minutos, produzindo uma profundidade de penetração de 0,5 µm. É essa camada rasa que a figura mostra como emissor. A fonte de dopante mais comum é o POCl₃, embora também se usem serigrafia ou deposição química de vapor <Cite id="saimm" />.
 
 #### A troca do boro pelo gálio
 
-A lâmina de partida é **tipo p**, e por décadas isso significou **dopada com boro** <Cite id="saimm" />. A dopagem com boro traz um defeito que mudou o dopante usado pela indústria.
+A lâmina de partida é tipo p, e por décadas isso significou dopada com boro <Cite id="saimm" />. A dopagem com boro traz um defeito que mudou o dopante usado pela indústria.
 
-O boro reage com o **oxigênio** dissolvido no silício Cz (a impureza que o próprio cadinho de quartzo introduz, como se viu na [fabricação de wafers](/fabricacao-wafers#oxigenio-e-carbono-o-que-o-cadinho-dissolve)) e forma um complexo **boro–oxigênio** ativo em recombinação. O defeito se ativa sob iluminação e injeção de portadores, e por isso o efeito é conhecido como **BO-LID** (*boron-oxygen light-induced degradation*) <Cite id="lid-hallam" />.
+O boro reage com o oxigênio dissolvido no silício Cz (a impureza que o próprio cadinho de quartzo introduz, como se viu na [fabricação de wafers](/fabricacao-wafers#oxigenio-e-carbono-do-cadinho)) e forma um complexo boro–oxigênio ativo em recombinação. O defeito se ativa sob iluminação e injeção de portadores, e por isso o efeito é conhecido como **BO-LID** (*boron-oxygen light-induced degradation*) <Cite id="lid-hallam" />.
 
-A perda teórica chega a **10% relativo** na eficiência. Em campo fica em cerca de **3 a 4%** nas células Al-BSF e **4 a 6%** nas PERC <Cite id="lid-hallam" />. Isso aparece como menos energia no sistema instalado.
+A perda teórica chega a 10% relativo na eficiência. Em campo fica em cerca de 3 a 4% nas células Al-BSF e 4 a 6% nas PERC <Cite id="lid-hallam" />. Isso aparece como menos energia no sistema instalado.
 
-A saída foi trocar o dopante. O **gálio** ocupa o mesmo papel aceitador do boro, mas **não forma o complexo com oxigênio**, e por isso a célula não sofre BO-LID <Cite id="lid-hallam" />. A substituição foi rápida quando as patentes que a bloqueavam expiraram, em **2020**: a fatia de lâminas dopadas com gálio saltou de cerca de **10% em 2019 para mais de 95% em 2021**, e a ITRPV já registrava o **desaparecimento do boro** como dopante tipo p em **2023** <Cite id="ga-transition" />.
+A saída foi trocar o dopante. O gálio ocupa o mesmo papel aceitador do boro, mas não forma o complexo com oxigênio, e por isso a célula não sofre BO-LID <Cite id="lid-hallam" />. A substituição foi rápida quando as patentes que a bloqueavam expiraram, em 2020: a fatia de lâminas dopadas com gálio saltou de cerca de 10% em 2019 para mais de 95% em 2021, e a ITRPV já registrava o desaparecimento do boro como dopante tipo p em 2023 <Cite id="ga-transition" />.
 
-O **coeficiente de segregação** do gálio é de apenas **0,008**, contra 0,8 do boro, então a resistividade varia muito ao longo de um lingote e menos da peça é aproveitável <Cite id="lid-hallam" />. Esse compromisso está em [dopagem e gradiente de resistividade](/fabricacao-wafers#dopagem-e-o-gradiente-de-resistividade). Células dopadas com gálio ainda podem sofrer **LeTID** (*light and elevated temperature induced degradation*), uma perda ligada ao hidrogênio de até **3% relativo** da potência <Cite id="letid-ga" />.
+O coeficiente de segregação do gálio é de apenas 0,008, contra 0,8 do boro, então a resistividade varia muito ao longo de um lingote e menos da peça é aproveitável <Cite id="lid-hallam" />. Esse compromisso está em [dopagem e gradiente de resistividade](/fabricacao-wafers#dopagem-e-o-gradiente-de-resistividade). Células dopadas com gálio ainda podem sofrer **LeTID** (*light and elevated temperature induced degradation*), uma perda ligada ao hidrogênio de até 3% relativo da potência <Cite id="letid-ga" />.
 
-A indústria também está indo para o **tipo n**. Em **2024** a ITRPV projetava que as lâminas tipo n passariam as tipo p e chegariam a **69% do mercado** no fim daquele ano <Cite id="itrpv-2024" />.
+A indústria também está indo para o tipo n. Em 2024 a ITRPV projetava que as lâminas tipo n passariam as tipo p e chegariam a 69% do mercado no fim daquele ano <Cite id="itrpv-2024" />.
 
 ### Isolamento de borda
 
-A difusão a partir da fase gasosa forma emissor na **superfície inteira** do wafer, inclusive nas bordas. O resultado é um **curto-circuito (shunt)** entre as regiões n e p <Cite id="saimm" />.
+A difusão a partir da fase gasosa forma emissor na superfície inteira do wafer, inclusive nas bordas. O resultado é um curto-circuito (shunt) entre as regiões n e p <Cite id="saimm" />.
 
-Para isolar o emissor frontal do traseiro usam-se técnicas **mecânicas, de corte a laser ou de ataque por plasma**, esta última a mais associada às células serigrafadas. Os wafers são empilhados numa câmara de vácuo e atacados em plasma de fluoreto ou óxido, removendo **2 a 5 µm** das bordas <Cite id="saimm" />.
+Para isolar o emissor frontal do traseiro usam-se técnicas mecânicas, de corte a laser ou de ataque por plasma, esta última a mais associada às células serigrafadas. Os wafers são empilhados numa câmara de vácuo e atacados em plasma de fluoreto ou óxido, removendo 2 a 5 µm das bordas <Cite id="saimm" />.
 
 ### Camada antirrefletora
 
-Reduzir a refletância da face frontal é uma das formas mais diretas de ganhar eficiência. Materiais com **índice de refração entre 1,4 e 2,7** servem como antirrefletor sobre silício <Cite id="saimm" />.
+Reduzir a refletância da face frontal é uma das formas mais diretas de ganhar eficiência. Materiais com índice de refração entre 1,4 e 2,7 servem como antirrefletor sobre silício <Cite id="saimm" />.
 
-O **dióxido de titânio** foi a escolha industrial por muito tempo. Hoje domina o **nitreto de silício depositado por PECVD**, por combinar índice de refração próximo do ideal com um bônus importante: ele também **passiva a superfície**, reduzindo a recombinação <Cite id="saimm" />.
+O dióxido de titânio foi a escolha industrial por muito tempo. Hoje domina o nitreto de silício depositado por PECVD, por combinar índice de refração próximo do ideal com um bônus importante: ele também passiva a superfície, reduzindo a recombinação <Cite id="saimm" />.
 
 ### Metalização
 
-A formação dos contatos afeta praticamente todo o desempenho da célula: corrente de curto-circuito, tensão de circuito aberto, resistência série, resistência shunt e fator de preenchimento <Cite id="saimm" />. E há um compromisso embutido. O metal frontal precisa ter **baixa resistência e ocupar pouca área**, porque cada milímetro de prata é um milímetro que não recebe luz <Cite id="saimm" />.
+A formação dos contatos afeta praticamente todo o desempenho da célula: corrente de curto-circuito, tensão de circuito aberto, resistência série, resistência shunt e fator de preenchimento <Cite id="saimm" />. E há um compromisso embutido. O metal frontal precisa ter baixa resistência e ocupar pouca área, porque cada milímetro de prata é um milímetro que não recebe luz <Cite id="saimm" />.
 
-A técnica dominante é a **serigrafia** (screen printing), em uso desde o início da década de 1970: pasta de **prata** na face frontal, pasta de **alumínio** na traseira, que se liga ao silício formando o contato e o campo retroativo. As pastas são secas em estufa a cerca de **300 °C** <Cite id="saimm" />. É um processo simples, rápido, barato e com pouco resíduo químico <Cite id="saimm" />.
+A técnica dominante é a serigrafia (screen printing), em uso desde o início da década de 1970: pasta de prata na face frontal, pasta de alumínio na traseira, que se liga ao silício formando o contato e o campo retroativo. As pastas são secas em estufa a cerca de 300 °C <Cite id="saimm" />. É um processo simples, rápido, barato e com pouco resíduo químico <Cite id="saimm" />.
 
 ### Queima dos contatos
 
-Os contatos serigrafados nascem **em cima** da camada antirrefletora, que é isolante. A célula passa então por um tratamento térmico curto, de até **900 °C**, num forno de esteira <Cite id="saimm" />.
+Os contatos serigrafados nascem em cima da camada antirrefletora, que é isolante. A célula passa então por um tratamento térmico curto, de até 900 °C, num forno de esteira <Cite id="saimm" />.
 
-Durante a queima, o antirrefletor sofre **dissolução seletiva** e os contatos atravessam a camada até alcançar o emissor, sem penetrar fundo demais no silício, uma janela de processo estreita. É nessa etapa que também se forma o **campo retroativo** com o alumínio <Cite id="saimm" />.
+Durante a queima, o antirrefletor sofre dissolução seletiva e os contatos atravessam a camada até alcançar o emissor, sem penetrar fundo demais no silício, uma janela de processo estreita. É nessa etapa que também se forma o campo retroativo com o alumínio <Cite id="saimm" />.
+
+## Células atuais
+
+As sete etapas acima constroem a célula clássica tipo p, e em 2025 a produção em massa já tinha passado dela em boa parte. Os wafers tipo n tinham cerca de 82% do mercado em 2025, e o PERC, o último desenho tipo p, tinha caído para cerca de 14% das células <Cite id="itrpv-2026" />.
+
+A célula mais comum em 2025 foi a TOPCon, uma célula tipo n com contatos nas duas faces, que tinha passado o PERC em 2024 <Cite id="itrpv-2026" />. As células de heterojunção de silício (SHJ) e as de contato traseiro, que levam os dois contatos para a face de trás, são os outros desenhos tipo n em produção. O ITRPV espera que as células de contato traseiro cheguem a até 28% do mercado em uma década, e que as células tandem de base silício apareçam depois de 2028 <Cite id="itrpv-2026" />.
+
+<ClientOnly>
+  <DataChart chart="pv-cell-technologies" />
+</ClientOnly>
+
+A primeira etapa sobrevive à mudança: as células monocristalinas continuam texturizadas com um ataque alcalino de KOH <Cite id="itrpv-2026" />. A diferença está na junção, na passivação das duas faces e nos contatos.
 
 ## Da célula ao módulo
 
-Uma célula de silício cristalino produz cerca de **0,5 V**, pouco demais para qualquer uso prático. Por isso as células são **interligadas em série** até atingirem uma tensão útil e depois **encapsuladas** para proteção contra umidade e impacto mecânico. O conjunto é o **módulo** (painel), que pode ser usado isolado ou integrado a um sistema fotovoltaico <Cite id="saimm" />.
+Uma célula de silício cristalino produz cerca de 0,5 V, pouco demais para qualquer uso prático. Por isso as células são **interligadas em série** até atingirem uma tensão útil e depois encapsuladas para proteção contra umidade e impacto mecânico. O conjunto é o módulo (painel), que pode ser usado isolado ou integrado a um sistema fotovoltaico <Cite id="saimm" />.
 
-O **tempo de retorno de energia** fica entre **1 e 2 anos**. A vida útil do módulo é de **25 a 30 anos** <Cite id="saimm" />. Depois de devolver a energia usada na fabricação, o painel ainda tem a maior parte da vida útil pela frente.
+O tempo de retorno de energia fica entre 1 e 2 anos. A vida útil do módulo é de 25 a 30 anos <Cite id="saimm" />. Depois de devolver a energia usada na fabricação, o painel ainda tem a maior parte da vida útil pela frente.
 
 ## Uma história que começa antes dos semicondutores
 
-A fotovoltaica é mais antiga que a eletrônica de estado sólido. Em **1839**, Alexandre-Edmond Becquerel observou que uma corrente elétrica surgia num eletrodo de platina coberto de prata imerso em eletrólito quando exposto à luz, o **efeito fotovoltaico** <Cite id="saimm" />. Em **1876**, o mesmo efeito foi demonstrado num sistema inteiramente sólido, com selênio e contatos de platina <Cite id="saimm" />.
+A fotovoltaica é mais antiga que a eletrônica de estado sólido. Em 1839, Alexandre-Edmond Becquerel observou que uma corrente elétrica surgia num eletrodo de platina coberto de prata imerso em eletrólito quando exposto à luz, o efeito fotovoltaico <Cite id="saimm" />. Em 1876, o mesmo efeito foi demonstrado num sistema inteiramente sólido, com selênio e contatos de platina <Cite id="saimm" />.
 
-A célula moderna nasce em **1954**, nos Bell Laboratories, com Chapin, Fuller e Pearson: silício com **6% de eficiência** <Cite id="saimm" />. Os números anteriores eram modestos (entre **0,1% e 0,5%**), o que dá a medida do salto. Naquele mesmo ano surgiu uma célula de filme fino de sulfeto de cádmio com eficiência equivalente; em **1956** vieram as células de arseneto de gálio da RCA, também com 6%, e o silício já alcançava **10%** <Cite id="saimm" />.
+A célula moderna nasce em 1954, nos Bell Laboratories, com Chapin, Fuller e Pearson: silício com 6% de eficiência <Cite id="saimm" />. Os números anteriores eram modestos (entre 0,1% e 0,5%), o que dá a medida do salto. Naquele mesmo ano surgiu uma célula de filme fino de sulfeto de cádmio com eficiência equivalente; em 1956 vieram as células de arseneto de gálio da RCA, também com 6%, e o silício já alcançava 10% <Cite id="saimm" />.
 
-A primeira aplicação em escala foi espacial: em **1958** os Estados Unidos lançaram o primeiro satélite alimentado por células solares, e eram de silício <Cite id="saimm" />.
+A primeira aplicação em escala foi espacial: em 1958 os Estados Unidos lançaram o primeiro satélite alimentado por células solares, e eram de silício <Cite id="saimm" />.
 
 ## O silício não é o material ideal
 
-O silício é um semicondutor de **gap indireto**: o mínimo da banda de condução e o máximo da banda de valência ficam em momentos cristalinos diferentes. Absorver um fóton é menos provável do que num material de gap direto, e a luz percorre mais caminho no wafer antes de ser absorvida <Cite id="saimm" />.
+O silício é um semicondutor de gap indireto: o mínimo da banda de condução e o máximo da banda de valência ficam em momentos cristalinos diferentes. Absorver um fóton é menos provável do que num material de gap direto, e a luz percorre mais caminho no wafer antes de ser absorvida <Cite id="saimm" />.
 
-A consequência é material: **1 µm de arseneto de gálio** (gap direto) absorve o que **100 µm de silício** absorvem, duas ordens de grandeza de diferença <Cite id="saimm" />.
+A consequência é material: 1 µm de arseneto de gálio (gap direto) absorve o que 100 µm de silício absorvem, duas ordens de grandeza de diferença <Cite id="saimm" />.
 
-Além disso, a eficiência máxima teórica ocorre para gaps entre **1,4 e 1,6 eV**, e o silício fica **abaixo** dessa faixa <Cite id="saimm" />. O telureto de cádmio, que é de gap direto e está dentro do ótimo, é o segundo colocado em participação de mercado <Cite id="saimm" />.
+Além disso, a eficiência máxima teórica ocorre para gaps entre 1,4 e 1,6 eV, e o silício fica abaixo dessa faixa <Cite id="saimm" />. O telureto de cádmio, que é de gap direto e está dentro do ótimo, é o segundo colocado em participação de mercado <Cite id="saimm" />.
 
-Então por que o silício domina? Por razões **históricas e de oferta**: a indústria de semicondutores já havia construído a capacidade de produzir silício de altíssima pureza em grandes volumes <Cite id="saimm" />. O que o silício tem é a cadeia industrial construída em volta dele.
+Então por que o silício domina? Por razões históricas e de oferta: a indústria de semicondutores já havia construído a capacidade de produzir silício de altíssima pureza em grandes volumes <Cite id="saimm" />. O que o silício tem é a cadeia industrial construída em volta dele.
 
 ## Escala, eficiência e custo
 
 Os números do setor, na época do levantamento de Xakalashe e Tangstad, dão a dimensão da indústria <Cite id="saimm" />:
 
-- A produção de células solares saltou de **1 GW (2004)** para **10 GW (2009)**, com o silício cristalino respondendo por pelo menos **80%**.
-- A capacidade fotovoltaica **acumulada** mundial chegou a quase **40 GW** ao fim de 2010.
-- Eficiências de até **22%** foram reportadas na indústria.
-- O preço das células se aproximava de **1 dólar por watt-pico (US\$/Wp)**; o módulo de silício cristalino mais barato ficava em torno de **2 US\$/Wp**, enquanto módulos de CdTe já ficavam **abaixo de 1 US\$/Wp**.
+- A produção de células solares saltou de 1 GW (2004) para 10 GW (2009), com o silício cristalino respondendo por pelo menos 80%.
+- A capacidade fotovoltaica acumulada mundial chegou a quase 40 GW ao fim de 2010.
+- Eficiências de até 22% foram reportadas na indústria.
+- O preço das células se aproximava de 1 dólar por watt-pico (US\$/Wp); o módulo de silício cristalino mais barato ficava em torno de 2 US\$/Wp, enquanto módulos de CdTe já ficavam abaixo de 1 US\$/Wp.
 
 São números de 2011 e envelheceram rápido. A produção anual hoje se mede em centenas de gigawatts <Cite id="fraunhofer-pv-report" />. Mas eles mostram o formato da disputa que define a fotovoltaica desde então: o silício ganha em escala e cadeia produtiva.
 
@@ -125,20 +137,20 @@ O levantamento de Xakalashe e Tangstad é de 2011, e a seção acima mantém os 
 
 Alguns números do relatório mais recente dão a medida do que mudou:
 
-- O **preço do módulo** continua caindo a uma taxa de aprendizado publicada: cerca de **26,7%** de redução para cada **duplicação da produção acumulada** <Cite id="fraunhofer-pv-report" />.
-- A eficiência dos módulos de silício comerciais subiu de cerca de **17% para pouco menos de 25%** em dez anos <Cite id="fraunhofer-pv-report" />.
-- O **tempo de retorno de energia** caiu para cerca de **1 ano**, e a vida útil assumida nos cálculos do relatório é de cerca de **20 anos**, contra os **25 a 30 anos** típicos de um módulo <Cite id="fraunhofer-pv-report" />.
-- O custo nivelado da eletricidade de grandes usinas solares está em torno de **4 centavos de euro por kWh** <Cite id="fraunhofer-pv-report" />.
+- O preço do módulo continua caindo a uma taxa de aprendizado publicada: cerca de 26,7% de redução para cada duplicação da produção acumulada <Cite id="fraunhofer-pv-report" />.
+- A eficiência dos módulos de silício comerciais subiu de cerca de 17% para pouco menos de 25% em dez anos <Cite id="fraunhofer-pv-report" />.
+- O tempo de retorno de energia caiu para cerca de 1 ano, e a vida útil assumida nos cálculos do relatório é de cerca de 20 anos, contra os 25 a 30 anos típicos de um módulo <Cite id="fraunhofer-pv-report" />.
+- O custo nivelado da eletricidade de grandes usinas solares está em torno de 4 centavos de euro por kWh <Cite id="fraunhofer-pv-report" />.
 
 <ClientOnly>
   <DataChart chart="pv-efficiency" />
 </ClientOnly>
 
-A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o **tandem** de perovskita sobre silício, que já chegou a **35%** em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
+A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o tandem de perovskita sobre silício, que já chegou a 35% em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
 
 Se o tandem se impuser, ele usa a lâmina de silício como substrato e acrescenta uma camada por cima. O caminho de quartzo a wafer descrito neste site continua o mesmo, e o valor por lâmina aumenta.
 
-<SourceNote :ids="['saimm', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency']" />
+<SourceNote :ids="['saimm', 'itrpv-2024', 'lid-hallam', 'ga-transition', 'letid-ga', 'fraunhofer-pv-report', 'nrel-efficiency', 'itrpv-2026']" />
 
 <SeeAlso :links="[
   { text: 'Fabricação de wafers', href: '/fabricacao-wafers', note: 'de onde vem a lâmina' },

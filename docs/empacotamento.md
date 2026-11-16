@@ -38,6 +38,10 @@ A razão é puramente econômica: empacotar custa dinheiro, e não faz sentido g
 
 A sequência de fabricação fica assim: fab → teste de wafer → empacotamento → teste final <Cite id="semiprobe-wafer-test" />.
 
+<DiagramFigure src="/assets/wafer-probe.svg" alt="Corte de um wafer sobre o chuck, com uma placa de prova acima cujas agulhas tocam os pads de um die; um die vizinho aparece aprovado e outro reprovado">
+As agulhas da placa de prova pousam nos pads de um die enquanto o testador o verifica; o resultado é registrado die a die no wafer. Diagrama do autor, fora de escala.
+</DiagramFigure>
+
 ### O cartão de sondas é uma peça sob medida
 
 Cada produto precisa do seu próprio cartão. Ele é um conjunto de agulhas ou molas posicionadas exatamente sobre os pads do die, e um cartão pode ter alguns milhares de sondas, o que o torna complexo e caro de fazer <Cite id="cadence-kgd" />.
@@ -76,6 +80,10 @@ Terminado o teste, o wafer precisa ser cortado. Parece a etapa mais trivial do p
 
 O método mais comum é a lâmina de diamante, e a geometria importa. A largura do corte, o kerf, não é a espessura da lâmina: é a espessura mais o lascamento. Em silício, o lascamento acrescenta cerca de 20 µm de cada lado; em vidro, cerca de 10 µm <Cite id="ku-dicing-sop" />. A lâmina em si tem dezenas de micrômetros: uma lâmina de níquel padrão mede 40 µm, e as resinadas para vidro chegam a 100 µm <Cite id="ku-dicing-sop" />.
 
+<DiagramFigure src="/assets/dicing-kerf.svg" alt="Corte de uma lâmina diamantada serrando entre dois dies sobre a fita de fatiamento, com bordas lascadas dos dois lados do corte; a lâmina tem 40 micrômetros e o lascamento cerca de 20 micrômetros de cada lado">
+O kerf é a lâmina mais o lascamento de cada lado: uma lâmina de 40 µm deixa no silício um corte de cerca de 80 µm. Diagrama do autor, com as dimensões do texto <Cite id="ku-dicing-sop" />.
+</DiagramFigure>
+
 Os parâmetros acompanham o material. Para silício usa-se o fuso a 30.000 rpm com avanço de 5 a 10 mm/s; para vidro, rotação menor <Cite id="disco-dad3221" />.
 
 ### Quando a lâmina deixa de servir
@@ -101,6 +109,10 @@ Um estudo clássico mostrou que o desbaste mecânico cria regiões fracas onde a
 Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: mais de 80% dos invólucros de semicondutores ainda são montados por ligação por fio <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o patamar, com cerca de um quarto a um terço das falhas de pacote vindas da própria ligação por fio <Cite id="pmc-bonding-wire" />.
 
 O princípio é o que se vê na figura: o die fica de face para cima, e fios finíssimos saem dos pads na sua periferia e descem até o substrato. Cada fio é uma conexão elétrica, e há dois tipos de ponta: a ball bond, em que uma esfera de fio é fundida e prensada sobre o pad, e a wedge bond, em que o fio é esmagado lateralmente. Esta produz laços mais baixos, o que importa em radiofrequência <Cite id="inseto-wire-guide" />.
+
+<DiagramFigure src="/assets/wire-bond.svg" alt="Corte de um die voltado para cima sobre o substrato, com um fio que sai de um ball bond num pad do die, sobe em arco e pousa no substrato com um wedge bond; uma fileira de pads marca o passo de 40 micrômetros e o fio de cobre de 15 micrômetros">
+Ball bond no die, wedge bond no substrato e o laço entre os dois, com as dimensões do fio de cobre de ponta <Cite id="imaps-cu-wire" />. Diagrama do autor, fora de escala.
+</DiagramFigure>
 
 O diâmetro do fio é a dimensão crítica. A ligação por fio de cobre de ponta usa 15 µm de fio com passo de 40 µm; a de ouro usa 18 µm no mesmo passo <Cite id="imaps-cu-wire" />.
 

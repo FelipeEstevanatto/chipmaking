@@ -57,6 +57,10 @@ This page follows the chemical route, which dominates the market and is the only
 
 The step before this page already delivers the starting material. Quartz (SiO₂) is reduced with carbon in a submerged electric arc furnace at about 2000 °C <Cite id="csiro" />, in a sequence of reactions where silicon carbide (SiC) is an essential intermediate:
 
+<DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Cross-section of a submerged-arc furnace: three pre-baked electrodes pierce the charge, with gas rising to the hood and the pool of liquid silicon at the bottom with the tap hole">
+The submerged-arc furnace where MG-Si is made, described in detail in the mining chapter. Author's drawing, from <Cite id="saimm" /> <Cite id="saevarsdottir-2010" />.
+</DiagramFigure>
+
 ```text
 SiO₂ + 3C → SiC + 2CO (g)          (upper region, ~1600 °C)
 SiO₂ + 2SiC → 3Si + 2CO (g)        (lower region, >1780 °C)
@@ -264,6 +268,10 @@ The metallurgical route did not lose on quality: the cells proved electrical par
 
 The purity classes mentioned above become far more concrete when you look at the numbers. Table I of the Xakalashe and Tangstad review compares the typical chemical analyses of the four products in the chain <Cite id="saimm" />:
 
+<DiagramFigure src="/assets/quartz-purity-ladder.svg" alt="Logarithmic scale of impurity concentration, from 1 ppb to 10,000 ppm, with metallurgical silicon between 5,000 and 15,000 ppm, high-purity quartz between 8 and 10 ppm and boron in the crystal at 1 ppm">
+Seven orders of magnitude separate the metal that leaves the furnace from the cleanest quartz. Author's drawing <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
+</DiagramFigure>
+
 | Element | MG-Si (ppm) | Solar grade (ppm) | Polycrystalline solar grade | Electronic grade (ppm) |
 | --- | --- | --- | --- | --- |
 | **Si** (mass fraction) | 99 % | 99.9999 % | 99.99999 % | 99.999999999 % |
@@ -341,7 +349,7 @@ The rise came from an artificial installation rush in China ahead of a regulator
 
 It is this kind of short cycle, against abundant installed capacity, in a market where more than 90% of supply comes from a single country, that helps explain why European plants competitive on quality, such as the one in Kristiansand described above, could not sustain themselves.
 
-<SourceNote label="Sources" :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle']" />
+<SourceNote label="Sources" :ids="['trendforce-2025', 'bernreuter', 'bernreuter-market', 'bernreuter-pork-cycle', 'saevarsdottir-2010', 'sibelco-hpq', 'quartzcorp-hpq']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'Timeline', href: '/en/linha-do-tempo', note: 'milestones of the polysilicon market' },

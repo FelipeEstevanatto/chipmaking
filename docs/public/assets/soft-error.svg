@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img">
+  <title>Soft error: an energetic particle crosses the silicon next to a storage node and leaves a trail of charge that the junction collects, flipping the stored bit</title>
+  <desc>Cross-section of a memory storage node in p-type silicon. A particle track enters from the top and passes through the junction; electron-hole pairs line the track, and the collected charge flips the stored bit from 0 to 1 until the next write. The particle is an alpha from the package or an ion produced by a cosmic-ray neutron. Schematic, not to scale.</desc>
+  <rect width="960" height="420" fill="#ffffff" />
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#718096" />
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c53030" />
+    </marker>
+  </defs>
+  <style>
+    .pt { font: 600 18px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .t { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #3d4756; }
+    .inv { font: 600 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #ffffff; }
+    .val { font: 700 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .unit { font: 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #1a202c; }
+    .alert { font: 700 17px system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; fill: #c53030; }
+    .si { fill: #cfd8e3; stroke: #7d8b9c; stroke-width: 1.4; }
+    .metal { fill: #ed8936; stroke: #c05621; stroke-width: 1.3; }
+    .gold { fill: #f6e05e; stroke: #b7791f; stroke-width: 1.3; }
+    .dark { fill: #4a5568; stroke: #2d3748; stroke-width: 1.3; }
+    .pcb { fill: #c6f6d5; stroke: #2f855a; stroke-width: 1.3; }
+    .chip { fill: #fed7d7; stroke: #c53030; stroke-width: 1.2; }
+    .lead { fill: none; stroke: #718096; stroke-width: 1.2; stroke-dasharray: 5 4; }
+    .dim { fill: none; stroke: #718096; stroke-width: 1.2; }
+    .wire { fill: none; stroke: #b7791f; stroke-width: 3; }
+    .needle { fill: none; stroke: #2d3748; stroke-width: 3; }
+    .track { fill: none; stroke: #c53030; stroke-width: 2.4; }
+    .ehp { fill: #c53030; }
+    .ehp2 { fill: #2b6cb0; }
+  </style>
+
+  <rect class="si" x="80" y="150" width="620" height="220" />
+  <text class="t" x="96" y="356">p-type silicon</text>
+  <path d="M 300,150 L 300,200 Q 300,220 320,220 L 480,220 Q 500,220 500,200 L 500,150 Z" fill="#b9d9f5" stroke="#2b6cb0" stroke-width="1.4" />
+  <text class="t" x="400" y="190" text-anchor="middle">n+ storage node</text>
+  <path class="track" d="M 470,40 L 380,380" marker-end="url(#arrRed)" />
+  <circle class="ehp" cx="428" cy="169" r="4" />
+  <circle class="ehp2" cx="446" cy="173" r="4" />
+  <circle class="ehp" cx="420" cy="196" r="4" />
+  <circle class="ehp2" cx="438" cy="200" r="4" />
+  <circle class="ehp" cx="412" cy="224" r="4" />
+  <circle class="ehp2" cx="430" cy="228" r="4" />
+  <circle class="ehp" cx="404" cy="251" r="4" />
+  <circle class="ehp2" cx="422" cy="255" r="4" />
+  <circle class="ehp" cx="396" cy="278" r="4" />
+  <circle class="ehp2" cx="414" cy="282" r="4" />
+  <circle class="ehp" cx="387" cy="305" r="4" />
+  <circle class="ehp2" cx="405" cy="309" r="4" />
+  <circle class="ehp" cx="379" cy="333" r="4" />
+  <circle class="ehp2" cx="397" cy="337" r="4" />
+  <circle class="ehp" cx="371" cy="360" r="4" />
+  <circle class="ehp2" cx="389" cy="364" r="4" />
+  <path class="lead" d="M 466,56 L 540,56" />
+  <text class="t" x="544" y="61" text-anchor="start">alpha (package) or ion from a neutron</text>
+  <path class="lead" d="M 440,280 L 560,300" />
+  <text class="t" x="564" y="305" text-anchor="start">electron-hole pairs</text>
+  <text class="pt" x="740" y="190">stored bit</text>
+  <text x="740" y="222"><tspan class="val">0</tspan><tspan class="unit"> &#8594; </tspan><tspan class="alert">1</tspan></text>
+  <text class="t" x="740" y="254">until the next write</text>
+</svg>

@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # The chokepoint map
 
-This site describes the silicon chain step by step, and the geographical facts ended up scattered: the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine-where-the-quartz-is-pure-enough), [Chinese](/en/polissilicio#the-chinese-ascent) polysilicon, [Japanese](/en/estrutura-wafers#who-makes-the-wafers) wafers, [single-source](/en/historia-fotolitografia) lithography. This page puts the pieces into one table and asks the question they do not ask separately: **what stops in the world if each of these points stops?**
+This site describes the silicon chain step by step, and the geographical facts ended up scattered: the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine), [Chinese](/en/polissilicio#the-chinese-ascent) polysilicon, [Japanese](/en/estrutura-wafers#who-makes-the-wafers) wafers, [single-source](/en/historia-fotolitografia) lithography. This page puts the pieces into one table and asks the question they do not ask separately: **what stops in the world if each of these points stops?**
 
 The answer has a pattern, and it repeats step by step.
 

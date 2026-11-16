@@ -2222,6 +2222,15 @@ const list: Citation[] = [
     url: 'https://micron.gcs-web.com/node/46656',
     short: 'Micron (HBM3E)',
   },
+  {
+    key: 'itrpv-2026',
+    num: 276,
+    title: 'International Technology Roadmap for Photovoltaics (ITRPV), 17th edition: 2025 results',
+    publisher: 'M. Fischer, M. Mechterstädt — VDMA Photovoltaics Equipment (2026)',
+    url: 'https://www.qualenergia.it/wp-content/uploads/2026/06/ITRPV-17-Edition.pdf',
+    short: 'ITRPV (2026)',
+    note: 'The linked copy is hosted by QualEnergia.',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

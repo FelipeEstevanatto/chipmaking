@@ -38,6 +38,10 @@ The reason is purely economic: packaging costs money, and there is no sense spen
 
 The manufacturing sequence therefore runs: fab → wafer test → packaging → final test <Cite id="semiprobe-wafer-test" />.
 
+<DiagramFigure src="/assets/wafer-probe.svg" alt="Cross-section of a wafer on a chuck, with a probe card above it whose needles touch the pads of one die; a neighbouring die is marked pass and another fail">
+A probe card's needles land on the pads of one die while the tester checks it; the result is recorded die by die across the wafer. Author's diagram, not to scale.
+</DiagramFigure>
+
 ### The probe card is a bespoke part
 
 Every product needs its own card. It is a set of needles or springs positioned exactly over the die's pads, and a card "may have literally a couple of thousand probes", which makes it complex and expensive to create <Cite id="cadence-kgd" />.
@@ -76,6 +80,10 @@ With testing done, the wafer has to be cut. It looks like the most trivial step 
 
 The most common method is the diamond blade, and the geometry matters. The width of the cut, the kerf, is not the blade thickness: it is the thickness plus chipping. In silicon, chipping adds about 20 µm on each side; in glass, about 10 µm <Cite id="ku-dicing-sop" />. The blade itself is tens of micrometres wide: a standard nickel-bonded blade measures 40 µm, and resin-bonded blades for glass reach 100 µm <Cite id="ku-dicing-sop" />.
 
+<DiagramFigure src="/assets/dicing-kerf.svg" alt="Cross-section of a diamond blade cutting between two dies on dicing tape, with chipped edges on both sides of the cut; the blade is 40 micrometres wide and the chipping about 20 micrometres on each side">
+The kerf is the blade plus the chipping on each side: a 40 µm blade leaves a cut about 80 µm wide in silicon. Author's diagram, from the dimensions in the text <Cite id="ku-dicing-sop" />.
+</DiagramFigure>
+
 The parameters follow the material. For silicon the spindle runs at 30,000 rpm with a feed of 5 to 10 mm/s; for glass, slower <Cite id="disco-dad3221" />.
 
 ### When the blade stops working
@@ -101,6 +109,10 @@ A classic study showed that mechanical grinding creates weak regions where chip 
 There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: more than 80% of semiconductor packages are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the level, with about one quarter to one third of package failures coming from the wire bond itself <Cite id="pmc-bonding-wire" />.
 
 The principle is what the figure shows: the die sits face up, and extremely fine wires run from the pads on its periphery down to the substrate. Each wire is an electrical connection, and there are two kinds of tip: the ball bond, in which a ball of wire is melted and pressed onto the pad, and the wedge bond, in which the wire is crushed sideways. The latter produces lower loops, which matters at radio frequencies <Cite id="inseto-wire-guide" />.
+
+<DiagramFigure src="/assets/wire-bond.svg" alt="Cross-section of a face-up die on a substrate, with a wire leaving a ball bond on a die pad, arching up and landing on the substrate with a wedge bond; a row of pads marks the 40 micrometre pitch and the 15 micrometre copper wire">
+Ball bond on the die, wedge bond on the substrate, and the loop between them, with the leading-edge copper dimensions <Cite id="imaps-cu-wire" />. Author's diagram, not to scale.
+</DiagramFigure>
 
 Wire diameter is the critical dimension. Leading-edge copper wire bonding uses 15 µm wire at 40 µm pitch; gold uses 18 µm at the same pitch <Cite id="imaps-cu-wire" />.
 

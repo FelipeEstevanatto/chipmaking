@@ -6,9 +6,9 @@ dataAsOf: 2026
 
 # Confiabilidade e envelhecimento
 
-Os capítulos anteriores contam como um chip é feito. A [fábrica](/na-fab) constrói o transistor camada por camada, a [evolução dos transistores](/transistores) mostra o que ficou dentro do die e o [empacotamento](/empacotamento) o veda numa carcaça. Falta a pergunta que decide se o produto existe de verdade: **por quanto tempo ele continua funcionando?**
+Os capítulos anteriores contam como um chip é feito. A [fábrica](/na-fab) constrói o transistor camada por camada, a [evolução dos transistores](/transistores) mostra o que ficou dentro do die e o [empacotamento](/empacotamento) o veda numa carcaça. Falta a pergunta que decide se o produto existe de verdade: por quanto tempo ele continua funcionando?
 
-Confiabilidade é a **distribuição das falhas ao longo do tempo**, e essa distribuição quase nunca é uniforme. Entendê-la é o que separa "o chip funciona" de "o chip pode ser vendido".
+Confiabilidade é a distribuição das falhas ao longo do tempo, e essa distribuição quase nunca é uniforme. Entendê-la é o que separa "o chip funciona" de "o chip pode ser vendido".
 
 O capítulo percorre o envelhecimento do chip em seis etapas:
 
@@ -23,13 +23,13 @@ O texto segue essa ordem.
 
 ## A curva da banheira
 
-Plote a taxa de falhas de uma população contra o tempo e o desenho que reaparece, em componentes mecânicos e eletrônicos dos mais variados, é sempre o mesmo: uma **curva em forma de banheira** <Cite id="rel-nist-bathtub" />.
+Plote a taxa de falhas de uma população contra o tempo e o desenho que reaparece, em componentes mecânicos e eletrônicos dos mais variados, é sempre o mesmo: uma curva em forma de banheira <Cite id="rel-nist-bathtub" />.
 
 - **Mortalidade infantil.** No começo a taxa é alta e cai depressa. Dura de algumas semanas a poucos meses, e corresponde a defeitos que já nasceram no lote <Cite id="rel-nist-bathtub" />.
 - **Vida útil.** A taxa se estabiliza num patamar aproximadamente constante: é aqui que a maioria dos sistemas passa a maior parte da vida <Cite id="rel-nist-bathtub" />.
 - **Desgaste.** Se o produto viver o suficiente, a taxa volta a subir, porque os materiais se degradam <Cite id="rel-nist-bathtub" />.
 
-O gráfico abaixo é um **esquema**, não um conjunto de dados: ele existe para fixar as três regiões na cabeça, não para ser medido.
+O gráfico abaixo é um esquema, não um conjunto de dados: ele existe para fixar as três regiões na cabeça, não para ser medido.
 
 <ClientOnly>
   <DataChart chart="bathtub" />
@@ -37,13 +37,13 @@ O gráfico abaixo é um **esquema**, não um conjunto de dados: ele existe para 
 
 ### Onde a queima age
 
-A [queima](/empacotamento) existe para atacar a primeira região. É uma troca explícita: a queima **reduz o custo de garantia ao custo de algum rendimento** <Cite id="ieee-burnin" />.
+A [queima](/empacotamento) existe para atacar a primeira região. É uma troca explícita: a queima reduz o custo de garantia ao custo de algum rendimento <Cite id="ieee-burnin" />.
 
-A queima ataca a **mortalidade infantil**. Ela não faz nada pela região plana nem pela de desgaste; a vida longa de um produto depende da física que vem a seguir.
+A queima ataca a mortalidade infantil. Ela não faz nada pela região plana nem pela de desgaste; a vida longa de um produto depende da física que vem a seguir.
 
 ## Mecanismos de desgaste
 
-O desgaste de um chip é química e física de interface, lento e **cumulativo**. Cada mecanismo tem um motor físico e uma assinatura que o delata.
+O desgaste de um chip é química e física de interface, lento e cumulativo. Cada mecanismo tem um motor físico e uma assinatura que o delata.
 
 | Mecanismo | Motor físico | Assinatura observável | Tecnologia mais afetada |
 | --- | --- | --- | --- |
@@ -58,37 +58,37 @@ O desgaste de um chip é química e física de interface, lento e **cumulativo**
 
 ### NBTI e PBTI
 
-A instabilidade por temperatura e polarização de porta (*bias temperature instability*) é o desgaste que a indústria passou a medir em cada nó. Sob polarização e temperatura elevadas, formam-se **armadilhas na interface** óxido–silício; elas capturam carga e deslocam a **tensão de limiar**, degradando o transistor <Cite id="rel-schroder-2003" />.
+A instabilidade por temperatura e polarização de porta (*bias temperature instability*) é o desgaste que a indústria passou a medir em cada nó. Sob polarização e temperatura elevadas, formam-se armadilhas na interface óxido–silício; elas capturam carga e deslocam a tensão de limiar, degradando o transistor <Cite id="rel-schroder-2003" />.
 
-O caso clássico é o do **pMOS** sob porta negativa (NBTI); o espelho no nMOS é o **PBTI**, e os dois entram na qualificação "conforme apropriado" <Cite id="rel-aec-q100" />. A complicação que faz o NBTI ser tão discutido é a **recuperação**: parte do deslocamento desaparece quando o estresse é removido, o que faz o número medido depender de quão rápido se mede <Cite id="rel-schroder-2003" />.
+O caso clássico é o do **pMOS** sob porta negativa (NBTI); o espelho no nMOS é o **PBTI**, e os dois entram na qualificação "conforme apropriado" <Cite id="rel-aec-q100" />. A complicação que faz o NBTI ser tão discutido é a recuperação: parte do deslocamento desaparece quando o estresse é removido, o que faz o número medido depender de quão rápido se mede <Cite id="rel-schroder-2003" />.
 
 ### Portadores quentes
 
-Perto do dreno, o campo elétrico acelera os portadores do canal até energias altas o bastante para **saltarem para dentro do óxido de porta**. Lá eles criam armadilhas, e o transistor perde ganho e corrente aos poucos <Cite id="rel-hu-1985" />. É um mecanismo de **canal curto**, pior em tensões de dreno altas, e é justamente por isso que a qualificação o exige "para todas as tecnologias MOS abaixo de 1 µm" <Cite id="rel-aec-q100" />.
+Perto do dreno, o campo elétrico acelera os portadores do canal até energias altas o bastante para saltarem para dentro do óxido de porta. Lá eles criam armadilhas, e o transistor perde ganho e corrente aos poucos <Cite id="rel-hu-1985" />. É um mecanismo de canal curto, pior em tensões de dreno altas, e é justamente por isso que a qualificação o exige "para todas as tecnologias MOS abaixo de 1 µm" <Cite id="rel-aec-q100" />.
 
 ### Ruptura do óxido de porta
 
-O dielétrico de porta não falha de uma vez. Ele **acumula defeitos** sob o campo elétrico até que um **caminho condutor** atravesse a camada de óxido e a porta entre em curto com o canal, a ruptura dielétrica dependente do tempo (*time-dependent dielectric breakdown*, TDDB) <Cite id="rel-mcpherson-2012" />. Como o campo acelera a taxa de geração de defeitos, a vida depende da **tensão**, e a extrapolação de tensão é tão central quanto a de temperatura <Cite id="rel-mcpherson-2012" />.
+O dielétrico de porta não falha de uma vez. Ele acumula defeitos sob o campo elétrico até que um caminho condutor atravesse a camada de óxido e a porta entre em curto com o canal, a ruptura dielétrica dependente do tempo (*time-dependent dielectric breakdown*, TDDB) <Cite id="rel-mcpherson-2012" />. Como o campo acelera a taxa de geração de defeitos, a vida depende da tensão, e a extrapolação de tensão é tão central quanto a de temperatura <Cite id="rel-mcpherson-2012" />.
 
-Foi esse muro que, décadas atrás, forçou o fim do SiO₂ puro como isolante de porta: quando o óxido chegou à casa de **1,2 nm**, a fuga por tunelamento passou a ser inaceitável, e o dielétrico de alta constante (*high-k*) entrou no lugar <Cite id="ecs-sio2-limits" />. É a mesma fronteira que a [fábrica](/na-fab) descreve pelo lado do processo.
+Foi esse muro que, décadas atrás, forçou o fim do SiO₂ puro como isolante de porta: quando o óxido chegou à casa de 1,2 nm, a fuga por tunelamento passou a ser inaceitável, e o dielétrico de alta constante (*high-k*) entrou no lugar <Cite id="ecs-sio2-limits" />. É a mesma fronteira que a [fábrica](/na-fab) descreve pelo lado do processo.
 
 ### Eletromigração
 
-Nos fios metálicos, os elétrons em movimento transferem momento para os átomos do metal. Com corrente alta e temperatura alta, esse empurrão faz o metal **migrar**: abre-se um **vazio** onde os átomos saíram e cresce um **montículo** onde eles se acumularam. Um vazio vira um fio aberto, um montículo vira um curto com o vizinho <Cite id="rel-black-1969" />.
+Nos fios metálicos, os elétrons em movimento transferem momento para os átomos do metal. Com corrente alta e temperatura alta, esse empurrão faz o metal migrar: abre-se um vazio onde os átomos saíram e cresce um montículo onde eles se acumularam. Um vazio vira um fio aberto, um montículo vira um curto com o vizinho <Cite id="rel-black-1969" />.
 
-O tempo até a falha segue a **equação de Black**:
+O tempo até a falha segue a equação de Black:
 
 $$
 \mathrm{MTTF} = A \cdot J^{-n} \cdot \exp\!\left(\frac{E_a}{k_B T}\right)
 $$
 
-onde $J$ é a densidade de corrente e $T$ é a temperatura <Cite id="rel-black-1969" />. O expoente $n$ fica tipicamente perto de **2** para o alumínio. A energia de ativação $E_a$ depende do metal e do caminho de difusão: na casa de **0,5 a 0,7 eV** para o alumínio e **0,8 a 1,0 eV** para o cobre <Cite id="rel-jep122" />.
+onde $J$ é a densidade de corrente e $T$ é a temperatura <Cite id="rel-black-1969" />. O expoente $n$ fica tipicamente perto de 2 para o alumínio. A energia de ativação $E_a$ depende do metal e do caminho de difusão: na casa de 0,5 a 0,7 eV para o alumínio e 0,8 a 1,0 eV para o cobre <Cite id="rel-jep122" />.
 
 ::: warning Não trate $n$ ou $E_a$ como constante universal
-O próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até **1,4 eV**, com **0,7 eV** como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />.
+O próprio material de qualificação registra que energias de ativação medidas variam de valores negativos até 1,4 eV, com 0,7 eV como valor "típico" apenas por convenção <Cite id="rel-aec-q100" />.
 :::
 
-O que se sustenta é a **direção**: a vida cai depressa com a corrente, na $n$-ésima potência, e exponencialmente com a temperatura, e é essa sensibilidade que fez a troca do alumínio pelo cobre, em **1997**, importar tanto <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
+O que se sustenta é a direção: a vida cai depressa com a corrente, na $n$-ésima potência, e exponencialmente com a temperatura, e é essa sensibilidade que fez a troca do alumínio pelo cobre, em 1997, importar tanto <Cite id="ibm-copper" />. A vida útil contra eletromigração do cobre é **mais de duas ordens de grandeza maior** <Cite id="ibm-cu-electroplating" />.
 
 <DiagramFigure src="/assets/wearout-mechanisms.svg" alt="Quatro cortes esquemáticos de um MOSFET, um por mecanismo de desgaste: armadilhas na interface óxido-silício que deslocam a tensão de limiar, portadores quentes injetados no óxido perto do dreno, um filamento condutor que atravessa o óxido de porta e a eletromigração num fio de cobre, com um vazio a montante e um montículo a jusante">
 Os quatro mecanismos de desgaste em corte. As armadilhas na interface deslocam a tensão de limiar <Cite id="rel-schroder-2003" /> e os portadores quentes saltam para o óxido perto do dreno <Cite id="rel-hu-1985" />. O filamento condutor rompe o óxido de porta <Cite id="rel-mcpherson-2012" />, e a eletromigração abre um vazio e ergue um montículo no fio de cobre <Cite id="rel-black-1969" />. Desenho do autor.
@@ -96,52 +96,57 @@ Os quatro mecanismos de desgaste em corte. As armadilhas na interface deslocam a
 
 ## Quantificar a falha
 
-Para comparar componentes, a indústria precisou de uma unidade comum. É o **FIT** (*failure in time*), definido como **uma falha por 10⁹ horas-dispositivo**, e cujo cálculo é padronizado pela JEDEC na JESD85A <Cite id="rel-jesd85a" />.
+Para comparar componentes, a indústria precisou de uma unidade comum. É o **FIT** (*failure in time*), definido como uma falha por 10⁹ horas-dispositivo, e cujo cálculo é padronizado pela JEDEC na JESD85A <Cite id="rel-jesd85a" />.
 
-A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de **11 anos** de operação contínua, e dez anos de calendário somam **87.600 h** (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar a taxa de um único componente com toda a base instalada de um cliente.
+A aritmética é o que torna o número utilizável. Como 10⁹ dividido pela taxa em FIT dá o **MTTF** em horas, um componente de 10 FIT tem MTTF de 10⁸ h <Cite id="rel-jesd85a" />. Convertendo: **100.000 h** são cerca de 11 anos de operação contínua, e dez anos de calendário somam 87.600 h (10 × 8.760 h). Escrever a meta em horas e a falha em FIT é o que permite comparar a taxa de um único componente com toda a base instalada de um cliente.
 
-Essas metas variam por mercado. A AEC-Q100 demonstra o método com um perfil automotivo de **15 anos** (**12.000 h** de operação dentro de **131.400 h** de calendário) <Cite id="rel-aec-q100" />. O horizonte de vida útil que se assume para um componente costuma ser contado em **uma década** <Cite id="rel-jep122" />; os dois números convivem porque medem coisas diferentes, tempo ligado de um lado e tempo de calendário do outro.
+<ClientOnly>
+  <DataChart chart="fit-to-mttf" />
+</ClientOnly>
+
+Essas metas variam por mercado. A AEC-Q100 demonstra o método com um perfil automotivo de 15 anos (12.000 h de operação dentro de 131.400 h de calendário) <Cite id="rel-aec-q100" />. O horizonte de vida útil que se assume para um componente costuma ser contado em uma década <Cite id="rel-jep122" />; os dois números convivem porque medem coisas diferentes, tempo ligado de um lado e tempo de calendário do outro.
 
 ### Teste acelerado
 
 Ninguém pode esperar dez anos. O jeito de medir uma vida longa é **acelerar** o mecanismo e extrapolar de volta com um modelo. Para os mecanismos ativados termicamente, o modelo é **Arrhenius**, com fator de aceleração que depende de $\exp[-(E_a/k_B)(1/T_u - 1/T_t)]$, onde os índices $u$ e $t$ são uso e teste <Cite id="rel-aec-q100" />.
 
-A AEC-Q100 fixa as constantes do exemplo: $E_a = 0{,}7$ eV e $k_B = 8{,}61733 \times 10^{-5}$ eV/K, chegando a uma duração de teste de **1.393 h** para o caso demonstrado <Cite id="rel-aec-q100" />. Forçar condições além do razoável pode **induzir mecanismos de falha irreais** e destruir a extrapolação <Cite id="rel-aec-q100" />. Acelerar é escolher um regime onde o *mesmo* mecanismo ainda governa.
+A AEC-Q100 fixa as constantes do exemplo: $E_a = 0{,}7$ eV e $k_B = 8{,}61733 \times 10^{-5}$ eV/K, chegando a uma duração de teste de 1.393 h para o caso demonstrado <Cite id="rel-aec-q100" />. Forçar condições além do razoável pode induzir mecanismos de falha irreais e destruir a extrapolação <Cite id="rel-aec-q100" />. Acelerar é escolher um regime onde o *mesmo* mecanismo ainda governa.
 
 ## Erros suaves
 
-Há uma classe de falha que não deixa cicatriz. No fim da década de 1970, ficou claro que **partículas alfa** (vindas de traços radioativos nos próprios materiais do encapsulamento) depositavam carga suficiente para **inverter um bit** de uma memória DRAM. O bit voltava a funcionar na próxima escrita: daí o nome **erro suave** (*soft error*) <Cite id="rel-may-woods-1979" />.
+Há uma classe de falha que não deixa cicatriz. No fim da década de 1970, ficou claro que partículas alfa (vindas de traços radioativos nos próprios materiais do encapsulamento) depositavam carga suficiente para inverter um bit de uma memória DRAM. O bit voltava a funcionar na próxima escrita: daí o nome erro suave (*soft error*) <Cite id="rel-may-woods-1979" />.
 
-Logo depois veio a generalização desconfortável: não era só o encapsulamento. **Nêutrons de raios cósmicos** fazem o mesmo em nível do mar, e a taxa de erro **cresce com a altitude**, o que transformou um problema de material num problema de ambiente <Cite id="rel-ziegler-1979" />. As fontes de radiação relevantes ficaram conhecidas como um conjunto de três <Cite id="rel-baumann-2001" />.
+<DiagramFigure src="/assets/soft-error.svg" alt="Corte de um nó de armazenamento de memória no silício, com o rastro de uma partícula atravessando a junção, pares elétron-lacuna ao longo do rastro e o bit armazenado passando de 0 a 1">
+O rastro da partícula deixa uma trilha de carga; a junção do nó de armazenamento a coleta, e o bit vira até a próxima escrita. Diagrama do autor, fora de escala.
+</DiagramFigure>
+
+Logo depois veio a generalização desconfortável: não era só o encapsulamento. Nêutrons de raios cósmicos fazem o mesmo em nível do mar, e a taxa de erro cresce com a altitude, o que transformou um problema de material num problema de ambiente <Cite id="rel-ziegler-1979" />. As fontes de radiação relevantes ficaram conhecidas como um conjunto de três <Cite id="rel-baumann-2001" />.
 
 Como a probabilidade cresce com o número de bits expostos, a métrica natural é **FIT por megabit**, não FIT por componente <Cite id="rel-baumann-2001" />. Foi a existência desse piso irredutível de erro que empurrou os códigos corretores de erro (**ECC**, *error-correcting code*) para dentro das memórias e dos controladores: não se pode impedir a partícula, mas se pode detectar e corrigir o bit que ela virou <Cite id="rel-baumann-2001" />.
 
 ## Qualificação
 
-"Confiável" não é uma opinião; é um conjunto de ensaios que o fornecedor precisa passar antes de vender. A JEDEC publica os métodos na JESD85A, inclusive como calcular e declarar a taxa de falhas em FIT <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
+"Confiável" quer dizer aprovado num conjunto de ensaios que o fornecedor precisa passar antes de vender. A JEDEC publica os métodos na JESD85A, inclusive como calcular e declarar a taxa de falhas em FIT <Cite id="rel-jesd85a" /> <Cite id="rel-jep122" />.
 
-O regime **automotivo** é mais duro que o de consumo, e a AEC-Q100 é o documento que o define: componentes que atendem às suas especificações são considerados adequados ao ambiente automotivo severo **sem qualificação adicional em nível de componente** <Cite id="rel-aec-q100" />. O eixo da dureza é a **temperatura de operação**, dividida em graus:
+O regime **automotivo** é mais duro que o de consumo, e a AEC-Q100 é o documento que o define: componentes que atendem às suas especificações são considerados adequados ao ambiente automotivo severo sem qualificação adicional em nível de componente <Cite id="rel-aec-q100" />. O eixo da dureza é a temperatura de operação, dividida em graus:
 
-| Grau | Faixa de temperatura ambiente |
-| --- | --- |
-| **Grau 0** | **−40 °C a +150 °C** |
-| Grau 1 | −40 °C a +125 °C |
-| Grau 2 | −40 °C a +105 °C |
-| Grau 3 | −40 °C a +85 °C |
+<ClientOnly>
+  <DataChart chart="aec-q100-grades" />
+</ClientOnly>
 
 <Cite id="rel-aec-q100" />
 
-Um teste de vida em operação em alta temperatura (**HTOL**, *high-temperature operating life*) no grau 0 estressa o dispositivo a **+150 °C** por **1.000 h** <Cite id="rel-aec-q100" />. É por isso que o automotivo é outro regime. Ele exige que o silício sobreviva a uma janela térmica e a um tempo de missão que o consumidor nunca vê, e a qualificação lista explicitamente os mecanismos a cobrir: **eletromigração, TDDB, injeção de portadores quentes, instabilidade de polarização e temperatura e migração por tensão** <Cite id="rel-aec-q100" />.
+Um teste de vida em operação em alta temperatura (**HTOL**, *high-temperature operating life*) no grau 0 estressa o dispositivo a +150 °C por 1.000 h <Cite id="rel-aec-q100" />. É por isso que o automotivo é outro regime. Ele exige que o silício sobreviva a uma janela térmica e a um tempo de missão que o consumidor nunca vê, e a qualificação lista explicitamente os mecanismos a cobrir: eletromigração, TDDB, injeção de portadores quentes, instabilidade de polarização e temperatura e migração por tensão <Cite id="rel-aec-q100" />.
 
 ## Por que isso é uma história de materiais
 
 A confiabilidade de um dispositivo começa no material.
 
-- A ruptura do óxido é governada pela **densidade de defeitos** no dielétrico, não pela geometria do circuito <Cite id="rel-mcpherson-2012" />.
-- A qualidade da **interface** óxido–silício é o que fez o silício funcionar como semicondutor, e o que o germânio não conseguiu entregar <Cite id="ecs-sio2-limits" />.
-- A vida contra eletromigração depende da **pureza e da estrutura** do metal e da barreira que o confina; por isso o cobre só substituiu o alumínio quando veio com uma barreira <Cite id="ibm-cu-electroplating" />.
+- A ruptura do óxido é governada pela densidade de defeitos no dielétrico, não pela geometria do circuito <Cite id="rel-mcpherson-2012" />.
+- A qualidade da interface óxido–silício é o que fez o silício funcionar como semicondutor, e o que o germânio não conseguiu entregar <Cite id="ecs-sio2-limits" />.
+- A vida contra eletromigração depende da pureza e da estrutura do metal e da barreira que o confina; por isso o cobre só substituiu o alumínio quando veio com uma barreira <Cite id="ibm-cu-electroplating" />.
 
-Um bom projeto **administra** esses mecanismos: escolhe margens, adiciona ECC, dimensiona fios. Mas não os elimina: os materiais é que decidem quais mecanismos existem e a que velocidade eles andam. Do mesmo jeito que o [rendimento](/na-fab) é uma medida de defeitos do processo, a confiabilidade é a medida de como esses mesmos defeitos envelhecem.
+Um bom projeto administra esses mecanismos: escolhe margens, adiciona ECC, dimensiona fios. Mas não os elimina: os materiais é que decidem quais mecanismos existem e a que velocidade eles andam. Do mesmo jeito que o [rendimento](/na-fab) é uma medida de defeitos do processo, a confiabilidade é a medida de como esses mesmos defeitos envelhecem.
 
 <SourceNote :ids="['rel-nist-bathtub', 'mil-std-883', 'semieng-burnin', 'ieee-burnin', 'rel-schroder-2003', 'rel-hu-1985', 'rel-mcpherson-2012', 'rel-black-1969', 'rel-jep122', 'rel-aec-q100', 'rel-jesd85a', 'rel-may-woods-1979', 'rel-ziegler-1979', 'rel-baumann-2001', 'voldman-esd', 'ecs-sio2-limits', 'ibm-cu-electroplating', 'ibm-copper']" />
 

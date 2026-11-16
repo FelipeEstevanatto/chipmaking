@@ -213,6 +213,10 @@ O CFET é uma aposta dentro do silício. Fora dele, os canais candidatos a subst
 
 O número do nó que abre cada seção só corresponde a uma dimensão física real até meados dos anos 1990. Depois disso, virou um nome de geração, em três etapas.
 
+<ClientOnly>
+  <DataChart chart="node-name-vs-dimensions" />
+</ClientOnly>
+
 ### 1. O número nasceu de uma coincidência
 
 O "nó" não foi inventado como conceito. Ele registra a observação de que duas dimensões diferentes davam aproximadamente o mesmo número. A primeira é o comprimento de porta (*gate length*), a distância entre fonte e dreno que o portão controla, historicamente a medida que mais determina a velocidade do transistor. A segunda é o meio-passo do metal (*metal half-pitch*), metade da distância entre o início de uma interconexão metálica e o início da seguinte <Cite id="ieee-node" />.

@@ -6,7 +6,7 @@ dataAsOf: 2026
 
 # O mapa dos gargalos
 
-Este site descreve a cadeia do silício etapa por etapa, e os fatos de geografia ficaram espalhados: o quartzo de [Spruce Pine](/mineracao-mg-si#spruce-pine-onde-o-quartzo-e-puro-o-suficiente), o polissilício [chinês](/polissilicio#a-ascensao-chinesa), os wafers [japoneses](/estrutura-wafers#quem-fabrica-os-wafers), a litografia [única](/historia-fotolitografia). Esta página junta os pedaços numa tabela só e faz a pergunta que eles, separados, não fazem: **o que para o mundo se cada um desses pontos parar?**
+Este site descreve a cadeia do silício etapa por etapa, e os fatos de geografia ficaram espalhados: o quartzo de [Spruce Pine](/mineracao-mg-si#spruce-pine), o polissilício [chinês](/polissilicio#a-ascensao-chinesa), os wafers [japoneses](/estrutura-wafers#quem-fabrica-os-wafers), a litografia [única](/historia-fotolitografia). Esta página junta os pedaços numa tabela só e faz a pergunta que eles, separados, não fazem: **o que para o mundo se cada um desses pontos parar?**
 
 A resposta tem um padrão, e o padrão se repete etapa por etapa.
 

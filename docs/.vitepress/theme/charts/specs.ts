@@ -455,6 +455,109 @@ export const CHARTS: Record<string, ChartSpec> = {
     sourceIds: ['anandtech-hbm1', 'jedec-hbm2', 'skhynix-hbm2e', 'jedec-hbm3', 'micron-hbm3e', 'jedec-hbm4'],
     slug: 'hbm-bandwidth',
   },
+
+  /**
+   * Module efficiency by cell technology in 2025, as the ITRPV executive summary states it.
+   */
+  'pv-cell-technologies': {
+    id: 'pv-cell-technologies',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Eficiência do módulo (%)', en: 'Module efficiency (%)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'PERC (tipo p)', en: 'PERC (p-type)' },
+      { pt: 'TOPCon (tipo n)', en: 'TOPCon (n-type)' },
+      { pt: 'Heterojunção, SHJ (tipo n)', en: 'Heterojunction, SHJ (n-type)' },
+      { pt: 'Contato traseiro TOPCon, TBC (tipo n)', en: 'TOPCon back contact, TBC (n-type)' },
+    ],
+    datasets: [
+      { pt: 'Eficiência do módulo, 2025', en: 'Module efficiency, 2025', color: '#48bb78', data: [21.7, 23.5, 23.5, 24.1] },
+    ],
+    caption: {
+      pt: 'Eficiência de conversão dos módulos por tecnologia de célula em 2025, segundo o ITRPV. As três tecnologias tipo n passam o PERC, o último desenho tipo p, por cerca de dois pontos percentuais.',
+      en: 'Module conversion efficiency by cell technology in 2025, according to the ITRPV. The three n-type technologies beat PERC, the last p-type design, by about two percentage points.',
+    },
+    sourceIds: ['itrpv-2026'],
+    slug: 'pv-cell-technologies',
+  },
+
+  /**
+   * The node label against what IEEE Spectrum reports was measured on the chip at three nodes. Each
+   * node only has the dimensions the article gives; the others are left empty rather than estimated.
+   */
+  'node-name-vs-dimensions': {
+    id: 'node-name-vs-dimensions',
+    type: 'bar',
+    xLabel: { pt: 'Nó', en: 'Node' },
+    yLabel: { pt: 'Dimensão (nm)', en: 'Dimension (nm)' },
+    labels: [
+      { pt: 'Nó de "130 nm"', en: '"130 nm" node' },
+      { pt: 'Nó de "22 nm" da Intel', en: 'Intel "22 nm" node' },
+      { pt: 'Chips de "5 nm"', en: '"5 nm" chips' },
+    ],
+    datasets: [
+      { pt: 'Número do nome', en: 'Number in the name', color: '#a0aec0', data: [130, 22, 5] },
+      { pt: 'Comprimento de porta', en: 'Gate length', color: '#2b6cb0', data: [70, 26, null] },
+      { pt: 'Meio-passo de metal', en: 'Metal half-pitch', color: '#805ad5', data: [null, 40, null] },
+      { pt: 'Passo de porta contactada', en: 'Contacted gate pitch', color: '#dd6b20', data: [null, null, 48] },
+      { pt: 'Passo de metal', en: 'Metal pitch', color: '#2f855a', data: [null, null, 36] },
+    ],
+    caption: {
+      pt: 'O número do nome do nó ao lado das dimensões que a IEEE Spectrum relata para três gerações. Em 130 nm a porta já era quase a metade do nome; em 22 nm e 5 nm nenhuma dimensão medida coincide com ele. Cada nó mostra só as dimensões que o artigo publica.',
+      en: 'The number in the node name next to the dimensions IEEE Spectrum reports for three generations. At 130 nm the gate was already about half the name; at 22 nm and 5 nm no measured dimension matches it. Each node shows only the dimensions the article publishes.',
+    },
+    sourceIds: ['ieee-node'],
+    slug: 'node-name-vs-dimensions',
+  },
+
+  /**
+   * MTTF from a FIT rate, by the JESD85A definition (MTTF = 10^9 / FIT hours), in years of 8,760 h.
+   * Computed, not measured.
+   */
+  'fit-to-mttf': {
+    id: 'fit-to-mttf',
+    type: 'bar',
+    logY: true,
+    xLabel: { pt: 'Taxa de falhas (FIT)', en: 'Failure rate (FIT)' },
+    yLabel: { pt: 'MTTF (anos de operação contínua)', en: 'MTTF (years of continuous operation)' },
+    labels: [1, 10, 100, 1000, 10000],
+    datasets: [
+      { pt: 'MTTF', en: 'MTTF', color: '#2b6cb0', data: [114155, 11416, 1142, 114, 11.4] },
+    ],
+    caption: {
+      pt: 'O MTTF que corresponde a cada taxa em FIT, pela definição da JESD85A (10⁹ horas divididas pela taxa), convertido em anos de 8.760 h. É um cálculo, não uma medição; o eixo é logarítmico, e cada fator de dez na taxa tira um fator de dez da vida média.',
+      en: 'The MTTF that matches each FIT rate, by the JESD85A definition (10⁹ hours divided by the rate), converted to years of 8,760 h. It is a calculation, not a measurement; the axis is logarithmic, and each factor of ten in the rate takes a factor of ten off the mean life.',
+    },
+    sourceIds: ['rel-jesd85a'],
+    slug: 'fit-to-mttf',
+  },
+
+  /**
+   * AEC-Q100 ambient operating temperature grades, drawn as ranges.
+   */
+  'aec-q100-grades': {
+    id: 'aec-q100-grades',
+    type: 'bar',
+    horizontal: true,
+    xLabel: { pt: 'Temperatura ambiente de operação (°C)', en: 'Ambient operating temperature (°C)' },
+    yLabel: { pt: '', en: '' },
+    labels: [
+      { pt: 'Grau 0', en: 'Grade 0' },
+      { pt: 'Grau 1', en: 'Grade 1' },
+      { pt: 'Grau 2', en: 'Grade 2' },
+      { pt: 'Grau 3', en: 'Grade 3' },
+    ],
+    datasets: [
+      { pt: 'Faixa de operação', en: 'Operating range', color: '#c05621', data: [[-40, 150], [-40, 125], [-40, 105], [-40, 85]] },
+    ],
+    caption: {
+      pt: 'Os graus de temperatura da AEC-Q100: todos começam em −40 °C, e o que os separa é o teto, de +85 °C no grau 3 a +150 °C no grau 0.',
+      en: 'The AEC-Q100 temperature grades: all start at −40 °C, and what separates them is the ceiling, from +85 °C at grade 3 to +150 °C at grade 0.',
+    },
+    sourceIds: ['rel-aec-q100'],
+    slug: 'aec-q100-grades',
+  },
 }
 
 export const chartIds = Object.keys(CHARTS)

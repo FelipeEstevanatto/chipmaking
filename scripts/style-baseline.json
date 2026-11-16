@@ -1,17 +1,12 @@
 {
   "docs/alem-do-silicio.md": {
-    "style-bold": 19,
-    "style-contrast": 4,
-    "style-kicker": 2
+    "style-bold": 3,
+    "style-contrast": 4
   },
   "docs/celulas-solares.md": {
-    "style-bold": 56,
-    "style-bold-long": 1,
     "style-contrast": 1
   },
   "docs/confiabilidade.md": {
-    "style-bold": 34,
-    "style-bold-long": 1,
     "style-contrast": 2
   },
   "docs/dados.md": {
@@ -24,17 +19,14 @@
     "style-contrast": 1
   },
   "docs/en/alem-do-silicio.md": {
-    "style-bold": 12,
+    "style-bold": 3,
     "style-contrast": 3
   },
   "docs/en/celulas-solares.md": {
-    "style-bold": 66,
     "style-contrast": 1
   },
   "docs/en/confiabilidade.md": {
-    "style-bold": 32,
-    "style-bold-long": 1,
-    "style-contrast": 3
+    "style-contrast": 2
   },
   "docs/en/dados.md": {
     "style-bold": 8,
@@ -45,24 +37,9 @@
     "style-bold": 2,
     "style-contrast": 1
   },
-  "docs/en/estrutura-wafers.md": {
-    "style-bold": 38,
-    "style-bold-long": 1,
-    "style-contrast": 1,
-    "style-heading": 3,
-    "style-kicker": 1,
-    "style-sourcing": 1
-  },
   "docs/en/fabricacao-wafers.md": {
-    "style-bold": 72,
-    "style-bold-long": 1,
-    "style-heading": 4,
+    "style-bold": 1,
     "style-kicker": 1
-  },
-  "docs/en/fotolitografia.md": {
-    "style-bold": 65,
-    "style-bold-long": 1,
-    "style-heading": 4
   },
   "docs/en/gargalos.md": {
     "style-bold": 5,
@@ -79,10 +56,7 @@
     "style-bold": 2
   },
   "docs/en/mineracao-mg-si.md": {
-    "style-bold": 32,
-    "style-contrast": 4,
-    "style-heading": 2,
-    "style-kicker": 1
+    "style-contrast": 4
   },
   "docs/en/na-fab.md": {
     "style-contrast": 1
@@ -108,21 +82,13 @@
     "style-contrast": 2
   },
   "docs/estrutura-wafers.md": {
-    "style-bold": 42,
-    "style-bold-long": 1,
-    "style-contrast": 3,
-    "style-heading": 3
+    "style-contrast": 3
   },
   "docs/fabricacao-wafers.md": {
-    "style-bold": 77,
-    "style-bold-long": 1,
-    "style-heading": 4,
     "style-kicker": 1
   },
   "docs/fotolitografia.md": {
-    "style-bold": 68,
-    "style-contrast": 1,
-    "style-heading": 4
+    "style-contrast": 1
   },
   "docs/gargalos.md": {
     "style-bold": 5,
@@ -143,11 +109,7 @@
     "style-bold": 2
   },
   "docs/mineracao-mg-si.md": {
-    "style-bold": 34,
-    "style-bold-long": 1,
-    "style-contrast": 4,
-    "style-heading": 2,
-    "style-kicker": 1
+    "style-contrast": 4
   },
   "docs/na-fab.md": {
     "style-contrast": 1
