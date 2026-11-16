@@ -26,12 +26,12 @@ The chapter follows the path of the light, from the source to the wafer, in ten 
 2. [The photoresist](#the-photoresist): the resin whose solubility changes where the light lands.
 3. [Step-by-step process](#step-by-step-process): the eight steps of the cycle, from coating to removal.
 4. [Resolution enhancement and multi-patterning](#resolution-enhancement-and-multi-patterning): the optical tricks and the repeated exposures.
-5. [Immersion: the water that stretched 193 nm](#immersion-lithography): the water film that raised the numerical aperture.
-6. [DUV: what 193 nm light still does](#duv-at-193-nm): what is left of deep ultraviolet.
-7. [The EUV light source: turning tin into plasma](#the-euv-light-source): how tin droplets become 13.5 nm light.
+5. [Immersion lithography](#immersion-lithography): the water film that raised the numerical aperture.
+6. [DUV at 193 nm](#duv-at-193-nm): what is left of deep ultraviolet.
+7. [The EUV light source](#the-euv-light-source): how tin droplets become 13.5 nm light.
 8. [Mirrors instead of lenses](#mirrors-instead-of-lenses): the reflective optics EUV requires.
 9. [DUV and EUV side by side](#duv-and-euv-side-by-side): what each technology does and where each one is used.
-10. [High-NA: the EXE system](#high-na-euv-exe): the next generation of scanners.
+10. [High-NA EUV (EXE)](#high-na-euv-exe): the next generation of scanners.
 
 The text follows that order.
 
@@ -91,7 +91,8 @@ Line doubling: the final pattern comes from adding two exposures, <a href="https
 </DiagramFigure>
 
 ## Immersion lithography
-The trick that kept optical lithography alive for more than a decade was replacing the air between the last lens and the wafer with purified water. Because the refractive index of water is higher than that of air, the effective wavelength drops from 193 nm to about 134 nm, with no change to optics, mask or photoresist <Cite id="asml-immersion" />.
+
+The trick that kept optical lithography alive for more than a decade was replacing the air between the last lens and the wafer with purified water <Cite id="asml-immersion" />. At 193 nm water has a refractive index of 1.44, so the effective wavelength drops from 193 nm to about 134 nm <Cite id="smith-water-immersion-2003" />. The switch still needed new materials at every level of the imaging stack, from the photomask and the immersion fluid to the topcoats and the photoresists <Cite id="french-tran-2009" />.
 
 <DiagramFigure src="/assets/immersion-lithography.svg" alt="Comparison of dry exposure with immersion exposure with water between the last lens and the wafer">
 The last lens, the water and the wafer in immersion lithography, <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (public domain), Wikimedia Commons.
@@ -102,6 +103,7 @@ The last lens, the water and the wafer in immersion lithography, <a href="https:
 The story of how that combination came about (the four optical generations, the discarded candidates and the election of EUV) is in [History of photolithography](/en/historia-fotolitografia).
 
 ## DUV at 193 nm
+
 **DUV** (*deep ultraviolet*) lithography is the one that uses excimer lasers. An excimer is a molecule that only exists while it is electrically excited: the discharge brings together a noble gas and a halogen, which do not normally combine, and the temporary molecule gives the energy back as light at a wavelength set by the pair chosen <Cite id="asml-light" />. The krypton + fluorine pair (KrF) emits at 248 nm; the argon + fluorine pair (ArF), at 193 nm <Cite id="asml-light" />.
 
 Each change of source shrank the smallest printable feature:
@@ -117,6 +119,7 @@ Each change of source shrank the smallest printable feature:
 DUV was not retired by EUV. A leading-edge fab uses both technologies in the same recipe: EUV exposes the few most critical layers and DUV, which is cheaper, prints all the rest <Cite id="asml-duv" /> <Cite id="branch-euv" />. The NXT platform, entirely water-immersed, runs more than 6,000 300 mm wafers per day and can still be upgraded in the field with node-enhancement packages <Cite id="asml-duv" />.
 
 ## The EUV light source
+
 EUV does not come out of a laser: it comes out of a tin explosion. Its 13.5 nm light is more than 14 times shorter than DUV <Cite id="asml-light" />, and it does not exist on Earth: it has to be manufactured.
 
 Inside the vacuum vessel, a generator releases droplets of molten tin about 25 µm across at 70 m/s <Cite id="asml-light" />. Two things happen to each droplet, 50,000 times every second <Cite id="asml-light" />:
@@ -180,7 +183,12 @@ That creates a problem DUV never had. In DUV, a protective pellicle covers the m
 | Role in the fab | prints most of the layers | prints the few critical layers |
 
 ## High-NA EUV (EXE)
-The numerical aperture (NA) measures the cone of light the optics can collect and focus. Rayleigh's equation, `CD = k1 × λ ÷ NA`, shows what happens when NA goes up: keeping 13.5 nm light and a k1 near 0.3, the NXE (NA 0.33) resolves 13 nm and the EXE (NA 0.55) resolves 8 nm <Cite id="asml-nxe3600d" /> <Cite id="asml-highna" />.
+
+The numerical aperture (NA) measures the cone of light the optics can collect and focus. Rayleigh's equation, $\mathrm{CD} = k_1 \lambda / \mathrm{NA}$, shows what happens when NA goes up: keeping 13.5 nm light and a k1 near 0.3, the NXE (NA 0.33) resolves 13 nm and the EXE (NA 0.55) resolves 8 nm <Cite id="asml-nxe3600d" /> <Cite id="asml-highna" />.
+
+<ClientOnly>
+  <RayleighCalculator />
+</ClientOnly>
 
 <DiagramFigure src="/assets/high-na-anamorphic.svg" alt="Comparison of two numerical apertures: the 0.33 NA system with a narrow cone and 13 nm resolution, and the 0.55 NA system with a visibly wider cone and 8 nm resolution; below, exposure fields of 26 by 33 mm and 26 by 16.5 mm">
 A larger numerical aperture collects a wider cone, and therefore resolves smaller features. Drawn by the author, from ASML.
@@ -213,7 +221,7 @@ The throughput figures below are measured at different doses (30 mJ/cm² on the 
 
 ## Videos
 
-<SourceNote label="Related videos" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv']" />
+<SourceNote label="Related videos" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv', 'smith-water-immersion-2003', 'french-tran-2009']" />
 
 <YouTubeEmbed id="B2482h_TNwg" title="The $200M Machine that Prints Microchips: the EUV Photolithography System (Branch Education, sponsored by ASML)" />
 

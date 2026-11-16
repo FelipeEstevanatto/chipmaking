@@ -27,6 +27,7 @@ O texto segue essa ordem.
 Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de boro e de metais alcalinos na casa das partes por bilhão, e depósitos assim são raríssimos: cerca de 70% a 90% do quartzo de alta pureza do mundo sai de uma única região, os pegmatitos de Spruce Pine, nos montes Apalaches da Carolina do Norte <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine
+
 Duas empresas mineram ali <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
 
 | Empresa | Mineração | Observação |
@@ -47,6 +48,7 @@ A Sibelco, uma das duas mineradoras de Spruce Pine, publicou um vídeo sobre o s
 <YouTubeEmbed id="MZf3ksYsHz8" title="Sibelco Spruce Pine IOTA HPQ (Sibelco Group)" />
 
 ### Drag, Noruega
+
 O outro polo fica acima do Círculo Polar Ártico. Em Drag, no município de Hamarøy (Nordland), a Norwegian Crystallites AS foi fundada em 1996 pela Norsk Mineral para produzir quartzo de altíssima pureza <Cite id="tqc-history" />. Em 2011, ela e os ativos de quartzo da francesa Imerys se uniram para formar a The Quartz Corp, e a planta de Drag passou a ser o ponto de purificação final da rota <Cite id="tqc-history" />.
 
 Parte do minério sai dali mesmo, das dezenas de corpos pegmatíticos da região; a maior parte, porém, cruza o Atlântico vindo de Spruce Pine. A purificação é uma sequência de quatro etapas, cada uma delas removendo uma classe de contaminante <Cite id="quartzcorp-hpq" />:

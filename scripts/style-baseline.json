@@ -1,4 +1,10 @@
 {
+  "docs/.vitepress/theme/charts/specs.ts": {
+    "copy-contrast": 6
+  },
+  "docs/.vitepress/theme/fab-stages.ts": {
+    "copy-commentary": 1
+  },
   "docs/alem-do-silicio.md": {
     "style-bold": 3,
     "style-contrast": 4

@@ -8,7 +8,14 @@ dataAsOf: 2026
 
 This site describes the silicon chain step by step, and the geographical facts ended up scattered: the quartz from [Spruce Pine](/en/mineracao-mg-si#spruce-pine), [Chinese](/en/polissilicio#the-chinese-ascent) polysilicon, [Japanese](/en/estrutura-wafers#who-makes-the-wafers) wafers, [single-source](/en/historia-fotolitografia) lithography. This page puts the pieces into one table and asks the question they do not ask separately: **what stops in the world if each of these points stops?**
 
-The answer has a pattern, and it repeats step by step.
+The page goes through four points:
+
+1. [The map](#the-map): who dominates each step and how concentrated it is.
+2. [The money of policy](#the-money-of-policy): what the US, the EU and China committed in response.
+3. [Export control](#export-control-is-an-engineered-chokepoint): the chokepoint created by rule.
+4. [Why concentration is not an accident](#why-concentration-is-not-an-accident): the forces that keep each step in few hands.
+
+The sections follow that order.
 
 ## The map
 

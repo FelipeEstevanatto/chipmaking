@@ -2231,6 +2231,22 @@ const list: Citation[] = [
     short: 'ITRPV (2026)',
     note: 'The linked copy is hosted by QualEnergia.',
   },
+  {
+    key: 'smith-water-immersion-2003',
+    num: 277,
+    title: 'Water immersion optical lithography for the 45 nm node',
+    publisher: 'B. W. Smith, H. Kang, A. Bourov, F. Cropanese, Y. Fan — Proc. SPIE 5040, Optical Microlithography XVI, p. 679 (2003)',
+    url: 'https://doi.org/10.1117/12.485489',
+    short: 'Smith et al. (2003)',
+  },
+  {
+    key: 'french-tran-2009',
+    num: 278,
+    title: 'Immersion Lithography: Photomask and Wafer-Level Materials',
+    publisher: 'R. H. French, H. V. Tran — Annual Review of Materials Research 39:93–126 (2009)',
+    url: 'https://doi.org/10.1146/annurev-matsci-082908-145350',
+    short: 'French & Tran (2009)',
+  },
 ]
 
 export const citationsByKey = Object.fromEntries(list.map((c) => [c.key, c])) as Record<

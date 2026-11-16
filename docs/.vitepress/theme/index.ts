@@ -21,6 +21,8 @@ import SeeAlso from './SeeAlso.vue'
 import SupplyChainMap from './SupplyChainMap.vue'
 import CrystalViewer from './CrystalViewer.vue'
 import YieldExplorer from './YieldExplorer.vue'
+import RayleighCalculator from './RayleighCalculator.vue'
+import OxidationExplorer from './OxidationExplorer.vue'
 import ReadingProgress from './ReadingProgress.vue'
 import DocMeta from './DocMeta.vue'
 import GlossaryTable from './GlossaryTable.vue'
@@ -51,6 +53,8 @@ export default {
     app.component('SupplyChainMap', SupplyChainMap)
     app.component('CrystalViewer', CrystalViewer)
     app.component('YieldExplorer', YieldExplorer)
+    app.component('RayleighCalculator', RayleighCalculator)
+    app.component('OxidationExplorer', OxidationExplorer)
     app.component('ReadingProgress', ReadingProgress)
     app.component('DocMeta', DocMeta)
     app.component('GlossaryTable', GlossaryTable)

@@ -10,6 +10,14 @@ Every chapter of this site treats silicon as the semiconductor material. That is
 
 In the first, there are semiconductors that are **not** silicon and beat it in specific applications, not by being better at everything, but by having one property silicon lacks. In the second, silicon does far more than process data and generate power: it is also mechanical structure, sensor, and more recently a qubit host.
 
+The chapter covers three things:
+
+1. [The wide-bandgap neighbours](#the-wide-bandgap-neighbours): silicon carbide and gallium nitride, and where they beat silicon.
+2. [Silicon's other lives](#silicon-s-other-lives): MEMS, image sensors, photonics and qubits.
+3. [What remains](#what-remains): why silicon keeps the logic and the substrate.
+
+The sections follow that order.
+
 ## The wide-bandgap neighbours
 
 The parameter that separates this family is the band gap, and the difference is large: silicon is **1.12 eV** <Cite id="elem-ioffe" />, silicon carbide (4H-SiC) is **3.26 eV** <Cite id="wbg-ioffe-sic" /> and gallium nitride (GaN) is **3.40 eV** <Cite id="wbg-ioffe-gan" />.

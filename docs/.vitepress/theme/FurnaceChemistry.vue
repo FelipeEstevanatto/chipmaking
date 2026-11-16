@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useIsEnglish } from './locale'
+import Cite from './Cite.vue'
 import { FURNACE_STAGES } from './furnace-stages'
 import { DARK, FurnaceScene, LIGHT, SCENE_H, SCENE_W, type Pick, type Tooltip } from './furnace-scene'
 
@@ -253,7 +254,10 @@ onBeforeUnmount(() => {
 
     <div class="fc-caption">
       <p class="fc-equation">{{ current.equation }}</p>
-      <p class="fc-note">{{ text(current.note) }}</p>
+      <p class="fc-note">
+        {{ text(current.note) }}
+        <Cite v-for="id in current.sourceIds ?? []" :id="id" :key="id" />
+      </p>
       <p class="fc-legend">{{ labels.legend }}</p>
       <p class="fc-hint">{{ labels.hint }}</p>
     </div>

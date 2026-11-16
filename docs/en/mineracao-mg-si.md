@@ -27,6 +27,7 @@ The text follows that order.
 Not every silica will do for a crucible. The quartz must be free of boron and of alkali metals down to the parts-per-billion level, and deposits like that are exceedingly rare: roughly 70% to 90% of the world's high-purity quartz comes from a single region, the pegmatites of Spruce Pine, in the Appalachian mountains of North Carolina <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine
+
 Two companies mine there <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
 
 | Company | Mining | Note |
@@ -47,6 +48,7 @@ Sibelco, one of the two miners at Spruce Pine, has published a video about the s
 <YouTubeEmbed id="MZf3ksYsHz8" title="Sibelco Spruce Pine IOTA HPQ (Sibelco Group)" />
 
 ### Drag, Norway
+
 The other hub sits above the Arctic Circle. In Drag, in the municipality of Hamarøy (Nordland), Norwegian Crystallites AS was founded in 1996 by Norsk Mineral to produce ultra-high-purity quartz <Cite id="tqc-history" />. In 2011 it and the quartz assets of France's Imerys merged to form The Quartz Corp, and the Drag plant became the final purification point on the route <Cite id="tqc-history" />.
 
 Part of the ore comes from the region's own dozens of pegmatite bodies; most of it, however, crosses the Atlantic from Spruce Pine. Purification is a sequence of four steps, each one removing a class of contaminant <Cite id="quartzcorp-hpq" />:

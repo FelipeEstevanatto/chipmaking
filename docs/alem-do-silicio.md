@@ -10,6 +10,14 @@ Todo este site trata o silício como o material dos semicondutores. Isso é verd
 
 Na primeira, existem semicondutores que **não** são silício e ganham dele em aplicações específicas, não por serem melhores em tudo, mas por terem uma propriedade que o silício não tem. Na segunda, o silício faz muito mais coisas do que processar dados e gerar energia: ele também é estrutura mecânica, sensor e, mais recentemente, hospedeiro de qubits.
 
+O capítulo trata de três coisas:
+
+1. [Os vizinhos de banda larga](#os-vizinhos-de-banda-larga): o carbeto de silício e o nitreto de gálio, e onde eles vencem o silício.
+2. [As outras vidas do silício](#as-outras-vidas-do-silicio): MEMS, sensores de imagem, fotônica e qubits.
+3. [O que fica](#o-que-fica): por que o silício segue com a lógica e o substrato.
+
+As seções seguem essa ordem.
+
 ## Os vizinhos de banda larga
 
 O parâmetro que separa essa família é o gap de banda, e a diferença é grande: o silício tem 1,12 eV <Cite id="elem-ioffe" />, o carbeto de silício (4H-SiC) tem 3,26 eV <Cite id="wbg-ioffe-sic" /> e o nitreto de gálio (GaN) tem 3,40 eV <Cite id="wbg-ioffe-gan" />.

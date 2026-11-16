@@ -54,6 +54,7 @@ Em 1.º de outubro de 1948, Gordon Teal e John Little, na Bell Labs, montaram um
 O passo seguinte foi o silício, bem mais hostil. O banho precisa ser contido num cadinho de quartzo (a grafita contamina) e puxado sob atmosfera controlada, porque o silício fundido oxida em contato com o ar. Entre 1951 e 1952, Teal e o técnico Ernest Buehler resolveram as duas coisas e anunciaram os primeiros cristais de silício e a primeira junção p-n crescida dentro de um deles <Cite id="teal-buehler-1952" />. É esse arranjo (quartzo, atmosfera inerte, semente girando) que a indústria usa até hoje.
 
 ### Oxigênio e carbono do cadinho
+
 O quartzo do cadinho não é inerte. Em contato com o silício fundido, ele se dissolve lentamente na massa, e é daí que vem a impureza dominante do silício Cz, o oxigênio, em concentrações muito acima de qualquer contaminante metálico: [O] ≈ 5–10 × 10¹⁷ cm⁻³ e [C] ≈ 5–10 × 10¹⁵ cm⁻³ <Cite id="pv-mfg-cz" />.
 
 A solubilidade do oxigênio no silício cai várias ordens de grandeza entre a fusão e a temperatura ambiente <Cite id="pv-mfg-cz" />. O cristal termina o puxamento supersaturado, e no resfriamento o excesso precisa sair de solução: o oxigênio precipita como partículas de SiO₂.
@@ -77,6 +78,7 @@ Com k < 1, o sólido rejeita o dopante para o líquido. Como o banho encolhe con
 O caso do **gálio** é o mais extremo. Com k = 0,008, ele praticamente não sai do banho, e a resistividade varia por um fator enorme ao longo de um único lingote, reduzindo a fração aproveitável da peça <Cite id="lid-hallam" />. É esse o preço que a fotovoltaica aceitou ao trocar boro por gálio, como se detalha no [capítulo de células solares](/celulas-solares).
 
 ### RCz e CCz
+
 Duas variações atacam justamente esse problema de uniformidade.
 
 Na **RCz** (*Recharge Czochralski*), o cadinho é recarregado com polissilício sem ser resfriado, aberto ou desmontado: um alimentador introduz material novo no banho ainda quente <Cite id="pv-mfg-cz" />. Como o forno deixa de ser aberto a cada lingote, caem as paradas para manutenção, o *hot zone* fica menos exposto ao ar e a vida útil do equipamento aumenta. A técnica também reduz os ciclos térmicos bruscos que trincam o cadinho <Cite id="pv-mfg-cz" />.
@@ -183,6 +185,7 @@ A bancada úmida (*wet bench*) onde ataques e limpezas acontecem: tanques com qu
 Após secagem Marangoni ou álcool isopropílico (IPA), os wafers passam por metrologia óptica (Laser Surface Scanning System, espalhamento de feixe laser) para detecção de defeitos de superfície e contagem de partículas. Por fim, wafers que precisam de camadas especiais passam por crescimento epitaxial (EPI) por deposição química de vapor (CVD) antes de serem embalados a vácuo sob atmosfera limpa (cleanroom classe 1/10) para envio às fabs (fábricas de semicondutores).
 
 ## Wafers solares
+
 Nem todo wafer de silício termina numa fab. A indústria fotovoltaica consome o mesmo material, mas com regras bastante diferentes, e as divergências começam já na escolha do cristal <Cite id="saimm" />.
 
 ### Monocristalino ou multicristalino
@@ -200,6 +203,7 @@ O objetivo é obter grãos alinhados verticalmente, o que evita tensões térmic
 Já o Czochralski, descrito acima, é um processo em batelada que leva cerca de dois dias por lingote <Cite id="saimm" />.
 
 ### Espessura do wafer solar
+
 Aqui está a diferença mais visível. Para extrair a potência elétrica, bastam cerca de 100 µm de silício: a luz não precisa de mais material que isso <Cite id="saimm" />. Na prática, a indústria fotovoltaica trabalha com lâminas abaixo de 200 µm <Cite id="saimm" />. O padrão de 2023 já era de 150 µm para lâminas monocristalinas do tipo p, com as do tipo n cerca de 5 a 10 µm mais finas <Cite id="itrpv-2024" />, contra os 700 a 800 µm típicos dos wafers de fab.
 
 A economia percorre a cadeia inteira. O wafer cristalino responde por quase metade do custo final do módulo, e a etapa de fabricação do wafer por cerca de 30% desse custo <Cite id="saimm" />.

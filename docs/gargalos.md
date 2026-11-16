@@ -8,7 +8,14 @@ dataAsOf: 2026
 
 Este site descreve a cadeia do silício etapa por etapa, e os fatos de geografia ficaram espalhados: o quartzo de [Spruce Pine](/mineracao-mg-si#spruce-pine), o polissilício [chinês](/polissilicio#a-ascensao-chinesa), os wafers [japoneses](/estrutura-wafers#quem-fabrica-os-wafers), a litografia [única](/historia-fotolitografia). Esta página junta os pedaços numa tabela só e faz a pergunta que eles, separados, não fazem: **o que para o mundo se cada um desses pontos parar?**
 
-A resposta tem um padrão, e o padrão se repete etapa por etapa.
+A página percorre quatro pontos:
+
+1. [O mapa](#o-mapa): quem domina cada etapa e quão concentrada ela é.
+2. [O dinheiro da política](#o-dinheiro-da-politica): o que EUA, UE e China comprometeram em resposta.
+3. [O controle de exportação](#o-controle-de-exportacao-e-um-gargalo-de-projeto): o gargalo criado por regra.
+4. [Por que a concentração não é acidente](#por-que-a-concentracao-nao-e-acidente): as forças que mantêm cada etapa em poucas mãos.
+
+As seções seguem essa ordem.
 
 ## O mapa
 

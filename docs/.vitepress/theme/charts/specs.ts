@@ -97,12 +97,12 @@ export const CHARTS: Record<string, ChartSpec> = {
     xLabel: { pt: 'Participação do líder (%)', en: 'Leader share (%)' },
     yLabel: { pt: '', en: '' },
     labels: [
-      { pt: 'Quartzo HPQ — Spruce Pine', en: 'HPQ quartz — Spruce Pine' },
-      { pt: 'Silício metalúrgico — China', en: 'Metallurgical silicon — China' },
-      { pt: 'Polissilício — China', en: 'Polysilicon — China' },
-      { pt: 'Wafers 300 mm — cinco maiores', en: '300 mm wafers — five largest' },
-      { pt: 'Neônio (oferta mundial) — Ucrânia', en: 'Neon (world supply) — Ukraine' },
-      { pt: 'Litografia EUV — ASML', en: 'EUV lithography — ASML' },
+      { pt: 'Quartzo HPQ (Spruce Pine)', en: 'HPQ quartz (Spruce Pine)' },
+      { pt: 'Silício metalúrgico (China)', en: 'Metallurgical silicon (China)' },
+      { pt: 'Polissilício (China)', en: 'Polysilicon (China)' },
+      { pt: 'Wafers 300 mm (cinco maiores)', en: '300 mm wafers (five largest)' },
+      { pt: 'Neônio, oferta mundial (Ucrânia)', en: 'Neon, world supply (Ukraine)' },
+      { pt: 'Litografia EUV (ASML)', en: 'EUV lithography (ASML)' },
     ],
     datasets: [
       {

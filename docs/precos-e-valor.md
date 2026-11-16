@@ -10,6 +10,15 @@ Os capítulos anteriores contam o silício em quilos, graus de pureza e nanômet
 
 O exercício tem uma virtude e um limite. A virtude é que o preço é o resumo mais honesto de uma cadeia industrial: ele já contém energia, rendimento, capital e risco. O limite é que nem todos os degraus são públicos, e a página diz **quais** não são em vez de preencher a lacuna com um número redondo.
 
+A página sobe a cadeia em quatro passos:
+
+1. [A escada](#a-escada): o preço em cada degrau, do MG-Si ao chip pronto.
+2. [O degrau de commodity](#o-degrau-de-commodity): o polissilício, o único degrau com ciclo de preço público.
+3. [O degrau que não se publica](#o-degrau-que-nao-se-publica): o wafer processado.
+4. [Do quilo ao milímetro quadrado](#do-quilo-ao-milimetro-quadrado): o custo por transistor como unidade final.
+
+As seções seguem essa ordem.
+
 ## A escada
 
 | Degrau | Unidade | Ordem de grandeza | Fonte |

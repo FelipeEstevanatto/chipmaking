@@ -28,8 +28,11 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(REPO, "docs", ".vitepress", "dist")
 
 # Pages that render at least one equation. `na-fab` has Deal-Grove and the yield model;
-# `confiabilidade` has Black's equation and the Arrhenius factors.
+# `confiabilidade` has Black's equation and the Arrhenius factors; `fotolitografia` has Rayleigh's
+# resolution equation.
 EXPECTED = {
+    "fotolitografia.html",
+    "en/fotolitografia.html",
     "na-fab.html",
     "en/na-fab.html",
     "confiabilidade.html",

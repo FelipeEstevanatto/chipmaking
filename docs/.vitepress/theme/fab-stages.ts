@@ -78,11 +78,18 @@ export interface FabStage {
   stack: Array<{ id: string; label: { pt: string; en: string }; role: 'carry' | 'add' | 'remove' }>
   /** True for a module whose process has its own chapter. */
   ownChapter?: boolean
+  /**
+   * Keys from `citations.ts` behind the numbers and claims in `caption` and `note`, printed as [n]
+   * markers after the note, the way `MilestoneRail` does. A stage whose claims have no source on the
+   * site leaves it out rather than borrowing one.
+   */
+  sourceIds?: string[]
 }
 
 export const FAB_STAGES: FabStage[] = [
   {
     id: 'oxidation',
+    sourceIds: ['deal-grove-1965', 'tu-wien-oxidation'],
     mode: 'furnace',
     phases: [
       { at: 0, label: { pt: 'Aquecimento', en: 'Heat up' } },
@@ -100,8 +107,8 @@ export const FAB_STAGES: FabStage[] = [
       en: 'Silicon grows its own insulator',
     },
     caption: {
-      pt: 'O wafer entra num forno com vapor de água e o próprio silício da superfície se converte em SiO₂. A camada não fica só por cima: ela avança para dentro e para fora, e a superfície original acaba no meio dela.',
-      en: 'The wafer goes into a furnace with steam and the silicon at the surface turns into SiO₂. The layer does not sit only on top: it moves both inwards and outwards, and the original surface ends up in the middle of it.',
+      pt: 'O wafer entra num forno com vapor de água e o próprio silício da superfície se converte em SiO₂. A camada cresce para dentro e para fora ao mesmo tempo, e a superfície original acaba no meio dela.',
+      en: 'The wafer goes into a furnace with steam and the silicon at the surface turns into SiO₂. The layer grows inwards and outwards at the same time, and the original surface ends up in the middle of it.',
     },
     note: {
       pt: 'Crescimento de Deal–Grove (1965), x² + A·x = B·t. Enquanto o óxido é fino, a reação manda e o crescimento é linear no tempo; quando ele engrossa, o oxidante precisa difundir por dentro dele e o crescimento passa a ser parabólico. A água penetra o óxido muito melhor que o oxigênio, então a oxidação úmida é a via rápida, para óxidos grossos; o oxidante seco fica para a porta, onde o óxido precisa ser fino e limpo.',
@@ -110,6 +117,7 @@ export const FAB_STAGES: FabStage[] = [
   },
   {
     id: 'deposition',
+    sourceIds: ['amat-ald'],
     mode: 'deposit',
     phases: [{ at: 0, label: { pt: 'Crescimento conforme', en: 'Conformal growth' } }],
     tab: { pt: 'Deposição', en: 'Deposition' },
@@ -127,8 +135,8 @@ export const FAB_STAGES: FabStage[] = [
       en: 'ALD sends in one precursor per cycle and stops by itself: once the surface sites are used up, more precursor deposits nothing. Thickness then depends only on the number of cycles, and comes out the same on everything exposed.',
     },
     note: {
-      pt: 'O filme é uma barreira de difusão, a camada fina que separa o silício do metal que ainda vem. A trincheira não nasceu aqui: quem a abriu foi a litografia e a corrosão de uma volta anterior do laço. Como cada ciclo cobre tudo o que está exposto, a espessura sai igual no topo, na parede e no fundo; um processo direcional como o PVD cobriria o topo e deixaria o fundo quase nu.',
-      en: 'The film is a diffusion barrier, the thin layer that separates the silicon from the metal still to come. The trench was not made here: lithography and etching opened it in an earlier lap of the loop. Because each cycle coats whatever is exposed, the thickness comes out the same on the top, the wall and the floor; a directional process such as PVD would coat the top and leave the floor almost bare.',
+      pt: 'O filme é uma barreira de difusão, a camada fina que separa o silício do metal que ainda vem. A litografia e a corrosão abriram a trincheira numa volta anterior do laço. Como cada ciclo cobre tudo o que está exposto, a espessura sai igual no topo, na parede e no fundo; um processo direcional como o PVD cobriria o topo e deixaria o fundo quase nu.',
+      en: 'The film is a diffusion barrier, the thin layer that separates the silicon from the metal still to come. Lithography and etching opened the trench in an earlier lap of the loop. Because each cycle coats whatever is exposed, the thickness comes out the same on the top, the wall and the floor; a directional process such as PVD would coat the top and leave the floor almost bare.',
     },
   },
   {
@@ -165,6 +173,7 @@ export const FAB_STAGES: FabStage[] = [
   },
   {
     id: 'etch',
+    sourceIds: ['mks-rie'],
     mode: 'etch',
     phases: [
       { at: 0, label: { pt: 'Ataque', en: 'Etch' } },
@@ -193,6 +202,7 @@ export const FAB_STAGES: FabStage[] = [
   },
   {
     id: 'implant',
+    sourceIds: ['cityu-implant'],
     mode: 'implant',
     phases: [
       { at: 0, label: { pt: 'Implante', en: 'Implant' } },
@@ -221,6 +231,7 @@ export const FAB_STAGES: FabStage[] = [
   },
   {
     id: 'cmp',
+    sourceIds: ['amat-cmp', 'cmp-depth-of-focus'],
     mode: 'cmp',
     phases: [
       { at: 0, label: { pt: 'Polimento', en: 'Polish' } },
@@ -248,6 +259,7 @@ export const FAB_STAGES: FabStage[] = [
   },
   {
     id: 'metrology',
+    sourceIds: ['horiba-ellipsometry', 'r2r-control'],
     mode: 'measure',
     phases: [
       { at: 0, label: { pt: 'Espessura', en: 'Thickness' } },
@@ -269,8 +281,8 @@ export const FAB_STAGES: FabStage[] = [
       en: 'An ellipsometer throws light at the surface at an angle and measures how the polarisation changes on reflection. The film thickness comes out of that, without touching the wafer.',
     },
     note: {
-      pt: 'A medida não serve só para rejeitar: ela volta para dentro do processo. O controle run-to-run compara o resultado com o modelo, atualiza o modelo e calcula um ajuste de receita para os próximos wafers.',
-      en: 'The measurement is not only for rejecting: it goes back into the process. Run-to-run control compares the result with the model, updates the model and works out a recipe adjustment for the next wafers.',
+      pt: 'A medida também volta para dentro do processo. O controle run-to-run compara o resultado com o modelo, atualiza o modelo e calcula um ajuste de receita para os próximos wafers.',
+      en: 'The measurement also goes back into the process. Run-to-run control compares the result with the model, updates the model and works out a recipe adjustment for the next wafers.',
     },
   },
 ]

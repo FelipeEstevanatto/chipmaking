@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useIsEnglish } from './locale'
+import Cite from './Cite.vue'
 import { FAB_STAGES, READOUT_LABELS, STAGE_DURATION, type FabReadout } from './fab-stages'
 import { DARK, FabScene, LIGHT, SCENE_H, SCENE_W } from './fab-scene'
 
@@ -420,7 +421,10 @@ onBeforeUnmount(() => {
     <div class="fab-process__caption">
       <p class="fab-process__caption-title">{{ text(current.title) }}</p>
       <p class="fab-process__caption-text">{{ text(current.caption) }}</p>
-      <p class="fab-process__caption-note">{{ text(current.note) }}</p>
+      <p class="fab-process__caption-note">
+        {{ text(current.note) }}
+        <Cite v-for="id in current.sourceIds ?? []" :id="id" :key="id" />
+      </p>
     </div>
 
     <p class="fab-process__note">{{ labels.note }}</p>

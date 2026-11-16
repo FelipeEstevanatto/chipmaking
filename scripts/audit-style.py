@@ -27,6 +27,15 @@ exempt, as in audit-svgs.py):
   svg-emdash        an em dash in a label.
   svg-slogan        a "Topic: subtitle" headline, or a label with a contrast or commentary pattern.
 
+And per component, on the prose strings of the theme's data modules (the copy the explorers, the
+chronologies, the home page and the chart captions render, which the Markdown rules never see):
+
+  copy-emdash       an em dash in a string a reader sees.
+  copy-bold         Markdown bold inside a string, which renders as literal asterisks.
+  copy-contrast     "not X, but Y", as in prose.
+  copy-commentary   a word that grades the fact, as in prose.
+  copy-sourcing     the source check narrated, as in prose.
+
 The backlog is large, so the audit is a ratchet rather than a plain gate: `style-baseline.json`
 records each file's count per rule, the check fails when any count rises above it, and it says so
 when a count falls, so the baseline can be lowered with --update-baseline. A new file starts at
@@ -272,6 +281,37 @@ def audit_svg(path: str) -> list[tuple[str, int, str]]:
     return findings
 
 
+THEME = os.path.join(REPO, "docs", ".vitepress", "theme")
+# The modules whose strings are prose a reader sees. Code identifiers and CSS live elsewhere.
+COPY_MODULES = [
+    "fab-stages.ts", "furnace-stages.ts", "milestones.ts", "transistor-eras.ts", "home-sections.ts",
+    "chain.ts", "yield-presets.ts", os.path.join("charts", "specs.ts"),
+]
+# A locale string: `pt: '...'` or `en: "..."`, the shape every bilingual pair in the theme uses.
+COPY_RE = re.compile(r"""\b(?:pt|en)\s*:\s*(?:'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`([^`]*)`)""")
+
+
+def audit_copy(path: str) -> list[tuple[str, int, str]]:
+    findings: list[tuple[str, int, str]] = []
+    for number, line in enumerate(open(path, encoding="utf-8"), start=1):
+        for match in COPY_RE.finditer(line):
+            text = next(g for g in match.groups() if g is not None)
+            if len(text.split()) < 3:
+                continue
+            if "\u2014" in text:
+                findings.append(("copy-emdash", number, text[:80]))
+            if "**" in text:
+                findings.append(("copy-bold", number, text[:80]))
+            for rule, regex in (
+                ("copy-contrast", CONTRAST_RE),
+                ("copy-commentary", COMMENTARY_RE),
+                ("copy-sourcing", SOURCING_RE),
+            ):
+                for found in regex.finditer(text):
+                    findings.append((rule, number, found.group(0)))
+    return findings
+
+
 def collect() -> tuple[dict[str, dict[str, int]], dict[str, list[tuple[str, int, str]]], dict[str, int]]:
     counts: dict[str, dict[str, int]] = {}
     details: dict[str, list[tuple[str, int, str]]] = {}
@@ -286,6 +326,11 @@ def collect() -> tuple[dict[str, dict[str, int]], dict[str, list[tuple[str, int,
             continue
         rel = "docs/public/assets/" + name
         details[rel] = audit_svg(os.path.join(ASSETS, name))
+    for name in COPY_MODULES:
+        path = os.path.join(THEME, name)
+        if os.path.exists(path):
+            rel = os.path.relpath(path, REPO).replace("\\", "/")
+            details[rel] = audit_copy(path)
     for rel, found in details.items():
         per_rule: dict[str, int] = {}
         for rule, _, _ in found:

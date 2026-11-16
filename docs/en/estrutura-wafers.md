@@ -71,6 +71,7 @@ How the edge encodes orientation and, on smaller wafers, doping type as well. Th
 </DiagramFigure>
 
 ### Flats (up to 150 mm)
+
 These wafers carry two flats of different lengths. The primary flat, the longer one, sits at the bottom and is parallel to a {110} plane: it is the orientation reference. The secondary flat, the shorter one, exists on only some wafers, and its **angular position** is what reports orientation and doping type together <Cite id="semi-m1" />.
 
 | Secondary flat angle | Type | Orientation |
@@ -111,6 +112,7 @@ Diameter and thickness move together, because the slice has to stay stiff as it 
 The same standard caps thickness variation (TTV) at 10 µm and the wafer's shape deviation: *bow* and *warp*. For 200 mm, M1 allows up to 65 µm of bow and 75 µm of warp; for 300 mm, bow is left open and warp is **100 µm** <Cite id="semi-m1" />. Supplier datasheets usually quote much tighter numbers, because the standard's limit is the floor a prime wafer must meet, not what the industry actually ships.
 
 ### The 450 mm transition
+
 The diameter stopped growing at 300 mm, and not for want of ambition. The logic is irrefutable: a 450 mm wafer has 2.25× the area of a 300 mm one, which would multiply the number of dies per slice with almost no multiplication of processing cost.
 
 The story actually began earlier, and with a different number. The first 400 mm crystals were pulled in 1995, and the plan was to continue at that size, but in 2000 the industry roadmap (ITRS) fixed the next generation at 450 mm, not 400 <Cite id="eng-450mm" />. The plan called for pilot lines in 2012 and production between 2014 and 2016 <Cite id="eng-450mm" />.
@@ -120,6 +122,7 @@ In May 2008, Intel, Samsung and TSMC announced an agreement to pursue exactly th
 The verdict that remains is economic, not technical: the move depended on the economies of scale outweighing the cost of rebuilding equipment, metrology and infrastructure, and that bill never added up <Cite id="eng-450mm" />. 300 mm remains the ceiling.
 
 ### Surface finish
+
 A virgin, polished wafer is a grey mirror. A wafer that has been through lithography shows an iridescent pattern, and the colours are neither paint nor oxidation: they are **thin-film interference** in the few-nanometre layers stacked on the slice, plus diffraction from the trace grid itself. Under strong light the die grid and the *scribe lines* are visible to the naked eye, which instantly separates a processed wafer from a blank test slice.
 
 ## Who makes the wafers

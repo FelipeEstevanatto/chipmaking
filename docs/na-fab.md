@@ -81,6 +81,10 @@ O artigo declara a faixa em que o modelo se ajusta: de 700 a 1.300 °C, de 0,1 a
   <DataChart chart="deal-grove-oxidation" />
 </ClientOnly>
 
+<ClientOnly>
+  <OxidationExplorer />
+</ClientOnly>
+
 ### Seco contra úmido
 
 O vapor de água penetra o óxido muito melhor que o oxigênio molecular: a solubilidade da água no SiO₂ a 1.000 °C é cerca de 600 vezes a do O₂ <Cite id="tu-wien-oxidation" />. Por isso a oxidação úmida é muito mais rápida, chegando a centenas de nanômetros por hora, e é usada para óxidos grossos: isolamento, máscaras, passivação.

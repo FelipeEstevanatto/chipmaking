@@ -10,6 +10,15 @@ The earlier chapters count silicon in kilograms, purity grades and nanometres. T
 
 The exercise has one virtue and one limit. The virtue is that price is the most honest summary of an industrial chain: it already contains energy, yield, capital and risk. The limit is that not every rung is public, and the page says which ones are not rather than filling the gap with a round number.
 
+The page climbs the chain in four steps:
+
+1. [The ladder](#the-ladder): the price at each rung, from MG-Si to the finished chip.
+2. [The commodity rung](#the-commodity-rung): polysilicon, the one rung with a public price cycle.
+3. [The rung nobody publishes](#the-rung-nobody-publishes): the processed wafer.
+4. [From kilogram to square millimetre](#from-kilogram-to-square-millimetre): cost per transistor as the final unit.
+
+The sections follow that order.
+
 ## The ladder
 
 | Rung | Unit | Order of magnitude | Source |

@@ -81,6 +81,10 @@ The paper states the range over which the model fits: 700 to 1,300 °C, 0.1 to 1
   <DataChart chart="deal-grove-oxidation" />
 </ClientOnly>
 
+<ClientOnly>
+  <OxidationExplorer />
+</ClientOnly>
+
 ### Dry versus wet
 
 Water vapour penetrates the oxide far better than molecular oxygen: the solubility of water in SiO₂ at 1,000 °C is about 600 times that of O₂ <Cite id="tu-wien-oxidation" />. Wet oxidation is therefore much faster, reaching hundreds of nanometres per hour, and is used for thick oxides: isolation, masks, passivation.

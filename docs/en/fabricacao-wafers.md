@@ -54,6 +54,7 @@ On 1 October 1948, Gordon Teal and John Little at Bell Labs assembled improvised
 The next step was silicon, a far more hostile material. The melt has to be contained in a quartz crucible (graphite contaminates it) and pulled under a controlled atmosphere, because molten silicon oxidises on contact with air. Between 1951 and 1952, Teal and technician Ernest Buehler solved both problems and announced the first silicon crystals and the first p-n junction grown inside one of them <Cite id="teal-buehler-1952" />. It is that arrangement (quartz, inert atmosphere, a rotating seed) that the industry still uses today.
 
 ### Oxygen and carbon from the crucible
+
 The quartz of the crucible is not inert. In contact with the molten silicon it slowly dissolves into the melt, and that is the origin of Cz silicon's dominant impurity, oxygen, present at concentrations far above any metallic contaminant: [O] ≈ 5–10 × 10¹⁷ cm⁻³ and [C] ≈ 5–10 × 10¹⁵ cm⁻³ <Cite id="pv-mfg-cz" />.
 
 Oxygen's solubility in silicon falls by several orders of magnitude between the melting point and room temperature <Cite id="pv-mfg-cz" />. The crystal finishes the pull supersaturated, and on cooling the excess has to leave solution: the oxygen precipitates as SiO₂ particles.
@@ -77,6 +78,7 @@ With k < 1, the solid rejects the dopant into the liquid. As the melt shrinks wh
 **Gallium** is the extreme case. With k = 0.008 it barely leaves the melt, and resistivity varies by an enormous factor along a single ingot, reducing the usable fraction of the piece <Cite id="lid-hallam" />. That is the price photovoltaics accepted when it swapped boron for gallium, as detailed in the [solar cell chapter](/en/celulas-solares).
 
 ### RCz and CCz
+
 Two variations attack precisely this uniformity problem.
 
 In **RCz** (*Recharge Czochralski*), the crucible is reloaded with polysilicon without being cooled, opened or dismantled: a feeder introduces fresh material into the still-hot melt <Cite id="pv-mfg-cz" />. Because the furnace is no longer opened for every ingot, maintenance stops drop, the hot zone is less exposed to air and equipment life improves. The technique also reduces the abrupt thermal cycles that crack the crucible <Cite id="pv-mfg-cz" />.
@@ -183,6 +185,7 @@ The wet bench where etches and cleans happen: chemical tanks, exhaust, and casca
 After Marangoni or isopropyl alcohol (IPA) drying, the wafers go through optical metrology (Laser Surface Scanning System) to detect surface defects and count particles. Finally, wafers that need special layers go through epitaxial growth (EPI) by chemical vapour deposition (CVD) before being vacuum-packed under a clean atmosphere (cleanroom class 1/10) for shipment to fabs (semiconductor factories).
 
 ## Solar wafers
+
 Not every silicon wafer ends up in a fab. The photovoltaic industry consumes the same material under quite different rules, and the divergence starts with the choice of crystal <Cite id="saimm" />.
 
 ### Monocrystalline or multicrystalline
@@ -200,6 +203,7 @@ The goal is **vertically aligned grains**, which avoids high thermal stress and 
 The Czochralski process described above, by contrast, is a batch process taking about two days per ingot <Cite id="saimm" />.
 
 ### Solar wafer thickness
+
 This is the most visible difference. Extracting the electrical power needs only about 100 µm of silicon: light does not require more material than that <Cite id="saimm" />. In practice the photovoltaic industry works with wafers below 200 µm <Cite id="saimm" />. The 2023 standard was already 150 µm for p-type monocrystalline wafers, with n-type wafers about 5 to 10 µm thinner <Cite id="itrpv-2024" />, against the 700 to 800 µm typical of fab wafers.
 
 The savings run across the entire chain. The crystalline wafer accounts for nearly half of the final module cost, and the wafer manufacturing step for about 30% of that cost <Cite id="saimm" />.

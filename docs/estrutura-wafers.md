@@ -71,6 +71,7 @@ Como a borda codifica a orientação e, nos wafers menores, também a dopagem. O
 </DiagramFigure>
 
 ### *Flats* (até 150 mm)
+
 Nesses wafers a borda traz dois chanfros de comprimentos diferentes. O primário, mais longo, fica na parte de baixo e é paralelo a um plano {110}: é a referência de orientação. O secundário, mais curto, existe em apenas parte dos wafers, e é a posição angular dele que informa, de uma só vez, a orientação e o tipo de dopagem <Cite id="semi-m1" />.
 
 | Ângulo do flat secundário | Tipo | Orientação |
@@ -111,6 +112,7 @@ Diâmetro e espessura caminham juntos, porque a lâmina precisa continuar rígid
 A mesma norma limita a variação de espessura (TTV) a 10 µm e a deformação da lâmina: *bow* e *warp*. Para 200 mm a M1 admite até 65 µm de *bow* e 75 µm de *warp*; para 300 mm o *bow* fica em aberto e o *warp* em 100 µm <Cite id="semi-m1" />. Folhas de especificação de fornecedor costumam trazer números bem mais apertados, porque o limite da norma é o mínimo que um wafer *prime* precisa cumprir, não o que a indústria de fato entrega.
 
 ### A transição para 450 mm
+
 O diâmetro parou de crescer em 300 mm, e não por falta de ambição. A lógica é irrecusável: a área de um wafer de 450 mm é **2,25×** a de um de 300 mm, o que multiplicaria o número de pastilhas por lâmina praticamente sem multiplicar o custo do processamento.
 
 A história começou antes, e com outro número. Os primeiros cristais de 400 mm foram puxados em 1995, e a ideia era continuar nessa medida, mas em 2000 o *roadmap* da indústria (ITRS) fixou a próxima geração em 450 mm, não 400 <Cite id="eng-450mm" />. O plano previa linhas-piloto em 2012 e produção entre 2014 e 2016 <Cite id="eng-450mm" />.
@@ -120,6 +122,7 @@ Em maio de 2008, Intel, Samsung e TSMC anunciaram um acordo para perseguir justa
 O diagnóstico que sobrou é econômico, não técnico: a mudança dependia de a economia de escala compensar o custo de refazer equipamento, metrologia e infraestrutura, e essa conta nunca fechou <Cite id="eng-450mm" />. O 300 mm continua sendo o teto.
 
 ### Acabamento da superfície
+
 Um wafer virgem e polido é um espelho cinza. Um wafer que já passou pela litografia mostra um padrão iridescente, e as cores não são tinta nem oxidação: são **interferência de filme fino** nas camadas de poucos nanômetros empilhadas sobre a lâmina, somada à difração da própria grade de traços. Sob luz forte dá para ver a grade de *dice* e as linhas de corte (*scribe lines*) a olho nu, o que distingue de imediato um wafer processado de uma lâmina de teste em branco.
 
 ## Quem fabrica os wafers

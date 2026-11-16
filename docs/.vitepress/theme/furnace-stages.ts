@@ -75,6 +75,8 @@ export interface FurnaceStage {
   equation: string
   title: { pt: string; en: string }
   note: { pt: string; en: string }
+  /** Keys from `citations.ts` behind the reaction and the note, printed as [n] markers. */
+  sourceIds?: string[]
   actors: ActorSpec[]
   bonds: BondSpec[]
   /** The pool of molten silicon at the bottom of the vessel. */
@@ -120,6 +122,7 @@ export const FURNACE_STAGES: FurnaceStage[] = [
   /* ------------------------------------------------------------------ 1 */
   {
     id: 'carbide',
+    sourceIds: ['saimm', 'pv-mfg-polysilicon'],
     zone: 'charge',
     tab: { pt: 'Carbeto', en: 'Carbide' },
     temp: '~1600 °C',
@@ -178,6 +181,7 @@ export const FURNACE_STAGES: FurnaceStage[] = [
   /* ------------------------------------------------------------------ 2 */
   {
     id: 'reduction',
+    sourceIds: ['saimm', 'pv-mfg-polysilicon'],
     zone: 'bath',
     tab: { pt: 'Redução', en: 'Reduction' },
     temp: '>1780 °C',
@@ -219,6 +223,7 @@ export const FURNACE_STAGES: FurnaceStage[] = [
   /* ------------------------------------------------------------------ 3 */
   {
     id: 'gas',
+    sourceIds: ['saimm', 'pv-mfg-polysilicon'],
     zone: 'rise',
     tab: { pt: 'Gás SiO', en: 'SiO gas' },
     temp: '>1780 °C',
@@ -228,8 +233,8 @@ export const FURNACE_STAGES: FurnaceStage[] = [
       en: 'Part of the silicon leaves as a gas',
     },
     note: {
-      pt: 'A terceira reação abre a válvula de escape do forno: quartzo e carbeto formam monóxido de silício gasoso, que sobe junto com o CO. É por essa porta que o forno perde silício, e por ela mesmo que ele o recupera.',
-      en: 'The third reaction opens the furnace’s escape valve: quartz and carbide form gaseous silicon monoxide, which rises together with the CO. That is the door through which the furnace loses silicon, and the same door through which it gets it back.',
+      pt: 'Na terceira reação, quartzo e carbeto formam monóxido de silício gasoso, que sobe junto com o CO. É assim que o forno perde silício, e a etapa seguinte mostra como parte dele volta.',
+      en: 'In the third reaction, quartz and carbide form gaseous silicon monoxide, which rises together with the CO. That is how the furnace loses silicon, and the next stage shows how some of it comes back.',
     },
     melt: true,
     actors: [
@@ -260,6 +265,7 @@ export const FURNACE_STAGES: FurnaceStage[] = [
   /* ------------------------------------------------------------------ 4 */
   {
     id: 'loop',
+    sourceIds: ['saimm', 'pv-mfg-polysilicon'],
     zone: 'return',
     tab: { pt: 'Ciclo', en: 'Loop' },
     temp: '~1600 °C',
@@ -269,8 +275,8 @@ export const FURNACE_STAGES: FurnaceStage[] = [
       en: 'The gas turns back into charge',
     },
     note: {
-      pt: 'Nas zonas frias a reação corre ao contrário: SiO e CO recompõem quartzo e carbeto de silício, que caem de volta na carga. Por isso o forno é autossuficiente em reagentes: ele gasta energia elétrica, não matéria-prima.',
-      en: 'In the cooler zones the reaction runs backwards: SiO and CO rebuild quartz and silicon carbide, which fall back into the charge. That is why the furnace is self-sufficient in reactants: it spends electricity, not raw material.',
+      pt: 'Nas zonas frias a reação corre ao contrário: SiO e CO recompõem quartzo e carbeto de silício, que caem de volta na carga. O silício que tinha saído como gás volta para a carga.',
+      en: 'In the cooler zones the reaction runs backwards: SiO and CO rebuild quartz and silicon carbide, which fall back into the charge. The silicon that left as gas goes back into the charge.',
     },
     melt: false,
     actors: [

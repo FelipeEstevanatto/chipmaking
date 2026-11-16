@@ -26,12 +26,12 @@ O capítulo percorre o caminho da luz, da fonte ao wafer, em dez partes:
 2. [O fotoresistor](#o-fotoresistor): a resina que muda de solubilidade onde a luz bate.
 3. [Passo a passo do processo](#passo-a-passo-do-processo): as oito etapas do ciclo, do revestimento à remoção.
 4. [Realce de resolução e multi-padrão](#realce-de-resolucao-e-multi-padrao): os truques ópticos e as exposições repetidas.
-5. [Imersão: a água que esticou o 193 nm](#litografia-por-imersao): o filme de água que aumentou a abertura numérica.
-6. [DUV: o que a luz de 193 nm ainda faz](#duv-a-193-nm): o que resta do ultravioleta profundo.
-7. [A fonte de luz EUV: o estanho virando plasma](#a-fonte-de-luz-euv): como gotas de estanho viram luz de 13,5 nm.
+5. [Litografia por imersão](#litografia-por-imersao): o filme de água que aumentou a abertura numérica.
+6. [DUV a 193 nm](#duv-a-193-nm): o que resta do ultravioleta profundo.
+7. [A fonte de luz EUV](#a-fonte-de-luz-euv): como gotas de estanho viram luz de 13,5 nm.
 8. [Espelhos em vez de lentes](#espelhos-em-vez-de-lentes): a óptica refletiva que o EUV exige.
 9. [DUV e EUV lado a lado](#duv-e-euv-lado-a-lado): o que cada tecnologia faz e onde cada uma é usada.
-10. [High-NA: o sistema EXE](#euv-high-na-exe): a próxima geração de scanners.
+10. [EUV High-NA (EXE)](#euv-high-na-exe): a próxima geração de scanners.
 
 O texto segue essa ordem.
 
@@ -91,7 +91,8 @@ Duplicação de linhas: o padrão final sai da soma de duas exposições, <a hre
 </DiagramFigure>
 
 ## Litografia por imersão
-O truque que segurou a litografia óptica por mais de uma década foi trocar o ar entre a última lente e o wafer por água purificada. Como o índice de refração da água é maior que o do ar, o comprimento de onda efetivo cai de 193 nm para cerca de 134 nm, sem trocar óptica, máscara ou fotoresistor <Cite id="asml-immersion" />.
+
+O truque que segurou a litografia óptica por mais de uma década foi trocar o ar entre a última lente e o wafer por água purificada <Cite id="asml-immersion" />. A 193 nm a água tem índice de refração de 1,44, então o comprimento de onda efetivo cai de 193 nm para cerca de 134 nm <Cite id="smith-water-immersion-2003" />. A troca ainda exigiu materiais novos em todos os níveis da pilha de imagem, da fotomáscara e do fluido de imersão às camadas de topo (*topcoats*) e aos fotoresistores <Cite id="french-tran-2009" />.
 
 <DiagramFigure src="/assets/immersion-lithography.svg" alt="Comparação entre exposição a seco e exposição com água entre a última lente e o wafer">
 A última lente, a água e o wafer na litografia por imersão, <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (domínio público), Wikimedia Commons.
@@ -102,6 +103,7 @@ O EUV segue o caminho oposto. Como tudo absorve EUV, ele não usa lentes nem ime
 A história de como se chegou a essa combinação (as quatro gerações ópticas, os candidatos descartados e a eleição do EUV) está em [História da fotolitografia](/historia-fotolitografia).
 
 ## DUV a 193 nm
+
 A litografia DUV (*deep ultraviolet*) é a que usa lasers de excímero. Um excímero é uma molécula que só existe enquanto está eletricamente excitada: a descarga elétrica junta um gás nobre e um halogênio, que em condições normais não se combinam, e a molécula temporária devolve a energia na forma de luz com o comprimento de onda do par escolhido <Cite id="asml-light" />. O par criptônio + flúor (KrF) emite a 248 nm; o par argônio + flúor (ArF), a 193 nm <Cite id="asml-light" />.
 
 Cada troca de fonte encolheu o menor traço imprimível:
@@ -117,6 +119,7 @@ Cada troca de fonte encolheu o menor traço imprimível:
 O DUV não foi aposentado pelo EUV. Uma fábrica de ponta usa as duas tecnologias na mesma receita: o EUV expõe as poucas camadas mais críticas e o DUV, mais barato, imprime todo o resto <Cite id="asml-duv" /> <Cite id="branch-euv" />. A plataforma NXT, toda de imersão em água, roda mais de 6.000 wafers de 300 mm por dia e continua sendo atualizável em campo por pacotes de melhoria de nó <Cite id="asml-duv" />.
 
 ## A fonte de luz EUV
+
 O EUV não sai de um laser: ele sai de uma explosão de estanho. A luz de **13,5 nm** é mais de 14 vezes mais curta que a do DUV <Cite id="asml-light" />, e não existe na Terra: precisa ser fabricada.
 
 Dentro da câmara de vácuo, um gerador libera gotas de estanho fundido de cerca de 25 µm a 70 m/s <Cite id="asml-light" />. Duas coisas acontecem com cada gota, 50.000 vezes por segundo <Cite id="asml-light" />:
@@ -180,7 +183,12 @@ Isso cria um problema que o DUV não tinha. No DUV, uma película protetora (*pe
 | Papel na fábrica | imprime a maioria das camadas | imprime as poucas camadas críticas |
 
 ## EUV High-NA (EXE)
-A abertura numérica (NA) mede o cone de luz que a óptica consegue captar e focar. A equação de Rayleigh, `CD = k1 × λ ÷ NA`, mostra o que acontece quando se aumenta o NA: mantendo a luz de 13,5 nm e um k1 próximo de 0,3, o NXE (NA 0,33) resolve 13 nm e o EXE (NA 0,55) resolve 8 nm <Cite id="asml-nxe3600d" /> <Cite id="asml-highna" />.
+
+A abertura numérica (NA) mede o cone de luz que a óptica consegue captar e focar. A equação de Rayleigh, $\mathrm{CD} = k_1 \lambda / \mathrm{NA}$, mostra o que acontece quando se aumenta o NA: mantendo a luz de 13,5 nm e um k1 próximo de 0,3, o NXE (NA 0,33) resolve 13 nm e o EXE (NA 0,55) resolve 8 nm <Cite id="asml-nxe3600d" /> <Cite id="asml-highna" />.
+
+<ClientOnly>
+  <RayleighCalculator />
+</ClientOnly>
 
 <DiagramFigure src="/assets/high-na-anamorphic.svg" alt="Comparação entre duas aberturas numéricas: o sistema de 0,33 NA com um cone estreito e 13 nm de resolução, e o de 0,55 NA com um cone visivelmente mais largo e 8 nm de resolução; abaixo, os campos de exposição de 26 por 33 mm e 26 por 16,5 mm">
 A abertura numérica maior capta um cone mais largo, e por isso enxerga traços menores. Desenho do autor, a partir de ASML.
@@ -213,7 +221,7 @@ As vazões abaixo são medidas em doses diferentes (30 mJ/cm² nos NXE e 50 mJ/c
 
 ## Vídeos
 
-<SourceNote label="Vídeos relacionados" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv']" />
+<SourceNote label="Vídeos relacionados" :ids="['asml-gaa', 'asml-highna-video', 'asml-unveiling-highna', 'asml-euv-podcast', 'branch-euv', 'smith-water-immersion-2003', 'french-tran-2009']" />
 
 <YouTubeEmbed id="B2482h_TNwg" title="The $200M Machine that Prints Microchips: the EUV Photolithography System (Branch Education, patrocinado pela ASML)" />
 
