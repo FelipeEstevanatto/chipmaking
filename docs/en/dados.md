@@ -76,6 +76,7 @@ Every chart on the site also exists as a data file, generated from the same defi
 - [Band gap × lattice constant](/data/band-gap.csv)
 - [Concentration by step](/data/chokepoint-share.csv)
 - [Photovoltaic efficiency](/data/pv-efficiency.csv)
+- [TSMC water per mask layer](/data/tsmc-water-per-layer.csv)
 - [Bathtub curve](/data/bathtub.csv)
 - [Binning by frequency](/data/binning-bins.csv)
 - [Thermal oxide growth](/data/deal-grove-oxidation.csv)

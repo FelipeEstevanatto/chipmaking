@@ -21,6 +21,9 @@ import SeeAlso from './SeeAlso.vue'
 import SupplyChainMap from './SupplyChainMap.vue'
 import CrystalViewer from './CrystalViewer.vue'
 import YieldExplorer from './YieldExplorer.vue'
+import ChokepointMap from './ChokepointMap.vue'
+import ScaleExplorer from './ScaleExplorer.vue'
+import IngotDopingExplorer from './IngotDopingExplorer.vue'
 import RayleighCalculator from './RayleighCalculator.vue'
 import OxidationExplorer from './OxidationExplorer.vue'
 import PolyEnergyCalculator from './PolyEnergyCalculator.vue'
@@ -54,6 +57,9 @@ export default {
     app.component('SupplyChainMap', SupplyChainMap)
     app.component('CrystalViewer', CrystalViewer)
     app.component('YieldExplorer', YieldExplorer)
+    app.component('ChokepointMap', ChokepointMap)
+    app.component('ScaleExplorer', ScaleExplorer)
+    app.component('IngotDopingExplorer', IngotDopingExplorer)
     app.component('RayleighCalculator', RayleighCalculator)
     app.component('OxidationExplorer', OxidationExplorer)
     app.component('PolyEnergyCalculator', PolyEnergyCalculator)

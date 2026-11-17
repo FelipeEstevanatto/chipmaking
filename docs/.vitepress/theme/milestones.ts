@@ -169,7 +169,7 @@ export const MILESTONES: Record<MilestoneSet, Milestone[]> = {
       year: '2002',
       title: { pt: 'Imersão em água no 193 nm', en: 'Water immersion at 193 nm' },
       note: {
-        pt: 'Burn Lin, então na TSMC, propõe trocar o ar entre a última lente e o wafer por água purificada, reaproveitando óptica, máscara e fotoresistor.',
+        pt: 'Burn Lin, então na TSMC, propõe trocar o ar entre a última lente e o wafer por água purificada, reaproveitando óptica, máscara e fotorresiste.',
         en: 'Burn Lin, then at TSMC, proposes replacing the air between the last lens and the wafer with purified water, reusing existing optics, masks and photoresists.',
       },
       sourceIds: ['lin-immersion'],

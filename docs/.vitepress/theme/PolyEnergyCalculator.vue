@@ -135,7 +135,7 @@ const t = computed(() =>
 .poly-energy__note {
   margin: 0;
   font-size: 0.8rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 @media (max-width: 480px) {
   .poly-energy__bars li {

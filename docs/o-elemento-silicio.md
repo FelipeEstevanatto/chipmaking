@@ -92,7 +92,7 @@ O silício natural é uma mistura de três isótopos estáveis, e a proporção 
 
 A variação é pequena, mas não nula, e é medida com precisão suficiente para virar ferramenta: a razão entre isótopos de silício num sedimento conta a história do clima em que ele se formou <Cite id="elem-ciaaw" />.
 
-Para a indústria, a consequência prática é outra. Os ~4,7% de ²⁹Si não são um detalhe químico: o núcleo do ²⁹Si tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo (não a substância, mas o isótopo) é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+Para a indústria, a consequência prática é outra. O núcleo do ²⁹Si, cerca de 4,7% do silício natural, tem spin, e um spin no silício é um ruído magnético para quem tenta usar o próprio silício como qubit. Purificar o isótopo, e não o elemento, é o que torna o silício um material quântico, assunto de [Além do silício](/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Por que a indústria usa este elemento
 

@@ -1,14 +1,14 @@
 ---
 title: Os insumos da fab
 description: O que uma fábrica de semicondutores consome além do silício (fotorresiste, máscara, slurry, gases e água ultrapura) e por que essa lista é um gargalo tão silencioso quanto o quartzo.
-dataAsOf: 2023
+dataAsOf: 2025
 ---
 
 # Os insumos da fab
 
 O wafer é o protagonista deste site: ele percorre a [fábrica](/na-fab), recebe camadas, é exposto na [litografia](/fotolitografia) e sai como chip. Mas nenhuma dessas etapas acontece no vácuo de material: a fab consome, a cada wafer, um conjunto de químicos e gases cuja cadeia de fornecimento tem exatamente o mesmo padrão do gargalo de Spruce Pine descrito em [mineração e MG-Si](/mineracao-mg-si).
 
-Esta página trata dos insumos que não são silício, mas que decidem se o silício vira produto.
+Esta página trata dos insumos, além do silício, que decidem se o silício vira produto.
 
 O capítulo percorre os insumos da fab em seis itens:
 
@@ -67,13 +67,19 @@ A água é, em volume, o insumo de maior peso de uma fab, e o mais fácil de sub
 
 A razão dos limites é a escala em que a fab trabalha. Íons dissolvidos são, literalmente, dopantes (sódio e potássio no nível de partes por bilhão (ppb) já alteram a tensão de limiar de um transistor), e matéria orgânica vira defeito na superfície onde a próxima camada precisa crescer. O resultado é que a água é produzida e purificada no próprio site, com a resistividade medida em linha, porque uma especificação dessas não sobrevive ao transporte.
 
+A TSMC publica o consumo de água por camada de máscara, medido num wafer equivalente de 12 polegadas: 161,0 litros em 2024 <Cite id="tsmc-sr-2024-water" /> e 153,3 litros em 2025 <Cite id="tsmc-ar-2025" />. O indicador conta a água de torneira que as fábricas captam <Cite id="tsmc-sr-2024-water" />. Multiplicado pelas 80 a 85 camadas de máscara de um nó de 7 nm, o valor de 2025 dá cerca de 12.300 a 13.000 litros por wafer, e as mais de 100 camadas de um nó de 5 nm levam a conta acima de 15.300 litros <Cite id="semieng-cycle-time" />.
+
+<ClientOnly>
+  <DataChart chart="tsmc-water-per-layer" />
+</ClientOnly>
+
 ## Por que essa lista é um gargalo
 
 Nenhum dos insumos desta página é caro por unidade, e todos são difíceis de substituir.
 
 O motivo é o mesmo que aparece em [o mapa dos gargalos](/gargalos): trocar um fornecedor de material exige requalificar o processo inteiro, e um resiste ou um slurry novos significam semanas de receita nova, com rendimento incerto, numa linha que custa por hora. O comprador tem, portanto, um incentivo estrutural para não trocar, e o fornecedor, para continuar sendo o único que sabe formular aquele produto.
 
-<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
+<SourceNote :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'tsmc-sr-2024-water', 'tsmc-ar-2025', 'semieng-cycle-time', 'branch-euv']" />
 
 <SeeAlso :links="[
   { text: 'O mapa dos gargalos', href: '/gargalos', note: 'a concentração de cada etapa' },

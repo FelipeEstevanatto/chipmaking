@@ -107,13 +107,12 @@ const regimeText = computed(() => t.value[regime.value as 'linear' | 'parabolic'
   <div class="ox-explorer" role="group" :aria-label="t.title">
     <p class="ox-explorer__title">{{ t.title }}</p>
 
-    <div class="ox-explorer__oxidant" role="radiogroup">
+    <div class="ox-explorer__oxidant" role="group">
       <button
         v-for="o in (['dry', 'wet'] as Oxidant[])"
         :key="o"
         type="button"
-        role="radio"
-        :aria-checked="oxidant === o"
+        :aria-pressed="oxidant === o"
         :class="['ox-explorer__choice', { 'is-active': oxidant === o }]"
         @click="oxidant = o"
       >
@@ -219,11 +218,11 @@ const regimeText = computed(() => t.value[regime.value as 'linear' | 'parabolic'
 .ox-explorer__axis {
   margin: 0.2rem 0 0.6rem;
   font-size: 0.78rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 .ox-explorer__note {
   margin: 0;
   font-size: 0.8rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 </style>

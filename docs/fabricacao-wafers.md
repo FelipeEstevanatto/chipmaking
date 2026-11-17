@@ -77,6 +77,10 @@ Com k < 1, o sólido rejeita o dopante para o líquido. Como o banho encolhe con
 
 O caso do **gálio** é o mais extremo. Com k = 0,008, ele praticamente não sai do banho, e a resistividade varia por um fator enorme ao longo de um único lingote, reduzindo a fração aproveitável da peça <Cite id="lid-hallam" />. É esse o preço que a fotovoltaica aceitou ao trocar boro por gálio, como se detalha no [capítulo de células solares](/celulas-solares).
 
+<ClientOnly>
+  <IngotDopingExplorer />
+</ClientOnly>
+
 ### RCz e CCz
 
 Duas variações atacam justamente esse problema de uniformidade.
@@ -123,7 +127,7 @@ Nos wafers de fab, o objetivo do corte é a planura. É no ramo fotovoltaico, qu
 
 A aresta que sai do corte é viva e frágil. O edge profiling (perfilagem da borda) desbasta um contorno curvo (coroa no ápice, chanfros para os dois lados) para que a tensão se distribua em vez de se concentrar num canto. Sem isso a borda lasca no manuseio e no transporte e, pior, cada trinca vira fonte de partículas que depois voltam à superfície ativa.
 
-Contornar a borda reduz exatamente esses lascamentos e ainda limita o excesso de material na borda (*edge crown*) e o acúmulo de fotoresistor na borda no *spin coating* <Cite id="semi-mf928" />. Nos wafers de 300 mm o padrão pede mais: borda polida, porque os vales deixados pela retificação retêm partículas e até fósforo que retorna à superfície durante a dopagem <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
+Contornar a borda reduz exatamente esses lascamentos e ainda limita o excesso de material na borda (*edge crown*) e o acúmulo de fotorresiste na borda no *spin coating* <Cite id="semi-mf928" />. Nos wafers de 300 mm o padrão pede mais: borda polida, porque os vales deixados pela retificação retêm partículas e até fósforo que retorna à superfície durante a dopagem <Cite id="prostek-edge" /> <Cite id="semi-m1" />.
 
 Depois vem a lapidação (lapping): um lote de wafers é prensado entre duas placas de metal que giram em sentidos opostos, com lama abrasiva de alumina injetada entre elas. Como as duas faces são atacadas ao mesmo tempo, a operação corrige espessura, paralelismo e as ondulações deixadas pelo corte <Cite id="pei-2005" />.
 
@@ -190,7 +194,7 @@ Nem todo wafer de silício termina numa fab. A indústria fotovoltaica consome o
 
 ### Monocristalino ou multicristalino
 
-A eletrônica usa exclusivamente silício monocristalino, porque os requisitos de qualidade são altos demais para abrir exceção. A fotovoltaica usa os dois <Cite id="saimm" />.
+A eletrônica usa exclusivamente silício monocristalino, porque os requisitos de qualidade são altos demais para abrir exceção, enquanto a fotovoltaica usa os dois <Cite id="saimm" />.
 
 O silício multicristalino tem eficiência de célula menor, mas custa menos, e é esse compromisso que explica sua presença no mercado <Cite id="saimm" />. Em vez de puxar um lingote cilíndrico, ele é produzido por fundição em bloco (processo Bridgman): o silício é fundido num cadinho e a interface cristal-líquido avança de baixo para cima conforme o resfriamento é controlado <Cite id="saimm" />.
 
@@ -225,7 +229,7 @@ A indústria fotovoltaica migrou para áreas maiores ao longo do tempo: do padr�
 | Objetivo do corte | planura <Cite id="semi-m1" /> | espessura mínima <Cite id="saimm" /> |
 | Kerf | — | cerca de 30% <Cite id="saimm" /> |
 
-<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
+<SourceNote :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024', 'pfann-1952']" />
 
 ## Vídeos
 

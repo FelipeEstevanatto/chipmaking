@@ -18,7 +18,7 @@
  */
 export const DEFECT_DENSITIES = [0.05, 0.1, 0.25, 0.5, 1] as const
 
-/** The wafer every drawing is cut from, and how much of the rim is unusable. */
+/** The default wafer, and how much of the rim is unusable on any size. */
 export const WAFER_MM = 300
 export const EDGE_MM = 3
 
@@ -37,9 +37,9 @@ export const AREA_STEP = 1
 export type DieCentre = { x: number; y: number }
 
 /** Centre of a die in millimetres, measured from the centre of the wafer. */
-export function dieGrid(areaMm2: number): DieCentre[] {
+export function dieGrid(areaMm2: number, waferMm: number = WAFER_MM): DieCentre[] {
   const half = Math.sqrt(areaMm2) / 2
-  const usable = WAFER_MM / 2 - EDGE_MM
+  const usable = waferMm / 2 - EDGE_MM
   const count = Math.floor((2 * usable) / (2 * half))
   const dies: DieCentre[] = []
   for (let i = 0; i < count; i++) {

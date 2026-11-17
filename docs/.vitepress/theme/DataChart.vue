@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { withBase } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 import type { Chart as ChartInstance } from 'chart.js/auto'
 import { CHARTS } from './charts'
 import type { ChartName, ChartText } from './charts/types'
@@ -24,6 +24,15 @@ const props = defineProps<{ chart: string }>()
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const isEnglish = useIsEnglish()
 const localePath = useLocalePath()
+
+const { isDark } = useData()
+
+/** Ink for ticks, axis titles, legend and grid. Chart.js defaults to #666 on a 10% black grid, which
+ * falls under 4.5:1 on the dark theme's background and leaves the grid invisible. */
+const ink = () =>
+  isDark.value
+    ? { text: 'rgba(255, 255, 245, 0.86)', grid: 'rgba(255, 255, 245, 0.14)' }
+    : { text: '#3c3c43', grid: 'rgba(60, 60, 67, 0.14)' }
 
 const spec = CHARTS[props.chart]
 const logY = ref(!!spec?.logY)
@@ -64,6 +73,8 @@ function datasetFor(dataset: (typeof spec.datasets)[number]) {
 onMounted(async () => {
   if (!spec || !canvasRef.value) return
   const { Chart } = await import('chart.js/auto')
+  Chart.defaults.color = ink().text
+  Chart.defaults.borderColor = ink().grid
 
   chart = new Chart(canvasRef.value, {
     type: spec.type,
@@ -118,6 +129,22 @@ watch(logY, (enabled) => {
   const y = (chart.options.scales as Record<string, Record<string, unknown>>).y
   y.type = enabled ? 'logarithmic' : 'linear'
   y.beginAtZero = !enabled
+  chart.update()
+})
+
+watch(isDark, () => {
+  if (!chart) return
+  const { text: color, grid } = ink()
+  chart.options.color = color
+  chart.options.borderColor = grid
+  for (const axis of Object.values(chart.options.scales ?? {}) as Record<string, any>[]) {
+    axis.ticks = { ...axis.ticks, color }
+    axis.title = { ...axis.title, color }
+    axis.grid = { ...axis.grid, color: grid }
+    axis.border = { ...axis.border, color: grid }
+  }
+  const legend = chart.options.plugins?.legend
+  if (legend) legend.labels = { ...legend.labels, color }
   chart.update()
 })
 

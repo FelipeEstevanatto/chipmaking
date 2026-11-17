@@ -1,14 +1,14 @@
 ---
 title: Fab consumables
 description: What a semiconductor fab consumes besides silicon (photoresist, mask, slurry, gases and ultrapure water) and why that list is as silent a chokepoint as quartz.
-dataAsOf: 2023
+dataAsOf: 2025
 ---
 
 # Fab consumables
 
 The wafer is this site's protagonist: it travels through the [fab](/en/na-fab), receives layers, is exposed in [photolithography](/en/fotolitografia) and leaves as a chip. But none of those steps happens in a materials vacuum: the fab consumes, for every wafer, a set of chemicals and gases whose supply chain has exactly the same pattern as the Spruce Pine chokepoint described in [mining and MG-Si](/en/mineracao-mg-si).
 
-This page is about the inputs that are not silicon but decide whether silicon becomes a product.
+This page is about the inputs other than silicon that decide whether silicon becomes a product.
 
 The chapter follows the fab consumables in six items:
 
@@ -67,13 +67,19 @@ Water is, by volume, the largest input of a fab, and the easiest to underestimat
 
 The reason for those limits is the scale at which the fab works. Dissolved ions are, literally, dopants (sodium and potassium at the parts per billion (ppb) level already shift a transistor's threshold voltage), and organic matter becomes a defect on the surface where the next layer has to grow. The upshot is that the water is produced and purified on site, with resistivity measured in line, because a specification like that does not survive transport.
 
+TSMC publishes its water use per mask layer, measured on a 12-inch equivalent wafer: 161.0 litres in 2024 <Cite id="tsmc-sr-2024-water" /> and 153.3 litres in 2025 <Cite id="tsmc-ar-2025" />. The indicator counts the tap water its fabs draw <Cite id="tsmc-sr-2024-water" />. Multiplied by the 80 to 85 mask layers of a 7 nm node, the 2025 value comes to about 12,300 to 13,000 litres per wafer, and the more than 100 layers of a 5 nm node take it past 15,300 litres <Cite id="semieng-cycle-time" />.
+
+<ClientOnly>
+  <DataChart chart="tsmc-water-per-layer" />
+</ClientOnly>
+
 ## Why this list is a chokepoint
 
 None of the inputs on this page is expensive per unit, and all of them are hard to replace.
 
 The reason is the same one that appears in [the chokepoint map](/en/gargalos): changing a materials supplier means requalifying the entire process, and a new resist or slurry means weeks of new recipe work, with uncertain yield, on a line that costs by the hour. The buyer therefore has a structural incentive not to switch, and the supplier, to remain the only one who knows how to formulate that product.
 
-<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'branch-euv']" />
+<SourceNote label="Sources" :ids="['fabm-ito-1983', 'asianometry-euv', 'runnels-1994', 'cmp-history', 'fabm-neon-2017', 'usitc-neon-2022', 'usitc-neon-pe-2022', 'usitc-taiwan-2023', 'fabm-upw', 'tsmc-sr-2024-water', 'tsmc-ar-2025', 'semieng-cycle-time', 'branch-euv']" />
 
 <SeeAlso title="See also" :links="[
   { text: 'The chokepoint map', href: '/en/gargalos', note: 'the concentration of each step' },

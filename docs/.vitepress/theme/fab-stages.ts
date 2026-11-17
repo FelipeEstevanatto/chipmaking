@@ -33,7 +33,7 @@ export const READOUT_LABELS: Record<string, { pt: string; en: string }> = {
   gpc: { pt: 'Por ciclo', en: 'Per cycle' },
   film: { pt: 'Filme', en: 'Film' },
   spin: { pt: 'Rotação', en: 'Spin' },
-  resist: { pt: 'Fotoresistor', en: 'Photoresist' },
+  resist: { pt: 'Fotorresiste', en: 'Photoresist' },
   bake: { pt: 'Recozimento', en: 'Bake' },
   wavelength: { pt: 'Comprimento de onda', en: 'Wavelength' },
   dose: { pt: 'Dose', en: 'Dose' },
@@ -157,14 +157,14 @@ export const FAB_STAGES: FabStage[] = [
       { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
       { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
       { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
-      { id: 'resist', label: { pt: 'Fotoresistor', en: 'Photoresist' }, role: 'add' },
+      { id: 'resist', label: { pt: 'Fotorresiste', en: 'Photoresist' }, role: 'add' },
     ],
     title: {
       pt: 'O desenho vira máscara',
       en: 'The drawing becomes a mask',
     },
     caption: {
-      pt: 'Uma gota de fotoresistor cai no centro e o wafer gira para espalhá-la numa película fina. Depois a máscara desce, a luz ultravioleta imprime o padrão e a revelação dissolve o que foi exposto. A luz desenhada aqui é o DUV de 193 nm.',
+      pt: 'Uma gota de fotorresiste cai no centro e o wafer gira para espalhá-la numa película fina. Depois a máscara desce, a luz ultravioleta imprime o padrão e a revelação dissolve o que foi exposto. A luz desenhada aqui é o DUV de 193 nm.',
       en: 'A drop of photoresist lands at the centre and the wafer spins to spread it into a thin film. Then the mask comes down, ultraviolet light prints the pattern and development dissolves what was exposed. The light drawn here is the 193 nm DUV line.',
     },
     note: {
@@ -185,7 +185,7 @@ export const FAB_STAGES: FabStage[] = [
       { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
       { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
       { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
-      { id: 'resist', label: { pt: 'Fotoresistor', en: 'Photoresist' }, role: 'carry' },
+      { id: 'resist', label: { pt: 'Fotorresiste', en: 'Photoresist' }, role: 'carry' },
       { id: 'trench', label: { pt: 'Trincheira', en: 'Trench' }, role: 'add' },
     ],
     title: {
@@ -214,7 +214,7 @@ export const FAB_STAGES: FabStage[] = [
       { id: 'si', label: { pt: 'Silício', en: 'Silicon' }, role: 'carry' },
       { id: 'oxide', label: { pt: 'SiO₂', en: 'SiO₂' }, role: 'carry' },
       { id: 'film', label: { pt: 'Filme', en: 'Film' }, role: 'carry' },
-      { id: 'resist', label: { pt: 'Fotoresistor', en: 'Photoresist' }, role: 'carry' },
+      { id: 'resist', label: { pt: 'Fotorresiste', en: 'Photoresist' }, role: 'carry' },
       { id: 'doped', label: { pt: 'Região dopada', en: 'Doped region' }, role: 'add' },
     ],
     title: {

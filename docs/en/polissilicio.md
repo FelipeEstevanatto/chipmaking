@@ -343,7 +343,7 @@ In the end the map turned geopolitical. Outside China, the last major project wa
 
 ### A note on the present
 
-**2025** brought an attempted price recovery. The consultancy TrendForce projected polysilicon at CNY 45/kg for the second quarter, with modules at CNY 0.70/W and TOPCon cells rising about 1.7% month on month <Cite id="trendforce-2025" />.
+2025 brought an attempted price recovery. The consultancy TrendForce projected polysilicon at CNY 45/kg for the second quarter, with modules at CNY 0.70/W and TOPCon cells rising about 1.7% month on month <Cite id="trendforce-2025" />.
 
 The rise came from an artificial installation rush in China ahead of a regulatory change, not from structural demand. TrendForce itself already expected the reversal in the third quarter <Cite id="trendforce-2025" />.
 

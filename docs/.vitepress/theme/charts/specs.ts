@@ -1,4 +1,5 @@
 import type { ChartLabel, ChartSpec } from './types'
+import { CHOKEPOINTS } from '../chokepoints'
 
 /** A blank category tick: the bathtub chart names only the two ends of its time axis. */
 const blank: ChartLabel = { pt: '', en: '' }
@@ -96,42 +97,29 @@ export const CHARTS: Record<string, ChartSpec> = {
     horizontal: true,
     xLabel: { pt: 'Participação do líder (%)', en: 'Leader share (%)' },
     yLabel: { pt: '', en: '' },
-    labels: [
-      { pt: 'Quartzo HPQ (Spruce Pine)', en: 'HPQ quartz (Spruce Pine)' },
-      { pt: 'Silício metalúrgico (China)', en: 'Metallurgical silicon (China)' },
-      { pt: 'Polissilício (China)', en: 'Polysilicon (China)' },
-      { pt: 'Wafers 300 mm (cinco maiores)', en: '300 mm wafers (five largest)' },
-      { pt: 'Neônio, oferta mundial (Ucrânia)', en: 'Neon, world supply (Ukraine)' },
-      { pt: 'Litografia EUV (ASML)', en: 'EUV lithography (ASML)' },
-    ],
+    // Read from `chokepoints.ts`, the one home of the list the gargalos page also renders as a map.
+    labels: CHOKEPOINTS.map((c) => c.chartLabel),
     datasets: [
       {
         pt: 'Valor ou piso',
         en: 'Value or lower bound',
         color: '#2b6cb0',
         grouped: false,
-        data: [70, 87, 90, 75, 50, 100],
+        data: CHOKEPOINTS.map((c) => c.share),
       },
       {
         pt: 'Faixa publicada',
         en: 'Published range',
         color: '#90cdf4',
         grouped: false,
-        data: [
-          [70, 90],
-          null,
-          [90, 100],
-          null,
-          null,
-          null,
-        ],
+        data: CHOKEPOINTS.map((c) => c.range ?? null),
       },
     ],
     caption: {
       pt: 'Quanto o líder de cada etapa detém, segundo a fonte de cada linha. As definições não são idênticas (faixa, participação em unidades, participação em volume), e por isso as barras se leem como ordem de grandeza, não como comparação exata. A barra escura vai até o valor ou o piso citado; o trecho claro acrescenta a faixa publicada onde a fonte dá um intervalo.',
       en: 'What the leader of each stage holds, according to each row\'s own source. The definitions are not identical (range, unit share, volume share), so the bars read as orders of magnitude rather than an exact comparison. The dark bar reaches the value or the lower bound; the light segment adds the published range where the source gives an interval.',
     },
-    sourceIds: ['sibelco-hpq', 'usgs-mcs-2026', 'bernreuter-market', 'nikkei-wafer-share', 'usitc-neon-2022', 'asml-euv-products'],
+    sourceIds: [...new Set(CHOKEPOINTS.flatMap((c) => c.sourceIds))],
     slug: 'chokepoint-share',
   },
 
@@ -607,6 +595,27 @@ export const CHARTS: Record<string, ChartSpec> = {
     },
     sourceIds: ['jarkin-2021-part2', 'icsc-tcs', 'icsc-stc'],
     slug: 'chlorosilane-boiling-points',
+  },
+  'tsmc-water-per-layer': {
+    id: 'tsmc-water-per-layer',
+    type: 'bar',
+    xLabel: { pt: 'Ano', en: 'Year' },
+    yLabel: { pt: 'Litros por camada de máscara', en: 'Litres per mask layer' },
+    labels: [2020, 2021, 2022, 2023, 2024, 2025],
+    datasets: [
+      {
+        pt: 'Água por camada de máscara',
+        en: 'Water per mask layer',
+        color: '#2b6cb0',
+        data: [128.4, 119.9, 137.3, 176.4, 161.0, 153.3],
+      },
+    ],
+    caption: {
+      pt: 'Consumo de água da TSMC por camada de máscara, em litros por wafer equivalente de 12 polegadas, como a empresa publica. O indicador conta a água de torneira captada por todas as fábricas da empresa. Os valores de 2020 a 2024 vêm do relatório de sustentabilidade de 2024, e o de 2025, do relatório anual de 2025.',
+      en: 'TSMC water use per mask layer, in litres per 12-inch equivalent wafer, as the company publishes it. The indicator counts the tap water drawn by all of the company\u2019s fabs. The 2020 to 2024 values come from the 2024 sustainability report, and the 2025 value from the 2025 annual report.',
+    },
+    sourceIds: ['tsmc-sr-2024-water', 'tsmc-ar-2025'],
+    slug: 'tsmc-water-per-layer',
   },
 }
 

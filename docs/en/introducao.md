@@ -32,6 +32,12 @@ The USGS has published silicon metal and ferrosilicon separately since the 2024 
 
 Silicon is the second most abundant element in the Earth's crust and can be mined from many sources, as oxide (silica) in sand, quartz and flint, and as silicates in feldspar and mica. The industrial route is mining quartz (SiO₂) and reducing it with carbon in an arc furnace.
 
+The chapters that follow go from the 300 mm wafer down to features a few nanometres wide. The ruler below puts those sizes side by side.
+
+<ClientOnly>
+  <ScaleExplorer />
+</ClientOnly>
+
 <SeeAlso title="See also" :links="[
   { text: 'Mining & MG-Si', href: '/en/mineracao-mg-si', note: 'the first industrial step after quartz' },
   { text: 'Glossary', href: '/en/glossario', note: 'the difference between MG-Si, polysilicon and EG-Si' },

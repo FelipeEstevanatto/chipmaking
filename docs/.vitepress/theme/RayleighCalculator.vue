@@ -62,13 +62,12 @@ const text = (v: { pt: string; en: string }) => (isEnglish.value ? v.en : v.pt)
   <div class="rayleigh-calc" role="group" :aria-label="t.title">
     <p class="rayleigh-calc__title">{{ t.title }}</p>
 
-    <div class="rayleigh-calc__presets" role="radiogroup" :aria-label="t.scanner">
+    <div class="rayleigh-calc__presets" role="group" :aria-label="t.scanner">
       <button
         v-for="(p, i) in RAYLEIGH_PRESETS"
         :key="p.id"
         type="button"
-        role="radio"
-        :aria-checked="selected === i"
+        :aria-pressed="selected === i"
         :class="['rayleigh-calc__preset', { 'is-active': selected === i }]"
         @click="selected = i"
       >
@@ -157,7 +156,7 @@ const text = (v: { pt: string; en: string }) => (isEnglish.value ? v.en : v.pt)
 }
 .rayleigh-calc__params dt {
   font-size: 0.78rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 .rayleigh-calc__params dd {
   margin: 0;
@@ -181,7 +180,7 @@ const text = (v: { pt: string; en: string }) => (isEnglish.value ? v.en : v.pt)
 .rayleigh-calc__compare-label {
   margin: 0 0 0.4rem;
   font-size: 0.78rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 .rayleigh-calc__bars {
   list-style: none;
@@ -217,6 +216,6 @@ const text = (v: { pt: string; en: string }) => (isEnglish.value ? v.en : v.pt)
 .rayleigh-calc__note {
   margin: 0;
   font-size: 0.8rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 </style>

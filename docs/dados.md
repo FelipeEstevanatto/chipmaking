@@ -76,6 +76,7 @@ Cada gráfico do site existe também como arquivo de dados, gerado a partir da m
 - [Gap de banda × constante de rede](/data/band-gap.csv)
 - [Concentração por etapa](/data/chokepoint-share.csv)
 - [Eficiência fotovoltaica](/data/pv-efficiency.csv)
+- [Água da TSMC por camada de máscara](/data/tsmc-water-per-layer.csv)
 - [Curva da banheira](/data/bathtub.csv)
 - [Classificação por frequência](/data/binning-bins.csv)
 - [Crescimento do óxido térmico](/data/deal-grove-oxidation.csv)

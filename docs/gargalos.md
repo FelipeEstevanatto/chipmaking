@@ -23,14 +23,9 @@ As seções seguem essa ordem.
   <DataChart chart="chokepoint-share" />
 </ClientOnly>
 
-| Etapa | Quem domina | Concentração | O que quebraria |
-| --- | --- | --- | --- |
-| Quartzo de alta pureza (HPQ) | Spruce Pine, EUA (Sibelco e The Quartz Corp) | **70 a 90%** do quartzo de alta pureza do mundo <Cite id="construction-physics-spruce-pine" /> | Os cadinhos de [crescimento Czochralski](/fabricacao-wafers) de toda a indústria, e sem cadinho não há lingote |
-| Silício metalúrgico (MG-Si) | China | **cerca de 87%** da produção mundial (4.800 de 5.500 mil t em 2024) <Cite id="usgs-mcs-2026" /> | A carga dos fornos de refino a montante | 
-| Polissilício | China | **mais de 90%** do volume global em 2023 <Cite id="bernreuter-market" /> | O insumo tanto do wafer quanto da célula solar |
-| Wafers de silício | Japão (Shin-Etsu e SUMCO) | **44,1%** para as duas maiores; cinco maiores somam cerca de **três quartos** <Cite id="nikkei-wafer-share" /> | A lâmina de partida de toda fab do planeta |
-| Litografia EUV | ASML (Holanda) | **fornecedora única** <Cite id="asml-euv-products" /> | As camadas críticas dos nós de ponta |
-| Neônio | Ucrânia | **cerca de metade** do neônio mundial em 2022, e até **90%** das importações dos EUA <Cite id="usitc-neon-2022" /> | Os lasers de excímero da [litografia DUV](/fotolitografia) |
+<ClientOnly>
+  <ChokepointMap />
+</ClientOnly>
 
 O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo padrão do gargalo de Spruce Pine: um insumo barato, pouco visível e insubstituível a curto prazo.
 

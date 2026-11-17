@@ -1,12 +1,12 @@
 ---
 title: Fotolitografia
-description: Como o scanner transporta a luz da fonte ao wafer, o fotoresistor, o realce de resolução, a imersão e o passo a passo do processo.
+description: Como o scanner transporta a luz da fonte ao wafer, o fotorresiste, o realce de resolução, a imersão e o passo a passo do processo.
 dataAsOf: 2025
 ---
 
 # Fotolitografia
 
-A fotolitografia é a etapa que desenha o circuito no wafer. Máquinas da ASML (origem na Philips), com precisão nanométrica, alinham o wafer em equipamentos que projetam luz ultravioleta através de uma máscara (retículo) com o circuito gravado; o fotoresistor reage apenas nos pontos selecionados.
+A fotolitografia é a etapa que desenha o circuito no wafer. Máquinas da ASML (origem na Philips), com precisão nanométrica, alinham o wafer em equipamentos que projetam luz ultravioleta através de uma máscara (retículo) com o circuito gravado; o fotorresiste reage apenas nos pontos selecionados.
 
 A mesa de posicionamento do wafer pesa cerca de 15 kg e pode acelerar com força de até 20 G (cerca de três vezes a aceleração típica de um carro de Fórmula 1), movendo-se com precisão de nanômetros para multi-padrões: vários retículos em sequência para linhas menores que o permitido por uma única exposição. Qualquer vibração indesejada pode destruir o padrão.
 
@@ -23,7 +23,7 @@ Exposição EUV em wafer, <a href="https://www.asml.com/" target="_blank" rel="n
 O capítulo percorre o caminho da luz, da fonte ao wafer, em dez partes:
 
 1. [Como a luz chega ao wafer](#como-a-luz-chega-ao-wafer): o caminho óptico da fonte ao wafer.
-2. [O fotoresistor](#o-fotoresistor): a resina que muda de solubilidade onde a luz bate.
+2. [O fotorresiste](#o-fotorresiste): a resina que muda de solubilidade onde a luz bate.
 3. [Passo a passo do processo](#passo-a-passo-do-processo): as oito etapas do ciclo, do revestimento à remoção.
 4. [Realce de resolução e multi-padrão](#realce-de-resolucao-e-multi-padrao): os truques ópticos e as exposições repetidas.
 5. [Litografia por imersão](#litografia-por-imersao): o filme de água que aumentou a abertura numérica.
@@ -47,14 +47,14 @@ O retículo não tem o padrão em tamanho final: ele é **maior**, e a óptica o
 
 Duas peças fora do eixo óptico tornam o desenho possível. A primeira é a mesa do wafer, que se move de campo em campo com precisão de nanômetros e por isso é medida continuamente por interferometria a laser; a segunda é o bloco de granito, sólido e pesado, que absorve a vibração antes que ela chegue ao padrão.
 
-## O fotoresistor
+## O fotorresiste
 
-O fotoresistor é um polímero sensível à luz: a exposição muda a sua solubilidade, e a revelação transforma essa mudança química em uma máscara física. Em resists positivos a região exposta é a que se dissolve; em negativos, o oposto.
+O fotorresiste é um polímero sensível à luz: a exposição muda a sua solubilidade, e a revelação transforma essa mudança química em uma máscara física. Em resists positivos a região exposta é a que se dissolve; em negativos, o oposto.
 
 Os resists modernos são **quimicamente amplificados** (*chemically amplified resist*, CAR): um único fóton gera um catalisador que dispara muitas reações, o que permite expor com doses baixas, e é isso que torna viável a vazão atual. Em troca, o filme fica mais sensível a contaminação e a efeitos de borda.
 
-<DiagramFigure src="/assets/photoresist-spin-coating.jpg" alt="Fotoresistor sendo espalhado por rotação sobre um wafer de silício">
-Fotoresistor sendo espalhado por rotação sobre um wafer, <a href="https://commons.wikimedia.org/wiki/File:Photoresist_spin_coating.jpg" target="_blank" rel="noopener noreferrer">Photoresist spin coating</a>, Sei (CC BY-SA 4.0), Wikimedia Commons.
+<DiagramFigure src="/assets/photoresist-spin-coating.jpg" alt="Fotorresiste sendo espalhado por rotação sobre um wafer de silício">
+Fotorresiste sendo espalhado por rotação sobre um wafer, <a href="https://commons.wikimedia.org/wiki/File:Photoresist_spin_coating.jpg" target="_blank" rel="noopener noreferrer">Photoresist spin coating</a>, Sei (CC BY-SA 4.0), Wikimedia Commons.
 </DiagramFigure>
 
 ## Passo a passo do processo
@@ -66,7 +66,7 @@ As oito etapas do ciclo, do substrato limpo ao padrão gravado no silício. Cada
 Executado em sequência, com controle rigoroso de temperatura e contaminantes <Cite id="wikipedia-photolithography" />:
 
 1. **Limpeza e preparação do substrato:** um cozimento de desidratação tira a água da superfície, tipicamente por volta de 150 °C durante dez minutos. Em seguida o promotor de adesão HMDS (hexametildisilazano) reage com o óxido nativo e deixa a superfície hidrofóbica, o que impede o revelador de se infiltrar por baixo do resiste.
-2. **Revestimento (*spin coating*):** o fotoresistor cai no centro do wafer e é espalhado por rotação a milhares de RPM até virar um filme uniforme, de espessura micrométrica ou nanométrica.
+2. **Revestimento (*spin coating*):** o fotorresiste cai no centro do wafer e é espalhado por rotação a milhares de RPM até virar um filme uniforme, de espessura micrométrica ou nanométrica.
 3. **Pré-cozimento (*soft bake*): placa quente a 90–100 °C** por 30 a 60 segundos, para o solvente sair e o filme se estabilizar.
 4. **Alinhamento e exposição:** o scanner posiciona o retículo sobre o padrão que já está no wafer e expõe. A luz é de 193 nm no **DUV** e de 13,5 nm no **EUV**; o cromo da máscara bloqueia, e só as aberturas mudam a solubilidade da resina.
 5. **Cozimento pós-exposição (PEB):** 100–130 °C. Nas resinas quimicamente amplificadas é aqui que a reação catalisada pelo ácido acontece, e não durante a exposição. O cozimento também reduz as ondas estacionárias que a interferência da luz deixa nas paredes do resiste.
@@ -76,7 +76,7 @@ Executado em sequência, com controle rigoroso de temperatura e contaminantes <C
 
 Os oito passos se dividem em duas máquinas. O track de coater/developer faz os cozimentos, o revestimento, a revelação e o enxágue; o scanner faz a exposição. Os dois ficam instalados lado a lado e ligados um ao outro, e o wafer passa de um para o outro sem sair do controle do sistema <Cite id="wikipedia-photolithography" />. A revelação é feita wafer a wafer, e não em lote, para que cada um receba a mesma dose.
 
-<DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Máquina automatizada de revestimento e revelação de fotoresistor dentro de uma sala iluminada por luz amarela">
+<DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Máquina automatizada de revestimento e revelação de fotorresiste dentro de uma sala iluminada por luz amarela">
 Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amarela. Essa luz não tem componente ultravioleta, então o resiste não é exposto enquanto é manuseado, <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
 </DiagramFigure>
 
@@ -84,7 +84,7 @@ Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amare
 
 Existe um limite físico para o que uma exposição consegue desenhar, e a indústria passou décadas contornando-o por software e por processo em vez de trocar a fonte de luz: máscaras de deslocamento de fase, iluminação fora de eixo, correção óptica de proximidade (OPC) e, quando nada disso bastou, expor mais de uma vez <Cite id="asianometry-euv" />.
 
-A ideia de duplicação de linhas (*line doubling*) é a versão mais direta do multi-padrão: o primeiro padrão é gravado na camada dura, o segundo é exposto no fotoresistor entre os traços que já existem e, na gravação seguinte, as duas máscaras se somam: o número de traços dobra sem que nenhuma exposição tenha ficado mais fina.
+A ideia de duplicação de linhas (*line doubling*) é a versão mais direta do multi-padrão: o primeiro padrão é gravado na camada dura, o segundo é exposto no fotorresiste entre os traços que já existem e, na gravação seguinte, as duas máscaras se somam: o número de traços dobra sem que nenhuma exposição tenha ficado mais fina.
 
 <DiagramFigure src="/assets/line-doubling.svg" alt="Sequência de duplicação de linhas: segunda exposição entre traços já gravados e gravação da camada com as duas máscaras somadas">
 Duplicação de linhas: o padrão final sai da soma de duas exposições, <a href="https://commons.wikimedia.org/wiki/File:Line_doubling.svg" target="_blank" rel="noopener noreferrer">Line doubling</a>, Wdwd (CC BY 3.0), Wikimedia Commons (baseado em Guiding light, en.Wikipedia).
@@ -92,7 +92,7 @@ Duplicação de linhas: o padrão final sai da soma de duas exposições, <a hre
 
 ## Litografia por imersão
 
-O truque que segurou a litografia óptica por mais de uma década foi trocar o ar entre a última lente e o wafer por água purificada <Cite id="asml-immersion" />. A 193 nm a água tem índice de refração de 1,44, então o comprimento de onda efetivo cai de 193 nm para cerca de 134 nm <Cite id="smith-water-immersion-2003" />. A troca ainda exigiu materiais novos em todos os níveis da pilha de imagem, da fotomáscara e do fluido de imersão às camadas de topo (*topcoats*) e aos fotoresistores <Cite id="french-tran-2009" />.
+O truque que segurou a litografia óptica por mais de uma década foi trocar o ar entre a última lente e o wafer por água purificada <Cite id="asml-immersion" />. A 193 nm a água tem índice de refração de 1,44, então o comprimento de onda efetivo cai de 193 nm para cerca de 134 nm <Cite id="smith-water-immersion-2003" />. A troca ainda exigiu materiais novos em todos os níveis da pilha de imagem, da fotomáscara e do fluido de imersão às camadas de topo (*topcoats*) e aos fotorresistes <Cite id="french-tran-2009" />.
 
 <DiagramFigure src="/assets/immersion-lithography.svg" alt="Comparação entre exposição a seco e exposição com água entre a última lente e o wafer">
 A última lente, a água e o wafer na litografia por imersão, <a href="https://commons.wikimedia.org/wiki/File:Immersion_lithography_illustration.svg" target="_blank" rel="noopener noreferrer">Immersion lithography illustration</a>, Oleg Alexandrov (domínio público), Wikimedia Commons.

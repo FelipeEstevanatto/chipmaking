@@ -32,6 +32,12 @@ O USGS publica silício metálico e ferrossilício separadamente desde a ediçã
 
 O silício é o segundo elemento mais abundante na crosta terrestre e pode ser minerado de diversas fontes, como óxido (sílica), na areia, no quartzo e no sílex, e como silicatos, nos feldspatos e nas micas. A rota industrial é a mineração do quartzo (SiO₂) e a sua redução carbotérmica num forno de arco.
 
+Os capítulos a seguir vão do wafer de 300 mm até estruturas de poucos nanômetros. A régua abaixo põe esses tamanhos lado a lado.
+
+<ClientOnly>
+  <ScaleExplorer />
+</ClientOnly>
+
 <SeeAlso :links="[
   { text: 'Mineração e MG-Si', href: '/mineracao-mg-si', note: 'primeiro passo industrial após o quartzo' },
   { text: 'Glossário', href: '/glossario', note: 'diferença entre MG-Si, polissilício e EG-Si' },

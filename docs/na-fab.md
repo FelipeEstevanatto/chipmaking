@@ -140,7 +140,7 @@ O RIE (*reactive ion etching*) combina as duas coisas e domina a indústria. Ele
 
 Nenhuma corrosão é perfeitamente seletiva. A **seletividade** é a razão entre a velocidade de corrosão do material desejado e a do material que deve ficar, normalmente a máscara ou a camada de baixo.
 
-O DRIE (*deep reactive ion etching*) usa o processo Bosch, que alterna uma etapa de corrosão e uma de passivação. A máscara de fotoresiste aguenta uma seletividade de 150:1 e a de óxido, 450:1 <Cite id="bosch-drie" />, o suficiente para cavar mais de 400 µm de silício sob uma máscara de poucos micrômetros. O mesmo processo alcança razão de aspecto de 80:1 em capacidade, 60:1 em desenvolvimento e 40:1 em produção em massa <Cite id="bosch-drie" />, e corta as trincheiras do 3D NAND e as estruturas dos MEMS.
+O DRIE (*deep reactive ion etching*) usa o processo Bosch, que alterna uma etapa de corrosão e uma de passivação. A máscara de fotorresiste aguenta uma seletividade de 150:1 e a de óxido, 450:1 <Cite id="bosch-drie" />, o suficiente para cavar mais de 400 µm de silício sob uma máscara de poucos micrômetros. O mesmo processo alcança razão de aspecto de 80:1 em capacidade, 60:1 em desenvolvimento e 40:1 em produção em massa <Cite id="bosch-drie" />, e corta as trincheiras do 3D NAND e as estruturas dos MEMS.
 
 ### ALE
 
@@ -172,7 +172,7 @@ A solução industrial é inclinar o wafer cerca de 7° em relação ao feixe <C
 
 Um transistor MOS simples dos anos 1970 precisava de 6 a 8 implantações. Um CMOS moderno com memória embutida pode precisar de 35 <Cite id="axcelis-implant" />. Uma fábrica grande processa até 50.000 wafers por mês, com 20 a 30 implantações por wafer, o que exige cerca de 20 implantadores trabalhando em paralelo <Cite id="axcelis-implant" />.
 
-Cada implantação é uma volta completa do laço: litografia, implantação, remoção do fotoresiste e, normalmente, uma medida.
+Cada implantação é uma volta completa do laço: litografia, implantação, remoção do fotorresiste e, normalmente, uma medida.
 
 ### Dano e recozimento
 

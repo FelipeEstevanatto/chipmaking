@@ -4,11 +4,19 @@ import { useIsEnglish } from './locale'
 import Cite from './Cite.vue'
 import { YIELD_PRESETS, type YieldPreset } from './yield-presets'
 import {
+  ALPHA_RANGE,
+  DENSITY_MARKS,
+  DENSITY_STEPS,
+  WAFER_PRICES,
+  WAFER_PRICE_SOURCE,
+  WAFER_PRICE_YEAR,
+  type DensityMark,
+} from './yield-references'
+import {
   ALPHAS,
   AREA_MAX,
   AREA_MIN,
   AREA_STEP,
-  DEFECT_DENSITIES,
   DIE_COLORS,
   WAFER_MM,
   clusteredYield,
@@ -41,11 +49,12 @@ const isEnglish = useIsEnglish()
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const area = ref(400)
-/** Index into `DEFECT_DENSITIES`; 0.25 cm⁻² is the middle of the set the chart above plots. */
-const densityIndex = ref(2)
+/** Index into `DENSITY_STEPS`; 0.25 cm⁻² is the middle of the set the chart above plots. */
+const densityIndex = ref(DENSITY_STEPS.indexOf(0.25))
 const alphaIndex = ref(ALPHAS.indexOf(1))
+const priceIndex = ref(WAFER_PRICES.findIndex((row) => row.node === '7 nm'))
 
-const density = computed(() => DEFECT_DENSITIES[densityIndex.value])
+const density = computed(() => DENSITY_STEPS[densityIndex.value])
 const alpha = computed(() => ALPHAS[alphaIndex.value])
 const lambda = computed(() => lambdaFor(area.value, density.value))
 const dies = computed(() => dieGrid(area.value))
@@ -55,7 +64,10 @@ const dies = computed(() => dieGrid(area.value))
  * three indices are packed into one integer, and the area keeps its half millimetres.
  */
 const seed = computed(
-  () => Math.round(area.value * 100) * 1000 + alphaIndex.value * 10 + densityIndex.value,
+  () =>
+    Math.round(area.value * 100) * 1000 +
+    alphaIndex.value * 10 +
+    densityIndex.value,
 )
 
 const sample = computed(() => sampleWafer(dies.value, lambda.value, alpha.value, seed.value))
@@ -111,10 +123,60 @@ function isActive(preset: YieldPreset): boolean {
   return Math.abs(area.value - preset.areaMm2) < 0.01
 }
 
+const activePreset = computed(() => YIELD_PRESETS.find(isActive) ?? null)
+const markFor = (id: string | null) => DENSITY_MARKS.find((m) => m.id === id) ?? null
+const activeMark = computed(() => (activePreset.value ? markFor(activePreset.value.densityMark) : null))
+
+/** A preset sets the area, the nearest published D₀ and the nearest priced node. */
+function choosePreset(preset: YieldPreset) {
+  area.value = preset.areaMm2
+  const mark = markFor(preset.densityMark)
+  if (mark) densityIndex.value = DENSITY_STEPS.indexOf(mark.d0)
+  priceIndex.value = WAFER_PRICES.findIndex((row) => row.node === preset.priceNode)
+}
+
+/** The mark the slider sits on, if any, so the dropdown follows the slider as well as driving it. */
+const markId = computed({
+  get: () => DENSITY_MARKS.find((m) => m.d0 === density.value)?.id ?? '',
+  set: (id: string) => {
+    const mark = markFor(id)
+    if (mark) densityIndex.value = DENSITY_STEPS.indexOf(mark.d0)
+  },
+})
+
+const local = (value: { pt: string; en: string }) => (isEnglish.value ? value.en : value.pt)
+const markLabel = (mark: DensityMark) => `${mark.process} ${local(mark.short)} (${mark.year})`
+
+/** PT writes US$ 16.988 where EN writes $16,988. */
+function formatUsd(value: number): string {
+  const digits = value >= 100 ? 0 : 2
+  const text = value.toLocaleString(isEnglish.value ? 'en-US' : 'pt-BR', {
+    minimumFractionDigits: digits,
+    maximumFractionDigits: digits,
+  })
+  return isEnglish.value ? `$${text}` : `US$ ${text}`
+}
+
+const waferPrice = computed(() => WAFER_PRICES[priceIndex.value])
+const goodCount = computed(() => clustered.value * dies.value.length)
+const costPerGood = computed(() => (goodCount.value >= 1 ? waferPrice.value.usd / goodCount.value : null))
+
 const text = computed(() => {
   const en = isEnglish.value
   return {
     presets: en ? 'Compare with published dies:' : 'Comparar com dies publicados:',
+    nearest: en ? 'nearest published D₀' : 'D₀ publicada mais próxima',
+    noMark: en ? 'no D₀ published for this process' : 'sem D₀ publicada para este processo',
+    marks: en ? 'Published D₀' : 'D₀ publicada',
+    pick: en ? 'none at this value' : 'nenhuma neste valor',
+    alphaRange: en
+      ? `published ${ALPHA_RANGE.min}–${ALPHA_RANGE.max}`
+      : `publicado ${String(ALPHA_RANGE.min).replace('.', ',')}–${ALPHA_RANGE.max}`,
+    price: en ? `Wafer price, ${WAFER_PRICE_YEAR} (CSET)` : `Preço do wafer, ${WAFER_PRICE_YEAR} (CSET)`,
+    perWafer: en ? 'per wafer' : 'por wafer',
+    perGood: en ? 'per good die' : 'por die bom',
+    noGood: en ? 'no good die expected' : 'nenhum die bom esperado',
+    refs: en ? 'Published D₀, wafer prices and the α range:' : 'D₀ publicadas, preços de wafer e faixa de α:',
     area: en ? 'Die area' : 'Área do die',
     density: en ? 'Defect density (D₀)' : 'Densidade de defeitos (D₀)',
     perCm2: en ? 'defect/cm²' : 'defeito/cm²',
@@ -122,7 +184,7 @@ const text = computed(() => {
     uniform: en ? 'uniform (Poisson)' : 'uniforme (Poisson)',
     clumped: en ? 'clumped' : 'agrupado',
     legend: en ? 'defects on the die' : 'defeitos no die',
-    dies: en ? 'dies per wafer' : 'dies por wafer',
+    dies: en ? 'dies per 300 mm (12 in) wafer' : 'dies por wafer de 300 mm (12 pol.)',
     mean: en ? 'mean per die (λ)' : 'média por die (λ)',
     poisson: 'Poisson',
     clustered: en ? 'negative binomial' : 'binomial negativo',
@@ -132,8 +194,8 @@ const text = computed(() => {
       ? 'At α = ∞ the negative binomial is the Poisson law itself, so the two curves coincide.'
       : 'Com α = ∞ o binomial negativo é o próprio Poisson, e as duas curvas coincidem.',
     note: en
-      ? 'The map is one seeded draw of the model, die by die; the two numbers are that model’s curve, not a count of the drawing. A preset carries only the published area of the die, and the density is yours to set: holding it equal is what makes two chips comparable.'
-      : 'O mapa é um sorteio do modelo, die a die; os dois números são a curva desse modelo, não uma contagem do desenho. Um preset traz apenas a área publicada do die, e a densidade é você quem escolhe; mantê-la igual dos dois lados é o que torna dois chips comparáveis.',
+      ? 'The map is one seeded draw of the model, die by die; the two numbers are that model’s curve, not a count of the drawing. A preset sets the die’s published area and the nearest D₀ a foundry has published for its process; holding the density equal is what makes two chips comparable.'
+      : 'O mapa é um sorteio do modelo, die a die; os dois números são a curva desse modelo, não uma contagem do desenho. Um preset aplica a área publicada do die e a D₀ mais próxima que uma foundry publicou para o seu processo; manter a densidade igual dos dois lados é o que torna dois chips comparáveis.',
     areas: en ? 'Die areas as published by their makers:' : 'Áreas dos dies publicadas por quem os desenhou:',
     models: en ? 'Models:' : 'Modelos:',
     canvas: en
@@ -210,12 +272,21 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
           :aria-pressed="isActive(preset)"
           :aria-label="presetLabel(preset)"
           :title="presetLabel(preset)"
-          @click="area = preset.areaMm2"
+          @click="choosePreset(preset)"
         >
           <span class="yield-explorer__preset-product">{{ preset.product }}</span>
           <span class="yield-explorer__preset-area">{{ preset.die }} · {{ formatArea(preset.areaMm2) }}</span>
         </button>
       </div>
+      <p v-if="activePreset" class="yield-explorer__preset-info">
+        {{ activePreset.die }} · {{ activePreset.process }} <Cite :id="activePreset.processCite" /> ·
+        <template v-if="activeMark">
+          {{ text.nearest }}: {{ activeMark.process }}, {{ local(activeMark.stated) }} ({{ activeMark.year }})
+          <Cite :id="activeMark.cite" />
+          <template v-if="activeMark.note"> · {{ local(activeMark.note) }} <Cite :id="activeMark.note.cite" /></template>
+        </template>
+        <template v-else>{{ text.noMark }}</template>
+      </p>
     </div>
 
     <div class="yield-explorer__grid">
@@ -250,11 +321,18 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
             v-model.number="densityIndex"
             type="range"
             min="0"
-            :max="DEFECT_DENSITIES.length - 1"
+            :max="DENSITY_STEPS.length - 1"
             step="1"
             :aria-valuetext="densityText"
           />
           <span class="yield-explorer__control-value">{{ densityText }}</span>
+        </label>
+        <label class="yield-explorer__marks">
+          <span>{{ text.marks }}</span>
+          <select v-model="markId">
+            <option value="" disabled>{{ text.pick }}</option>
+            <option v-for="mark in DENSITY_MARKS" :key="mark.id" :value="mark.id">{{ markLabel(mark) }}</option>
+          </select>
         </label>
 
         <label class="yield-explorer__control">
@@ -269,9 +347,10 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
           />
           <span class="yield-explorer__control-value">{{ alphaText }}</span>
         </label>
-        <p class="yield-explorer__ends" aria-hidden="true">
-          <span>{{ text.uniform }}</span>
-          <span>{{ text.clumped }}</span>
+        <p class="yield-explorer__ends">
+          <span aria-hidden="true">{{ text.uniform }}</span>
+          <span>{{ text.alphaRange }} <Cite :id="ALPHA_RANGE.cite" /></span>
+          <span aria-hidden="true">{{ text.clumped }}</span>
         </p>
 
         <dl class="yield-explorer__metrics">
@@ -312,6 +391,20 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
         </ul>
 
         <p v-if="!Number.isFinite(alpha)" class="yield-explorer__agree">{{ text.agree }}</p>
+
+        <div class="yield-explorer__cost">
+          <label class="yield-explorer__cost-head">
+            <span>{{ text.price }}</span>
+            <select v-model.number="priceIndex">
+              <option v-for="(row, i) in WAFER_PRICES" :key="row.node" :value="i">{{ row.node }}</option>
+            </select>
+          </label>
+          <p class="yield-explorer__cost-line">
+            <strong>{{ formatUsd(waferPrice.usd) }}</strong> {{ text.perWafer }} <Cite :id="WAFER_PRICE_SOURCE" /> ·
+            <template v-if="costPerGood !== null">≈ <strong>{{ formatUsd(costPerGood) }}</strong> {{ text.perGood }}</template>
+            <template v-else>{{ text.noGood }}</template>
+          </p>
+        </div>
       </div>
     </div>
 
@@ -321,6 +414,9 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
       <Cite id="nvidia-blackwell-whitepaper" />, AMD (Zeppelin) <Cite id="amd-chiplet-economics" />.
       <span class="yield-explorer__models">{{ text.models }}</span>
       <Cite id="leachman-yield" /> <Cite id="murphy-1964" />
+      <span class="yield-explorer__models">{{ text.refs }}</span>
+      <Cite id="cadence-tsmc-2016" /> <Cite id="anandtech-samsung-14nm" /> <Cite id="anandtech-tsmc-d0" />
+      <Cite id="cset-ai-chips" /> <Cite id="bogdanov-clustering" />
     </p>
   </div>
 </template>
@@ -342,7 +438,7 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
   display: block;
   margin-bottom: 0.4rem;
   font-size: 0.78rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .yield-explorer__preset-row {
@@ -388,7 +484,7 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
 
 .yield-explorer__preset-area {
   font-size: 0.7rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
   font-variant-numeric: tabular-nums;
 }
 
@@ -475,7 +571,7 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
   justify-content: space-between;
   margin: -0.4rem 0 0;
   font-size: 0.75rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .yield-explorer__metrics {
@@ -486,7 +582,7 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
 
 .yield-explorer__metrics dt {
   font-size: 0.75rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .yield-explorer__metrics dd {
@@ -522,7 +618,7 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
 
 .yield-explorer__bar-count {
   font-size: 0.72rem;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
   font-variant-numeric: tabular-nums;
 }
 
@@ -566,7 +662,60 @@ watch([area, densityIndex, alphaIndex], () => paint(), { flush: 'post' })
 }
 
 .yield-explorer__models {
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
+}
+
+.yield-explorer__preset-info {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--vp-c-text-2);
+}
+
+.yield-explorer__marks,
+.yield-explorer__cost-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--vp-c-text-2);
+}
+
+.yield-explorer__marks {
+  margin-top: -0.3rem;
+}
+
+.yield-explorer__marks > span,
+.yield-explorer__cost-head > span {
+  white-space: nowrap;
+}
+
+.yield-explorer__marks select,
+.yield-explorer__cost select {
+  min-width: 0;
+  padding: 0.15rem 0.3rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 5px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  font-size: 0.8rem;
+}
+
+.yield-explorer__cost {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+
+.yield-explorer__cost-line {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-1);
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 559px) {

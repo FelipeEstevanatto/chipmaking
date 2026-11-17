@@ -147,7 +147,7 @@ The channel leaves the plane: the vertical fin is wrapped by the gate on three s
 
 Below 20 nm, planar devices lost control. Intel commercialised FinFET at 22 nm (2011): the channel becomes a vertical “fin” and the gate wraps three sides, reducing leakage and allowing drive current to scale with adjacent fins (fin quantization).
 
-**Ivy Bridge** (22 nm, April 2012) was the first high-volume product <Cite id="intel-trigate" />. The architecture dominated every node from 22 nm down to N3 (3 nm), with Samsung moving to GAA at 3 nm.
+Ivy Bridge (22 nm, April 2012) was the first high-volume product <Cite id="intel-trigate" />. The architecture dominated every node from 22 nm down to N3 (3 nm), with Samsung moving to GAA at 3 nm.
 
 ## 2012: FD-SOI (ultra-thin body)
 

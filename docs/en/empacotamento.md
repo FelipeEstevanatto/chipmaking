@@ -134,7 +134,7 @@ Wire bonding won itself a much wider application band, and that is where most of
 
 The limitation of wire bonding is geometric: the pads have to sit on the edge of the die, because that is where the wire leaves from. That limits the number of connections to the perimeter, and the perimeter grows with the square root of the area.
 
-**Flip-chip** solves it by inverting the die. It is mounted face down, and the connection is made by solder bumps or copper pillars distributed across the entire active surface <Cite id="wiley-packaging-ch3" />.
+Flip-chip solves it by inverting the die. It is mounted face down, and the connection is made by solder bumps or copper pillars distributed across the entire active surface <Cite id="wiley-packaging-ch3" />.
 
 <DiagramFigure src="/assets/wirebond-vs-flipchip.svg" alt="Side-by-side comparison: on the left, the die face up with looping wires leaving the edge; on the right, the die face down with solder bumps distributed across the whole area">
 It is a single choice (face up or face down), and it determines how many connections the package can have.
@@ -270,7 +270,7 @@ It runs on two axes. The first is frequency: how much the chip holds within a gi
 
 The Core i7-8700K and Core i7-8086K pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, US\$75 more than the 8700K <Cite id="tomshardware-8086k" />.
 
-**Silicon Lottery** bought processors at retail, measured every unit before reselling it, and published the distribution. In the 8700K batch, 17% of units reached 5.2 GHz; in the 8086K batch, none fell below 5.0 GHz <Cite id="siliconlottery-stats" />.
+Silicon Lottery bought processors at retail, measured every unit before reselling it, and published the distribution. In the 8700K batch, 17% of units reached 5.2 GHz; in the 8086K batch, none fell below 5.0 GHz <Cite id="siliconlottery-stats" />.
 
 <ClientOnly>
   <DataChart chart="binning-bins" />

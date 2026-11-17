@@ -77,6 +77,10 @@ With k < 1, the solid rejects the dopant into the liquid. As the melt shrinks wh
 
 **Gallium** is the extreme case. With k = 0.008 it barely leaves the melt, and resistivity varies by an enormous factor along a single ingot, reducing the usable fraction of the piece <Cite id="lid-hallam" />. That is the price photovoltaics accepted when it swapped boron for gallium, as detailed in the [solar cell chapter](/en/celulas-solares).
 
+<ClientOnly>
+  <IngotDopingExplorer />
+</ClientOnly>
+
 ### RCz and CCz
 
 Two variations attack precisely this uniformity problem.
@@ -190,9 +194,9 @@ Not every silicon wafer ends up in a fab. The photovoltaic industry consumes the
 
 ### Monocrystalline or multicrystalline
 
-Electronics uses single-crystal silicon exclusively, because the quality requirements are far too strict to make exceptions. Photovoltaics uses both <Cite id="saimm" />.
+Electronics uses single-crystal silicon exclusively, because the quality requirements are far too strict to make exceptions, while photovoltaics uses both <Cite id="saimm" />.
 
-**Multicrystalline** silicon delivers lower cell efficiency but costs less, and that trade-off is what explains its presence on the market <Cite id="saimm" />. Instead of pulling a cylindrical ingot, it is produced by block casting (the Bridgman process): silicon is melted in a crucible and the crystal-liquid interface moves upward as cooling is controlled <Cite id="saimm" />.
+Multicrystalline silicon delivers lower cell efficiency but costs less, and that trade-off is what explains its presence on the market <Cite id="saimm" />. Instead of pulling a cylindrical ingot, it is produced by block casting (the Bridgman process): silicon is melted in a crucible and the crystal-liquid interface moves upward as cooling is controlled <Cite id="saimm" />.
 
 <DiagramFigure src="/assets/multicrystalline-silicon-wafer.jpg" alt="A multicrystalline silicon wafer with visible grain boundaries and the iridescence of a thin silicon nitride film">
 The difference is visible to the naked eye: on a multicrystalline wafer the grain boundaries show up as a mosaic, something a monocrystalline wafer never does. Radiotrefoil, <a href="https://commons.wikimedia.org/wiki/File:Multicrystalline_silicon_wafer_with_thin_film_iridescence.jpg" target="_blank" rel="noopener noreferrer">Multicrystalline silicon wafer</a> (CC BY-SA 4.0), Wikimedia Commons.
@@ -225,7 +229,7 @@ The photovoltaic industry has migrated to larger areas over time: from the 10 ×
 | Slicing goal | flatness <Cite id="semi-m1" /> | minimum thickness <Cite id="saimm" /> |
 | Kerf | — | about 30% <Cite id="saimm" /> |
 
-<SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024']" />
+<SourceNote label="Sources" :ids="['zulehner-2000', 'moller-2012', 'runnels-1994', 'kern-1990', 'saimm', 'semi-m1', 'iucr-czochralski', 'nae-teal', 'chm-grown-junction', 'teal-buehler-1952', 'pv-tech-dws', 'asianometry-wafer', 'pv-mfg-cz', 'lid-hallam', 'itrpv-2024', 'pfann-1952']" />
 
 ## Videos
 

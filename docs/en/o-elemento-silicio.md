@@ -92,7 +92,7 @@ Natural silicon is a mixture of three stable isotopes, and the proportion betwee
 
 The variation is small but not zero, and it is measured precisely enough to become a tool: the ratio of silicon isotopes in a sediment records the climate in which it formed <Cite id="elem-ciaaw" />.
 
-For the industry the practical consequence is different. That **~4.7% of ²⁹Si** is not a chemical detail: the ²⁹Si nucleus carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope (not the substance, the isotope) is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+For the industry the practical consequence is different. The ²⁹Si nucleus, about 4.7% of natural silicon, carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope, rather than the element, is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Why the industry uses this element
 

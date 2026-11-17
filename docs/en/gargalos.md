@@ -23,14 +23,9 @@ The sections follow that order.
   <DataChart chart="chokepoint-share" />
 </ClientOnly>
 
-| Step | Who dominates | Concentration | What would break |
-| --- | --- | --- | --- |
-| High-purity quartz (HPQ) | Spruce Pine, USA (Sibelco and The Quartz Corp) | **70 to 90%** of the world's high-purity quartz <Cite id="construction-physics-spruce-pine" /> | The [Czochralski growth](/en/fabricacao-wafers) crucibles of the whole industry, and without a crucible there is no ingot |
-| Metallurgical silicon (MG-Si) | China | **about 87%** of world output (4,800 of 5,500 kt in 2024) <Cite id="usgs-mcs-2026" /> | The charge of the upstream refining furnaces |
-| Polysilicon | China | **more than 90%** of global volume in 2023 <Cite id="bernreuter-market" /> | The feedstock of both the wafer and the solar cell |
-| Silicon wafers | Japan (Shin-Etsu and SUMCO) | **44.1%** for the top two; the top five hold about **three quarters** <Cite id="nikkei-wafer-share" /> | The starting wafer of every fab on the planet |
-| EUV lithography | ASML (Netherlands) | **sole supplier** <Cite id="asml-euv-products" /> | The critical layers of leading-edge nodes |
-| Neon | Ukraine | **about half** of world neon in 2022, and up to **90%** of US imports <Cite id="usitc-neon-2022" /> | The excimer lasers of [DUV lithography](/en/fotolitografia) |
+<ClientOnly>
+  <ChokepointMap />
+</ClientOnly>
 
 Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same pattern as the Spruce Pine chokepoint: a cheap, barely visible and short-term irreplaceable input.
 

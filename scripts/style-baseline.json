@@ -35,14 +35,6 @@
     "style-contrast": 4
   },
   "docs/en/empacotamento.md": {
-    "style-bold": 2,
-    "style-contrast": 1
-  },
-  "docs/en/fabricacao-wafers.md": {
-    "style-bold": 1,
-    "style-kicker": 1
-  },
-  "docs/en/insumos-fab.md": {
     "style-contrast": 1
   },
   "docs/en/mineracao-mg-si.md": {
@@ -55,30 +47,23 @@
     "style-contrast": 1
   },
   "docs/en/polissilicio.md": {
-    "style-bold": 1,
     "style-contrast": 1
   },
   "docs/en/precos-e-valor.md": {
     "style-contrast": 2
   },
   "docs/en/transistores.md": {
-    "style-bold": 2,
+    "style-bold": 1,
     "style-contrast": 2
   },
   "docs/estrutura-wafers.md": {
     "style-contrast": 3
-  },
-  "docs/fabricacao-wafers.md": {
-    "style-kicker": 1
   },
   "docs/fotolitografia.md": {
     "style-contrast": 1
   },
   "docs/historia-fotolitografia.md": {
     "style-contrast": 2
-  },
-  "docs/insumos-fab.md": {
-    "style-contrast": 1
   },
   "docs/mineracao-mg-si.md": {
     "style-contrast": 4
