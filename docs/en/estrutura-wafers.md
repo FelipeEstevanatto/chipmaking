@@ -81,7 +81,7 @@ These wafers carry two flats of different lengths. The primary flat, the longer 
 | 90° | P | &lt;100&gt; |
 | 180° | N | &lt;100&gt; |
 
-There is one exception for 150 mm (100) N-type wafers: the secondary flat sits at 135°, not 180°. The standard records the change with a date: it applies from 1 January 1990, and wafers made before that follow the older convention <Cite id="semi-m1" />.
+There is one exception for 150 mm (100) N-type wafers: the secondary flat sits at 135°; the older convention put it at 180°. The standard records the change with a date: it applies from 1 January 1990, and wafers made before that follow the older convention <Cite id="semi-m1" />.
 
 ### Notch: 200 mm and 300 mm
 
@@ -109,11 +109,11 @@ Diameter and thickness move together, because the slice has to stay stiff as it 
 | 200 mm | 725 µm | notch |
 | 300 mm | 775 µm | notch |
 
-The same standard caps thickness variation (TTV) at 10 µm and the wafer's shape deviation: *bow* and *warp*. For 200 mm, M1 allows up to 65 µm of bow and 75 µm of warp; for 300 mm, bow is left open and warp is **100 µm** <Cite id="semi-m1" />. Supplier datasheets usually quote much tighter numbers, because the standard's limit is the floor a prime wafer must meet, not what the industry actually ships.
+The same standard caps thickness variation (TTV) at 10 µm and the wafer's shape deviation: *bow* and *warp*. For 200 mm, M1 allows up to 65 µm of bow and 75 µm of warp; for 300 mm, bow is left open and warp is **100 µm** <Cite id="semi-m1" />. Supplier datasheets usually quote much tighter numbers, because the standard's limit is the floor a prime wafer must meet; supplier sheets show what the industry actually ships.
 
 ### The 450 mm transition
 
-The diameter stopped growing at 300 mm, and not for want of ambition. The logic is irrefutable: a 450 mm wafer has 2.25× the area of a 300 mm one, which would multiply the number of dies per slice with almost no multiplication of processing cost.
+The diameter stopped growing at 300 mm for economic reasons. The logic is irrefutable: a 450 mm wafer has 2.25× the area of a 300 mm one, which would multiply the number of dies per slice with almost no multiplication of processing cost.
 
 The story actually began earlier, and with a different number. The first 400 mm crystals were pulled in 1995, and the plan was to continue at that size, but in 2000 the industry roadmap (ITRS) fixed the next generation at 450 mm, not 400 <Cite id="eng-450mm" />. The plan called for pilot lines in 2012 and production between 2014 and 2016 <Cite id="eng-450mm" />.
 

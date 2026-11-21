@@ -29,7 +29,7 @@ Plote a taxa de falhas de uma população contra o tempo e o desenho que reapare
 - **Vida útil.** A taxa se estabiliza num patamar aproximadamente constante: é aqui que a maioria dos sistemas passa a maior parte da vida <Cite id="rel-nist-bathtub" />.
 - **Desgaste.** Se o produto viver o suficiente, a taxa volta a subir, porque os materiais se degradam <Cite id="rel-nist-bathtub" />.
 
-O gráfico abaixo é um esquema, não um conjunto de dados: ele existe para fixar as três regiões na cabeça, não para ser medido.
+O gráfico abaixo é um esquema. Ele existe para fixar as três regiões na cabeça; os valores são ilustrativos.
 
 <ClientOnly>
   <DataChart chart="bathtub" />
@@ -70,7 +70,7 @@ Perto do dreno, o campo elétrico acelera os portadores do canal até energias a
 
 O dielétrico de porta não falha de uma vez. Ele acumula defeitos sob o campo elétrico até que um caminho condutor atravesse a camada de óxido e a porta entre em curto com o canal, a ruptura dielétrica dependente do tempo (*time-dependent dielectric breakdown*, TDDB) <Cite id="rel-mcpherson-2012" />. Como o campo acelera a taxa de geração de defeitos, a vida depende da tensão, e a extrapolação de tensão é tão central quanto a de temperatura <Cite id="rel-mcpherson-2012" />.
 
-Foi esse muro que, décadas atrás, forçou o fim do SiO₂ puro como isolante de porta: quando o óxido chegou à casa de 1,2 nm, a fuga por tunelamento passou a ser inaceitável, e o dielétrico de alta constante (*high-k*) entrou no lugar <Cite id="ecs-sio2-limits" />. É a mesma fronteira que a [fábrica](/na-fab) descreve pelo lado do processo.
+Foi esse muro que, décadas atrás, forçou o fim do SiO₂ puro como isolante de porta: quando o óxido chegou à casa de 1,2 nm, a fuga por tunelamento passou a ser inaceitável, e o dielétrico de alta constante (*high-k*) entrou no lugar <Cite id="ecs-sio2-limits" />. A [fábrica](/na-fab) descreve a mesma fronteira pelo lado do processo.
 
 ### Eletromigração
 
@@ -122,7 +122,7 @@ O rastro da partícula deixa uma trilha de carga; a junção do nó de armazenam
 
 Logo depois veio a generalização desconfortável: não era só o encapsulamento. Nêutrons de raios cósmicos fazem o mesmo em nível do mar, e a taxa de erro cresce com a altitude, o que transformou um problema de material num problema de ambiente <Cite id="rel-ziegler-1979" />. As fontes de radiação relevantes ficaram conhecidas como um conjunto de três <Cite id="rel-baumann-2001" />.
 
-Como a probabilidade cresce com o número de bits expostos, a métrica natural é **FIT por megabit**, não FIT por componente <Cite id="rel-baumann-2001" />. Foi a existência desse piso irredutível de erro que empurrou os códigos corretores de erro (**ECC**, *error-correcting code*) para dentro das memórias e dos controladores: não se pode impedir a partícula, mas se pode detectar e corrigir o bit que ela virou <Cite id="rel-baumann-2001" />.
+Como a probabilidade cresce com o número de bits expostos, a métrica natural é **FIT por megabit**, não FIT por componente <Cite id="rel-baumann-2001" />. Foi a existência desse piso irredutível de erro que empurrou os códigos corretores de erro (**ECC**, *error-correcting code*) para dentro das memórias e dos controladores: não se pode impedir a partícula; dá para detectar e corrigir o bit que ela virou <Cite id="rel-baumann-2001" />.
 
 ## Qualificação
 
@@ -136,7 +136,7 @@ O regime **automotivo** é mais duro que o de consumo, e a AEC-Q100 é o documen
 
 <Cite id="rel-aec-q100" />
 
-Um teste de vida em operação em alta temperatura (**HTOL**, *high-temperature operating life*) no grau 0 estressa o dispositivo a +150 °C por 1.000 h <Cite id="rel-aec-q100" />. É por isso que o automotivo é outro regime. Ele exige que o silício sobreviva a uma janela térmica e a um tempo de missão que o consumidor nunca vê, e a qualificação lista explicitamente os mecanismos a cobrir: eletromigração, TDDB, injeção de portadores quentes, instabilidade de polarização e temperatura e migração por tensão <Cite id="rel-aec-q100" />.
+Um teste de vida em operação em alta temperatura (**HTOL**, *high-temperature operating life*) no grau 0 estressa o dispositivo a +150 °C por 1.000 h <Cite id="rel-aec-q100" />. Por isso, o automotivo é outro regime. Ele exige que o silício sobreviva a uma janela térmica e a um tempo de missão que o consumidor nunca vê, e a qualificação lista explicitamente os mecanismos a cobrir: eletromigração, TDDB, injeção de portadores quentes, instabilidade de polarização e temperatura e migração por tensão <Cite id="rel-aec-q100" />.
 
 ## Por que isso é uma história de materiais
 

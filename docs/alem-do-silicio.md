@@ -8,7 +8,7 @@ dataAsOf: 2022
 
 Todo este site trata o silício como o material dos semicondutores. Isso é verdade para a lógica e para a fotovoltaica, e falso em duas direções que valem um capítulo.
 
-Na primeira, existem semicondutores que **não** são silício e ganham dele em aplicações específicas, não por serem melhores em tudo, mas por terem uma propriedade que o silício não tem. Na segunda, o silício faz muito mais coisas do que processar dados e gerar energia: ele também é estrutura mecânica, sensor e, mais recentemente, hospedeiro de qubits.
+Na primeira, existem semicondutores que **não** são silício e ganham dele em aplicações específicas por terem uma propriedade que o silício não tem. Na segunda, o silício faz muito mais coisas do que processar dados e gerar energia: ele também é estrutura mecânica, sensor e, mais recentemente, hospedeiro de qubits.
 
 O capítulo trata de três coisas:
 
@@ -32,29 +32,37 @@ O parâmetro que separa essa família é o gap de banda, e a diferença é grand
   <DataChart chart="band-gap" />
 </ClientOnly>
 
-A consequência do gap maior é uma tensão de ruptura muito mais alta: um material com banda proibida larga suporta um campo elétrico maior antes de entrar em avalanche <Cite id="elem-sze" />. E isso muda a geometria do dispositivo. Um transistor de potência precisa de uma região de deriva espessa e pouco dopada para segurar a tensão; quanto maior o campo crítico, mais fina e mais dopada essa região pode ser, e menor é a resistência em condução. É por isso que SiC e GaN conseguem fazer, num volume pequeno, o que o silício só faz num volume maior.
+A consequência do gap maior é uma tensão de ruptura muito mais alta: um material com banda proibida larga suporta um campo elétrico maior antes de entrar em avalanche <Cite id="elem-sze" />. E isso muda a geometria do dispositivo. Um transistor de potência precisa de uma região de deriva espessa e pouco dopada para segurar a tensão; quanto maior o campo crítico, mais fina e mais dopada essa região pode ser, e menor é a resistência em condução. Por isso, SiC e GaN conseguem fazer, num volume pequeno, o que o silício só faz num volume maior.
 
 No chaveamento de alta tensão (inversores de tração de veículos elétricos, conversores de rede e fontes industriais), o SiC compete com o **IGBT**, um dispositivo bipolar que acumula portadores minoritários e por isso tem uma cauda de corrente no desligamento. O MOSFET de SiC elimina essa cauda, e a diferença de perda aparece justamente na frequência de chaveamento <Cite id="elem-sze" />.
 
-No GaN, a vantagem vem de outra interface: no contato entre AlGaN e GaN forma-se um gás de elétrons bidimensional, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que o silício não resolve por razões de física, não por falta de engenharia: emitir luz azul. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
+No GaN, a vantagem vem de outra interface. No contato entre AlGaN e GaN forma-se um gás de elétrons bidimensional, uma camada de portadores de alta mobilidade sem dopagem intencional, o que dá origem ao transistor HEMT e às suas versões de potência e de radiofrequência <Cite id="wbg-ioffe-gan" />. E a mesma família de materiais resolveu um problema que a física nega ao silício: emitir luz azul. O LED azul eficiente, de Akasaki, Amano e Nakamura, é o que tornou possível a iluminação branca de estado sólido, e rendeu o Nobel de Física de 2014 <Cite id="wbg-nobel-2014" />.
 
-Esses materiais não substituem o silício na lógica por causa do substrato, não do gap. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem. Só em abril de 2022 abriu uma fábrica de SiC de 200 mm: a da Wolfspeed em Marcy, Nova York, que a empresa chama de primeira e maior do mundo <Cite id="wolfspeed-mohawk-200mm" />, enquanto as fábricas de silício já processam wafers de 300 mm <Cite id="zulehner-2000" />. É o mesmo argumento que o capítulo de [células e módulos solares](/celulas-solares) usa para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
+Esses materiais não substituem o silício na lógica por causa do substrato. O gap não é o obstáculo. Crescer um cristal grande e sem defeitos é a parte difícil, e é ali que o silício tem décadas de vantagem. Só em abril de 2022 abriu uma fábrica de SiC de 200 mm: a da Wolfspeed em Marcy, Nova York, que a empresa chama de primeira e maior do mundo <Cite id="wolfspeed-mohawk-200mm" />, enquanto as fábricas de silício já processam wafers de 300 mm <Cite id="zulehner-2000" />. O capítulo de [células e módulos solares](/celulas-solares) usa o mesmo argumento para explicar por que o silício domina a fotovoltaica com um gap indireto pior para absorver luz.
 
 ## As outras vidas do silício
 
 Antes de ser um processador, o silício é um material estrutural excelente: duro, elástico em uma faixa previsível e moldável com precisão submicrométrica. Esta seção trata de quatro de seus outros usos: MEMS, sensores de imagem, fotônica de silício e qubits.
 
-**MEMS.** Sensores de sistema microeletromecânico (acelerômetros, giroscópios, microfones, sensores de pressão) são silício usinado, não silício dopado. A fabricação usa as mesmas ferramentas da fab: corrosão úmida anisotrópica, que ataca planos cristalinos diferentes em velocidades diferentes, e corrosão profunda por plasma (DRIE), que escava trincheiras verticais <Cite id="bosch-drie" />.
+### MEMS
+
+Sensores de sistema microeletromecânico (acelerômetros, giroscópios, microfones, sensores de pressão) são silício usinado, não silício dopado. A fabricação usa as mesmas ferramentas da fab: corrosão úmida anisotrópica, que ataca planos cristalinos diferentes em velocidades diferentes, e corrosão profunda por plasma (DRIE), que escava trincheiras verticais <Cite id="bosch-drie" />.
 
 <DiagramFigure src="/assets/mems-structure.svg" alt="Corte transversal de uma estrutura MEMS de silício: uma viga fina suspensa sobre uma cavidade aberta no próprio substrato, presa ao substrato numa das pontas e solta na outra, com as paredes da cavidade inclinadas para dentro">
 A viga suspensa em corte: uma das pontas está ancorada no substrato e a outra fica livre sobre a cavidade, aberta por corrosão no próprio silício <Cite id="bosch-drie" />. Desenho do autor.
 </DiagramFigure>
 
-**Sensores de imagem.** O sensor CMOS é, hoje, provavelmente o produto de silício mais numeroso do mundo. A geração atual empilha duas lâminas (a de pixels e a de circuitos) e as liga por vias passantes (TSV), a mesma tecnologia que o capítulo de [empacotamento](/empacotamento) descreve para os pacotes 3D <Cite id="semieng-tsv" />.
+### Sensores de imagem
 
-**Fotônica de silício.** Aqui o silício é, de novo, vítima do próprio gap. Um material de gap indireto não emite luz com eficiência <Cite id="elem-sze" />, e por isso um circuito fotônico integrado em silício não consegue fazer seu próprio laser: ele guia, modula e detecta luz muito bem, mas precisa buscar a fonte em outro material, integrado ao chip. É a mesma propriedade física que explica, no capítulo solar, por que são necessários 100 µm de silício para absorver o que 1 µm de arseneto de gálio absorve <Cite id="saimm" />.
+O sensor CMOS é, hoje, provavelmente o produto de silício mais numeroso do mundo. A geração atual empilha duas lâminas (a de pixels e a de circuitos) e as liga por vias passantes (TSV), a mesma tecnologia que o capítulo de [empacotamento](/empacotamento) descreve para os pacotes 3D <Cite id="semieng-tsv" />.
 
-**Qubits.** E há um uso em que o silício é escolhido exatamente por ser silício: como o isótopo ²⁹Si tem spin nuclear, o silício natural é um ambiente magneticamente ruidoso para um qubit. Purificar o isótopo (deixar quase só ²⁸Si) cria o ambiente silencioso em que qubits de spin operam <Cite id="wbg-si28-qubit" /> <Cite id="elem-ciaaw" />.
+### Fotônica de silício
+
+Aqui o silício é, de novo, vítima do próprio gap. Um material de gap indireto não emite luz com eficiência <Cite id="elem-sze" />, e por isso um circuito fotônico integrado em silício não consegue fazer seu próprio laser. Ele guia, modula e detecta luz muito bem, mas precisa buscar a fonte em outro material, integrado ao chip. A mesma propriedade física explica, no capítulo solar, por que são necessários 100 µm de silício para absorver o que 1 µm de arseneto de gálio absorve <Cite id="saimm" />.
+
+### Qubits
+
+E há um uso em que o silício é escolhido exatamente por ser silício: como o isótopo ²⁹Si tem spin nuclear, o silício natural é um ambiente magneticamente ruidoso para um qubit. Purificar o isótopo (deixar quase só ²⁸Si) cria o ambiente silencioso em que qubits de spin operam <Cite id="wbg-si28-qubit" /> <Cite id="elem-ciaaw" />.
 
 ## O que fica
 
@@ -62,12 +70,12 @@ O silício venceu por ser bom o bastante numa faixa larguíssima de funções, c
 
 Os materiais deste capítulo entram onde essa combinação não basta, e complementam o silício em vez de substituí-lo. Um chip de potência em SiC continua sendo montado sobre silício, empacotado com silício e alimentado por silício.
 
-As constantes deste capítulo vêm de tabelas de referência, não de medições de um ano. A fonte datada mais recente que ele cita é a fábrica de SiC de 200 mm da Wolfspeed, de 2022, e é esse o ano que o selo de atualidade registra.
+As constantes deste capítulo vêm de tabelas de referência. Nenhuma é uma medição feita neste ano. A fonte datada mais recente que ele cita é a fábrica de SiC de 200 mm da Wolfspeed, de 2022, e é esse o ano que o selo de atualidade registra.
 
 <SourceNote :ids="['elem-ioffe', 'wbg-ioffe-sic', 'wbg-ioffe-gan', 'elem-sze', 'wbg-nobel-2014', 'bosch-drie', 'semieng-tsv', 'saimm', 'wbg-si28-qubit', 'elem-ciaaw', 'wolfspeed-mohawk-200mm', 'zulehner-2000']" />
 
 <SeeAlso :links="[
-  { text: 'O elemento silício', href: '/o-elemento-silicio', note: 'por que o silício, e não o germânio' },
+  { text: 'O elemento silício', href: '/o-elemento-silicio', note: 'por que o silício venceu o germânio' },
   { text: 'Evolução dos transistores', href: '/transistores', note: 'o transistor de potência no plano do silício' },
   { text: 'Células e módulos solares', href: '/celulas-solares', note: 'o gap indireto como limite' },
   { text: 'Referências', href: '/referencias', note: 'lista numerada' },

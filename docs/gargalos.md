@@ -27,7 +27,7 @@ As seções seguem essa ordem.
   <ChokepointMap />
 </ClientOnly>
 
-O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. É o mesmo padrão do gargalo de Spruce Pine: um insumo barato, pouco visível e insubstituível a curto prazo.
+O neônio é o caso que ilustra melhor o padrão, porque ele não é um material de silício: é um gás nobre que sobra da separação do ar, purificado em poucas plantas cujos insumos vêm, em boa parte, da siderurgia russa. Quando a invasão da Ucrânia interrompeu essas plantas em 2022, a indústria descobriu que dependia de um subproduto que ninguém acompanhava, e passou a projetar recuperação e reciclagem de neônio dentro da própria fab <Cite id="fabm-neon-2017" />. O padrão é o mesmo do gargalo de Spruce Pine: um insumo barato, pouco visível e insubstituível a curto prazo.
 
 O encapsulamento, a última etapa antes de o chip ser vendido, também é concentrado. Em 2020, quatro das seis empresas de encapsulamento avançado com participação citada estavam em Taiwan, e as empresas taiwanesas detinham quase metade da capacidade mundial de encapsulamento avançado <Cite id="cset-packaging" />.
 
@@ -63,7 +63,7 @@ Mercados grandes deveriam ter muitos fornecedores. Três forças empurram na dir
 
 - **Capacidade ociosa é caríssima.** Uma planta de polissilício ou de wafer custa bilhões e precisa rodar cheia. Dois fornecedores dividindo um mercado do mesmo tamanho ficam os dois abaixo do ponto de equilíbrio: é mais estável que haja um.
 - **Qualificação é um ativo.** Trocar de fornecedor de material exige requalificar o processo. Isso prende o cliente e desestimula o entrante, como se discute em [insumos da fab](/insumos-fab).
-- **O risco é correlacionado.** Quando cada etapa tem um fornecedor, o risco de cada etapa não se diversifica: ele se soma. É o argumento que a própria [fabricação de wafers](/estrutura-wafers#quem-fabrica-os-wafers) já faz sobre o Japão, e que a [história da litografia](/historia-fotolitografia) faz sobre o consórcio que apostou no EUV quando a lista de candidatos tinha seis nomes.
+- **O risco é correlacionado.** Quando cada etapa tem um fornecedor, o risco de cada etapa não se diversifica: ele se soma. A própria [fabricação de wafers](/estrutura-wafers#quem-fabrica-os-wafers) já faz esse argumento sobre o Japão, e a [história da litografia](/historia-fotolitografia) o faz sobre o consórcio que apostou no EUV quando a lista de candidatos tinha seis nomes.
 
 A cadeia foi otimizada para custo durante décadas, e a concentração é o resultado dessa otimização. O preço da eficiência é a ausência de plano B.
 

@@ -106,7 +106,7 @@ A classic study showed that mechanical grinding creates weak regions where chip 
 
 ## Wire bonding
 
-There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise: more than 80% of semiconductor packages are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the level, with about one quarter to one third of package failures coming from the wire bond itself <Cite id="pmc-bonding-wire" />.
+There is a temptation to treat *wire bonding* as yesterday's technology. The numbers say otherwise. More than 80% of semiconductor packages are still assembled by wire bonding <Cite id="semieng-wirebond" />, and a 2023 academic review confirms the level, with about one quarter to one third of package failures coming from the wire bond itself <Cite id="pmc-bonding-wire" />.
 
 The principle is what the figure shows: the die sits face up, and extremely fine wires run from the pads on its periphery down to the substrate. Each wire is an electrical connection, and there are two kinds of tip: the ball bond, in which a ball of wire is melted and pressed onto the pad, and the wedge bond, in which the wire is crushed sideways. The latter produces lower loops, which matters at radio frequencies <Cite id="inseto-wire-guide" />.
 
@@ -126,9 +126,9 @@ Those last two are the price of the choice. Copper is harder, which increases st
 
 ### Why wire bonding still wins
 
-Economics explains it well. A 25 µm copper wire costs less than one tenth of an equivalent gold wire; and while gold wire bonding becomes more expensive than flip-chip above 1,024 connections, copper wire bonding stays competitive up to about 2,000 connections <Cite id="imaps-cu-wire" />.
+Economics explains it well. A 25 µm copper wire costs less than one tenth of an equivalent gold wire. Gold wire bonding becomes more expensive than flip-chip above 1,024 connections; copper wire bonding stays competitive up to about 2,000 connections <Cite id="imaps-cu-wire" />.
 
-Wire bonding won itself a much wider application band, and that is where most of the world's chips live: microcontrollers, regulators, sensors, memories, practically everything that is not a high-performance processor.
+Wire bonding ended up with a much wider application band, and that is where most of the world's chips live: microcontrollers, regulators, sensors, memories, practically everything that is not a high-performance processor.
 
 ## Flip-chip
 
@@ -140,7 +140,7 @@ Flip-chip solves it by inverting the die. It is mounted face down, and the conne
 It is a single choice (face up or face down), and it determines how many connections the package can have.
 </DiagramFigure>
 
-The gain is threefold: the electrical path becomes short, inductance falls sharply, and the number of contacts is no longer limited by the perimeter. That is why microprocessors, GPUs and accelerators are flip-chip: they need thousands of simultaneous connections <Cite id="wiley-packaging-ch3" />.
+The gain is threefold: the electrical path becomes short, inductance falls sharply, and the number of contacts is no longer limited by the perimeter. For that reason, microprocessors, GPUs and accelerators are flip-chip: they need thousands of simultaneous connections <Cite id="wiley-packaging-ch3" />.
 
 ### C4 solder bumps
 
@@ -164,7 +164,7 @@ The road of advanced packaging is a single metric going down: the distance betwe
 
 ### 2.5D
 
-In 2.5D integration, the dies sit side by side on an intermediate piece called an interposer, usually made of silicon. Only the interposers need vias running through the silicon, not the chips, which allows existing die designs to be reused <Cite id="fue-packaging-roadmap" />.
+In 2.5D integration, the dies sit side by side on an intermediate piece called an interposer, usually made of silicon. Only the interposers need vias running through the silicon; the chips do without them, which allows existing die designs to be reused <Cite id="fue-packaging-roadmap" />.
 
 TSMC calls its 2.5D platform CoWoS (*chip on wafer on substrate*), and it has been in production since 2012 <Cite id="tsmc-cowos" />. There are now three variants worth distinguishing:
 
@@ -176,7 +176,7 @@ The first breach of the reticle barrier came in March 2020, when TSMC and Broadc
 
 ### 3D
 
-In 3D integration, dies are stacked and connected by through-silicon vias (TSV). The dimensions tell the story of the process: in HBM, TSVs are typically 2 to 5 µm in diameter and 30 to 60 µm deep, in the *via-middle* scheme, formed after the front-end and before the BEOL, a balance between density, cost and thermal behaviour <Cite id="semieng-tsv" />. In interposers, TSVs are larger, 10 µm or more, with an aspect ratio around 10:1 <Cite id="semieng-tsv" />.
+In 3D integration, dies are stacked and connected by through-silicon vias (TSV). The dimensions tell the story of the process. In HBM, TSVs are typically 2 to 5 µm in diameter and 30 to 60 µm deep, in the *via-middle* scheme, formed after the front-end and before the BEOL, a balance between density, cost and thermal behaviour <Cite id="semieng-tsv" />. In interposers, TSVs are larger, 10 µm or more, with an aspect ratio around 10:1 <Cite id="semieng-tsv" />.
 
 These are holes a few micrometres across, tens of micrometres deep, filled with copper and polished, in each of the hundreds of thousands of vias in a memory stack.
 
@@ -212,7 +212,7 @@ HBM is a JEDEC standard, and the evolution of its versions is the history of the
 
 HBM4 shows why this memory cannot be a plug-in module. The standard doubles the interface from 1,024 to 2,048 bits and the channels from 16 to 32 per stack, with speeds up to 8 Gb/s, dies of 24 or 32 Gb in 4-, 8-, 12- or 16-high stacks, and up to 64 GB per cube <Cite id="jedec-hbm4" />.
 
-On the processor side, that means a trace count that has no way of existing on a board: there are already more than a thousand wires between the accelerator and a single HBM stack at the HBM3E generation, a density impossible to route on an organic substrate or circuit board <Cite id="semianalysis-hbm" />. In HBM4 there are 2,048 data wires and about 3,000 traces once clock, control and address are counted <Cite id="rambus-hbm" />.
+On the processor side, that means a trace count that has no way of existing on a board. There are already more than a thousand wires between the accelerator and a single HBM stack at the HBM3E generation, a density impossible to route on an organic substrate or circuit board <Cite id="semianalysis-hbm" />. In HBM4 there are 2,048 data wires and about 3,000 traces once clock, control and address are counted <Cite id="rambus-hbm" />.
 
 That is where 2.5D integration, described above, comes in. The silicon interposer exists, to a large extent, to make that trace count physically possible.
 
@@ -262,13 +262,13 @@ It is an explicit trade: burn-in reduces warranty cost at the cost of some yield
 
 Not every working chip is equal. At final test, devices are sorted, *binned*, by maximum operating frequency, by voltage, by temperature, by leakage current or by output drive capability <Cite id="semieng-binning" />.
 
-That is why the same die appears in the shop in several versions at different prices. Binning happens after packaging, at final test <Cite id="semieng-binning" />, and it converts the process's natural variability into a product line instead of waste. A die that cannot reach the top model's frequency can still be sold as the model below.
+For that reason, the same die appears in the shop in several versions at different prices. Binning happens after packaging, at final test <Cite id="semieng-binning" />, and it converts the process's natural variability into a product line instead of waste. A die that cannot reach the top model's frequency can still be sold as the model below.
 
 It runs on two axes. The first is frequency: how much the chip holds within a given voltage and temperature. The second is which blocks survive: cores, cache and memory controllers are designed so they can be fused off, and a die with one of them defective is sold as the model below instead of being scrapped <Cite id="gamersnexus-binning" />. Testing starts at wafer level, with a simple algorithm that discards the dies that answer wrong; frequency is only measured after packaging <Cite id="bit-tech-binning" />.
 
 #### Binning by frequency
 
-The Core i7-8700K and Core i7-8086K pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading, but the 8086K shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, US\$75 more than the 8700K <Cite id="tomshardware-8086k" />.
+The Core i7-8700K and Core i7-8086K pair shows the whole axis. It is the same Coffee Lake die, with the same six cores and hyper-threading. The 8086K, however, shipped with higher turbo bins because Intel reserved the best examples of the run for it: 50,000 units, US\$75 more than the 8700K <Cite id="tomshardware-8086k" />.
 
 Silicon Lottery bought processors at retail, measured every unit before reselling it, and published the distribution. In the 8700K batch, 17% of units reached 5.2 GHz; in the 8086K batch, none fell below 5.0 GHz <Cite id="siliconlottery-stats" />.
 
@@ -284,11 +284,11 @@ The second axis is harvesting. A chip with one defective block is sold with that
 
 The case that went furthest is Nvidia's GF100 in 2010: 3 billion transistors on about 530 mm², on TSMC's then-new 40 nm node <Cite id="anandtech-gtx580" />. No board ever shipped with the full chip: the GTX 480 carried only 480 of the 512 cores, with one of the 16 shader clusters fused off and the GTX 470 came with 448 <Cite id="anandtech-gtx480" />.
 
-SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die; Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”; how many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />.
+SemiAccurate argued that the smallest block the company could fuse off was a cluster of 32 cores, and that fusing two of them meant finding more than one unrecoverable defect per die. Nvidia denied that 40 nm yields were below 20% and said it might launch a 512-core chip “in the future” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. On the clock, SemiAccurate heard that A2's bin splits put Fermi's top clock at about 500 MHz, against the initial 750 MHz target, and described the yields as “alarming”. How many dies would land in the top bin was the open question <Cite id="semiaccurate-fermi-silicon" />. The same coverage already flagged a clock miss of about 20% against the original target, against 10% for the G200, and Nvidia running four months late with a chip of about 130 mm² on the same node <Cite id="semiaccurate-fermi-clocks" />.
 
 That chip only arrived with the GF110, a redesigned GF100 with all 512 cores enabled, launched in the GTX 580 in November of that year <Cite id="anandtech-gtx580" />.
 
-Not every disabled block is a defect. In one batch of Radeon RX 460, 128 cores present on the die were disabled and came back with a BIOS swap, about 14% more cores; the risk is that the chip was disabled for a defect, in which case the picture comes out with artifacts <Cite id="extremetech-rx460" />.
+Not every disabled block is a defect. In one batch of Radeon RX 460, 128 cores present on the die were disabled and came back with a BIOS swap, about 14% more cores. The risk is that the chip was disabled for a defect, in which case the picture comes out with artifacts <Cite id="extremetech-rx460" />.
 
 Without binning, the only alternative is to scrap them. Macworld runs the numbers on the A18: a wafer yields around 500 chips of that class, and throwing away every one with a flaw would leave around 200 <Cite id="macworld-binning" />. Binning is what keeps the other 300 out of the trash.
 
@@ -300,7 +300,7 @@ The first: it is small. CSET cites an earlier report estimating assembly, test a
 
 The second: despite that, the ITRS records that packaging cost often exceeds the cost of fabricating the integrated circuit itself <Cite id="itrs-assembly" />. The two statements coexist because they measure different things: share of the product's final value on one hand, industrial cost of the step on the other.
 
-And there is a third, more recent figure that explains why the subject stopped being peripheral. The advanced packaging market (the part that does CoWoS, HBM and chiplets) was worth about US\$46 billion in 2024 and is heading for more than US\$79 billion by 2030 <Cite id="yole-advanced-packaging" />. It is a minority of the total, but it is the minority that constrains the rest: TSMC stated in 2024 that CoWoS capacity had more than doubled year on year and that it intended to double it again, and that customer demand still far exceeded its ability to supply <Cite id="tsmc-q3-2024" />.
+And there is a third, more recent figure that explains why the subject stopped being peripheral. The advanced packaging market (the part that does CoWoS, HBM and chiplets) was worth about US\$46 billion in 2024 and is heading for more than US\$79 billion by 2030 <Cite id="yole-advanced-packaging" />. It is a minority of the total, but it is the minority that constrains the rest. TSMC stated in 2024 that CoWoS capacity had more than doubled year on year and that it intended to double it again. Even so, customer demand still far exceeded its ability to supply <Cite id="tsmc-q3-2024" />.
 
 A bottleneck that is small in value can be large in consequence. That is what happened to packaging: for decades the cheap step at the end of the line, it is now the step that decides how many AI chips the world can assemble.
 

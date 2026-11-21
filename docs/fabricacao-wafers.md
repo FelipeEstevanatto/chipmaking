@@ -55,7 +55,7 @@ O passo seguinte foi o silício, bem mais hostil. O banho precisa ser contido nu
 
 ### Oxigênio e carbono do cadinho
 
-O quartzo do cadinho não é inerte. Em contato com o silício fundido, ele se dissolve lentamente na massa, e é daí que vem a impureza dominante do silício Cz, o oxigênio, em concentrações muito acima de qualquer contaminante metálico: [O] ≈ 5–10 × 10¹⁷ cm⁻³ e [C] ≈ 5–10 × 10¹⁵ cm⁻³ <Cite id="pv-mfg-cz" />.
+O quartzo do cadinho não é inerte. Em contato com o silício fundido, ele se dissolve lentamente na massa, e é daí que vem a impureza dominante do silício Cz, o oxigênio, em concentrações muito acima de qualquer contaminante metálico. Os valores típicos são [O] ≈ 5–10 × 10¹⁷ cm⁻³ e [C] ≈ 5–10 × 10¹⁵ cm⁻³ <Cite id="pv-mfg-cz" />.
 
 A solubilidade do oxigênio no silício cai várias ordens de grandeza entre a fusão e a temperatura ambiente <Cite id="pv-mfg-cz" />. O cristal termina o puxamento supersaturado, e no resfriamento o excesso precisa sair de solução: o oxigênio precipita como partículas de SiO₂.
 
@@ -139,7 +139,7 @@ Perfil da borda. Acima, a aresta viva que sai do corte: o canto concentra tensã
 Lapidação de dupla face. À esquerda, o princípio: os wafers ficam coplanares entre dois pratos que giram em sentidos opostos, e a lama abrasiva de alumina trabalha as duas faces ao mesmo tempo. À direita, o que se ganha: a ondulação do corte some e as faces ficam paralelas. Desenho do autor, a partir de Pei et al. (2005) <Cite id="pei-2005" />.
 </DiagramFigure>
 
-A lapidação, porém, tem custo: é lenta, gasta muito abrasivo, carrega e descarrega wafers à mão e deixa dano subsuperficial que precisa ser removido depois. É por isso que as linhas modernas a substituem pela retificação simultânea de duas faces (SDSG), em que um único wafer passa entre dois rebolos de diamante: mais rendimento, menos consumível, mais automação e bem menos lama descartada <Cite id="pei-2005" />.
+A lapidação, porém, tem custo: é lenta, gasta muito abrasivo, carrega e descarrega wafers à mão e deixa dano subsuperficial que precisa ser removido depois. Por isso, as linhas modernas a substituem pela retificação simultânea de duas faces (SDSG), em que um único wafer passa entre dois rebolos de diamante: mais rendimento, menos consumível, mais automação e bem menos lama descartada <Cite id="pei-2005" />.
 
 ## Ataque químico (etching)
 

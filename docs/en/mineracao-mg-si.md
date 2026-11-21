@@ -8,7 +8,7 @@ dataAsOf: 2025
 
 The first step in the silicon chain is obtaining High-Purity Quartz (HPQ), extracted from deposits of quartzite or mineral quartz, which is extremely abundant in the Earth's crust <Cite id="pv-education" />. Silicon is the second most abundant element in the crust, behind oxygen only, and occurs as near-pure silica or as silicates; the resources are, in practice, plentiful, although purity varies considerably from deposit to deposit <Cite id="saimm" />. In the 1970s this mining was highly selective, focusing on pegmatites in regions such as Brazil and Madagascar to ensure the samples were free of critical impurities like iron and boron <Cite id="sciencedirect-hpq" />. Today, large-scale extraction is concentrated in a handful of exceptional deposits: the subsequent physical and chemical purification can only start from material that was already good <Cite id="sciencedirect-hpq" />.
 
-Quartz enters the chain along two distinct paths, and it is worth separating them from the outset: it is the raw material for silicon (reduced to MG-Si, as we shall see next) and it is also the material of the crucible that holds the melt during crystal growth. The first use tolerates impurities that the chemistry downstream removes; the second does not.
+Quartz enters the chain along two distinct paths, and it is worth separating them from the outset. It is the raw material for silicon (reduced to MG-Si, as we shall see next) and it is also the material of the crucible that holds the melt during crystal growth. The first use tolerates impurities that the chemistry downstream removes; the second does not.
 
 The chapter follows the material in seven steps:
 
@@ -24,7 +24,7 @@ The text follows that order.
 
 ## Quartz mining (HPQ)
 
-Not every silica will do for a crucible. The quartz must be free of boron and of alkali metals down to the parts-per-billion level, and deposits like that are exceedingly rare: roughly 70% to 90% of the world's high-purity quartz comes from a single region, the pegmatites of Spruce Pine, in the Appalachian mountains of North Carolina <Cite id="construction-physics-spruce-pine" />.
+Not every silica will do for a crucible. The quartz must be free of boron and of alkali metals down to the parts-per-billion level. Deposits like that are exceedingly rare: roughly 70% to 90% of the world's high-purity quartz comes from a single region, the pegmatites of Spruce Pine, in the Appalachian mountains of North Carolina <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine
 
@@ -37,7 +37,7 @@ Two companies mine there <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />:
 
 Unimin merged with Fairmount Santrol in 2018, and the resulting company took the name Covia. The high-purity quartz business did not go with it. It was carved out to the Belgian parent Sibelco before the merger, and Sibelco still operates Spruce Pine and sells the IOTA® line <Cite id="sibelco-hpq" />.
 
-What is mined there is a rock, not an isolated crystal: the district's pegmatitic granite carries quartz, feldspar and mica grown together into large crystals, and that mixture is what purification has to undo <Cite id="quartzcorp-hpq" />.
+What is mined there is a rock: the district's pegmatitic granite carries quartz, feldspar and mica grown together into large crystals, and that mixture is what purification has to undo <Cite id="quartzcorp-hpq" />.
 
 <DiagramFigure src="/assets/spruce-pine-pegmatite.jpg" alt="Hand specimen of pegmatitic granite from the Spruce Pine district, with grey and milky quartz, white and pink feldspar, and dark sheets of mica">
 A specimen of the pegmatitic granite of the Spruce Pine district, from the Wiseman quarry. The quartz (grey) comes with feldspar (white and pink) and mica (black), the phases that flotation and magnetic separation later remove. James St. John, <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
@@ -71,7 +71,7 @@ Because the quartz becomes the crucible in which the silicon is melted, it sits 
 **Boron** is the critical case, because it is the dopant that sets the resistivity of p-type silicon. A fraction of **1 ppm** is already enough to collapse the crystal's resistivity, and resistivity is what sets the finished wafer's electrical behaviour <Cite id="sibelco-hpq" />. CZ crucibles therefore require boron below 0.04 ppm, or 40 parts per billion <Cite id="sibelco-hpq" />. Alkali metals (K, Li, Na) are the other limit: they lower the crucible's softening point and reduce its resistance to deformation, shortening the component's life and hurting crystal yield <Cite id="sibelco-hpq" />.
 
 <DiagramFigure src="/assets/quartz-purity-ladder.svg" alt="Logarithmic scale of impurity concentration, from 1 ppb to 10,000 ppm, with metallurgical silicon between 5,000 and 15,000 ppm, high-purity quartz between 8 and 10 ppm, boron in the crystal at 1 ppm, and, at the clean end, the limits of the crucible quartz: boron at 0.04 ppm, transition metals at 50 ppb and potassium, lithium and sodium at 80 ppb">
-The axis spans seven orders of magnitude, and that distance is what separates the metal that leaves the furnace from the quartz that can become a crucible. The MG-Si band is the complement of its silicon content (98.5 to 99.5% ⇒ 5,000 to 15,000 ppm of other elements); the 1 ppm boron mark is a limit in the crystal, and the three rows in the key are limits in the quartz <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
+The axis spans seven orders of magnitude, and that distance is what separates the metal that leaves the furnace from the quartz that can become a crucible. The MG-Si band is the complement of its silicon content (98.5 to 99.5% ⇒ 5,000 to 15,000 ppm of other elements). The 1 ppm boron mark is a limit in the crystal, and the three rows in the key are limits in the quartz <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
 </DiagramFigure>
 
 The most demanding grade in the IOTA® line reaches 99.9992% SiO₂, with K + Li + Na totalling 80 ppb and critical transition metals below 50 ppb <Cite id="sibelco-hpq" />. It is a niche material: what sustains the industry's volume sits one grade below, and The Quartz Corp works at 99.999% silica <Cite id="quartzcorp-hpq" />.
@@ -118,12 +118,12 @@ The animation below walks through those reactions at the level of the atoms: car
   <FurnaceChemistry />
 </ClientOnly>
 
-The drawing is a sketch of the bond changes, not a balanced atom count: the equation of each step is printed under the canvas, and that is what carries the stoichiometry <Cite id="pv-education" /> <Cite id="pv-mfg-polysilicon" />.
+The drawing is a sketch of the bond changes. The equation of each step is printed under the canvas, and that is what carries the stoichiometry <Cite id="pv-education" /> <Cite id="pv-mfg-polysilicon" />.
 
 ### The submerged-arc furnace
 
 <DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Cross-section of a submerged-arc furnace: three pre-baked electrodes pierce the charge, each with its crater lined by a carbide wall and roofed by a crust, gas rising through the charge to the hood, the pool of liquid silicon at the bottom with the tap hole, and the off-gas going on to the bag filter and heat recovery">
-Cross-section of a submerged-arc furnace. The three pre-baked electrodes, about 1 m across, pierce the charge; around each tip a crater opens, with a carbide wall and a crust as its roof, where the silica and the carbide react at about 2000 °C. The SiO and the CO that rise are recovered inside the charge itself, and the liquid silicon collects at the bottom, where it is tapped. Author's drawing, from <Cite id="saimm" /> <Cite id="saevarsdottir-2010" /> <Cite id="vangskasen-2013" /> <Cite id="elkem-electrodes" />.
+Cross-section of a submerged-arc furnace. The three pre-baked electrodes, about 1 m across, pierce the charge. Around each tip a crater opens, with a carbide wall and a crust as its roof, where the silica and the carbide react at about 2000 °C. The SiO and the CO that rise are recovered inside the charge itself, and the liquid silicon collects at the bottom, where it is tapped. Author's drawing, from <Cite id="saimm" /> <Cite id="saevarsdottir-2010" /> <Cite id="vangskasen-2013" /> <Cite id="elkem-electrodes" />.
 </DiagramFigure>
 
 The furnace is a shell roughly 10 m in diameter, pierced by three pre-baked carbon electrodes about 1 m across, submerged in the charge. They carry a three-phase current and take the material to about 2000 °C <Cite id="saimm" /> <Cite id="elkem-electrodes" />.
@@ -150,7 +150,7 @@ The balance for one tonne of silicon, from the figures in this chapter: silica f
 
 The off-gas is the other relevant by-product. Its energy content is of the same order of magnitude as the electrical energy fed into the furnace <Cite id="saimm" />. Plants usually recover it as hot water or saturated steam for heating, or as superheated steam for electricity <Cite id="saimm" />.
 
-The furnace's own electricity consumption runs at 11 to 13 MWh per tonne of silicon metal, and falls markedly when the end product is an alloy with more iron in it <Cite id="saimm" />. It is that energy bill, not the availability of quartz, that decides where MG-Si is produced: in countries with cheap electricity, abundant reductants and good quartz deposits <Cite id="saimm" />.
+The furnace's own electricity consumption runs at 11 to 13 MWh per tonne of silicon metal, and falls markedly when the end product is an alloy with more iron in it <Cite id="saimm" />. The energy bill decides where MG-Si is produced. It weighs more than the availability of quartz: what matters is cheap electricity, abundant reductants and good quartz deposits <Cite id="saimm" />.
 
 ### Scale and uses of MG-Si
 
@@ -158,7 +158,7 @@ World silicon-metal production was about 4.6 million tonnes in 2025 <Cite id="us
 
 Much of the silicon made in these furnaces never becomes MG-Si for chemicals or chips. It leaves as ferrosilicon, used to deoxidise and alloy steel and cast iron <Cite id="saimm" />. Photovoltaics is the fastest-growing outlet for the metal that does go on to be purified <Cite id="saimm" />.
 
-That set of factors, not the ore, is what decides where a plant is built.
+That set of factors decides where a plant is built. The ore alone is not enough to justify a plant.
 
 <DiagramFigure src="/assets/elkem-salten-ferrosilicon.jpg" alt="Aerial view of Elkem's plant at Salten, in Norway, between the fjord and the mountains, with the quartz stockyard beside the industrial buildings">
 Elkem's plant at Salten, in Straumen, northern Norway, has been making ferrosilicon since 1967. Frankemann, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.

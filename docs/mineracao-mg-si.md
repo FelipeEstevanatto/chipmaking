@@ -8,7 +8,7 @@ dataAsOf: 2025
 
 O primeiro passo na cadeia de produção do silício é a obtenção de Quartzo de Alta Pureza (HPQ), extraído de depósitos de quartzito ou quartzo mineral, extremamente abundante na crosta terrestre <Cite id="pv-education" />. O silício é o segundo elemento mais abundante da crosta, atrás apenas do oxigênio, e ocorre como sílica praticamente pura ou como silicatos; os recursos são, na prática, abundantes, embora a pureza varie consideravelmente de depósito para depósito <Cite id="saimm" />. Na década de 1970, essa mineração era altamente seletiva, focando em pegmatitos em regiões como o Brasil e Madagascar para garantir que as amostras fossem livres de impurezas críticas como ferro e boro <Cite id="sciencedirect-hpq" />. Hoje, a extração em larga escala concentra-se num punhado de depósitos excepcionais: o processo subsequente de purificação física e química só consegue partir de um material que já era bom <Cite id="sciencedirect-hpq" />.
 
-O quartzo entra na cadeia por dois caminhos distintos, e vale separá-los desde já: ele é a matéria-prima do silício (reduzido a MG-Si, como veremos a seguir) e também o material do cadinho que contém o banho no crescimento do cristal. O primeiro uso tolera impurezas que a química a jusante remove; o segundo, não.
+O quartzo entra na cadeia por dois caminhos distintos, e vale separá-los desde já. Ele é a matéria-prima do silício (reduzido a MG-Si, como veremos a seguir) e também o material do cadinho que contém o banho no crescimento do cristal. O primeiro uso tolera impurezas que a química a jusante remove; o segundo, não.
 
 O capítulo percorre a rota do material em sete passos:
 
@@ -24,7 +24,7 @@ O texto segue essa ordem.
 
 ## Mineração de quartzo (HPQ)
 
-Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de boro e de metais alcalinos na casa das partes por bilhão, e depósitos assim são raríssimos: cerca de 70% a 90% do quartzo de alta pureza do mundo sai de uma única região, os pegmatitos de Spruce Pine, nos montes Apalaches da Carolina do Norte <Cite id="construction-physics-spruce-pine" />.
+Nem toda sílica serve para um cadinho. O quartzo precisa ser livre de boro e de metais alcalinos na casa das partes por bilhão. Depósitos assim são raríssimos: cerca de 70% a 90% do quartzo de alta pureza do mundo sai de uma única região, os pegmatitos de Spruce Pine, nos montes Apalaches da Carolina do Norte <Cite id="construction-physics-spruce-pine" />.
 
 ### Spruce Pine
 
@@ -37,7 +37,7 @@ Duas empresas mineram ali <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />
 
 A Unimin se fundiu com a Fairmount Santrol em 2018, e a empresa resultante adotou o nome Covia. O negócio de quartzo de alta pureza não foi junto. Foi separado (*carve-out*) para a controladora belga Sibelco antes da fusão, e é a Sibelco que opera Spruce Pine e vende a linha IOTA® até hoje <Cite id="sibelco-hpq" />.
 
-O que se extrai ali é uma rocha, não um cristal isolado: o granito pegmatítico do distrito traz quartzo, feldspato e mica crescidos juntos em cristais grandes, e é essa mistura que a purificação precisa desfazer <Cite id="quartzcorp-hpq" />.
+O que se extrai ali é uma rocha: o granito pegmatítico do distrito traz quartzo, feldspato e mica crescidos juntos em cristais grandes, e é essa mistura que a purificação precisa desfazer <Cite id="quartzcorp-hpq" />.
 
 <DiagramFigure src="/assets/spruce-pine-pegmatite.jpg" alt="Amostra de granito pegmatítico do distrito de Spruce Pine, com quartzo cinza e leitoso, feldspato branco e rosa, e mica escura em placas">
 Amostra do granito pegmatítico do distrito de Spruce Pine, no afloramento Wiseman. O quartzo (cinza) vem acompanhado de feldspato (branco e rosa) e mica (preto), as fases que a flotação e a separação magnética removem depois. James St. John, <a href="https://commons.wikimedia.org/wiki/File:Pegmatitic_granite_(Spruce_Pine_Pegmatite_District,_Devonian;_Wiseman_Quarry,_near_Spruce_Pine,_North_Carolina,_USA)_1_(40770864524).jpg" target="_blank" rel="noopener noreferrer">Pegmatitic granite</a> (CC BY 2.0), Wikimedia Commons.
@@ -71,7 +71,7 @@ Como o quartzo vira o cadinho onde o silício é fundido, ele fica em contato di
 O **boro** é o caso crítico, porque é justamente o dopante que define a resistividade do silício tipo P. Uma fração de 1 ppm já basta para derrubar a resistividade do cristal, e é a resistividade que estabelece o comportamento elétrico do wafer acabado <Cite id="sibelco-hpq" />. Por isso os cadinhos para CZ exigem boro abaixo de 0,04 ppm, ou 40 partes por bilhão <Cite id="sibelco-hpq" />. Os metais alcalinos (K, Li, Na) são o outro limite: eles baixam o ponto de amolecimento do cadinho e reduzem sua resistência à deformação, encurtando a vida útil do componente e prejudicando o rendimento do cristal <Cite id="sibelco-hpq" />.
 
 <DiagramFigure src="/assets/quartz-purity-ladder.svg" alt="Escala logarítmica de concentração de impurezas, de 1 ppb a 10.000 ppm, com a faixa do silício metalúrgico entre 5.000 e 15.000 ppm, o quartzo de alta pureza entre 8 e 10 ppm, o boro do cristal em 1 ppm e, no extremo limpo, os limites do quartzo de cadinho: boro em 0,04 ppm, metais de transição em 50 ppb e potássio, lítio e sódio em 80 ppb">
-A escala cobre sete ordens de grandeza, e é essa distância que separa o metal que sai do forno do quartzo que pode virar cadinho. A faixa do MG-Si é o complemento do teor de silício (98,5 a 99,5% ⇒ 5.000 a 15.000 ppm de outros elementos); o boro de 1 ppm é o limite do cristal, e os três valores do quadro são os limites do quartzo <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
+A escala cobre sete ordens de grandeza, e é essa distância que separa o metal que sai do forno do quartzo que pode virar cadinho. A faixa do MG-Si é o complemento do teor de silício (98,5 a 99,5% ⇒ 5.000 a 15.000 ppm de outros elementos). O boro de 1 ppm é o limite do cristal, e os três valores do quadro são os limites do quartzo <Cite id="saimm" /> <Cite id="sibelco-hpq" /> <Cite id="quartzcorp-hpq" />.
 </DiagramFigure>
 
 O grau mais exigente da linha IOTA® chega a 99,9992% de SiO₂, com K + Li + Na somando 80 ppb e metais de transição críticos abaixo de 50 ppb <Cite id="sibelco-hpq" />. É um material de nicho: o que sustenta o volume da indústria fica um grau logo abaixo, e a The Quartz Corp trabalha com 99,999% de sílica <Cite id="quartzcorp-hpq" />.
@@ -118,12 +118,12 @@ A animação abaixo percorre essas reações no nível dos átomos: o carbono ti
   <FurnaceChemistry />
 </ClientOnly>
 
-O desenho é um esquema das trocas de ligação, não uma contagem balanceada de átomos: a equação de cada etapa está impressa sob a tela, e é ela que carrega a estequiometria <Cite id="pv-education" /> <Cite id="pv-mfg-polysilicon" />.
+O desenho é um esquema das trocas de ligação. A equação de cada etapa está impressa sob a tela, e é ela que carrega a estequiometria <Cite id="pv-education" /> <Cite id="pv-mfg-polysilicon" />.
 
 ### O forno de arco submerso
 
 <DiagramFigure src="/assets/submerged-arc-furnace.svg" alt="Corte de um forno de arco submerso: três eletrodos pré-cozidos atravessam a carga, cada um com sua cratera de parede de carbeto e o teto de crosta, gás subindo pela carga até o capuz, o banho de silício líquido no fundo com o furo de vazamento, e o gás seguindo para o filtro de manga e a recuperação de calor">
-Corte de um forno de arco submerso. Os três eletrodos pré-cozidos, de cerca de 1 m de diâmetro, atravessam a carga; em volta da ponta de cada um abre-se uma cratera, com parede de carbeto e um teto de crosta, onde a sílica e o carbeto reagem a cerca de 2000 °C. O SiO e o CO que sobem são reaproveitados na própria carga, e o silício líquido se acumula no fundo, de onde é vazado. Desenho do autor, a partir de <Cite id="saimm" /> <Cite id="saevarsdottir-2010" /> <Cite id="vangskasen-2013" /> <Cite id="elkem-electrodes" />.
+Corte de um forno de arco submerso. Os três eletrodos pré-cozidos, de cerca de 1 m de diâmetro, atravessam a carga. Em volta da ponta de cada um abre-se uma cratera, com parede de carbeto e um teto de crosta, onde a sílica e o carbeto reagem a cerca de 2000 °C. O SiO e o CO que sobem são reaproveitados na própria carga, e o silício líquido se acumula no fundo, de onde é vazado. Desenho do autor, a partir de <Cite id="saimm" /> <Cite id="saevarsdottir-2010" /> <Cite id="vangskasen-2013" /> <Cite id="elkem-electrodes" />.
 </DiagramFigure>
 
 O forno é um invólucro com cerca de 10 m de diâmetro, atravessado por três eletrodos de carbono pré-cozido de cerca de 1 m de diâmetro, mergulhados na carga. Eles conduzem corrente trifásica e levam o material a aproximadamente 2000 °C <Cite id="saimm" /> <Cite id="elkem-electrodes" />.
@@ -150,7 +150,7 @@ O balanço de uma tonelada de silício pelos números do capítulo: o fume de s�
 
 O gás de exaustão é o outro subproduto relevante. Seu conteúdo energético é da mesma ordem de grandeza da energia elétrica injetada no forno <Cite id="saimm" />. As plantas costumam recuperá-lo como água quente ou vapor saturado para aquecimento, ou como vapor superaquecido para eletricidade <Cite id="saimm" />.
 
-O consumo elétrico do forno fica entre 11 e 13 MWh por tonelada de silício metálico, e cai sensivelmente quando o produto final é uma liga com mais ferro <Cite id="saimm" />. É essa conta de energia, e não a disponibilidade de quartzo, que decide onde o MG-Si é produzido: em países com eletricidade barata, redutores abundantes e bons depósitos de quartzo <Cite id="saimm" />.
+O consumo elétrico do forno fica entre 11 e 13 MWh por tonelada de silício metálico, e cai sensivelmente quando o produto final é uma liga com mais ferro <Cite id="saimm" />. A conta de energia decide onde o MG-Si é produzido. É ela que pesa mais do que a disponibilidade de quartzo: importam a eletricidade barata, os redutores abundantes e os bons depósitos <Cite id="saimm" />.
 
 ### Escala e uso do MG-Si
 
@@ -158,7 +158,7 @@ A produção mundial de silício metálico foi de cerca de 4,6 milhões de tonel
 
 Boa parte do silício desses fornos nunca vira MG-Si para a química ou para chips. Sai como ferrossilício, usado na desoxidação e na liga de aços e ferros fundidos <Cite id="saimm" />. O fotovoltaico é o destino que mais cresce para o metal que segue para purificação <Cite id="saimm" />.
 
-É esse conjunto de fatores, e não o minério, que decide onde uma planta se instala.
+Esse conjunto de fatores decide onde uma planta se instala. O minério sozinho não basta para justificar a planta.
 
 <DiagramFigure src="/assets/elkem-salten-ferrosilicon.jpg" alt="Vista aérea da planta da Elkem em Salten, na Noruega, entre o fiorde e as montanhas, com a área de estocagem de quartzo ao lado das naves industriais">
 A planta da Elkem em Salten, em Straumen, no norte da Noruega, produz ferrossilício desde 1967. Frankemann, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Salten_at_Straumen.jpg" target="_blank" rel="noopener noreferrer">Elkem Salten at Straumen</a> (CC BY-SA 4.0), Wikimedia Commons.

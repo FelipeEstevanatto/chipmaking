@@ -29,7 +29,7 @@ Plot the failure rate of a population against time and the same shape reappears,
 - **Useful life.** The rate levels off at a roughly constant value: this is where most systems spend most of their lives <Cite id="rel-nist-bathtub" />.
 - **Wear-out.** If the product lives long enough, the rate rises again, because the materials degrade <Cite id="rel-nist-bathtub" />.
 
-The chart below is a schematic, not a data set: it exists to fix the three regions in your head, not to be measured.
+The chart below is a schematic. It exists to fix the three regions in your head; the values are illustrative.
 
 <ClientOnly>
   <DataChart chart="bathtub" />
@@ -70,7 +70,7 @@ Near the drain, the electric field accelerates channel carriers to energies high
 
 The gate dielectric does not fail all at once. It accumulates defects under the electric field until a conductive path crosses the oxide layer and the gate shorts to the channel, time-dependent dielectric breakdown (TDDB) <Cite id="rel-mcpherson-2012" />. Because the field accelerates the rate of defect generation, lifetime depends on voltage, and voltage extrapolation is as central as temperature extrapolation <Cite id="rel-mcpherson-2012" />.
 
-That same wall, decades ago, ended pure SiO₂ as the gate insulator: once the oxide reached the 1.2 nm range, tunnelling leakage became unacceptable and the high-k dielectric took its place <Cite id="ecs-sio2-limits" />. It is the same frontier the [fab](/en/na-fab) describes from the process side.
+That same wall, decades ago, ended pure SiO₂ as the gate insulator: once the oxide reached the 1.2 nm range, tunnelling leakage became unacceptable and the high-k dielectric took its place <Cite id="ecs-sio2-limits" />. The [fab](/en/na-fab) describes the same frontier from the process side.
 
 ### Electromigration
 
@@ -136,13 +136,13 @@ The automotive regime is harsher than consumer, and AEC-Q100 is the document tha
 
 <Cite id="rel-aec-q100" />
 
-A high-temperature operating life (**HTOL**) test at grade 0 stresses the device at +150 °C for 1,000 h <Cite id="rel-aec-q100" />. That is why automotive is a different regime. It demands that the silicon survive a thermal window and a mission time the consumer never sees, and the qualification explicitly lists the mechanisms to cover: electromigration, TDDB, hot carrier injection, bias temperature instability and stress migration <Cite id="rel-aec-q100" />.
+A high-temperature operating life (**HTOL**) test at grade 0 stresses the device at +150 °C for 1,000 h <Cite id="rel-aec-q100" />. For that reason, automotive is a different regime. It demands that the silicon survive a thermal window and a mission time the consumer never sees, and the qualification explicitly lists the mechanisms to cover: electromigration, TDDB, hot carrier injection, bias temperature instability and stress migration <Cite id="rel-aec-q100" />.
 
 ## Why this is a materials story
 
 A device's reliability starts with the material.
 
-- Oxide breakdown is governed by the defect density in the dielectric, not by the circuit geometry <Cite id="rel-mcpherson-2012" />.
+- Oxide breakdown depends on the defect density in the dielectric. Circuit geometry plays no part <Cite id="rel-mcpherson-2012" />.
 - The quality of the **oxide–silicon interface** is what let silicon work as a semiconductor, and what germanium could not deliver <Cite id="ecs-sio2-limits" />.
 - Electromigration life depends on the metal's purity and structure and on the barrier that confines it; that is why copper only replaced aluminium once it came with a barrier <Cite id="ibm-cu-electroplating" />.
 

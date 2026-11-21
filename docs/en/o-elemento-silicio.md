@@ -44,7 +44,7 @@ The constants below are the ones the industry does not choose, and three of them
 
 ## The lattice silicon forms
 
-The data card describes an arrangement, not a lone atom: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the four bonds industry builds with it: carbon, germanium, oxygen and nitrogen. Drag to rotate, use the arrow keys to rotate without a mouse and the extent control to repeat more cells; the occupancy panel, which on a phone appears below the drawing, shows how much of one unit cell is matter and how much is void.
+The data card describes an arrangement: every silicon bonds to four neighbours, and the lattice repeats that tetrahedron in all three directions. The viewer below draws that arrangement, together with the four bonds industry builds with it: carbon, germanium, oxygen and nitrogen. Drag to rotate, use the arrow keys to rotate without a mouse and the extent control to repeat more cells; the occupancy panel, which on a phone appears below the drawing, shows how much of one unit cell is matter and how much is void.
 
 <ClientOnly>
   <CrystalViewer />
@@ -92,7 +92,7 @@ Natural silicon is a mixture of three stable isotopes, and the proportion betwee
 
 The variation is small but not zero, and it is measured precisely enough to become a tool: the ratio of silicon isotopes in a sediment records the climate in which it formed <Cite id="elem-ciaaw" />.
 
-For the industry the practical consequence is different. The ²⁹Si nucleus, about 4.7% of natural silicon, carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Purifying the isotope, rather than the element, is what turns silicon into a quantum material, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
+For the industry the practical consequence is different. The ²⁹Si nucleus, about 4.7% of natural silicon, carries spin, and spin in silicon is magnetic noise for anyone trying to use silicon itself as a qubit. Silicon becomes a quantum material when the isotope is purified, the subject of [Beyond silicon](/en/alem-do-silicio) <Cite id="wbg-si28-qubit" />.
 
 ## Why the industry uses this element
 

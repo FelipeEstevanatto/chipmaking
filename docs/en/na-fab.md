@@ -120,7 +120,7 @@ The methods differ in how much film they leave at the bottom of the trench.
 
 ALD (*atomic layer deposition*) lays down one atomic layer at a time and then stops by itself. Each cycle has two chemical reaction steps in which the precursor reacts until it exhausts the available surface sites; after that, extra precursor deposits nothing <Cite id="amat-ald" />.
 
-Thickness therefore depends only on the number of cycles, not on time, flow rate or temperature <Cite id="amat-ald" />. Because each cycle covers everything exposed, the film is as thick on the wall and at the bottom as on top, including in very deep structures. ASM reports gap-filling structures with aspect ratios greater than 100:1, a technology selected for several 3D NAND applications <Cite id="asm-ald-gapfill" />.
+Thickness therefore depends only on the number of cycles. Time, flow rate and temperature no longer matter <Cite id="amat-ald" />. Because each cycle covers everything exposed, the film is as thick on the wall and at the bottom as on top, including in very deep structures. ASM reports gap-filling structures with aspect ratios greater than 100:1, a technology selected for several 3D NAND applications <Cite id="asm-ald-gapfill" />.
 
 ALD is slow. Growth per cycle is on the order of 0.1 nm, and a full cycle including purges takes seconds <Cite id="yim-ald-gpc" />. Thick films are made by other methods, and ALD is kept for what must be thin, exact and conformal: high-k gate oxides, diffusion barriers and the spacers of leading-edge transistors <Cite id="amat-trillium" />.
 
@@ -215,7 +215,7 @@ Measuring every wafer would be impractical, so fabs sample by lot. Metrology typ
   <DataChart chart="metrology-sampling" />
 </ClientOnly>
 
-CD-SEM uses an electron beam to measure a line's width at nanometre resolution, which is how a fab checks that the gate came out as wide as the drawing asked. Spectroscopic ellipsometry measures thickness without touching the wafer: it measures how light changes polarisation on reflection and solves for thickness with a model <Cite id="horiba-ellipsometry" />. It is the standard method for ultrathin films, from a few ångströms to tens of micrometres, and for multilayer stacks <Cite id="horiba-ellipsometry" />.
+CD-SEM uses an electron beam to measure a line's width at nanometre resolution, which is how a fab checks that the gate came out as wide as the design specified. Spectroscopic ellipsometry measures thickness without touching the wafer: it measures how light changes polarisation on reflection and solves for thickness with a model <Cite id="horiba-ellipsometry" />. It is the standard method for ultrathin films, from a few ångströms to tens of micrometres, and for multilayer stacks <Cite id="horiba-ellipsometry" />.
 
 ### The control loop
 

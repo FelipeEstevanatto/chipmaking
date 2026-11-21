@@ -106,7 +106,7 @@ Um estudo clássico mostrou que o desbaste mecânico cria regiões fracas onde a
 
 ## Wire bonding
 
-Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário: mais de 80% dos invólucros de semicondutores ainda são montados por ligação por fio <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o patamar, com cerca de um quarto a um terço das falhas de pacote vindas da própria ligação por fio <Cite id="pmc-bonding-wire" />.
+Existe uma tentação de tratar *wire bonding* como tecnologia do passado. Os números dizem o contrário. Mais de 80% dos invólucros de semicondutores ainda são montados por ligação por fio <Cite id="semieng-wirebond" />, e uma revisão acadêmica de 2023 confirma o patamar, com cerca de um quarto a um terço das falhas de pacote vindas da própria ligação por fio <Cite id="pmc-bonding-wire" />.
 
 O princípio é o que se vê na figura: o die fica de face para cima, e fios finíssimos saem dos pads na sua periferia e descem até o substrato. Cada fio é uma conexão elétrica, e há dois tipos de ponta: a ball bond, em que uma esfera de fio é fundida e prensada sobre o pad, e a wedge bond, em que o fio é esmagado lateralmente. Esta produz laços mais baixos, o que importa em radiofrequência <Cite id="inseto-wire-guide" />.
 
@@ -126,7 +126,7 @@ Os dois "contra" são o preço dessa escolha. O cobre é mais duro, o que aument
 
 ### Por que a ligação por fio ainda ganha
 
-A economia explica bem. Um fio de cobre de 25 µm custa menos de um décimo de um fio de ouro equivalente; e enquanto a ligação por fio de ouro se torna mais cara que o flip-chip acima de 1.024 contatos, a de cobre continua competitiva até cerca de 2.000 contatos <Cite id="imaps-cu-wire" />.
+A economia explica bem. Um fio de cobre de 25 µm custa menos de um décimo de um fio de ouro equivalente. A ligação por fio de ouro se torna mais cara que o flip-chip acima de 1.024 contatos; a de cobre continua competitiva até cerca de 2.000 contatos <Cite id="imaps-cu-wire" />.
 
 A ligação por fio ganhou uma faixa de aplicação muito mais larga, e é lá que vive a maior parte dos chips do mundo: microcontroladores, reguladores, sensores, memórias, praticamente tudo que não é um processador de alto desempenho.
 
@@ -140,7 +140,7 @@ O flip-chip resolve invertendo o die. Ele é montado de face para baixo, e a con
 A escolha é uma só (face para cima ou para baixo), e ela determina quantas conexões o pacote consegue ter.
 </DiagramFigure>
 
-O ganho é triplo: o caminho elétrico fica curto, a indutância cai muito e o número de contatos deixa de ser limitado pelo perímetro. É por isso que microprocessadores, GPUs e aceleradores são flip-chip: eles precisam de milhares de conexões simultâneas <Cite id="wiley-packaging-ch3" />.
+O ganho é triplo: o caminho elétrico fica curto, a indutância cai muito e o número de contatos deixa de ser limitado pelo perímetro. Por isso, microprocessadores, GPUs e aceleradores são flip-chip: eles precisam de milhares de conexões simultâneas <Cite id="wiley-packaging-ch3" />.
 
 ### Bumps de solda C4
 
@@ -164,7 +164,7 @@ A estrada do empacotamento avançado é uma só métrica descendo: a distância 
 
 ### 2.5D
 
-Na integração 2.5D, os dies ficam lado a lado sobre uma peça intermediária chamada interposer, tipicamente de silício. Apenas os interposers precisam de vias atravessando o silício, não os chips, o que permite reaproveitar projetos de die existentes <Cite id="fue-packaging-roadmap" />.
+Na integração 2.5D, os dies ficam lado a lado sobre uma peça intermediária chamada interposer, tipicamente de silício. Apenas os interposers precisam de vias atravessando o silício; os chips dispensam essas vias, o que permite reaproveitar projetos de die existentes <Cite id="fue-packaging-roadmap" />.
 
 A TSMC chama sua plataforma 2.5D de CoWoS (*chip on wafer on substrate*), e ela está em produção desde 2012 <Cite id="tsmc-cowos" />. Hoje são três variantes que vale distinguir:
 
@@ -212,7 +212,7 @@ O HBM é um padrão JEDEC, e a evolução das versões é a própria história d
 
 O HBM4 mostra por que essa memória não pode ser um módulo encaixado. O padrão dobra a interface de 1.024 para 2.048 bits e os canais de 16 para 32 por pilha, com velocidade de até 8 Gb/s, dies de 24 ou 32 Gb em pilhas de 4, 8, 12 ou 16 camadas e até 64 GB por cubo <Cite id="jedec-hbm4" />.
 
-Do lado do processador, isso significa uma contagem de trilhas que não tem como existir em placa: são mais de mil fios entre o acelerador e uma única pilha de HBM já na geração HBM3E, densidade impossível de rotear em substrato orgânico ou placa de circuito <Cite id="semianalysis-hbm" />. No HBM4, são 2.048 fios de dados e cerca de 3.000 trilhas contando clock, controle e endereço <Cite id="rambus-hbm" />.
+Do lado do processador, isso significa uma contagem de trilhas que não tem como existir em placa. São mais de mil fios entre o acelerador e uma única pilha de HBM já na geração HBM3E, densidade impossível de rotear em substrato orgânico ou placa de circuito <Cite id="semianalysis-hbm" />. No HBM4, são 2.048 fios de dados e cerca de 3.000 trilhas contando clock, controle e endereço <Cite id="rambus-hbm" />.
 
 Aí entra a integração 2.5D, descrita acima. O interposer de silício existe, em boa medida, para tornar fisicamente possível essa contagem de fios.
 
@@ -262,13 +262,13 @@ O *burn-in* existe para antecipar isso: os componentes são submetidos a condiç
 
 Nem todo chip funcional é igual. No teste final, os dispositivos são classificados, *binned*, por frequência máxima de operação, por tensão, por temperatura, por corrente de fuga ou por capacidade de excitação de saída <Cite id="semieng-binning" />.
 
-É por isso que o mesmo die aparece na loja em várias versões com preços diferentes. A classificação é feita depois do empacotamento, no teste final <Cite id="semieng-binning" />, e converte a variabilidade natural do processo em uma linha de produtos em vez de desperdício. Um die que não alcança a frequência do modelo topo ainda pode ser vendido como o modelo de baixo.
+Por isso, o mesmo die aparece na loja em várias versões com preços diferentes. A classificação é feita depois do empacotamento, no teste final <Cite id="semieng-binning" />, e converte a variabilidade natural do processo em uma linha de produtos em vez de desperdício. Um die que não alcança a frequência do modelo topo ainda pode ser vendido como o modelo de baixo.
 
 Ela corre sobre dois eixos. O primeiro é frequência: quanto o chip aguenta dentro de uma tensão e uma temperatura dadas. O segundo são os blocos que sobrevivem: núcleos, cache e controladores de memória são projetados para poder ser desligados, e o die com um deles defeituoso vira o modelo de baixo em vez de virar lixo <Cite id="gamersnexus-binning" />. O teste começa ainda no wafer, com um algoritmo simples que descarta quem responde errado; a frequência só é medida depois do empacotamento <Cite id="bit-tech-binning" />.
 
 #### Binning por frequência
 
-O par Core i7-8700K e Core i7-8086K mostra o eixo inteiro. É o mesmo die Coffee Lake, com os mesmos seis núcleos e *hyper-threading*, mas o 8086K saiu com frequências de turbo mais altas porque a Intel reservou para ele os melhores exemplares da produção: 50 mil unidades, US\$ 75 mais caras que o 8700K <Cite id="tomshardware-8086k" />.
+O par Core i7-8700K e Core i7-8086K mostra o eixo inteiro. É o mesmo die Coffee Lake, com os mesmos seis núcleos e *hyper-threading*. O 8086K, porém, saiu com frequências de turbo mais altas porque a Intel reservou para ele os melhores exemplares da produção: 50 mil unidades, US\$ 75 mais caras que o 8700K <Cite id="tomshardware-8086k" />.
 
 A Silicon Lottery comprava processadores no varejo, media cada unidade antes de revender e publicava a distribuição. No lote de 8700K, 17% das unidades chegavam a 5,2 GHz; no lote de 8086K, nenhuma ficou abaixo de 5,0 GHz <Cite id="siliconlottery-stats" />.
 
@@ -284,7 +284,7 @@ O segundo eixo é a colheita (*harvesting*). Um chip com um bloco defeituoso pas
 
 O caso levado ao extremo foi o GF100 da Nvidia, em 2010: 3 bilhões de transistores em cerca de 530 mm², no 40 nm recém-estreado da TSMC <Cite id="anandtech-gtx580" />. Nenhuma placa saiu com o chip completo: a GTX 480 recebeu apenas 480 dos 512 núcleos, com um dos 16 *clusters* de shaders desligado e a GTX 470 ficou com 448 <Cite id="anandtech-gtx480" />.
 
-A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die; a Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20% e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. No relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”; quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20% sobre a meta original, contra 10% do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />.
+A SemiAccurate argumentou que o menor bloco desligável era um *cluster* de 32 núcleos, e que desligar dois significava encontrar mais de um defeito irrecuperável por die. A Nvidia negou que o rendimento do 40 nm estivesse abaixo de 20% e disse que talvez lançasse um chip de 512 núcleos “no futuro” <Cite id="semiaccurate-fermi-clusters" /> <Cite id="semiaccurate-fermi-yields" />. No relógio, a SemiAccurate ouviu que a divisão de *bins* do *stepping* A2 punha o teto da Fermi em cerca de 500 MHz, contra os 750 MHz que constavam como meta inicial, e descreveu o rendimento como “alarmante”. Quantos dies chegariam ao *bin* de cima era a pergunta em aberto <Cite id="semiaccurate-fermi-silicon" />. A mesma cobertura já apontava um erro de relógio de cerca de 20% sobre a meta original, contra 10% do G200, e uma Nvidia quatro meses atrasada com um chip de cerca de 130 mm² no mesmo nó <Cite id="semiaccurate-fermi-clocks" />.
 
 Esse chip só apareceu no GF110, um GF100 redesenhado com os 512 núcleos ativos, lançado na GTX 580 em novembro do mesmo ano <Cite id="anandtech-gtx580" />.
 
@@ -300,7 +300,7 @@ A primeira: é pequeno. A CSET cita um relatório anterior que estimava a montag
 
 A segunda: apesar disso, o ITRS registra que o custo de empacotamento frequentemente excede o custo de fabricação do próprio circuito integrado <Cite id="itrs-assembly" />. As duas afirmações convivem porque medem coisas diferentes: participação no valor final do produto, de um lado, e custo industrial da etapa, do outro.
 
-E há um terceiro dado, mais recente, que explica por que o assunto deixou de ser periférico. O mercado de empacotamento avançado (a parte que faz CoWoS, HBM e chiplets) movimentou cerca de US\$ 46 bilhões em 2024 e caminha para mais de US\$ 79 bilhões em 2030 <Cite id="yole-advanced-packaging" />. É uma fração menor do total, mas é a fração que limita o resto: a TSMC declarou em 2024 que a capacidade de CoWoS mais que dobrou em relação ao ano anterior e que pretendia dobrar de novo, e ainda assim a demanda dos clientes excedia em muito a capacidade de fornecimento <Cite id="tsmc-q3-2024" />.
+E há um terceiro dado, mais recente, que explica por que o assunto deixou de ser periférico. O mercado de empacotamento avançado (a parte que faz CoWoS, HBM e chiplets) movimentou cerca de US\$ 46 bilhões em 2024 e caminha para mais de US\$ 79 bilhões em 2030 <Cite id="yole-advanced-packaging" />. É uma fração menor do total, mas é a fração que limita o resto. A TSMC declarou em 2024 que a capacidade de CoWoS mais que dobrou em relação ao ano anterior e que pretendia dobrá-la de novo. Mesmo assim, a demanda dos clientes excedia em muito a capacidade de fornecimento <Cite id="tsmc-q3-2024" />.
 
 Um gargalo pequeno em valor pode ser um gargalo grande em consequência. Foi o que aconteceu com o empacotamento: durante décadas a etapa barata no fim da linha, hoje é a etapa que decide quantos chips de IA o mundo consegue montar.
 

@@ -78,8 +78,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       },
     ],
     caption: {
-      pt: 'As três regiões da curva da banheira: mortalidade infantil, vida útil e desgaste. É um esquema qualitativo, não uma medição: os eixos mostram o formato, não valores.',
-      en: 'The three regions of the bathtub curve: infant mortality, useful life and wear-out. This is a qualitative sketch, not a measurement: the axes show shape, not values.',
+      pt: 'As três regiões da curva da banheira: mortalidade infantil, vida útil e desgaste. É um esquema qualitativo: os eixos mostram o formato.',
+      en: 'The three regions of the bathtub curve: infant mortality, useful life and wear-out. This is a qualitative sketch: the axes show shape.',
     },
     sourceIds: ['rel-nist-bathtub'],
     slug: 'bathtub',
@@ -266,8 +266,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       { pt: 'Seca (O₂), 1.000 °C', en: 'Dry (O₂), 1,000 °C', color: '#f6ad55', data: [17, 31, 54, 91, 121, 146, 190, 228, 261] },
     ],
     caption: {
-      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove, sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo, não uma medição. A oxidação úmida cresce de cinco a oito vezes mais rápido nestas temperaturas, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
-      en: 'Oxide thickness computed with the Deal–Grove model, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a calculation, not a measurement. Wet oxidation grows five to eight times faster at these temperatures, and every curve slows once diffusion through the oxide sets the pace.',
+      pt: 'Espessura do óxido calculada pelo modelo de Deal–Grove, sem óxido inicial, com as constantes de Arrhenius tabeladas na apostila de oxidação do curso EE212 de Stanford. É um cálculo do modelo; as curvas são previstas. A oxidação úmida cresce de cinco a oito vezes mais rápido nestas temperaturas, e todas as curvas desaceleram quando a difusão pelo óxido passa a ditar o ritmo.',
+      en: 'Oxide thickness computed with the Deal–Grove model, with no initial oxide, using the Arrhenius constants tabulated in the Stanford EE212 oxidation handout. It is a model calculation; every curve is predicted. Wet oxidation grows five to eight times faster at these temperatures, and every curve slows once diffusion through the oxide sets the pace.',
     },
     sourceIds: ['deal-grove-1965', 'stanford-ee212-oxidation'],
     slug: 'deal-grove-oxidation',
@@ -514,8 +514,8 @@ export const CHARTS: Record<string, ChartSpec> = {
       { pt: 'MTTF', en: 'MTTF', color: '#2b6cb0', data: [114155, 11416, 1142, 114, 11.4] },
     ],
     caption: {
-      pt: 'O MTTF que corresponde a cada taxa em FIT, pela definição da JESD85A (10⁹ horas divididas pela taxa), convertido em anos de 8.760 h. É um cálculo, não uma medição; o eixo é logarítmico, e cada fator de dez na taxa tira um fator de dez da vida média.',
-      en: 'The MTTF that matches each FIT rate, by the JESD85A definition (10⁹ hours divided by the rate), converted to years of 8,760 h. It is a calculation, not a measurement; the axis is logarithmic, and each factor of ten in the rate takes a factor of ten off the mean life.',
+      pt: 'O MTTF que corresponde a cada taxa em FIT, pela definição da JESD85A (10⁹ horas divididas pela taxa), convertido em anos de 8.760 h. É um cálculo pela definição da JESD85A; o eixo é logarítmico, e cada fator de dez na taxa tira um fator de dez da vida média.',
+      en: 'The MTTF that matches each FIT rate, by the JESD85A definition (10⁹ hours divided by the rate), converted to years of 8,760 h. It is a calculation from the JESD85A definition; the axis is logarithmic, and each factor of ten in the rate takes a factor of ten off the mean life.',
     },
     sourceIds: ['rel-jesd85a'],
     slug: 'fit-to-mttf',

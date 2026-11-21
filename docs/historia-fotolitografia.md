@@ -63,7 +63,7 @@ O calendário escorregou desde o início. Em novembro de 1997, a recomendação 
 
 Em dezembro de 1999 e setembro de 2000, a recomendação foi manter EUV e EPL para o nó de 70 nm, reconhecendo a possibilidade crescente de que a indústria precisasse de mais de uma tecnologia de ponta <Cite id="sematech-ngl" />. Em agosto de 2001, no quinto e último workshop, a recomendação oficial seguiu sendo financiar a comercialização das duas <Cite id="sematech-ngl" />.
 
-O EUV não foi ungido sozinho em 2001. O que houve foi o EPL morrer de produtividade, reduzindo o campo a um candidato por eliminação, enquanto a recomendação formal de sustentar as duas frentes ainda constava do relatório daquele ano <Cite id="sematech-ngl" />. O efeito prático foi o alvo do EUV escorregar do nó de 130/100 nm para o de 70 nm, uma a duas gerações depois do plano original <Cite id="sematech-ngl" />.
+O EUV não foi ungido sozinho em 2001. O EPL foi abandonado por produtividade, o que reduziu o campo a um candidato por eliminação, enquanto a recomendação formal de sustentar as duas frentes ainda constava do relatório daquele ano <Cite id="sematech-ngl" />. O efeito prático foi o alvo do EUV escorregar do nó de 130/100 nm para o de 70 nm, uma a duas gerações depois do plano original <Cite id="sematech-ngl" />.
 
 ## Por que os concorrentes perderam
 
@@ -89,7 +89,7 @@ Em 1996, o Congresso americano cortou o financiamento do Departamento de Energia
 
 O valor anunciado foi de US\$ 250 milhões em três anos (US\$ 130 milhões em dinheiro e US\$ 120 milhões em equipamento, material e pessoal), o maior investimento privado já feito num projeto do Departamento de Energia dos EUA até então <Cite id="intel-euvllc" />. IBM, Micron, Infineon e a própria ASML entraram depois <Cite id="eet-euvlith" />. A Europa e o Japão responderam com consórcios próprios, o EUCLIDES e o ASET <Cite id="construction-physics-euv" />.
 
-O candidato que menos parecia capaz de durar várias gerações foi o que venceu: o raio X travou na máscara e o EPL na vazão, e só o EUV pôde ser estendido de nó em nó com o mesmo 13,5 nm.
+O candidato menos provável de durar várias gerações prevaleceu: o raio X travou na máscara e o EPL na vazão, e só o EUV pôde ser estendido de nó em nó com o mesmo 13,5 nm.
 
 ## O desvio de 157 nm e o resgate pela imersão
 

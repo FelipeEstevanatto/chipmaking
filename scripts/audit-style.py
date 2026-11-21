@@ -85,7 +85,7 @@ CONTRAST = [
     r"\b(?:is|are|was|were)n't\b[^.;!?]{1,50}[;.]\s+(?:it|they)(?:'s| is| are)\b",
     r"\b(?:is|are|was|were) not\b[^.;!?]{1,50}[;.]\s+(?:it|they)(?:'s| is| are)\b",
     r",\s+not\s+(?:a|an|the|in|by|on|at|from|just|only)\b",
-    r"\bnão\b[^.;:!?]{1,60}?,?\s+mas\b",
+    r"(?<!\()(?<!para )\bnão\b[^.;:!?]{1,60}?,?\s+mas\b",
     r",\s+e não\s+(?:um|uma|o|a|os|as|em|por|de|só|apenas)\b",
     r",\s+não\s+(?:um|uma|o|a|os|as|em|por|de|só|apenas)\b",
 ]
@@ -96,7 +96,8 @@ COMMENTARY = [
     r"striking(?:ly)?", r"elegant(?:ly)?", r"remarkabl[ey]", r"surprising(?:ly)?", r"notabl[ey]",
     r"crucial(?:ly)?", r"honest(?:ly)?", r"intuitive(?:ly)?", r"absurd", r"fascinating",
     r"(?:this|that|the) (?:difference|distinction|detail|point) matters", r"matters (?:because|more)",
-    r"here is", r"here's", r"the key (?:point|idea|is)", r"the catch",
+    r"here's (?:why|the|what|how)\b",
+    r"the key (?:point|idea|is)", r"the catch",
     r"the (?:reason|answer) is (?:simple|direct|intuitive)",
     # Portuguese
     r"impressionante(?:s|mente)?", r"elegante(?:s|mente)?", r"not[áa]ve(?:l|is)", r"notavelmente",
@@ -117,6 +118,74 @@ SOURCING = [
 ]
 SOURCING_RE = re.compile(r"\b(?:" + "|".join(SOURCING) + r")", re.IGNORECASE)
 
+# The content tells from Wikipedia:Signs of AI writing that the word lists above do not see.
+# These are phrase-level on purpose: "serves as an insulator" is a fact; "serves as a testament"
+# is puffery. A single adjective is not enough to fail a page.
+SIGNIFICANCE = [
+    r"stands? as (?:a |the )?testament", r"is (?:a |the )?testament to",
+    r"serves? as (?:a |the )?reminder", r"plays? a (?:crucial|pivotal|vital|key|significant|central) role",
+    r"underscor(?:es|ing) (?:its|the|his|her) (?:importance|significance|role)",
+    r"reflects? a (?:broader|wider|growing|ongoing)", r"cements? (?:its|the|his|her)",
+    r"solidifies? (?:its|the|his|her)", r"paved the way", r"ushered in",
+    r"left an? (?:indelible|lasting) mark", r"key turning point", r"evolving landscape",
+    r"focal point", r"deeply rooted",
+    r"é um testemunho", r"serve(?:m)? de (?:testemunho|lembrete)",
+    r"desempenha (?:um )?papel (?:crucial|pivotal|vital|central|fundamental)",
+    r"papel (?:crucial|pivotal|vital|central|fundamental)", r"destaca a (?:sua )?importância",
+    r"reflete (?:um|uma) (?:movimento|tendência|contexto) (?:maior|amplo)",
+    r"consolid(?:a|ou) (?:sua|a) posição", r"abriu caminho", r"deixou (?:uma )?marca",
+    r"ponto de virada", r"cenário em evolução", r"ponto focal",
+]
+SIGNIFICANCE_RE = re.compile(r"\b(?:" + "|".join(SIGNIFICANCE) + r")", re.IGNORECASE)
+
+SUPERFICIAL = [
+    r",\s+(?:highlighting|underscoring|emphasizing|reflecting|symbolizing|showcasing|cementing|solidifying|reinforcing|paving the way)\b",
+    r",\s+(?:destacando|ressaltando|enfatizando|refletindo|simbolizando|consolidando|reforçando)\b",
+]
+SUPERFICIAL_RE = re.compile("|".join(SUPERFICIAL), re.IGNORECASE)
+
+VAGUE = [
+    r"\bexperts (?:agree|say|believe)", r"\bstudies (?:show|suggest)", r"\bindustry reports suggest",
+    r"\bmany (?:argue|believe|say)", r"\banalysts (?:say|expect)",
+    r"\bit is widely (?:believed|known|accepted)",
+    r"\bespecialistas (?:dizem|afirmam|acreditam)", r"\bestudos (?:mostram|sugerem)",
+    r"\bmuitos (?:argumentam|acreditam|dizem)", r"\banalistas (?:dizem|esperam)",
+    r"\bé amplamente (?:sabido|aceito|reconhecido)",
+]
+VAGUE_RE = re.compile("|".join(VAGUE), re.IGNORECASE)
+
+OUTLINE = [
+    r"\bchallenges and opportunities", r"\bfuture prospects", r"\blooking ahead",
+    r"\bthe road ahead", r"\bremains to be seen", r"\bin the years to come",
+    r"\bwill (?:likely )?(?:shape|define) the future",
+    r"\bdesafios e oportunidades", r"\bperspectivas futuras", r"\bolhando para frente",
+    r"\bo caminho à frente", r"\bresta saber", r"\bnos próximos anos",
+    r"\bvai (?:moldar|definir) o futuro",
+]
+OUTLINE_RE = re.compile("|".join(OUTLINE), re.IGNORECASE)
+
+NOTABILITY = [
+    r"\bindependent coverage", r"\bfeatured in\b", r"\bprofiled in\b", r"\btrade publications?",
+    r"\bmaintains? an? (?:active|strong) (?:social media|digital) presence",
+    r"\bcobertura independente", r"\bfoi destaque\b", r"\bfoi perfilad[oa]\b",
+    r"\bimprensa especializada",
+    r"\bmantém (?:uma )?(?:forte|ativa) presença digital",
+]
+NOTABILITY_RE = re.compile("|".join(NOTABILITY), re.IGNORECASE)
+
+COLLABORATIVE = [
+    r"\blet me know\b", r"\bI hope this helps\b", r"\bfeel free to\b", r"\bas an AI\b",
+    r"\bI cannot\b", r"\bin this article\b", r"\bwe will (?:see|explore)\b",
+    r"\bme avise\b", r"\bespero que (?:isso )?ajude\b", r"\bsinta-se à vontade\b",
+    r"\bcomo uma IA\b", r"\bneste artigo\b", r"\bvamos (?:ver|explorar)\b",
+]
+COLLABORATIVE_RE = re.compile("|".join(COLLABORATIVE), re.IGNORECASE)
+
+# A quote is data. The ITRS sentence in the transistor chapter carries "not by the gate length",
+# and a rule that forces an edit to a cited quotation is wrong. Mask the quoted span, preserving
+# character positions so the reported excerpt still points at the original text.
+QUOTE_RE = re.compile(r'"[^"\n]*"|“[^”\n]*”')
+
 # Markup that should not count as words when measuring a sentence.
 STRIP_RE = re.compile(r"<[^>]+>|\$[^$]*\$|\[([^\]]*)\]\([^)]*\)|[*_`]")
 SENTENCE_END_RE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀ-Ý])")
@@ -126,6 +195,11 @@ def plain(text: str) -> str:
     text = STRIP_RE.sub(lambda m: m.group(1) or "", text)
     # A stripped <Cite /> leaves "contest ." behind.
     return re.sub(r"\s+([.,;:!?])", r"\1", text).strip()
+
+
+def unquoted(text: str) -> str:
+    """Blank the inside of a quoted span without changing its length or the surrounding text."""
+    return QUOTE_RE.sub(lambda m: " " * len(m.group(0)), text)
 
 
 def words(text: str) -> int:
@@ -196,7 +270,16 @@ def audit_page(path: str) -> tuple[int, list[tuple[str, int, str]]]:
         if number <= frontmatter_end:
             # audit-prose.py yields the frontmatter for its `description`, which a reader sees in
             # search results: the sentence rules apply to it, but it is never a paragraph.
-            for rule, regex in (("style-contrast", CONTRAST_RE), ("style-commentary", COMMENTARY_RE)):
+            for rule, regex in (
+                ("style-contrast", CONTRAST_RE),
+                ("style-commentary", COMMENTARY_RE),
+                ("style-significance", SIGNIFICANCE_RE),
+                ("style-superficial", SUPERFICIAL_RE),
+                ("style-vague", VAGUE_RE),
+                ("style-outline", OUTLINE_RE),
+                ("style-notability", NOTABILITY_RE),
+                ("style-collaborative", COLLABORATIVE_RE),
+            ):
                 for match in regex.finditer(stripped):
                     findings.append((rule, number, match.group(0)))
             continue
@@ -238,8 +321,15 @@ def audit_page(path: str) -> tuple[int, list[tuple[str, int, str]]]:
                     or re.search(r"\b(?:é|são|is|are|chama|chamam|called)\s*$", before, re.I)
                 )
                 term = bool(re.search(r"\b(?:o|a|os|as|um|uma|an?|the|this|that)\s*$", before, re.I))
+                # "Backside Power Delivery Network (BSPDN)" defines an acronym; that is a term,
+                # not emphasis, even when the line starts with it.
+                acronym = bool(
+                    re.match(r"^[^()]+\([A-Z][A-Z0-9-]{1,}\)$", span)
+                    and (not before or before.endswith((".", ":", "!", "?")))
+                )
                 if (
                     defined
+                    or acronym
                     or (term and len(span.split()) <= 6)
                     or re.sub(r"\s+", " ", span).strip().lower().strip(" .,:;") in GLOSSARY_TERMS
                 ):
@@ -248,12 +338,19 @@ def audit_page(path: str) -> tuple[int, list[tuple[str, int, str]]]:
                     findings.append(("style-bold-long", number, match.group(0)))
                 else:
                     findings.append(("style-bold", number, match.group(0)))
+        flat = unquoted(plain(stripped))
         for rule, regex in (
             ("style-contrast", CONTRAST_RE),
             ("style-commentary", COMMENTARY_RE),
             ("style-sourcing", SOURCING_RE),
+            ("style-significance", SIGNIFICANCE_RE),
+            ("style-superficial", SUPERFICIAL_RE),
+            ("style-vague", VAGUE_RE),
+            ("style-outline", OUTLINE_RE),
+            ("style-notability", NOTABILITY_RE),
+            ("style-collaborative", COLLABORATIVE_RE),
         ):
-            for match in regex.finditer(plain(stripped)):
+            for match in regex.finditer(flat):
                 findings.append((rule, number, match.group(0)))
     close_paragraph()
     return total_words, findings
@@ -285,10 +382,15 @@ THEME = os.path.join(REPO, "docs", ".vitepress", "theme")
 # The modules whose strings are prose a reader sees. Code identifiers and CSS live elsewhere.
 COPY_MODULES = [
     "fab-stages.ts", "furnace-stages.ts", "milestones.ts", "transistor-eras.ts", "home-sections.ts",
-    "chain.ts", "yield-presets.ts", os.path.join("charts", "specs.ts"),
+    "chain.ts", "yield-presets.ts", "chokepoints.ts", "yield-references.ts",
+    os.path.join("charts", "specs.ts"),
 ]
-# A locale string: `pt: '...'` or `en: "..."`, the shape every bilingual pair in the theme uses.
-COPY_RE = re.compile(r"""\b(?:pt|en)\s*:\s*(?:'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`([^`]*)`)""")
+# A locale string: `pt: '...'`, `en: "..."`, or the `descPt`/`descEn`, `productsPt`/`productsEn`,
+# `altPt`/`altEn` and `namePt`/`nameEn` pairs that `transistor-eras.ts` uses.
+COPY_RE = re.compile(
+    r"""\b(?:pt|en|descPt|descEn|productsPt|productsEn|altPt|altEn|namePt|nameEn|titlePt|titleEn|notePt|noteEn)"""
+    r"""\s*:\s*(?:'((?:[^'\\\n]|\\.)*)'|"((?:[^"\\\n]|\\.)*)"|`([^`]*)`)"""
+)
 
 
 def audit_copy(path: str) -> list[tuple[str, int, str]]:
@@ -302,12 +404,19 @@ def audit_copy(path: str) -> list[tuple[str, int, str]]:
                 findings.append(("copy-emdash", number, text[:80]))
             if "**" in text:
                 findings.append(("copy-bold", number, text[:80]))
+            flat = unquoted(text)
             for rule, regex in (
                 ("copy-contrast", CONTRAST_RE),
                 ("copy-commentary", COMMENTARY_RE),
                 ("copy-sourcing", SOURCING_RE),
+                ("copy-significance", SIGNIFICANCE_RE),
+                ("copy-superficial", SUPERFICIAL_RE),
+                ("copy-vague", VAGUE_RE),
+                ("copy-outline", OUTLINE_RE),
+                ("copy-notability", NOTABILITY_RE),
+                ("copy-collaborative", COLLABORATIVE_RE),
             ):
-                for found in regex.finditer(text):
+                for found in regex.finditer(flat):
                     findings.append((rule, number, found.group(0)))
     return findings
 

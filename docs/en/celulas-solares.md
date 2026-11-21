@@ -28,7 +28,7 @@ A finished cell comes out of seven steps, in this order:
 6. [Metallisation](#metallisation): the contacts, where every millimetre of silver is a millimetre without light.
 7. [Contact firing](#contact-firing): the heat step that drives the metal through the anti-reflection layer.
 
-The choice of p-type dopant (boron or gallium) runs through the third step and became a subsection inside it: it changed the product, not the process sequence. These seven steps build the classic p-type cell; the n-type designs that replaced it in mass production are covered in [current cells](#current-cells).
+The choice of p-type dopant (boron or gallium) runs through the third step and became a subsection inside it: it changed the product; the process sequence stayed the same. These seven steps build the classic p-type cell; the n-type designs that replaced it in mass production are covered in [current cells](#current-cells).
 
 ### Saw damage removal
 
@@ -54,7 +54,7 @@ Boron reacts with the oxygen dissolved in Cz silicon (the impurity the quartz cr
 
 The theoretical loss reaches 10% relative in efficiency. In the field it is about 3 to 4% in Al-BSF cells and 4 to 6% in PERC <Cite id="lid-hallam" />. That shows up as lower energy from the installed system.
 
-The way out was to change the dopant. Gallium fills boron's role as acceptor but does not form the complex with oxygen, so the cell does not suffer BO-LID <Cite id="lid-hallam" />. The substitution was swift once the blocking patents expired in 2020: the share of gallium-doped wafers jumped from about 10% in 2019 to over 95% in 2021, and the ITRPV already recorded boron disappearing as a p-type dopant in 2023 <Cite id="ga-transition" />.
+The way out was to change the dopant. Gallium fills boron's role as acceptor but does not form the complex with oxygen, so the cell does not suffer BO-LID <Cite id="lid-hallam" />. The substitution was swift once the blocking patents expired in 2020. The share of gallium-doped wafers jumped from about 10% in 2019 to over 95% in 2021, and the ITRPV already recorded boron disappearing as a p-type dopant in 2023 <Cite id="ga-transition" />.
 
 Gallium's **segregation coefficient** is only 0.008, against 0.8 for boron, so resistivity varies a lot along one ingot and less of the piece is usable <Cite id="lid-hallam" />. That trade-off is described in [doping and the resistivity gradient](/en/fabricacao-wafers#doping-and-the-resistivity-gradient). Gallium-doped cells can still suffer **LeTID** (*light and elevated temperature induced degradation*), a hydrogen-related loss of up to 3% relative power <Cite id="letid-ga" />.
 
@@ -146,7 +146,7 @@ A few numbers from the most recent report measure how much has changed:
   <DataChart chart="pv-efficiency" />
 </ClientOnly>
 
-The gap between the first two bars in that chart and the last three is this chapter's contest in miniature: what you can buy today is silicon, and what promises the next jump is the perovskite-on-silicon tandem, which has already reached 35% in the laboratory <Cite id="fraunhofer-pv-report" />. Single-cell records are in the comparative chart from [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
+The gap between the first two bars in that chart and the last three is this chapter's contest in miniature. What you can buy today is silicon, and what promises the next jump is the perovskite-on-silicon tandem, which has already reached 35% in the laboratory <Cite id="fraunhofer-pv-report" />. Single-cell records are in the comparative chart from [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
 
 If the tandem takes hold, it uses the silicon wafer as a substrate and adds a layer on top. The quartz-to-wafer path described on this site stays the same, and the value per wafer rises.
 

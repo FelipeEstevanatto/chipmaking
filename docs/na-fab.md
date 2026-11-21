@@ -120,7 +120,7 @@ Os métodos diferem na quantidade de filme que deixam no fundo da trincheira.
 
 A ALD (*atomic layer deposition*) coloca uma camada atômica por vez e para sozinha. Cada ciclo tem duas etapas de reação química em que o precursor reage até esgotar os sítios disponíveis na superfície; a partir daí, precursor a mais não deposita nada <Cite id="amat-ald" />.
 
-A espessura passa a depender apenas do número de ciclos, e não de tempo, vazão ou temperatura <Cite id="amat-ald" />. Como cada ciclo cobre tudo o que estiver exposto, o filme tem na parede e no fundo a mesma espessura que no topo, inclusive em estruturas muito profundas. A ASM relata gap-fill de estruturas com razão de aspecto superior a 100:1, tecnologia escolhida para várias aplicações de 3D NAND <Cite id="asm-ald-gapfill" />.
+A espessura passa a depender só do número de ciclos. Tempo, vazão e temperatura deixam de importar <Cite id="amat-ald" />. Como cada ciclo cobre tudo o que estiver exposto, o filme tem na parede e no fundo a mesma espessura que no topo, inclusive em estruturas muito profundas. A ASM relata gap-fill de estruturas com razão de aspecto superior a 100:1, tecnologia escolhida para várias aplicações de 3D NAND <Cite id="asm-ald-gapfill" />.
 
 A ALD é lenta. O crescimento por ciclo fica na casa de 0,1 nm, e um ciclo completo com purgas dura segundos <Cite id="yim-ald-gpc" />. Filmes grossos são feitos por outros métodos, e a ALD fica com o que precisa ser fino, exato e conforme: óxidos de porta de alta constante dielétrica, barreiras de difusão e os espaçadores dos transistores de ponta <Cite id="amat-trillium" />.
 
@@ -215,7 +215,7 @@ Medir todos os wafers seria inviável, então as fábricas amostram por lote. A 
   <DataChart chart="metrology-sampling" />
 </ClientOnly>
 
-O CD-SEM usa um feixe de elétrons para medir a largura de uma linha com resolução nanométrica, e é assim que a fábrica confere se a porta saiu com a largura que o desenho pedia. A elipsometria espectroscópica mede espessura sem tocar no wafer: mede como a luz muda de polarização ao refletir e resolve a espessura por modelo <Cite id="horiba-ellipsometry" />. É o método padrão para filmes ultrafinos, de poucos ångströms a dezenas de micrômetros, e para pilhas de múltiplas camadas <Cite id="horiba-ellipsometry" />.
+O CD-SEM usa um feixe de elétrons para medir a largura de uma linha com resolução nanométrica, e é assim que a fábrica confere se a porta saiu com a largura especificada no projeto. A elipsometria espectroscópica mede espessura sem tocar no wafer: mede como a luz muda de polarização ao refletir e resolve a espessura por modelo <Cite id="horiba-ellipsometry" />. É o método padrão para filmes ultrafinos, de poucos ångströms a dezenas de micrômetros, e para pilhas de múltiplas camadas <Cite id="horiba-ellipsometry" />.
 
 ### O laço de controle
 

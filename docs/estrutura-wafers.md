@@ -81,7 +81,7 @@ Nesses wafers a borda traz dois chanfros de comprimentos diferentes. O primário
 | 90° | P | &lt;100&gt; |
 | 180° | N | &lt;100&gt; |
 
-Existe uma exceção para os wafers de 150 mm do tipo (100) N: o flat secundário fica a 135°, não a 180°. A própria norma registra a mudança com data: ela vale desde 1.º de janeiro de 1990, e wafers fabricados antes disso seguem a convenção antiga <Cite id="semi-m1" />.
+Existe uma exceção para os wafers de 150 mm do tipo (100) N: o flat secundário fica a 135°; a convenção antiga o punha a 180°. A própria norma registra a mudança com data: ela vale desde 1.º de janeiro de 1990, e wafers fabricados antes disso seguem a convenção antiga <Cite id="semi-m1" />.
 
 ### *Notch*: 200 mm e 300 mm
 
@@ -109,11 +109,11 @@ Diâmetro e espessura caminham juntos, porque a lâmina precisa continuar rígid
 | 200 mm | 725 µm | notch |
 | 300 mm | 775 µm | notch |
 
-A mesma norma limita a variação de espessura (TTV) a 10 µm e a deformação da lâmina: *bow* e *warp*. Para 200 mm a M1 admite até 65 µm de *bow* e 75 µm de *warp*; para 300 mm o *bow* fica em aberto e o *warp* em 100 µm <Cite id="semi-m1" />. Folhas de especificação de fornecedor costumam trazer números bem mais apertados, porque o limite da norma é o mínimo que um wafer *prime* precisa cumprir, não o que a indústria de fato entrega.
+A mesma norma limita a variação de espessura (TTV) a 10 µm e a deformação da lâmina: *bow* e *warp*. Para 200 mm a M1 admite até 65 µm de *bow* e 75 µm de *warp*; para 300 mm o *bow* fica em aberto e o *warp* em 100 µm <Cite id="semi-m1" />. Folhas de especificação de fornecedor costumam trazer números bem mais apertados, porque o limite da norma é o mínimo que um wafer *prime* precisa cumprir; as folhas de fornecedor mostram o que a indústria de fato entrega.
 
 ### A transição para 450 mm
 
-O diâmetro parou de crescer em 300 mm, e não por falta de ambição. A lógica é irrecusável: a área de um wafer de 450 mm é **2,25×** a de um de 300 mm, o que multiplicaria o número de pastilhas por lâmina praticamente sem multiplicar o custo do processamento.
+O diâmetro parou de crescer em 300 mm por razões econômicas. A lógica é irrecusável: a área de um wafer de 450 mm é **2,25×** a de um de 300 mm, o que multiplicaria o número de pastilhas por lâmina praticamente sem multiplicar o custo do processamento.
 
 A história começou antes, e com outro número. Os primeiros cristais de 400 mm foram puxados em 1995, e a ideia era continuar nessa medida, mas em 2000 o *roadmap* da indústria (ITRS) fixou a próxima geração em 450 mm, não 400 <Cite id="eng-450mm" />. O plano previa linhas-piloto em 2012 e produção entre 2014 e 2016 <Cite id="eng-450mm" />.
 

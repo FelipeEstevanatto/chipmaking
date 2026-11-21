@@ -36,6 +36,8 @@ jobs:
           python3 scripts/audit-glossary.py
           python3 scripts/audit-math.py
           python3 scripts/audit-links.py
+          python3 scripts/audit-citations.py
+          python3 scripts/audit-syntax.py
           python3 scripts/audit-numbers.py
 
       # The CSVs under docs/public/data are generated from charts/specs.ts. Editing a series without

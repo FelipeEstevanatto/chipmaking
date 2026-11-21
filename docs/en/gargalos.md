@@ -27,7 +27,7 @@ The sections follow that order.
   <ChokepointMap />
 </ClientOnly>
 
-Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. It is the same pattern as the Spruce Pine chokepoint: a cheap, barely visible and short-term irreplaceable input.
+Neon is the case that best illustrates the pattern, because it is not a silicon material at all: it is a noble gas left over from air separation, purified in a few plants whose feedstock comes largely from Russian steelmaking. When the invasion of Ukraine interrupted those plants in 2022, the industry discovered it depended on a by-product nobody monitored, and began designing neon recovery and recycling inside the fab itself <Cite id="fabm-neon-2017" />. The pattern is the same as the Spruce Pine chokepoint: a cheap, barely visible and short-term irreplaceable input.
 
 Packaging, the last step before the chip is sold, is concentrated as well. In 2020 four of the six advanced-packaging firms with a named share were in Taiwan, and Taiwanese firms held nearly half of the world's advanced-packaging capacity <Cite id="cset-packaging" />.
 
@@ -63,7 +63,7 @@ Large markets should have many suppliers. Three forces push the other way.
 
 - **Idle capacity is punishingly expensive.** A polysilicon or wafer plant costs billions and has to run full. Two suppliers splitting a market of the same size both sit below break-even: it is more stable for there to be one.
 - **Qualification is an asset.** Changing a materials supplier means requalifying the process. That locks in the customer and deters the entrant, as discussed in [fab consumables](/en/insumos-fab).
-- **The risk is correlated.** When each step has one supplier, the risk of each step does not diversify: it adds up. That is the argument [wafer fabrication](/en/estrutura-wafers#who-makes-the-wafers) already makes about Japan, and the one the [history of lithography](/en/historia-fotolitografia) makes about the consortium that bet on EUV when the candidate list still had six names.
+- **The risk is correlated.** When each step has one supplier, the risk of each step does not diversify: it adds up. [Wafer fabrication](/en/estrutura-wafers#who-makes-the-wafers) already makes that argument about Japan, and the [history of lithography](/en/historia-fotolitografia) makes it about the consortium that bet on EUV when the candidate list still had six names.
 
 The chain was optimised for cost for decades, and concentration is the result of that optimisation. The price of efficiency is the absence of a plan B.
 

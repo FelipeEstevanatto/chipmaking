@@ -109,7 +109,7 @@ As duas rotas convivem na indústria, e a escolha entre elas é feita no projeto
 | Energia por kg de SiHCl₃ | 0,4–0,7 kWh | 2,0–3,5 kWh |
 | Campanha contínua | 150–330 dias | ~120 dias |
 
-É por isso que plantas grandes raramente escolhem uma só: acima de 10.000 t/ano o caminho usual é o método híbrido, combinando reatores de síntese direta com reatores de hidrocloração <Cite id="jarkin-2021" />.
+Por isso, plantas grandes raramente escolhem uma só: acima de 10.000 t/ano o caminho usual é o método híbrido, combinando reatores de síntese direta com reatores de hidrocloração <Cite id="jarkin-2021" />.
 
 Com ponto de ebulição de apenas 31,8 °C, o TCS sai do reator já como gás <Cite id="ratedpower" /> <Cite id="jarkin-2021-part2" />. No topo do reator um filtro separa o TCS gasoso do hidrogênio e do HCl residual <Cite id="pv-mfg-polysilicon" />, e o gás segue para destilação fracionada, onde a diferença de volatilidade entre o TCS e os cloretos de boro, fósforo e metais faz a separação com altíssima precisão <Cite id="ratedpower" />. É aqui, e não antes, que o silício se torna realmente puro.
 
@@ -179,7 +179,7 @@ O ciclo do cloro. O silício bruto entra na etapa 1 e o polissilício sai na eta
 
 O mesmo vale para o subproduto mais incômodo da cloração, o tetracloreto de silício (SiCl₄). Em vez de sair como efluente clorado, ele volta ao processo por hidrocloração, junto com hidrogênio e mais silício bruto <Cite id="jarkin-2021-part2" /> <Cite id="jarkin-2021" />.
 
-Para cada quilo de polissilício produzido, o estágio de síntese direta gera de 2 a 5 kg de SiCl₄, e o estágio de deposição outros 11 a 14 kg <Cite id="jarkin-2021" />. Sem o reciclo, uma planta seria ao mesmo tempo uma fábrica de polissilício e uma fábrica de tetracloreto, nesta última numa proporção de dez para um. É por isso que uma planta de polissilício se mede pela energia que consome, e não pela matéria-prima que descarta: o cloro circula, e o que o sistema perde como resíduo é bem menos do que a equação do reator sugere.
+Para cada quilo de polissilício produzido, o estágio de síntese direta gera de 2 a 5 kg de SiCl₄, e o estágio de deposição outros 11 a 14 kg <Cite id="jarkin-2021" />. Sem o reciclo, uma planta seria ao mesmo tempo uma fábrica de polissilício e uma fábrica de tetracloreto, nesta última numa proporção de dez para um. Por isso, uma planta de polissilício se mede pela energia que consome. A matéria-prima que descarta pesa menos: o cloro circula, e o que o sistema perde como resíduo é bem menos do que a equação do reator sugere.
 
 <VideoPressEmbed id="ZlxguS11" title="Animação da rota de produção de polissilício" />
 
@@ -193,7 +193,7 @@ A rota química domina, e é cara em energia. Cloração, destilação e o reato
 
 O TCS ilustra bem o problema. É um líquido incolor e volátil (densidade de 1,34 g/cm³, ponto de fusão de −126,5 °C, ebulição a 31,8 °C). A faixa de inflamabilidade em ar vai de 1,2% a 90,5% em volume, e a autoignição ocorre a apenas 185 °C <Cite id="icsc-tcs" />.
 
-Com ponto de fulgor de −27 °C, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é 4,7 vezes mais denso que o ar, ou seja, acumula-se no piso <Cite id="icsc-tcs" />. É por isso que o TCS se armazena e se manuseia sob gás inerte.
+Com ponto de fulgor de −27 °C, o líquido já emite vapor inflamável à temperatura ambiente, e esse vapor é 4,7 vezes mais denso que o ar, ou seja, acumula-se no piso <Cite id="icsc-tcs" />. Por isso, o TCS se armazena e se manuseia sob gás inerte.
 
 ::: warning
 O TCS reage violentamente com a água, inclusive com a umidade do ar, liberando ácido clorídrico e calor, e as instruções de combate a incêndio da ficha internacional prescrevem explicitamente não usar água <Cite id="icsc-tcs" />.
@@ -248,7 +248,7 @@ A diferença essencial em relação ao processo Siemens é que o silício nunca 
 A planta de Kristiansand (Fiskå), onde a Elkem industrializou sua rota metalúrgica em 2009. A produção começou com 5.000 t/ano, subiu para 6.000 t/ano em 2011 e tinha capacidade projetada de ~7.500 t/ano <Cite id="elkem-solar-route" />. Bjoertvedt, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Solar_01.JPG" target="_blank" rel="noopener noreferrer">Elkem Solar</a> (CC BY-SA 3.0), Wikimedia Commons.
 </DiagramFigure>
 
-O ganho energético é o ponto central do argumento. A planta produzia silício com cerca de 70% menos energia que a rota Siemens de referência, e as emissões de CO₂ equivalente ficavam entre 10 e 30% das do processo Siemens: 11 g contra 40–150 g de CO₂-eq por kg, conforme a rota e a localização da planta <Cite id="elkem-solar-route" />. O tempo de retorno energético de um módulo solar feito com esse material ficava abaixo de um ano <Cite id="elkem-solar-route" />.
+O ganho energético é o ponto central do argumento. A planta produzia silício com cerca de 70% menos energia que a rota Siemens de referência, e as emissões de CO₂ equivalente ficavam entre 10 e 30% das do processo Siemens. Eram 11 g contra 40–150 g de CO₂-eq por kg, conforme a rota e a localização da planta <Cite id="elkem-solar-route" />. O tempo de retorno energético de um módulo solar feito com esse material ficava abaixo de um ano <Cite id="elkem-solar-route" />.
 
 A purificação também evoluiu. Nos anos 1980 o produto carregava quase 4 ppmw de boro e fósforo; os valores típicos chegaram a 0,22 ppmw de boro e 0,62 ppmw de fósforo <Cite id="elkem-solar-route" />. Com isso o material, vendido sob a marca ESS™, passou a atender ao grupo IV da norma SEMI PV17-0611, que classifica justamente as qualidades de silício grau solar <Cite id="elkem-solar-route" />.
 
@@ -293,7 +293,7 @@ Sete ordens de grandeza separam o metal que sai do forno do quartzo mais limpo. 
 | Ti | 160–200 | < 0,01 | — | < 0,003 |
 | Cr | 50–200 | < 0,1 | — | — |
 
-A leitura da tabela explica por que a purificação química existe. O ferro, impureza dominante no MG-Si, cai de milhares de ppm para menos de 0,01 ppm no grau eletrônico; o boro, que o MG-Si carrega em dezenas de ppm, precisa chegar a menos de 0,0002 ppm, uma queda de mais de cinco ordens de grandeza. Nenhuma metalurgia faz isso; só a destilação de um gás <Cite id="saimm" />.
+A leitura da tabela explica por que a purificação química existe. O ferro, impureza dominante no MG-Si, cai de milhares de ppm para menos de 0,01 ppm no grau eletrônico. O boro, que o MG-Si carrega em dezenas de ppm, precisa chegar a menos de 0,0002 ppm, uma queda de mais de cinco ordens de grandeza. Nenhuma metalurgia faz isso; só a destilação de um gás <Cite id="saimm" />.
 
 Repare também que a coluna do grau solar policristalino lista apenas o teor de silício. Não é omissão: o grau solar não tem especificação formal, e o que se publica são concentrações aceitáveis de impureza, usadas como referência e não como norma <Cite id="saimm" />.
 
@@ -311,7 +311,7 @@ A indústria é, nas palavras da própria Bernreuter Research, um superpetroleir
 
 Antes de 2004, a demanda era dominada pelos semicondutores, com seus próprios ciclos. A explosão da fotovoltaica encurtou o ciclo pela metade: o intervalo entre vale e pico caiu de oito para quatro anos <Cite id="bernreuter-market" />. Depois, a expansão chinesa de baixo custo praticamente invalidou o ciclo, produzindo uma tendência sustentada de sobreoferta interrompida apenas por fases curtas de escassez <Cite id="bernreuter-market" />. O ciclo só voltou quando a retração das instalações na China e o fechamento de mais de uma dúzia de fabricantes em 2018–2019 foram seguidos pela recuperação rápida da demanda no segundo semestre de 2020 <Cite id="bernreuter-pork-cycle" />.
 
-Os extremos recentes mostram o tamanho do movimento: em junho de 2020 o preço à vista tocou o fundo histórico de US\$ 6,75/kg; em agosto de 2022 estava em US\$ 39/kg: a subida inteira em cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
+Os extremos recentes mostram o tamanho do movimento. Em junho de 2020 o preço à vista tocou o fundo histórico de US\$ 6,75/kg; em agosto de 2022 estava em US\$ 39/kg. A subida inteira levou cerca de dois anos, seguida de nova onda de projetos e, segundo a própria consultoria, de mais um *shakeout* inevitável <Cite id="bernreuter-pork-cycle" />.
 
 ### A inversão da demanda
 
@@ -345,7 +345,7 @@ No fim, o mapa virou geopolítico. Fora da China, o último grande projeto foi a
 
 Em 2025 houve uma tentativa de recuperação de preços. A consultoria TrendForce projetou para o segundo trimestre um polissilício a CNY 45/kg, com módulos a CNY 0,70/W e células TOPCon subindo cerca de 1,7% no mês <Cite id="trendforce-2025" />.
 
-A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória, e não de demanda estrutural: a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />.
+A alta, porém, veio de um pico artificial de instalações na China antes de uma mudança regulatória. A demanda estrutural não mudou: a própria TrendForce já previa a reversão para o terceiro trimestre <Cite id="trendforce-2025" />.
 
 É esse tipo de ciclo curto, contra capacidade instalada abundante, num mercado onde mais de 90% da oferta sai de um só país, que ajuda a explicar por que plantas europeias competitivas em qualidade, como a de Kristiansand descrita acima, não conseguiram se sustentar.
 

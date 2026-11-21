@@ -43,7 +43,7 @@ The series drawn above ends in 2025, with the count NVIDIA publishes for the GB2
 
 ## Yield against area
 
-The second chart is the Poisson model of yield, evaluated from the equation the [in the fab](/en/na-fab) chapter presents, for five defect densities <Cite id="leachman-yield" />. It is a model, not a measurement.
+The second chart is the Poisson model of yield, evaluated from the equation the [in the fab](/en/na-fab) chapter presents, for five defect densities <Cite id="leachman-yield" />. It is a model: the curves come from the Poisson equation.
 
 <ClientOnly>
   <DataChart chart="yield-vs-area" />
@@ -51,7 +51,7 @@ The second chart is the Poisson model of yield, evaluated from the equation the 
 
 Doubling a die's area costs more than twice as much per good die: at D₀ = 0.1 defect/cm², yield falls from 90% to 82% when the area doubles from 1 to 2 cm². That is the economic reason large dies are rare and the reason the industry moved to [chiplets](/en/empacotamento#chiplets) instead of continuing to enlarge the monolithic die. The Poisson model is conservative at large areas, as the chapter itself records, and the correction the industry uses is the negative binomial distribution <Cite id="murphy-1964" />.
 
-The chart above is a curve; clustering shows up in a map. The two controls below move the die area and the clustering factor α of the negative binomial. At α = ∞ defects land at random across the wafer and the model is the Poisson law itself. As α falls they arrive in clumps: most dies come out clean and the failures concentrate in a few. Poisson cannot see that, which is why it understates the yield of a real wafer; the gap between the two bars is the size of the error.
+The chart above is a curve; clustering shows up in a map. The two controls below move the die area and the clustering factor α of the negative binomial. At α = ∞ defects land at random across the wafer and the model is the Poisson law itself. As α falls they arrive in clumps: most dies come out clean and the failures concentrate in a few. The Poisson model does not capture that, which is why it understates the yield of a real wafer; the gap between the two bars is the size of the error.
 
 <ClientOnly>
   <YieldExplorer />
@@ -69,7 +69,7 @@ The shares are the difference between consecutive published percentiles, rounded
 
 ## The series as files
 
-Every chart on the site also exists as a data file, generated from the same definition that draws it, not from a parallel spreadsheet that would age on its own:
+Every chart on the site also exists as a data file, generated from the same definition that draws it. There is no parallel spreadsheet to age on its own:
 
 - [Transistor count](/data/transistor-count.csv)
 - [Yield against area](/data/yield-vs-area.csv)
@@ -96,9 +96,9 @@ The script `scripts/export-chart-data.ts` rewrites all of them from `docs/.vitep
 
 ## The freshness stamp
 
-Not every chapter is equally recent, and until now a reader had no way to know. The [solar cells and modules](/en/celulas-solares) chapter uses 2011 figures for the industry's scale and cost, which its own text admits are outdated, and its stamp points at the most recent datum the chapter cites, not at those 2011 figures. [Crystal structure](/en/estrutura-wafers), by contrast, cites a 2024 survey published in 2025.
+Not every chapter is equally recent, and until now a reader had no way to know. The [solar cells and modules](/en/celulas-solares) chapter uses 2011 figures for the industry's scale and cost, which its own text admits are outdated, and its stamp points at the most recent datum the chapter cites. The 2011 figures stay in the text, marked as old. [Crystal structure](/en/estrutura-wafers), by contrast, cites a 2024 survey published in 2025.
 
-That is why each chapter declares, below its title, the year of the most recent data it cites. It is a reading aid, not a validity stamp: a 2011 number may still be the best reference for what it describes, but the reader is entitled to know they are reading 2011.
+That is why each chapter declares, below its title, the year of the most recent data it cites. It is a reading aid: it tells you the age of the data. A 2011 number may still be the best reference for what it describes, but the reader is entitled to know they are reading 2011.
 
 <SourceNote :ids="['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'apple-m6', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k', 'intel-chip-timeline']" />
 

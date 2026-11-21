@@ -23,11 +23,11 @@ Chipmaking follows silicon through its whole production chain: quartz mining, th
 ## What is in it
 
 - **Two languages, one text.** Every chapter exists in Portuguese and English, file for file, and a CI check fails when their glossary annotations drift apart.
-- **278 numbered sources.** Each number in the prose carries a `[n]` marker that resolves to the references page, and the rule is to cite whoever measured, not whoever repeated it.
+- **292 numbered sources.** Each number in the prose carries a `[n]` marker that resolves to the references page, and the rule is to cite whoever measured, not whoever repeated it.
 - **54 original drawings** of process steps and device structures, plus four credited third-party diagrams, and interactive pieces: USGS production charts, a WebGL crystal viewer that computes packing fractions from the unit cell, an animation of the arc-furnace chemistry, a fab-loop explorer, a yield explorer, a lithography resolution calculator and an oxide-growth explorer.
 - **A 67-term glossary** that annotates each term on its first use per page.
 - **Chart data as CSV**, generated from the same specs that draw the charts, so the downloadable data and the picture cannot disagree.
-- **Audits in CI.** Every push runs checks for prose style, drawing structure, glossary coverage, maths rendering, internal links and a number-parity report between the two languages.
+- **Audits in CI.** Every push runs checks for prose style, drawing structure, glossary coverage, maths rendering, internal links, citation integrity, a sentence-length budget and a number-parity report between the two languages.
 
 ## Chapters
 

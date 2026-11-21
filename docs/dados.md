@@ -43,7 +43,7 @@ A série desenhada acima termina em 2025, com a contagem que a NVIDIA publica pa
 
 ## Rendimento contra área
 
-O segundo gráfico é o modelo de Poisson do rendimento, calculado a partir da equação apresentada no capítulo [Na fab](/na-fab), para cinco densidades de defeitos <Cite id="leachman-yield" />. É um modelo, não uma medição.
+O segundo gráfico é o modelo de Poisson do rendimento, calculado a partir da equação apresentada no capítulo [Na fab](/na-fab), para cinco densidades de defeitos <Cite id="leachman-yield" />. É um modelo: as curvas saem da equação de Poisson.
 
 <ClientOnly>
   <DataChart chart="yield-vs-area" />
@@ -51,7 +51,7 @@ O segundo gráfico é o modelo de Poisson do rendimento, calculado a partir da e
 
 Dobrar a área de um die custa mais que o dobro por die bom: a D₀ = 0,1 defeito/cm², o rendimento cai de 90% para 82% quando a área dobra de 1 para 2 cm². É o motivo econômico pelo qual dies muito grandes são raros e pelo qual a indústria foi para [chiplets](/empacotamento#chiplets) em vez de continuar aumentando o monolito. O modelo de Poisson é conservador para áreas grandes, como o próprio capítulo registra, e a correção que a indústria usa é a distribuição binomial negativa <Cite id="murphy-1964" />.
 
-O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o fator de agrupamento α do binomial negativo. Em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson. Conforme α desce, eles chegam em blocos: a maior parte dos dies sai limpa e as falhas se concentram em poucos. O Poisson não vê isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
+O gráfico acima é uma curva; o efeito do agrupamento aparece num mapa. Os dois controles abaixo movem a área do die e o fator de agrupamento α do binomial negativo. Em α = ∞ os defeitos caem ao acaso pelo wafer e o modelo é o próprio Poisson. Conforme α desce, eles chegam em blocos: a maior parte dos dies sai limpa e as falhas se concentram em poucos. O modelo de Poisson não captura isso, e é por isso que ele subestima o rendimento de um wafer real; a distância entre as duas barras é o tamanho do erro.
 
 <ClientOnly>
   <YieldExplorer />
@@ -69,7 +69,7 @@ As fatias saem da diferença entre percentis consecutivos publicados, arredondad
 
 ## As séries em arquivo
 
-Cada gráfico do site existe também como arquivo de dados, gerado a partir da mesma definição que o desenha, não de uma planilha paralela que envelheceria sozinha:
+Cada gráfico do site existe também como arquivo de dados, gerado a partir da mesma definição que o desenha. Não existe planilha paralela para envelhecer sozinha:
 
 - [Contagem de transistores](/data/transistor-count.csv)
 - [Rendimento contra área](/data/yield-vs-area.csv)
@@ -96,9 +96,9 @@ O script `scripts/export-chart-data.ts` reescreve todos eles a partir de `docs/.
 
 ## O selo de atualidade
 
-Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usa, para a escala e o custo do setor, números de 2011, que o próprio texto admite estarem defasados, e o selo dele aponta o dado mais recente que o capítulo cita, não os números de 2011. Já [estrutura e tipos](/estrutura-wafers) cita um levantamento de 2024 publicado em 2025.
+Nem todo capítulo é igualmente recente, e até agora o leitor não tinha como saber. O capítulo de [células e módulos solares](/celulas-solares) usa, para a escala e o custo do setor, números de 2011, que o próprio texto admite estarem defasados, e o selo dele aponta o dado mais recente que o capítulo cita. Os números de 2011 ficam no texto, identificados como antigos. Já [estrutura e tipos](/estrutura-wafers) cita um levantamento de 2024 publicado em 2025.
 
-Por isso cada capítulo declara, abaixo do título, o ano do dado mais recente que cita. É uma informação de leitura, não de validade: um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
+Por isso cada capítulo declara, abaixo do título, o ano do dado mais recente que cita. É uma informação de leitura: diz a idade do dado. Um número de 2011 pode continuar sendo a melhor referência para o que ele descreve, mas o leitor tem o direito de saber que está lendo 2011.
 
 <SourceNote :ids="['dados-transistor-count', 'intel-4004', 'apple-m1', 'apple-m4', 'apple-m6', 'nvidia-ada-whitepaper', 'nvidia-blackwell-whitepaper', 'leachman-yield', 'murphy-1964', 'siliconlottery-stats', 'tomshardware-8086k', 'intel-chip-timeline']" />
 

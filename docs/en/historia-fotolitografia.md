@@ -63,7 +63,7 @@ The schedule slipped from the start. In November 1997 the recommendation was tha
 
 In December 1999 and September 2000, the recommendation was to keep EUV and EPL for the 70 nm node, acknowledging the growing possibility that the industry might need more than one mainstream technology <Cite id="sematech-ngl" />. In August 2001, at the fifth and final workshop, the official recommendation was still to fund commercialisation of both <Cite id="sematech-ngl" />.
 
-EUV was not anointed alone in 2001. What happened is that EPL died of throughput, reducing the field to one candidate by elimination, while the formal recommendation to sustain both tracks was still in that year's report <Cite id="sematech-ngl" />. The practical effect was that EUV's target slipped from the 130/100 nm node to the 70 nm node, one to two generations later than the original plan <Cite id="sematech-ngl" />.
+EUV was not anointed alone in 2001. EPL was abandoned because of throughput, which reduced the field to one candidate by elimination, while the formal recommendation to sustain both tracks was still in that year's report <Cite id="sematech-ngl" />. The practical effect was that EUV's target slipped from the 130/100 nm node to the 70 nm node, one to two generations later than the original plan <Cite id="sematech-ngl" />.
 
 ## Why the runners-up lost
 
@@ -89,7 +89,7 @@ In 1996 the US Congress cut Department of Energy funding for EUV <Cite id="const
 
 The announced figure was US\$250 million over three years (US\$130 million in cash and US\$120 million in equipment, materials and personnel), the largest private investment ever made in a Department of Energy project at the time <Cite id="intel-euvllc" />. IBM, Micron, Infineon and ASML itself joined later <Cite id="eet-euvlith" />. Europe and Japan responded with their own consortia, EUCLIDES and ASET <Cite id="construction-physics-euv" />.
 
-The candidate that least looked capable of lasting several generations is the one that won: X-ray stalled on the mask and EPL on throughput, and only EUV could be extended from node to node with the same 13.5 nm.
+The least likely candidate to last several generations prevailed: X-ray stalled on the mask and EPL on throughput, and only EUV could be extended from node to node with the same 13.5 nm.
 
 ## The 157 nm detour and the rescue by immersion
 

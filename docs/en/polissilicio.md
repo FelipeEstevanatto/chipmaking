@@ -109,7 +109,7 @@ Both routes coexist in industry, and the choice between them is made when the pl
 | Energy per kg of SiHCl₃ | 0.4–0.7 kWh | 2.0–3.5 kWh |
 | Continuous run | 150–330 days | ~120 days |
 
-Which is why large plants rarely pick just one: above 10,000 t/y the usual route is the hybrid method, combining direct-synthesis reactors with hydrochlorination reactors <Cite id="jarkin-2021" />.
+For that reason, large plants rarely pick just one: above 10,000 t/y the usual route is the hybrid method, combining direct-synthesis reactors with hydrochlorination reactors <Cite id="jarkin-2021" />.
 
 With a boiling point of just 31.8 °C, TCS leaves the reactor already as a gas <Cite id="ratedpower" /> <Cite id="jarkin-2021-part2" />. At the top of the reactor a filter separates the gaseous TCS from the residual hydrogen and HCl <Cite id="pv-mfg-polysilicon" />, and the gas goes on to fractional distillation, where the difference in volatility between TCS and the chlorides of boron, phosphorus and metals performs the separation with very high precision <Cite id="ratedpower" />. It is here, and not before, that silicon becomes genuinely pure.
 
@@ -179,7 +179,7 @@ The chlorine loop. Raw silicon enters at step 1 and polysilicon leaves at step 3
 
 The same applies to the most awkward byproduct of chlorination, silicon tetrachloride (SiCl₄). Instead of leaving as a chlorinated effluent, it returns to the process through hydrochlorination, together with hydrogen and more raw silicon <Cite id="jarkin-2021-part2" /> <Cite id="jarkin-2021" />.
 
-For every kilogram of polysilicon produced, the direct-synthesis stage generates 2 to 5 kg of SiCl₄, and the deposition stage another 11 to 14 kg <Cite id="jarkin-2021" />. Without recycling, a plant would be a polysilicon factory and a tetrachloride factory at the same time, the latter at a ratio of ten to one. That is why a polysilicon plant is judged by the energy it consumes rather than by the raw material it throws away: the chlorine circulates, and what the system loses as waste is far less than the reactor equation suggests.
+For every kilogram of polysilicon produced, the direct-synthesis stage generates 2 to 5 kg of SiCl₄, and the deposition stage another 11 to 14 kg <Cite id="jarkin-2021" />. Without recycling, a plant would be a polysilicon factory and a tetrachloride factory at the same time, the latter at a ratio of ten to one. For that reason, a polysilicon plant is judged by the energy it consumes. The raw material it throws away matters less: the chlorine circulates, and what the system loses as waste is far less than the reactor equation suggests.
 
 <VideoPressEmbed id="ZlxguS11" title="Animation of the polysilicon production route" />
 
@@ -193,7 +193,7 @@ The chemical route dominates, and it is expensive in energy. Chlorination, disti
 
 TCS illustrates the problem well. It is a colourless, volatile liquid (density 1.34 g/cm³, melting point −126.5 °C, boiling at 31.8 °C). Its flammable range in air runs from 1.2% to 90.5% by volume, and it auto-ignites at just 185 °C <Cite id="icsc-tcs" />.
 
-With a flash point of −27 °C, the liquid already gives off flammable vapour at room temperature, and that vapour is 4.7 times denser than air, so it collects at floor level <Cite id="icsc-tcs" />. This is why TCS must be stored and handled under inert gas.
+With a flash point of −27 °C, the liquid already gives off flammable vapour at room temperature, and that vapour is 4.7 times denser than air, so it collects at floor level <Cite id="icsc-tcs" />. For that reason, TCS must be stored and handled under inert gas.
 
 ::: warning
 TCS reacts violently with water, including plain humidity, releasing hydrochloric acid and heat, and the international safety card's firefighting instructions explicitly say do not use water <Cite id="icsc-tcs" />.
@@ -248,7 +248,7 @@ The essential difference from the Siemens process is that the silicon never pass
 The Kristiansand plant (Fiskå), where Elkem industrialised its metallurgical route in 2009. Production began at 5,000 t/year, rose to 6,000 t/year in 2011 and had a projected capacity of ~7,500 t/year <Cite id="elkem-solar-route" />. Bjoertvedt, <a href="https://commons.wikimedia.org/wiki/File:Elkem_Solar_01.JPG" target="_blank" rel="noopener noreferrer">Elkem Solar</a> (CC BY-SA 3.0), Wikimedia Commons.
 </DiagramFigure>
 
-The energy gain is the core of the argument. The plant produced silicon with about 70% less energy than the reference Siemens route, and CO₂-equivalent emissions were between 10 and 30% of those of the Siemens process: 11 g against 40–150 g of CO₂-eq per kg, depending on the route and plant location <Cite id="elkem-solar-route" />. The energy payback time of a solar module made from that material was under one year <Cite id="elkem-solar-route" />.
+The energy gain is the core of the argument. The plant produced silicon with about 70% less energy than the reference Siemens route, and CO₂-equivalent emissions were between 10 and 30% of those of the Siemens process. That was 11 g against 40–150 g of CO₂-eq per kg, depending on the route and plant location <Cite id="elkem-solar-route" />. The energy payback time of a solar module made from that material was under one year <Cite id="elkem-solar-route" />.
 
 Purification evolved too. In the 1980s the product carried nearly 4 ppmw of boron and phosphorus; typical values reached 0.22 ppmw boron and 0.62 ppmw phosphorus <Cite id="elkem-solar-route" />. That brought the material, sold under the ESS™ brand, into group IV of the SEMI PV17-0611 standard, which classifies precisely the qualities of solar-grade silicon <Cite id="elkem-solar-route" />.
 
@@ -293,7 +293,7 @@ Seven orders of magnitude separate the metal that leaves the furnace from the cl
 | Ti | 160–200 | < 0.01 | — | < 0.003 |
 | Cr | 50–200 | < 0.1 | — | — |
 
-Reading the table explains why chemical purification exists at all. Iron, the dominant impurity in MG-Si, drops from thousands of ppm to below 0.01 ppm at electronic grade; boron, which MG-Si carries in the tens of ppm, has to reach below 0.0002 ppm, a fall of more than five orders of magnitude. No metallurgy achieves that; only the distillation of a gas does <Cite id="saimm" />.
+Reading the table explains why chemical purification exists at all. Iron, the dominant impurity in MG-Si, drops from thousands of ppm to below 0.01 ppm at electronic grade. Boron, which MG-Si carries in the tens of ppm, has to reach below 0.0002 ppm, a fall of more than five orders of magnitude. No metallurgy achieves that; only the distillation of a gas does <Cite id="saimm" />.
 
 Note also that the polycrystalline solar grade column lists only the silicon content. That is not an omission: solar grade has no formal specification, and what gets published are acceptable impurity concentrations, used as a guideline rather than a standard <Cite id="saimm" />.
 
@@ -311,7 +311,7 @@ The industry is, in Bernreuter Research's own words, a supertanker with a long b
 
 Before 2004, demand was dominated by the semiconductor industry, with its own cycles. The photovoltaic boom halved the cycle: the interval between trough and peak fell from eight to four years <Cite id="bernreuter-market" />. Afterwards, low-cost Chinese expansion practically invalidated the cycle, producing a sustained tendency to oversupply interrupted only by brief phases of shortage <Cite id="bernreuter-market" />. The cycle only returned once the slowdown in Chinese installations and the closure of more than a dozen manufacturers in 2018–2019 were followed by a rapid demand recovery in the second half of 2020 <Cite id="bernreuter-pork-cycle" />.
 
-The recent extremes show the scale of the movement: in June 2020 the spot price hit its historical low of US\$ 6.75/kg; by August 2022 it stood at US\$ 39/kg: the entire climb in about two years, followed by another wave of projects and, by the consultancy's own account, another inevitable shakeout <Cite id="bernreuter-pork-cycle" />.
+The recent extremes show the scale of the movement. In June 2020 the spot price hit its historical low of US\$ 6.75/kg; by August 2022 it stood at US\$ 39/kg. The entire climb took about two years, followed by another wave of projects and, by the consultancy's own account, another inevitable shakeout <Cite id="bernreuter-pork-cycle" />.
 
 ### The demand inversion
 
@@ -334,7 +334,7 @@ The rates for the two main South Korean suppliers came in below 3%, hardly dissu
 The expansion changed the nature of the market through three simultaneous forces:
 
 - **Energy cost.** The new plants clustered in the autonomous regions of Xinjiang and Inner Mongolia, where electricity is very cheap, the decisive input for a process as intensive as the Siemens one. The environmental counterpart is that this electricity comes mostly from coal-fired power stations, so the polysilicon produced carries a large carbon footprint <Cite id="bernreuter-market" />.
-- **A deliberate price war.** In 2018 the then-CEO of Daqo New Energy, Longgen Zhang, was explicit about the strategy: of the 300,000 tonnes of Chinese capacity in 2017, roughly 100,000 were low-cost, and the other 200,000 "will be wiped out" to make room for the new capacity <Cite id="bernreuter-market" />.
+- **A deliberate price war.** In 2018 the then-CEO of Daqo New Energy, Longgen Zhang, was explicit about the strategy. Of the 300,000 tonnes of Chinese capacity in 2017, roughly 100,000 were low-cost, and the other 200,000 "will be wiped out" to make room for the new capacity <Cite id="bernreuter-market" />.
 - **Falling specific consumption.** The amount of silicon per installed watt dropped so far that the polysilicon consumed for each new gigawatt in 2023 was a quarter of what it took in 2006. Contributors included the reduction of wafer thickness, the switch from slurry wire saws to diamond wire saws (less kerf loss), rising cell efficiency, the shift to n-type monocrystalline cells, and half-cut cells and other cell-to-module improvements <Cite id="bernreuter-market" />.
 
 The shift to monocrystalline was not purely technical. In 2015 China's National Energy Administration launched the Top Runner programme, whose minimum efficiency thresholds favoured monocrystalline over multicrystalline, and that provided the push Longi and Zhonghuan needed to scale up <Cite id="bernreuter-market" />. Because monocrystalline cells, especially n-type, require purer feedstock, the programme also favoured China's higher-quality polysilicon plants, and kept a niche open for foreign suppliers such as Wacker and OCI <Cite id="bernreuter-market" />.
@@ -345,7 +345,7 @@ In the end the map turned geopolitical. Outside China, the last major project wa
 
 2025 brought an attempted price recovery. The consultancy TrendForce projected polysilicon at CNY 45/kg for the second quarter, with modules at CNY 0.70/W and TOPCon cells rising about 1.7% month on month <Cite id="trendforce-2025" />.
 
-The rise came from an artificial installation rush in China ahead of a regulatory change, not from structural demand. TrendForce itself already expected the reversal in the third quarter <Cite id="trendforce-2025" />.
+The rise came from an artificial installation rush in China ahead of a regulatory change. Structural demand did not change. TrendForce itself already expected the reversal in the third quarter <Cite id="trendforce-2025" />.
 
 It is this kind of short cycle, against abundant installed capacity, in a market where more than 90% of supply comes from a single country, that helps explain why European plants competitive on quality, such as the one in Kristiansand described above, could not sustain themselves.
 

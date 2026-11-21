@@ -28,7 +28,7 @@ A célula pronta sai de sete etapas, nesta ordem:
 6. [Metalização](#metalizacao): os contatos, onde cada milímetro de prata é um milímetro sem luz.
 7. [Queima dos contatos](#queima-dos-contatos): o tratamento térmico que faz o metal atravessar o antirrefletor.
 
-A escolha do dopante tipo p (boro ou gálio) atravessa a terceira etapa e virou subseção dentro dela: mudou o produto, não a sequência do processo. Essas sete etapas constroem a célula clássica tipo p; os desenhos tipo n que a substituíram na produção em massa estão em [células atuais](#celulas-atuais).
+A escolha do dopante tipo p (boro ou gálio) atravessa a terceira etapa e virou subseção dentro dela: mudou o produto; a sequência do processo ficou igual. Essas sete etapas constroem a célula clássica tipo p; os desenhos tipo n que a substituíram na produção em massa estão em [células atuais](#celulas-atuais).
 
 ### Remoção da camada danificada
 
@@ -54,7 +54,7 @@ O boro reage com o oxigênio dissolvido no silício Cz (a impureza que o própri
 
 A perda teórica chega a 10% relativo na eficiência. Em campo fica em cerca de 3 a 4% nas células Al-BSF e 4 a 6% nas PERC <Cite id="lid-hallam" />. Isso aparece como menos energia no sistema instalado.
 
-A saída foi trocar o dopante. O gálio ocupa o mesmo papel aceitador do boro, mas não forma o complexo com oxigênio, e por isso a célula não sofre BO-LID <Cite id="lid-hallam" />. A substituição foi rápida quando as patentes que a bloqueavam expiraram, em 2020: a fatia de lâminas dopadas com gálio saltou de cerca de 10% em 2019 para mais de 95% em 2021, e a ITRPV já registrava o desaparecimento do boro como dopante tipo p em 2023 <Cite id="ga-transition" />.
+A saída foi trocar o dopante. O gálio ocupa o mesmo papel aceitador do boro, mas não forma o complexo com oxigênio, e por isso a célula não sofre BO-LID <Cite id="lid-hallam" />. A substituição foi rápida quando as patentes que a bloqueavam expiraram, em 2020. A fatia de lâminas dopadas com gálio saltou de cerca de 10% em 2019 para mais de 95% em 2021, e a ITRPV já registrava o desaparecimento do boro como dopante tipo p em 2023 <Cite id="ga-transition" />.
 
 O coeficiente de segregação do gálio é de apenas 0,008, contra 0,8 do boro, então a resistividade varia muito ao longo de um lingote e menos da peça é aproveitável <Cite id="lid-hallam" />. Esse compromisso está em [dopagem e gradiente de resistividade](/fabricacao-wafers#dopagem-e-o-gradiente-de-resistividade). Células dopadas com gálio ainda podem sofrer **LeTID** (*light and elevated temperature induced degradation*), uma perda ligada ao hidrogênio de até 3% relativo da potência <Cite id="letid-ga" />.
 
@@ -146,7 +146,7 @@ Alguns números do relatório mais recente dão a medida do que mudou:
   <DataChart chart="pv-efficiency" />
 </ClientOnly>
 
-A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo: o que se compra hoje é silício, e o que promete o próximo salto é o tandem de perovskita sobre silício, que já chegou a 35% em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
+A distância entre as duas primeiras barras do gráfico e as três últimas é o resumo da disputa do capítulo. O que se compra hoje é silício, e o que promete o próximo salto é o tandem de perovskita sobre silício, que já chegou a 35% em laboratório <Cite id="fraunhofer-pv-report" />. Os recordes de célula única estão no gráfico comparativo do [NREL](https://www.nrel.gov/pv/cell-efficiency.html) <Cite id="nrel-efficiency" />.
 
 Se o tandem se impuser, ele usa a lâmina de silício como substrato e acrescenta uma camada por cima. O caminho de quartzo a wafer descrito neste site continua o mesmo, e o valor por lâmina aumenta.
 

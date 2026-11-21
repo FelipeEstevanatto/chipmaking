@@ -8,7 +8,7 @@ dataAsOf: 2025
 
 A fotolitografia é a etapa que desenha o circuito no wafer. Máquinas da ASML (origem na Philips), com precisão nanométrica, alinham o wafer em equipamentos que projetam luz ultravioleta através de uma máscara (retículo) com o circuito gravado; o fotorresiste reage apenas nos pontos selecionados.
 
-A mesa de posicionamento do wafer pesa cerca de 15 kg e pode acelerar com força de até 20 G (cerca de três vezes a aceleração típica de um carro de Fórmula 1), movendo-se com precisão de nanômetros para multi-padrões: vários retículos em sequência para linhas menores que o permitido por uma única exposição. Qualquer vibração indesejada pode destruir o padrão.
+A mesa de posicionamento do wafer pesa cerca de 15 kg e acelera com força de até 20 G, cerca de três vezes a aceleração de um carro de Fórmula 1. Ela se move com precisão de nanômetros para o multi-padrão: vários retículos em sequência, para linhas menores que as de uma única exposição. Qualquer vibração indesejada pode destruir o padrão.
 
 A própria ASML nasceu de uma *joint venture* entre a Philips e a ASM International (ASMI), em 1984, num galpão ao lado de um prédio da Philips em Eindhoven; o primeiro stepper, o PAS 2000, saiu no mesmo ano <Cite id="asml-history" />.
 
@@ -45,7 +45,7 @@ O caminho óptico de um scanner de imersão DUV, da fonte ao wafer. Desenho do a
 
 O retículo não tem o padrão em tamanho final: ele é **maior**, e a óptica o reduz por um fator fixo (4× nos scanners atuais). Isso existe porque uma máscara com traços de poucos nanômetros não seria fabricável. É mais fácil desenhar grande e reduzir do que desenhar no tamanho do alvo.
 
-Duas peças fora do eixo óptico tornam o desenho possível. A primeira é a mesa do wafer, que se move de campo em campo com precisão de nanômetros e por isso é medida continuamente por interferometria a laser; a segunda é o bloco de granito, sólido e pesado, que absorve a vibração antes que ela chegue ao padrão.
+Duas peças fora do eixo óptico tornam o desenho possível. A primeira é a mesa do wafer, que se move de campo em campo com precisão de nanômetros e por isso é medida continuamente por interferometria a laser. A segunda é o bloco de granito, sólido e pesado, que absorve a vibração antes que ela chegue ao padrão.
 
 ## O fotorresiste
 
@@ -71,10 +71,10 @@ Executado em sequência, com controle rigoroso de temperatura e contaminantes <C
 4. **Alinhamento e exposição:** o scanner posiciona o retículo sobre o padrão que já está no wafer e expõe. A luz é de 193 nm no **DUV** e de 13,5 nm no **EUV**; o cromo da máscara bloqueia, e só as aberturas mudam a solubilidade da resina.
 5. **Cozimento pós-exposição (PEB):** 100–130 °C. Nas resinas quimicamente amplificadas é aqui que a reação catalisada pelo ácido acontece, e não durante a exposição. O cozimento também reduz as ondas estacionárias que a interferência da luz deixa nas paredes do resiste.
 6. **Revelação (*development*):** TMAH (hidróxido de tetrametilamônio) em poça sobre o wafer. Em resiste positivo, a região exposta é a que se dissolve. A temperatura do revelador é controlada com precisão de 0,2 °C.
-7. **Cozimento final (*hard bake*):** um cozimento opcional que endurece o resiste antes da gravação e da implantação. Um resiste positivo começa a reticular por volta de 130 a 140 °C, o que aumenta sua resistência a químicos úmidos; a mesma reticulação o torna mais difícil de remover depois, e os removedores comuns chegam ao limite depois de cozimentos de cerca de 150 a 160 °C <Cite id="microchemicals-hardbake" />.
+7. **Cozimento final (*hard bake*):** um cozimento opcional que endurece o resiste antes da gravação e da implantação. Um resiste positivo começa a reticular por volta de 130 a 140 °C, o que aumenta sua resistência a químicos úmidos. A mesma reticulação o torna mais difícil de remover depois, e os removedores comuns chegam ao limite depois de cozimentos de cerca de 150 a 160 °C <Cite id="microchemicals-hardbake" />.
 8. **Transferência de padrão e remoção:** gravação por etch ou implantação iônica nas áreas que ficaram sem resiste, e depois remoção por solvente como o NMP ou por plasma ashing de oxigênio.
 
-Os oito passos se dividem em duas máquinas. O track de coater/developer faz os cozimentos, o revestimento, a revelação e o enxágue; o scanner faz a exposição. Os dois ficam instalados lado a lado e ligados um ao outro, e o wafer passa de um para o outro sem sair do controle do sistema <Cite id="wikipedia-photolithography" />. A revelação é feita wafer a wafer, e não em lote, para que cada um receba a mesma dose.
+Os oito passos se dividem em duas máquinas. O track de coater/developer faz os cozimentos, o revestimento, a revelação e o enxágue; o scanner faz a exposição. Os dois ficam instalados lado a lado e ligados um ao outro, e o wafer passa de um para o outro sem sair do controle do sistema <Cite id="wikipedia-photolithography" />. A revelação é feita wafer a wafer: cada um recebe a mesma dose.
 
 <DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Máquina automatizada de revestimento e revelação de fotorresiste dentro de uma sala iluminada por luz amarela">
 Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amarela. Essa luz não tem componente ultravioleta, então o resiste não é exposto enquanto é manuseado, <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
@@ -82,9 +82,9 @@ Um coater/developer da EVG no laboratório LAAS-CNRS, em Toulouse, sob luz amare
 
 ## Realce de resolução e multi-padrão
 
-Existe um limite físico para o que uma exposição consegue desenhar, e a indústria passou décadas contornando-o por software e por processo em vez de trocar a fonte de luz: máscaras de deslocamento de fase, iluminação fora de eixo, correção óptica de proximidade (OPC) e, quando nada disso bastou, expor mais de uma vez <Cite id="asianometry-euv" />.
+Existe um limite físico para o que uma exposição consegue desenhar. A indústria passou décadas contornando-o por software e por processo, em vez de trocar a fonte de luz: máscaras de deslocamento de fase, iluminação fora de eixo, correção óptica de proximidade (OPC) e, quando nada disso bastou, mais de uma exposição <Cite id="asianometry-euv" />.
 
-A ideia de duplicação de linhas (*line doubling*) é a versão mais direta do multi-padrão: o primeiro padrão é gravado na camada dura, o segundo é exposto no fotorresiste entre os traços que já existem e, na gravação seguinte, as duas máscaras se somam: o número de traços dobra sem que nenhuma exposição tenha ficado mais fina.
+A duplicação de linhas (*line doubling*) é a versão mais direta do multi-padrão. O primeiro padrão é gravado na camada dura. O segundo é exposto no fotorresiste entre os traços que já existem. Na gravação seguinte, as duas máscaras se somam: o número de traços dobra sem que nenhuma exposição fique mais fina.
 
 <DiagramFigure src="/assets/line-doubling.svg" alt="Sequência de duplicação de linhas: segunda exposição entre traços já gravados e gravação da camada com as duas máscaras somadas">
 Duplicação de linhas: o padrão final sai da soma de duas exposições, <a href="https://commons.wikimedia.org/wiki/File:Line_doubling.svg" target="_blank" rel="noopener noreferrer">Line doubling</a>, Wdwd (CC BY 3.0), Wikimedia Commons (baseado em Guiding light, en.Wikipedia).
@@ -104,7 +104,7 @@ A história de como se chegou a essa combinação (as quatro gerações ópticas
 
 ## DUV a 193 nm
 
-A litografia DUV (*deep ultraviolet*) é a que usa lasers de excímero. Um excímero é uma molécula que só existe enquanto está eletricamente excitada: a descarga elétrica junta um gás nobre e um halogênio, que em condições normais não se combinam, e a molécula temporária devolve a energia na forma de luz com o comprimento de onda do par escolhido <Cite id="asml-light" />. O par criptônio + flúor (KrF) emite a 248 nm; o par argônio + flúor (ArF), a 193 nm <Cite id="asml-light" />.
+A litografia DUV (*deep ultraviolet*) é a que usa lasers de excímero. Um excímero é uma molécula que só existe enquanto está eletricamente excitada. A descarga elétrica junta um gás nobre e um halogênio, que em condições normais não se combinam, e a molécula temporária devolve a energia na forma de luz com o comprimento de onda do par escolhido <Cite id="asml-light" />. O par criptônio + flúor (KrF) emite a 248 nm; o par argônio + flúor (ArF), a 193 nm <Cite id="asml-light" />.
 
 Cada troca de fonte encolheu o menor traço imprimível:
 
@@ -137,7 +137,7 @@ A fonte de plasma de estanho, da gota ao foco intermediário. Desenho do autor, 
 
 ### A potência que faltava
 
-O laser de CO₂ que faz a explosão é uma das máquinas mais potentes já produzidas em série: cerca de 40 kW de potência pulsada a 50 kHz, alimentados por uma fonte de 1 MW, e ainda assim só cerca de 200 W chegam ao wafer <Cite id="laserfocus-euv" />. O motivo está na seção seguinte: as perdas do caminho óptico.
+O laser de CO₂ que faz a explosão é uma das máquinas mais potentes já produzidas em série. São cerca de 40 kW de potência pulsada a 50 kHz, alimentados por uma fonte de 1 MW, e ainda assim só cerca de 200 W chegam ao wafer <Cite id="laserfocus-euv" />. O motivo está na seção seguinte: as perdas do caminho óptico.
 
 Chegar a essa potência levou muito mais tempo do que o prometido. Quando o desenvolvimento industrial começou, a fonte entregava poucos watts; a meta para viabilizar 125 wafers por hora era de 250 W, ou seja, faltavam duas ordens de grandeza <Cite id="asml-euv-podcast" />. A potência subiu em degraus (40 W, 80 W, 125 W e, por fim, 250 W), e a primeira demonstração de 250 W contínuos num cliente só veio no início de 2018, cerca de seis anos depois da data originalmente prometida <Cite id="asml-euv-podcast" />.
 
@@ -196,7 +196,7 @@ A abertura numérica maior capta um cone mais largo, e por isso enxerga traços 
 
 <YouTubeEmbed id="h_zgURwr6nA" title="Unveiling High NA EUV (ASML)" />
 
-O ganho é grande: traços 1,7 vezes menores e, portanto, densidades de transistores 2,9 vezes maiores <Cite id="asml-highna" />. O preço é a óptica. Para chegar a 0,55 de NA os espelhos ficam muito maiores, e a luz deixa de conseguir passar sem obstrução na direção de varredura. A solução foi a óptica anamórfica: redução de 8× na direção da varredura e 4× na outra, o que corta o campo de exposição pela metade (26 × 16,5 mm em vez de 26 × 33 mm) e obriga os estágios de wafer e de retículo a serem bem mais rápidos <Cite id="asml-exe5200b" /> <Cite id="asml-highna" />.
+O ganho é grande: traços 1,7 vezes menores e, portanto, densidades de transistores 2,9 vezes maiores <Cite id="asml-highna" />. O preço é a óptica. Para chegar a 0,55 de NA os espelhos ficam muito maiores, e a luz deixa de conseguir passar sem obstrução na direção de varredura. A solução foi a óptica anamórfica: redução de 8× na direção da varredura e 4× na outra. Isso corta o campo de exposição pela metade (26 × 16,5 mm em vez de 26 × 33 mm) e obriga os estágios de wafer e de retículo a serem bem mais rápidos <Cite id="asml-exe5200b" /> <Cite id="asml-highna" />.
 
 A plataforma tem três marcos até agora:
 

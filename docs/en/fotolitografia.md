@@ -8,7 +8,7 @@ dataAsOf: 2025
 
 Photolithography is the step that draws the circuit on the wafer. ASML machines (which grew out of Philips), with nanometre precision, align the wafer in equipment that projects ultraviolet light through a mask (reticle) carrying the printed circuit; the photoresist reacts only at selected points.
 
-The wafer positioning stage weighs about 15 kg and can accelerate with a force of up to 20 G (roughly three times the acceleration of a Formula 1 car), moving with nanometre precision for multi-patterning: several reticles in sequence to produce lines smaller than a single exposure allows. Any unwanted vibration can destroy the pattern.
+The wafer positioning stage weighs about 15 kg and can accelerate with a force of up to 20 G, roughly three times the acceleration of a Formula 1 car. It moves with nanometre precision for multi-patterning: several reticles in sequence, for lines smaller than a single exposure allows. Any unwanted vibration can destroy the pattern.
 
 ASML itself began as a *joint venture* between Philips and ASM International (ASMI) in 1984, in a shed next to a Philips building in Eindhoven; its first stepper, the PAS 2000, was launched the same year <Cite id="asml-history" />.
 
@@ -45,7 +45,7 @@ The optical path of a DUV immersion scanner, from source to wafer. Drawn by the 
 
 The reticle does not hold the pattern at its final size: it is **larger**, and the optics reduces it by a fixed factor (4× in today's scanners). The reason is that a mask with features a few nanometres wide would not be manufacturable. It is easier to draw large and shrink than to draw at the target size.
 
-Two parts off the optical axis make the design possible. The first is the wafer stage, which steps from field to field with nanometre precision and is therefore measured continuously by laser interferometry; the second is the granite block, solid and heavy, which absorbs vibration before it reaches the pattern.
+Two parts off the optical axis make the design possible. The first is the wafer stage, which steps from field to field with nanometre precision and is therefore measured continuously by laser interferometry. The second is the granite block, solid and heavy, which absorbs vibration before it reaches the pattern.
 
 ## The photoresist
 
@@ -71,10 +71,10 @@ Performed in sequence, under strict control of temperature and contaminants <Cit
 4. **Alignment and exposure:** the scanner positions the reticle over the pattern already on the wafer and exposes. The light is **193 nm** in **DUV** and 13.5 nm in **EUV**; the chromium on the mask blocks it, and only the openings change the solubility of the resist.
 5. **Post-exposure bake (PEB):** 100–130 °C. In chemically amplified resists the acid-catalysed reaction happens here rather than during the exposure. The bake also reduces the standing waves that light interference leaves on the resist sidewalls.
 6. **Development:** TMAH (tetramethylammonium hydroxide) puddled onto the wafer. In a positive resist the exposed region is the one that dissolves. The developer temperature is held to within 0.2 °C.
-7. **Hard bake:** an optional bake that hardens the resist before etching and implantation. A positive resist starts to cross-link at about 130 to 140 °C, which raises its stability against wet chemicals; the same cross-linking makes it harder to strip afterwards, and common removers reach their limit after hard bakes of about 150 to 160 °C <Cite id="microchemicals-hardbake" />.
+7. **Hard bake:** an optional bake that hardens the resist before etching and implantation. A positive resist starts to cross-link at about 130 to 140 °C, which raises its stability against wet chemicals. The same cross-linking makes it harder to strip afterwards, and common removers reach their limit after hard bakes of about 150 to 160 °C <Cite id="microchemicals-hardbake" />.
 8. **Pattern transfer and removal:** etching or ion implantation in the areas left bare, then removal with a solvent such as NMP or with oxygen plasma ashing.
 
-The eight steps are split across two machines. The coater/developer track does the bakes, the coating, the development and the rinse; the scanner does the exposure. The two are installed side by side and linked, and the wafer passes from one to the other without leaving the system's control <Cite id="wikipedia-photolithography" />. Development runs one wafer at a time rather than in batches, so that each one receives the same dose.
+The eight steps are split across two machines. The coater/developer track does the bakes, the coating, the development and the rinse; the scanner does the exposure. The two are installed side by side and linked, and the wafer passes from one to the other without leaving the system's control <Cite id="wikipedia-photolithography" />. Development runs one wafer at a time: each one receives the same dose.
 
 <DiagramFigure src="/assets/resist-coater-developer.jpg" alt="Automated photoresist coater and developer inside a room lit by yellow light">
 An EVG coater/developer at the LAAS-CNRS laboratory in Toulouse, under yellow light. That light carries no ultraviolet, so the resist is not exposed while it is handled, <a href="https://commons.wikimedia.org/wiki/File:EVG_120_resist_coater-developer_at_LAAS_0434.jpg" target="_blank" rel="noopener noreferrer">EVG 120 resist coater-developer at LAAS 0434</a>, Guillaume Paumier (CC BY-SA 3.0), Wikimedia Commons.
@@ -82,9 +82,9 @@ An EVG coater/developer at the LAAS-CNRS laboratory in Toulouse, under yellow li
 
 ## Resolution enhancement and multi-patterning
 
-There is a physical limit to what a single exposure can draw, and the industry spent decades working around it in software and in process rather than replacing the light source: phase-shift masks, off-axis illumination, optical proximity correction (OPC) and, when none of that was enough, exposing more than once <Cite id="asianometry-euv" />.
+There is a physical limit to what a single exposure can draw. The industry spent decades working around it in software and in process, rather than replacing the light source: phase-shift masks, off-axis illumination, optical proximity correction (OPC) and, when none of that was enough, more than one exposure <Cite id="asianometry-euv" />.
 
-**Line doubling** is the most direct form of multi-patterning: the first pattern is etched into the hard layer, the second is exposed in the photoresist between the features that already exist, and in the next etch the two masks add up: the number of lines doubles without either exposure becoming finer.
+**Line doubling** is the most direct form of multi-patterning. The first pattern is etched into the hard layer. The second is exposed in the photoresist between the features that already exist. In the next etch the two masks add up: the number of lines doubles without either exposure becoming finer.
 
 <DiagramFigure src="/assets/line-doubling.svg" alt="Sequence of line doubling: a second exposure between features already etched, and etching of the layer with the two masks added together">
 Line doubling: the final pattern comes from adding two exposures, <a href="https://commons.wikimedia.org/wiki/File:Line_doubling.svg" target="_blank" rel="noopener noreferrer">Line doubling</a>, Wdwd (CC BY 3.0), Wikimedia Commons (based on Guiding light, en.Wikipedia).
@@ -104,7 +104,7 @@ The story of how that combination came about (the four optical generations, the 
 
 ## DUV at 193 nm
 
-**DUV** (*deep ultraviolet*) lithography is the one that uses excimer lasers. An excimer is a molecule that only exists while it is electrically excited: the discharge brings together a noble gas and a halogen, which do not normally combine, and the temporary molecule gives the energy back as light at a wavelength set by the pair chosen <Cite id="asml-light" />. The krypton + fluorine pair (KrF) emits at 248 nm; the argon + fluorine pair (ArF), at 193 nm <Cite id="asml-light" />.
+**DUV** (*deep ultraviolet*) lithography is the one that uses excimer lasers. An excimer is a molecule that only exists while it is electrically excited. The discharge brings together a noble gas and a halogen, which do not normally combine, and the temporary molecule gives the energy back as light at a wavelength set by the pair chosen <Cite id="asml-light" />. The krypton + fluorine pair (KrF) emits at 248 nm; the argon + fluorine pair (ArF), at 193 nm <Cite id="asml-light" />.
 
 Each change of source shrank the smallest printable feature:
 
@@ -196,7 +196,7 @@ A larger numerical aperture collects a wider cone, and therefore resolves smalle
 
 <YouTubeEmbed id="h_zgURwr6nA" title="Unveiling High NA EUV (ASML)" />
 
-The gain is large: features 1.7 times smaller and therefore transistor densities 2.9 times higher <Cite id="asml-highna" />. The price is the optics. To reach an NA of 0.55 the mirrors become much larger, and the light can no longer clear them unobstructed in the scan direction. The answer was anamorphic optics: 8× reduction in the scan direction and 4× across it, which halves the exposure field (26 × 16.5 mm instead of 26 × 33 mm) and forces the wafer and reticle stages to be much faster <Cite id="asml-exe5200b" /> <Cite id="asml-highna" />.
+The gain is large: features 1.7 times smaller and therefore transistor densities 2.9 times higher <Cite id="asml-highna" />. The price is the optics. To reach an NA of 0.55 the mirrors become much larger, and the light can no longer clear them unobstructed in the scan direction. The answer was anamorphic optics: 8× reduction in the scan direction and 4× across it. That halves the exposure field (26 × 16.5 mm instead of 26 × 33 mm) and forces the wafer and reticle stages to be much faster <Cite id="asml-exe5200b" /> <Cite id="asml-highna" />.
 
 The platform has three milestones so far:
 

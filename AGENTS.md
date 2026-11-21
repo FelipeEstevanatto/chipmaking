@@ -377,6 +377,11 @@ Never touch an em dash that is data:
   that declare it).
 - `python scripts/audit-links.py` — after the build; must print `OK` (every internal `href#fragment`
   resolves, which is how a renamed heading is caught in the locale it was not renamed in).
+- `python scripts/audit-citations.py` — must print `OK` (every `<Cite>`, `SourceNote`, `sourceIds` and
+  `processCite` resolves; no duplicate key or number; no unused entry; no `utm_` or malformed URL).
+- `python scripts/audit-syntax.py` — must print `OK` (no sentence over 60 words, and no sentence over
+  45 words that still carries a colon or semicolon). It also prints cleft density per file as a
+  report, not a gate.
 - `python scripts/audit-numbers.py` — the numbers a chapter and its translation do not share. Read it;
   it is not a gate, because the two languages legitimately write a quantity differently (PT `50 mil`
   against EN `50,000`). Add `--strict` to make it fail.

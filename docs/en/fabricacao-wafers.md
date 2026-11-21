@@ -55,7 +55,7 @@ The next step was silicon, a far more hostile material. The melt has to be conta
 
 ### Oxygen and carbon from the crucible
 
-The quartz of the crucible is not inert. In contact with the molten silicon it slowly dissolves into the melt, and that is the origin of Cz silicon's dominant impurity, oxygen, present at concentrations far above any metallic contaminant: [O] ≈ 5–10 × 10¹⁷ cm⁻³ and [C] ≈ 5–10 × 10¹⁵ cm⁻³ <Cite id="pv-mfg-cz" />.
+The quartz of the crucible is not inert. In contact with the molten silicon it slowly dissolves into the melt, and that is the origin of Cz silicon's dominant impurity, oxygen, present at concentrations far above any metallic contaminant. Typical values are [O] ≈ 5–10 × 10¹⁷ cm⁻³ and [C] ≈ 5–10 × 10¹⁵ cm⁻³ <Cite id="pv-mfg-cz" />.
 
 Oxygen's solubility in silicon falls by several orders of magnitude between the melting point and room temperature <Cite id="pv-mfg-cz" />. The crystal finishes the pull supersaturated, and on cooling the excess has to leave solution: the oxygen precipitates as SiO₂ particles.
 
@@ -139,7 +139,7 @@ Edge profile. Above, the sharp corner the saw leaves behind: the corner concentr
 Double-side lapping. On the left, the principle: the wafers sit coplanar between two plates that rotate in opposite directions, and the alumina slurry works both faces at the same time. On the right, what it buys: the waviness of the cut is gone and the faces are parallel. Author's drawing, after Pei et al. (2005) <Cite id="pei-2005" />.
 </DiagramFigure>
 
-Lapping has a cost, though: it is slow, consumes a great deal of abrasive, loads and unloads wafers by hand and leaves subsurface damage that must be removed afterwards. That is why modern lines replace it with simultaneous double-side grinding (SDSG), in which a single wafer passes between two diamond cup wheels: higher throughput, fewer consumables, more automation and far less slurry to dispose of <Cite id="pei-2005" />.
+Lapping has a cost, though: it is slow, consumes a great deal of abrasive, loads and unloads wafers by hand and leaves subsurface damage that must be removed afterwards. For that reason, modern lines replace it with simultaneous double-side grinding (SDSG), in which a single wafer passes between two diamond cup wheels: higher throughput, fewer consumables, more automation and far less slurry to dispose of <Cite id="pei-2005" />.
 
 ## Chemical etching
 
